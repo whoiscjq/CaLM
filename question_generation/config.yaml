@@ -1,0 +1,713 @@
+story_list:
+  candle:
+    type: collision
+    node: ["X", "Y", "Z"]
+    edge: ["X->Y", "Z->Y"]
+    all_cases: 
+      - {'X':0, 'Z':0, 'Y':0}
+      - {'X':0, 'Z':1, 'Y':1}
+      - {'X':1, 'Z':0, 'Y':1}
+      - {'X':1, 'Z':1, 'Y':1}
+    background: "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Blowing out the candle directly causes the dark room. The candle out of wax directly causes the dark room."
+    semantic: 
+      X: whether blowing out the candle
+      Y: whether the room is bright or dark
+      Z: whether the candle is out of wax
+      X0: the person in the room doesn't blow out the candle
+      X1: the person in the room blows out the candle
+      Y0: the room is bright
+      Y1: the room is dark
+      Z0: the candle has wax
+      Z1: the candle is out of wax
+      X0_noun: not blowing out the candle
+      X1_noun: blowing out the candle
+      Z0_noun: candle with wax
+      Z1_noun: candle out of wax
+      Y0_noun: bright room
+      Y1_noun: dark room
+      X0_past: the person in the room had not blowed out the candle
+      X1_past: the person in the room had blowed out the candle
+      Y0_present: the room still have been bright
+      Y1_present: the room still have been dark
+      Z0_past: the candle had had wax
+      Z1_past: the candle had been out of wax
+  alarm:
+    type: collision
+    node: ["X", "Y", "Z"]
+    edge: ["X->Y", "Z->Y"]
+    all_cases: 
+      - {'X':0, 'Z':0, 'Y':0}
+      - {'X':0, 'Z':1, 'Y':1}
+      - {'X':1, 'Z':0, 'Y':1}
+      - {'X':1, 'Z':1, 'Y':1}
+    background: "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: The husband setting the alarm directly causes the alarm ringing the next morning. The wife setting the alarm directly causes the alarm ringing the next morning."
+    semantic: 
+      X: the husband setting the alarm or not
+      Y: the alarm ringing the next morning or not
+      Z: the wife setting the alarm or not
+      X0: the husband does NOT set the alarm
+      X1: the husband sets the alarm
+      Y0: the alarm does NOT ring the next morning
+      Y1: the alarm rings the next morning
+      Z0: the wife does NOT set the alarm
+      Z1: the wife sets the alarm
+      X0_noun: the husband NOT setting the alarm
+      X1_noun: the husband setting the alarm
+      Z0_noun: the wife NOT setting the alarm
+      Z1_noun: the wife setting the alarm
+      Y0_noun: the alarm NOT ringing the next morning
+      Y1_noun: the alarm ringing the next morning
+      X0_past: the husband had NOT set the alarm
+      X1_past: the husband had set the alarm
+      Y0_present: the alarm still have NOT rung the next morning
+      Y1_present: the alarm still have rung the next morning
+      Z0_past: the wife had NOT set the alarm
+      Z1_past: the wife had set the alarm
+  celebrity:
+    type: collision
+    node: ["X", "Y", "Z"]
+    edge: ["X->Y", "Z->Y"]
+    all_cases: 
+      - {'X':0, 'Z':0, 'Y':0}
+      - {'X':0, 'Z':1, 'Y':0}
+      - {'X':0, 'Z':1, 'Y':1}
+      - {'X':1, 'Z':0, 'Y':0}
+      - {'X':1, 'Z':0, 'Y':1}
+      - {'X':1, 'Z':1, 'Y':0}
+      - {'X':1, 'Z':1, 'Y':1}
+    data: 
+      - {'X':0, 'Z':0, 'Y':0, 'count': 800}
+      - {'X':0, 'Z':0, 'Y':1, 'count': 1}
+      - {'X':0, 'Z':1, 'Y':0, 'count': 90}
+      - {'X':0, 'Z':1, 'Y':1, 'count': 10}
+      - {'X':1, 'Z':0, 'Y':0, 'count': 195}
+      - {'X':1, 'Z':0, 'Y':1, 'count': 5}
+      - {'X':1, 'Z':1, 'Y':0, 'count': 5}
+      - {'X':1, 'Z':1, 'Y':1, 'count': 5}
+    semantic: 
+      X: the person's appearance
+      Y: the person's fame
+      Z: the person's talent
+      X0: the person is considered unattractive
+      X1: the person is considered attractive
+      Y0: the person is not famous
+      Y1: the person is famous
+      Z0: the person is not talented
+      Z1: the person is talented
+      X0_noun: unattractive appearance
+      X1_noun: attractive appearance
+      Y0_noun: lack of fame
+      Y1_noun: being famous
+      Z0_noun: lack of talent
+      Z1_noun: being talented
+      X0_past: the person had been considered unattractive
+      X1_past: the person had been considered attractive
+      Y0_present: the person still have been not famous
+      Y1_present: the person still have been famous
+      Z0_past: the person had been not talented
+      Z1_past: the person had been talented
+  drug_taken:
+    type: collision
+    node: ["V1", "V2", "X"]
+    edge: ["V1->X", "V2->X"]
+    all_cases: 
+      - {'V2':0, 'V1':0, 'X':0}
+      - {'V2':0, 'V1':1, 'X':0}
+      - {'V2':1, 'V1':0, 'X':0}
+      - {'V2':1, 'V1':1, 'X':1}
+    semantic:
+      V1: null
+      V2: treatment assignment
+      X: drug taken
+      V10: null
+      V11: null
+      V20: the patient is NOT assigned the drug treatment
+      V21: the patient is assigned the treatment
+      X0: the patient does NOT take any assigned drugs
+      X1: the patient takes all assigned drugs
+      V10_noun: null
+      V11_noun: null
+      V20_noun: absence of assignment of drug treatment
+      V21_noun: assignment of drug treatment
+      X0_noun: NOT taking of any assigned drugs
+      X1_noun: taking of all assigned drugs
+      V10_past: null
+      V11_past: null
+      V20_past: the patient had not been assigned the drug treatment
+      V21_past: the patient had been assigned the drug treatment
+      X0_present: the patient still have not taken any assigned drugs
+      X1_present: the patient still have taken all assigned drugs
+  cholesterol_level: 
+    type: mediation
+    node: ["V1", "X", "Y"]
+    edge: ["V1->X", "V1->Y", "X->Y"]
+    background: "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Drug taken has a direct effect on cholesterol level. Unobserved confounders has a directly effect on cholesterol level. Unobserved confounders has a directly effect on drug taken."
+    all_cases: null
+    semantic:
+      V1: null
+      X: drug taken
+      Y: cholesterol level
+  drug_taken_and_cholesterol_level:
+    type: IV
+    node: ["V1", "V2", "X", "Y"]
+    edge: ["V1->X", "V2->X", "V1->Y", "X->Y"]
+    all_cases: null
+    semantic:
+      V1: null
+      V2: treatment assignment
+      X: drug taken
+      Y: cholesterol level
+  blood_pressure: 
+    type: mediation
+    node: ["X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z", "X->Z"]
+    all_cases: null
+    semantic:
+      X: medication taken
+      Y: blood pressure
+      Z: heart condition
+  education_skill_salary:
+    type: chain
+    node: ["X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z"]
+    all_cases: null
+    semantic:
+      X: education level
+      Y: skill level
+      Z: salary
+  elite_students:
+    type: collision
+    node: ["X", "Y", "Z"]
+    edge: ["X->Z", "Y->Z"]
+    all_cases: 
+      - {'X':0, 'Y':0, 'Z':0}
+      - {'X':0, 'Y':1, 'Z':0}
+      - {'X':0, 'Y':1, 'Z':1}
+      - {'X':1, 'Y':0, 'Z':0}
+      - {'X':1, 'Y':0, 'Z':1}
+      - {'X':1, 'Y':1, 'Z':0}
+      - {'X':1, 'Y':1, 'Z':1}
+    semantic:
+      X: the student's talent
+      Y: the student's effort
+      Z: elite institution admission status
+      X0: the student is not talented
+      X1: the student is talented
+      Y0: the student is lazy
+      Y1: the student is hard-working
+      Z0: the student is rejected by the elite institution
+      Z1: the student is accepted by the elite institution
+      X0_noun: lack of talent
+      X1_noun: being talented
+      Y0_noun: being lazy
+      Y1_noun: being hard-working
+      Z0_noun: elite institution rejection
+      Z1_noun: elite institution acceptance
+      X0_past: the student had been not talented
+      X1_past: the student had been talented
+      Y0_past: the student had been lazy
+      Y1_past: the student had been hard-working
+      Z0_present: the student still have been rejected by the elite institution
+      Z1_present: the student still have been accepted by the elite institution
+  distance_education:
+    type: collision
+    node: ["V1", "V2", "X"]
+    edge: ["V1->X", "V2->X"]
+    all_cases: null
+    semantic:
+      V1: null
+      V2: whether living closed to a college or not
+      X: education level
+  education_salary: 
+    type: mediation
+    node: ["V1", "X", "Y"]
+    edge: ["V1->X", "V1->Y", "X->Y"]
+    all_cases: null
+    semantic:
+      V1: null
+      X: education level
+      Y: salary
+  distance_education_salary:
+    type: IV
+    node: ["V1", "V2", "X", "Y"]
+    edge: ["V1->X", "V2->X", "V1->Y", "X->Y"]
+    all_cases: null
+    semantic:
+      V1: null
+      V2: whether living closed to a college or not
+      X: education level
+      Y: salary
+  encouragement_program:
+    type: mediation
+    node: ["X", "Y", "Z"]
+    edge: ["X->Z", "Y->Z", "X->Y"]
+    all_cases: null
+    semantic:
+      X: encouragement level
+      Y: whether the student studies hard
+      Z: exam score
+  firing_emplyee:
+    type: diamondcut
+    node: ["X", "V1", "V2", "Y"]
+    edge: ["X->V1", "X->V2", "V1->Y", "V2->Y"]
+    all_cases:
+      - {'X': 0, 'V1': 0, 'V2': 0, 'Y': 0}
+      - {'X': 1, 'V1': 0, 'V2': 0, 'Y': 0}
+      - {'X': 1, 'V1': 1, 'V2': 0, 'Y': 0}
+      - {'X': 1, 'V1': 0, 'V2': 1, 'Y': 0}
+      - {'X': 1, 'V1': 1, 'V2': 1, 'Y': 1}
+    semantic:
+      X: the CEO's decision to retain or fire the employee
+      V1: whether the manager signs the termination letter
+      V2: whether the director signs the termination letter
+      Y: whether the employee is fired
+      X0: the CEO decides to retain the employee
+      X1: the CEO decides to fire the employee
+      V10: the manager does not sign the termination letter
+      V11: the manager signs the termination letter
+      V20: the director does not sign the termination letter
+      V21: the director signs the termination letter
+      Y0: the employee is retained
+      Y1: the employee is fired
+      X0_noun: the CEO's decision to retain the employee
+      X1_noun: the CEO's decision to fire the employee
+      V10_noun: the manager signing the termination letter
+      V11_noun: the manager not signing the termination letter
+      V20_noun: the director signing the termination letter
+      V21_noun: the director not signing the termination letter
+      Y0_noun: the employee being retained
+      Y1_noun: the employee being fired
+      X0_past: the CEO had decided to retain the employee
+      X1_past: the CEO had decided to fire the employee
+      V10_past: the manager had not signed the termination letter
+      V11_past: the manager had signed the termination letter
+      V20_past: the director had not signed the termination letter
+      V21_past: the director had signed the termination letter
+      V10_present: the manager still have not signed the termination letter
+      V11_present: the manager still have signed the termination letter
+      V20_present: the director still have not signed the termination letter
+      V21_present: the director still haves signed the termination letter
+      Y0_present: the employee still have been retained
+      Y1_present: the employee still have been fired
+  firing_squad:
+    type: diamondcut
+    node: ["X", "V1", "V2", "Y"]
+    edge: ["X->V1", "X->V2", "V1->Y", "V2->Y"]
+    all_cases:
+      - {'X': 0, 'V1': 0, 'V2': 0, 'Y': 0}
+      - {'X': 1, 'V1': 0, 'V2': 0, 'Y': 0}
+      - {'X': 1, 'V1': 1, 'V2': 0, 'Y': 1}
+      - {'X': 1, 'V1': 0, 'V2': 1, 'Y': 1}
+      - {'X': 1, 'V1': 1, 'V2': 1, 'Y': 1}
+    semantic:
+      X: whether the captain orders to execute the prisoner or not
+      V1: whether the private shoots or not
+      V2: whether the corporal shoots or not
+      Y: whether the prisoner is alive or dead
+      X0: the captain does not order to execte the prisoner
+      X1: the captain orders to execte the prisoner
+      V10: the private does not shoot
+      V11: the private shoots
+      V20: the corporal does not shoots
+      V21: the corporal shoots
+      Y0: the prisoner is alive
+      Y1: the prisoner is dead
+      X0_noun: the captain not ordering to execute the prisoner
+      X1_noun: the captain ordering to execute the prisoner
+      V10_noun: the private not shooting
+      V11_noun: the private shooting
+      V20_noun: the corporal not shooting
+      V21_noun: the corporal shooting
+      Y0_noun: the prisoner alive
+      Y1_noun: the prisoner dead
+      X0_past: the captain had not ordered to execte the prisoner
+      X1_past: the captain had ordered to execte the prisoner
+      V10_past: the private had not shot
+      V11_past: the private had shot
+      V20_past: the corporal had not shot
+      V21_past: the corporal had shot
+      V10_present: the private still have not shot
+      V11_present: the private still have shot
+      V20_present: the corporal still have not shot
+      V21_present: the corporal still have shot
+      Y0_present: the prisoner still have been alive
+      Y1_present: the prisoner still have been dead
+  floor_wet:
+    type: diamondcut
+    node: ["X", "V1", "V2", "Y"]
+    edge: ["X->V1", "X->V2", "V1->Y", "V2->Y"]
+    all_cases:
+      - {'X': 0, 'V1': 0, 'V2': 0, 'Y': 0}
+      - {'X': 0, 'V1': 1, 'V2': 0, 'Y': 1}
+      - {'X': 0, 'V1': 0, 'V2': 1, 'Y': 1}
+      - {'X': 0, 'V1': 1, 'V2': 1, 'Y': 1}
+      - {'X': 1, 'V1': 0, 'V2': 0, 'Y': 0}
+      - {'X': 1, 'V1': 1, 'V2': 0, 'Y': 1}
+      - {'X': 1, 'V1': 0, 'V2': 1, 'Y': 1}
+      - {'X': 1, 'V1': 1, 'V2': 1, 'Y': 1}
+    semantic:
+      X: season 
+      V1: whether the sprinkler is on or off
+      V2: weather there is rain
+      Y: whether the ground is wet or dry
+      X0: the season is dry
+      X1: the season is rainy 
+      V10: the sprinkler is off
+      V11: the sprinkler is on
+      V20: there is no rain
+      V21: there is rain
+      Y0: the ground is dry
+      Y1: the ground is wet
+      X0_noun: dry season
+      X1_noun: rainy season
+      V10_noun: sprinkler off
+      V11_noun: sprinkler on
+      V20_noun: no rain
+      V21_noun: rain
+      Y0_noun: dry ground
+      Y1_noun: wet ground
+      X0_past: the season had been dry
+      X1_past: the season had been wet
+      V10_past: the sprinkler had been off
+      V11_past: the sprinkler had been on
+      V20_past: there had been no rain
+      V21_past: there had been rain
+      V10_present: the sprinkler still have been off
+      V11_present: the sprinkler still have been on
+      V20_present: there still have been no rain
+      V21_present: there still have been rain
+      Y0_present: the ground still have been dry
+      Y1_present: the ground still have been wet
+  forest_fire:
+    type: collision
+    node: ["V1", "V2", "X"]
+    edge: ["V1->X", "V2->X"]
+    all_cases:
+      - {'V1': 0, 'V2': 0, 'X': 0}
+      - {'V1': 0, 'V2': 1, 'X': 0}
+      - {'V1': 0, 'V2': 1, 'X': 1}
+      - {'V1': 1, 'V2': 0, 'X': 0}
+      - {'V1': 1, 'V2': 0, 'X': 1}
+      - {'V1': 1, 'V2': 1, 'X': 0}
+      - {'V1': 1, 'V2': 1, 'X': 1}
+    semantic:
+      V1: whether the camper lights a match
+      V2: whether the chain-smoker lights a match
+      X: the forest fire
+      V10: the camper does not light a match
+      V11: the camper lights a match
+      V20: the chain-smoker does not light a match
+      V21: the chain-smoker lights a match
+      X0: the forest is not on fire
+      X1: the forest is on fire
+      V10_noun: the camper not lighting a match
+      V11_noun: the camper lighting a match
+      V20_noun: the chain-smoker not lighting a match
+      V21_noun: the chain-smoker lighting a match
+      X0_noun: the forest not on fire
+      X1_noun: the forest on fire
+      V10_past: the camper had not lighted a match
+      V11_past: the camper had lighted a match
+      V20_past: the chain-smoker had not lighted a match
+      V21_past: the chain-smoker had lighted a match
+      X0_present: the forest have not been on fire
+      X1_present: the forest have been on fire
+  gender_admission_state:
+    type: arrowhead
+    node: ["W", "X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z", "X->Z", "W->Y", "W->Z"]
+    all_cases: null
+    semantic:
+      W: residency status (out-of-state/in-stage)
+      X: gender of the applicant (male/female)
+      Y: competitiveness of the applied department
+      Z: admission status (rejected/admitted)
+  gender_admission:
+    type: mediation
+    node: ["X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z", "X->Z"]
+    all_cases: null
+    semantic:
+      X: gender of the applicant (male/female)
+      Y: competitiveness of the applied department
+      Z: admission status (rejected/admitted)
+  gender_state_competitive:
+    type: collision
+    node: ["W", "X", "Y"]
+    edge: ["X->Y", "W->Y"]
+    all_cases: null
+    semantic:
+      W: residency status (out-of-state/in-stage)
+      X: gender of the applicant (male/female)
+      Y: competitiveness of the applied department
+  admission:
+    type: collision
+    node: ["W", "X", "Y", "Z"]
+    edge: ["Y->Z", "X->Z", "W->Z"]
+    all_cases: null
+    semantic:
+      W: residency status (out-of-state/in-stage)
+      X: gender of the applicant (male/female)
+      Y: competitiveness of the applied department
+      Z: admission status (rejected/admitted)
+  gender_pay:
+    type: arrowhead
+    node: ["W", "X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z", "X->Z", "W->Y", "W->Z"]
+    background: "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender of the employee has a direct effect on occupation type (blue-collar/white-collar). Occupation type (blue-collar/white-collar) has a direct effect on salary level. Gender of the employee has a direct effect on salary level. Skill level of the employee has a direct effect on occupation type (blue-collar/white-collar). Skill level of the employee has a direct effect on salary level."
+    all_cases: null
+    semantic:
+      W: skill level of the employee
+      X: gender of the employee
+      Y: occupation type (blue-collar/white-collar)
+      Z: salary level
+  getting_late:
+    type: collision
+    node: ["X", "Y", "Z"]
+    edge: ["X->Z", "Y->Z"]
+    all_cases:
+      - {'X': 0, 'Y': 0, 'Z': 0}
+      - {'X': 0, 'Y': 1, 'Z': 1}
+      - {'X': 1, 'Y': 0, 'Z': 1}
+      - {'X': 1, 'Y': 1, 'Z': 1}
+    semantic:
+      X: whether Alice gets up on time or late
+      Y: traffic condition
+      Z: whether Alice arrives at school on time or late
+      X0: Alice gets up on time
+      X1: Alice gets up late
+      Y0: there is a smooth trafic
+      Y1: there is a traffic congestion
+      Z0: Alice arrives at school on time
+      Z1: Alice arrives at school late
+      X0_noun: Alice getting up on time
+      X1_noun: Alice getting up late
+      Y0_noun: smooth trafic
+      Y1_noun: traffic congestion
+      Z0_noun: Alice arriving at school on time
+      Z1_noun: Alice arriving at school late
+      X0_past: Alice had got up on time
+      X1_past: Alice had got up late
+      Y0_past: there had been a smooth trafic
+      Y1_past: there had been a traffic congestion
+      Z0_present: Alice has been arrived at school on time
+      Z1_present: Alice has been arrived at school late
+  getting_tanned:
+    type: collision
+    node: ["X", "Y", "Z"]
+    edge: ["X->Z", "Y->Z"]
+    all_cases: null
+    semantic:
+      X: tanning salon treatment
+      Y: whether the person goes to the beach
+      Z: whether the person has pale skin or tanned skin
+  hospitalization:
+    type: collision
+    node: ["X", "Y", "Z"]
+    edge: ["X->Z", "Y->Z"]
+    all_cases: null
+    semantic:
+      X: whether the person has respiratory issues
+      Y: whether the person has broken bones
+      Z: whether the person is hospitalized
+  man_in_relationship:
+    type: collision
+    node: ["X", "Y", "Z"]
+    edge: ["X->Z", "Y->Z"]
+    all_cases: null
+    semantic:
+      X: whether the person is mean or kind
+      Y: whether the person is considered attractive
+      Z: the person's relationship status
+  nature_vs_nurture:
+    type: arrowhead
+    node: ["W", "X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z", "X->Z", "W->Y", "W->Z"]
+    all_cases: null
+    semantic:
+      W: null 
+      X: parents' intelligence
+      Y: parents' social status
+      Z: child's intelligence
+  neg_mediation:
+    type: mediation
+    node: ["X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z", "X->Z"]
+    background: "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the student is a smoker has a direct effect on whether the strudent is lazy or hard working. Whether the strudent is lazy or hard working has a direct effect on whether the student gets admitted to college. Whether the student is a smoker has a direct effect on whether the student gets admitted to college."
+    all_cases: null
+    semantic:
+      X: whether the student is a smoker
+      Y: whether the strudent is lazy or hard working
+      Z: whether the student gets admitted to college
+  obesity_mortality:
+    type: arrowhead
+    node: ["W", "X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z", "X->Z", "W->Y", "W->Z"]
+    background: "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Obesity has a direct effect on whether the person has diabetes. Whether the person has diabetes has a direct effect on the person's lifespan. Obesity has a direct effect on the person's lifespan. Whether the person is a smoker has a direct effect on whether the person has diabetes. Whether the person is a smoker has a direct effect on the person's lifespan."
+    all_cases: null
+    semantic:
+      W: whether the person is a smoker
+      X: obesity
+      Y: whether the person has diabetes
+      Z: the person's lifespan
+  orange_scurvy:
+    type: chain
+    node: ["X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z"]
+    background: "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the patient eats citrus has a direct effect on whether the patient has sufficient vitamin C. Whether the patient has sufficient vitamin C has direct effect on whether the patient recovers from scurvy."
+    all_cases: null
+    semantic:
+      X: whether the patient eats citrus
+      Y: whether the patient has sufficient vitamin C
+      Z: whether the patient recovers from scurvy
+  price:
+    type: IV
+    node: ["V1", "V2", "X", "Y"]
+    edge: ["V1->X", "V2->X", "V1->Y", "X->Y"]
+    all_cases: 
+      - {"V1": 0, "V2": 0, "X": 0, "Y": 0}
+      - {"V1": 0, "V2": 0, "X": 0, "Y": 1}
+      - {"V1": 0, "V2": 1, "X": 0, "Y": 0}
+      - {"V1": 0, "V2": 1, "X": 0, "Y": 1}
+      - {"V1": 0, "V2": 1, "X": 1, "Y": 0}
+      - {"V1": 1, "V2": 0, "X": 0, "Y": 1}
+      - {"V1": 1, "V2": 0, "X": 1, "Y": 0}
+      - {"V1": 1, "V2": 0, "X": 1, "Y": 1}
+      - {"V1": 1, "V2": 1, "X": 1, "Y": 0}
+      - {"V1": 1, "V2": 1, "X": 1, "Y": 1}
+    semantic:
+      V1: demand
+      V2: yield per acre
+      X: supply
+      Y: price
+      V10: demand decreases
+      V11: demand increases
+      V20: yield per acre decreases
+      V21: yield per acre increases
+      X0: supply decreases
+      X1: supply increases
+      Y0: price decreases
+      Y1: price increases
+      V10_noun: demand decreasing
+      V11_noun: demand increasing
+      V20_noun: yield per acre decreasing
+      V21_noun: yield per acre increasing
+      X0_noun: supply decreasing
+      X1_noun: supply increasing
+      Y0_noun: price decreasing
+      Y1_noun: price increasing
+      V10_past: demand had decreased
+      V11_past: demand had increased
+      V20_past: yield per acre had decreased
+      V21_past: yield per acre had increased
+      X0_past: supply had decreased
+      X1_past: supply had increased
+      X0_present: supply have decreased
+      X1_present: supply have increased
+      Y0_present: price have decreased
+      Y1_present: price have increased
+  simpson_drup:
+    type: mediation
+    node: ["X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z", "X->Z"]
+    all_cases: null
+    semantic:
+      X: gender
+      Y: whether the patient receives treatment
+      Z: whether the patient recovers
+  simpson_hospital:
+    type: mediation
+    node: ["X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z", "X->Z"]
+    all_cases: null
+    semantic:
+      X: age of the patient
+      Y: hospital costs
+      Z: whether the patient recovers
+  simpson_kisneyston:
+    type: mediation
+    node: ["X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z", "X->Z"]
+    all_cases: null
+    semantic:
+      X: kidney stone size
+      Y: whether the patient receives treatment
+      Z: whether the patient recovers
+  simpson_vaccine:
+    type: mediation
+    node: ["X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z", "X->Z"]
+    all_cases: null
+    semantic:
+      X: whether the person has pre-conditions
+      Y: whether the person gets the vaccine or refuses the vaccine
+      Z: whether the preson dies or recovers from the disease
+  smoke_birthWeight:
+    type: arrowhead
+    node: ["W", "X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z", "X->Z", "W->Y", "W->Z"]
+    all_cases: null
+    semantic:
+      W: health condition
+      X: maternal smoking status
+      Y: infant's birth weight
+      Z: infant mortality
+  smoking_frontdoor:
+    type: frontdoor
+    node: ["W", "X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z", "W->X", "W->Z"]
+    all_cases: null
+    semantic:
+      W: gender
+      X: smoking or not
+      Y: whether the person has a high tar deposit in lungs
+      Z: whether the person has lung cancer
+  smoking_gene_cancer:
+    type: arrowhead
+    node: ["W", "X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z", "X->Z", "W->Y", "W->Z"]
+    all_cases: null
+    semantic:
+      W: pollution status of the living place
+      X: whether the person has a smoking gene
+      Y: smoking or not
+      Z: whether the person has lung cancer
+  smoking_tar_cancer:
+    type: chain
+    node: ["X", "Y", "Z"]
+    edge: ["X->Y", "Y->Z"]
+    all_cases: null
+    semantic:
+      X: smoking or not
+      Y: whether the person has a high tar deposit in lungs
+      Z: whether the person has lung cancer
+  tax_smoke_birthWeight:
+    type: IV
+    node: ["V1", "V2", "X", "Y"]
+    edge: ["V1->X", "V2->X", "V1->Y", "X->Y"]
+    all_cases: null
+    semantic:
+      V1: null
+      V2: cigarette tax
+      X: maternal smoking status
+      Y: infant's birth weight
+  vaccine_kills:
+    type: diamondcut
+    node: ["X", "V1", "V2", "Y"]
+    edge: ["X->V1", "X->V2", "V1->Y", "V2->Y"]
+    all_cases: null
+    semantic:
+      X: whether the person is vaccinated
+      V1: whether the person has a severe reaction to the vaccine
+      V2: whether the person has smallpox or not
+      Y: whether the person dies from smallpox
+  water_cholera:
+    type: IV
+    node: ["V1", "V2", "X", "Y"]
+    edge: ["V1->X", "V2->X", "V1->Y", "X->Y"]
+    all_cases: null
+    semantic:
+      V1: poverty of the region
+      V2: whether the person is served by a local water company or a global water company
+      X: water quality which the person drinks
+      Y: whether the person gets cholera

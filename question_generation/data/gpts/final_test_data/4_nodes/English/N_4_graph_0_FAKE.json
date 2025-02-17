@@ -1,0 +1,3021 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->C",
+      "A->D"
+    ],
+    "node_name": {
+      "A": "fbge",
+      "B": "vijq",
+      "C": "twac",
+      "D": "vdla"
+    },
+    "node_value": {
+      "A": [
+        "low",
+        "high"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "low",
+        "high"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": 0.8521522233157658,
+      "B": 2.5658227811490972,
+      "C": 1.9781055310116336,
+      "D": -0.14076664899029404
+    },
+    "edge_weight": {
+      "A->B": -1.681088260875836,
+      "A->C": -0.5171253320098637,
+      "A->D": 1.6044795783212367
+    },
+    "function_description": "P(A=1)=0.7010\nP(B=1|A)=sigmoid(2.5658227811490972 + -1.6811 * A)\nP(C=1|A)=sigmoid(1.9781055310116336 + -0.5171 * A)\nP(D=1|A)=sigmoid(-0.14076664899029404 + 1.6045 * A)\n",
+    "text_description": "The probability of fbge being high (A=1) is 0.7010. \nFor those with fbge being low (A=0), the probability of vijq being high (B=1) is 0.9286. \nFor those with fbge being high (A=1), the probability of vijq being high (B=1) is 0.7078. \nFor those with fbge being low (A=0), the probability of twac being high (C=1) is 0.8785. \nFor those with fbge being high (A=1), the probability of twac being high (C=1) is 0.8117. \nFor those with fbge being low (A=0), the probability of vdla being high (D=1) is 0.4649. \nFor those with fbge being high (A=1), the probability of vdla being high (D=1) is 0.8121. \n",
+    "Statistic_data": [
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 6651
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 3799
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 363
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 16566
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 5688
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 6461
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 1500
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 899
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 3771
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 913
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 1564
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 752
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 503
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 444
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 54
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 72
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vijq being low (B=0) is 0.0721. For those with fbge being high (A=1), the probability of vijq being low (B=0) is 0.2870. ",
+        "data_info_math": "P(B=0|A=0)=0.0721; P(B=0|A=1)=0.2870; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of fbge on vijq.",
+      "Question": "If fbge is changed to be low, will vijq be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.0721\tP(B=0|A=1)=0.2870",
+        "Step 6": "ATE=0.0721-0.2870=-0.2149",
+        "Step 7": "ATE=-0.2149<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.21493989663607171
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vijq being high (B=1) is 0.9279. For those with fbge being high (A=1), the probability of vijq being high (B=1) is 0.7130. ",
+        "data_info_math": "P(B=1|A=0)=0.9279; P(B=1|A=1)=0.7130; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of fbge on vijq.",
+      "Question": "If fbge is changed to be low, will vijq be more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.9279\tP(B=1|A=1)=0.7130",
+        "Step 6": "ATE=0.9279-0.7130=0.2149",
+        "Step 7": "ATE=0.2149>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.21493989663607171
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vijq being low (B=0) is 0.2870. For those with fbge being low (A=0), the probability of vijq being low (B=0) is 0.0721. ",
+        "data_info_math": "P(B=0|A=1)=0.2870; P(B=0|A=0)=0.0721; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of fbge on vijq.",
+      "Question": "If fbge is changed to be high, will vijq be more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.2870\tP(B=0|A=0)=0.0721",
+        "Step 6": "ATE=0.2870-0.0721=0.2149",
+        "Step 7": "ATE=0.2149>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.21493989663607171
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vijq being high (B=1) is 0.7130. For those with fbge being low (A=0), the probability of vijq being high (B=1) is 0.9279. ",
+        "data_info_math": "P(B=1|A=1)=0.7130; P(B=1|A=0)=0.9279; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of fbge on vijq.",
+      "Question": "If fbge is changed to be high, will vijq be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.7130\tP(B=1|A=0)=0.9279",
+        "Step 6": "ATE=0.7130-0.9279=-0.2149",
+        "Step 7": "ATE=-0.2149<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.21493989663607171
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of twac being low (C=0) is 0.1203. For those with fbge being high (A=1), the probability of twac being low (C=0) is 0.1879. ",
+        "data_info_math": "P(C=0|A=0)=0.1203; P(C=0|A=1)=0.1879; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of fbge on twac.",
+      "Question": "If fbge is changed to be low, will twac be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.1203\tP(C=0|A=1)=0.1879",
+        "Step 6": "ATE=0.1203-0.1879=-0.0676",
+        "Step 7": "ATE=-0.0676<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.06757282556798731
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of twac being high (C=1) is 0.8797. For those with fbge being high (A=1), the probability of twac being high (C=1) is 0.8121. ",
+        "data_info_math": "P(C=1|A=0)=0.8797; P(C=1|A=1)=0.8121; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of fbge on twac.",
+      "Question": "If fbge is changed to be low, will twac be more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.8797\tP(C=1|A=1)=0.8121",
+        "Step 6": "ATE=0.8797-0.8121=0.0676",
+        "Step 7": "ATE=0.0676>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.06757282556798716
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of twac being low (C=0) is 0.1879. For those with fbge being low (A=0), the probability of twac being low (C=0) is 0.1203. ",
+        "data_info_math": "P(C=0|A=1)=0.1879; P(C=0|A=0)=0.1203; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of fbge on twac.",
+      "Question": "If fbge is changed to be high, will twac be more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.1879\tP(C=0|A=0)=0.1203",
+        "Step 6": "ATE=0.1879-0.1203=0.0676",
+        "Step 7": "ATE=0.0676>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.06757282556798731
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of twac being high (C=1) is 0.8121. For those with fbge being low (A=0), the probability of twac being high (C=1) is 0.8797. ",
+        "data_info_math": "P(C=1|A=1)=0.8121; P(C=1|A=0)=0.8797; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of fbge on twac.",
+      "Question": "If fbge is changed to be high, will twac be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.8121\tP(C=1|A=0)=0.8797",
+        "Step 6": "ATE=0.8121-0.8797=-0.0676",
+        "Step 7": "ATE=-0.0676<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.06757282556798716
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vdla being low (D=0) is 0.5340. For those with fbge being high (A=1), the probability of vdla being low (D=0) is 0.1869. ",
+        "data_info_math": "P(D=0|A=0)=0.5340; P(D=0|A=1)=0.1869; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of fbge on vdla.",
+      "Question": "If fbge is changed to be low, will vdla be more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.5340\tP(D=0|A=1)=0.1869",
+        "Step 6": "ATE=0.5340-0.1869=0.3471",
+        "Step 7": "ATE=0.3471>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.347101928577354
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vdla being high (D=1) is 0.4660. For those with fbge being high (A=1), the probability of vdla being high (D=1) is 0.8131. ",
+        "data_info_math": "P(D=1|A=0)=0.4660; P(D=1|A=1)=0.8131; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of fbge on vdla.",
+      "Question": "If fbge is changed to be low, will vdla be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.4660\tP(D=1|A=1)=0.8131",
+        "Step 6": "ATE=0.4660-0.8131=-0.3471",
+        "Step 7": "ATE=-0.3471<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.347101928577354
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vdla being low (D=0) is 0.1869. For those with fbge being low (A=0), the probability of vdla being low (D=0) is 0.5340. ",
+        "data_info_math": "P(D=0|A=1)=0.1869; P(D=0|A=0)=0.5340; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of fbge on vdla.",
+      "Question": "If fbge is changed to be high, will vdla be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.1869\tP(D=0|A=0)=0.5340",
+        "Step 6": "ATE=0.1869-0.5340=-0.3471",
+        "Step 7": "ATE=-0.3471<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.347101928577354
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vdla being high (D=1) is 0.8131. For those with fbge being low (A=0), the probability of vdla being high (D=1) is 0.4660. ",
+        "data_info_math": "P(D=1|A=1)=0.8131; P(D=1|A=0)=0.4660; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of fbge on vdla.",
+      "Question": "If fbge is changed to be high, will vdla be more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.8131\tP(D=1|A=0)=0.4660",
+        "Step 6": "ATE=0.8131-0.4660=0.3471",
+        "Step 7": "ATE=0.3471>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.347101928577354
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vijq on fbge.",
+      "Question": "If vijq is changed to be low, will fbge be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vijq on fbge.",
+      "Question": "If vijq is changed to be low, will fbge be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vijq on fbge.",
+      "Question": "If vijq is changed to be high, will fbge be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vijq on fbge.",
+      "Question": "If vijq is changed to be high, will fbge be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vijq on twac.",
+      "Question": "If vijq is changed to be low, will twac be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vijq on twac.",
+      "Question": "If vijq is changed to be low, will twac be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vijq on twac.",
+      "Question": "If vijq is changed to be high, will twac be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vijq on twac.",
+      "Question": "If vijq is changed to be high, will twac be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vijq on vdla.",
+      "Question": "If vijq is changed to be low, will vdla be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vijq on vdla.",
+      "Question": "If vijq is changed to be low, will vdla be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vijq on vdla.",
+      "Question": "If vijq is changed to be high, will vdla be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vijq on vdla.",
+      "Question": "If vijq is changed to be high, will vdla be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of twac on fbge.",
+      "Question": "If twac is changed to be low, will fbge be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of twac on fbge.",
+      "Question": "If twac is changed to be low, will fbge be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of twac on fbge.",
+      "Question": "If twac is changed to be high, will fbge be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of twac on fbge.",
+      "Question": "If twac is changed to be high, will fbge be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of twac on vijq.",
+      "Question": "If twac is changed to be low, will vijq be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of twac on vijq.",
+      "Question": "If twac is changed to be low, will vijq be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of twac on vijq.",
+      "Question": "If twac is changed to be high, will vijq be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of twac on vijq.",
+      "Question": "If twac is changed to be high, will vijq be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of twac on vdla.",
+      "Question": "If twac is changed to be low, will vdla be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of twac on vdla.",
+      "Question": "If twac is changed to be low, will vdla be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of twac on vdla.",
+      "Question": "If twac is changed to be high, will vdla be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of twac on vdla.",
+      "Question": "If twac is changed to be high, will vdla be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vdla on fbge.",
+      "Question": "If vdla is changed to be low, will fbge be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vdla on fbge.",
+      "Question": "If vdla is changed to be low, will fbge be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vdla on fbge.",
+      "Question": "If vdla is changed to be high, will fbge be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vdla on fbge.",
+      "Question": "If vdla is changed to be high, will fbge be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vdla on vijq.",
+      "Question": "If vdla is changed to be low, will vijq be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vdla on vijq.",
+      "Question": "If vdla is changed to be low, will vijq be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vdla on vijq.",
+      "Question": "If vdla is changed to be high, will vijq be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vdla on vijq.",
+      "Question": "If vdla is changed to be high, will vijq be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vdla on twac.",
+      "Question": "If vdla is changed to be low, will twac be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vdla on twac.",
+      "Question": "If vdla is changed to be low, will twac be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vdla on twac.",
+      "Question": "If vdla is changed to be high, will twac be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of vdla on twac.",
+      "Question": "If vdla is changed to be high, will twac be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vijq being low (B=0) is 0.0721. For those with fbge being high (A=1), the probability of vijq being low (B=0) is 0.2870. ",
+        "data_info_math": "P(B=0|A=0)=0.0721; P(B=0|A=1)=0.2870; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of fbge on vijq.",
+      "Question": "Suppose the mediator keeps constant when fbge is changed to be low, would the vijq have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (B). The edge A->B exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.0721\tP(B=0|A=1)=0.2870",
+        "Step 6": "NDE=0.0721-0.2870=-0.2149",
+        "Step 7": "NDE=-0.2149<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.21493989663607171
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vijq being high (B=1) is 0.9279. For those with fbge being high (A=1), the probability of vijq being high (B=1) is 0.7130. ",
+        "data_info_math": "P(B=1|A=0)=0.9279; P(B=1|A=1)=0.7130; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of fbge on vijq.",
+      "Question": "Suppose the mediator keeps constant when fbge is changed to be low, would the vijq have been more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (B). The edge A->B exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.9279\tP(B=1|A=1)=0.7130",
+        "Step 6": "NDE=0.9279-0.7130=0.2149",
+        "Step 7": "NDE=0.2149>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.21493989663607171
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vijq being low (B=0) is 0.2870. For those with fbge being low (A=0), the probability of vijq being low (B=0) is 0.0721. ",
+        "data_info_math": "P(B=0|A=1)=0.2870; P(B=0|A=0)=0.0721; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of fbge on vijq.",
+      "Question": "Suppose the mediator keeps constant when fbge is changed to be high, would the vijq have been more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (B). The edge A->B exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.2870\tP(B=0|A=0)=0.0721",
+        "Step 6": "NDE=0.2870-0.0721=0.2149",
+        "Step 7": "NDE=0.2149>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.21493989663607171
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vijq being high (B=1) is 0.7130. For those with fbge being low (A=0), the probability of vijq being high (B=1) is 0.9279. ",
+        "data_info_math": "P(B=1|A=1)=0.7130; P(B=1|A=0)=0.9279; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of fbge on vijq.",
+      "Question": "Suppose the mediator keeps constant when fbge is changed to be high, would the vijq have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (B). The edge A->B exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.7130\tP(B=1|A=0)=0.9279",
+        "Step 6": "NDE=0.7130-0.9279=-0.2149",
+        "Step 7": "NDE=-0.2149<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.21493989663607171
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of twac being low (C=0) is 0.1203. For those with fbge being high (A=1), the probability of twac being low (C=0) is 0.1879. ",
+        "data_info_math": "P(C=0|A=0)=0.1203; P(C=0|A=1)=0.1879; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of fbge on twac.",
+      "Question": "Suppose the mediator keeps constant when fbge is changed to be low, would the twac have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (C). The edge A->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.1203\tP(C=0|A=1)=0.1879",
+        "Step 6": "NDE=0.1203-0.1879=-0.0676",
+        "Step 7": "NDE=-0.0676<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.06757282556798731
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of twac being high (C=1) is 0.8797. For those with fbge being high (A=1), the probability of twac being high (C=1) is 0.8121. ",
+        "data_info_math": "P(C=1|A=0)=0.8797; P(C=1|A=1)=0.8121; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of fbge on twac.",
+      "Question": "Suppose the mediator keeps constant when fbge is changed to be low, would the twac have been more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (C). The edge A->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.8797\tP(C=1|A=1)=0.8121",
+        "Step 6": "NDE=0.8797-0.8121=0.0676",
+        "Step 7": "NDE=0.0676>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.06757282556798716
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of twac being low (C=0) is 0.1879. For those with fbge being low (A=0), the probability of twac being low (C=0) is 0.1203. ",
+        "data_info_math": "P(C=0|A=1)=0.1879; P(C=0|A=0)=0.1203; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of fbge on twac.",
+      "Question": "Suppose the mediator keeps constant when fbge is changed to be high, would the twac have been more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (C). The edge A->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.1879\tP(C=0|A=0)=0.1203",
+        "Step 6": "NDE=0.1879-0.1203=0.0676",
+        "Step 7": "NDE=0.0676>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.06757282556798731
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of twac being high (C=1) is 0.8121. For those with fbge being low (A=0), the probability of twac being high (C=1) is 0.8797. ",
+        "data_info_math": "P(C=1|A=1)=0.8121; P(C=1|A=0)=0.8797; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of fbge on twac.",
+      "Question": "Suppose the mediator keeps constant when fbge is changed to be high, would the twac have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (C). The edge A->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.8121\tP(C=1|A=0)=0.8797",
+        "Step 6": "NDE=0.8121-0.8797=-0.0676",
+        "Step 7": "NDE=-0.0676<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.06757282556798716
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vdla being low (D=0) is 0.5340. For those with fbge being high (A=1), the probability of vdla being low (D=0) is 0.1869. ",
+        "data_info_math": "P(D=0|A=0)=0.5340; P(D=0|A=1)=0.1869; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of fbge on vdla.",
+      "Question": "Suppose the mediator keeps constant when fbge is changed to be low, would the vdla have been more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (D). The edge A->D exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.5340\tP(D=0|A=1)=0.1869",
+        "Step 6": "NDE=0.5340-0.1869=0.3471",
+        "Step 7": "NDE=0.3471>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.347101928577354
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vdla being high (D=1) is 0.4660. For those with fbge being high (A=1), the probability of vdla being high (D=1) is 0.8131. ",
+        "data_info_math": "P(D=1|A=0)=0.4660; P(D=1|A=1)=0.8131; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of fbge on vdla.",
+      "Question": "Suppose the mediator keeps constant when fbge is changed to be low, would the vdla have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (D). The edge A->D exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.4660\tP(D=1|A=1)=0.8131",
+        "Step 6": "NDE=0.4660-0.8131=-0.3471",
+        "Step 7": "NDE=-0.3471<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.347101928577354
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vdla being low (D=0) is 0.1869. For those with fbge being low (A=0), the probability of vdla being low (D=0) is 0.5340. ",
+        "data_info_math": "P(D=0|A=1)=0.1869; P(D=0|A=0)=0.5340; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of fbge on vdla.",
+      "Question": "Suppose the mediator keeps constant when fbge is changed to be high, would the vdla have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (D). The edge A->D exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.1869\tP(D=0|A=0)=0.5340",
+        "Step 6": "NDE=0.1869-0.5340=-0.3471",
+        "Step 7": "NDE=-0.3471<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.347101928577354
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vdla being high (D=1) is 0.8131. For those with fbge being low (A=0), the probability of vdla being high (D=1) is 0.4660. ",
+        "data_info_math": "P(D=1|A=1)=0.8131; P(D=1|A=0)=0.4660; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of fbge on vdla.",
+      "Question": "Suppose the mediator keeps constant when fbge is changed to be high, would the vdla have been more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (D). The edge A->D exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.8131\tP(D=1|A=0)=0.4660",
+        "Step 6": "NDE=0.8131-0.4660=0.3471",
+        "Step 7": "NDE=0.3471>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.347101928577354
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of fbge on vijq.",
+      "Question": "Suppose fbge is held constant and the mediator changes to whatever value it would have attained under fbge changing to be low, would vijq have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (B). There is no directed path with three or more vertices from A to B. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of fbge on vijq.",
+      "Question": "Suppose fbge is held constant and the mediator changes to whatever value it would have attained under fbge changing to be low, would vijq have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (B). There is no directed path with three or more vertices from A to B. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of fbge on vijq.",
+      "Question": "Suppose fbge is held constant and the mediator changes to whatever value it would have attained under fbge changing to be high, would vijq have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (B). There is no directed path with three or more vertices from A to B. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of fbge on vijq.",
+      "Question": "Suppose fbge is held constant and the mediator changes to whatever value it would have attained under fbge changing to be high, would vijq have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (B). There is no directed path with three or more vertices from A to B. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of fbge on twac.",
+      "Question": "Suppose fbge is held constant and the mediator changes to whatever value it would have attained under fbge changing to be low, would twac have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (C). There is no directed path with three or more vertices from A to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of fbge on twac.",
+      "Question": "Suppose fbge is held constant and the mediator changes to whatever value it would have attained under fbge changing to be low, would twac have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (C). There is no directed path with three or more vertices from A to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of fbge on twac.",
+      "Question": "Suppose fbge is held constant and the mediator changes to whatever value it would have attained under fbge changing to be high, would twac have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (C). There is no directed path with three or more vertices from A to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of fbge on twac.",
+      "Question": "Suppose fbge is held constant and the mediator changes to whatever value it would have attained under fbge changing to be high, would twac have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (C). There is no directed path with three or more vertices from A to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of fbge on vdla.",
+      "Question": "Suppose fbge is held constant and the mediator changes to whatever value it would have attained under fbge changing to be low, would vdla have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (D). There is no directed path with three or more vertices from A to D. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of fbge on vdla.",
+      "Question": "Suppose fbge is held constant and the mediator changes to whatever value it would have attained under fbge changing to be low, would vdla have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (D). There is no directed path with three or more vertices from A to D. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of fbge on vdla.",
+      "Question": "Suppose fbge is held constant and the mediator changes to whatever value it would have attained under fbge changing to be high, would vdla have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (D). There is no directed path with three or more vertices from A to D. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of fbge on vdla.",
+      "Question": "Suppose fbge is held constant and the mediator changes to whatever value it would have attained under fbge changing to be high, would vdla have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (D). There is no directed path with three or more vertices from A to D. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vijq being low (B=0) is 0.0721. For those with fbge being high (A=1), the probability of vijq being low (B=0) is 0.2870. ",
+        "data_info_math": "P(B=0|A=0)=0.0721; P(B=0|A=1)=0.2870; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of fbge on vijq.",
+      "Question": "For those with fbge being low, if their fbge had been high, would the vijq have been more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.0721\tP(B=0|A=1)=0.2870",
+        "Step 6": "ETT=0.0721-0.2870=-0.2149",
+        "Step 7": "ETT=-0.2149<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.21493989663607171
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vijq being high (B=1) is 0.9279. For those with fbge being high (A=1), the probability of vijq being high (B=1) is 0.7130. ",
+        "data_info_math": "P(B=1|A=0)=0.9279; P(B=1|A=1)=0.7130; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of fbge on vijq.",
+      "Question": "For those with fbge being low, if their fbge had been high, would the vijq have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.9279\tP(B=1|A=1)=0.7130",
+        "Step 6": "ETT=0.9279-0.7130=0.2149",
+        "Step 7": "ETT=0.2149>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.21493989663607171
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vijq being low (B=0) is 0.2870. For those with fbge being low (A=0), the probability of vijq being low (B=0) is 0.0721. ",
+        "data_info_math": "P(B=0|A=1)=0.2870; P(B=0|A=0)=0.0721; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of fbge on vijq.",
+      "Question": "For those with fbge being high, if their fbge had been low, would the vijq have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.2870\tP(B=0|A=0)=0.0721",
+        "Step 6": "ETT=0.2870-0.0721=0.2149",
+        "Step 7": "ETT=0.2149>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.21493989663607171
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vijq being high (B=1) is 0.7130. For those with fbge being low (A=0), the probability of vijq being high (B=1) is 0.9279. ",
+        "data_info_math": "P(B=1|A=1)=0.7130; P(B=1|A=0)=0.9279; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of fbge on vijq.",
+      "Question": "For those with fbge being high, if their fbge had been low, would the vijq have been more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.7130\tP(B=1|A=0)=0.9279",
+        "Step 6": "ETT=0.7130-0.9279=-0.2149",
+        "Step 7": "ETT=-0.2149<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.21493989663607171
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of twac being low (C=0) is 0.1203. For those with fbge being high (A=1), the probability of twac being low (C=0) is 0.1879. ",
+        "data_info_math": "P(C=0|A=0)=0.1203; P(C=0|A=1)=0.1879; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of fbge on twac.",
+      "Question": "For those with fbge being low, if their fbge had been high, would the twac have been more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.1203\tP(C=0|A=1)=0.1879",
+        "Step 6": "ETT=0.1203-0.1879=-0.0676",
+        "Step 7": "ETT=-0.0676<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.06757282556798731
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of twac being high (C=1) is 0.8797. For those with fbge being high (A=1), the probability of twac being high (C=1) is 0.8121. ",
+        "data_info_math": "P(C=1|A=0)=0.8797; P(C=1|A=1)=0.8121; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of fbge on twac.",
+      "Question": "For those with fbge being low, if their fbge had been high, would the twac have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.8797\tP(C=1|A=1)=0.8121",
+        "Step 6": "ETT=0.8797-0.8121=0.0676",
+        "Step 7": "ETT=0.0676>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.06757282556798716
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of twac being low (C=0) is 0.1879. For those with fbge being low (A=0), the probability of twac being low (C=0) is 0.1203. ",
+        "data_info_math": "P(C=0|A=1)=0.1879; P(C=0|A=0)=0.1203; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of fbge on twac.",
+      "Question": "For those with fbge being high, if their fbge had been low, would the twac have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.1879\tP(C=0|A=0)=0.1203",
+        "Step 6": "ETT=0.1879-0.1203=0.0676",
+        "Step 7": "ETT=0.0676>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.06757282556798731
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of twac being high (C=1) is 0.8121. For those with fbge being low (A=0), the probability of twac being high (C=1) is 0.8797. ",
+        "data_info_math": "P(C=1|A=1)=0.8121; P(C=1|A=0)=0.8797; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of fbge on twac.",
+      "Question": "For those with fbge being high, if their fbge had been low, would the twac have been more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.8121\tP(C=1|A=0)=0.8797",
+        "Step 6": "ETT=0.8121-0.8797=-0.0676",
+        "Step 7": "ETT=-0.0676<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.06757282556798716
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vdla being low (D=0) is 0.5340. For those with fbge being high (A=1), the probability of vdla being low (D=0) is 0.1869. ",
+        "data_info_math": "P(D=0|A=0)=0.5340; P(D=0|A=1)=0.1869; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of fbge on vdla.",
+      "Question": "For those with fbge being low, if their fbge had been high, would the vdla have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.5340\tP(D=0|A=1)=0.1869",
+        "Step 6": "ETT=0.5340-0.1869=0.3471",
+        "Step 7": "ETT=0.3471>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.347101928577354
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vdla being high (D=1) is 0.4660. For those with fbge being high (A=1), the probability of vdla being high (D=1) is 0.8131. ",
+        "data_info_math": "P(D=1|A=0)=0.4660; P(D=1|A=1)=0.8131; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of fbge on vdla.",
+      "Question": "For those with fbge being low, if their fbge had been high, would the vdla have been more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.4660\tP(D=1|A=1)=0.8131",
+        "Step 6": "ETT=0.4660-0.8131=-0.3471",
+        "Step 7": "ETT=-0.3471<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.347101928577354
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vdla being low (D=0) is 0.1869. For those with fbge being low (A=0), the probability of vdla being low (D=0) is 0.5340. ",
+        "data_info_math": "P(D=0|A=1)=0.1869; P(D=0|A=0)=0.5340; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of fbge on vdla.",
+      "Question": "For those with fbge being high, if their fbge had been low, would the vdla have been more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.1869\tP(D=0|A=0)=0.5340",
+        "Step 6": "ETT=0.1869-0.5340=-0.3471",
+        "Step 7": "ETT=-0.3471<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.347101928577354
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vdla being high (D=1) is 0.8131. For those with fbge being low (A=0), the probability of vdla being high (D=1) is 0.4660. ",
+        "data_info_math": "P(D=1|A=1)=0.8131; P(D=1|A=0)=0.4660; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of fbge on vdla.",
+      "Question": "For those with fbge being high, if their fbge had been low, would the vdla have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.8131\tP(D=1|A=0)=0.4660",
+        "Step 6": "ETT=0.8131-0.4660=0.3471",
+        "Step 7": "ETT=0.3471>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.347101928577354
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vijq on fbge.",
+      "Question": "For those with vijq being low, if their vijq had been high, would the fbge have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vijq on fbge.",
+      "Question": "For those with vijq being low, if their vijq had been high, would the fbge have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vijq on fbge.",
+      "Question": "For those with vijq being high, if their vijq had been low, would the fbge have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vijq on fbge.",
+      "Question": "For those with vijq being high, if their vijq had been low, would the fbge have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vijq on twac.",
+      "Question": "For those with vijq being low, if their vijq had been high, would the twac have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vijq on twac.",
+      "Question": "For those with vijq being low, if their vijq had been high, would the twac have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vijq on twac.",
+      "Question": "For those with vijq being high, if their vijq had been low, would the twac have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vijq on twac.",
+      "Question": "For those with vijq being high, if their vijq had been low, would the twac have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vijq on vdla.",
+      "Question": "For those with vijq being low, if their vijq had been high, would the vdla have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vijq on vdla.",
+      "Question": "For those with vijq being low, if their vijq had been high, would the vdla have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vijq on vdla.",
+      "Question": "For those with vijq being high, if their vijq had been low, would the vdla have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vijq on vdla.",
+      "Question": "For those with vijq being high, if their vijq had been low, would the vdla have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of twac on fbge.",
+      "Question": "For those with twac being low, if their twac had been high, would the fbge have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of twac on fbge.",
+      "Question": "For those with twac being low, if their twac had been high, would the fbge have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of twac on fbge.",
+      "Question": "For those with twac being high, if their twac had been low, would the fbge have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of twac on fbge.",
+      "Question": "For those with twac being high, if their twac had been low, would the fbge have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of twac on vijq.",
+      "Question": "For those with twac being low, if their twac had been high, would the vijq have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of twac on vijq.",
+      "Question": "For those with twac being low, if their twac had been high, would the vijq have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of twac on vijq.",
+      "Question": "For those with twac being high, if their twac had been low, would the vijq have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of twac on vijq.",
+      "Question": "For those with twac being high, if their twac had been low, would the vijq have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of twac on vdla.",
+      "Question": "For those with twac being low, if their twac had been high, would the vdla have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of twac on vdla.",
+      "Question": "For those with twac being low, if their twac had been high, would the vdla have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of twac on vdla.",
+      "Question": "For those with twac being high, if their twac had been low, would the vdla have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of twac on vdla.",
+      "Question": "For those with twac being high, if their twac had been low, would the vdla have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vdla on fbge.",
+      "Question": "For those with vdla being low, if their vdla had been high, would the fbge have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vdla on fbge.",
+      "Question": "For those with vdla being low, if their vdla had been high, would the fbge have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vdla on fbge.",
+      "Question": "For those with vdla being high, if their vdla had been low, would the fbge have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vdla on fbge.",
+      "Question": "For those with vdla being high, if their vdla had been low, would the fbge have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vdla on vijq.",
+      "Question": "For those with vdla being low, if their vdla had been high, would the vijq have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vdla on vijq.",
+      "Question": "For those with vdla being low, if their vdla had been high, would the vijq have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vdla on vijq.",
+      "Question": "For those with vdla being high, if their vdla had been low, would the vijq have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vdla on vijq.",
+      "Question": "For those with vdla being high, if their vdla had been low, would the vijq have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vdla on twac.",
+      "Question": "For those with vdla being low, if their vdla had been high, would the twac have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vdla on twac.",
+      "Question": "For those with vdla being low, if their vdla had been high, would the twac have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vdla on twac.",
+      "Question": "For those with vdla being high, if their vdla had been low, would the twac have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of vdla on twac.",
+      "Question": "For those with vdla being high, if their vdla had been low, would the twac have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment fbge (A) and outcome vijq (B).",
+      "Question": "Method 1: We look at how fbge correlates with vijq case by case according to vdla.\nMethod 2: We look directly at how fbge correlates with vijq in general.\nTo understand how fbge affects vijq, is it more correct to use the Method 1 than Method 2?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is no."
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 121,
+      "question_id": 120,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment fbge (A) and outcome vijq (B).",
+      "Question": "Method 1: We look at how fbge correlates with vijq case by case according to twac.\nMethod 2: We look directly at how fbge correlates with vijq in general.\nTo understand how fbge affects vijq, is it more correct to use the Method 2 than Method 1?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is yes."
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 122,
+      "question_id": 121,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment fbge (A) and outcome twac (C).",
+      "Question": "Method 1: We look at how fbge correlates with twac case by case according to vdla.\nMethod 2: We look directly at how fbge correlates with twac in general.\nTo understand how fbge affects twac, is it more correct to use the Method 1 than Method 2?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is no."
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 123,
+      "question_id": 121,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment fbge (A) and outcome twac (C).",
+      "Question": "Method 1: We look at how fbge correlates with twac case by case according to vdla.\nMethod 2: We look directly at how fbge correlates with twac in general.\nTo understand how fbge affects twac, is it more correct to use the Method 2 than Method 1?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is yes."
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 124,
+      "question_id": 122,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment fbge (A) and outcome vdla (D).",
+      "Question": "Method 1: We look at how fbge correlates with vdla case by case according to vijq.\nMethod 2: We look directly at how fbge correlates with vdla in general.\nTo understand how fbge affects vdla, is it more correct to use the Method 1 than Method 2?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is no."
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 125,
+      "question_id": 122,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment fbge (A) and outcome vdla (D).",
+      "Question": "Method 1: We look at how fbge correlates with vdla case by case according to twac.\nMethod 2: We look directly at how fbge correlates with vdla in general.\nTo understand how fbge affects vdla, is it more correct to use the Method 2 than Method 1?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is yes."
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 126,
+      "question_id": 123,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vijq being high (B=1) is 0.9279. The probability of vijq being high (B=1) is 0.7770. The probability of fbge being high (A=1) and vijq being high (B=1) is 0.5007. ",
+        "data_info_math": "P(B=1|A=0)=0.9279; P(B=1)=0.7770; P(A=1,B=1)=0.5007; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of fbge on vijq.",
+      "Question": "Given that fbge was high and vijq was high, what is the lower bound of the probability of the vijq would have been low if the fbge had been low?",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "Calculate P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.9279",
+        "Step 2": "Lower bound of PN: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.7770-0.9279)/0.5007}\n=max{0, -0.3015}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 124,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vijq being low (B=0) is 0.0721. The probability of fbge being low (A=0) and vijq being low (B=0) is 0.0215. The probability of fbge being high (A=1) and vijq being high (B=1) is 0.5007. ",
+        "data_info_math": "P(B=0|A=0)=0.0721; P(A=0,B=0)=0.0215; P(A=1,B=1)=0.5007; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of fbge on vijq.",
+      "Question": "Given that fbge was high and vijq was high, what is the upper bound of the probability of the vijq would have been low if the fbge had been low?",
+      "Answer": "0.1011",
+      "Reason": {
+        "Step 1": "Calculate P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.0721",
+        "Step 2": "Upper bound of PN: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.0721-0.0215)/0.5007}\n=min{1, 0.1011}\n=0.1011"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.10109108885231127
+    },
+    {
+      "id": 128,
+      "question_id": 125,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of twac being high (C=1) is 0.8797. The probability of twac being high (C=1) is 0.8322. The probability of fbge being high (A=1) and twac being high (C=1) is 0.5703. ",
+        "data_info_math": "P(C=1|A=0)=0.8797; P(C=1)=0.8322; P(A=1,C=1)=0.5703; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of fbge on twac.",
+      "Question": "Given that fbge was high and twac was high, what is the lower bound of the probability of the twac would have been low if the fbge had been low?",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "Calculate P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.8797",
+        "Step 2": "Lower bound of PN: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.8322-0.8797)/0.5703}\n=max{0, -0.0832}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 129,
+      "question_id": 126,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of twac being low (C=0) is 0.1203. The probability of fbge being low (A=0) and twac being low (C=0) is 0.0358. The probability of fbge being high (A=1) and twac being high (C=1) is 0.5703. ",
+        "data_info_math": "P(C=0|A=0)=0.1203; P(A=0,C=0)=0.0358; P(A=1,C=1)=0.5703; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of fbge on twac.",
+      "Question": "Given that fbge was high and twac was high, what is the upper bound of the probability of the twac would have been low if the fbge had been low?",
+      "Answer": "0.1481",
+      "Reason": {
+        "Step 1": "Calculate P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.1203",
+        "Step 2": "Upper bound of PN: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.1203-0.0358)/0.5703}\n=min{1, 0.1481}\n=0.1481"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.1481384267018958
+    },
+    {
+      "id": 130,
+      "question_id": 127,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vdla being high (D=1) is 0.4660. The probability of vdla being high (D=1) is 0.7098. The probability of fbge being high (A=1) and vdla being high (D=1) is 0.5710. ",
+        "data_info_math": "P(D=1|A=0)=0.4660; P(D=1)=0.7098; P(A=1,D=1)=0.5710; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of fbge on vdla.",
+      "Question": "Given that fbge was high and vdla was high, what is the lower bound of the probability of the vdla would have been low if the fbge had been low?",
+      "Answer": "0.4269",
+      "Reason": {
+        "Step 1": "Calculate P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.4660",
+        "Step 2": "Lower bound of PN: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.7098-0.4660)/0.5710}\n=max{0, 0.4269}\n=0.4269"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.4268629174186267
+    },
+    {
+      "id": 131,
+      "question_id": 128,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being low (A=0), the probability of vdla being low (D=0) is 0.5340. The probability of fbge being low (A=0) and vdla being low (D=0) is 0.1590. The probability of fbge being high (A=1) and vdla being high (D=1) is 0.5710. ",
+        "data_info_math": "P(D=0|A=0)=0.5340; P(A=0,D=0)=0.1590; P(A=1,D=1)=0.5710; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of fbge on vdla.",
+      "Question": "Given that fbge was high and vdla was high, what is the upper bound of the probability of the vdla would have been low if the fbge had been low?",
+      "Answer": "0.6567",
+      "Reason": {
+        "Step 1": "Calculate P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.5340",
+        "Step 2": "Upper bound of PN: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.5340-0.1590)/0.5710}\n=min{1, 0.6567}\n=0.6567"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.6566541754741044
+    },
+    {
+      "id": 132,
+      "question_id": 129,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vijq being low (B=0) is 0.2870. The probability of vijq being low (B=0) is 0.2230. The probability of fbge being low (A=0) and vijq being low (B=0) is 0.0215. ",
+        "data_info_math": "P(B=0|A=1)=0.2870; P(B=0)=0.2230; P(A=0,B=0)=0.0215; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of fbge on vijq.",
+      "Question": "Given that fbge was low and vijq was low, what is the lower bound of the probability that vijq would have been high if the fbge had been high?",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "Calculate P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.2870",
+        "Step 2": "Lower bound of PS: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.2230-0.2870)/0.0215}\n=max{0, -2.9821}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 133,
+      "question_id": 130,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vijq being high (B=1) is 0.7130. The probability of fbge being low (A=0) and vijq being low (B=0) is 0.0215. The probability of fbge being high (A=1) and vijq being high (B=1) is 0.5007. ",
+        "data_info_math": "P(B=1|A=1)=0.7130; P(A=0,B=0)=0.0215; P(A=1,B=1)=0.5007; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of fbge on vijq.",
+      "Question": "Given that fbge was low and vijq was low, what is the upper bound of the probability that vijq would have been high if the fbge had been high?",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "Calculate P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.7130",
+        "Step 2": "Upper bound of PS: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.7130-0.5007)/0.0215}\n=min{1, 9.8921}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 134,
+      "question_id": 131,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of twac being low (C=0) is 0.1879. The probability of twac being low (C=0) is 0.1678. The probability of fbge being low (A=0) and twac being low (C=0) is 0.0358. ",
+        "data_info_math": "P(C=0|A=1)=0.1879; P(C=0)=0.1678; P(A=0,C=0)=0.0358; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of fbge on twac.",
+      "Question": "Given that fbge was low and twac was low, what is the lower bound of the probability that twac would have been high if the fbge had been high?",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "Calculate P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.1879",
+        "Step 2": "Lower bound of PS: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.1678-0.1879)/0.0358}\n=max{0, -0.5617}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 135,
+      "question_id": 132,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of twac being high (C=1) is 0.8121. The probability of fbge being low (A=0) and twac being low (C=0) is 0.0358. The probability of fbge being high (A=1) and twac being high (C=1) is 0.5703. ",
+        "data_info_math": "P(C=1|A=1)=0.8121; P(A=0,C=0)=0.0358; P(A=1,C=1)=0.5703; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of fbge on twac.",
+      "Question": "Given that fbge was low and twac was low, what is the upper bound of the probability that twac would have been high if the fbge had been high?",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "Calculate P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.8121",
+        "Step 2": "Upper bound of PS: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.8121-0.5703)/0.0358}\n=min{1, 6.7504}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 136,
+      "question_id": 133,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vdla being low (D=0) is 0.1869. The probability of vdla being low (D=0) is 0.2902. The probability of fbge being low (A=0) and vdla being low (D=0) is 0.1590. ",
+        "data_info_math": "P(D=0|A=1)=0.1869; P(D=0)=0.2902; P(A=0,D=0)=0.1590; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of fbge on vdla.",
+      "Question": "Given that fbge was low and vdla was low, what is the lower bound of the probability that vdla would have been high if the fbge had been high?",
+      "Answer": "0.6501",
+      "Reason": {
+        "Step 1": "Calculate P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.1869",
+        "Step 2": "Lower bound of PS: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.2902-0.1869)/0.1590}\n=max{0, 0.6501}\n=0.6501"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.650057417377163
+    },
+    {
+      "id": 137,
+      "question_id": 134,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents fbge, B represents vijq, C represents twac and D represents vdla. ",
+        "data_info": "For those with fbge being high (A=1), the probability of vdla being high (D=1) is 0.8131. The probability of fbge being low (A=0) and vdla being low (D=0) is 0.1590. The probability of fbge being high (A=1) and vdla being high (D=1) is 0.5710. ",
+        "data_info_math": "P(D=1|A=1)=0.8131; P(A=0,D=0)=0.1590; P(A=1,D=1)=0.5710; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of fbge on vdla.",
+      "Question": "Given that fbge was low and vdla was low, what is the upper bound of the probability that vdla would have been high if the fbge had been high?",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "Calculate P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.8131",
+        "Step 2": "Upper bound of PS: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.8131-0.5710)/0.1590}\n=min{1, 1.5229}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 1
+    }
+  ]
+}

@@ -1,0 +1,3953 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "湿度水平",
+      "B": "外貌水平",
+      "C": "销售表现",
+      "D": "雇员表现水平"
+    },
+    "node_value": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": -1.2290820903648438,
+      "B": -1.6001643443140343,
+      "C": 1.9960906643767429,
+      "D": 0.13709457430752087
+    },
+    "edge_weight": {
+      "A->B": 0.4677177021293534,
+      "A->C": -1.056746548938545,
+      "A->D": 0.14300750380890193,
+      "B->D": -0.006114283839790291,
+      "C->D": -1.9106776700767247
+    },
+    "function_description": "P(A=1)=0.2263\nP(B=1|A)=sigmoid(-1.6001643443140343 + 0.4677 * A)\nP(C=1|A)=sigmoid(1.9960906643767429 + -1.0567 * A)\nP(D=1|B,C,A)=sigmoid(0.13709457430752087 + -0.0061 * B + -1.9107 * C + 0.1430 * A)\n",
+    "text_description": "The probability of humidity level being high (A=1) is 0.2263. \nFor those with humidity level being low (A=0), the probability of appearance being high (B=1) is 0.1680. \nFor those with humidity level being high (A=1), the probability of appearance being high (B=1) is 0.2437. \nFor those with humidity level being low (A=0), the probability of sales performance being high (C=1) is 0.8804. \nFor those with humidity level being high (A=1), the probability of sales performance being high (C=1) is 0.7190. \nFor those with appearance being low (B=0), sales performance being low (C=0) and humidity level being low (A=0), the probability of employee performance being high (D=1) is 0.5342. \nFor those with appearance being low (B=0), sales performance being low (C=0) and humidity level being high (A=1), the probability of employee performance being high (D=1) is 0.5696. \nFor those with appearance being low (B=0), sales performance being high (C=1) and humidity level being low (A=0), the probability of employee performance being high (D=1) is 0.1451. \nFor those with appearance being low (B=0), sales performance being high (C=1) and humidity level being high (A=1), the probability of employee performance being high (D=1) is 0.1638. \nFor those with appearance being high (B=1), sales performance being low (C=0) and humidity level being low (A=0), the probability of employee performance being high (D=1) is 0.5327. \nFor those with appearance being high (B=1), sales performance being low (C=0) and humidity level being high (A=1), the probability of employee performance being high (D=1) is 0.5681. \nFor those with appearance being high (B=1), sales performance being high (C=1) and humidity level being low (A=0), the probability of employee performance being high (D=1) is 0.1443. \nFor those with appearance being high (B=1), sales performance being high (C=1) and humidity level being high (A=1), the probability of employee performance being high (D=1) is 0.1629. \n",
+    "Statistic_data": [
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 24377
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 964
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 1713
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 5011
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 1330
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 318
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 4059
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 780
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 2026
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 5061
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 364
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 1778
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 1098
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 335
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 386
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 400
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 外貌水平为低(B=0)的概率为0.8313。在湿度水平为高(A=1)的条件下, 外貌水平为低(B=0)的概率为0.7535。",
+        "data_info_math": "P(B=0|A=0)=0.8313; P(B=0|A=1)=0.7535; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为低，那么外貌水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.8313\tP(B=0|A=1)=0.7535",
+        "Step 6": "ATE=0.8313-0.7535=0.0779",
+        "Step 7": "ATE=0.0779>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.0778809700256553
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 外貌水平为高(B=1)的概率为0.1687。在湿度水平为高(A=1)的条件下, 外貌水平为高(B=1)的概率为0.2465。",
+        "data_info_math": "P(B=1|A=0)=0.1687; P(B=1|A=1)=0.2465; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.1687\tP(B=1|A=1)=0.2465",
+        "Step 6": "ATE=0.1687-0.2465=-0.0779",
+        "Step 7": "ATE=-0.0779<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.07788097002565522
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 外貌水平为低(B=0)的概率为0.7535。在湿度水平为低(A=0)的条件下, 外貌水平为低(B=0)的概率为0.8313。",
+        "data_info_math": "P(B=0|A=1)=0.7535; P(B=0|A=0)=0.8313; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.7535\tP(B=0|A=0)=0.8313",
+        "Step 6": "ATE=0.7535-0.8313=-0.0779",
+        "Step 7": "ATE=-0.0779<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.0778809700256553
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 外貌水平为高(B=1)的概率为0.2465。在湿度水平为低(A=0)的条件下, 外貌水平为高(B=1)的概率为0.1687。",
+        "data_info_math": "P(B=1|A=1)=0.2465; P(B=1|A=0)=0.1687; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为高，那么外貌水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.2465\tP(B=1|A=0)=0.1687",
+        "Step 6": "ATE=0.2465-0.1687=0.0779",
+        "Step 7": "ATE=0.0779>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.07788097002565522
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 销售表现为低(C=0)的概率为0.1174。在湿度水平为高(A=1)的条件下, 销售表现为低(C=0)的概率为0.2804。",
+        "data_info_math": "P(C=0|A=0)=0.1174; P(C=0|A=1)=0.2804; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为低，那么销售表现更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.1174\tP(C=0|A=1)=0.2804",
+        "Step 6": "ATE=0.1174-0.2804=-0.1630",
+        "Step 7": "ATE=-0.1630<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.16298851174358986
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 销售表现为高(C=1)的概率为0.8826。在湿度水平为高(A=1)的条件下, 销售表现为高(C=1)的概率为0.7196。",
+        "data_info_math": "P(C=1|A=0)=0.8826; P(C=1|A=1)=0.7196; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为低，那么销售表现更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.8826\tP(C=1|A=1)=0.7196",
+        "Step 6": "ATE=0.8826-0.7196=0.1630",
+        "Step 7": "ATE=0.1630>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.16298851174358997
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 销售表现为低(C=0)的概率为0.2804。在湿度水平为低(A=0)的条件下, 销售表现为低(C=0)的概率为0.1174。",
+        "data_info_math": "P(C=0|A=1)=0.2804; P(C=0|A=0)=0.1174; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为高，那么销售表现更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.2804\tP(C=0|A=0)=0.1174",
+        "Step 6": "ATE=0.2804-0.1174=0.1630",
+        "Step 7": "ATE=0.1630>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.16298851174358986
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 销售表现为高(C=1)的概率为0.7196。在湿度水平为低(A=0)的条件下, 销售表现为高(C=1)的概率为0.8826。",
+        "data_info_math": "P(C=1|A=1)=0.7196; P(C=1|A=0)=0.8826; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为高，那么销售表现更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.7196\tP(C=1|A=0)=0.8826",
+        "Step 6": "ATE=0.7196-0.8826=-0.1630",
+        "Step 7": "ATE=-0.1630<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.16298851174358997
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8130。在湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7300。",
+        "data_info_math": "P(D=0|A=0)=0.8130; P(D=0|A=1)=0.7300; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.8130\tP(D=0|A=1)=0.7300",
+        "Step 6": "ATE=0.8130-0.7300=0.0830",
+        "Step 7": "ATE=0.0830>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.0830154102711178
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1870。在湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2700。",
+        "data_info_math": "P(D=1|A=0)=0.1870; P(D=1|A=1)=0.2700; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.1870\tP(D=1|A=1)=0.2700",
+        "Step 6": "ATE=0.1870-0.2700=-0.0830",
+        "Step 7": "ATE=-0.0830<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.08301541027111775
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7300。在湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8130。",
+        "data_info_math": "P(D=0|A=1)=0.7300; P(D=0|A=0)=0.8130; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.7300\tP(D=0|A=0)=0.8130",
+        "Step 6": "ATE=0.7300-0.8130=-0.0830",
+        "Step 7": "ATE=-0.0830<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.0830154102711178
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2700。在湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1870。",
+        "data_info_math": "P(D=1|A=1)=0.2700; P(D=1|A=0)=0.1870; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.2700\tP(D=1|A=0)=0.1870",
+        "Step 6": "ATE=0.2700-0.1870=0.0830",
+        "Step 7": "ATE=0.0830>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.08301541027111775
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于销售表现的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么销售表现更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于销售表现的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么销售表现更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于销售表现的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么销售表现更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于销售表现的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么销售表现更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为低(B=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8113。在外貌水平为高(B=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8217。湿度水平为低(A=0)的概率为0.7756。在外貌水平为低(B=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7286。在外貌水平为高(B=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7343。湿度水平为高(A=1)的概率为0.2244。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.8113; P(D=0|B=1,A=0)=0.8217; P(A=0)=0.7756; P(D=0|B=0,A=1)=0.7286; P(D=0|B=1,A=1)=0.7343; P(A=1)=0.2244; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=sum_{A} [P(D=0|B=0,A)*P(A)-P(D=0|B=1,A)*P(A)]=[P(D=0|B=0,A=0)*P(A=0)-P(D=0|B=1,A=0)*P(A=0)]+[P(D=0|B=0,A=1)*P(A=1)-P(D=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=0,A=0)=0.8113\tP(D=0|B=1,A=0)=0.8217\tP(A=0)=0.7756\tP(D=0|B=0,A=1)=0.7286\tP(D=0|B=1,A=1)=0.7343\tP(A=1)=0.2244",
+        "Step 6": "ATE=[0.8113*0.7756-0.8217*0.7756]+[0.7286*0.2244-0.7343*0.2244]=-0.0094",
+        "Step 7": "ATE=-0.0094<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.009398029180357648
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为低(B=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1887。在外貌水平为高(B=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1783。湿度水平为低(A=0)的概率为0.7756。在外貌水平为低(B=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2714。在外貌水平为高(B=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2657。湿度水平为高(A=1)的概率为0.2244。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.1887; P(D=1|B=1,A=0)=0.1783; P(A=0)=0.7756; P(D=1|B=0,A=1)=0.2714; P(D=1|B=1,A=1)=0.2657; P(A=1)=0.2244; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=sum_{A} [P(D=1|B=0,A)*P(A)-P(D=1|B=1,A)*P(A)]=[P(D=1|B=0,A=0)*P(A=0)-P(D=1|B=1,A=0)*P(A=0)]+[P(D=1|B=0,A=1)*P(A=1)-P(D=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=0,A=0)=0.1887\tP(D=1|B=1,A=0)=0.1783\tP(A=0)=0.7756\tP(D=1|B=0,A=1)=0.2714\tP(D=1|B=1,A=1)=0.2657\tP(A=1)=0.2244",
+        "Step 6": "ATE=[0.1887*0.7756-0.1783*0.7756]+[0.2714*0.2244-0.2657*0.2244]=0.0094",
+        "Step 7": "ATE=0.0094>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.009398029180357578
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为高(B=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8217。在外貌水平为低(B=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8113。湿度水平为低(A=0)的概率为0.7756。在外貌水平为高(B=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7343。在外貌水平为低(B=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7286。湿度水平为高(A=1)的概率为0.2244。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.8217; P(D=0|B=0,A=0)=0.8113; P(A=0)=0.7756; P(D=0|B=1,A=1)=0.7343; P(D=0|B=0,A=1)=0.7286; P(A=1)=0.2244; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=sum_{A} [P(D=0|B=1,A)*P(A)-P(D=0|B=0,A)*P(A)]=[P(D=0|B=1,A=0)*P(A=0)-P(D=0|B=0,A=0)*P(A=0)]+[P(D=0|B=1,A=1)*P(A=1)-P(D=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=1,A=0)=0.8217\tP(D=0|B=0,A=0)=0.8113\tP(A=0)=0.7756\tP(D=0|B=1,A=1)=0.7343\tP(D=0|B=0,A=1)=0.7286\tP(A=1)=0.2244",
+        "Step 6": "ATE=[0.8217*0.7756-0.8113*0.7756]+[0.7343*0.2244-0.7286*0.2244]=0.0094",
+        "Step 7": "ATE=0.0094>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.009398029180357648
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为高(B=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1783。在外貌水平为低(B=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1887。湿度水平为低(A=0)的概率为0.7756。在外貌水平为高(B=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2657。在外貌水平为低(B=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2714。湿度水平为高(A=1)的概率为0.2244。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.1783; P(D=1|B=0,A=0)=0.1887; P(A=0)=0.7756; P(D=1|B=1,A=1)=0.2657; P(D=1|B=0,A=1)=0.2714; P(A=1)=0.2244; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=sum_{A} [P(D=1|B=1,A)*P(A)-P(D=1|B=0,A)*P(A)]=[P(D=1|B=1,A=0)*P(A=0)-P(D=1|B=0,A=0)*P(A=0)]+[P(D=1|B=1,A=1)*P(A=1)-P(D=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=1,A=0)=0.1783\tP(D=1|B=0,A=0)=0.1887\tP(A=0)=0.7756\tP(D=1|B=1,A=1)=0.2657\tP(D=1|B=0,A=1)=0.2714\tP(A=1)=0.2244",
+        "Step 6": "ATE=[0.1783*0.7756-0.1887*0.7756]+[0.2657*0.2244-0.2714*0.2244]=-0.0094",
+        "Step 7": "ATE=-0.0094<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.009398029180357578
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果销售表现被改变为低，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果销售表现被改变为低，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果销售表现被改变为高，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果销售表现被改变为高，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果销售表现被改变为低，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果销售表现被改变为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果销售表现被改变为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果销售表现被改变为高，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为低(C=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.4704。在销售表现为高(C=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8586。湿度水平为低(A=0)的概率为0.7756。在销售表现为低(C=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.4501。在销售表现为高(C=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.8391。湿度水平为高(A=1)的概率为0.2244。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.4704; P(D=0|C=1,A=0)=0.8586; P(A=0)=0.7756; P(D=0|C=0,A=1)=0.4501; P(D=0|C=1,A=1)=0.8391; P(A=1)=0.2244; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果销售表现被改变为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=0))-P(D=0|do(C=1))=sum_{A} [P(D=0|C=0,A)*P(A)-P(D=0|C=1,A)*P(A)]=[P(D=0|C=0,A=0)*P(A=0)-P(D=0|C=1,A=0)*P(A=0)]+[P(D=0|C=0,A=1)*P(A=1)-P(D=0|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=0,A=0)=0.4704\tP(D=0|C=1,A=0)=0.8586\tP(A=0)=0.7756\tP(D=0|C=0,A=1)=0.4501\tP(D=0|C=1,A=1)=0.8391\tP(A=1)=0.2244",
+        "Step 6": "ATE=[0.4704*0.7756-0.8586*0.7756]+[0.4501*0.2244-0.8391*0.2244]=-0.3884",
+        "Step 7": "ATE=-0.3884<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.38842918473070764
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为低(C=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.5296。在销售表现为高(C=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1414。湿度水平为低(A=0)的概率为0.7756。在销售表现为低(C=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.5499。在销售表现为高(C=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.1609。湿度水平为高(A=1)的概率为0.2244。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.5296; P(D=1|C=1,A=0)=0.1414; P(A=0)=0.7756; P(D=1|C=0,A=1)=0.5499; P(D=1|C=1,A=1)=0.1609; P(A=1)=0.2244; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果销售表现被改变为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=0))-P(D=1|do(C=1))=sum_{A} [P(D=1|C=0,A)*P(A)-P(D=1|C=1,A)*P(A)]=[P(D=1|C=0,A=0)*P(A=0)-P(D=1|C=1,A=0)*P(A=0)]+[P(D=1|C=0,A=1)*P(A=1)-P(D=1|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=0,A=0)=0.5296\tP(D=1|C=1,A=0)=0.1414\tP(A=0)=0.7756\tP(D=1|C=0,A=1)=0.5499\tP(D=1|C=1,A=1)=0.1609\tP(A=1)=0.2244",
+        "Step 6": "ATE=[0.5296*0.7756-0.1414*0.7756]+[0.5499*0.2244-0.1609*0.2244]=0.3884",
+        "Step 7": "ATE=0.3884>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.38842918473070787
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为高(C=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8586。在销售表现为低(C=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.4704。湿度水平为低(A=0)的概率为0.7756。在销售表现为高(C=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.8391。在销售表现为低(C=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.4501。湿度水平为高(A=1)的概率为0.2244。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.8586; P(D=0|C=0,A=0)=0.4704; P(A=0)=0.7756; P(D=0|C=1,A=1)=0.8391; P(D=0|C=0,A=1)=0.4501; P(A=1)=0.2244; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果销售表现被改变为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=1))-P(D=0|do(C=0))=sum_{A} [P(D=0|C=1,A)*P(A)-P(D=0|C=0,A)*P(A)]=[P(D=0|C=1,A=0)*P(A=0)-P(D=0|C=0,A=0)*P(A=0)]+[P(D=0|C=1,A=1)*P(A=1)-P(D=0|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=1,A=0)=0.8586\tP(D=0|C=0,A=0)=0.4704\tP(A=0)=0.7756\tP(D=0|C=1,A=1)=0.8391\tP(D=0|C=0,A=1)=0.4501\tP(A=1)=0.2244",
+        "Step 6": "ATE=[0.8586*0.7756-0.4704*0.7756]+[0.8391*0.2244-0.4501*0.2244]=0.3884",
+        "Step 7": "ATE=0.3884>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.38842918473070764
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为高(C=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1414。在销售表现为低(C=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.5296。湿度水平为低(A=0)的概率为0.7756。在销售表现为高(C=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.1609。在销售表现为低(C=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.5499。湿度水平为高(A=1)的概率为0.2244。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.1414; P(D=1|C=0,A=0)=0.5296; P(A=0)=0.7756; P(D=1|C=1,A=1)=0.1609; P(D=1|C=0,A=1)=0.5499; P(A=1)=0.2244; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果销售表现被改变为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=1))-P(D=1|do(C=0))=sum_{A} [P(D=1|C=1,A)*P(A)-P(D=1|C=0,A)*P(A)]=[P(D=1|C=1,A=0)*P(A=0)-P(D=1|C=0,A=0)*P(A=0)]+[P(D=1|C=1,A=1)*P(A=1)-P(D=1|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=1,A=0)=0.1414\tP(D=1|C=0,A=0)=0.5296\tP(A=0)=0.7756\tP(D=1|C=1,A=1)=0.1609\tP(D=1|C=0,A=1)=0.5499\tP(A=1)=0.2244",
+        "Step 6": "ATE=[0.1414*0.7756-0.5296*0.7756]+[0.1609*0.2244-0.5499*0.2244]=-0.3884",
+        "Step 7": "ATE=-0.3884<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.38842918473070787
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为低，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为低，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为高，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为高，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为低，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为高，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于销售表现的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为低，那么销售表现更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于销售表现的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为低，那么销售表现更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于销售表现的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为高，那么销售表现更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于销售表现的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为高，那么销售表现更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 外貌水平为低(B=0)的概率为0.8313。在湿度水平为高(A=1)的条件下, 外貌水平为低(B=0)的概率为0.7535。",
+        "data_info_math": "P(B=0|A=0)=0.8313; P(B=0|A=1)=0.7535; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而湿度水平变化为低，那么外貌水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.8313\tP(B=0|A=1)=0.7535",
+        "Step 6": "NDE=0.8313-0.7535=0.0779",
+        "Step 7": "NDE=0.0779>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.0778809700256553
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 外貌水平为高(B=1)的概率为0.1687。在湿度水平为高(A=1)的条件下, 外貌水平为高(B=1)的概率为0.2465。",
+        "data_info_math": "P(B=1|A=0)=0.1687; P(B=1|A=1)=0.2465; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而湿度水平变化为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.1687\tP(B=1|A=1)=0.2465",
+        "Step 6": "NDE=0.1687-0.2465=-0.0779",
+        "Step 7": "NDE=-0.0779<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.07788097002565522
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 外貌水平为低(B=0)的概率为0.7535。在湿度水平为低(A=0)的条件下, 外貌水平为低(B=0)的概率为0.8313。",
+        "data_info_math": "P(B=0|A=1)=0.7535; P(B=0|A=0)=0.8313; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而湿度水平变化为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.7535\tP(B=0|A=0)=0.8313",
+        "Step 6": "NDE=0.7535-0.8313=-0.0779",
+        "Step 7": "NDE=-0.0779<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.0778809700256553
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 外貌水平为高(B=1)的概率为0.2465。在湿度水平为低(A=0)的条件下, 外貌水平为高(B=1)的概率为0.1687。",
+        "data_info_math": "P(B=1|A=1)=0.2465; P(B=1|A=0)=0.1687; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而湿度水平变化为高，那么外貌水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.2465\tP(B=1|A=0)=0.1687",
+        "Step 6": "NDE=0.2465-0.1687=0.0779",
+        "Step 7": "NDE=0.0779>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.07788097002565522
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 销售表现为低(C=0)的概率为0.1174。在湿度水平为高(A=1)的条件下, 销售表现为低(C=0)的概率为0.2804。",
+        "data_info_math": "P(C=0|A=0)=0.1174; P(C=0|A=1)=0.2804; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而湿度水平变化为低，那么销售表现更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.1174\tP(C=0|A=1)=0.2804",
+        "Step 6": "NDE=0.1174-0.2804=-0.1630",
+        "Step 7": "NDE=-0.1630<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.16298851174358986
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 销售表现为高(C=1)的概率为0.8826。在湿度水平为高(A=1)的条件下, 销售表现为高(C=1)的概率为0.7196。",
+        "data_info_math": "P(C=1|A=0)=0.8826; P(C=1|A=1)=0.7196; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而湿度水平变化为低，那么销售表现更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.8826\tP(C=1|A=1)=0.7196",
+        "Step 6": "NDE=0.8826-0.7196=0.1630",
+        "Step 7": "NDE=0.1630>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.16298851174358997
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 销售表现为低(C=0)的概率为0.2804。在湿度水平为低(A=0)的条件下, 销售表现为低(C=0)的概率为0.1174。",
+        "data_info_math": "P(C=0|A=1)=0.2804; P(C=0|A=0)=0.1174; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而湿度水平变化为高，那么销售表现更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.2804\tP(C=0|A=0)=0.1174",
+        "Step 6": "NDE=0.2804-0.1174=0.1630",
+        "Step 7": "NDE=0.1630>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.16298851174358986
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 销售表现为高(C=1)的概率为0.7196。在湿度水平为低(A=0)的条件下, 销售表现为高(C=1)的概率为0.8826。",
+        "data_info_math": "P(C=1|A=1)=0.7196; P(C=1|A=0)=0.8826; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而湿度水平变化为高，那么销售表现更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.7196\tP(C=1|A=0)=0.8826",
+        "Step 6": "NDE=0.7196-0.8826=-0.1630",
+        "Step 7": "NDE=-0.1630<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.16298851174358997
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为低(B=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8113。在外貌水平为高(B=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8217。湿度水平为低(A=0)的概率为0.7756。在外貌水平为低(B=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7286。在外貌水平为高(B=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7343。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.8113; P(D=0|B=1,A=0)=0.8217; P(A=0)=0.7756; P(D=0|B=0,A=1)=0.7286; P(D=0|B=1,A=1)=0.7343; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而外貌水平变化为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|B=0,A)-P(D=0|B=1,A)]*P(A)=[P(D=0|B=0,A=0)-P(D=0|B=1,A=0)]*P(A=0)+[P(D=0|B=0,A=1)-P(D=0|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,A=0)=0.8113\tP(D=0|B=1,A=0)=0.8217\tP(A=0)=0.7756\tP(D=0|B=0,A=1)=0.7286\tP(D=0|B=1,A=1)=0.7343\tP(A=1)=0.2244",
+        "Step 6": "NDE=[0.8113-0.8217]*0.7756+[0.7286-0.7343]*0.2244=-0.0094",
+        "Step 7": "NDE=-0.0094<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.009398029180357648
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为低(B=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1887。在外貌水平为高(B=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1783。湿度水平为低(A=0)的概率为0.7756。在外貌水平为低(B=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2714。在外貌水平为高(B=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2657。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.1887; P(D=1|B=1,A=0)=0.1783; P(A=0)=0.7756; P(D=1|B=0,A=1)=0.2714; P(D=1|B=1,A=1)=0.2657; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而外貌水平变化为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|B=0,A)-P(D=1|B=1,A)]*P(A)=[P(D=1|B=0,A=0)-P(D=1|B=1,A=0)]*P(A=0)+[P(D=1|B=0,A=1)-P(D=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,A=0)=0.1887\tP(D=1|B=1,A=0)=0.1783\tP(A=0)=0.7756\tP(D=1|B=0,A=1)=0.2714\tP(D=1|B=1,A=1)=0.2657\tP(A=1)=0.2244",
+        "Step 6": "NDE=[0.1887-0.1783]*0.7756+[0.2714-0.2657]*0.2244=0.0094",
+        "Step 7": "NDE=0.0094>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.00939802918035757
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为高(B=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8217。在外貌水平为低(B=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8113。湿度水平为低(A=0)的概率为0.7756。在外貌水平为高(B=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7343。在外貌水平为低(B=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7286。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.8217; P(D=0|B=0,A=0)=0.8113; P(A=0)=0.7756; P(D=0|B=1,A=1)=0.7343; P(D=0|B=0,A=1)=0.7286; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而外貌水平变化为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|B=1,A)-P(D=0|B=0,A)]*P(A)=[P(D=0|B=1,A=0)-P(D=0|B=0,A=0)]*P(A=0)+[P(D=0|B=1,A=1)-P(D=0|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,A=0)=0.8217\tP(D=0|B=0,A=0)=0.8113\tP(A=0)=0.7756\tP(D=0|B=1,A=1)=0.7343\tP(D=0|B=0,A=1)=0.7286\tP(A=1)=0.2244",
+        "Step 6": "NDE=[0.8217-0.8113]*0.7756+[0.7343-0.7286]*0.2244=0.0094",
+        "Step 7": "NDE=0.0094>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.009398029180357648
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为高(B=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1783。在外貌水平为低(B=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1887。湿度水平为低(A=0)的概率为0.7756。在外貌水平为高(B=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2657。在外貌水平为低(B=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2714。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.1783; P(D=1|B=0,A=0)=0.1887; P(A=0)=0.7756; P(D=1|B=1,A=1)=0.2657; P(D=1|B=0,A=1)=0.2714; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而外貌水平变化为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|B=1,A)-P(D=1|B=0,A)]*P(A)=[P(D=1|B=1,A=0)-P(D=1|B=0,A=0)]*P(A=0)+[P(D=1|B=1,A=1)-P(D=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,A=0)=0.1783\tP(D=1|B=0,A=0)=0.1887\tP(A=0)=0.7756\tP(D=1|B=1,A=1)=0.2657\tP(D=1|B=0,A=1)=0.2714\tP(A=1)=0.2244",
+        "Step 6": "NDE=[0.1783-0.1887]*0.7756+[0.2657-0.2714]*0.2244=-0.0094",
+        "Step 7": "NDE=-0.0094<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.00939802918035757
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为低(C=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.4704。在销售表现为高(C=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8586。湿度水平为低(A=0)的概率为0.7756。在销售表现为低(C=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.4501。在销售表现为高(C=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.8391。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.4704; P(D=0|C=1,A=0)=0.8586; P(A=0)=0.7756; P(D=0|C=0,A=1)=0.4501; P(D=0|C=1,A=1)=0.8391; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而销售表现变化为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=0,A)-P(D=0|C=1,A)]*P(A)=[P(D=0|C=0,A=0)-P(D=0|C=1,A=0)]*P(A=0)+[P(D=0|C=0,A=1)-P(D=0|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=0,A=0)=0.4704\tP(D=0|C=1,A=0)=0.8586\tP(A=0)=0.7756\tP(D=0|C=0,A=1)=0.4501\tP(D=0|C=1,A=1)=0.8391\tP(A=1)=0.2244",
+        "Step 6": "NDE=[0.4704-0.8586]*0.7756+[0.4501-0.8391]*0.2244=-0.3884",
+        "Step 7": "NDE=-0.3884<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.3884291847307077
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为低(C=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.5296。在销售表现为高(C=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1414。湿度水平为低(A=0)的概率为0.7756。在销售表现为低(C=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.5499。在销售表现为高(C=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.1609。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.5296; P(D=1|C=1,A=0)=0.1414; P(A=0)=0.7756; P(D=1|C=0,A=1)=0.5499; P(D=1|C=1,A=1)=0.1609; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而销售表现变化为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=0,A)-P(D=1|C=1,A)]*P(A)=[P(D=1|C=0,A=0)-P(D=1|C=1,A=0)]*P(A=0)+[P(D=1|C=0,A=1)-P(D=1|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=0,A=0)=0.5296\tP(D=1|C=1,A=0)=0.1414\tP(A=0)=0.7756\tP(D=1|C=0,A=1)=0.5499\tP(D=1|C=1,A=1)=0.1609\tP(A=1)=0.2244",
+        "Step 6": "NDE=[0.5296-0.1414]*0.7756+[0.5499-0.1609]*0.2244=0.3884",
+        "Step 7": "NDE=0.3884>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.38842918473070787
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为高(C=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8586。在销售表现为低(C=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.4704。湿度水平为低(A=0)的概率为0.7756。在销售表现为高(C=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.8391。在销售表现为低(C=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.4501。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.8586; P(D=0|C=0,A=0)=0.4704; P(A=0)=0.7756; P(D=0|C=1,A=1)=0.8391; P(D=0|C=0,A=1)=0.4501; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而销售表现变化为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=1,A)-P(D=0|C=0,A)]*P(A)=[P(D=0|C=1,A=0)-P(D=0|C=0,A=0)]*P(A=0)+[P(D=0|C=1,A=1)-P(D=0|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=1,A=0)=0.8586\tP(D=0|C=0,A=0)=0.4704\tP(A=0)=0.7756\tP(D=0|C=1,A=1)=0.8391\tP(D=0|C=0,A=1)=0.4501\tP(A=1)=0.2244",
+        "Step 6": "NDE=[0.8586-0.4704]*0.7756+[0.8391-0.4501]*0.2244=0.3884",
+        "Step 7": "NDE=0.3884>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.3884291847307077
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为高(C=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1414。在销售表现为低(C=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.5296。湿度水平为低(A=0)的概率为0.7756。在销售表现为高(C=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.1609。在销售表现为低(C=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.5499。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.1414; P(D=1|C=0,A=0)=0.5296; P(A=0)=0.7756; P(D=1|C=1,A=1)=0.1609; P(D=1|C=0,A=1)=0.5499; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而销售表现变化为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=1,A)-P(D=1|C=0,A)]*P(A)=[P(D=1|C=1,A=0)-P(D=1|C=0,A=0)]*P(A=0)+[P(D=1|C=1,A=1)-P(D=1|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=1,A=0)=0.1414\tP(D=1|C=0,A=0)=0.5296\tP(A=0)=0.7756\tP(D=1|C=1,A=1)=0.1609\tP(D=1|C=0,A=1)=0.5499\tP(A=1)=0.2244",
+        "Step 6": "NDE=[0.1414-0.5296]*0.7756+[0.1609-0.5499]*0.2244=-0.3884",
+        "Step 7": "NDE=-0.3884<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.38842918473070787
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如湿度水平保持不变，而所有中间变量被改变为当它们在湿度水平变化为低下的取值，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如湿度水平保持不变，而所有中间变量被改变为当它们在湿度水平变化为低下的取值，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如湿度水平保持不变，而所有中间变量被改变为当它们在湿度水平变化为高下的取值，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如湿度水平保持不变，而所有中间变量被改变为当它们在湿度水平变化为高下的取值，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如湿度水平保持不变，而所有中间变量被改变为当它们在湿度水平变化为低下的取值，那么销售表现更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如湿度水平保持不变，而所有中间变量被改变为当它们在湿度水平变化为低下的取值，那么销售表现更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如湿度水平保持不变，而所有中间变量被改变为当它们在湿度水平变化为高下的取值，那么销售表现更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如湿度水平保持不变，而所有中间变量被改变为当它们在湿度水平变化为高下的取值，那么销售表现更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如外貌水平保持不变，而所有中间变量被改变为当它们在外貌水平变化为低下的取值，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如外貌水平保持不变，而所有中间变量被改变为当它们在外貌水平变化为低下的取值，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如外貌水平保持不变，而所有中间变量被改变为当它们在外貌水平变化为高下的取值，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如外貌水平保持不变，而所有中间变量被改变为当它们在外貌水平变化为高下的取值，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如销售表现保持不变，而所有中间变量被改变为当它们在销售表现变化为低下的取值，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如销售表现保持不变，而所有中间变量被改变为当它们在销售表现变化为低下的取值，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如销售表现保持不变，而所有中间变量被改变为当它们在销售表现变化为高下的取值，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如销售表现保持不变，而所有中间变量被改变为当它们在销售表现变化为高下的取值，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 外貌水平为低(B=0)的概率为0.8313。在湿度水平为高(A=1)的条件下, 外貌水平为低(B=0)的概率为0.7535。",
+        "data_info_math": "P(B=0|A=0)=0.8313; P(B=0|A=1)=0.7535; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为低，假如湿度水平为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.8313\tP(B=0|A=1)=0.7535",
+        "Step 6": "ETT=0.8313-0.7535=0.0779",
+        "Step 7": "ETT=0.0779>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.0778809700256553
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 外貌水平为高(B=1)的概率为0.1687。在湿度水平为高(A=1)的条件下, 外貌水平为高(B=1)的概率为0.2465。",
+        "data_info_math": "P(B=1|A=0)=0.1687; P(B=1|A=1)=0.2465; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为低，假如湿度水平为高，那么外貌水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.1687\tP(B=1|A=1)=0.2465",
+        "Step 6": "ETT=0.1687-0.2465=-0.0779",
+        "Step 7": "ETT=-0.0779<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.07788097002565522
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 外貌水平为低(B=0)的概率为0.7535。在湿度水平为低(A=0)的条件下, 外貌水平为低(B=0)的概率为0.8313。",
+        "data_info_math": "P(B=0|A=1)=0.7535; P(B=0|A=0)=0.8313; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为高，假如湿度水平为低，那么外貌水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.7535\tP(B=0|A=0)=0.8313",
+        "Step 6": "ETT=0.7535-0.8313=-0.0779",
+        "Step 7": "ETT=-0.0779<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.0778809700256553
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 外貌水平为高(B=1)的概率为0.2465。在湿度水平为低(A=0)的条件下, 外貌水平为高(B=1)的概率为0.1687。",
+        "data_info_math": "P(B=1|A=1)=0.2465; P(B=1|A=0)=0.1687; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为高，假如湿度水平为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.2465\tP(B=1|A=0)=0.1687",
+        "Step 6": "ETT=0.2465-0.1687=0.0779",
+        "Step 7": "ETT=0.0779>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.07788097002565522
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 销售表现为低(C=0)的概率为0.1174。在湿度水平为高(A=1)的条件下, 销售表现为低(C=0)的概率为0.2804。",
+        "data_info_math": "P(C=0|A=0)=0.1174; P(C=0|A=1)=0.2804; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为低，假如湿度水平为高，那么销售表现更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.1174\tP(C=0|A=1)=0.2804",
+        "Step 6": "ETT=0.1174-0.2804=-0.1630",
+        "Step 7": "ETT=-0.1630<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.16298851174358986
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 销售表现为高(C=1)的概率为0.8826。在湿度水平为高(A=1)的条件下, 销售表现为高(C=1)的概率为0.7196。",
+        "data_info_math": "P(C=1|A=0)=0.8826; P(C=1|A=1)=0.7196; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为低，假如湿度水平为高，那么销售表现更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.8826\tP(C=1|A=1)=0.7196",
+        "Step 6": "ETT=0.8826-0.7196=0.1630",
+        "Step 7": "ETT=0.1630>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.16298851174358997
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 销售表现为低(C=0)的概率为0.2804。在湿度水平为低(A=0)的条件下, 销售表现为低(C=0)的概率为0.1174。",
+        "data_info_math": "P(C=0|A=1)=0.2804; P(C=0|A=0)=0.1174; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为高，假如湿度水平为低，那么销售表现更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.2804\tP(C=0|A=0)=0.1174",
+        "Step 6": "ETT=0.2804-0.1174=0.1630",
+        "Step 7": "ETT=0.1630>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.16298851174358986
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 销售表现为高(C=1)的概率为0.7196。在湿度水平为低(A=0)的条件下, 销售表现为高(C=1)的概率为0.8826。",
+        "data_info_math": "P(C=1|A=1)=0.7196; P(C=1|A=0)=0.8826; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为高，假如湿度水平为低，那么销售表现更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.7196\tP(C=1|A=0)=0.8826",
+        "Step 6": "ETT=0.7196-0.8826=-0.1630",
+        "Step 7": "ETT=-0.1630<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.16298851174358997
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8130。在湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7300。",
+        "data_info_math": "P(D=0|A=0)=0.8130; P(D=0|A=1)=0.7300; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为低，假如湿度水平为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.8130\tP(D=0|A=1)=0.7300",
+        "Step 6": "ETT=0.8130-0.7300=0.0830",
+        "Step 7": "ETT=0.0830>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.0830154102711178
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1870。在湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2700。",
+        "data_info_math": "P(D=1|A=0)=0.1870; P(D=1|A=1)=0.2700; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为低，假如湿度水平为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.1870\tP(D=1|A=1)=0.2700",
+        "Step 6": "ETT=0.1870-0.2700=-0.0830",
+        "Step 7": "ETT=-0.0830<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.08301541027111775
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7300。在湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8130。",
+        "data_info_math": "P(D=0|A=1)=0.7300; P(D=0|A=0)=0.8130; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为高，假如湿度水平为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.7300\tP(D=0|A=0)=0.8130",
+        "Step 6": "ETT=0.7300-0.8130=-0.0830",
+        "Step 7": "ETT=-0.0830<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.0830154102711178
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2700。在湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1870。",
+        "data_info_math": "P(D=1|A=1)=0.2700; P(D=1|A=0)=0.1870; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为高，假如湿度水平为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.2700\tP(D=1|A=0)=0.1870",
+        "Step 6": "ETT=0.2700-0.1870=0.0830",
+        "Step 7": "ETT=0.0830>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.08301541027111775
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于销售表现的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么销售表现更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于销售表现的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么销售表现更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于销售表现的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么销售表现更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于销售表现的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么销售表现更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为低(B=0)的条件下, 雇员表现水平为低(D=0)的概率为0.7941。在湿度水平为低(A=0)且外貌水平为高(B=1)的条件下, 雇员表现水平为低(D=0)的概率为0.8217。在外貌水平为低(B=0)的条件下, 湿度水平为低(A=0)的概率为0.7923。在湿度水平为高(A=1)且外貌水平为高(B=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7343。在外貌水平为低(B=0)的条件下, 湿度水平为高(A=1)的概率为0.2077。",
+        "data_info_math": "P(D=0|B=0)=0.7941; P(D=0|A=0,B=1)=0.8217; P(A=0|B=0)=0.7923; P(D=0|A=1,B=1)=0.7343; P(A=1|B=0)=0.2077; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-sum_{A} P(D=0|B=1,A)*P(A|B=0)=P(D=0|B=0)-[P(D=0|B=1,A=0)*P(A=0|B=0)+P(D=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=0|B=0)=0.7941\tP(D=0|B=1,A=0)=0.8217\tP(A=0|B=0)=0.7923\tP(D=0|B=1,A=1)=0.7343\tP(A=1|B=0)=0.2077",
+        "Step 6": "ETT=0.7941-[0.8217*0.7923+0.7343*0.2077]=-0.0095",
+        "Step 7": "ETT=-0.0095<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.00947837121091663
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为低(B=0)的条件下, 雇员表现水平为高(D=1)的概率为0.2059。在湿度水平为低(A=0)且外貌水平为高(B=1)的条件下, 雇员表现水平为高(D=1)的概率为0.1783。在外貌水平为低(B=0)的条件下, 湿度水平为低(A=0)的概率为0.7923。在湿度水平为高(A=1)且外貌水平为高(B=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2657。在外貌水平为低(B=0)的条件下, 湿度水平为高(A=1)的概率为0.2077。",
+        "data_info_math": "P(D=1|B=0)=0.2059; P(D=1|A=0,B=1)=0.1783; P(A=0|B=0)=0.7923; P(D=1|A=1,B=1)=0.2657; P(A=1|B=0)=0.2077; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-sum_{A} P(D=1|B=1,A)*P(A|B=0)=P(D=1|B=0)-[P(D=1|B=1,A=0)*P(A=0|B=0)+P(D=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=1|B=0)=0.2059\tP(D=1|B=1,A=0)=0.1783\tP(A=0|B=0)=0.7923\tP(D=1|B=1,A=1)=0.2657\tP(A=1|B=0)=0.2077",
+        "Step 6": "ETT=0.2059-[0.1783*0.7923+0.2657*0.2077]=0.0095",
+        "Step 7": "ETT=0.0095>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.00947837121091652
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为高(B=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7957。在湿度水平为低(A=0)且外貌水平为低(B=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8113。在外貌水平为高(B=1)的条件下, 湿度水平为低(A=0)的概率为0.7028。在湿度水平为高(A=1)且外貌水平为低(B=0)的条件下, 雇员表现水平为低(D=0)的概率为0.7286。在外貌水平为高(B=1)的条件下, 湿度水平为高(A=1)的概率为0.2972。",
+        "data_info_math": "P(D=0|B=1)=0.7957; P(D=0|A=0,B=0)=0.8113; P(A=0|B=1)=0.7028; P(D=0|A=1,B=0)=0.7286; P(A=1|B=1)=0.2972; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-sum_{A} P(D=0|B=0,A)*P(A|B=1)=P(D=0|B=1)-[P(D=0|B=0,A=0)*P(A=0|B=1)+P(D=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=0|B=1)=0.7957\tP(D=0|B=0,A=0)=0.8113\tP(A=0|B=1)=0.7028\tP(D=0|B=0,A=1)=0.7286\tP(A=1|B=1)=0.2972",
+        "Step 6": "ETT=0.7957-[0.8113*0.7028+0.7286*0.2972]=0.0090",
+        "Step 7": "ETT=0.0090>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.009046749686478311
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为高(B=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2043。在湿度水平为低(A=0)且外貌水平为低(B=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1887。在外貌水平为高(B=1)的条件下, 湿度水平为低(A=0)的概率为0.7028。在湿度水平为高(A=1)且外貌水平为低(B=0)的条件下, 雇员表现水平为高(D=1)的概率为0.2714。在外貌水平为高(B=1)的条件下, 湿度水平为高(A=1)的概率为0.2972。",
+        "data_info_math": "P(D=1|B=1)=0.2043; P(D=1|A=0,B=0)=0.1887; P(A=0|B=1)=0.7028; P(D=1|A=1,B=0)=0.2714; P(A=1|B=1)=0.2972; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-sum_{A} P(D=1|B=0,A)*P(A|B=1)=P(D=1|B=1)-[P(D=1|B=0,A=0)*P(A=0|B=1)+P(D=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=1|B=1)=0.2043\tP(D=1|B=0,A=0)=0.1887\tP(A=0|B=1)=0.7028\tP(D=1|B=0,A=1)=0.2714\tP(A=1|B=1)=0.2972",
+        "Step 6": "ETT=0.2043-[0.1887*0.7028+0.2714*0.2972]=-0.0090",
+        "Step 7": "ETT=-0.0090<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.009046749686478242
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些销售表现为低，假如销售表现为高，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些销售表现为低，假如销售表现为高，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些销售表现为高，假如销售表现为低，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些销售表现为高，假如销售表现为低，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些销售表现为低，假如销售表现为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些销售表现为低，假如销售表现为高，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些销售表现为高，假如销售表现为低，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑销售表现作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些销售表现为高，假如销售表现为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为低(C=0)的条件下, 雇员表现水平为低(D=0)的概率为0.4621。在湿度水平为低(A=0)且销售表现为高(C=1)的条件下, 雇员表现水平为低(D=0)的概率为0.8586。在销售表现为低(C=0)的条件下, 湿度水平为低(A=0)的概率为0.5914。在湿度水平为高(A=1)且销售表现为高(C=1)的条件下, 雇员表现水平为低(D=0)的概率为0.8391。在销售表现为低(C=0)的条件下, 湿度水平为高(A=1)的概率为0.4086。",
+        "data_info_math": "P(D=0|C=0)=0.4621; P(D=0|A=0,C=1)=0.8586; P(A=0|C=0)=0.5914; P(D=0|A=1,C=1)=0.8391; P(A=1|C=0)=0.4086; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些销售表现为低，假如销售表现为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=0|C=0)-sum_{A} P(D=0|C=1,A)*P(A|C=0)=P(D=0|C=0)-[P(D=0|C=1,A=0)*P(A=0|C=0)+P(D=0|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=0|C=0)=0.4621\tP(D=0|C=1,A=0)=0.8586\tP(A=0|C=0)=0.5914\tP(D=0|C=1,A=1)=0.8391\tP(A=1|C=0)=0.4086",
+        "Step 6": "ETT=0.4621-[0.8586*0.5914+0.8391*0.4086]=-0.3886",
+        "Step 7": "ETT=-0.3886<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.3885642446616048
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为低(C=0)的条件下, 雇员表现水平为高(D=1)的概率为0.5379。在湿度水平为低(A=0)且销售表现为高(C=1)的条件下, 雇员表现水平为高(D=1)的概率为0.1414。在销售表现为低(C=0)的条件下, 湿度水平为低(A=0)的概率为0.5914。在湿度水平为高(A=1)且销售表现为高(C=1)的条件下, 雇员表现水平为高(D=1)的概率为0.1609。在销售表现为低(C=0)的条件下, 湿度水平为高(A=1)的概率为0.4086。",
+        "data_info_math": "P(D=1|C=0)=0.5379; P(D=1|A=0,C=1)=0.1414; P(A=0|C=0)=0.5914; P(D=1|A=1,C=1)=0.1609; P(A=1|C=0)=0.4086; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些销售表现为低，假如销售表现为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=1|C=0)-sum_{A} P(D=1|C=1,A)*P(A|C=0)=P(D=1|C=0)-[P(D=1|C=1,A=0)*P(A=0|C=0)+P(D=1|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=1|C=0)=0.5379\tP(D=1|C=1,A=0)=0.1414\tP(A=0|C=0)=0.5914\tP(D=1|C=1,A=1)=0.1609\tP(A=1|C=0)=0.4086",
+        "Step 6": "ETT=0.5379-[0.1414*0.5914+0.1609*0.4086]=0.3886",
+        "Step 7": "ETT=0.3886>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.38856424466160483
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为高(C=1)的条件下, 雇员表现水平为低(D=0)的概率为0.8549。在湿度水平为低(A=0)且销售表现为低(C=0)的条件下, 雇员表现水平为低(D=0)的概率为0.4704。在销售表现为高(C=1)的条件下, 湿度水平为低(A=0)的概率为0.8091。在湿度水平为高(A=1)且销售表现为低(C=0)的条件下, 雇员表现水平为低(D=0)的概率为0.4501。在销售表现为高(C=1)的条件下, 湿度水平为高(A=1)的概率为0.1909。",
+        "data_info_math": "P(D=0|C=1)=0.8549; P(D=0|A=0,C=0)=0.4704; P(A=0|C=1)=0.8091; P(D=0|A=1,C=0)=0.4501; P(A=1|C=1)=0.1909; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些销售表现为高，假如销售表现为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=0|C=1)-sum_{A} P(D=0|C=0,A)*P(A|C=1)=P(D=0|C=1)-[P(D=0|C=0,A=0)*P(A=0|C=1)+P(D=0|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=0|C=1)=0.8549\tP(D=0|C=0,A=0)=0.4704\tP(A=0|C=1)=0.8091\tP(D=0|C=0,A=1)=0.4501\tP(A=1|C=1)=0.1909",
+        "Step 6": "ETT=0.8549-[0.4704*0.8091+0.4501*0.1909]=0.3884",
+        "Step 7": "ETT=0.3884>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.3884045993532159
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为高(C=1)的条件下, 雇员表现水平为高(D=1)的概率为0.1451。在湿度水平为低(A=0)且销售表现为低(C=0)的条件下, 雇员表现水平为高(D=1)的概率为0.5296。在销售表现为高(C=1)的条件下, 湿度水平为低(A=0)的概率为0.8091。在湿度水平为高(A=1)且销售表现为低(C=0)的条件下, 雇员表现水平为高(D=1)的概率为0.5499。在销售表现为高(C=1)的条件下, 湿度水平为高(A=1)的概率为0.1909。",
+        "data_info_math": "P(D=1|C=1)=0.1451; P(D=1|A=0,C=0)=0.5296; P(A=0|C=1)=0.8091; P(D=1|A=1,C=0)=0.5499; P(A=1|C=1)=0.1909; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些销售表现为高，假如销售表现为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=1|C=1)-sum_{A} P(D=1|C=0,A)*P(A|C=1)=P(D=1|C=1)-[P(D=1|C=0,A=0)*P(A=0|C=1)+P(D=1|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=1|C=1)=0.1451\tP(D=1|C=0,A=0)=0.5296\tP(A=0|C=1)=0.8091\tP(D=1|C=0,A=1)=0.5499\tP(A=1|C=1)=0.1909",
+        "Step 6": "ETT=0.1451-[0.5296*0.8091+0.5499*0.1909]=-0.3884",
+        "Step 7": "ETT=-0.3884<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.3884045993532161
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为低，假如雇员表现水平为高，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为低，假如雇员表现水平为高，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为高，假如雇员表现水平为低，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为高，假如雇员表现水平为低，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为低，假如雇员表现水平为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为低，假如雇员表现水平为高，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为高，假如雇员表现水平为低，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为高，假如雇员表现水平为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于销售表现的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为低，假如雇员表现水平为高，那么销售表现更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于销售表现的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为低，假如雇员表现水平为高，那么销售表现更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于销售表现的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为高，假如雇员表现水平为低，那么销售表现更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于销售表现的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为高，假如雇员表现水平为低，那么销售表现更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0), 外貌水平为高(B=1)且销售表现为高(C=1)的条件下, 雇员表现水平为低(D=0)的概率为0.8653。在湿度水平为高(A=1), 外貌水平为高(B=1)且销售表现为高(C=1)的条件下, 雇员表现水平为低(D=0)的概率为0.8364。",
+        "data_info_math": "P(D=0|A=0,B=1,C=1)=0.8653; P(D=0|A=1,B=1,C=1)=0.8364; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在外貌水平为高且销售表现为高的条件下，假如湿度水平为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=0,B=1,C=1))-P(D=0|do(A=1,B=1,C=1))=P(D=0|A=0,B=1,C=1)-P(D=0|A=1,B=1,C=1)",
+        "Step 5": "P(D=0|A=0,B=1,C=1)=0.8653\tP(D=0|A=1,B=1,C=1)=0.8364",
+        "Step 6": "CDE=0.8653-0.8364=0.0289",
+        "Step 7": "CDE=0.0289>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.028882455669357765
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0), 外貌水平为高(B=1)且销售表现为高(C=1)的条件下, 雇员表现水平为高(D=1)的概率为0.1347。在湿度水平为高(A=1), 外貌水平为高(B=1)且销售表现为高(C=1)的条件下, 雇员表现水平为高(D=1)的概率为0.1636。",
+        "data_info_math": "P(D=1|A=0,B=1,C=1)=0.1347; P(D=1|A=1,B=1,C=1)=0.1636; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在外貌水平为高且销售表现为高的条件下，假如湿度水平为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=0,B=1,C=1))-P(D=1|do(A=1,B=1,C=1))=P(D=1|A=0,B=1,C=1)-P(D=1|A=1,B=1,C=1)",
+        "Step 5": "P(D=1|A=0,B=1,C=1)=0.1347\tP(D=1|A=1,B=1,C=1)=0.1636",
+        "Step 6": "CDE=0.1347-0.1636=-0.0289",
+        "Step 7": "CDE=-0.0289<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.028882455669357626
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1), 外貌水平为高(B=1)且销售表现为低(C=0)的条件下, 雇员表现水平为低(D=0)的概率为0.4429。在湿度水平为低(A=0), 外貌水平为高(B=1)且销售表现为低(C=0)的条件下, 雇员表现水平为低(D=0)的概率为0.4853。",
+        "data_info_math": "P(D=0|A=1,B=1,C=0)=0.4429; P(D=0|A=0,B=1,C=0)=0.4853; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在外貌水平为高且销售表现为低的条件下，假如湿度水平为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=1,B=1,C=0))-P(D=0|do(A=0,B=1,C=0))=P(D=0|A=1,B=1,C=0)-P(D=0|A=0,B=1,C=0)",
+        "Step 5": "P(D=0|A=1,B=1,C=0)=0.4429\tP(D=0|A=0,B=1,C=0)=0.4853",
+        "Step 6": "CDE=0.4429-0.4853=-0.0424",
+        "Step 7": "CDE=-0.0424<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.04243639740018568
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1), 外貌水平为低(B=0)且销售表现为高(C=1)的条件下, 雇员表现水平为高(D=1)的概率为0.1600。在湿度水平为低(A=0), 外貌水平为低(B=0)且销售表现为高(C=1)的条件下, 雇员表现水平为高(D=1)的概率为0.1427。",
+        "data_info_math": "P(D=1|A=1,B=0,C=1)=0.1600; P(D=1|A=0,B=0,C=1)=0.1427; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在外貌水平为低且销售表现为高的条件下，假如湿度水平为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=1,B=0,C=1))-P(D=1|do(A=0,B=0,C=1))=P(D=1|A=1,B=0,C=1)-P(D=1|A=0,B=0,C=1)",
+        "Step 5": "P(D=1|A=1,B=0,C=1)=0.1600\tP(D=1|A=0,B=0,C=1)=0.1427",
+        "Step 6": "CDE=0.1600-0.1427=0.0173",
+        "Step 7": "CDE=0.0173>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.017258404838936564
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象湿度水平(A)和观察节点外貌水平(B)的后门调整集合。",
+      "Question": "方法1: 根据雇员表现水平的情况，我们逐个研究湿度水平和外貌水平的关联。\n方法2：我们直接研究一般情况下湿度水平和外貌水平的关联。\n为了理解湿度水平如何影响外貌水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 133,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象湿度水平(A)和观察节点外貌水平(B)的后门调整集合。",
+      "Question": "方法1: 根据销售表现的情况，我们逐个研究湿度水平和外貌水平的关联。\n方法2：我们直接研究一般情况下湿度水平和外貌水平的关联。\n为了理解湿度水平如何影响外貌水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 134,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象湿度水平(A)和观察节点销售表现(C)的后门调整集合。",
+      "Question": "方法1: 根据雇员表现水平的情况，我们逐个研究湿度水平和销售表现的关联。\n方法2：我们直接研究一般情况下湿度水平和销售表现的关联。\n为了理解湿度水平如何影响销售表现，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 135,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象湿度水平(A)和观察节点销售表现(C)的后门调整集合。",
+      "Question": "方法1: 根据外貌水平的情况，我们逐个研究湿度水平和销售表现的关联。\n方法2：我们直接研究一般情况下湿度水平和销售表现的关联。\n为了理解湿度水平如何影响销售表现，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 136,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象湿度水平(A)和观察节点雇员表现水平(D)的后门调整集合。",
+      "Question": "方法1: 根据外貌水平的情况，我们逐个研究湿度水平和雇员表现水平的关联。\n方法2：我们直接研究一般情况下湿度水平和雇员表现水平的关联。\n为了理解湿度水平如何影响雇员表现水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 137,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象湿度水平(A)和观察节点雇员表现水平(D)的后门调整集合。",
+      "Question": "方法1: 根据销售表现的情况，我们逐个研究湿度水平和雇员表现水平的关联。\n方法2：我们直接研究一般情况下湿度水平和雇员表现水平的关联。\n为了理解湿度水平如何影响雇员表现水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 138,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象外貌水平(B)和观察节点雇员表现水平(D)的后门调整集合。",
+      "Question": "方法1: 根据湿度水平的情况，我们逐个研究外貌水平和雇员表现水平的关联。\n方法2：我们直接研究一般情况下外貌水平和雇员表现水平的关联。\n为了理解外貌水平如何影响雇员表现水平，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 139,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象外貌水平(B)和观察节点雇员表现水平(D)的后门调整集合。",
+      "Question": "方法1: 根据湿度水平的情况，我们逐个研究外貌水平和雇员表现水平的关联。\n方法2：我们直接研究一般情况下外貌水平和雇员表现水平的关联。\n为了理解外貌水平如何影响雇员表现水平，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 140,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象销售表现(C)和观察节点雇员表现水平(D)的后门调整集合。",
+      "Question": "方法1: 根据湿度水平的情况，我们逐个研究销售表现和雇员表现水平的关联。\n方法2：我们直接研究一般情况下销售表现和雇员表现水平的关联。\n为了理解销售表现如何影响雇员表现水平，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 141,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象销售表现(C)和观察节点雇员表现水平(D)的后门调整集合。",
+      "Question": "方法1: 根据湿度水平的情况，我们逐个研究销售表现和雇员表现水平的关联。\n方法2：我们直接研究一般情况下销售表现和雇员表现水平的关联。\n为了理解销售表现如何影响雇员表现水平，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 142,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为低(D=0)且外貌水平为高(B=1)的条件下, 销售表现为高(C=1)的概率为0.9079。在雇员表现水平为低(D=0)且外貌水平为低(B=0)的条件下, 销售表现为高(C=1)的概率为0.9110。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.9079; P(C=1|D=0,B=0)=0.9110; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为低的条件下，外貌水平会影响销售表现吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=0)-P(C=1|do(B=0),D=0)=P(C=1|D=0)-P(C=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 143,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为低(D=0)且外貌水平为高(B=1)的条件下, 销售表现为高(C=1)的概率为0.9079。在雇员表现水平为低(D=0)且外貌水平为低(B=0)的条件下, 销售表现为高(C=1)的概率为0.9110。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.9079; P(C=1|D=0,B=0)=0.9110; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为低的条件下，外貌水平不会影响销售表现吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=0)-P(C=1|do(B=0),D=0)=P(C=1|D=0)-P(C=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 144,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为低(D=0)且外貌水平为高(B=1)的条件下, 销售表现为高(C=1)的概率为0.9079。在雇员表现水平为低(D=0)且外貌水平为低(B=0)的条件下, 销售表现为高(C=1)的概率为0.9110。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.9079; P(C=1|D=0,B=0)=0.9110; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为低的条件下，外貌水平是和销售表现相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=0)-P(C=1|B=0,D=0)=0.9079-0.9110=-0.0031!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 145,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为低(D=0)且外貌水平为高(B=1)的条件下, 销售表现为高(C=1)的概率为0.9079。在雇员表现水平为低(D=0)且外貌水平为低(B=0)的条件下, 销售表现为高(C=1)的概率为0.9110。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.9079; P(C=1|D=0,B=0)=0.9110; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为低的条件下，外貌水平是和销售表现独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=0)-P(C=1|B=0,D=0)=0.9079-0.9110=-0.0031!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 146,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为高(D=1)且外貌水平为高(B=1)的条件下, 销售表现为高(C=1)的概率为0.5865。在雇员表现水平为高(D=1)且外貌水平为低(B=0)的条件下, 销售表现为高(C=1)的概率为0.5995。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.5865; P(C=1|D=1,B=0)=0.5995; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为高的条件下，外貌水平会影响销售表现吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=1)-P(C=1|do(B=0),D=1)=P(C=1|D=1)-P(C=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 147,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为高(D=1)且外貌水平为高(B=1)的条件下, 销售表现为高(C=1)的概率为0.5865。在雇员表现水平为高(D=1)且外貌水平为低(B=0)的条件下, 销售表现为高(C=1)的概率为0.5995。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.5865; P(C=1|D=1,B=0)=0.5995; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为高的条件下，外貌水平不会影响销售表现吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=1)-P(C=1|do(B=0),D=1)=P(C=1|D=1)-P(C=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 148,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为高(D=1)且外貌水平为高(B=1)的条件下, 销售表现为高(C=1)的概率为0.5865。在雇员表现水平为高(D=1)且外貌水平为低(B=0)的条件下, 销售表现为高(C=1)的概率为0.5995。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.5865; P(C=1|D=1,B=0)=0.5995; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为高的条件下，外貌水平是和销售表现相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=1)-P(C=1|B=0,D=1)=0.5865-0.5995=-0.0129!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 149,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为高(D=1)且外貌水平为高(B=1)的条件下, 销售表现为高(C=1)的概率为0.5865。在雇员表现水平为高(D=1)且外貌水平为低(B=0)的条件下, 销售表现为高(C=1)的概率为0.5995。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.5865; P(C=1|D=1,B=0)=0.5995; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为高的条件下，外貌水平是和销售表现独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=1)-P(C=1|B=0,D=1)=0.5865-0.5995=-0.0129!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 150,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为低(D=0)且销售表现为高(C=1)的条件下, 外貌水平为高(B=1)的概率为0.1859。在雇员表现水平为低(D=0)且销售表现为低(C=0)的条件下, 外貌水平为高(B=1)的概率为0.1917。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.1859; P(B=1|D=0,C=0)=0.1917; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为低的条件下，销售表现会影响外貌水平吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=0)-P(B=1|do(C=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 151,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为低(D=0)且销售表现为高(C=1)的条件下, 外貌水平为高(B=1)的概率为0.1859。在雇员表现水平为低(D=0)且销售表现为低(C=0)的条件下, 外貌水平为高(B=1)的概率为0.1917。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.1859; P(B=1|D=0,C=0)=0.1917; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为低的条件下，销售表现不会影响外貌水平吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=0)-P(B=1|do(C=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 152,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为低(D=0)且销售表现为高(C=1)的条件下, 外貌水平为高(B=1)的概率为0.1859。在雇员表现水平为低(D=0)且销售表现为低(C=0)的条件下, 外貌水平为高(B=1)的概率为0.1917。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.1859; P(B=1|D=0,C=0)=0.1917; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为低的条件下，销售表现是和外貌水平相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=0)-P(B=1|C=0,D=0)=0.1859-0.1917=-0.0057!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 153,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为低(D=0)且销售表现为高(C=1)的条件下, 外貌水平为高(B=1)的概率为0.1859。在雇员表现水平为低(D=0)且销售表现为低(C=0)的条件下, 外貌水平为高(B=1)的概率为0.1917。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.1859; P(B=1|D=0,C=0)=0.1917; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为低的条件下，销售表现是和外貌水平独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=0)-P(B=1|C=0,D=0)=0.1859-0.1917=-0.0057!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 154,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为高(D=1)且销售表现为高(C=1)的条件下, 外貌水平为高(B=1)的概率为0.1817。在雇员表现水平为高(D=1)且销售表现为低(C=0)的条件下, 外貌水平为高(B=1)的概率为0.1898。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.1817; P(B=1|D=1,C=0)=0.1898; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为高的条件下，销售表现会影响外貌水平吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=1)-P(B=1|do(C=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 155,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为高(D=1)且销售表现为高(C=1)的条件下, 外貌水平为高(B=1)的概率为0.1817。在雇员表现水平为高(D=1)且销售表现为低(C=0)的条件下, 外貌水平为高(B=1)的概率为0.1898。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.1817; P(B=1|D=1,C=0)=0.1898; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为高的条件下，销售表现不会影响外貌水平吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=1)-P(B=1|do(C=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 156,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为高(D=1)且销售表现为高(C=1)的条件下, 外貌水平为高(B=1)的概率为0.1817。在雇员表现水平为高(D=1)且销售表现为低(C=0)的条件下, 外貌水平为高(B=1)的概率为0.1898。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.1817; P(B=1|D=1,C=0)=0.1898; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为高的条件下，销售表现是和外貌水平相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=1)-P(B=1|C=0,D=1)=0.1817-0.1898=-0.0081!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 157,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在雇员表现水平为高(D=1)且销售表现为高(C=1)的条件下, 外貌水平为高(B=1)的概率为0.1817。在雇员表现水平为高(D=1)且销售表现为低(C=0)的条件下, 外貌水平为高(B=1)的概率为0.1898。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.1817; P(B=1|D=1,C=0)=0.1898; "
+      },
+      "Instruction": "",
+      "Question": "给定雇员表现水平为高的条件下，销售表现是和外貌水平独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=1)-P(B=1|C=0,D=1)=0.1817-0.1898=-0.0081!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 158,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 外貌水平为高(B=1)的概率为0.1687。外貌水平为高(B=1)的概率为0.1861。湿度水平为高(A=1)且外貌水平为高(B=1)的概率为0.0553。",
+        "data_info_math": "P(B=1|A=0)=0.1687; P(B=1)=0.1861; P(A=1,B=1)=0.0553; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定湿度水平为高且外貌水平为高, 那么假如湿度水平为低，此时外貌水平为低的概率的下界是多少？",
+      "Answer": "0.3159",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.1687",
+        "Step 2": "PN的下界: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.1861-0.1687)/0.0553}\n=max{0, 0.3159}\n=0.3159"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.3158881427034801
+    },
+    {
+      "id": 159,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 外貌水平为低(B=0)的概率为0.8313。湿度水平为低(A=0)且外貌水平为低(B=0)的概率为0.6448。湿度水平为高(A=1)且外貌水平为高(B=1)的概率为0.0553。",
+        "data_info_math": "P(B=0|A=0)=0.8313; P(A=0,B=0)=0.6448; P(A=1,B=1)=0.0553; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定湿度水平为高且外貌水平为高, 那么假如湿度水平为低，此时外貌水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.8313",
+        "Step 2": "PN的上界: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.8313-0.6448)/0.0553}\n=min{1, 3.3719}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 160,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 销售表现为高(C=1)的概率为0.8826。销售表现为高(C=1)的概率为0.8460。湿度水平为高(A=1)且销售表现为高(C=1)的概率为0.1615。",
+        "data_info_math": "P(C=1|A=0)=0.8826; P(C=1)=0.8460; P(A=1,C=1)=0.1615; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的必要性概率(probability of necessity, PN)。",
+      "Question": "给定湿度水平为高且销售表现为高, 那么假如湿度水平为低，此时销售表现为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.8826",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.8460-0.8826)/0.1615}\n=max{0, -0.2265}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 161,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 销售表现为低(C=0)的概率为0.1174。湿度水平为低(A=0)且销售表现为低(C=0)的概率为0.0911。湿度水平为高(A=1)且销售表现为高(C=1)的概率为0.1615。",
+        "data_info_math": "P(C=0|A=0)=0.1174; P(A=0,C=0)=0.0911; P(A=1,C=1)=0.1615; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的必要性概率(probability of necessity, PN)。",
+      "Question": "给定湿度水平为高且销售表现为高, 那么假如湿度水平为低，此时销售表现为低的概率的上界是多少？",
+      "Answer": "0.1632",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.1174",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.1174-0.0911)/0.1615}\n=min{1, 0.1632}\n=0.1632"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.16318987820496292
+    },
+    {
+      "id": 162,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1870。雇员表现水平为高(D=1)的概率为0.2056。湿度水平为高(A=1)且雇员表现水平为高(D=1)的概率为0.0606。",
+        "data_info_math": "P(D=1|A=0)=0.1870; P(D=1)=0.2056; P(A=1,D=1)=0.0606; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定湿度水平为高且雇员表现水平为高, 那么假如湿度水平为低，此时雇员表现水平为低的概率的下界是多少？",
+      "Answer": "0.3075",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.1870",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.2056-0.1870)/0.0606}\n=max{0, 0.3075}\n=0.3075"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.30747767838615714
+    },
+    {
+      "id": 163,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8130。湿度水平为低(A=0)且雇员表现水平为低(D=0)的概率为0.6306。湿度水平为高(A=1)且雇员表现水平为高(D=1)的概率为0.0606。",
+        "data_info_math": "P(D=0|A=0)=0.8130; P(A=0,D=0)=0.6306; P(A=1,D=1)=0.0606; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定湿度水平为高且雇员表现水平为高, 那么假如湿度水平为低，此时雇员表现水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.8130",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.8130-0.6306)/0.0606}\n=min{1, 3.0113}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 164,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为低(B=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1887。湿度水平为低(A=0)的概率为0.7756。在外貌水平为低(B=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2714。湿度水平为高(A=1)的概率为0.2244。雇员表现水平为高(D=1)的概率为0.2056。外貌水平为高(B=1)且雇员表现水平为高(D=1)的概率为0.0380。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.1887; P(A=0)=0.7756; P(D=1|B=0,A=1)=0.2714; P(A=1)=0.2244; P(D=1)=0.2056; P(B=1,D=1)=0.0380; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定外貌水平为高且雇员表现水平为高, 那么假如外貌水平为低，此时雇员表现水平为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=sum_{A} P(D=1|B=0,A)*P(A)=P(D=1|B=0,A=0)*P(A=0)+P(D=1|B=0,A=1)*P(A=1)\nP(D=1|B=0,A=0)=0.1887\tP(A=0)=0.7756\tP(D=1|B=0,A=1)=0.2714\tP(A=1)=0.2244\nP(D=1|do(B=0))=0.1887*0.7756+0.2714*0.2244=0.2073",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.2056-0.2073)/0.0380}\n=max{0, -0.0443}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 165,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为低(B=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8113。湿度水平为低(A=0)的概率为0.7756。在外貌水平为低(B=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7286。湿度水平为高(A=1)的概率为0.2244。外貌水平为低(B=0)且雇员表现水平为低(D=0)的概率为0.6463。外貌水平为高(B=1)且雇员表现水平为高(D=1)的概率为0.0380。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.8113; P(A=0)=0.7756; P(D=0|B=0,A=1)=0.7286; P(A=1)=0.2244; P(B=0,D=0)=0.6463; P(B=1,D=1)=0.0380; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定外貌水平为高且雇员表现水平为高, 那么假如外貌水平为低，此时雇员表现水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=sum_{A} P(D=0|B=0,A)*P(A)=P(D=0|B=0,A=0)*P(A=0)+P(D=0|B=0,A=1)*P(A=1)\nP(D=0|B=0,A=0)=0.8113\tP(A=0)=0.7756\tP(D=0|B=0,A=1)=0.7286\tP(A=1)=0.2244\nP(D=0|do(B=0))=0.8113*0.7756+0.7286*0.2244=0.7927",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.7927-0.6463)/0.0380}\n=min{1, 3.8516}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 166,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为低(C=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.5296。湿度水平为低(A=0)的概率为0.7756。在销售表现为低(C=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.5499。湿度水平为高(A=1)的概率为0.2244。雇员表现水平为高(D=1)的概率为0.2056。销售表现为高(C=1)且雇员表现水平为高(D=1)的概率为0.1228。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.5296; P(A=0)=0.7756; P(D=1|C=0,A=1)=0.5499; P(A=1)=0.2244; P(D=1)=0.2056; P(C=1,D=1)=0.1228; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定销售表现为高且雇员表现水平为高, 那么假如销售表现为低，此时雇员表现水平为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=0))\nP(D=1|do(C=0))=sum_{A} P(D=1|C=0,A)*P(A)=P(D=1|C=0,A=0)*P(A=0)+P(D=1|C=0,A=1)*P(A=1)\nP(D=1|C=0,A=0)=0.5296\tP(A=0)=0.7756\tP(D=1|C=0,A=1)=0.5499\tP(A=1)=0.2244\nP(D=1|do(C=0))=0.5296*0.7756+0.5499*0.2244=0.5342",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(C=0))]/P(C=1,D=1)}\n=max{0, (0.2056-0.5342)/0.1228}\n=max{0, -2.6767}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 167,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为低(C=0)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.4704。湿度水平为低(A=0)的概率为0.7756。在销售表现为低(C=0)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.4501。湿度水平为高(A=1)的概率为0.2244。销售表现为低(C=0)且雇员表现水平为低(D=0)的概率为0.0712。销售表现为高(C=1)且雇员表现水平为高(D=1)的概率为0.1228。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.4704; P(A=0)=0.7756; P(D=0|C=0,A=1)=0.4501; P(A=1)=0.2244; P(C=0,D=0)=0.0712; P(C=1,D=1)=0.1228; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定销售表现为高且雇员表现水平为高, 那么假如销售表现为低，此时雇员表现水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=0))\nP(D=0|do(C=0))=sum_{A} P(D=0|C=0,A)*P(A)=P(D=0|C=0,A=0)*P(A=0)+P(D=0|C=0,A=1)*P(A=1)\nP(D=0|C=0,A=0)=0.4704\tP(A=0)=0.7756\tP(D=0|C=0,A=1)=0.4501\tP(A=1)=0.2244\nP(D=0|do(C=0))=0.4704*0.7756+0.4501*0.2244=0.4658",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(C=0)-P(C=0,D=0)]/P(C=1,D=1)}\n=min{1, (0.4658-0.0712)/0.1228}\n=min{1, 3.2148}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 168,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 外貌水平为低(B=0)的概率为0.7535。外貌水平为低(B=0)的概率为0.8139。湿度水平为低(A=0)且外貌水平为低(B=0)的概率为0.6448。",
+        "data_info_math": "P(B=0|A=1)=0.7535; P(B=0)=0.8139; P(A=0,B=0)=0.6448; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定湿度水平为低且外貌水平为低, 假如湿度水平为高，此时外貌水平为高的概率的下界是多少？",
+      "Answer": "0.0937",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.7535",
+        "Step 2": "PS的下界: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.8139-0.7535)/0.6448}\n=max{0, 0.0937}\n=0.0937"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.09368182067509108
+    },
+    {
+      "id": 169,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 外貌水平为高(B=1)的概率为0.2465。湿度水平为低(A=0)且外貌水平为低(B=0)的概率为0.6448。湿度水平为高(A=1)且外貌水平为高(B=1)的概率为0.0553。",
+        "data_info_math": "P(B=1|A=1)=0.2465; P(A=0,B=0)=0.6448; P(A=1,B=1)=0.0553; "
+      },
+      "Instruction": "考虑湿度水平作用于外貌水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定湿度水平为低且外貌水平为低, 假如湿度水平为高，此时外貌水平为高的概率的上界是多少？",
+      "Answer": "0.2966",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.2465",
+        "Step 2": "PS的上界: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.2465-0.0553)/0.6448}\n=min{1, 0.2966}\n=0.2966"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.2965664360597064
+    },
+    {
+      "id": 170,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 销售表现为低(C=0)的概率为0.2804。销售表现为低(C=0)的概率为0.1540。湿度水平为低(A=0)且销售表现为低(C=0)的概率为0.0911。",
+        "data_info_math": "P(C=0|A=1)=0.2804; P(C=0)=0.1540; P(A=0,C=0)=0.0911; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定湿度水平为低且销售表现为低, 假如湿度水平为高，此时销售表现为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.2804",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.1540-0.2804)/0.0911}\n=max{0, -1.3880}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 171,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 销售表现为高(C=1)的概率为0.7196。湿度水平为低(A=0)且销售表现为低(C=0)的概率为0.0911。湿度水平为高(A=1)且销售表现为高(C=1)的概率为0.1615。",
+        "data_info_math": "P(C=1|A=1)=0.7196; P(A=0,C=0)=0.0911; P(A=1,C=1)=0.1615; "
+      },
+      "Instruction": "考虑湿度水平作用于销售表现的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定湿度水平为低且销售表现为低, 假如湿度水平为高，此时销售表现为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.7196",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.7196-0.1615)/0.0911}\n=min{1, 6.1278}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 172,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7300。雇员表现水平为低(D=0)的概率为0.7944。湿度水平为低(A=0)且雇员表现水平为低(D=0)的概率为0.6306。",
+        "data_info_math": "P(D=0|A=1)=0.7300; P(D=0)=0.7944; P(A=0,D=0)=0.6306; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定湿度水平为低且雇员表现水平为低, 假如湿度水平为高，此时雇员表现水平为高的概率的下界是多少？",
+      "Answer": "0.1021",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.7300",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.7944-0.7300)/0.6306}\n=max{0, 0.1021}\n=0.1021"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.10210658502138335
+    },
+    {
+      "id": 173,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2700。湿度水平为低(A=0)且雇员表现水平为低(D=0)的概率为0.6306。湿度水平为高(A=1)且雇员表现水平为高(D=1)的概率为0.0606。",
+        "data_info_math": "P(D=1|A=1)=0.2700; P(A=0,D=0)=0.6306; P(A=1,D=1)=0.0606; "
+      },
+      "Instruction": "考虑湿度水平作用于雇员表现水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定湿度水平为低且雇员表现水平为低, 假如湿度水平为高，此时雇员表现水平为高的概率的上界是多少？",
+      "Answer": "0.3321",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.2700",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.2700-0.0606)/0.6306}\n=min{1, 0.3321}\n=0.3321"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.3320780407778058
+    },
+    {
+      "id": 174,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为高(B=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8217。湿度水平为低(A=0)的概率为0.7756。在外貌水平为高(B=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.7343。湿度水平为高(A=1)的概率为0.2244。雇员表现水平为低(D=0)的概率为0.7944。外貌水平为低(B=0)且雇员表现水平为低(D=0)的概率为0.6463。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.8217; P(A=0)=0.7756; P(D=0|B=1,A=1)=0.7343; P(A=1)=0.2244; P(D=0)=0.7944; P(B=0,D=0)=0.6463; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定外貌水平为低且雇员表现水平为低, 假如外貌水平为高，此时雇员表现水平为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=sum_{A} P(D=0|B=1,A)*P(A)=P(D=0|B=1,A=0)*P(A=0)+P(D=0|B=1,A=1)*P(A=1)\nP(D=0|B=1,A=0)=0.8217\tP(A=0)=0.7756\tP(D=0|B=1,A=1)=0.7343\tP(A=1)=0.2244\nP(D=0|do(B=1))=0.8217*0.7756+0.7343*0.2244=0.8021",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.7944-0.8021)/0.6463}\n=max{0, -0.0119}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 175,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在外貌水平为高(B=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1783。湿度水平为低(A=0)的概率为0.7756。在外貌水平为高(B=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.2657。湿度水平为高(A=1)的概率为0.2244。外貌水平为低(B=0)且雇员表现水平为低(D=0)的概率为0.6463。外貌水平为高(B=1)且雇员表现水平为高(D=1)的概率为0.0380。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.1783; P(A=0)=0.7756; P(D=1|B=1,A=1)=0.2657; P(A=1)=0.2244; P(B=0,D=0)=0.6463; P(B=1,D=1)=0.0380; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定外貌水平为低且雇员表现水平为低, 假如外貌水平为高，此时雇员表现水平为高的概率的上界是多少？",
+      "Answer": "0.2474",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=sum_{A} P(D=1|B=1,A)*P(A)=P(D=1|B=1,A=0)*P(A=0)+P(D=1|B=1,A=1)*P(A=1)\nP(D=1|B=1,A=0)=0.1783\tP(A=0)=0.7756\tP(D=1|B=1,A=1)=0.2657\tP(A=1)=0.2244\nP(D=1|do(B=1))=0.1783*0.7756+0.2657*0.2244=0.1979",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.1979-0.0380)/0.6463}\n=min{1, 0.2474}\n=0.2474"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.24736326794312602
+    },
+    {
+      "id": 176,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为高(C=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为低(D=0)的概率为0.8586。湿度水平为低(A=0)的概率为0.7756。在销售表现为高(C=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为低(D=0)的概率为0.8391。湿度水平为高(A=1)的概率为0.2244。雇员表现水平为低(D=0)的概率为0.7944。销售表现为低(C=0)且雇员表现水平为低(D=0)的概率为0.0712。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.8586; P(A=0)=0.7756; P(D=0|C=1,A=1)=0.8391; P(A=1)=0.2244; P(D=0)=0.7944; P(C=0,D=0)=0.0712; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定销售表现为低且雇员表现水平为低, 假如销售表现为高，此时雇员表现水平为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=1))\nP(D=0|do(C=1))=sum_{A} P(D=0|C=1,A)*P(A)=P(D=0|C=1,A=0)*P(A=0)+P(D=0|C=1,A=1)*P(A=1)\nP(D=0|C=1,A=0)=0.8586\tP(A=0)=0.7756\tP(D=0|C=1,A=1)=0.8391\tP(A=1)=0.2244\nP(D=0|do(C=1))=0.8586*0.7756+0.8391*0.2244=0.8542",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(C=1))]/P(C=0,D=0)}\n=max{0, (0.7944-0.8542)/0.0712}\n=max{0, -0.8409}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 177,
+      "question_id": 160,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表湿度水平, B代表外貌水平, C代表销售表现, D代表雇员表现水平。",
+        "data_info": "在销售表现为高(C=1)且湿度水平为低(A=0)的条件下, 雇员表现水平为高(D=1)的概率为0.1414。湿度水平为低(A=0)的概率为0.7756。在销售表现为高(C=1)且湿度水平为高(A=1)的条件下, 雇员表现水平为高(D=1)的概率为0.1609。湿度水平为高(A=1)的概率为0.2244。销售表现为低(C=0)且雇员表现水平为低(D=0)的概率为0.0712。销售表现为高(C=1)且雇员表现水平为高(D=1)的概率为0.1228。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.1414; P(A=0)=0.7756; P(D=1|C=1,A=1)=0.1609; P(A=1)=0.2244; P(C=0,D=0)=0.0712; P(C=1,D=1)=0.1228; "
+      },
+      "Instruction": "考虑销售表现作用于雇员表现水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定销售表现为低且雇员表现水平为低, 假如销售表现为高，此时雇员表现水平为高的概率的上界是多少？",
+      "Answer": "0.3232",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=1))\nP(D=1|do(C=1))=sum_{A} P(D=1|C=1,A)*P(A)=P(D=1|C=1,A=0)*P(A=0)+P(D=1|C=1,A=1)*P(A=1)\nP(D=1|C=1,A=0)=0.1414\tP(A=0)=0.7756\tP(D=1|C=1,A=1)=0.1609\tP(A=1)=0.2244\nP(D=1|do(C=1))=0.1414*0.7756+0.1609*0.2244=0.1458",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(C=1)-P(C=1,D=1)]/P(C=0,D=0)}\n=min{1, (0.1458-0.1228)/0.0712}\n=min{1, 0.3232}\n=0.3232"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.3232308364546497
+    }
+  ]
+}

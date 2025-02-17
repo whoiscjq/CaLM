@@ -1,0 +1,4175 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->D",
+      "B->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "气压",
+      "B": "市场需求水平",
+      "C": "血压",
+      "D": "交通拥堵水平"
+    },
+    "node_value": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": -0.9045014726543306,
+      "B": -0.456069363321416,
+      "C": 1.3025250879032657,
+      "D": -0.039110127086911736
+    },
+    "edge_weight": {
+      "A->B": 1.6746576578063213,
+      "A->D": -0.36761565290654763,
+      "B->C": 0.3950576770273355,
+      "B->D": 0.3123593511359072,
+      "C->D": -0.8363891178859186
+    },
+    "function_description": "P(A=1)=0.2881\nP(B=1|A)=sigmoid(-0.456069363321416 + 1.6747 * A)\nP(C=1|B)=sigmoid(1.3025250879032657 + 0.3951 * B)\nP(D=1|A,B,C)=sigmoid(-0.039110127086911736 + -0.3676 * A + 0.3124 * B + -0.8364 * C)\n",
+    "text_description": "The probability of air pressure being high (A=1) is 0.2881. \nFor those with air pressure being low (A=0), the probability of market demand being high (B=1) is 0.3879. \nFor those with air pressure being high (A=1), the probability of market demand being high (B=1) is 0.7718. \nFor those with market demand being low (B=0), the probability of blood pressure being high (C=1) is 0.7863. \nFor those with market demand being high (B=1), the probability of blood pressure being high (C=1) is 0.8452. \nFor those with air pressure being low (A=0), market demand being low (B=0) and blood pressure being low (C=0), the probability of traffic congestion being high (D=1) is 0.4902. \nFor those with air pressure being low (A=0), market demand being low (B=0) and blood pressure being high (C=1), the probability of traffic congestion being high (D=1) is 0.2941. \nFor those with air pressure being low (A=0), market demand being high (B=1) and blood pressure being low (C=0), the probability of traffic congestion being high (D=1) is 0.5679. \nFor those with air pressure being low (A=0), market demand being high (B=1) and blood pressure being high (C=1), the probability of traffic congestion being high (D=1) is 0.3628. \nFor those with air pressure being high (A=1), market demand being low (B=0) and blood pressure being low (C=0), the probability of traffic congestion being high (D=1) is 0.3997. \nFor those with air pressure being high (A=1), market demand being low (B=0) and blood pressure being high (C=1), the probability of traffic congestion being high (D=1) is 0.2239. \nFor those with air pressure being high (A=1), market demand being high (B=1) and blood pressure being low (C=0), the probability of traffic congestion being high (D=1) is 0.4764. \nFor those with air pressure being high (A=1), market demand being high (B=1) and blood pressure being high (C=1), the probability of traffic congestion being high (D=1) is 0.2828. \n",
+    "Statistic_data": [
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 442
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 6739
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 12011
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 1964
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 7396
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 904
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 2709
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 4195
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 2265
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 5147
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 934
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 1175
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 2445
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 814
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 580
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 280
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 市场需求水平为低(B=0)的概率为0.6148。在气压为高(A=1)的条件下, 市场需求水平为低(B=0)的概率为0.2263。",
+        "data_info_math": "P(B=0|A=0)=0.6148; P(B=0|A=1)=0.2263; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么市场需求水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.6148\tP(B=0|A=1)=0.2263",
+        "Step 6": "ATE=0.6148-0.2263=0.3885",
+        "Step 7": "ATE=0.3885>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.38851965143685296
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 市场需求水平为高(B=1)的概率为0.3852。在气压为高(A=1)的条件下, 市场需求水平为高(B=1)的概率为0.7737。",
+        "data_info_math": "P(B=1|A=0)=0.3852; P(B=1|A=1)=0.7737; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么市场需求水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.3852\tP(B=1|A=1)=0.7737",
+        "Step 6": "ATE=0.3852-0.7737=-0.3885",
+        "Step 7": "ATE=-0.3885<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.3885196514368529
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 市场需求水平为低(B=0)的概率为0.2263。在气压为低(A=0)的条件下, 市场需求水平为低(B=0)的概率为0.6148。",
+        "data_info_math": "P(B=0|A=1)=0.2263; P(B=0|A=0)=0.6148; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么市场需求水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.2263\tP(B=0|A=0)=0.6148",
+        "Step 6": "ATE=0.2263-0.6148=-0.3885",
+        "Step 7": "ATE=-0.3885<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.38851965143685296
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 市场需求水平为高(B=1)的概率为0.7737。在气压为低(A=0)的条件下, 市场需求水平为高(B=1)的概率为0.3852。",
+        "data_info_math": "P(B=1|A=1)=0.7737; P(B=1|A=0)=0.3852; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么市场需求水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.7737\tP(B=1|A=0)=0.3852",
+        "Step 6": "ATE=0.7737-0.3852=0.3885",
+        "Step 7": "ATE=0.3885>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.3885196514368529
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.1917。在气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.1691。",
+        "data_info_math": "P(C=0|A=0)=0.1917; P(C=0|A=1)=0.1691; "
+      },
+      "Instruction": "考虑气压作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么血压更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.1917\tP(C=0|A=1)=0.1691",
+        "Step 6": "ATE=0.1917-0.1691=0.0226",
+        "Step 7": "ATE=0.0226>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.022648537812209185
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 血压为高(C=1)的概率为0.8083。在气压为高(A=1)的条件下, 血压为高(C=1)的概率为0.8309。",
+        "data_info_math": "P(C=1|A=0)=0.8083; P(C=1|A=1)=0.8309; "
+      },
+      "Instruction": "考虑气压作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.8083\tP(C=1|A=1)=0.8309",
+        "Step 6": "ATE=0.8083-0.8309=-0.0226",
+        "Step 7": "ATE=-0.0226<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.022648537812209102
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.1691。在气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.1917。",
+        "data_info_math": "P(C=0|A=1)=0.1691; P(C=0|A=0)=0.1917; "
+      },
+      "Instruction": "考虑气压作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.1691\tP(C=0|A=0)=0.1917",
+        "Step 6": "ATE=0.1691-0.1917=-0.0226",
+        "Step 7": "ATE=-0.0226<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.022648537812209185
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 血压为高(C=1)的概率为0.8309。在气压为低(A=0)的条件下, 血压为高(C=1)的概率为0.8083。",
+        "data_info_math": "P(C=1|A=1)=0.8309; P(C=1|A=0)=0.8083; "
+      },
+      "Instruction": "考虑气压作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么血压更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.8309\tP(C=1|A=0)=0.8083",
+        "Step 6": "ATE=0.8309-0.8083=0.0226",
+        "Step 7": "ATE=0.0226>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.022648537812209102
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6406。在气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6963。",
+        "data_info_math": "P(D=0|A=0)=0.6406; P(D=0|A=1)=0.6963; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6406\tP(D=0|A=1)=0.6963",
+        "Step 6": "ATE=0.6406-0.6963=-0.0557",
+        "Step 7": "ATE=-0.0557<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.055667860345331444
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3594。在气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3037。",
+        "data_info_math": "P(D=1|A=0)=0.3594; P(D=1|A=1)=0.3037; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3594\tP(D=1|A=1)=0.3037",
+        "Step 6": "ATE=0.3594-0.3037=0.0557",
+        "Step 7": "ATE=0.0557>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.055667860345331444
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6963。在气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6406。",
+        "data_info_math": "P(D=0|A=1)=0.6963; P(D=0|A=0)=0.6406; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.6963\tP(D=0|A=0)=0.6406",
+        "Step 6": "ATE=0.6963-0.6406=0.0557",
+        "Step 7": "ATE=0.0557>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.055667860345331444
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3037。在气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3594。",
+        "data_info_math": "P(D=1|A=1)=0.3037; P(D=1|A=0)=0.3594; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.3037\tP(D=1|A=0)=0.3594",
+        "Step 6": "ATE=0.3037-0.3594=-0.0557",
+        "Step 7": "ATE=-0.0557<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.055667860345331444
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑市场需求水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果市场需求水平被改变为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑市场需求水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果市场需求水平被改变为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑市场需求水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果市场需求水平被改变为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑市场需求水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果市场需求水平被改变为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)的条件下, 血压为低(C=0)的概率为0.2161。在市场需求水平为高(B=1)的条件下, 血压为低(C=0)的概率为0.1539。",
+        "data_info_math": "P(C=0|B=0)=0.2161; P(C=0|B=1)=0.1539; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果市场需求水平被改变为低，那么血压更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.2161\tP(C=0|B=1)=0.1539",
+        "Step 6": "ATE=0.2161-0.1539=0.0622",
+        "Step 7": "ATE=0.0622>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.06221665785969366
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)的条件下, 血压为高(C=1)的概率为0.7839。在市场需求水平为高(B=1)的条件下, 血压为高(C=1)的概率为0.8461。",
+        "data_info_math": "P(C=1|B=0)=0.7839; P(C=1|B=1)=0.8461; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果市场需求水平被改变为低，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.7839\tP(C=1|B=1)=0.8461",
+        "Step 6": "ATE=0.7839-0.8461=-0.0622",
+        "Step 7": "ATE=-0.0622<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.06221665785969366
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1)的条件下, 血压为低(C=0)的概率为0.1539。在市场需求水平为低(B=0)的条件下, 血压为低(C=0)的概率为0.2161。",
+        "data_info_math": "P(C=0|B=1)=0.1539; P(C=0|B=0)=0.2161; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果市场需求水平被改变为高，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.1539\tP(C=0|B=0)=0.2161",
+        "Step 6": "ATE=0.1539-0.2161=-0.0622",
+        "Step 7": "ATE=-0.0622<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.06221665785969366
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1)的条件下, 血压为高(C=1)的概率为0.8461。在市场需求水平为低(B=0)的条件下, 血压为高(C=1)的概率为0.7839。",
+        "data_info_math": "P(C=1|B=1)=0.8461; P(C=1|B=0)=0.7839; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果市场需求水平被改变为高，那么血压更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.8461\tP(C=1|B=0)=0.7839",
+        "Step 6": "ATE=0.8461-0.7839=0.0622",
+        "Step 7": "ATE=0.0622>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.06221665785969366
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6611。在市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6080。气压为低(A=0)的概率为0.7114。在市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7367。在市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6845。气压为高(A=1)的概率为0.2886。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6611; P(D=0|B=1,A=0)=0.6080; P(A=0)=0.7114; P(D=0|B=0,A=1)=0.7367; P(D=0|B=1,A=1)=0.6845; P(A=1)=0.2886; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果市场需求水平被改变为低，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=sum_{A} [P(D=0|B=0,A)*P(A)-P(D=0|B=1,A)*P(A)]=[P(D=0|B=0,A=0)*P(A=0)-P(D=0|B=1,A=0)*P(A=0)]+[P(D=0|B=0,A=1)*P(A=1)-P(D=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=0,A=0)=0.6611\tP(D=0|B=1,A=0)=0.6080\tP(A=0)=0.7114\tP(D=0|B=0,A=1)=0.7367\tP(D=0|B=1,A=1)=0.6845\tP(A=1)=0.2886",
+        "Step 6": "ATE=[0.6611*0.7114-0.6080*0.7114]+[0.7367*0.2886-0.6845*0.2886]=0.0528",
+        "Step 7": "ATE=0.0528>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.05278683145357255
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3389。在市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3920。气压为低(A=0)的概率为0.7114。在市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.2633。在市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3155。气压为高(A=1)的概率为0.2886。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3389; P(D=1|B=1,A=0)=0.3920; P(A=0)=0.7114; P(D=1|B=0,A=1)=0.2633; P(D=1|B=1,A=1)=0.3155; P(A=1)=0.2886; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果市场需求水平被改变为低，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=sum_{A} [P(D=1|B=0,A)*P(A)-P(D=1|B=1,A)*P(A)]=[P(D=1|B=0,A=0)*P(A=0)-P(D=1|B=1,A=0)*P(A=0)]+[P(D=1|B=0,A=1)*P(A=1)-P(D=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=0,A=0)=0.3389\tP(D=1|B=1,A=0)=0.3920\tP(A=0)=0.7114\tP(D=1|B=0,A=1)=0.2633\tP(D=1|B=1,A=1)=0.3155\tP(A=1)=0.2886",
+        "Step 6": "ATE=[0.3389*0.7114-0.3920*0.7114]+[0.2633*0.2886-0.3155*0.2886]=-0.0528",
+        "Step 7": "ATE=-0.0528<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.05278683145357238
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6080。在市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6611。气压为低(A=0)的概率为0.7114。在市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6845。在市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7367。气压为高(A=1)的概率为0.2886。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.6080; P(D=0|B=0,A=0)=0.6611; P(A=0)=0.7114; P(D=0|B=1,A=1)=0.6845; P(D=0|B=0,A=1)=0.7367; P(A=1)=0.2886; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果市场需求水平被改变为高，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=sum_{A} [P(D=0|B=1,A)*P(A)-P(D=0|B=0,A)*P(A)]=[P(D=0|B=1,A=0)*P(A=0)-P(D=0|B=0,A=0)*P(A=0)]+[P(D=0|B=1,A=1)*P(A=1)-P(D=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=1,A=0)=0.6080\tP(D=0|B=0,A=0)=0.6611\tP(A=0)=0.7114\tP(D=0|B=1,A=1)=0.6845\tP(D=0|B=0,A=1)=0.7367\tP(A=1)=0.2886",
+        "Step 6": "ATE=[0.6080*0.7114-0.6611*0.7114]+[0.6845*0.2886-0.7367*0.2886]=-0.0528",
+        "Step 7": "ATE=-0.0528<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.05278683145357255
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3920。在市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3389。气压为低(A=0)的概率为0.7114。在市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3155。在市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.2633。气压为高(A=1)的概率为0.2886。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.3920; P(D=1|B=0,A=0)=0.3389; P(A=0)=0.7114; P(D=1|B=1,A=1)=0.3155; P(D=1|B=0,A=1)=0.2633; P(A=1)=0.2886; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果市场需求水平被改变为高，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=sum_{A} [P(D=1|B=1,A)*P(A)-P(D=1|B=0,A)*P(A)]=[P(D=1|B=1,A=0)*P(A=0)-P(D=1|B=0,A=0)*P(A=0)]+[P(D=1|B=1,A=1)*P(A=1)-P(D=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=1,A=0)=0.3920\tP(D=1|B=0,A=0)=0.3389\tP(A=0)=0.7114\tP(D=1|B=1,A=1)=0.3155\tP(D=1|B=0,A=1)=0.2633\tP(A=1)=0.2886",
+        "Step 6": "ATE=[0.3920*0.7114-0.3389*0.7114]+[0.3155*0.2886-0.2633*0.2886]=0.0528",
+        "Step 7": "ATE=0.0528>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.05278683145357238
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于市场需求水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为低，那么市场需求水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于市场需求水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为低，那么市场需求水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于市场需求水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为高，那么市场需求水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于市场需求水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为高，那么市场需求水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为低(C=0)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.5315。在血压为高(C=1)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.7093。市场需求水平为低(B=0)的概率为0.5027。在血压为低(C=0)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.4803。在血压为高(C=1)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6718。市场需求水平为高(B=1)的概率为0.4973。",
+        "data_info_math": "P(D=0|C=0,B=0)=0.5315; P(D=0|C=1,B=0)=0.7093; P(B=0)=0.5027; P(D=0|C=0,B=1)=0.4803; P(D=0|C=1,B=1)=0.6718; P(B=1)=0.4973; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为低，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ATE=P(D=0|do(C=0))-P(D=0|do(C=1))=sum_{B} [P(D=0|C=0,B)*P(B)-P(D=0|C=1,B)*P(B)]=[P(D=0|C=0,B=0)*P(B=0)-P(D=0|C=1,B=0)*P(B=0)]+[P(D=0|C=0,B=1)*P(B=1)-P(D=0|C=1,B=1)*P(B=1)]",
+        "Step 5": "P(D=0|C=0,B=0)=0.5315\tP(D=0|C=1,B=0)=0.7093\tP(B=0)=0.5027\tP(D=0|C=0,B=1)=0.4803\tP(D=0|C=1,B=1)=0.6718\tP(B=1)=0.4973",
+        "Step 6": "ATE=[0.5315*0.5027-0.7093*0.5027]+[0.4803*0.4973-0.6718*0.4973]=-0.1847",
+        "Step 7": "ATE=-0.1847<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.18467043524461507
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为低(C=0)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.4685。在血压为高(C=1)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.2907。市场需求水平为低(B=0)的概率为0.5027。在血压为低(C=0)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.5197。在血压为高(C=1)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3282。市场需求水平为高(B=1)的概率为0.4973。",
+        "data_info_math": "P(D=1|C=0,B=0)=0.4685; P(D=1|C=1,B=0)=0.2907; P(B=0)=0.5027; P(D=1|C=0,B=1)=0.5197; P(D=1|C=1,B=1)=0.3282; P(B=1)=0.4973; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为低，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ATE=P(D=1|do(C=0))-P(D=1|do(C=1))=sum_{B} [P(D=1|C=0,B)*P(B)-P(D=1|C=1,B)*P(B)]=[P(D=1|C=0,B=0)*P(B=0)-P(D=1|C=1,B=0)*P(B=0)]+[P(D=1|C=0,B=1)*P(B=1)-P(D=1|C=1,B=1)*P(B=1)]",
+        "Step 5": "P(D=1|C=0,B=0)=0.4685\tP(D=1|C=1,B=0)=0.2907\tP(B=0)=0.5027\tP(D=1|C=0,B=1)=0.5197\tP(D=1|C=1,B=1)=0.3282\tP(B=1)=0.4973",
+        "Step 6": "ATE=[0.4685*0.5027-0.2907*0.5027]+[0.5197*0.4973-0.3282*0.4973]=0.1847",
+        "Step 7": "ATE=0.1847>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.18467043524461507
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为高(C=1)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.7093。在血压为低(C=0)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.5315。市场需求水平为低(B=0)的概率为0.5027。在血压为高(C=1)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6718。在血压为低(C=0)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.4803。市场需求水平为高(B=1)的概率为0.4973。",
+        "data_info_math": "P(D=0|C=1,B=0)=0.7093; P(D=0|C=0,B=0)=0.5315; P(B=0)=0.5027; P(D=0|C=1,B=1)=0.6718; P(D=0|C=0,B=1)=0.4803; P(B=1)=0.4973; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为高，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ATE=P(D=0|do(C=1))-P(D=0|do(C=0))=sum_{B} [P(D=0|C=1,B)*P(B)-P(D=0|C=0,B)*P(B)]=[P(D=0|C=1,B=0)*P(B=0)-P(D=0|C=0,B=0)*P(B=0)]+[P(D=0|C=1,B=1)*P(B=1)-P(D=0|C=0,B=1)*P(B=1)]",
+        "Step 5": "P(D=0|C=1,B=0)=0.7093\tP(D=0|C=0,B=0)=0.5315\tP(B=0)=0.5027\tP(D=0|C=1,B=1)=0.6718\tP(D=0|C=0,B=1)=0.4803\tP(B=1)=0.4973",
+        "Step 6": "ATE=[0.7093*0.5027-0.5315*0.5027]+[0.6718*0.4973-0.4803*0.4973]=0.1847",
+        "Step 7": "ATE=0.1847>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.18467043524461507
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为高(C=1)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.2907。在血压为低(C=0)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.4685。市场需求水平为低(B=0)的概率为0.5027。在血压为高(C=1)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3282。在血压为低(C=0)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.5197。市场需求水平为高(B=1)的概率为0.4973。",
+        "data_info_math": "P(D=1|C=1,B=0)=0.2907; P(D=1|C=0,B=0)=0.4685; P(B=0)=0.5027; P(D=1|C=1,B=1)=0.3282; P(D=1|C=0,B=1)=0.5197; P(B=1)=0.4973; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为高，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ATE=P(D=1|do(C=1))-P(D=1|do(C=0))=sum_{B} [P(D=1|C=1,B)*P(B)-P(D=1|C=0,B)*P(B)]=[P(D=1|C=1,B=0)*P(B=0)-P(D=1|C=0,B=0)*P(B=0)]+[P(D=1|C=1,B=1)*P(B=1)-P(D=1|C=0,B=1)*P(B=1)]",
+        "Step 5": "P(D=1|C=1,B=0)=0.2907\tP(D=1|C=0,B=0)=0.4685\tP(B=0)=0.5027\tP(D=1|C=1,B=1)=0.3282\tP(D=1|C=0,B=1)=0.5197\tP(B=1)=0.4973",
+        "Step 6": "ATE=[0.2907*0.5027-0.4685*0.5027]+[0.3282*0.4973-0.5197*0.4973]=-0.1847",
+        "Step 7": "ATE=-0.1847<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.18467043524461507
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果交通拥堵水平被改变为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果交通拥堵水平被改变为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果交通拥堵水平被改变为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果交通拥堵水平被改变为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于市场需求水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果交通拥堵水平被改变为低，那么市场需求水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于市场需求水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果交通拥堵水平被改变为低，那么市场需求水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于市场需求水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果交通拥堵水平被改变为高，那么市场需求水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于市场需求水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果交通拥堵水平被改变为高，那么市场需求水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果交通拥堵水平被改变为低，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果交通拥堵水平被改变为低，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果交通拥堵水平被改变为高，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果交通拥堵水平被改变为高，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 市场需求水平为低(B=0)的概率为0.6148。在气压为高(A=1)的条件下, 市场需求水平为低(B=0)的概率为0.2263。",
+        "data_info_math": "P(B=0|A=0)=0.6148; P(B=0|A=1)=0.2263; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为低，那么市场需求水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.6148\tP(B=0|A=1)=0.2263",
+        "Step 6": "NDE=0.6148-0.2263=0.3885",
+        "Step 7": "NDE=0.3885>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.38851965143685296
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 市场需求水平为高(B=1)的概率为0.3852。在气压为高(A=1)的条件下, 市场需求水平为高(B=1)的概率为0.7737。",
+        "data_info_math": "P(B=1|A=0)=0.3852; P(B=1|A=1)=0.7737; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为低，那么市场需求水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.3852\tP(B=1|A=1)=0.7737",
+        "Step 6": "NDE=0.3852-0.7737=-0.3885",
+        "Step 7": "NDE=-0.3885<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.3885196514368529
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 市场需求水平为低(B=0)的概率为0.2263。在气压为低(A=0)的条件下, 市场需求水平为低(B=0)的概率为0.6148。",
+        "data_info_math": "P(B=0|A=1)=0.2263; P(B=0|A=0)=0.6148; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为高，那么市场需求水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.2263\tP(B=0|A=0)=0.6148",
+        "Step 6": "NDE=0.2263-0.6148=-0.3885",
+        "Step 7": "NDE=-0.3885<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.38851965143685296
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 市场需求水平为高(B=1)的概率为0.7737。在气压为低(A=0)的条件下, 市场需求水平为高(B=1)的概率为0.3852。",
+        "data_info_math": "P(B=1|A=1)=0.7737; P(B=1|A=0)=0.3852; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为高，那么市场需求水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.7737\tP(B=1|A=0)=0.3852",
+        "Step 6": "NDE=0.7737-0.3852=0.3885",
+        "Step 7": "NDE=0.3885>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.3885196514368529
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为低，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为低，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为高，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为高，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)的条件下, 血压为低(C=0)的概率为0.2161。在市场需求水平为高(B=1)的条件下, 血压为低(C=0)的概率为0.1539。",
+        "data_info_math": "P(C=0|B=0)=0.2161; P(C=0|B=1)=0.1539; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而市场需求水平变化为低，那么血压更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.2161\tP(C=0|B=1)=0.1539",
+        "Step 6": "NDE=0.2161-0.1539=0.0622",
+        "Step 7": "NDE=0.0622>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.06221665785969366
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)的条件下, 血压为高(C=1)的概率为0.7839。在市场需求水平为高(B=1)的条件下, 血压为高(C=1)的概率为0.8461。",
+        "data_info_math": "P(C=1|B=0)=0.7839; P(C=1|B=1)=0.8461; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而市场需求水平变化为低，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.7839\tP(C=1|B=1)=0.8461",
+        "Step 6": "NDE=0.7839-0.8461=-0.0622",
+        "Step 7": "NDE=-0.0622<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.06221665785969366
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1)的条件下, 血压为低(C=0)的概率为0.1539。在市场需求水平为低(B=0)的条件下, 血压为低(C=0)的概率为0.2161。",
+        "data_info_math": "P(C=0|B=1)=0.1539; P(C=0|B=0)=0.2161; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而市场需求水平变化为高，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.1539\tP(C=0|B=0)=0.2161",
+        "Step 6": "NDE=0.1539-0.2161=-0.0622",
+        "Step 7": "NDE=-0.0622<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.06221665785969366
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1)的条件下, 血压为高(C=1)的概率为0.8461。在市场需求水平为低(B=0)的条件下, 血压为高(C=1)的概率为0.7839。",
+        "data_info_math": "P(C=1|B=1)=0.8461; P(C=1|B=0)=0.7839; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而市场需求水平变化为高，那么血压更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.8461\tP(C=1|B=0)=0.7839",
+        "Step 6": "NDE=0.8461-0.7839=0.0622",
+        "Step 7": "NDE=0.0622>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.06221665785969366
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "气压为低(A=0)的概率为0.7114。在血压为低(C=0), 市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.5191。在血压为低(C=0), 市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.4429。在市场需求水平为高(B=1)且气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.1539。在血压为高(C=1), 市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.7000。在血压为高(C=1), 市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6381。在血压为低(C=0), 市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6122。在血压为低(C=0), 市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.5262。在市场需求水平为高(B=1)且气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.1539。在血压为高(C=1), 市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7720。在血压为高(C=1), 市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7133。",
+        "data_info_math": "P(A=0)=0.7114; P(D=0|C=0,B=0,A=0)=0.5191; P(D=0|C=0,B=1,A=0)=0.4429; P(C=0|B=1,A=0)=0.1539; P(D=0|C=1,B=0,A=0)=0.7000; P(D=0|C=1,B=1,A=0)=0.6381; P(D=0|C=0,B=0,A=1)=0.6122; P(D=0|C=0,B=1,A=1)=0.5262; P(C=0|B=1,A=1)=0.1539; P(D=0|C=1,B=0,A=1)=0.7720; P(D=0|C=1,B=1,A=1)=0.7133; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而市场需求水平变化为低，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{C}sum_{A} [P(D=0|B=0,C,A)-P(D=0|B=1,C,A)]*P(C|B=1,A)*P(A)=[P(D=0|B=0,C=0,A=0) - P(D=0|B=1,C=0,A=0)]*P(C=0|B=1,A=0)*P(A=0)+[P(D=0|B=0,C=1,A=0) - P(D=0|B=1,C=1,A=0)]*P(C=1|B=1,A=0)*P(A=0)+[P(D=0|B=0,C=0,A=1) - P(D=0|B=1,C=0,A=1)]*P(C=0|B=1,A=1)*P(A=1)+[P(D=0|B=0,C=1,A=1) - P(D=0|B=1,C=1,A=1)]*P(C=1|B=1,A=1)*P(A=1)",
+        "Step 5": "P(D=0|B=0,C=0,A=0)=0.5191\tP(D=0|B=1,C=0,A=0)=0.4429\tP(C=0|B=1,A=0)=0.1539\tP(A=0)=0.7114\tP(D=0|B=0,C=1,A=0)=0.7000\tP(D=0|B=1,C=1,A=0)=0.6381\tP(C=1|B=1,A=0)=0.8461\tP(A=0)=0.7114\tP(D=0|B=0,C=0,A=1)=0.6122\tP(D=0|B=1,C=0,A=1)=0.5262\tP(C=0|B=1,A=1)=0.1539\tP(A=1)=0.2886\tP(D=0|B=0,C=1,A=1)=0.7720\tP(D=0|B=1,C=1,A=1)=0.7133\tP(C=1|B=1,A=1)=0.8461\tP(A=1)=0.2886",
+        "Step 6": "NDE=(0.5191-0.4429)*0.1539*0.7114+(0.7000-0.6381)*0.8461*0.7114+(0.6122-0.5262)*0.1539*0.2886+(0.7720-0.7133)*0.8461*0.2886=0.0638",
+        "Step 7": "NDE=0.0638>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.06379440813184778
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "气压为低(A=0)的概率为0.7114。在血压为低(C=0), 市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.4809。在血压为低(C=0), 市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.5571。在市场需求水平为高(B=1)且气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.1539。在血压为高(C=1), 市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3000。在血压为高(C=1), 市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3619。在血压为低(C=0), 市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3878。在血压为低(C=0), 市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.4738。在市场需求水平为高(B=1)且气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.1539。在血压为高(C=1), 市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.2280。在血压为高(C=1), 市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.2867。",
+        "data_info_math": "P(A=0)=0.7114; P(D=1|C=0,B=0,A=0)=0.4809; P(D=1|C=0,B=1,A=0)=0.5571; P(C=0|B=1,A=0)=0.1539; P(D=1|C=1,B=0,A=0)=0.3000; P(D=1|C=1,B=1,A=0)=0.3619; P(D=1|C=0,B=0,A=1)=0.3878; P(D=1|C=0,B=1,A=1)=0.4738; P(C=0|B=1,A=1)=0.1539; P(D=1|C=1,B=0,A=1)=0.2280; P(D=1|C=1,B=1,A=1)=0.2867; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而市场需求水平变化为低，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{C}sum_{A} [P(D=1|B=0,C,A)-P(D=1|B=1,C,A)]*P(C|B=1,A)*P(A)=[P(D=1|B=0,C=0,A=0) - P(D=1|B=1,C=0,A=0)]*P(C=0|B=1,A=0)*P(A=0)+[P(D=1|B=0,C=1,A=0) - P(D=1|B=1,C=1,A=0)]*P(C=1|B=1,A=0)*P(A=0)+[P(D=1|B=0,C=0,A=1) - P(D=1|B=1,C=0,A=1)]*P(C=0|B=1,A=1)*P(A=1)+[P(D=1|B=0,C=1,A=1) - P(D=1|B=1,C=1,A=1)]*P(C=1|B=1,A=1)*P(A=1)",
+        "Step 5": "P(D=1|B=0,C=0,A=0)=0.4809\tP(D=1|B=1,C=0,A=0)=0.5571\tP(C=0|B=1,A=0)=0.1539\tP(A=0)=0.7114\tP(D=1|B=0,C=1,A=0)=0.3000\tP(D=1|B=1,C=1,A=0)=0.3619\tP(C=1|B=1,A=0)=0.8461\tP(A=0)=0.7114\tP(D=1|B=0,C=0,A=1)=0.3878\tP(D=1|B=1,C=0,A=1)=0.4738\tP(C=0|B=1,A=1)=0.1539\tP(A=1)=0.2886\tP(D=1|B=0,C=1,A=1)=0.2280\tP(D=1|B=1,C=1,A=1)=0.2867\tP(C=1|B=1,A=1)=0.8461\tP(A=1)=0.2886",
+        "Step 6": "NDE=(0.4809-0.5571)*0.1539*0.7114+(0.3000-0.3619)*0.8461*0.7114+(0.3878-0.4738)*0.1539*0.2886+(0.2280-0.2867)*0.8461*0.2886=-0.0638",
+        "Step 7": "NDE=-0.0638<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.06379440813184789
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "气压为低(A=0)的概率为0.7114。在血压为低(C=0), 市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.4429。在血压为低(C=0), 市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.5191。在市场需求水平为低(B=0)且气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.2154。在血压为高(C=1), 市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6381。在血压为高(C=1), 市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.7000。在血压为低(C=0), 市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.5262。在血压为低(C=0), 市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6122。在市场需求水平为低(B=0)且气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.2211。在血压为高(C=1), 市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7133。在血压为高(C=1), 市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7720。",
+        "data_info_math": "P(A=0)=0.7114; P(D=0|C=0,B=1,A=0)=0.4429; P(D=0|C=0,B=0,A=0)=0.5191; P(C=0|B=0,A=0)=0.2154; P(D=0|C=1,B=1,A=0)=0.6381; P(D=0|C=1,B=0,A=0)=0.7000; P(D=0|C=0,B=1,A=1)=0.5262; P(D=0|C=0,B=0,A=1)=0.6122; P(C=0|B=0,A=1)=0.2211; P(D=0|C=1,B=1,A=1)=0.7133; P(D=0|C=1,B=0,A=1)=0.7720; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而市场需求水平变化为高，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{C}sum_{A} [P(D=0|B=1,C,A)-P(D=0|B=0,C,A)]*P(C|B=0,A)*P(A)=[P(D=0|B=1,C=0,A=0) - P(D=0|B=0,C=0,A=0)]*P(C=0|B=0,A=0)*P(A=0)+[P(D=0|B=1,C=1,A=0) - P(D=0|B=0,C=1,A=0)]*P(C=1|B=0,A=0)*P(A=0)+[P(D=0|B=1,C=0,A=1) - P(D=0|B=0,C=0,A=1)]*P(C=0|B=0,A=1)*P(A=1)+[P(D=0|B=1,C=1,A=1) - P(D=0|B=0,C=1,A=1)]*P(C=1|B=0,A=1)*P(A=1)",
+        "Step 5": "P(D=0|B=1,C=0,A=0)=0.4429\tP(D=0|B=0,C=0,A=0)=0.5191\tP(C=0|B=0,A=0)=0.2154\tP(A=0)=0.7114\tP(D=0|B=1,C=1,A=0)=0.6381\tP(D=0|B=0,C=1,A=0)=0.7000\tP(C=1|B=0,A=0)=0.7846\tP(A=0)=0.7114\tP(D=0|B=1,C=0,A=1)=0.5262\tP(D=0|B=0,C=0,A=1)=0.6122\tP(C=0|B=0,A=1)=0.2211\tP(A=1)=0.2886\tP(D=0|B=1,C=1,A=1)=0.7133\tP(D=0|B=0,C=1,A=1)=0.7720\tP(C=1|B=0,A=1)=0.7789\tP(A=1)=0.2886",
+        "Step 6": "NDE=(0.4429-0.5191)*0.2154*0.7114+(0.6381-0.7000)*0.7846*0.7114+(0.5262-0.6122)*0.2211*0.2886+(0.7133-0.7720)*0.7789*0.2886=-0.0649",
+        "Step 7": "NDE=-0.0649<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.06494822329210741
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "气压为低(A=0)的概率为0.7114。在血压为低(C=0), 市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.5571。在血压为低(C=0), 市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.4809。在市场需求水平为低(B=0)且气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.2154。在血压为高(C=1), 市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3619。在血压为高(C=1), 市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3000。在血压为低(C=0), 市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.4738。在血压为低(C=0), 市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3878。在市场需求水平为低(B=0)且气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.2211。在血压为高(C=1), 市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.2867。在血压为高(C=1), 市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.2280。",
+        "data_info_math": "P(A=0)=0.7114; P(D=1|C=0,B=1,A=0)=0.5571; P(D=1|C=0,B=0,A=0)=0.4809; P(C=0|B=0,A=0)=0.2154; P(D=1|C=1,B=1,A=0)=0.3619; P(D=1|C=1,B=0,A=0)=0.3000; P(D=1|C=0,B=1,A=1)=0.4738; P(D=1|C=0,B=0,A=1)=0.3878; P(C=0|B=0,A=1)=0.2211; P(D=1|C=1,B=1,A=1)=0.2867; P(D=1|C=1,B=0,A=1)=0.2280; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而市场需求水平变化为高，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{C}sum_{A} [P(D=1|B=1,C,A)-P(D=1|B=0,C,A)]*P(C|B=0,A)*P(A)=[P(D=1|B=1,C=0,A=0) - P(D=1|B=0,C=0,A=0)]*P(C=0|B=0,A=0)*P(A=0)+[P(D=1|B=1,C=1,A=0) - P(D=1|B=0,C=1,A=0)]*P(C=1|B=0,A=0)*P(A=0)+[P(D=1|B=1,C=0,A=1) - P(D=1|B=0,C=0,A=1)]*P(C=0|B=0,A=1)*P(A=1)+[P(D=1|B=1,C=1,A=1) - P(D=1|B=0,C=1,A=1)]*P(C=1|B=0,A=1)*P(A=1)",
+        "Step 5": "P(D=1|B=1,C=0,A=0)=0.5571\tP(D=1|B=0,C=0,A=0)=0.4809\tP(C=0|B=0,A=0)=0.2154\tP(A=0)=0.7114\tP(D=1|B=1,C=1,A=0)=0.3619\tP(D=1|B=0,C=1,A=0)=0.3000\tP(C=1|B=0,A=0)=0.7846\tP(A=0)=0.7114\tP(D=1|B=1,C=0,A=1)=0.4738\tP(D=1|B=0,C=0,A=1)=0.3878\tP(C=0|B=0,A=1)=0.2211\tP(A=1)=0.2886\tP(D=1|B=1,C=1,A=1)=0.2867\tP(D=1|B=0,C=1,A=1)=0.2280\tP(C=1|B=0,A=1)=0.7789\tP(A=1)=0.2886",
+        "Step 6": "NDE=(0.5571-0.4809)*0.2154*0.7114+(0.3619-0.3000)*0.7846*0.7114+(0.4738-0.3878)*0.2211*0.2886+(0.2867-0.2280)*0.7789*0.2886=0.0649",
+        "Step 7": "NDE=0.0649>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.06494822329210749
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为低(C=0)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.5315。在血压为高(C=1)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.7093。市场需求水平为低(B=0)的概率为0.5027。在血压为低(C=0)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.4803。在血压为高(C=1)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6718。",
+        "data_info_math": "P(D=0|C=0,B=0)=0.5315; P(D=0|C=1,B=0)=0.7093; P(B=0)=0.5027; P(D=0|C=0,B=1)=0.4803; P(D=0|C=1,B=1)=0.6718; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而血压变化为低，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "NDE=sum_{B} [P(D=0|C=0,B)-P(D=0|C=1,B)]*P(B)=[P(D=0|C=0,B=0)-P(D=0|C=1,B=0)]*P(B=0)+[P(D=0|C=0,B=1)-P(D=0|C=1,B=1)]*P(B=1)",
+        "Step 5": "P(D=0|C=0,B=0)=0.5315\tP(D=0|C=1,B=0)=0.7093\tP(B=0)=0.5027\tP(D=0|C=0,B=1)=0.4803\tP(D=0|C=1,B=1)=0.6718\tP(B=1)=0.4973",
+        "Step 6": "NDE=[0.5315-0.7093]*0.5027+[0.4803-0.6718]*0.4973=-0.1847",
+        "Step 7": "NDE=-0.1847<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.18467043524461507
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为低(C=0)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.4685。在血压为高(C=1)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.2907。市场需求水平为低(B=0)的概率为0.5027。在血压为低(C=0)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.5197。在血压为高(C=1)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3282。",
+        "data_info_math": "P(D=1|C=0,B=0)=0.4685; P(D=1|C=1,B=0)=0.2907; P(B=0)=0.5027; P(D=1|C=0,B=1)=0.5197; P(D=1|C=1,B=1)=0.3282; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而血压变化为低，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "NDE=sum_{B} [P(D=1|C=0,B)-P(D=1|C=1,B)]*P(B)=[P(D=1|C=0,B=0)-P(D=1|C=1,B=0)]*P(B=0)+[P(D=1|C=0,B=1)-P(D=1|C=1,B=1)]*P(B=1)",
+        "Step 5": "P(D=1|C=0,B=0)=0.4685\tP(D=1|C=1,B=0)=0.2907\tP(B=0)=0.5027\tP(D=1|C=0,B=1)=0.5197\tP(D=1|C=1,B=1)=0.3282\tP(B=1)=0.4973",
+        "Step 6": "NDE=[0.4685-0.2907]*0.5027+[0.5197-0.3282]*0.4973=0.1847",
+        "Step 7": "NDE=0.1847>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.18467043524461504
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为高(C=1)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.7093。在血压为低(C=0)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.5315。市场需求水平为低(B=0)的概率为0.5027。在血压为高(C=1)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6718。在血压为低(C=0)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.4803。",
+        "data_info_math": "P(D=0|C=1,B=0)=0.7093; P(D=0|C=0,B=0)=0.5315; P(B=0)=0.5027; P(D=0|C=1,B=1)=0.6718; P(D=0|C=0,B=1)=0.4803; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而血压变化为高，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "NDE=sum_{B} [P(D=0|C=1,B)-P(D=0|C=0,B)]*P(B)=[P(D=0|C=1,B=0)-P(D=0|C=0,B=0)]*P(B=0)+[P(D=0|C=1,B=1)-P(D=0|C=0,B=1)]*P(B=1)",
+        "Step 5": "P(D=0|C=1,B=0)=0.7093\tP(D=0|C=0,B=0)=0.5315\tP(B=0)=0.5027\tP(D=0|C=1,B=1)=0.6718\tP(D=0|C=0,B=1)=0.4803\tP(B=1)=0.4973",
+        "Step 6": "NDE=[0.7093-0.5315]*0.5027+[0.6718-0.4803]*0.4973=0.1847",
+        "Step 7": "NDE=0.1847>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.18467043524461507
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为高(C=1)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.2907。在血压为低(C=0)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.4685。市场需求水平为低(B=0)的概率为0.5027。在血压为高(C=1)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3282。在血压为低(C=0)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.5197。",
+        "data_info_math": "P(D=1|C=1,B=0)=0.2907; P(D=1|C=0,B=0)=0.4685; P(B=0)=0.5027; P(D=1|C=1,B=1)=0.3282; P(D=1|C=0,B=1)=0.5197; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而血压变化为高，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "NDE=sum_{B} [P(D=1|C=1,B)-P(D=1|C=0,B)]*P(B)=[P(D=1|C=1,B=0)-P(D=1|C=0,B=0)]*P(B=0)+[P(D=1|C=1,B=1)-P(D=1|C=0,B=1)]*P(B=1)",
+        "Step 5": "P(D=1|C=1,B=0)=0.2907\tP(D=1|C=0,B=0)=0.4685\tP(B=0)=0.5027\tP(D=1|C=1,B=1)=0.3282\tP(D=1|C=0,B=1)=0.5197\tP(B=1)=0.4973",
+        "Step 6": "NDE=[0.2907-0.4685]*0.5027+[0.3282-0.5197]*0.4973=-0.1847",
+        "Step 7": "NDE=-0.1847<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.18467043524461504
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为低下的取值，那么市场需求水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为低下的取值，那么市场需求水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为高下的取值，那么市场需求水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为高下的取值，那么市场需求水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)且气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.2211。在气压为低(A=0)的条件下, 市场需求水平为低(B=0)的概率为0.6148。在气压为高(A=1)的条件下, 市场需求水平为低(B=0)的概率为0.2263。在市场需求水平为高(B=1)且气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.1539。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.2211; P(B=0|A=0)=0.6148; P(B=0|A=1)=0.2263; P(C=0|B=1,A=1)=0.1539; "
+      },
+      "Instruction": "考虑气压作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为低下的取值，那么血压更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=0|A=1,B=0)=0.2211\tP(B=0|A=0)=0.6148\tP(B=0|A=1)=0.2263\tP(C=0|A=1,B=1)=0.1539\tP(B=1|A=0)=0.3852\tP(B=1|A=1)=0.7737",
+        "Step 6": "NIE=0.2211*(0.6148-0.2263)+0.1539*(0.3852-0.7737)=0.0261",
+        "Step 7": "NIE=0.0261>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.026110693038582246
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)且气压为高(A=1)的条件下, 血压为高(C=1)的概率为0.7789。在气压为低(A=0)的条件下, 市场需求水平为低(B=0)的概率为0.6148。在气压为高(A=1)的条件下, 市场需求水平为低(B=0)的概率为0.2263。在市场需求水平为高(B=1)且气压为高(A=1)的条件下, 血压为高(C=1)的概率为0.8461。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.7789; P(B=0|A=0)=0.6148; P(B=0|A=1)=0.2263; P(C=1|B=1,A=1)=0.8461; "
+      },
+      "Instruction": "考虑气压作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为低下的取值，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=1|A=1,B=0)=0.7789\tP(B=0|A=0)=0.6148\tP(B=0|A=1)=0.2263\tP(C=1|A=1,B=1)=0.8461\tP(B=1|A=0)=0.3852\tP(B=1|A=1)=0.7737",
+        "Step 6": "NIE=0.7789*(0.6148-0.2263)+0.8461*(0.3852-0.7737)=-0.0261",
+        "Step 7": "NIE=-0.0261<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.026110693038582156
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)且气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.2154。在气压为高(A=1)的条件下, 市场需求水平为低(B=0)的概率为0.2263。在气压为低(A=0)的条件下, 市场需求水平为低(B=0)的概率为0.6148。在市场需求水平为高(B=1)且气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.1539。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.2154; P(B=0|A=1)=0.2263; P(B=0|A=0)=0.6148; P(C=0|B=1,A=0)=0.1539; "
+      },
+      "Instruction": "考虑气压作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为高下的取值，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=0|A=0,B=0)=0.2154\tP(B=0|A=1)=0.2263\tP(B=0|A=0)=0.6148\tP(C=0|A=0,B=1)=0.1539\tP(B=1|A=1)=0.7737\tP(B=1|A=0)=0.3852",
+        "Step 6": "NIE=0.2154*(0.2263-0.6148)+0.1539*(0.7737-0.3852)=-0.0239",
+        "Step 7": "NIE=-0.0239<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.02387126998761952
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)且气压为低(A=0)的条件下, 血压为高(C=1)的概率为0.7846。在气压为高(A=1)的条件下, 市场需求水平为低(B=0)的概率为0.2263。在气压为低(A=0)的条件下, 市场需求水平为低(B=0)的概率为0.6148。在市场需求水平为高(B=1)且气压为低(A=0)的条件下, 血压为高(C=1)的概率为0.8461。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.7846; P(B=0|A=1)=0.2263; P(B=0|A=0)=0.6148; P(C=1|B=1,A=0)=0.8461; "
+      },
+      "Instruction": "考虑气压作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为高下的取值，那么血压更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=1|A=0,B=0)=0.7846\tP(B=0|A=1)=0.2263\tP(B=0|A=0)=0.6148\tP(C=1|A=0,B=1)=0.8461\tP(B=1|A=1)=0.7737\tP(B=1|A=0)=0.3852",
+        "Step 6": "NIE=0.7846*(0.2263-0.6148)+0.8461*(0.7737-0.3852)=0.0239",
+        "Step 7": "NIE=0.0239>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.02387126998761946
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如市场需求水平保持不变，而所有中间变量被改变为当它们在市场需求水平变化为低下的取值，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如市场需求水平保持不变，而所有中间变量被改变为当它们在市场需求水平变化为低下的取值，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如市场需求水平保持不变，而所有中间变量被改变为当它们在市场需求水平变化为高下的取值，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如市场需求水平保持不变，而所有中间变量被改变为当它们在市场需求水平变化为高下的取值，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "气压为低(A=0)的概率为0.7114。在血压为低(C=0), 市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.4429。在市场需求水平为低(B=0)且气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.2154。在市场需求水平为高(B=1)且气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.1539。在血压为高(C=1), 市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6381。在血压为低(C=0), 市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.5262。在市场需求水平为低(B=0)且气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.2211。在市场需求水平为高(B=1)且气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.1539。在血压为高(C=1), 市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7133。",
+        "data_info_math": "P(A=0)=0.7114; P(D=0|C=0,B=1,A=0)=0.4429; P(C=0|B=0,A=0)=0.2154; P(C=0|B=1,A=0)=0.1539; P(D=0|C=1,B=1,A=0)=0.6381; P(D=0|C=0,B=1,A=1)=0.5262; P(C=0|B=0,A=1)=0.2211; P(C=0|B=1,A=1)=0.1539; P(D=0|C=1,B=1,A=1)=0.7133; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如市场需求水平保持不变，而所有中间变量被改变为当它们在市场需求水平变化为低下的取值，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=0|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=0|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,C=0,A=0)=0.4429\tP(C=0|B=0,A=0)=0.2154\tP(C=0|B=1,A=0)=0.1539\tP(A=0)=0.7114\tP(D=0|B=1,C=1,A=0)=0.6381\tP(C=1|B=0,A=0)=0.7846\tP(C=1|B=1,A=0)=0.8461\tP(A=0)=0.7114\tP(D=0|B=1,C=0,A=1)=0.5262\tP(C=0|B=0,A=1)=0.2211\tP(C=0|B=1,A=1)=0.1539\tP(A=1)=0.2886\tP(D=0|B=1,C=1,A=1)=0.7133\tP(C=1|B=0,A=1)=0.7789\tP(C=1|B=1,A=1)=0.8461\tP(A=1)=0.2886",
+        "Step 6": "NIE=0.4429*[0.2154-0.1539]*0.7114+0.6381*[0.7846-0.8461]*0.7114+0.5262*[0.2211-0.1539]*0.2886+0.7133*[0.7789-0.8461]*0.2886=-0.0122",
+        "Step 7": "NIE=-0.0122<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.012161391838534973
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "气压为低(A=0)的概率为0.7114。在血压为低(C=0), 市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.5571。在市场需求水平为低(B=0)且气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.2154。在市场需求水平为高(B=1)且气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.1539。在血压为高(C=1), 市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3619。在血压为低(C=0), 市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.4738。在市场需求水平为低(B=0)且气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.2211。在市场需求水平为高(B=1)且气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.1539。在血压为高(C=1), 市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.2867。",
+        "data_info_math": "P(A=0)=0.7114; P(D=1|C=0,B=1,A=0)=0.5571; P(C=0|B=0,A=0)=0.2154; P(C=0|B=1,A=0)=0.1539; P(D=1|C=1,B=1,A=0)=0.3619; P(D=1|C=0,B=1,A=1)=0.4738; P(C=0|B=0,A=1)=0.2211; P(C=0|B=1,A=1)=0.1539; P(D=1|C=1,B=1,A=1)=0.2867; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如市场需求水平保持不变，而所有中间变量被改变为当它们在市场需求水平变化为低下的取值，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=1|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=1|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,C=0,A=0)=0.5571\tP(C=0|B=0,A=0)=0.2154\tP(C=0|B=1,A=0)=0.1539\tP(A=0)=0.7114\tP(D=1|B=1,C=1,A=0)=0.3619\tP(C=1|B=0,A=0)=0.7846\tP(C=1|B=1,A=0)=0.8461\tP(A=0)=0.7114\tP(D=1|B=1,C=0,A=1)=0.4738\tP(C=0|B=0,A=1)=0.2211\tP(C=0|B=1,A=1)=0.1539\tP(A=1)=0.2886\tP(D=1|B=1,C=1,A=1)=0.2867\tP(C=1|B=0,A=1)=0.7789\tP(C=1|B=1,A=1)=0.8461\tP(A=1)=0.2886",
+        "Step 6": "NIE=0.5571*[0.2154-0.1539]*0.7114+0.3619*[0.7846-0.8461]*0.7114+0.4738*[0.2211-0.1539]*0.2886+0.2867*[0.7789-0.8461]*0.2886=0.0122",
+        "Step 7": "NIE=0.0122>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.012161391838535058
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "气压为低(A=0)的概率为0.7114。在血压为低(C=0), 市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.5191。在市场需求水平为高(B=1)且气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.1539。在市场需求水平为低(B=0)且气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.2154。在血压为高(C=1), 市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.7000。在血压为低(C=0), 市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6122。在市场需求水平为高(B=1)且气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.1539。在市场需求水平为低(B=0)且气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.2211。在血压为高(C=1), 市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7720。",
+        "data_info_math": "P(A=0)=0.7114; P(D=0|C=0,B=0,A=0)=0.5191; P(C=0|B=1,A=0)=0.1539; P(C=0|B=0,A=0)=0.2154; P(D=0|C=1,B=0,A=0)=0.7000; P(D=0|C=0,B=0,A=1)=0.6122; P(C=0|B=1,A=1)=0.1539; P(C=0|B=0,A=1)=0.2211; P(D=0|C=1,B=0,A=1)=0.7720; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如市场需求水平保持不变，而所有中间变量被改变为当它们在市场需求水平变化为高下的取值，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=0|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=0|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,C=0,A=0)=0.5191\tP(C=0|B=1,A=0)=0.1539\tP(C=0|B=0,A=0)=0.2154\tP(A=0)=0.7114\tP(D=0|B=0,C=1,A=0)=0.7000\tP(C=1|B=1,A=0)=0.8461\tP(C=1|B=0,A=0)=0.7846\tP(A=0)=0.7114\tP(D=0|B=0,C=0,A=1)=0.6122\tP(C=0|B=1,A=1)=0.1539\tP(C=0|B=0,A=1)=0.2211\tP(A=1)=0.2886\tP(D=0|B=0,C=1,A=1)=0.7720\tP(C=1|B=1,A=1)=0.8461\tP(C=1|B=0,A=1)=0.7789\tP(A=1)=0.2886",
+        "Step 6": "NIE=0.5191*[0.1539-0.2154]*0.7114+0.7000*[0.8461-0.7846]*0.7114+0.6122*[0.1539-0.2211]*0.2886+0.7720*[0.8461-0.7789]*0.2886=0.0110",
+        "Step 7": "NIE=0.0110>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.011007576678275352
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "气压为低(A=0)的概率为0.7114。在血压为低(C=0), 市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.4809。在市场需求水平为高(B=1)且气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.1539。在市场需求水平为低(B=0)且气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.2154。在血压为高(C=1), 市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3000。在血压为低(C=0), 市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3878。在市场需求水平为高(B=1)且气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.1539。在市场需求水平为低(B=0)且气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.2211。在血压为高(C=1), 市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.2280。",
+        "data_info_math": "P(A=0)=0.7114; P(D=1|C=0,B=0,A=0)=0.4809; P(C=0|B=1,A=0)=0.1539; P(C=0|B=0,A=0)=0.2154; P(D=1|C=1,B=0,A=0)=0.3000; P(D=1|C=0,B=0,A=1)=0.3878; P(C=0|B=1,A=1)=0.1539; P(C=0|B=0,A=1)=0.2211; P(D=1|C=1,B=0,A=1)=0.2280; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如市场需求水平保持不变，而所有中间变量被改变为当它们在市场需求水平变化为高下的取值，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=1|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=1|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,C=0,A=0)=0.4809\tP(C=0|B=1,A=0)=0.1539\tP(C=0|B=0,A=0)=0.2154\tP(A=0)=0.7114\tP(D=1|B=0,C=1,A=0)=0.3000\tP(C=1|B=1,A=0)=0.8461\tP(C=1|B=0,A=0)=0.7846\tP(A=0)=0.7114\tP(D=1|B=0,C=0,A=1)=0.3878\tP(C=0|B=1,A=1)=0.1539\tP(C=0|B=0,A=1)=0.2211\tP(A=1)=0.2886\tP(D=1|B=0,C=1,A=1)=0.2280\tP(C=1|B=1,A=1)=0.8461\tP(C=1|B=0,A=1)=0.7789\tP(A=1)=0.2886",
+        "Step 6": "NIE=0.4809*[0.1539-0.2154]*0.7114+0.3000*[0.8461-0.7846]*0.7114+0.3878*[0.1539-0.2211]*0.2886+0.2280*[0.8461-0.7789]*0.2886=-0.0110",
+        "Step 7": "NIE=-0.0110<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.011007576678275448
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如血压保持不变，而所有中间变量被改变为当它们在血压变化为低下的取值，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如血压保持不变，而所有中间变量被改变为当它们在血压变化为低下的取值，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如血压保持不变，而所有中间变量被改变为当它们在血压变化为高下的取值，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如血压保持不变，而所有中间变量被改变为当它们在血压变化为高下的取值，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 市场需求水平为低(B=0)的概率为0.6148。在气压为高(A=1)的条件下, 市场需求水平为低(B=0)的概率为0.2263。",
+        "data_info_math": "P(B=0|A=0)=0.6148; P(B=0|A=1)=0.2263; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么市场需求水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.6148\tP(B=0|A=1)=0.2263",
+        "Step 6": "ETT=0.6148-0.2263=0.3885",
+        "Step 7": "ETT=0.3885>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.38851965143685296
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 市场需求水平为高(B=1)的概率为0.3852。在气压为高(A=1)的条件下, 市场需求水平为高(B=1)的概率为0.7737。",
+        "data_info_math": "P(B=1|A=0)=0.3852; P(B=1|A=1)=0.7737; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么市场需求水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.3852\tP(B=1|A=1)=0.7737",
+        "Step 6": "ETT=0.3852-0.7737=-0.3885",
+        "Step 7": "ETT=-0.3885<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.3885196514368529
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 市场需求水平为低(B=0)的概率为0.2263。在气压为低(A=0)的条件下, 市场需求水平为低(B=0)的概率为0.6148。",
+        "data_info_math": "P(B=0|A=1)=0.2263; P(B=0|A=0)=0.6148; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么市场需求水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.2263\tP(B=0|A=0)=0.6148",
+        "Step 6": "ETT=0.2263-0.6148=-0.3885",
+        "Step 7": "ETT=-0.3885<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.38851965143685296
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 市场需求水平为高(B=1)的概率为0.7737。在气压为低(A=0)的条件下, 市场需求水平为高(B=1)的概率为0.3852。",
+        "data_info_math": "P(B=1|A=1)=0.7737; P(B=1|A=0)=0.3852; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么市场需求水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.7737\tP(B=1|A=0)=0.3852",
+        "Step 6": "ETT=0.7737-0.3852=0.3885",
+        "Step 7": "ETT=0.3885>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.3885196514368529
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.1917。在气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.1691。",
+        "data_info_math": "P(C=0|A=0)=0.1917; P(C=0|A=1)=0.1691; "
+      },
+      "Instruction": "考虑气压作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.1917\tP(C=0|A=1)=0.1691",
+        "Step 6": "ETT=0.1917-0.1691=0.0226",
+        "Step 7": "ETT=0.0226>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.022648537812209185
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 血压为高(C=1)的概率为0.8083。在气压为高(A=1)的条件下, 血压为高(C=1)的概率为0.8309。",
+        "data_info_math": "P(C=1|A=0)=0.8083; P(C=1|A=1)=0.8309; "
+      },
+      "Instruction": "考虑气压作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么血压更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.8083\tP(C=1|A=1)=0.8309",
+        "Step 6": "ETT=0.8083-0.8309=-0.0226",
+        "Step 7": "ETT=-0.0226<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.022648537812209102
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.1691。在气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.1917。",
+        "data_info_math": "P(C=0|A=1)=0.1691; P(C=0|A=0)=0.1917; "
+      },
+      "Instruction": "考虑气压作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么血压更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.1691\tP(C=0|A=0)=0.1917",
+        "Step 6": "ETT=0.1691-0.1917=-0.0226",
+        "Step 7": "ETT=-0.0226<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.022648537812209185
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 血压为高(C=1)的概率为0.8309。在气压为低(A=0)的条件下, 血压为高(C=1)的概率为0.8083。",
+        "data_info_math": "P(C=1|A=1)=0.8309; P(C=1|A=0)=0.8083; "
+      },
+      "Instruction": "考虑气压作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.8309\tP(C=1|A=0)=0.8083",
+        "Step 6": "ETT=0.8309-0.8083=0.0226",
+        "Step 7": "ETT=0.0226>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.022648537812209102
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6406。在气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6963。",
+        "data_info_math": "P(D=0|A=0)=0.6406; P(D=0|A=1)=0.6963; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6406\tP(D=0|A=1)=0.6963",
+        "Step 6": "ETT=0.6406-0.6963=-0.0557",
+        "Step 7": "ETT=-0.0557<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.055667860345331444
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3594。在气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3037。",
+        "data_info_math": "P(D=1|A=0)=0.3594; P(D=1|A=1)=0.3037; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3594\tP(D=1|A=1)=0.3037",
+        "Step 6": "ETT=0.3594-0.3037=0.0557",
+        "Step 7": "ETT=0.0557>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.055667860345331444
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6963。在气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6406。",
+        "data_info_math": "P(D=0|A=1)=0.6963; P(D=0|A=0)=0.6406; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.6963\tP(D=0|A=0)=0.6406",
+        "Step 6": "ETT=0.6963-0.6406=0.0557",
+        "Step 7": "ETT=0.0557>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.055667860345331444
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3037。在气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3594。",
+        "data_info_math": "P(D=1|A=1)=0.3037; P(D=1|A=0)=0.3594; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.3037\tP(D=1|A=0)=0.3594",
+        "Step 6": "ETT=0.3037-0.3594=-0.0557",
+        "Step 7": "ETT=-0.0557<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.055667860345331444
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑市场需求水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些市场需求水平为低，假如市场需求水平为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑市场需求水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些市场需求水平为低，假如市场需求水平为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑市场需求水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些市场需求水平为高，假如市场需求水平为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑市场需求水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些市场需求水平为高，假如市场需求水平为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)的条件下, 血压为低(C=0)的概率为0.2161。在市场需求水平为高(B=1)的条件下, 血压为低(C=0)的概率为0.1539。",
+        "data_info_math": "P(C=0|B=0)=0.2161; P(C=0|B=1)=0.1539; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些市场需求水平为低，假如市场需求水平为高，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.2161\tP(C=0|B=1)=0.1539",
+        "Step 6": "ETT=0.2161-0.1539=0.0622",
+        "Step 7": "ETT=0.0622>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.06221665785969366
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)的条件下, 血压为高(C=1)的概率为0.7839。在市场需求水平为高(B=1)的条件下, 血压为高(C=1)的概率为0.8461。",
+        "data_info_math": "P(C=1|B=0)=0.7839; P(C=1|B=1)=0.8461; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些市场需求水平为低，假如市场需求水平为高，那么血压更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.7839\tP(C=1|B=1)=0.8461",
+        "Step 6": "ETT=0.7839-0.8461=-0.0622",
+        "Step 7": "ETT=-0.0622<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.06221665785969366
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1)的条件下, 血压为低(C=0)的概率为0.1539。在市场需求水平为低(B=0)的条件下, 血压为低(C=0)的概率为0.2161。",
+        "data_info_math": "P(C=0|B=1)=0.1539; P(C=0|B=0)=0.2161; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些市场需求水平为高，假如市场需求水平为低，那么血压更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.1539\tP(C=0|B=0)=0.2161",
+        "Step 6": "ETT=0.1539-0.2161=-0.0622",
+        "Step 7": "ETT=-0.0622<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.06221665785969366
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1)的条件下, 血压为高(C=1)的概率为0.8461。在市场需求水平为低(B=0)的条件下, 血压为高(C=1)的概率为0.7839。",
+        "data_info_math": "P(C=1|B=1)=0.8461; P(C=1|B=0)=0.7839; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些市场需求水平为高，假如市场需求水平为低，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.8461\tP(C=1|B=0)=0.7839",
+        "Step 6": "ETT=0.8461-0.7839=0.0622",
+        "Step 7": "ETT=0.0622>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.06221665785969366
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6709。在气压为低(A=0)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6080。在市场需求水平为低(B=0)的条件下, 气压为低(A=0)的概率为0.8701。在气压为高(A=1)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6845。在市场需求水平为低(B=0)的条件下, 气压为高(A=1)的概率为0.1299。",
+        "data_info_math": "P(D=0|B=0)=0.6709; P(D=0|A=0,B=1)=0.6080; P(A=0|B=0)=0.8701; P(D=0|A=1,B=1)=0.6845; P(A=1|B=0)=0.1299; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些市场需求水平为低，假如市场需求水平为高，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-sum_{A} P(D=0|B=1,A)*P(A|B=0)=P(D=0|B=0)-[P(D=0|B=1,A=0)*P(A=0|B=0)+P(D=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=0|B=0)=0.6709\tP(D=0|B=1,A=0)=0.6080\tP(A=0|B=0)=0.8701\tP(D=0|B=1,A=1)=0.6845\tP(A=1|B=0)=0.1299",
+        "Step 6": "ETT=0.6709-[0.6080*0.8701+0.6845*0.1299]=0.0529",
+        "Step 7": "ETT=0.0529>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.05291945830837179
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3291。在气压为低(A=0)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3920。在市场需求水平为低(B=0)的条件下, 气压为低(A=0)的概率为0.8701。在气压为高(A=1)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3155。在市场需求水平为低(B=0)的条件下, 气压为高(A=1)的概率为0.1299。",
+        "data_info_math": "P(D=1|B=0)=0.3291; P(D=1|A=0,B=1)=0.3920; P(A=0|B=0)=0.8701; P(D=1|A=1,B=1)=0.3155; P(A=1|B=0)=0.1299; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些市场需求水平为低，假如市场需求水平为高，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-sum_{A} P(D=1|B=1,A)*P(A|B=0)=P(D=1|B=0)-[P(D=1|B=1,A=0)*P(A=0|B=0)+P(D=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=1|B=0)=0.3291\tP(D=1|B=1,A=0)=0.3920\tP(A=0|B=0)=0.8701\tP(D=1|B=1,A=1)=0.3155\tP(A=1|B=0)=0.1299",
+        "Step 6": "ETT=0.3291-[0.3920*0.8701+0.3155*0.1299]=-0.0529",
+        "Step 7": "ETT=-0.0529<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.05291945830837164
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6424。在气压为低(A=0)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6611。在市场需求水平为高(B=1)的条件下, 气压为低(A=0)的概率为0.5510。在气压为高(A=1)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.7367。在市场需求水平为高(B=1)的条件下, 气压为高(A=1)的概率为0.4490。",
+        "data_info_math": "P(D=0|B=1)=0.6424; P(D=0|A=0,B=0)=0.6611; P(A=0|B=1)=0.5510; P(D=0|A=1,B=0)=0.7367; P(A=1|B=1)=0.4490; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些市场需求水平为高，假如市场需求水平为低，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-sum_{A} P(D=0|B=0,A)*P(A|B=1)=P(D=0|B=1)-[P(D=0|B=0,A=0)*P(A=0|B=1)+P(D=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=0|B=1)=0.6424\tP(D=0|B=0,A=0)=0.6611\tP(A=0|B=1)=0.5510\tP(D=0|B=0,A=1)=0.7367\tP(A=1|B=1)=0.4490",
+        "Step 6": "ETT=0.6424-[0.6611*0.5510+0.7367*0.4490]=-0.0527",
+        "Step 7": "ETT=-0.0527<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.05265277517718997
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3576。在气压为低(A=0)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3389。在市场需求水平为高(B=1)的条件下, 气压为低(A=0)的概率为0.5510。在气压为高(A=1)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.2633。在市场需求水平为高(B=1)的条件下, 气压为高(A=1)的概率为0.4490。",
+        "data_info_math": "P(D=1|B=1)=0.3576; P(D=1|A=0,B=0)=0.3389; P(A=0|B=1)=0.5510; P(D=1|A=1,B=0)=0.2633; P(A=1|B=1)=0.4490; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些市场需求水平为高，假如市场需求水平为低，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-sum_{A} P(D=1|B=0,A)*P(A|B=1)=P(D=1|B=1)-[P(D=1|B=0,A=0)*P(A=0|B=1)+P(D=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=1|B=1)=0.3576\tP(D=1|B=0,A=0)=0.3389\tP(A=0|B=1)=0.5510\tP(D=1|B=0,A=1)=0.2633\tP(A=1|B=1)=0.4490",
+        "Step 6": "ETT=0.3576-[0.3389*0.5510+0.2633*0.4490]=0.0527",
+        "Step 7": "ETT=0.0527>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.05265277517719004
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为低，假如血压为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为低，假如血压为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为高，假如血压为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为高，假如血压为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于市场需求水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为低，假如血压为高，那么市场需求水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于市场需求水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为低，假如血压为高，那么市场需求水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于市场需求水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为高，假如血压为低，那么市场需求水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于市场需求水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为高，假如血压为低，那么市场需求水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为低(C=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.5103。在市场需求水平为低(B=0)且血压为高(C=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7093。在血压为低(C=0)的条件下, 市场需求水平为低(B=0)的概率为0.5867。在市场需求水平为高(B=1)且血压为高(C=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6718。在血压为低(C=0)的条件下, 市场需求水平为高(B=1)的概率为0.4133。",
+        "data_info_math": "P(D=0|C=0)=0.5103; P(D=0|B=0,C=1)=0.7093; P(B=0|C=0)=0.5867; P(D=0|B=1,C=1)=0.6718; P(B=1|C=0)=0.4133; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为低，假如血压为高，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=0|C=0)-sum_{B} P(D=0|C=1,B)*P(B|C=0)=P(D=0|C=0)-[P(D=0|C=1,B=0)*P(B=0|C=0)+P(D=0|C=1,B=1)*P(B=1|C=0)]",
+        "Step 5": "P(D=0|C=0)=0.5103\tP(D=0|C=1,B=0)=0.7093\tP(B=0|C=0)=0.5867\tP(D=0|C=1,B=1)=0.6718\tP(B=1|C=0)=0.4133",
+        "Step 6": "ETT=0.5103-[0.7093*0.5867+0.6718*0.4133]=-0.1835",
+        "Step 7": "ETT=-0.1835<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.18351662834756732
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为低(C=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.4897。在市场需求水平为低(B=0)且血压为高(C=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.2907。在血压为低(C=0)的条件下, 市场需求水平为低(B=0)的概率为0.5867。在市场需求水平为高(B=1)且血压为高(C=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3282。在血压为低(C=0)的条件下, 市场需求水平为高(B=1)的概率为0.4133。",
+        "data_info_math": "P(D=1|C=0)=0.4897; P(D=1|B=0,C=1)=0.2907; P(B=0|C=0)=0.5867; P(D=1|B=1,C=1)=0.3282; P(B=1|C=0)=0.4133; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为低，假如血压为高，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=1|C=0)-sum_{B} P(D=1|C=1,B)*P(B|C=0)=P(D=1|C=0)-[P(D=1|C=1,B=0)*P(B=0|C=0)+P(D=1|C=1,B=1)*P(B=1|C=0)]",
+        "Step 5": "P(D=1|C=0)=0.4897\tP(D=1|C=1,B=0)=0.2907\tP(B=0|C=0)=0.5867\tP(D=1|C=1,B=1)=0.3282\tP(B=1|C=0)=0.4133",
+        "Step 6": "ETT=0.4897-[0.2907*0.5867+0.3282*0.4133]=0.1835",
+        "Step 7": "ETT=0.1835>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.18351662834756718
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为高(C=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6900。在市场需求水平为低(B=0)且血压为低(C=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.5315。在血压为高(C=1)的条件下, 市场需求水平为低(B=0)的概率为0.4836。在市场需求水平为高(B=1)且血压为低(C=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.4803。在血压为高(C=1)的条件下, 市场需求水平为高(B=1)的概率为0.5164。",
+        "data_info_math": "P(D=0|C=1)=0.6900; P(D=0|B=0,C=0)=0.5315; P(B=0|C=1)=0.4836; P(D=0|B=1,C=0)=0.4803; P(B=1|C=1)=0.5164; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为高，假如血压为低，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=0|C=1)-sum_{B} P(D=0|C=0,B)*P(B|C=1)=P(D=0|C=1)-[P(D=0|C=0,B=0)*P(B=0|C=1)+P(D=0|C=0,B=1)*P(B=1|C=1)]",
+        "Step 5": "P(D=0|C=1)=0.6900\tP(D=0|C=0,B=0)=0.5315\tP(B=0|C=1)=0.4836\tP(D=0|C=0,B=1)=0.4803\tP(B=1|C=1)=0.5164",
+        "Step 6": "ETT=0.6900-[0.5315*0.4836+0.4803*0.5164]=0.1849",
+        "Step 7": "ETT=0.1849>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.18493265507377407
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为高(C=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3100。在市场需求水平为低(B=0)且血压为低(C=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.4685。在血压为高(C=1)的条件下, 市场需求水平为低(B=0)的概率为0.4836。在市场需求水平为高(B=1)且血压为低(C=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.5197。在血压为高(C=1)的条件下, 市场需求水平为高(B=1)的概率为0.5164。",
+        "data_info_math": "P(D=1|C=1)=0.3100; P(D=1|B=0,C=0)=0.4685; P(B=0|C=1)=0.4836; P(D=1|B=1,C=0)=0.5197; P(B=1|C=1)=0.5164; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为高，假如血压为低，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=1|C=1)-sum_{B} P(D=1|C=0,B)*P(B|C=1)=P(D=1|C=1)-[P(D=1|C=0,B=0)*P(B=0|C=1)+P(D=1|C=0,B=1)*P(B=1|C=1)]",
+        "Step 5": "P(D=1|C=1)=0.3100\tP(D=1|C=0,B=0)=0.4685\tP(B=0|C=1)=0.4836\tP(D=1|C=0,B=1)=0.5197\tP(B=1|C=1)=0.5164",
+        "Step 6": "ETT=0.3100-[0.4685*0.4836+0.5197*0.5164]=-0.1849",
+        "Step 7": "ETT=-0.1849<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.18493265507377404
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些交通拥堵水平为低，假如交通拥堵水平为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些交通拥堵水平为低，假如交通拥堵水平为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些交通拥堵水平为高，假如交通拥堵水平为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些交通拥堵水平为高，假如交通拥堵水平为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于市场需求水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些交通拥堵水平为低，假如交通拥堵水平为高，那么市场需求水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于市场需求水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些交通拥堵水平为低，假如交通拥堵水平为高，那么市场需求水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于市场需求水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些交通拥堵水平为高，假如交通拥堵水平为低，那么市场需求水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于市场需求水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些交通拥堵水平为高，假如交通拥堵水平为低，那么市场需求水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些交通拥堵水平为低，假如交通拥堵水平为高，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 133,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些交通拥堵水平为低，假如交通拥堵水平为高，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 134,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些交通拥堵水平为高，假如交通拥堵水平为低，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 135,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑交通拥堵水平作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些交通拥堵水平为高，假如交通拥堵水平为低，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 136,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于血压的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在市场需求水平为高的条件下，假如气压为低，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 137,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于血压的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在市场需求水平为高的条件下，假如气压为低，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 138,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于血压的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在市场需求水平为低的条件下，假如气压为高，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 139,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于血压的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在市场需求水平为低的条件下，假如气压为高，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 140,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0), 市场需求水平为高(B=1)且血压为高(C=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6381。在气压为高(A=1), 市场需求水平为高(B=1)且血压为高(C=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7133。",
+        "data_info_math": "P(D=0|A=0,B=1,C=1)=0.6381; P(D=0|A=1,B=1,C=1)=0.7133; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在市场需求水平为高且血压为高的条件下，假如气压为低，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=0,B=1,C=1))-P(D=0|do(A=1,B=1,C=1))=P(D=0|A=0,B=1,C=1)-P(D=0|A=1,B=1,C=1)",
+        "Step 5": "P(D=0|A=0,B=1,C=1)=0.6381\tP(D=0|A=1,B=1,C=1)=0.7133",
+        "Step 6": "CDE=0.6381-0.7133=-0.0752",
+        "Step 7": "CDE=-0.0752<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.07519138034553519
+    },
+    {
+      "id": 141,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0), 市场需求水平为高(B=1)且血压为低(C=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.5571。在气压为高(A=1), 市场需求水平为高(B=1)且血压为低(C=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.4738。",
+        "data_info_math": "P(D=1|A=0,B=1,C=0)=0.5571; P(D=1|A=1,B=1,C=0)=0.4738; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在市场需求水平为高且血压为低的条件下，假如气压为低，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=0,B=1,C=0))-P(D=1|do(A=1,B=1,C=0))=P(D=1|A=0,B=1,C=0)-P(D=1|A=1,B=1,C=0)",
+        "Step 5": "P(D=1|A=0,B=1,C=0)=0.5571\tP(D=1|A=1,B=1,C=0)=0.4738",
+        "Step 6": "CDE=0.5571-0.4738=0.0833",
+        "Step 7": "CDE=0.0833>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.08332933141462034
+    },
+    {
+      "id": 142,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1), 市场需求水平为低(B=0)且血压为高(C=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7720。在气压为低(A=0), 市场需求水平为低(B=0)且血压为高(C=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7000。",
+        "data_info_math": "P(D=0|A=1,B=0,C=1)=0.7720; P(D=0|A=0,B=0,C=1)=0.7000; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在市场需求水平为低且血压为高的条件下，假如气压为高，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=1,B=0,C=1))-P(D=0|do(A=0,B=0,C=1))=P(D=0|A=1,B=0,C=1)-P(D=0|A=0,B=0,C=1)",
+        "Step 5": "P(D=0|A=1,B=0,C=1)=0.7720\tP(D=0|A=0,B=0,C=1)=0.7000",
+        "Step 6": "CDE=0.7720-0.7000=0.0720",
+        "Step 7": "CDE=0.0720>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.07198926587593968
+    },
+    {
+      "id": 143,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1), 市场需求水平为低(B=0)且血压为低(C=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3878。在气压为低(A=0), 市场需求水平为低(B=0)且血压为低(C=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.4809。",
+        "data_info_math": "P(D=1|A=1,B=0,C=0)=0.3878; P(D=1|A=0,B=0,C=0)=0.4809; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在市场需求水平为低且血压为低的条件下，假如气压为高，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=1,B=0,C=0))-P(D=1|do(A=0,B=0,C=0))=P(D=1|A=1,B=0,C=0)-P(D=1|A=0,B=0,C=0)",
+        "Step 5": "P(D=1|A=1,B=0,C=0)=0.3878\tP(D=1|A=0,B=0,C=0)=0.4809",
+        "Step 6": "CDE=0.3878-0.4809=-0.0931",
+        "Step 7": "CDE=-0.0931<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.09308008539619239
+    },
+    {
+      "id": 144,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0), 血压为高(C=1)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.7000。在市场需求水平为高(B=1), 血压为高(C=1)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6381。气压为低(A=0)的概率为0.7114。在市场需求水平为低(B=0), 血压为高(C=1)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7720。在市场需求水平为高(B=1), 血压为高(C=1)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7133。气压为高(A=1)的概率为0.2886。",
+        "data_info_math": "P(D=0|B=0,C=1,A=0)=0.7000; P(D=0|B=1,C=1,A=0)=0.6381; P(A=0)=0.7114; P(D=0|B=0,C=1,A=1)=0.7720; P(D=0|B=1,C=1,A=1)=0.7133; P(A=1)=0.2886; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在血压为高的条件下，假如市场需求水平为低，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "CDE=P(D=0|do(B=0,C=1))-P(D=0|do(B=1,C=1))=sum_{A} [P(D=0|B=0,C=1,A)-P(D=0|B=1,C=1,A)]*P(A)=[P(D=0|B=0,C=1,A=0)-P(D=0|B=1,C=1,A=0)]*P(A=0)+[P(D=0|B=0,C=1,A=1)-P(D=0|B=1,C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,C=1,A=0)=0.7000\tP(A=0)=0.7114\tP(D=0|B=1,C=1,A=0)=0.6381\tP(D=0|B=0,C=1,A=1)=0.7720\tP(A=1)=0.2886\tP(D=0|B=1,C=1,A=1)=0.7133",
+        "Step 6": "CDE=[0.7000-0.6381]*0.7114+[0.7720-0.7133]*0.2886=0.0610",
+        "Step 7": "CDE=0.0610>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.06101778446908454
+    },
+    {
+      "id": 145,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0), 血压为低(C=0)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.4809。在市场需求水平为高(B=1), 血压为低(C=0)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.5571。气压为低(A=0)的概率为0.7114。在市场需求水平为低(B=0), 血压为低(C=0)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3878。在市场需求水平为高(B=1), 血压为低(C=0)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.4738。气压为高(A=1)的概率为0.2886。",
+        "data_info_math": "P(D=1|B=0,C=0,A=0)=0.4809; P(D=1|B=1,C=0,A=0)=0.5571; P(A=0)=0.7114; P(D=1|B=0,C=0,A=1)=0.3878; P(D=1|B=1,C=0,A=1)=0.4738; P(A=1)=0.2886; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在血压为低的条件下，假如市场需求水平为低，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "CDE=P(D=1|do(B=0,C=0))-P(D=1|do(B=1,C=0))=sum_{A} [P(D=1|B=0,C=0,A)-P(D=1|B=1,C=0,A)]*P(A)=[P(D=1|B=0,C=0,A=0)-P(D=1|B=1,C=0,A=0)]*P(A=0)+[P(D=1|B=0,C=0,A=1)-P(D=1|B=1,C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,C=0,A=0)=0.4809\tP(A=0)=0.7114\tP(D=1|B=1,C=0,A=0)=0.5571\tP(D=1|B=0,C=0,A=1)=0.3878\tP(A=1)=0.2886\tP(D=1|B=1,C=0,A=1)=0.4738",
+        "Step 6": "CDE=[0.4809-0.5571]*0.7114+[0.3878-0.4738]*0.2886=-0.0791",
+        "Step 7": "CDE=-0.0791<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.07905882133589101
+    },
+    {
+      "id": 146,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1), 血压为高(C=1)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6381。在市场需求水平为低(B=0), 血压为高(C=1)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.7000。气压为低(A=0)的概率为0.7114。在市场需求水平为高(B=1), 血压为高(C=1)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7133。在市场需求水平为低(B=0), 血压为高(C=1)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7720。气压为高(A=1)的概率为0.2886。",
+        "data_info_math": "P(D=0|B=1,C=1,A=0)=0.6381; P(D=0|B=0,C=1,A=0)=0.7000; P(A=0)=0.7114; P(D=0|B=1,C=1,A=1)=0.7133; P(D=0|B=0,C=1,A=1)=0.7720; P(A=1)=0.2886; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在血压为高的条件下，假如市场需求水平为高，那么交通拥堵水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "CDE=P(D=0|do(B=1,C=1))-P(D=0|do(B=0,C=1))=sum_{A} [P(D=0|B=1,C=1,A)-P(D=0|B=0,C=1,A)]*P(A)=[P(D=0|B=1,C=1,A=0)-P(D=0|B=0,C=1,A=0)]*P(A=0)+[P(D=0|B=1,C=1,A=1)-P(D=0|B=0,C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,C=1,A=0)=0.6381\tP(A=0)=0.7114\tP(D=0|B=0,C=1,A=0)=0.7000\tP(D=0|B=1,C=1,A=1)=0.7133\tP(A=1)=0.2886\tP(D=0|B=0,C=1,A=1)=0.7720",
+        "Step 6": "CDE=[0.6381-0.7000]*0.7114+[0.7133-0.7720]*0.2886=-0.0610",
+        "Step 7": "CDE=-0.0610<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.06101778446908454
+    },
+    {
+      "id": 147,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1), 血压为低(C=0)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.5571。在市场需求水平为低(B=0), 血压为低(C=0)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.4809。气压为低(A=0)的概率为0.7114。在市场需求水平为高(B=1), 血压为低(C=0)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.4738。在市场需求水平为低(B=0), 血压为低(C=0)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3878。气压为高(A=1)的概率为0.2886。",
+        "data_info_math": "P(D=1|B=1,C=0,A=0)=0.5571; P(D=1|B=0,C=0,A=0)=0.4809; P(A=0)=0.7114; P(D=1|B=1,C=0,A=1)=0.4738; P(D=1|B=0,C=0,A=1)=0.3878; P(A=1)=0.2886; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在血压为低的条件下，假如市场需求水平为高，那么交通拥堵水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "CDE=P(D=1|do(B=1,C=0))-P(D=1|do(B=0,C=0))=sum_{A} [P(D=1|B=1,C=0,A)-P(D=1|B=0,C=0,A)]*P(A)=[P(D=1|B=1,C=0,A=0)-P(D=1|B=0,C=0,A=0)]*P(A=0)+[P(D=1|B=1,C=0,A=1)-P(D=1|B=0,C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,C=0,A=0)=0.5571\tP(A=0)=0.7114\tP(D=1|B=0,C=0,A=0)=0.4809\tP(D=1|B=1,C=0,A=1)=0.4738\tP(A=1)=0.2886\tP(D=1|B=0,C=0,A=1)=0.3878",
+        "Step 6": "CDE=[0.5571-0.4809]*0.7114+[0.4738-0.3878]*0.2886=0.0791",
+        "Step 7": "CDE=0.0791>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.07905882133589101
+    },
+    {
+      "id": 148,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象气压(A)和观察节点市场需求水平(B)的后门调整集合。",
+      "Question": "方法1: 根据血压的情况，我们逐个研究气压和市场需求水平的关联。\n方法2：我们直接研究一般情况下气压和市场需求水平的关联。\n为了理解气压如何影响市场需求水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 149,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象气压(A)和观察节点市场需求水平(B)的后门调整集合。",
+      "Question": "方法1: 根据交通拥堵水平的情况，我们逐个研究气压和市场需求水平的关联。\n方法2：我们直接研究一般情况下气压和市场需求水平的关联。\n为了理解气压如何影响市场需求水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 150,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象气压(A)和观察节点血压(C)的后门调整集合。",
+      "Question": "方法1: 根据交通拥堵水平的情况，我们逐个研究气压和血压的关联。\n方法2：我们直接研究一般情况下气压和血压的关联。\n为了理解气压如何影响血压，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 151,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象气压(A)和观察节点血压(C)的后门调整集合。",
+      "Question": "方法1: 根据交通拥堵水平的情况，我们逐个研究气压和血压的关联。\n方法2：我们直接研究一般情况下气压和血压的关联。\n为了理解气压如何影响血压，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 152,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象气压(A)和观察节点交通拥堵水平(D)的后门调整集合。",
+      "Question": "方法1: 根据市场需求水平的情况，我们逐个研究气压和交通拥堵水平的关联。\n方法2：我们直接研究一般情况下气压和交通拥堵水平的关联。\n为了理解气压如何影响交通拥堵水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 153,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象气压(A)和观察节点交通拥堵水平(D)的后门调整集合。",
+      "Question": "方法1: 根据血压的情况，我们逐个研究气压和交通拥堵水平的关联。\n方法2：我们直接研究一般情况下气压和交通拥堵水平的关联。\n为了理解气压如何影响交通拥堵水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 154,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象市场需求水平(B)和观察节点血压(C)的后门调整集合。",
+      "Question": "方法1: 根据交通拥堵水平的情况，我们逐个研究市场需求水平和血压的关联。\n方法2：我们直接研究一般情况下市场需求水平和血压的关联。\n为了理解市场需求水平如何影响血压，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 155,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象市场需求水平(B)和观察节点血压(C)的后门调整集合。",
+      "Question": "方法1: 根据气压的情况，我们逐个研究市场需求水平和血压的关联。\n方法2：我们直接研究一般情况下市场需求水平和血压的关联。\n为了理解市场需求水平如何影响血压，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 156,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象市场需求水平(B)和观察节点交通拥堵水平(D)的后门调整集合。",
+      "Question": "方法1: 根据气压的情况，我们逐个研究市场需求水平和交通拥堵水平的关联。\n方法2：我们直接研究一般情况下市场需求水平和交通拥堵水平的关联。\n为了理解市场需求水平如何影响交通拥堵水平，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 157,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象市场需求水平(B)和观察节点交通拥堵水平(D)的后门调整集合。",
+      "Question": "方法1: 根据气压的情况，我们逐个研究市场需求水平和交通拥堵水平的关联。\n方法2：我们直接研究一般情况下市场需求水平和交通拥堵水平的关联。\n为了理解市场需求水平如何影响交通拥堵水平，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 158,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象血压(C)和观察节点交通拥堵水平(D)的后门调整集合。",
+      "Question": "方法1: 根据市场需求水平的情况，我们逐个研究血压和交通拥堵水平的关联。\n方法2：我们直接研究一般情况下血压和交通拥堵水平的关联。\n为了理解血压如何影响交通拥堵水平，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{B}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 159,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象血压(C)和观察节点交通拥堵水平(D)的后门调整集合。",
+      "Question": "方法1: 根据市场需求水平的情况，我们逐个研究血压和交通拥堵水平的关联。\n方法2：我们直接研究一般情况下血压和交通拥堵水平的关联。\n为了理解血压如何影响交通拥堵水平，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{B}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 160,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 市场需求水平为高(B=1)的概率为0.3852。市场需求水平为高(B=1)的概率为0.4973。气压为高(A=1)且市场需求水平为高(B=1)的概率为0.2233。",
+        "data_info_math": "P(B=1|A=0)=0.3852; P(B=1)=0.4973; P(A=1,B=1)=0.2233; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定气压为高且市场需求水平为高, 那么假如气压为低，此时市场需求水平为低的概率的下界是多少？",
+      "Answer": "0.5022",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.3852",
+        "Step 2": "PN的下界: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.4973-0.3852)/0.2233}\n=max{0, 0.5022}\n=0.5022"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.5021597357636269
+    },
+    {
+      "id": 161,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 市场需求水平为低(B=0)的概率为0.6148。气压为低(A=0)且市场需求水平为低(B=0)的概率为0.4374。气压为高(A=1)且市场需求水平为高(B=1)的概率为0.2233。",
+        "data_info_math": "P(B=0|A=0)=0.6148; P(A=0,B=0)=0.4374; P(A=1,B=1)=0.2233; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定气压为高且市场需求水平为高, 那么假如气压为低，此时市场需求水平为低的概率的上界是多少？",
+      "Answer": "0.7947",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.6148",
+        "Step 2": "PN的上界: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.6148-0.4374)/0.2233}\n=min{1, 0.7947}\n=0.7947"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.7946548100964231
+    },
+    {
+      "id": 162,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 血压为高(C=1)的概率为0.8083。血压为高(C=1)的概率为0.8148。气压为高(A=1)且血压为高(C=1)的概率为0.2398。",
+        "data_info_math": "P(C=1|A=0)=0.8083; P(C=1)=0.8148; P(A=1,C=1)=0.2398; "
+      },
+      "Instruction": "考虑气压作用于血压的必要性概率(probability of necessity, PN)。",
+      "Question": "给定气压为高且血压为高, 那么假如气压为低，此时血压为低的概率的下界是多少？",
+      "Answer": "0.0273",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.8083",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.8148-0.8083)/0.2398}\n=max{0, 0.0273}\n=0.0273"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.02725681268393914
+    },
+    {
+      "id": 163,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 血压为低(C=0)的概率为0.1917。气压为低(A=0)且血压为低(C=0)的概率为0.1364。气压为高(A=1)且血压为高(C=1)的概率为0.2398。",
+        "data_info_math": "P(C=0|A=0)=0.1917; P(A=0,C=0)=0.1364; P(A=1,C=1)=0.2398; "
+      },
+      "Instruction": "考虑气压作用于血压的必要性概率(probability of necessity, PN)。",
+      "Question": "给定气压为高且血压为高, 那么假如气压为低，此时血压为低的概率的上界是多少？",
+      "Answer": "0.2307",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.1917",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.1917-0.1364)/0.2398}\n=min{1, 0.2307}\n=0.2307"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.2307257920034859
+    },
+    {
+      "id": 164,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3594。交通拥堵水平为高(D=1)的概率为0.3433。气压为高(A=1)且交通拥堵水平为高(D=1)的概率为0.0877。",
+        "data_info_math": "P(D=1|A=0)=0.3594; P(D=1)=0.3433; P(A=1,D=1)=0.0877; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定气压为高且交通拥堵水平为高, 那么假如气压为低，此时交通拥堵水平为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.3594",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.3433-0.3594)/0.0877}\n=max{0, -0.1833}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 165,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6406。气压为低(A=0)且交通拥堵水平为低(D=0)的概率为0.4557。气压为高(A=1)且交通拥堵水平为高(D=1)的概率为0.0877。",
+        "data_info_math": "P(D=0|A=0)=0.6406; P(A=0,D=0)=0.4557; P(A=1,D=1)=0.0877; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定气压为高且交通拥堵水平为高, 那么假如气压为低，此时交通拥堵水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.6406",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.6406-0.4557)/0.0877}\n=min{1, 2.1094}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 166,
+      "question_id": 160,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)的条件下, 血压为高(C=1)的概率为0.7839。血压为高(C=1)的概率为0.8148。市场需求水平为高(B=1)且血压为高(C=1)的概率为0.4208。",
+        "data_info_math": "P(C=1|B=0)=0.7839; P(C=1)=0.8148; P(B=1,C=1)=0.4208; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的必要性概率(probability of necessity, PN)。",
+      "Question": "给定市场需求水平为高且血压为高, 那么假如市场需求水平为低，此时血压为低的概率的下界是多少？",
+      "Answer": "0.0735",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=P(C=1|B=0)=0.7839",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.8148-0.7839)/0.4208}\n=max{0, 0.0735}\n=0.0735"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.07353388537188754
+    },
+    {
+      "id": 167,
+      "question_id": 161,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)的条件下, 血压为低(C=0)的概率为0.2161。市场需求水平为低(B=0)且血压为低(C=0)的概率为0.1086。市场需求水平为高(B=1)且血压为高(C=1)的概率为0.4208。",
+        "data_info_math": "P(C=0|B=0)=0.2161; P(B=0,C=0)=0.1086; P(B=1,C=1)=0.4208; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的必要性概率(probability of necessity, PN)。",
+      "Question": "给定市场需求水平为高且血压为高, 那么假如市场需求水平为低，此时血压为低的概率的上界是多少？",
+      "Answer": "0.2554",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=P(C=0|B=0)=0.2161",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.2161-0.1086)/0.4208}\n=min{1, 0.2554}\n=0.2554"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.255434165803467
+    },
+    {
+      "id": 168,
+      "question_id": 162,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3389。气压为低(A=0)的概率为0.7114。在市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.2633。气压为高(A=1)的概率为0.2886。交通拥堵水平为高(D=1)的概率为0.3433。市场需求水平为高(B=1)且交通拥堵水平为高(D=1)的概率为0.1779。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3389; P(A=0)=0.7114; P(D=1|B=0,A=1)=0.2633; P(A=1)=0.2886; P(D=1)=0.3433; P(B=1,D=1)=0.1779; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定市场需求水平为高且交通拥堵水平为高, 那么假如市场需求水平为低，此时交通拥堵水平为低的概率的下界是多少？",
+      "Answer": "0.1472",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=sum_{A} P(D=1|B=0,A)*P(A)=P(D=1|B=0,A=0)*P(A=0)+P(D=1|B=0,A=1)*P(A=1)\nP(D=1|B=0,A=0)=0.3389\tP(A=0)=0.7114\tP(D=1|B=0,A=1)=0.2633\tP(A=1)=0.2886\nP(D=1|do(B=0))=0.3389*0.7114+0.2633*0.2886=0.3171",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.3433-0.3171)/0.1779}\n=max{0, 0.1472}\n=0.1472"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.14722409845451534
+    },
+    {
+      "id": 169,
+      "question_id": 163,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为低(B=0)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6611。气压为低(A=0)的概率为0.7114。在市场需求水平为低(B=0)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.7367。气压为高(A=1)的概率为0.2886。市场需求水平为低(B=0)且交通拥堵水平为低(D=0)的概率为0.3372。市场需求水平为高(B=1)且交通拥堵水平为高(D=1)的概率为0.1779。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6611; P(A=0)=0.7114; P(D=0|B=0,A=1)=0.7367; P(A=1)=0.2886; P(B=0,D=0)=0.3372; P(B=1,D=1)=0.1779; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定市场需求水平为高且交通拥堵水平为高, 那么假如市场需求水平为低，此时交通拥堵水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=sum_{A} P(D=0|B=0,A)*P(A)=P(D=0|B=0,A=0)*P(A=0)+P(D=0|B=0,A=1)*P(A=1)\nP(D=0|B=0,A=0)=0.6611\tP(A=0)=0.7114\tP(D=0|B=0,A=1)=0.7367\tP(A=1)=0.2886\nP(D=0|do(B=0))=0.6611*0.7114+0.7367*0.2886=0.6829",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.6829-0.3372)/0.1779}\n=min{1, 1.9434}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 170,
+      "question_id": 164,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为低(C=0)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.4685。市场需求水平为低(B=0)的概率为0.5027。在血压为低(C=0)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.5197。市场需求水平为高(B=1)的概率为0.4973。交通拥堵水平为高(D=1)的概率为0.3433。血压为高(C=1)且交通拥堵水平为高(D=1)的概率为0.2526。",
+        "data_info_math": "P(D=1|C=0,B=0)=0.4685; P(B=0)=0.5027; P(D=1|C=0,B=1)=0.5197; P(B=1)=0.4973; P(D=1)=0.3433; P(C=1,D=1)=0.2526; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定血压为高且交通拥堵水平为高, 那么假如血压为低，此时交通拥堵水平为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=0))\nP(D=1|do(C=0))=sum_{B} P(D=1|C=0,B)*P(B)=P(D=1|C=0,B=0)*P(B=0)+P(D=1|C=0,B=1)*P(B=1)\nP(D=1|C=0,B=0)=0.4685\tP(B=0)=0.5027\tP(D=1|C=0,B=1)=0.5197\tP(B=1)=0.4973\nP(D=1|do(C=0))=0.4685*0.5027+0.5197*0.4973=0.4940",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(C=0))]/P(C=1,D=1)}\n=max{0, (0.3433-0.4940)/0.2526}\n=max{0, -0.5965}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 171,
+      "question_id": 165,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为低(C=0)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.5315。市场需求水平为低(B=0)的概率为0.5027。在血压为低(C=0)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.4803。市场需求水平为高(B=1)的概率为0.4973。血压为低(C=0)且交通拥堵水平为低(D=0)的概率为0.0945。血压为高(C=1)且交通拥堵水平为高(D=1)的概率为0.2526。",
+        "data_info_math": "P(D=0|C=0,B=0)=0.5315; P(B=0)=0.5027; P(D=0|C=0,B=1)=0.4803; P(B=1)=0.4973; P(C=0,D=0)=0.0945; P(C=1,D=1)=0.2526; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定血压为高且交通拥堵水平为高, 那么假如血压为低，此时交通拥堵水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=0))\nP(D=0|do(C=0))=sum_{B} P(D=0|C=0,B)*P(B)=P(D=0|C=0,B=0)*P(B=0)+P(D=0|C=0,B=1)*P(B=1)\nP(D=0|C=0,B=0)=0.5315\tP(B=0)=0.5027\tP(D=0|C=0,B=1)=0.4803\tP(B=1)=0.4973\nP(D=0|do(C=0))=0.5315*0.5027+0.4803*0.4973=0.5060",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(C=0)-P(C=0,D=0)]/P(C=1,D=1)}\n=min{1, (0.5060-0.0945)/0.2526}\n=min{1, 1.6290}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 172,
+      "question_id": 166,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 市场需求水平为低(B=0)的概率为0.2263。市场需求水平为低(B=0)的概率为0.5027。气压为低(A=0)且市场需求水平为低(B=0)的概率为0.4374。",
+        "data_info_math": "P(B=0|A=1)=0.2263; P(B=0)=0.5027; P(A=0,B=0)=0.4374; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定气压为低且市场需求水平为低, 假如气压为高，此时市场需求水平为高的概率的下界是多少？",
+      "Answer": "0.6319",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.2263",
+        "Step 2": "PS的下界: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.5027-0.2263)/0.4374}\n=max{0, 0.6319}\n=0.6319"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.6319218475537766
+    },
+    {
+      "id": 173,
+      "question_id": 167,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 市场需求水平为高(B=1)的概率为0.7737。气压为低(A=0)且市场需求水平为低(B=0)的概率为0.4374。气压为高(A=1)且市场需求水平为高(B=1)的概率为0.2233。",
+        "data_info_math": "P(B=1|A=1)=0.7737; P(A=0,B=0)=0.4374; P(A=1,B=1)=0.2233; "
+      },
+      "Instruction": "考虑气压作用于市场需求水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定气压为低且市场需求水平为低, 假如气压为高，此时市场需求水平为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.7737",
+        "Step 2": "PS的上界: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.7737-0.2233)/0.4374}\n=min{1, 1.2584}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 174,
+      "question_id": 168,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 血压为低(C=0)的概率为0.1691。血压为低(C=0)的概率为0.1852。气压为低(A=0)且血压为低(C=0)的概率为0.1364。",
+        "data_info_math": "P(C=0|A=1)=0.1691; P(C=0)=0.1852; P(A=0,C=0)=0.1364; "
+      },
+      "Instruction": "考虑气压作用于血压的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定气压为低且血压为低, 假如气压为高，此时血压为高的概率的下界是多少？",
+      "Answer": "0.1181",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.1691",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.1852-0.1691)/0.1364}\n=max{0, 0.1181}\n=0.1181"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.11813509208163323
+    },
+    {
+      "id": 175,
+      "question_id": 169,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 血压为高(C=1)的概率为0.8309。气压为低(A=0)且血压为低(C=0)的概率为0.1364。气压为高(A=1)且血压为高(C=1)的概率为0.2398。",
+        "data_info_math": "P(C=1|A=1)=0.8309; P(A=0,C=0)=0.1364; P(A=1,C=1)=0.2398; "
+      },
+      "Instruction": "考虑气压作用于血压的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定气压为低且血压为低, 假如气压为高，此时血压为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.8309",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.8309-0.2398)/0.1364}\n=min{1, 4.3341}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 176,
+      "question_id": 170,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6963。交通拥堵水平为低(D=0)的概率为0.6567。气压为低(A=0)且交通拥堵水平为低(D=0)的概率为0.4557。",
+        "data_info_math": "P(D=0|A=1)=0.6963; P(D=0)=0.6567; P(A=0,D=0)=0.4557; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定气压为低且交通拥堵水平为低, 假如气压为高，此时交通拥堵水平为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.6963",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.6567-0.6963)/0.4557}\n=max{0, -0.0869}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 177,
+      "question_id": 171,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3037。气压为低(A=0)且交通拥堵水平为低(D=0)的概率为0.4557。气压为高(A=1)且交通拥堵水平为高(D=1)的概率为0.0877。",
+        "data_info_math": "P(D=1|A=1)=0.3037; P(A=0,D=0)=0.4557; P(A=1,D=1)=0.0877; "
+      },
+      "Instruction": "考虑气压作用于交通拥堵水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定气压为低且交通拥堵水平为低, 假如气压为高，此时交通拥堵水平为高的概率的上界是多少？",
+      "Answer": "0.4741",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.3037",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.3037-0.0877)/0.4557}\n=min{1, 0.4741}\n=0.4741"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.47406326442715924
+    },
+    {
+      "id": 178,
+      "question_id": 172,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1)的条件下, 血压为低(C=0)的概率为0.1539。血压为低(C=0)的概率为0.1852。市场需求水平为低(B=0)且血压为低(C=0)的概率为0.1086。",
+        "data_info_math": "P(C=0|B=1)=0.1539; P(C=0)=0.1852; P(B=0,C=0)=0.1086; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定市场需求水平为低且血压为低, 假如市场需求水平为高，此时血压为高的概率的下界是多少？",
+      "Answer": "0.2879",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=P(C=0|B=1)=0.1539",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.1852-0.1539)/0.1086}\n=max{0, 0.2879}\n=0.2879"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.287878033623995
+    },
+    {
+      "id": 179,
+      "question_id": 173,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1)的条件下, 血压为高(C=1)的概率为0.8461。市场需求水平为低(B=0)且血压为低(C=0)的概率为0.1086。市场需求水平为高(B=1)且血压为高(C=1)的概率为0.4208。",
+        "data_info_math": "P(C=1|B=1)=0.8461; P(B=0,C=0)=0.1086; P(B=1,C=1)=0.4208; "
+      },
+      "Instruction": "考虑市场需求水平作用于血压的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定市场需求水平为低且血压为低, 假如市场需求水平为高，此时血压为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=P(C=1|B=1)=0.8461",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.8461-0.4208)/0.1086}\n=min{1, 3.9149}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 180,
+      "question_id": 174,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.6080。气压为低(A=0)的概率为0.7114。在市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6845。气压为高(A=1)的概率为0.2886。交通拥堵水平为低(D=0)的概率为0.6567。市场需求水平为低(B=0)且交通拥堵水平为低(D=0)的概率为0.3372。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.6080; P(A=0)=0.7114; P(D=0|B=1,A=1)=0.6845; P(A=1)=0.2886; P(D=0)=0.6567; P(B=0,D=0)=0.3372; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定市场需求水平为低且交通拥堵水平为低, 假如市场需求水平为高，此时交通拥堵水平为高的概率的下界是多少？",
+      "Answer": "0.0789",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=sum_{A} P(D=0|B=1,A)*P(A)=P(D=0|B=1,A=0)*P(A=0)+P(D=0|B=1,A=1)*P(A=1)\nP(D=0|B=1,A=0)=0.6080\tP(A=0)=0.7114\tP(D=0|B=1,A=1)=0.6845\tP(A=1)=0.2886\nP(D=0|do(B=1))=0.6080*0.7114+0.6845*0.2886=0.6301",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.6567-0.6301)/0.3372}\n=max{0, 0.0789}\n=0.0789"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.07888018414912906
+    },
+    {
+      "id": 181,
+      "question_id": 175,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在市场需求水平为高(B=1)且气压为低(A=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.3920。气压为低(A=0)的概率为0.7114。在市场需求水平为高(B=1)且气压为高(A=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3155。气压为高(A=1)的概率为0.2886。市场需求水平为低(B=0)且交通拥堵水平为低(D=0)的概率为0.3372。市场需求水平为高(B=1)且交通拥堵水平为高(D=1)的概率为0.1779。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.3920; P(A=0)=0.7114; P(D=1|B=1,A=1)=0.3155; P(A=1)=0.2886; P(B=0,D=0)=0.3372; P(B=1,D=1)=0.1779; "
+      },
+      "Instruction": "考虑市场需求水平作用于交通拥堵水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定市场需求水平为低且交通拥堵水平为低, 假如市场需求水平为高，此时交通拥堵水平为高的概率的上界是多少？",
+      "Answer": "0.5695",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=sum_{A} P(D=1|B=1,A)*P(A)=P(D=1|B=1,A=0)*P(A=0)+P(D=1|B=1,A=1)*P(A=1)\nP(D=1|B=1,A=0)=0.3920\tP(A=0)=0.7114\tP(D=1|B=1,A=1)=0.3155\tP(A=1)=0.2886\nP(D=1|do(B=1))=0.3920*0.7114+0.3155*0.2886=0.3699",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.3699-0.1779)/0.3372}\n=min{1, 0.5695}\n=0.5695"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.5694506977299616
+    },
+    {
+      "id": 182,
+      "question_id": 176,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为高(C=1)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为低(D=0)的概率为0.7093。市场需求水平为低(B=0)的概率为0.5027。在血压为高(C=1)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为低(D=0)的概率为0.6718。市场需求水平为高(B=1)的概率为0.4973。交通拥堵水平为低(D=0)的概率为0.6567。血压为低(C=0)且交通拥堵水平为低(D=0)的概率为0.0945。",
+        "data_info_math": "P(D=0|C=1,B=0)=0.7093; P(B=0)=0.5027; P(D=0|C=1,B=1)=0.6718; P(B=1)=0.4973; P(D=0)=0.6567; P(C=0,D=0)=0.0945; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定血压为低且交通拥堵水平为低, 假如血压为高，此时交通拥堵水平为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=1))\nP(D=0|do(C=1))=sum_{B} P(D=0|C=1,B)*P(B)=P(D=0|C=1,B=0)*P(B=0)+P(D=0|C=1,B=1)*P(B=1)\nP(D=0|C=1,B=0)=0.7093\tP(B=0)=0.5027\tP(D=0|C=1,B=1)=0.6718\tP(B=1)=0.4973\nP(D=0|do(C=1))=0.7093*0.5027+0.6718*0.4973=0.6907",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(C=1))]/P(C=0,D=0)}\n=max{0, (0.6567-0.6907)/0.0945}\n=max{0, -0.3596}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 183,
+      "question_id": 177,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表市场需求水平, C代表血压, D代表交通拥堵水平。",
+        "data_info": "在血压为高(C=1)且市场需求水平为低(B=0)的条件下, 交通拥堵水平为高(D=1)的概率为0.2907。市场需求水平为低(B=0)的概率为0.5027。在血压为高(C=1)且市场需求水平为高(B=1)的条件下, 交通拥堵水平为高(D=1)的概率为0.3282。市场需求水平为高(B=1)的概率为0.4973。血压为低(C=0)且交通拥堵水平为低(D=0)的概率为0.0945。血压为高(C=1)且交通拥堵水平为高(D=1)的概率为0.2526。",
+        "data_info_math": "P(D=1|C=1,B=0)=0.2907; P(B=0)=0.5027; P(D=1|C=1,B=1)=0.3282; P(B=1)=0.4973; P(C=0,D=0)=0.0945; P(C=1,D=1)=0.2526; "
+      },
+      "Instruction": "考虑血压作用于交通拥堵水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定血压为低且交通拥堵水平为低, 假如血压为高，此时交通拥堵水平为高的概率的上界是多少？",
+      "Answer": "0.6000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=1))\nP(D=1|do(C=1))=sum_{B} P(D=1|C=1,B)*P(B)=P(D=1|C=1,B=0)*P(B=0)+P(D=1|C=1,B=1)*P(B=1)\nP(D=1|C=1,B=0)=0.2907\tP(B=0)=0.5027\tP(D=1|C=1,B=1)=0.3282\tP(B=1)=0.4973\nP(D=1|do(C=1))=0.2907*0.5027+0.3282*0.4973=0.3093",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(C=1)-P(C=1,D=1)]/P(C=0,D=0)}\n=min{1, (0.3093-0.2526)/0.0945}\n=min{1, 0.6000}\n=0.6000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.5999618070116141
+    }
+  ]
+}

@@ -1,0 +1,3345 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->C",
+      "A->D",
+      "B->C"
+    ],
+    "node_name": {
+      "A": "amount of exercise done",
+      "B": "diet quality",
+      "C": "weight",
+      "D": "risk of developing heart disease"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "intense"
+      ],
+      "B": [
+        "poor",
+        "good"
+      ],
+      "C": [
+        "underweight",
+        "overweight"
+      ],
+      "D": [
+        "high",
+        "low"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {
+      "A->C": 1,
+      "A->D": 1,
+      "B->C": -1
+    },
+    "node_bias": {
+      "A": -0.3283622823002449,
+      "B": -1.8681119010521363,
+      "C": -0.0709759592941989,
+      "D": -0.7287339450431752
+    },
+    "edge_weight": {
+      "A->C": 2.7298851936613344,
+      "A->D": 1.2632333058283842,
+      "B->C": -0.5480133014431887
+    },
+    "function_description": "P(A=1)=0.4186\nP(B=1)=0.1338\nP(C=1|B,A)=sigmoid(-0.0709759592941989 + -0.5480 * B + 2.7299 * A)\nP(D=1|A)=sigmoid(-0.7287339450431752 + 1.2632 * A)\n",
+    "text_description": "The probability of amount of exercise done being intense (A=1) is 0.4186. \nThe probability of diet quality being good (B=1) is 0.1338. \nFor those with diet quality being poor (B=0) and amount of exercise done being little (A=0), the probability of weight being overweight (C=1) is 0.4823. \nFor those with diet quality being poor (B=0) and amount of exercise done being intense (A=1), the probability of weight being overweight (C=1) is 0.9346. \nFor those with diet quality being good (B=1) and amount of exercise done being little (A=0), the probability of weight being overweight (C=1) is 0.3500. \nFor those with diet quality being good (B=1) and amount of exercise done being intense (A=1), the probability of weight being overweight (C=1) is 0.8920. \nFor those with amount of exercise done being little (A=0), the probability of risk of developing heart disease being low (D=1) is 0.3255. \nFor those with amount of exercise done being intense (A=1), the probability of risk of developing heart disease being low (D=1) is 0.6305. \n",
+    "Statistic_data": [
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 10785
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 1653
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 3995
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 8273
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 6228
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 745
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 8729
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 4226
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 1576
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 796
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 949
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 181
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 885
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 421
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 431
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 127
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of amount of exercise done on diet quality.",
+      "Question": "If amount of exercise done is changed to be little, will diet quality be more likely to be poor?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is not a cause of node B because there is no directed path from A to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of amount of exercise done on diet quality.",
+      "Question": "If amount of exercise done is changed to be little, will diet quality be more likely to be good?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is not a cause of node B because there is no directed path from A to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of amount of exercise done on diet quality.",
+      "Question": "If amount of exercise done is changed to be intense, will diet quality be more likely to be poor?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is not a cause of node B because there is no directed path from A to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of amount of exercise done on diet quality.",
+      "Question": "If amount of exercise done is changed to be intense, will diet quality be more likely to be good?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is not a cause of node B because there is no directed path from A to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of weight being underweight (C=0) is 0.5302. For those with amount of exercise done being intense (A=1), the probability of weight being underweight (C=0) is 0.0704. ",
+        "data_info_math": "P(C=0|A=0)=0.5302; P(C=0|A=1)=0.0704; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of amount of exercise done on weight.",
+      "Question": "If amount of exercise done is changed to be little, will weight be more likely to be underweight?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.5302\tP(C=0|A=1)=0.0704",
+        "Step 6": "ATE=0.5302-0.0704=0.4599",
+        "Step 7": "ATE=0.4599>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.45985695886388206
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of weight being overweight (C=1) is 0.4698. For those with amount of exercise done being intense (A=1), the probability of weight being overweight (C=1) is 0.9296. ",
+        "data_info_math": "P(C=1|A=0)=0.4698; P(C=1|A=1)=0.9296; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of amount of exercise done on weight.",
+      "Question": "If amount of exercise done is changed to be little, will weight be more likely to be overweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.4698\tP(C=1|A=1)=0.9296",
+        "Step 6": "ATE=0.4698-0.9296=-0.4599",
+        "Step 7": "ATE=-0.4599<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.459856958863882
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of weight being underweight (C=0) is 0.0704. For those with amount of exercise done being little (A=0), the probability of weight being underweight (C=0) is 0.5302. ",
+        "data_info_math": "P(C=0|A=1)=0.0704; P(C=0|A=0)=0.5302; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of amount of exercise done on weight.",
+      "Question": "If amount of exercise done is changed to be intense, will weight be more likely to be underweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.0704\tP(C=0|A=0)=0.5302",
+        "Step 6": "ATE=0.0704-0.5302=-0.4599",
+        "Step 7": "ATE=-0.4599<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.45985695886388206
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of weight being overweight (C=1) is 0.9296. For those with amount of exercise done being little (A=0), the probability of weight being overweight (C=1) is 0.4698. ",
+        "data_info_math": "P(C=1|A=1)=0.9296; P(C=1|A=0)=0.4698; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of amount of exercise done on weight.",
+      "Question": "If amount of exercise done is changed to be intense, will weight be more likely to be overweight?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.9296\tP(C=1|A=0)=0.4698",
+        "Step 6": "ATE=0.9296-0.4698=0.4599",
+        "Step 7": "ATE=0.4599>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.459856958863882
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of risk of developing heart disease being high (D=0) is 0.6748. For those with amount of exercise done being intense (A=1), the probability of risk of developing heart disease being high (D=0) is 0.3657. ",
+        "data_info_math": "P(D=0|A=0)=0.6748; P(D=0|A=1)=0.3657; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of amount of exercise done on risk of developing heart disease.",
+      "Question": "If amount of exercise done is changed to be little, will risk of developing heart disease be more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6748\tP(D=0|A=1)=0.3657",
+        "Step 6": "ATE=0.6748-0.3657=0.3091",
+        "Step 7": "ATE=0.3091>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.30907492760014105
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of risk of developing heart disease being low (D=1) is 0.3252. For those with amount of exercise done being intense (A=1), the probability of risk of developing heart disease being low (D=1) is 0.6343. ",
+        "data_info_math": "P(D=1|A=0)=0.3252; P(D=1|A=1)=0.6343; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of amount of exercise done on risk of developing heart disease.",
+      "Question": "If amount of exercise done is changed to be little, will risk of developing heart disease be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3252\tP(D=1|A=1)=0.6343",
+        "Step 6": "ATE=0.3252-0.6343=-0.3091",
+        "Step 7": "ATE=-0.3091<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.30907492760014105
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of risk of developing heart disease being high (D=0) is 0.3657. For those with amount of exercise done being little (A=0), the probability of risk of developing heart disease being high (D=0) is 0.6748. ",
+        "data_info_math": "P(D=0|A=1)=0.3657; P(D=0|A=0)=0.6748; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of amount of exercise done on risk of developing heart disease.",
+      "Question": "If amount of exercise done is changed to be intense, will risk of developing heart disease be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.3657\tP(D=0|A=0)=0.6748",
+        "Step 6": "ATE=0.3657-0.6748=-0.3091",
+        "Step 7": "ATE=-0.3091<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.30907492760014105
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of risk of developing heart disease being low (D=1) is 0.6343. For those with amount of exercise done being little (A=0), the probability of risk of developing heart disease being low (D=1) is 0.3252. ",
+        "data_info_math": "P(D=1|A=1)=0.6343; P(D=1|A=0)=0.3252; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of amount of exercise done on risk of developing heart disease.",
+      "Question": "If amount of exercise done is changed to be intense, will risk of developing heart disease be more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.6343\tP(D=1|A=0)=0.3252",
+        "Step 6": "ATE=0.6343-0.3252=0.3091",
+        "Step 7": "ATE=0.3091>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.30907492760014105
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of diet quality on amount of exercise done.",
+      "Question": "If diet quality is changed to be poor, will amount of exercise done be more likely to be little?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of diet quality on amount of exercise done.",
+      "Question": "If diet quality is changed to be poor, will amount of exercise done be more likely to be intense?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of diet quality on amount of exercise done.",
+      "Question": "If diet quality is changed to be good, will amount of exercise done be more likely to be little?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of diet quality on amount of exercise done.",
+      "Question": "If diet quality is changed to be good, will amount of exercise done be more likely to be intense?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being poor (B=0), the probability of weight being underweight (C=0) is 0.3254. For those with diet quality being good (B=1), the probability of weight being underweight (C=0) is 0.4179. ",
+        "data_info_math": "P(C=0|B=0)=0.3254; P(C=0|B=1)=0.4179; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of diet quality on weight.",
+      "Question": "If diet quality is changed to be poor, will weight be more likely to be underweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is a cause of node C because there is one or more directed paths from B to C (e.g. B->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(B)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.3254\tP(C=0|B=1)=0.4179",
+        "Step 6": "ATE=0.3254-0.4179=-0.0925",
+        "Step 7": "ATE=-0.0925<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.09250022478196085
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being poor (B=0), the probability of weight being overweight (C=1) is 0.6746. For those with diet quality being good (B=1), the probability of weight being overweight (C=1) is 0.5821. ",
+        "data_info_math": "P(C=1|B=0)=0.6746; P(C=1|B=1)=0.5821; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of diet quality on weight.",
+      "Question": "If diet quality is changed to be poor, will weight be more likely to be overweight?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is a cause of node C because there is one or more directed paths from B to C (e.g. B->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(B)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.6746\tP(C=1|B=1)=0.5821",
+        "Step 6": "ATE=0.6746-0.5821=0.0925",
+        "Step 7": "ATE=0.0925>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.09250022478196085
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being good (B=1), the probability of weight being underweight (C=0) is 0.4179. For those with diet quality being poor (B=0), the probability of weight being underweight (C=0) is 0.3254. ",
+        "data_info_math": "P(C=0|B=1)=0.4179; P(C=0|B=0)=0.3254; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of diet quality on weight.",
+      "Question": "If diet quality is changed to be good, will weight be more likely to be underweight?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is a cause of node C because there is one or more directed paths from B to C (e.g. B->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(B)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.4179\tP(C=0|B=0)=0.3254",
+        "Step 6": "ATE=0.4179-0.3254=0.0925",
+        "Step 7": "ATE=0.0925>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.09250022478196085
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being good (B=1), the probability of weight being overweight (C=1) is 0.5821. For those with diet quality being poor (B=0), the probability of weight being overweight (C=1) is 0.6746. ",
+        "data_info_math": "P(C=1|B=1)=0.5821; P(C=1|B=0)=0.6746; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of diet quality on weight.",
+      "Question": "If diet quality is changed to be good, will weight be more likely to be overweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is a cause of node C because there is one or more directed paths from B to C (e.g. B->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(B)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.5821\tP(C=1|B=0)=0.6746",
+        "Step 6": "ATE=0.5821-0.6746=-0.0925",
+        "Step 7": "ATE=-0.0925<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.09250022478196085
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of diet quality on risk of developing heart disease.",
+      "Question": "If diet quality is changed to be poor, will risk of developing heart disease be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of diet quality on risk of developing heart disease.",
+      "Question": "If diet quality is changed to be poor, will risk of developing heart disease be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of diet quality on risk of developing heart disease.",
+      "Question": "If diet quality is changed to be good, will risk of developing heart disease be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of diet quality on risk of developing heart disease.",
+      "Question": "If diet quality is changed to be good, will risk of developing heart disease be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of weight on amount of exercise done.",
+      "Question": "If weight is changed to be underweight, will amount of exercise done be more likely to be little?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of weight on amount of exercise done.",
+      "Question": "If weight is changed to be underweight, will amount of exercise done be more likely to be intense?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of weight on amount of exercise done.",
+      "Question": "If weight is changed to be overweight, will amount of exercise done be more likely to be little?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of weight on amount of exercise done.",
+      "Question": "If weight is changed to be overweight, will amount of exercise done be more likely to be intense?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of weight on diet quality.",
+      "Question": "If weight is changed to be underweight, will diet quality be more likely to be poor?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of weight on diet quality.",
+      "Question": "If weight is changed to be underweight, will diet quality be more likely to be good?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of weight on diet quality.",
+      "Question": "If weight is changed to be overweight, will diet quality be more likely to be poor?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of weight on diet quality.",
+      "Question": "If weight is changed to be overweight, will diet quality be more likely to be good?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of weight on risk of developing heart disease.",
+      "Question": "If weight is changed to be underweight, will risk of developing heart disease be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of weight on risk of developing heart disease.",
+      "Question": "If weight is changed to be underweight, will risk of developing heart disease be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of weight on risk of developing heart disease.",
+      "Question": "If weight is changed to be overweight, will risk of developing heart disease be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of weight on risk of developing heart disease.",
+      "Question": "If weight is changed to be overweight, will risk of developing heart disease be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of risk of developing heart disease on amount of exercise done.",
+      "Question": "If risk of developing heart disease is changed to be high, will amount of exercise done be more likely to be little?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of risk of developing heart disease on amount of exercise done.",
+      "Question": "If risk of developing heart disease is changed to be high, will amount of exercise done be more likely to be intense?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of risk of developing heart disease on amount of exercise done.",
+      "Question": "If risk of developing heart disease is changed to be low, will amount of exercise done be more likely to be little?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of risk of developing heart disease on amount of exercise done.",
+      "Question": "If risk of developing heart disease is changed to be low, will amount of exercise done be more likely to be intense?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of risk of developing heart disease on diet quality.",
+      "Question": "If risk of developing heart disease is changed to be high, will diet quality be more likely to be poor?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of risk of developing heart disease on diet quality.",
+      "Question": "If risk of developing heart disease is changed to be high, will diet quality be more likely to be good?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of risk of developing heart disease on diet quality.",
+      "Question": "If risk of developing heart disease is changed to be low, will diet quality be more likely to be poor?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of risk of developing heart disease on diet quality.",
+      "Question": "If risk of developing heart disease is changed to be low, will diet quality be more likely to be good?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of risk of developing heart disease on weight.",
+      "Question": "If risk of developing heart disease is changed to be high, will weight be more likely to be underweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of risk of developing heart disease on weight.",
+      "Question": "If risk of developing heart disease is changed to be high, will weight be more likely to be overweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of risk of developing heart disease on weight.",
+      "Question": "If risk of developing heart disease is changed to be low, will weight be more likely to be underweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of risk of developing heart disease on weight.",
+      "Question": "If risk of developing heart disease is changed to be low, will weight be more likely to be overweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of weight being underweight (C=0) is 0.5302. For those with amount of exercise done being intense (A=1), the probability of weight being underweight (C=0) is 0.0704. ",
+        "data_info_math": "P(C=0|A=0)=0.5302; P(C=0|A=1)=0.0704; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of amount of exercise done on weight.",
+      "Question": "Suppose the mediator keeps constant when amount of exercise done is changed to be little, would the weight have been more likely to be underweight?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (C). The edge A->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.5302\tP(C=0|A=1)=0.0704",
+        "Step 6": "NDE=0.5302-0.0704=0.4599",
+        "Step 7": "NDE=0.4599>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.45985695886388206
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of weight being overweight (C=1) is 0.4698. For those with amount of exercise done being intense (A=1), the probability of weight being overweight (C=1) is 0.9296. ",
+        "data_info_math": "P(C=1|A=0)=0.4698; P(C=1|A=1)=0.9296; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of amount of exercise done on weight.",
+      "Question": "Suppose the mediator keeps constant when amount of exercise done is changed to be little, would the weight have been more likely to be overweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (C). The edge A->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.4698\tP(C=1|A=1)=0.9296",
+        "Step 6": "NDE=0.4698-0.9296=-0.4599",
+        "Step 7": "NDE=-0.4599<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.459856958863882
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of weight being underweight (C=0) is 0.0704. For those with amount of exercise done being little (A=0), the probability of weight being underweight (C=0) is 0.5302. ",
+        "data_info_math": "P(C=0|A=1)=0.0704; P(C=0|A=0)=0.5302; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of amount of exercise done on weight.",
+      "Question": "Suppose the mediator keeps constant when amount of exercise done is changed to be intense, would the weight have been more likely to be underweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (C). The edge A->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.0704\tP(C=0|A=0)=0.5302",
+        "Step 6": "NDE=0.0704-0.5302=-0.4599",
+        "Step 7": "NDE=-0.4599<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.45985695886388206
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of weight being overweight (C=1) is 0.9296. For those with amount of exercise done being little (A=0), the probability of weight being overweight (C=1) is 0.4698. ",
+        "data_info_math": "P(C=1|A=1)=0.9296; P(C=1|A=0)=0.4698; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of amount of exercise done on weight.",
+      "Question": "Suppose the mediator keeps constant when amount of exercise done is changed to be intense, would the weight have been more likely to be overweight?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (C). The edge A->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.9296\tP(C=1|A=0)=0.4698",
+        "Step 6": "NDE=0.9296-0.4698=0.4599",
+        "Step 7": "NDE=0.4599>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.459856958863882
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of risk of developing heart disease being high (D=0) is 0.6748. For those with amount of exercise done being intense (A=1), the probability of risk of developing heart disease being high (D=0) is 0.3657. ",
+        "data_info_math": "P(D=0|A=0)=0.6748; P(D=0|A=1)=0.3657; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of amount of exercise done on risk of developing heart disease.",
+      "Question": "Suppose the mediator keeps constant when amount of exercise done is changed to be little, would the risk of developing heart disease have been more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (D). The edge A->D exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6748\tP(D=0|A=1)=0.3657",
+        "Step 6": "NDE=0.6748-0.3657=0.3091",
+        "Step 7": "NDE=0.3091>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.30907492760014105
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of risk of developing heart disease being low (D=1) is 0.3252. For those with amount of exercise done being intense (A=1), the probability of risk of developing heart disease being low (D=1) is 0.6343. ",
+        "data_info_math": "P(D=1|A=0)=0.3252; P(D=1|A=1)=0.6343; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of amount of exercise done on risk of developing heart disease.",
+      "Question": "Suppose the mediator keeps constant when amount of exercise done is changed to be little, would the risk of developing heart disease have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (D). The edge A->D exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3252\tP(D=1|A=1)=0.6343",
+        "Step 6": "NDE=0.3252-0.6343=-0.3091",
+        "Step 7": "NDE=-0.3091<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.30907492760014105
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of risk of developing heart disease being high (D=0) is 0.3657. For those with amount of exercise done being little (A=0), the probability of risk of developing heart disease being high (D=0) is 0.6748. ",
+        "data_info_math": "P(D=0|A=1)=0.3657; P(D=0|A=0)=0.6748; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of amount of exercise done on risk of developing heart disease.",
+      "Question": "Suppose the mediator keeps constant when amount of exercise done is changed to be intense, would the risk of developing heart disease have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (D). The edge A->D exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.3657\tP(D=0|A=0)=0.6748",
+        "Step 6": "NDE=0.3657-0.6748=-0.3091",
+        "Step 7": "NDE=-0.3091<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.30907492760014105
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of risk of developing heart disease being low (D=1) is 0.6343. For those with amount of exercise done being little (A=0), the probability of risk of developing heart disease being low (D=1) is 0.3252. ",
+        "data_info_math": "P(D=1|A=1)=0.6343; P(D=1|A=0)=0.3252; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of amount of exercise done on risk of developing heart disease.",
+      "Question": "Suppose the mediator keeps constant when amount of exercise done is changed to be intense, would the risk of developing heart disease have been more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (D). The edge A->D exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.6343\tP(D=1|A=0)=0.3252",
+        "Step 6": "NDE=0.6343-0.3252=0.3091",
+        "Step 7": "NDE=0.3091>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.30907492760014105
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being poor (B=0), the probability of weight being underweight (C=0) is 0.3254. For those with diet quality being good (B=1), the probability of weight being underweight (C=0) is 0.4179. ",
+        "data_info_math": "P(C=0|B=0)=0.3254; P(C=0|B=1)=0.4179; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of diet quality on weight.",
+      "Question": "Suppose the mediator keeps constant when diet quality is changed to be poor, would the weight have been more likely to be underweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (B) to outcome (C). The edge B->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.3254\tP(C=0|B=1)=0.4179",
+        "Step 6": "NDE=0.3254-0.4179=-0.0925",
+        "Step 7": "NDE=-0.0925<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.09250022478196085
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being poor (B=0), the probability of weight being overweight (C=1) is 0.6746. For those with diet quality being good (B=1), the probability of weight being overweight (C=1) is 0.5821. ",
+        "data_info_math": "P(C=1|B=0)=0.6746; P(C=1|B=1)=0.5821; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of diet quality on weight.",
+      "Question": "Suppose the mediator keeps constant when diet quality is changed to be poor, would the weight have been more likely to be overweight?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (B) to outcome (C). The edge B->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.6746\tP(C=1|B=1)=0.5821",
+        "Step 6": "NDE=0.6746-0.5821=0.0925",
+        "Step 7": "NDE=0.0925>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.09250022478196085
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being good (B=1), the probability of weight being underweight (C=0) is 0.4179. For those with diet quality being poor (B=0), the probability of weight being underweight (C=0) is 0.3254. ",
+        "data_info_math": "P(C=0|B=1)=0.4179; P(C=0|B=0)=0.3254; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of diet quality on weight.",
+      "Question": "Suppose the mediator keeps constant when diet quality is changed to be good, would the weight have been more likely to be underweight?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (B) to outcome (C). The edge B->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.4179\tP(C=0|B=0)=0.3254",
+        "Step 6": "NDE=0.4179-0.3254=0.0925",
+        "Step 7": "NDE=0.0925>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.09250022478196085
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being good (B=1), the probability of weight being overweight (C=1) is 0.5821. For those with diet quality being poor (B=0), the probability of weight being overweight (C=1) is 0.6746. ",
+        "data_info_math": "P(C=1|B=1)=0.5821; P(C=1|B=0)=0.6746; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of diet quality on weight.",
+      "Question": "Suppose the mediator keeps constant when diet quality is changed to be good, would the weight have been more likely to be overweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (B) to outcome (C). The edge B->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.5821\tP(C=1|B=0)=0.6746",
+        "Step 6": "NDE=0.5821-0.6746=-0.0925",
+        "Step 7": "NDE=-0.0925<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.09250022478196085
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of amount of exercise done on weight.",
+      "Question": "Suppose amount of exercise done is held constant and the mediator changes to whatever value it would have attained under amount of exercise done changing to be little, would weight have been more likely to be underweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (C). There is no directed path with three or more vertices from A to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of amount of exercise done on weight.",
+      "Question": "Suppose amount of exercise done is held constant and the mediator changes to whatever value it would have attained under amount of exercise done changing to be little, would weight have been more likely to be overweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (C). There is no directed path with three or more vertices from A to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of amount of exercise done on weight.",
+      "Question": "Suppose amount of exercise done is held constant and the mediator changes to whatever value it would have attained under amount of exercise done changing to be intense, would weight have been more likely to be underweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (C). There is no directed path with three or more vertices from A to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of amount of exercise done on weight.",
+      "Question": "Suppose amount of exercise done is held constant and the mediator changes to whatever value it would have attained under amount of exercise done changing to be intense, would weight have been more likely to be overweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (C). There is no directed path with three or more vertices from A to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of amount of exercise done on risk of developing heart disease.",
+      "Question": "Suppose amount of exercise done is held constant and the mediator changes to whatever value it would have attained under amount of exercise done changing to be little, would risk of developing heart disease have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (D). There is no directed path with three or more vertices from A to D. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of amount of exercise done on risk of developing heart disease.",
+      "Question": "Suppose amount of exercise done is held constant and the mediator changes to whatever value it would have attained under amount of exercise done changing to be little, would risk of developing heart disease have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (D). There is no directed path with three or more vertices from A to D. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of amount of exercise done on risk of developing heart disease.",
+      "Question": "Suppose amount of exercise done is held constant and the mediator changes to whatever value it would have attained under amount of exercise done changing to be intense, would risk of developing heart disease have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (D). There is no directed path with three or more vertices from A to D. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of amount of exercise done on risk of developing heart disease.",
+      "Question": "Suppose amount of exercise done is held constant and the mediator changes to whatever value it would have attained under amount of exercise done changing to be intense, would risk of developing heart disease have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (D). There is no directed path with three or more vertices from A to D. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of diet quality on weight.",
+      "Question": "Suppose diet quality is held constant and the mediator changes to whatever value it would have attained under diet quality changing to be poor, would weight have been more likely to be underweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (B) and outcome (C). There is no directed path with three or more vertices from B to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of diet quality on weight.",
+      "Question": "Suppose diet quality is held constant and the mediator changes to whatever value it would have attained under diet quality changing to be poor, would weight have been more likely to be overweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (B) and outcome (C). There is no directed path with three or more vertices from B to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of diet quality on weight.",
+      "Question": "Suppose diet quality is held constant and the mediator changes to whatever value it would have attained under diet quality changing to be good, would weight have been more likely to be underweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (B) and outcome (C). There is no directed path with three or more vertices from B to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of diet quality on weight.",
+      "Question": "Suppose diet quality is held constant and the mediator changes to whatever value it would have attained under diet quality changing to be good, would weight have been more likely to be overweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (B) and outcome (C). There is no directed path with three or more vertices from B to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of amount of exercise done on diet quality.",
+      "Question": "For those with amount of exercise done being little, if their amount of exercise done had been intense, would the diet quality have been more likely to be poor?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is not a cause of node B because there is no directed path from A to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of amount of exercise done on diet quality.",
+      "Question": "For those with amount of exercise done being little, if their amount of exercise done had been intense, would the diet quality have been more likely to be good?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is not a cause of node B because there is no directed path from A to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of amount of exercise done on diet quality.",
+      "Question": "For those with amount of exercise done being intense, if their amount of exercise done had been little, would the diet quality have been more likely to be poor?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is not a cause of node B because there is no directed path from A to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of amount of exercise done on diet quality.",
+      "Question": "For those with amount of exercise done being intense, if their amount of exercise done had been little, would the diet quality have been more likely to be good?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is not a cause of node B because there is no directed path from A to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of weight being underweight (C=0) is 0.5302. For those with amount of exercise done being intense (A=1), the probability of weight being underweight (C=0) is 0.0704. ",
+        "data_info_math": "P(C=0|A=0)=0.5302; P(C=0|A=1)=0.0704; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of amount of exercise done on weight.",
+      "Question": "For those with amount of exercise done being little, if their amount of exercise done had been intense, would the weight have been more likely to be underweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.5302\tP(C=0|A=1)=0.0704",
+        "Step 6": "ETT=0.5302-0.0704=0.4599",
+        "Step 7": "ETT=0.4599>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.45985695886388206
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of weight being overweight (C=1) is 0.4698. For those with amount of exercise done being intense (A=1), the probability of weight being overweight (C=1) is 0.9296. ",
+        "data_info_math": "P(C=1|A=0)=0.4698; P(C=1|A=1)=0.9296; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of amount of exercise done on weight.",
+      "Question": "For those with amount of exercise done being little, if their amount of exercise done had been intense, would the weight have been more likely to be overweight?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.4698\tP(C=1|A=1)=0.9296",
+        "Step 6": "ETT=0.4698-0.9296=-0.4599",
+        "Step 7": "ETT=-0.4599<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.459856958863882
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of weight being underweight (C=0) is 0.0704. For those with amount of exercise done being little (A=0), the probability of weight being underweight (C=0) is 0.5302. ",
+        "data_info_math": "P(C=0|A=1)=0.0704; P(C=0|A=0)=0.5302; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of amount of exercise done on weight.",
+      "Question": "For those with amount of exercise done being intense, if their amount of exercise done had been little, would the weight have been more likely to be underweight?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.0704\tP(C=0|A=0)=0.5302",
+        "Step 6": "ETT=0.0704-0.5302=-0.4599",
+        "Step 7": "ETT=-0.4599<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.45985695886388206
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of weight being overweight (C=1) is 0.9296. For those with amount of exercise done being little (A=0), the probability of weight being overweight (C=1) is 0.4698. ",
+        "data_info_math": "P(C=1|A=1)=0.9296; P(C=1|A=0)=0.4698; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of amount of exercise done on weight.",
+      "Question": "For those with amount of exercise done being intense, if their amount of exercise done had been little, would the weight have been more likely to be overweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.9296\tP(C=1|A=0)=0.4698",
+        "Step 6": "ETT=0.9296-0.4698=0.4599",
+        "Step 7": "ETT=0.4599>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.459856958863882
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of risk of developing heart disease being high (D=0) is 0.6748. For those with amount of exercise done being intense (A=1), the probability of risk of developing heart disease being high (D=0) is 0.3657. ",
+        "data_info_math": "P(D=0|A=0)=0.6748; P(D=0|A=1)=0.3657; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of amount of exercise done on risk of developing heart disease.",
+      "Question": "For those with amount of exercise done being little, if their amount of exercise done had been intense, would the risk of developing heart disease have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6748\tP(D=0|A=1)=0.3657",
+        "Step 6": "ETT=0.6748-0.3657=0.3091",
+        "Step 7": "ETT=0.3091>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.30907492760014105
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of risk of developing heart disease being low (D=1) is 0.3252. For those with amount of exercise done being intense (A=1), the probability of risk of developing heart disease being low (D=1) is 0.6343. ",
+        "data_info_math": "P(D=1|A=0)=0.3252; P(D=1|A=1)=0.6343; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of amount of exercise done on risk of developing heart disease.",
+      "Question": "For those with amount of exercise done being little, if their amount of exercise done had been intense, would the risk of developing heart disease have been more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3252\tP(D=1|A=1)=0.6343",
+        "Step 6": "ETT=0.3252-0.6343=-0.3091",
+        "Step 7": "ETT=-0.3091<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.30907492760014105
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of risk of developing heart disease being high (D=0) is 0.3657. For those with amount of exercise done being little (A=0), the probability of risk of developing heart disease being high (D=0) is 0.6748. ",
+        "data_info_math": "P(D=0|A=1)=0.3657; P(D=0|A=0)=0.6748; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of amount of exercise done on risk of developing heart disease.",
+      "Question": "For those with amount of exercise done being intense, if their amount of exercise done had been little, would the risk of developing heart disease have been more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.3657\tP(D=0|A=0)=0.6748",
+        "Step 6": "ETT=0.3657-0.6748=-0.3091",
+        "Step 7": "ETT=-0.3091<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.30907492760014105
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of risk of developing heart disease being low (D=1) is 0.6343. For those with amount of exercise done being little (A=0), the probability of risk of developing heart disease being low (D=1) is 0.3252. ",
+        "data_info_math": "P(D=1|A=1)=0.6343; P(D=1|A=0)=0.3252; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of amount of exercise done on risk of developing heart disease.",
+      "Question": "For those with amount of exercise done being intense, if their amount of exercise done had been little, would the risk of developing heart disease have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.6343\tP(D=1|A=0)=0.3252",
+        "Step 6": "ETT=0.6343-0.3252=0.3091",
+        "Step 7": "ETT=0.3091>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.30907492760014105
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of diet quality on amount of exercise done.",
+      "Question": "For those with diet quality being poor, if their diet quality had been good, would the amount of exercise done have been more likely to be little?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of diet quality on amount of exercise done.",
+      "Question": "For those with diet quality being poor, if their diet quality had been good, would the amount of exercise done have been more likely to be intense?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of diet quality on amount of exercise done.",
+      "Question": "For those with diet quality being good, if their diet quality had been poor, would the amount of exercise done have been more likely to be little?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of diet quality on amount of exercise done.",
+      "Question": "For those with diet quality being good, if their diet quality had been poor, would the amount of exercise done have been more likely to be intense?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being poor (B=0), the probability of weight being underweight (C=0) is 0.3254. For those with diet quality being good (B=1), the probability of weight being underweight (C=0) is 0.4179. ",
+        "data_info_math": "P(C=0|B=0)=0.3254; P(C=0|B=1)=0.4179; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of diet quality on weight.",
+      "Question": "For those with diet quality being poor, if their diet quality had been good, would the weight have been more likely to be underweight?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is a cause of node C because there is one or more directed paths from B to C (e.g. B->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(B)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.3254\tP(C=0|B=1)=0.4179",
+        "Step 6": "ETT=0.3254-0.4179=-0.0925",
+        "Step 7": "ETT=-0.0925<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.09250022478196085
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being poor (B=0), the probability of weight being overweight (C=1) is 0.6746. For those with diet quality being good (B=1), the probability of weight being overweight (C=1) is 0.5821. ",
+        "data_info_math": "P(C=1|B=0)=0.6746; P(C=1|B=1)=0.5821; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of diet quality on weight.",
+      "Question": "For those with diet quality being poor, if their diet quality had been good, would the weight have been more likely to be overweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is a cause of node C because there is one or more directed paths from B to C (e.g. B->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(B)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.6746\tP(C=1|B=1)=0.5821",
+        "Step 6": "ETT=0.6746-0.5821=0.0925",
+        "Step 7": "ETT=0.0925>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.09250022478196085
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being good (B=1), the probability of weight being underweight (C=0) is 0.4179. For those with diet quality being poor (B=0), the probability of weight being underweight (C=0) is 0.3254. ",
+        "data_info_math": "P(C=0|B=1)=0.4179; P(C=0|B=0)=0.3254; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of diet quality on weight.",
+      "Question": "For those with diet quality being good, if their diet quality had been poor, would the weight have been more likely to be underweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is a cause of node C because there is one or more directed paths from B to C (e.g. B->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(B)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.4179\tP(C=0|B=0)=0.3254",
+        "Step 6": "ETT=0.4179-0.3254=0.0925",
+        "Step 7": "ETT=0.0925>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.09250022478196085
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being good (B=1), the probability of weight being overweight (C=1) is 0.5821. For those with diet quality being poor (B=0), the probability of weight being overweight (C=1) is 0.6746. ",
+        "data_info_math": "P(C=1|B=1)=0.5821; P(C=1|B=0)=0.6746; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of diet quality on weight.",
+      "Question": "For those with diet quality being good, if their diet quality had been poor, would the weight have been more likely to be overweight?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is a cause of node C because there is one or more directed paths from B to C (e.g. B->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(B)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.5821\tP(C=1|B=0)=0.6746",
+        "Step 6": "ETT=0.5821-0.6746=-0.0925",
+        "Step 7": "ETT=-0.0925<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.09250022478196085
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of diet quality on risk of developing heart disease.",
+      "Question": "For those with diet quality being poor, if their diet quality had been good, would the risk of developing heart disease have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of diet quality on risk of developing heart disease.",
+      "Question": "For those with diet quality being poor, if their diet quality had been good, would the risk of developing heart disease have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of diet quality on risk of developing heart disease.",
+      "Question": "For those with diet quality being good, if their diet quality had been poor, would the risk of developing heart disease have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of diet quality on risk of developing heart disease.",
+      "Question": "For those with diet quality being good, if their diet quality had been poor, would the risk of developing heart disease have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of weight on amount of exercise done.",
+      "Question": "For those with weight being underweight, if their weight had been overweight, would the amount of exercise done have been more likely to be little?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of weight on amount of exercise done.",
+      "Question": "For those with weight being underweight, if their weight had been overweight, would the amount of exercise done have been more likely to be intense?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of weight on amount of exercise done.",
+      "Question": "For those with weight being overweight, if their weight had been underweight, would the amount of exercise done have been more likely to be little?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of weight on amount of exercise done.",
+      "Question": "For those with weight being overweight, if their weight had been underweight, would the amount of exercise done have been more likely to be intense?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of weight on diet quality.",
+      "Question": "For those with weight being underweight, if their weight had been overweight, would the diet quality have been more likely to be poor?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of weight on diet quality.",
+      "Question": "For those with weight being underweight, if their weight had been overweight, would the diet quality have been more likely to be good?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of weight on diet quality.",
+      "Question": "For those with weight being overweight, if their weight had been underweight, would the diet quality have been more likely to be poor?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of weight on diet quality.",
+      "Question": "For those with weight being overweight, if their weight had been underweight, would the diet quality have been more likely to be good?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of weight on risk of developing heart disease.",
+      "Question": "For those with weight being underweight, if their weight had been overweight, would the risk of developing heart disease have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of weight on risk of developing heart disease.",
+      "Question": "For those with weight being underweight, if their weight had been overweight, would the risk of developing heart disease have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of weight on risk of developing heart disease.",
+      "Question": "For those with weight being overweight, if their weight had been underweight, would the risk of developing heart disease have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of weight on risk of developing heart disease.",
+      "Question": "For those with weight being overweight, if their weight had been underweight, would the risk of developing heart disease have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of risk of developing heart disease on amount of exercise done.",
+      "Question": "For those with risk of developing heart disease being high, if their risk of developing heart disease had been low, would the amount of exercise done have been more likely to be little?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of risk of developing heart disease on amount of exercise done.",
+      "Question": "For those with risk of developing heart disease being high, if their risk of developing heart disease had been low, would the amount of exercise done have been more likely to be intense?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of risk of developing heart disease on amount of exercise done.",
+      "Question": "For those with risk of developing heart disease being low, if their risk of developing heart disease had been high, would the amount of exercise done have been more likely to be little?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of risk of developing heart disease on amount of exercise done.",
+      "Question": "For those with risk of developing heart disease being low, if their risk of developing heart disease had been high, would the amount of exercise done have been more likely to be intense?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of risk of developing heart disease on diet quality.",
+      "Question": "For those with risk of developing heart disease being high, if their risk of developing heart disease had been low, would the diet quality have been more likely to be poor?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of risk of developing heart disease on diet quality.",
+      "Question": "For those with risk of developing heart disease being high, if their risk of developing heart disease had been low, would the diet quality have been more likely to be good?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of risk of developing heart disease on diet quality.",
+      "Question": "For those with risk of developing heart disease being low, if their risk of developing heart disease had been high, would the diet quality have been more likely to be poor?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of risk of developing heart disease on diet quality.",
+      "Question": "For those with risk of developing heart disease being low, if their risk of developing heart disease had been high, would the diet quality have been more likely to be good?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of risk of developing heart disease on weight.",
+      "Question": "For those with risk of developing heart disease being high, if their risk of developing heart disease had been low, would the weight have been more likely to be underweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of risk of developing heart disease on weight.",
+      "Question": "For those with risk of developing heart disease being high, if their risk of developing heart disease had been low, would the weight have been more likely to be overweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of risk of developing heart disease on weight.",
+      "Question": "For those with risk of developing heart disease being low, if their risk of developing heart disease had been high, would the weight have been more likely to be underweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of risk of developing heart disease on weight.",
+      "Question": "For those with risk of developing heart disease being low, if their risk of developing heart disease had been high, would the weight have been more likely to be overweight?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment amount of exercise done (A) and outcome weight (C).",
+      "Question": "Method 1: We look at how amount of exercise done correlates with weight case by case according to risk of developing heart disease.\nMethod 2: We look directly at how amount of exercise done correlates with weight in general.\nTo understand how amount of exercise done affects weight, is it more correct to use the Method 1 than Method 2?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is no."
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 121,
+      "question_id": 120,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment amount of exercise done (A) and outcome weight (C).",
+      "Question": "Method 1: We look at how amount of exercise done correlates with weight case by case according to risk of developing heart disease.\nMethod 2: We look directly at how amount of exercise done correlates with weight in general.\nTo understand how amount of exercise done affects weight, is it more correct to use the Method 2 than Method 1?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is yes."
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 122,
+      "question_id": 121,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment amount of exercise done (A) and outcome risk of developing heart disease (D).",
+      "Question": "Method 1: We look at how amount of exercise done correlates with risk of developing heart disease case by case according to diet quality.\nMethod 2: We look directly at how amount of exercise done correlates with risk of developing heart disease in general.\nTo understand how amount of exercise done affects risk of developing heart disease, is it more correct to use the Method 1 than Method 2?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is no."
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 123,
+      "question_id": 121,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment amount of exercise done (A) and outcome risk of developing heart disease (D).",
+      "Question": "Method 1: We look at how amount of exercise done correlates with risk of developing heart disease case by case according to weight.\nMethod 2: We look directly at how amount of exercise done correlates with risk of developing heart disease in general.\nTo understand how amount of exercise done affects risk of developing heart disease, is it more correct to use the Method 2 than Method 1?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is yes."
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 124,
+      "question_id": 122,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment diet quality (B) and outcome weight (C).",
+      "Question": "Method 1: We look at how diet quality correlates with weight case by case according to amount of exercise done.\nMethod 2: We look directly at how diet quality correlates with weight in general.\nTo understand how diet quality affects weight, is it more correct to use the Method 1 than Method 2?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is no."
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 125,
+      "question_id": 122,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment diet quality (B) and outcome weight (C).",
+      "Question": "Method 1: We look at how diet quality correlates with weight case by case according to amount of exercise done.\nMethod 2: We look directly at how diet quality correlates with weight in general.\nTo understand how diet quality affects weight, is it more correct to use the Method 2 than Method 1?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is yes."
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 126,
+      "question_id": 123,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being underweight (C=0) and diet quality being good (B=1), the probability of amount of exercise done being intense (A=1) is 0.1117. For those with weight being underweight (C=0) and diet quality being poor (B=0), the probability of amount of exercise done being intense (A=1) is 0.0826. ",
+        "data_info_math": "P(A=1|C=0,B=1)=0.1117; P(A=1|C=0,B=0)=0.0826; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is underweight, does it mean that diet quality affects amount of exercise done?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=0)-P(A=1|do(B=0),C=0)=P(A=1|C=0)-P(A=1|C=0)=0",
+        "Step 2": "Conditioned on C, B does not affect A, so the answer is no."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 127,
+      "question_id": 123,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being underweight (C=0) and diet quality being good (B=1), the probability of amount of exercise done being intense (A=1) is 0.1117. For those with weight being underweight (C=0) and diet quality being poor (B=0), the probability of amount of exercise done being intense (A=1) is 0.0826. ",
+        "data_info_math": "P(A=1|C=0,B=1)=0.1117; P(A=1|C=0,B=0)=0.0826; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is underweight, does it mean that diet quality does not affect amount of exercise done?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=0)-P(A=1|do(B=0),C=0)=P(A=1|C=0)-P(A=1|C=0)=0",
+        "Step 2": "Conditioned on C, B does not affect A, so the answer is yes."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 128,
+      "question_id": 123,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being underweight (C=0) and diet quality being good (B=1), the probability of amount of exercise done being intense (A=1) is 0.1117. For those with weight being underweight (C=0) and diet quality being poor (B=0), the probability of amount of exercise done being intense (A=1) is 0.0826. ",
+        "data_info_math": "P(A=1|C=0,B=1)=0.1117; P(A=1|C=0,B=0)=0.0826; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is underweight, does it mean that diet quality is correlated with amount of exercise done?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=0)-P(A=1|B=0,C=0)=0.1117-0.0826=0.0291!=0",
+        "Step 2": "Conditioned on C, B is correlated with A, so the answer is yes."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 129,
+      "question_id": 123,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being underweight (C=0) and diet quality being good (B=1), the probability of amount of exercise done being intense (A=1) is 0.1117. For those with weight being underweight (C=0) and diet quality being poor (B=0), the probability of amount of exercise done being intense (A=1) is 0.0826. ",
+        "data_info_math": "P(A=1|C=0,B=1)=0.1117; P(A=1|C=0,B=0)=0.0826; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is underweight, does it mean that diet quality is independet of amount of exercise done?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=0)-P(A=1|B=0,C=0)=0.1117-0.0826=0.0291!=0",
+        "Step 2": "Conditioned on C, B is not independent of A, so the answer is no."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 130,
+      "question_id": 124,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being overweight (C=1) and diet quality being good (B=1), the probability of amount of exercise done being intense (A=1) is 0.6407. For those with weight being overweight (C=1) and diet quality being poor (B=0), the probability of amount of exercise done being intense (A=1) is 0.5810. ",
+        "data_info_math": "P(A=1|C=1,B=1)=0.6407; P(A=1|C=1,B=0)=0.5810; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is overweight, does it mean that diet quality affects amount of exercise done?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=1)-P(A=1|do(B=0),C=1)=P(A=1|C=1)-P(A=1|C=1)=0",
+        "Step 2": "Conditioned on C, B does not affect A, so the answer is no."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 131,
+      "question_id": 124,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being overweight (C=1) and diet quality being good (B=1), the probability of amount of exercise done being intense (A=1) is 0.6407. For those with weight being overweight (C=1) and diet quality being poor (B=0), the probability of amount of exercise done being intense (A=1) is 0.5810. ",
+        "data_info_math": "P(A=1|C=1,B=1)=0.6407; P(A=1|C=1,B=0)=0.5810; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is overweight, does it mean that diet quality does not affect amount of exercise done?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=1)-P(A=1|do(B=0),C=1)=P(A=1|C=1)-P(A=1|C=1)=0",
+        "Step 2": "Conditioned on C, B does not affect A, so the answer is yes."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 132,
+      "question_id": 124,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being overweight (C=1) and diet quality being good (B=1), the probability of amount of exercise done being intense (A=1) is 0.6407. For those with weight being overweight (C=1) and diet quality being poor (B=0), the probability of amount of exercise done being intense (A=1) is 0.5810. ",
+        "data_info_math": "P(A=1|C=1,B=1)=0.6407; P(A=1|C=1,B=0)=0.5810; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is overweight, does it mean that diet quality is correlated with amount of exercise done?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=1)-P(A=1|B=0,C=1)=0.6407-0.5810=0.0597!=0",
+        "Step 2": "Conditioned on C, B is correlated with A, so the answer is yes."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 133,
+      "question_id": 124,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being overweight (C=1) and diet quality being good (B=1), the probability of amount of exercise done being intense (A=1) is 0.6407. For those with weight being overweight (C=1) and diet quality being poor (B=0), the probability of amount of exercise done being intense (A=1) is 0.5810. ",
+        "data_info_math": "P(A=1|C=1,B=1)=0.6407; P(A=1|C=1,B=0)=0.5810; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is overweight, does it mean that diet quality is independet of amount of exercise done?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=1)-P(A=1|B=0,C=1)=0.6407-0.5810=0.0597!=0",
+        "Step 2": "Conditioned on C, B is not independent of A, so the answer is no."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 134,
+      "question_id": 125,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being underweight (C=0) and amount of exercise done being intense (A=1), the probability of diet quality being good (B=1) is 0.2090. For those with weight being underweight (C=0) and amount of exercise done being little (A=0), the probability of diet quality being good (B=1) is 0.1590. ",
+        "data_info_math": "P(B=1|C=0,A=1)=0.2090; P(B=1|C=0,A=0)=0.1590; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is underweight, does it mean that amount of exercise done affects diet quality?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=0)-P(B=1|do(A=0),C=0)=P(B=1|C=0)-P(B=1|C=0)=0",
+        "Step 2": "Conditioned on C, A does not affect B, so the answer is no."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 135,
+      "question_id": 125,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being underweight (C=0) and amount of exercise done being intense (A=1), the probability of diet quality being good (B=1) is 0.2090. For those with weight being underweight (C=0) and amount of exercise done being little (A=0), the probability of diet quality being good (B=1) is 0.1590. ",
+        "data_info_math": "P(B=1|C=0,A=1)=0.2090; P(B=1|C=0,A=0)=0.1590; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is underweight, does it mean that amount of exercise done does not affect diet quality?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=0)-P(B=1|do(A=0),C=0)=P(B=1|C=0)-P(B=1|C=0)=0",
+        "Step 2": "Conditioned on C, A does not affect B, so the answer is yes."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 136,
+      "question_id": 125,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being underweight (C=0) and amount of exercise done being intense (A=1), the probability of diet quality being good (B=1) is 0.2090. For those with weight being underweight (C=0) and amount of exercise done being little (A=0), the probability of diet quality being good (B=1) is 0.1590. ",
+        "data_info_math": "P(B=1|C=0,A=1)=0.2090; P(B=1|C=0,A=0)=0.1590; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is underweight, does it mean that amount of exercise done is correlated with diet quality?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=0)-P(B=1|A=0,C=0)=0.2090-0.1590=0.0500!=0",
+        "Step 2": "Conditioned on C, A is correlated with B, so the answer is yes."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 137,
+      "question_id": 125,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being underweight (C=0) and amount of exercise done being intense (A=1), the probability of diet quality being good (B=1) is 0.2090. For those with weight being underweight (C=0) and amount of exercise done being little (A=0), the probability of diet quality being good (B=1) is 0.1590. ",
+        "data_info_math": "P(B=1|C=0,A=1)=0.2090; P(B=1|C=0,A=0)=0.1590; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is underweight, does it mean that amount of exercise done is independet of diet quality?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=0)-P(B=1|A=0,C=0)=0.2090-0.1590=0.0500!=0",
+        "Step 2": "Conditioned on C, A is not independent of B, so the answer is no."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 138,
+      "question_id": 126,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being overweight (C=1) and amount of exercise done being intense (A=1), the probability of diet quality being good (B=1) is 0.1264. For those with weight being overweight (C=1) and amount of exercise done being little (A=0), the probability of diet quality being good (B=1) is 0.1011. ",
+        "data_info_math": "P(B=1|C=1,A=1)=0.1264; P(B=1|C=1,A=0)=0.1011; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is overweight, does it mean that amount of exercise done affects diet quality?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=1)-P(B=1|do(A=0),C=1)=P(B=1|C=1)-P(B=1|C=1)=0",
+        "Step 2": "Conditioned on C, A does not affect B, so the answer is no."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 139,
+      "question_id": 126,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being overweight (C=1) and amount of exercise done being intense (A=1), the probability of diet quality being good (B=1) is 0.1264. For those with weight being overweight (C=1) and amount of exercise done being little (A=0), the probability of diet quality being good (B=1) is 0.1011. ",
+        "data_info_math": "P(B=1|C=1,A=1)=0.1264; P(B=1|C=1,A=0)=0.1011; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is overweight, does it mean that amount of exercise done does not affect diet quality?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=1)-P(B=1|do(A=0),C=1)=P(B=1|C=1)-P(B=1|C=1)=0",
+        "Step 2": "Conditioned on C, A does not affect B, so the answer is yes."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 140,
+      "question_id": 126,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being overweight (C=1) and amount of exercise done being intense (A=1), the probability of diet quality being good (B=1) is 0.1264. For those with weight being overweight (C=1) and amount of exercise done being little (A=0), the probability of diet quality being good (B=1) is 0.1011. ",
+        "data_info_math": "P(B=1|C=1,A=1)=0.1264; P(B=1|C=1,A=0)=0.1011; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is overweight, does it mean that amount of exercise done is correlated with diet quality?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=1)-P(B=1|A=0,C=1)=0.1264-0.1011=0.0253!=0",
+        "Step 2": "Conditioned on C, A is correlated with B, so the answer is yes."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 141,
+      "question_id": 126,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with weight being overweight (C=1) and amount of exercise done being intense (A=1), the probability of diet quality being good (B=1) is 0.1264. For those with weight being overweight (C=1) and amount of exercise done being little (A=0), the probability of diet quality being good (B=1) is 0.1011. ",
+        "data_info_math": "P(B=1|C=1,A=1)=0.1264; P(B=1|C=1,A=0)=0.1011; "
+      },
+      "Instruction": "",
+      "Question": "Given that weight is overweight, does it mean that amount of exercise done is independet of diet quality?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=1)-P(B=1|A=0,C=1)=0.1264-0.1011=0.0253!=0",
+        "Step 2": "Conditioned on C, A is not independent of B, so the answer is no."
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 142,
+      "question_id": 127,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of weight being overweight (C=1) is 0.4698. The probability of weight being overweight (C=1) is 0.6624. The probability of amount of exercise done being intense (A=1) and weight being overweight (C=1) is 0.3895. ",
+        "data_info_math": "P(C=1|A=0)=0.4698; P(C=1)=0.6624; P(A=1,C=1)=0.3895; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of amount of exercise done on weight.",
+      "Question": "Given that amount of exercise done was intense and weight was overweight, what is the lower bound of the probability of the weight would have been underweight if the amount of exercise done had been little?",
+      "Answer": "0.4947",
+      "Reason": {
+        "Step 1": "Calculate P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.4698",
+        "Step 2": "Lower bound of PN: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.6624-0.4698)/0.3895}\n=max{0, 0.4947}\n=0.4947"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.49466383764406924
+    },
+    {
+      "id": 143,
+      "question_id": 128,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of weight being underweight (C=0) is 0.5302. The probability of amount of exercise done being little (A=0) and weight being underweight (C=0) is 0.3081. The probability of amount of exercise done being intense (A=1) and weight being overweight (C=1) is 0.3895. ",
+        "data_info_math": "P(C=0|A=0)=0.5302; P(A=0,C=0)=0.3081; P(A=1,C=1)=0.3895; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of amount of exercise done on weight.",
+      "Question": "Given that amount of exercise done was intense and weight was overweight, what is the upper bound of the probability of the weight would have been underweight if the amount of exercise done had been little?",
+      "Answer": "0.5704",
+      "Reason": {
+        "Step 1": "Calculate P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.5302",
+        "Step 2": "Upper bound of PN: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.5302-0.3081)/0.3895}\n=min{1, 0.5704}\n=0.5704"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.5703545021197803
+    },
+    {
+      "id": 144,
+      "question_id": 129,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of risk of developing heart disease being low (D=1) is 0.3252. The probability of risk of developing heart disease being low (D=1) is 0.4547. The probability of amount of exercise done being intense (A=1) and risk of developing heart disease being low (D=1) is 0.2657. ",
+        "data_info_math": "P(D=1|A=0)=0.3252; P(D=1)=0.4547; P(A=1,D=1)=0.2657; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of amount of exercise done on risk of developing heart disease.",
+      "Question": "Given that amount of exercise done was intense and risk of developing heart disease was low, what is the lower bound of the probability of the risk of developing heart disease would have been high if the amount of exercise done had been little?",
+      "Answer": "0.4873",
+      "Reason": {
+        "Step 1": "Calculate P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.3252",
+        "Step 2": "Lower bound of PN: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.4547-0.3252)/0.2657}\n=max{0, 0.4873}\n=0.4873"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.4872809199494059
+    },
+    {
+      "id": 145,
+      "question_id": 130,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being little (A=0), the probability of risk of developing heart disease being high (D=0) is 0.6748. The probability of amount of exercise done being little (A=0) and risk of developing heart disease being high (D=0) is 0.3921. The probability of amount of exercise done being intense (A=1) and risk of developing heart disease being low (D=1) is 0.2657. ",
+        "data_info_math": "P(D=0|A=0)=0.6748; P(A=0,D=0)=0.3921; P(A=1,D=1)=0.2657; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of amount of exercise done on risk of developing heart disease.",
+      "Question": "Given that amount of exercise done was intense and risk of developing heart disease was low, what is the upper bound of the probability of the risk of developing heart disease would have been high if the amount of exercise done had been little?",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "Calculate P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.6748",
+        "Step 2": "Upper bound of PN: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.6748-0.3921)/0.2657}\n=min{1, 1.0639}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 146,
+      "question_id": 131,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being poor (B=0), the probability of weight being overweight (C=1) is 0.6746. The probability of weight being overweight (C=1) is 0.6624. The probability of diet quality being good (B=1) and weight being overweight (C=1) is 0.0768. ",
+        "data_info_math": "P(C=1|B=0)=0.6746; P(C=1)=0.6624; P(B=1,C=1)=0.0768; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of diet quality on weight.",
+      "Question": "Given that diet quality was good and weight was overweight, what is the lower bound of the probability of the weight would have been underweight if the diet quality had been poor?",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "Calculate P(C=1|do(B=0))\nP(C=1|do(B=0))=P(C=1|B=0)=0.6746",
+        "Step 2": "Lower bound of PN: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.6624-0.6746)/0.0768}\n=max{0, -0.1589}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 147,
+      "question_id": 132,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being poor (B=0), the probability of weight being underweight (C=0) is 0.3254. The probability of diet quality being poor (B=0) and weight being underweight (C=0) is 0.2824. The probability of diet quality being good (B=1) and weight being overweight (C=1) is 0.0768. ",
+        "data_info_math": "P(C=0|B=0)=0.3254; P(B=0,C=0)=0.2824; P(B=1,C=1)=0.0768; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of diet quality on weight.",
+      "Question": "Given that diet quality was good and weight was overweight, what is the upper bound of the probability of the weight would have been underweight if the diet quality had been poor?",
+      "Answer": "0.5589",
+      "Reason": {
+        "Step 1": "Calculate P(C=0|do(B=0))\nP(C=0|do(B=0))=P(C=0|B=0)=0.3254",
+        "Step 2": "Upper bound of PN: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.3254-0.2824)/0.0768}\n=min{1, 0.5589}\n=0.5589"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.5588866224651452
+    },
+    {
+      "id": 148,
+      "question_id": 133,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of weight being underweight (C=0) is 0.0704. The probability of weight being underweight (C=0) is 0.3376. The probability of amount of exercise done being little (A=0) and weight being underweight (C=0) is 0.3081. ",
+        "data_info_math": "P(C=0|A=1)=0.0704; P(C=0)=0.3376; P(A=0,C=0)=0.3081; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of amount of exercise done on weight.",
+      "Question": "Given that amount of exercise done was little and weight was underweight, what is the lower bound of the probability that weight would have been overweight if the amount of exercise done had been intense?",
+      "Answer": "0.8673",
+      "Reason": {
+        "Step 1": "Calculate P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.0704",
+        "Step 2": "Lower bound of PS: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.3376-0.0704)/0.3081}\n=max{0, 0.8673}\n=0.8673"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.8672918961901779
+    },
+    {
+      "id": 149,
+      "question_id": 134,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of weight being overweight (C=1) is 0.9296. The probability of amount of exercise done being little (A=0) and weight being underweight (C=0) is 0.3081. The probability of amount of exercise done being intense (A=1) and weight being overweight (C=1) is 0.3895. ",
+        "data_info_math": "P(C=1|A=1)=0.9296; P(A=0,C=0)=0.3081; P(A=1,C=1)=0.3895; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of amount of exercise done on weight.",
+      "Question": "Given that amount of exercise done was little and weight was underweight, what is the upper bound of the probability that weight would have been overweight if the amount of exercise done had been intense?",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "Calculate P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.9296",
+        "Step 2": "Upper bound of PS: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.9296-0.3895)/0.3081}\n=min{1, 1.7533}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 150,
+      "question_id": 135,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of risk of developing heart disease being high (D=0) is 0.3657. The probability of risk of developing heart disease being high (D=0) is 0.5453. The probability of amount of exercise done being little (A=0) and risk of developing heart disease being high (D=0) is 0.3921. ",
+        "data_info_math": "P(D=0|A=1)=0.3657; P(D=0)=0.5453; P(A=0,D=0)=0.3921; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of amount of exercise done on risk of developing heart disease.",
+      "Question": "Given that amount of exercise done was little and risk of developing heart disease was high, what is the lower bound of the probability that risk of developing heart disease would have been low if the amount of exercise done had been intense?",
+      "Answer": "0.4580",
+      "Reason": {
+        "Step 1": "Calculate P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.3657",
+        "Step 2": "Lower bound of PS: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.5453-0.3657)/0.3921}\n=max{0, 0.4580}\n=0.4580"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.4580312587553203
+    },
+    {
+      "id": 151,
+      "question_id": 136,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with amount of exercise done being intense (A=1), the probability of risk of developing heart disease being low (D=1) is 0.6343. The probability of amount of exercise done being little (A=0) and risk of developing heart disease being high (D=0) is 0.3921. The probability of amount of exercise done being intense (A=1) and risk of developing heart disease being low (D=1) is 0.2657. ",
+        "data_info_math": "P(D=1|A=1)=0.6343; P(A=0,D=0)=0.3921; P(A=1,D=1)=0.2657; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of amount of exercise done on risk of developing heart disease.",
+      "Question": "Given that amount of exercise done was little and risk of developing heart disease was high, what is the upper bound of the probability that risk of developing heart disease would have been low if the amount of exercise done had been intense?",
+      "Answer": "0.9400",
+      "Reason": {
+        "Step 1": "Calculate P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.6343",
+        "Step 2": "Upper bound of PS: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.6343-0.2657)/0.3921}\n=min{1, 0.9400}\n=0.9400"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.9399737194776218
+    },
+    {
+      "id": 152,
+      "question_id": 137,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being good (B=1), the probability of weight being underweight (C=0) is 0.4179. The probability of weight being underweight (C=0) is 0.3376. The probability of diet quality being poor (B=0) and weight being underweight (C=0) is 0.2824. ",
+        "data_info_math": "P(C=0|B=1)=0.4179; P(C=0)=0.3376; P(B=0,C=0)=0.2824; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of diet quality on weight.",
+      "Question": "Given that diet quality was poor and weight was underweight, what is the lower bound of the probability that weight would have been overweight if the diet quality had been good?",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "Calculate P(C=0|do(B=1))\nP(C=0|do(B=1))=P(C=0|B=1)=0.4179",
+        "Step 2": "Lower bound of PS: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.3376-0.4179)/0.2824}\n=max{0, -0.2843}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 153,
+      "question_id": 138,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->C, A->D, B->C.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents amount of exercise done, B represents diet quality, C represents weight and D represents risk of developing heart disease. ",
+        "data_info": "For those with diet quality being good (B=1), the probability of weight being overweight (C=1) is 0.5821. The probability of diet quality being poor (B=0) and weight being underweight (C=0) is 0.2824. The probability of diet quality being good (B=1) and weight being overweight (C=1) is 0.0768. ",
+        "data_info_math": "P(C=1|B=1)=0.5821; P(B=0,C=0)=0.2824; P(B=1,C=1)=0.0768; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of diet quality on weight.",
+      "Question": "Given that diet quality was poor and weight was underweight, what is the upper bound of the probability that weight would have been overweight if the diet quality had been good?",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "Calculate P(C=1|do(B=1))\nP(C=1|do(B=1))=P(C=1|B=1)=0.5821",
+        "Step 2": "Upper bound of PS: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.5821-0.0768)/0.2824}\n=min{1, 1.7893}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    }
+  ]
+}

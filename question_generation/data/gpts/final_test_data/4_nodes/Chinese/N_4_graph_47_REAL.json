@@ -1,0 +1,3814 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "锻炼量",
+      "B": "身体素质水平",
+      "C": "整体健康状况",
+      "D": "life expectancy"
+    },
+    "node_value": {
+      "A": [
+        "少",
+        "充足"
+      ],
+      "B": [
+        "差",
+        "好"
+      ],
+      "C": [
+        "不好",
+        "好"
+      ],
+      "D": [
+        "短",
+        "长"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {
+      "A->B": 1,
+      "A->C": 1,
+      "A->D": 1,
+      "B->C": 1,
+      "B->D": 1,
+      "C->D": 1
+    },
+    "node_bias": {
+      "A": 1.132693941371012,
+      "B": -1.0078171535630456,
+      "C": -1.0557998748861253,
+      "D": -0.2473898377170592
+    },
+    "edge_weight": {
+      "A->B": 2.608865188598326,
+      "A->C": 0.2826000106532738,
+      "A->D": 3.0991684489853117,
+      "B->C": 0.09777917241435463,
+      "B->D": 2.5463308791437287,
+      "C->D": 0.8240816611157492
+    },
+    "function_description": "P(A=1)=0.7563\nP(B=1|A)=sigmoid(-1.0078171535630456 + 2.6089 * A)\nP(C=1|A,B)=sigmoid(-1.0557998748861253 + 0.2826 * A + 0.0978 * B)\nP(D=1|A,B,C)=sigmoid(-0.2473898377170592 + 3.0992 * A + 2.5463 * B + 0.8241 * C)\n",
+    "text_description": "The probability of amount of exercise being ample (A=1) is 0.7563. \nFor those with amount of exercise being little (A=0), the probability of physical fitness level being good (B=1) is 0.2674. \nFor those with amount of exercise being ample (A=1), the probability of physical fitness level being good (B=1) is 0.8322. \nFor those with amount of exercise being little (A=0) and physical fitness level being poor (B=0), the probability of overall health condition being good (C=1) is 0.2581. \nFor those with amount of exercise being little (A=0) and physical fitness level being good (B=1), the probability of overall health condition being good (C=1) is 0.2773. \nFor those with amount of exercise being ample (A=1) and physical fitness level being poor (B=0), the probability of overall health condition being good (C=1) is 0.3158. \nFor those with amount of exercise being ample (A=1) and physical fitness level being good (B=1), the probability of overall health condition being good (C=1) is 0.3373. \nFor those with amount of exercise being little (A=0), physical fitness level being poor (B=0) and overall health condition being poor (C=0), the probability of life expectancy being long (D=1) is 0.4385. \nFor those with amount of exercise being little (A=0), physical fitness level being poor (B=0) and overall health condition being good (C=1), the probability of life expectancy being long (D=1) is 0.6403. \nFor those with amount of exercise being little (A=0), physical fitness level being good (B=1) and overall health condition being poor (C=0), the probability of life expectancy being long (D=1) is 0.9088. \nFor those with amount of exercise being little (A=0), physical fitness level being good (B=1) and overall health condition being good (C=1), the probability of life expectancy being long (D=1) is 0.9578. \nFor those with amount of exercise being ample (A=1), physical fitness level being poor (B=0) and overall health condition being poor (C=0), the probability of life expectancy being long (D=1) is 0.9454. \nFor those with amount of exercise being ample (A=1), physical fitness level being poor (B=0) and overall health condition being good (C=1), the probability of life expectancy being long (D=1) is 0.9753. \nFor those with amount of exercise being ample (A=1), physical fitness level being good (B=1) and overall health condition being poor (C=0), the probability of life expectancy being long (D=1) is 0.9955. \nFor those with amount of exercise being ample (A=1), physical fitness level being good (B=1) and overall health condition being good (C=1), the probability of life expectancy being long (D=1) is 0.9980. \n",
+    "Statistic_data": [
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 10620
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 20754
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 239
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 1489
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 4100
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 3678
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 1918
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 2179
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 2904
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 872
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 209
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 51
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 834
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 98
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 20
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 35
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, 身体素质水平为差(B=0)的概率为0.7299。在锻炼量为充足(A=1)的条件下, 身体素质水平为差(B=0)的概率为0.1669。",
+        "data_info_math": "P(B=0|A=0)=0.7299; P(B=0|A=1)=0.1669; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果锻炼量被改变为少，那么身体素质水平更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.7299\tP(B=0|A=1)=0.1669",
+        "Step 6": "ATE=0.7299-0.1669=0.5630",
+        "Step 7": "ATE=0.5630>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.5630397259085784
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, 身体素质水平为好(B=1)的概率为0.2701。在锻炼量为充足(A=1)的条件下, 身体素质水平为好(B=1)的概率为0.8331。",
+        "data_info_math": "P(B=1|A=0)=0.2701; P(B=1|A=1)=0.8331; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果锻炼量被改变为少，那么身体素质水平更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.2701\tP(B=1|A=1)=0.8331",
+        "Step 6": "ATE=0.2701-0.8331=-0.5630",
+        "Step 7": "ATE=-0.5630<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.5630397259085782
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, 身体素质水平为差(B=0)的概率为0.1669。在锻炼量为少(A=0)的条件下, 身体素质水平为差(B=0)的概率为0.7299。",
+        "data_info_math": "P(B=0|A=1)=0.1669; P(B=0|A=0)=0.7299; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果锻炼量被改变为充足，那么身体素质水平更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.1669\tP(B=0|A=0)=0.7299",
+        "Step 6": "ATE=0.1669-0.7299=-0.5630",
+        "Step 7": "ATE=-0.5630<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.5630397259085784
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, 身体素质水平为好(B=1)的概率为0.8331。在锻炼量为少(A=0)的条件下, 身体素质水平为好(B=1)的概率为0.2701。",
+        "data_info_math": "P(B=1|A=1)=0.8331; P(B=1|A=0)=0.2701; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果锻炼量被改变为充足，那么身体素质水平更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.8331\tP(B=1|A=0)=0.2701",
+        "Step 6": "ATE=0.8331-0.2701=0.5630",
+        "Step 7": "ATE=0.5630>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.5630397259085782
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7352。在锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6664。",
+        "data_info_math": "P(C=0|A=0)=0.7352; P(C=0|A=1)=0.6664; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果锻炼量被改变为少，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.7352\tP(C=0|A=1)=0.6664",
+        "Step 6": "ATE=0.7352-0.6664=0.0688",
+        "Step 7": "ATE=0.0688>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.06881733021077285
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2648。在锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3336。",
+        "data_info_math": "P(C=1|A=0)=0.2648; P(C=1|A=1)=0.3336; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果锻炼量被改变为少，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.2648\tP(C=1|A=1)=0.3336",
+        "Step 6": "ATE=0.2648-0.3336=-0.0688",
+        "Step 7": "ATE=-0.0688<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.0688173302107728
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6664。在锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7352。",
+        "data_info_math": "P(C=0|A=1)=0.6664; P(C=0|A=0)=0.7352; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果锻炼量被改变为充足，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.6664\tP(C=0|A=0)=0.7352",
+        "Step 6": "ATE=0.6664-0.7352=-0.0688",
+        "Step 7": "ATE=-0.0688<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.06881733021077285
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3336。在锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2648。",
+        "data_info_math": "P(C=1|A=1)=0.3336; P(C=1|A=0)=0.2648; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果锻炼量被改变为充足，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.3336\tP(C=1|A=0)=0.2648",
+        "Step 6": "ATE=0.3336-0.2648=0.0688",
+        "Step 7": "ATE=0.0688>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.0688173302107728
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.3898。在锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0108。",
+        "data_info_math": "P(D=0|A=0)=0.3898; P(D=0|A=1)=0.0108; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果锻炼量被改变为少，那么life expectancy更有可能为短吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.3898\tP(D=0|A=1)=0.0108",
+        "Step 6": "ATE=0.3898-0.0108=0.3790",
+        "Step 7": "ATE=0.3790>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.3790424147801197
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.6102。在锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9892。",
+        "data_info_math": "P(D=1|A=0)=0.6102; P(D=1|A=1)=0.9892; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果锻炼量被改变为少，那么life expectancy更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.6102\tP(D=1|A=1)=0.9892",
+        "Step 6": "ATE=0.6102-0.9892=-0.3790",
+        "Step 7": "ATE=-0.3790<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.37904241478011946
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0108。在锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.3898。",
+        "data_info_math": "P(D=0|A=1)=0.0108; P(D=0|A=0)=0.3898; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果锻炼量被改变为充足，那么life expectancy更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.0108\tP(D=0|A=0)=0.3898",
+        "Step 6": "ATE=0.0108-0.3898=-0.3790",
+        "Step 7": "ATE=-0.3790<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.3790424147801197
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9892。在锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.6102。",
+        "data_info_math": "P(D=1|A=1)=0.9892; P(D=1|A=0)=0.6102; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果锻炼量被改变为充足，那么life expectancy更有可能为长吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.9892\tP(D=1|A=0)=0.6102",
+        "Step 6": "ATE=0.9892-0.6102=0.3790",
+        "Step 7": "ATE=0.3790>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.37904241478011946
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体素质水平作用于锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体素质水平被改变为差，那么锻炼量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体素质水平作用于锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体素质水平被改变为差，那么锻炼量更有可能为充足吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体素质水平作用于锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体素质水平被改变为好，那么锻炼量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体素质水平作用于锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体素质水平被改变为好，那么锻炼量更有可能为充足吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7247。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6621。锻炼量为充足(A=1)的概率为0.7560。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.7391; P(C=0|B=1,A=0)=0.7247; P(A=0)=0.2440; P(C=0|B=0,A=1)=0.6879; P(C=0|B=1,A=1)=0.6621; P(A=1)=0.7560; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体素质水平被改变为差，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=sum_{A} [P(C=0|B=0,A)*P(A)-P(C=0|B=1,A)*P(A)]=[P(C=0|B=0,A=0)*P(A=0)-P(C=0|B=1,A=0)*P(A=0)]+[P(C=0|B=0,A=1)*P(A=1)-P(C=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=0,A=0)=0.7391\tP(C=0|B=1,A=0)=0.7247\tP(A=0)=0.2440\tP(C=0|B=0,A=1)=0.6879\tP(C=0|B=1,A=1)=0.6621\tP(A=1)=0.7560",
+        "Step 6": "ATE=[0.7391*0.2440-0.7247*0.2440]+[0.6879*0.7560-0.6621*0.7560]=0.0230",
+        "Step 7": "ATE=0.0230>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.02295833993599386
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2609。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2753。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3121。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3379。锻炼量为充足(A=1)的概率为0.7560。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.2609; P(C=1|B=1,A=0)=0.2753; P(A=0)=0.2440; P(C=1|B=0,A=1)=0.3121; P(C=1|B=1,A=1)=0.3379; P(A=1)=0.7560; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体素质水平被改变为差，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=sum_{A} [P(C=1|B=0,A)*P(A)-P(C=1|B=1,A)*P(A)]=[P(C=1|B=0,A=0)*P(A=0)-P(C=1|B=1,A=0)*P(A=0)]+[P(C=1|B=0,A=1)*P(A=1)-P(C=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=0,A=0)=0.2609\tP(C=1|B=1,A=0)=0.2753\tP(A=0)=0.2440\tP(C=1|B=0,A=1)=0.3121\tP(C=1|B=1,A=1)=0.3379\tP(A=1)=0.7560",
+        "Step 6": "ATE=[0.2609*0.2440-0.2753*0.2440]+[0.3121*0.7560-0.3379*0.7560]=-0.0230",
+        "Step 7": "ATE=-0.0230<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.022958339935993874
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7247。在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6621。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。锻炼量为充足(A=1)的概率为0.7560。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.7247; P(C=0|B=0,A=0)=0.7391; P(A=0)=0.2440; P(C=0|B=1,A=1)=0.6621; P(C=0|B=0,A=1)=0.6879; P(A=1)=0.7560; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体素质水平被改变为好，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=sum_{A} [P(C=0|B=1,A)*P(A)-P(C=0|B=0,A)*P(A)]=[P(C=0|B=1,A=0)*P(A=0)-P(C=0|B=0,A=0)*P(A=0)]+[P(C=0|B=1,A=1)*P(A=1)-P(C=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=1,A=0)=0.7247\tP(C=0|B=0,A=0)=0.7391\tP(A=0)=0.2440\tP(C=0|B=1,A=1)=0.6621\tP(C=0|B=0,A=1)=0.6879\tP(A=1)=0.7560",
+        "Step 6": "ATE=[0.7247*0.2440-0.7391*0.2440]+[0.6621*0.7560-0.6879*0.7560]=-0.0230",
+        "Step 7": "ATE=-0.0230<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.02295833993599386
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2753。在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2609。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3379。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3121。锻炼量为充足(A=1)的概率为0.7560。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.2753; P(C=1|B=0,A=0)=0.2609; P(A=0)=0.2440; P(C=1|B=1,A=1)=0.3379; P(C=1|B=0,A=1)=0.3121; P(A=1)=0.7560; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体素质水平被改变为好，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=sum_{A} [P(C=1|B=1,A)*P(A)-P(C=1|B=0,A)*P(A)]=[P(C=1|B=1,A=0)*P(A=0)-P(C=1|B=0,A=0)*P(A=0)]+[P(C=1|B=1,A=1)*P(A=1)-P(C=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=1,A=0)=0.2753\tP(C=1|B=0,A=0)=0.2609\tP(A=0)=0.2440\tP(C=1|B=1,A=1)=0.3379\tP(C=1|B=0,A=1)=0.3121\tP(A=1)=0.7560",
+        "Step 6": "ATE=[0.2753*0.2440-0.2609*0.2440]+[0.3379*0.7560-0.3121*0.7560]=0.0230",
+        "Step 7": "ATE=0.0230>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.022958339935993874
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.5067。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.0741。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0460。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0037。锻炼量为充足(A=1)的概率为0.7560。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.5067; P(D=0|B=1,A=0)=0.0741; P(A=0)=0.2440; P(D=0|B=0,A=1)=0.0460; P(D=0|B=1,A=1)=0.0037; P(A=1)=0.7560; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体素质水平被改变为差，那么life expectancy更有可能为短吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=sum_{A} [P(D=0|B=0,A)*P(A)-P(D=0|B=1,A)*P(A)]=[P(D=0|B=0,A=0)*P(A=0)-P(D=0|B=1,A=0)*P(A=0)]+[P(D=0|B=0,A=1)*P(A=1)-P(D=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=0,A=0)=0.5067\tP(D=0|B=1,A=0)=0.0741\tP(A=0)=0.2440\tP(D=0|B=0,A=1)=0.0460\tP(D=0|B=1,A=1)=0.0037\tP(A=1)=0.7560",
+        "Step 6": "ATE=[0.5067*0.2440-0.0741*0.2440]+[0.0460*0.7560-0.0037*0.7560]=0.1375",
+        "Step 7": "ATE=0.1375>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.13748487742078164
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.4933。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.9259。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9540。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9963。锻炼量为充足(A=1)的概率为0.7560。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.4933; P(D=1|B=1,A=0)=0.9259; P(A=0)=0.2440; P(D=1|B=0,A=1)=0.9540; P(D=1|B=1,A=1)=0.9963; P(A=1)=0.7560; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体素质水平被改变为差，那么life expectancy更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=sum_{A} [P(D=1|B=0,A)*P(A)-P(D=1|B=1,A)*P(A)]=[P(D=1|B=0,A=0)*P(A=0)-P(D=1|B=1,A=0)*P(A=0)]+[P(D=1|B=0,A=1)*P(A=1)-P(D=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=0,A=0)=0.4933\tP(D=1|B=1,A=0)=0.9259\tP(A=0)=0.2440\tP(D=1|B=0,A=1)=0.9540\tP(D=1|B=1,A=1)=0.9963\tP(A=1)=0.7560",
+        "Step 6": "ATE=[0.4933*0.2440-0.9259*0.2440]+[0.9540*0.7560-0.9963*0.7560]=-0.1375",
+        "Step 7": "ATE=-0.1375<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.13748487742078175
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.0741。在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.5067。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0037。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0460。锻炼量为充足(A=1)的概率为0.7560。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.0741; P(D=0|B=0,A=0)=0.5067; P(A=0)=0.2440; P(D=0|B=1,A=1)=0.0037; P(D=0|B=0,A=1)=0.0460; P(A=1)=0.7560; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体素质水平被改变为好，那么life expectancy更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=sum_{A} [P(D=0|B=1,A)*P(A)-P(D=0|B=0,A)*P(A)]=[P(D=0|B=1,A=0)*P(A=0)-P(D=0|B=0,A=0)*P(A=0)]+[P(D=0|B=1,A=1)*P(A=1)-P(D=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=1,A=0)=0.0741\tP(D=0|B=0,A=0)=0.5067\tP(A=0)=0.2440\tP(D=0|B=1,A=1)=0.0037\tP(D=0|B=0,A=1)=0.0460\tP(A=1)=0.7560",
+        "Step 6": "ATE=[0.0741*0.2440-0.5067*0.2440]+[0.0037*0.7560-0.0460*0.7560]=-0.1375",
+        "Step 7": "ATE=-0.1375<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.13748487742078164
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.9259。在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.4933。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9963。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9540。锻炼量为充足(A=1)的概率为0.7560。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.9259; P(D=1|B=0,A=0)=0.4933; P(A=0)=0.2440; P(D=1|B=1,A=1)=0.9963; P(D=1|B=0,A=1)=0.9540; P(A=1)=0.7560; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体素质水平被改变为好，那么life expectancy更有可能为长吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=sum_{A} [P(D=1|B=1,A)*P(A)-P(D=1|B=0,A)*P(A)]=[P(D=1|B=1,A=0)*P(A=0)-P(D=1|B=0,A=0)*P(A=0)]+[P(D=1|B=1,A=1)*P(A=1)-P(D=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=1,A=0)=0.9259\tP(D=1|B=0,A=0)=0.4933\tP(A=0)=0.2440\tP(D=1|B=1,A=1)=0.9963\tP(D=1|B=0,A=1)=0.9540\tP(A=1)=0.7560",
+        "Step 6": "ATE=[0.9259*0.2440-0.4933*0.2440]+[0.9963*0.7560-0.9540*0.7560]=0.1375",
+        "Step 7": "ATE=0.1375>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.13748487742078175
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为不好，那么锻炼量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为不好，那么锻炼量更有可能为充足吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么锻炼量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么锻炼量更有可能为充足吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于身体素质水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为不好，那么身体素质水平更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于身体素质水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为不好，那么身体素质水平更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于身体素质水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么身体素质水平更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于身体素质水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么身体素质水平更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果life expectancy被改变为短，那么锻炼量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果life expectancy被改变为短，那么锻炼量更有可能为充足吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果life expectancy被改变为长，那么锻炼量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果life expectancy被改变为长，那么锻炼量更有可能为充足吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于身体素质水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果life expectancy被改变为短，那么身体素质水平更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于身体素质水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果life expectancy被改变为短，那么身体素质水平更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于身体素质水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果life expectancy被改变为长，那么身体素质水平更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于身体素质水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果life expectancy被改变为长，那么身体素质水平更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果life expectancy被改变为短，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果life expectancy被改变为短，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果life expectancy被改变为长，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果life expectancy被改变为长，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, 身体素质水平为差(B=0)的概率为0.7299。在锻炼量为充足(A=1)的条件下, 身体素质水平为差(B=0)的概率为0.1669。",
+        "data_info_math": "P(B=0|A=0)=0.7299; P(B=0|A=1)=0.1669; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而锻炼量变化为少，那么身体素质水平更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.7299\tP(B=0|A=1)=0.1669",
+        "Step 6": "NDE=0.7299-0.1669=0.5630",
+        "Step 7": "NDE=0.5630>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.5630397259085784
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, 身体素质水平为好(B=1)的概率为0.2701。在锻炼量为充足(A=1)的条件下, 身体素质水平为好(B=1)的概率为0.8331。",
+        "data_info_math": "P(B=1|A=0)=0.2701; P(B=1|A=1)=0.8331; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而锻炼量变化为少，那么身体素质水平更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.2701\tP(B=1|A=1)=0.8331",
+        "Step 6": "NDE=0.2701-0.8331=-0.5630",
+        "Step 7": "NDE=-0.5630<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.5630397259085782
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, 身体素质水平为差(B=0)的概率为0.1669。在锻炼量为少(A=0)的条件下, 身体素质水平为差(B=0)的概率为0.7299。",
+        "data_info_math": "P(B=0|A=1)=0.1669; P(B=0|A=0)=0.7299; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而锻炼量变化为充足，那么身体素质水平更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.1669\tP(B=0|A=0)=0.7299",
+        "Step 6": "NDE=0.1669-0.7299=-0.5630",
+        "Step 7": "NDE=-0.5630<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.5630397259085784
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, 身体素质水平为好(B=1)的概率为0.8331。在锻炼量为少(A=0)的条件下, 身体素质水平为好(B=1)的概率为0.2701。",
+        "data_info_math": "P(B=1|A=1)=0.8331; P(B=1|A=0)=0.2701; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而锻炼量变化为充足，那么身体素质水平更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.8331\tP(B=1|A=0)=0.2701",
+        "Step 6": "NDE=0.8331-0.2701=0.5630",
+        "Step 7": "NDE=0.5630>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.5630397259085782
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。在锻炼量为充足(A=1)的条件下, 身体素质水平为差(B=0)的概率为0.1669。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7247。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6621。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.7391; P(C=0|B=0,A=1)=0.6879; P(B=0|A=1)=0.1669; P(C=0|B=1,A=0)=0.7247; P(C=0|B=1,A=1)=0.6621; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而锻炼量变化为少，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=0,B)-P(C=0|A=1,B)]*P(B|A=1)=[P(C=0|A=0,B=0)-P(C=0|A=1,B=0)]*P(B=0|A=1)+[P(C=0|A=0,B=1)-P(C=0|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=0|A=0,B=0)=0.7391\tP(C=0|A=1,B=0)=0.6879\tP(B=0|A=1)=0.1669\tP(C=0|A=0,B=1)=0.7247\tP(C=0|A=1,B=1)=0.6621\tP(B=1|A=1)=0.8331",
+        "Step 6": "=(0.7391-0.6879)*0.1669+(0.7247-0.6621)*0.8331=0.0607",
+        "Step 7": "NDE=0.0607>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.060709067689839205
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2609。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3121。在锻炼量为充足(A=1)的条件下, 身体素质水平为差(B=0)的概率为0.1669。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2753。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3379。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.2609; P(C=1|B=0,A=1)=0.3121; P(B=0|A=1)=0.1669; P(C=1|B=1,A=0)=0.2753; P(C=1|B=1,A=1)=0.3379; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而锻炼量变化为少，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=0,B)-P(C=1|A=1,B)]*P(B|A=1)=[P(C=1|A=0,B=0)-P(C=1|A=1,B=0)]*P(B=0|A=1)+[P(C=1|A=0,B=1)-P(C=1|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=1|A=0,B=0)=0.2609\tP(C=1|A=1,B=0)=0.3121\tP(B=0|A=1)=0.1669\tP(C=1|A=0,B=1)=0.2753\tP(C=1|A=1,B=1)=0.3379\tP(B=1|A=1)=0.8331",
+        "Step 6": "=(0.2609-0.3121)*0.1669+(0.2753-0.3379)*0.8331=-0.0607",
+        "Step 7": "NDE=-0.0607<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.06070906768983925
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。在锻炼量为少(A=0)的条件下, 身体素质水平为差(B=0)的概率为0.7299。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6621。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7247。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.6879; P(C=0|B=0,A=0)=0.7391; P(B=0|A=0)=0.7299; P(C=0|B=1,A=1)=0.6621; P(C=0|B=1,A=0)=0.7247; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而锻炼量变化为充足，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=1,B)-P(C=0|A=0,B)]*P(B|A=0)=[P(C=0|A=1,B=0)-P(C=0|A=0,B=0)]*P(B=0|A=0)+[P(C=0|A=1,B=1)-P(C=0|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=0|A=1,B=0)=0.6879\tP(C=0|A=0,B=0)=0.7391\tP(B=0|A=0)=0.7299\tP(C=0|A=1,B=1)=0.6621\tP(C=0|A=0,B=1)=0.7247\tP(B=1|A=0)=0.2701",
+        "Step 6": "=(0.6879-0.7391)*0.7299+(0.6621-0.7247)*0.2701=-0.0543",
+        "Step 7": "NDE=-0.0543<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.0543357940073731
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3121。在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2609。在锻炼量为少(A=0)的条件下, 身体素质水平为差(B=0)的概率为0.7299。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3379。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2753。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.3121; P(C=1|B=0,A=0)=0.2609; P(B=0|A=0)=0.7299; P(C=1|B=1,A=1)=0.3379; P(C=1|B=1,A=0)=0.2753; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而锻炼量变化为充足，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=1,B)-P(C=1|A=0,B)]*P(B|A=0)=[P(C=1|A=1,B=0)-P(C=1|A=0,B=0)]*P(B=0|A=0)+[P(C=1|A=1,B=1)-P(C=1|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=1|A=1,B=0)=0.3121\tP(C=1|A=0,B=0)=0.2609\tP(B=0|A=0)=0.7299\tP(C=1|A=1,B=1)=0.3379\tP(C=1|A=0,B=1)=0.2753\tP(B=1|A=0)=0.2701",
+        "Step 6": "=(0.3121-0.2609)*0.7299+(0.3379-0.2753)*0.2701=0.0543",
+        "Step 7": "NDE=0.0543>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.054335794007373116
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7247。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6621。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.7391; P(C=0|B=1,A=0)=0.7247; P(A=0)=0.2440; P(C=0|B=0,A=1)=0.6879; P(C=0|B=1,A=1)=0.6621; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体素质水平变化为差，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=0,A)-P(C=0|B=1,A)]*P(A)=[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=0,A=0)=0.7391\tP(C=0|B=1,A=0)=0.7247\tP(A=0)=0.2440\tP(C=0|B=0,A=1)=0.6879\tP(C=0|B=1,A=1)=0.6621\tP(A=1)=0.7560",
+        "Step 6": "NDE=[0.7391-0.7247]*0.2440+[0.6879-0.6621]*0.7560=0.0230",
+        "Step 7": "NDE=0.0230>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.022958339935993867
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2609。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2753。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3121。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3379。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.2609; P(C=1|B=1,A=0)=0.2753; P(A=0)=0.2440; P(C=1|B=0,A=1)=0.3121; P(C=1|B=1,A=1)=0.3379; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体素质水平变化为差，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=0,A)-P(C=1|B=1,A)]*P(A)=[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=0,A=0)=0.2609\tP(C=1|B=1,A=0)=0.2753\tP(A=0)=0.2440\tP(C=1|B=0,A=1)=0.3121\tP(C=1|B=1,A=1)=0.3379\tP(A=1)=0.7560",
+        "Step 6": "NDE=[0.2609-0.2753]*0.2440+[0.3121-0.3379]*0.7560=-0.0230",
+        "Step 7": "NDE=-0.0230<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.02295833993599391
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7247。在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6621。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.7247; P(C=0|B=0,A=0)=0.7391; P(A=0)=0.2440; P(C=0|B=1,A=1)=0.6621; P(C=0|B=0,A=1)=0.6879; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体素质水平变化为好，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=1,A)-P(C=0|B=0,A)]*P(A)=[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=1,A=0)=0.7247\tP(C=0|B=0,A=0)=0.7391\tP(A=0)=0.2440\tP(C=0|B=1,A=1)=0.6621\tP(C=0|B=0,A=1)=0.6879\tP(A=1)=0.7560",
+        "Step 6": "NDE=[0.7247-0.7391]*0.2440+[0.6621-0.6879]*0.7560=-0.0230",
+        "Step 7": "NDE=-0.0230<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.022958339935993867
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2753。在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2609。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3379。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3121。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.2753; P(C=1|B=0,A=0)=0.2609; P(A=0)=0.2440; P(C=1|B=1,A=1)=0.3379; P(C=1|B=0,A=1)=0.3121; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体素质水平变化为好，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=1,A)-P(C=1|B=0,A)]*P(A)=[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=1,A=0)=0.2753\tP(C=1|B=0,A=0)=0.2609\tP(A=0)=0.2440\tP(C=1|B=1,A=1)=0.3379\tP(C=1|B=0,A=1)=0.3121\tP(A=1)=0.7560",
+        "Step 6": "NDE=[0.2753-0.2609]*0.2440+[0.3379-0.3121]*0.7560=0.0230",
+        "Step 7": "NDE=0.0230>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.02295833993599391
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "锻炼量为少(A=0)的概率为0.2440。在整体健康状况为不好(C=0), 身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.5588。在整体健康状况为不好(C=0), 身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.0875。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7247。在整体健康状况为好(C=1), 身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.3590。在整体健康状况为好(C=1), 身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.0386。在整体健康状况为不好(C=0), 身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0551。在整体健康状况为不好(C=0), 身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0047。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6621。在整体健康状况为好(C=1), 身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0259。在整体健康状况为好(C=1), 身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0019。",
+        "data_info_math": "P(A=0)=0.2440; P(D=0|C=0,B=0,A=0)=0.5588; P(D=0|C=0,B=1,A=0)=0.0875; P(C=0|B=1,A=0)=0.7247; P(D=0|C=1,B=0,A=0)=0.3590; P(D=0|C=1,B=1,A=0)=0.0386; P(D=0|C=0,B=0,A=1)=0.0551; P(D=0|C=0,B=1,A=1)=0.0047; P(C=0|B=1,A=1)=0.6621; P(D=0|C=1,B=0,A=1)=0.0259; P(D=0|C=1,B=1,A=1)=0.0019; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体素质水平变化为差，那么life expectancy更有可能为短吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{C}sum_{A} [P(D=0|B=0,C,A)-P(D=0|B=1,C,A)]*P(C|B=1,A)*P(A)=[P(D=0|B=0,C=0,A=0) - P(D=0|B=1,C=0,A=0)]*P(C=0|B=1,A=0)*P(A=0)+[P(D=0|B=0,C=1,A=0) - P(D=0|B=1,C=1,A=0)]*P(C=1|B=1,A=0)*P(A=0)+[P(D=0|B=0,C=0,A=1) - P(D=0|B=1,C=0,A=1)]*P(C=0|B=1,A=1)*P(A=1)+[P(D=0|B=0,C=1,A=1) - P(D=0|B=1,C=1,A=1)]*P(C=1|B=1,A=1)*P(A=1)",
+        "Step 5": "P(D=0|B=0,C=0,A=0)=0.5588\tP(D=0|B=1,C=0,A=0)=0.0875\tP(C=0|B=1,A=0)=0.7247\tP(A=0)=0.2440\tP(D=0|B=0,C=1,A=0)=0.3590\tP(D=0|B=1,C=1,A=0)=0.0386\tP(C=1|B=1,A=0)=0.2753\tP(A=0)=0.2440\tP(D=0|B=0,C=0,A=1)=0.0551\tP(D=0|B=1,C=0,A=1)=0.0047\tP(C=0|B=1,A=1)=0.6621\tP(A=1)=0.7560\tP(D=0|B=0,C=1,A=1)=0.0259\tP(D=0|B=1,C=1,A=1)=0.0019\tP(C=1|B=1,A=1)=0.3379\tP(A=1)=0.7560",
+        "Step 6": "NDE=(0.5588-0.0875)*0.7247*0.2440+(0.3590-0.0386)*0.2753*0.2440+(0.0551-0.0047)*0.6621*0.7560+(0.0259-0.0019)*0.3379*0.7560=0.1362",
+        "Step 7": "NDE=0.1362>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.13621549626345403
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "锻炼量为少(A=0)的概率为0.2440。在整体健康状况为不好(C=0), 身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.4412。在整体健康状况为不好(C=0), 身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.9125。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7247。在整体健康状况为好(C=1), 身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.6410。在整体健康状况为好(C=1), 身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.9614。在整体健康状况为不好(C=0), 身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9449。在整体健康状况为不好(C=0), 身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9953。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6621。在整体健康状况为好(C=1), 身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9741。在整体健康状况为好(C=1), 身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9981。",
+        "data_info_math": "P(A=0)=0.2440; P(D=1|C=0,B=0,A=0)=0.4412; P(D=1|C=0,B=1,A=0)=0.9125; P(C=0|B=1,A=0)=0.7247; P(D=1|C=1,B=0,A=0)=0.6410; P(D=1|C=1,B=1,A=0)=0.9614; P(D=1|C=0,B=0,A=1)=0.9449; P(D=1|C=0,B=1,A=1)=0.9953; P(C=0|B=1,A=1)=0.6621; P(D=1|C=1,B=0,A=1)=0.9741; P(D=1|C=1,B=1,A=1)=0.9981; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体素质水平变化为差，那么life expectancy更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{C}sum_{A} [P(D=1|B=0,C,A)-P(D=1|B=1,C,A)]*P(C|B=1,A)*P(A)=[P(D=1|B=0,C=0,A=0) - P(D=1|B=1,C=0,A=0)]*P(C=0|B=1,A=0)*P(A=0)+[P(D=1|B=0,C=1,A=0) - P(D=1|B=1,C=1,A=0)]*P(C=1|B=1,A=0)*P(A=0)+[P(D=1|B=0,C=0,A=1) - P(D=1|B=1,C=0,A=1)]*P(C=0|B=1,A=1)*P(A=1)+[P(D=1|B=0,C=1,A=1) - P(D=1|B=1,C=1,A=1)]*P(C=1|B=1,A=1)*P(A=1)",
+        "Step 5": "P(D=1|B=0,C=0,A=0)=0.4412\tP(D=1|B=1,C=0,A=0)=0.9125\tP(C=0|B=1,A=0)=0.7247\tP(A=0)=0.2440\tP(D=1|B=0,C=1,A=0)=0.6410\tP(D=1|B=1,C=1,A=0)=0.9614\tP(C=1|B=1,A=0)=0.2753\tP(A=0)=0.2440\tP(D=1|B=0,C=0,A=1)=0.9449\tP(D=1|B=1,C=0,A=1)=0.9953\tP(C=0|B=1,A=1)=0.6621\tP(A=1)=0.7560\tP(D=1|B=0,C=1,A=1)=0.9741\tP(D=1|B=1,C=1,A=1)=0.9981\tP(C=1|B=1,A=1)=0.3379\tP(A=1)=0.7560",
+        "Step 6": "NDE=(0.4412-0.9125)*0.7247*0.2440+(0.6410-0.9614)*0.2753*0.2440+(0.9449-0.9953)*0.6621*0.7560+(0.9741-0.9981)*0.3379*0.7560=-0.1362",
+        "Step 7": "NDE=-0.1362<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.136215496263454
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "锻炼量为少(A=0)的概率为0.2440。在整体健康状况为不好(C=0), 身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.0875。在整体健康状况为不好(C=0), 身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.5588。在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。在整体健康状况为好(C=1), 身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.0386。在整体健康状况为好(C=1), 身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.3590。在整体健康状况为不好(C=0), 身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0047。在整体健康状况为不好(C=0), 身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0551。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。在整体健康状况为好(C=1), 身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0019。在整体健康状况为好(C=1), 身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0259。",
+        "data_info_math": "P(A=0)=0.2440; P(D=0|C=0,B=1,A=0)=0.0875; P(D=0|C=0,B=0,A=0)=0.5588; P(C=0|B=0,A=0)=0.7391; P(D=0|C=1,B=1,A=0)=0.0386; P(D=0|C=1,B=0,A=0)=0.3590; P(D=0|C=0,B=1,A=1)=0.0047; P(D=0|C=0,B=0,A=1)=0.0551; P(C=0|B=0,A=1)=0.6879; P(D=0|C=1,B=1,A=1)=0.0019; P(D=0|C=1,B=0,A=1)=0.0259; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体素质水平变化为好，那么life expectancy更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{C}sum_{A} [P(D=0|B=1,C,A)-P(D=0|B=0,C,A)]*P(C|B=0,A)*P(A)=[P(D=0|B=1,C=0,A=0) - P(D=0|B=0,C=0,A=0)]*P(C=0|B=0,A=0)*P(A=0)+[P(D=0|B=1,C=1,A=0) - P(D=0|B=0,C=1,A=0)]*P(C=1|B=0,A=0)*P(A=0)+[P(D=0|B=1,C=0,A=1) - P(D=0|B=0,C=0,A=1)]*P(C=0|B=0,A=1)*P(A=1)+[P(D=0|B=1,C=1,A=1) - P(D=0|B=0,C=1,A=1)]*P(C=1|B=0,A=1)*P(A=1)",
+        "Step 5": "P(D=0|B=1,C=0,A=0)=0.0875\tP(D=0|B=0,C=0,A=0)=0.5588\tP(C=0|B=0,A=0)=0.7391\tP(A=0)=0.2440\tP(D=0|B=1,C=1,A=0)=0.0386\tP(D=0|B=0,C=1,A=0)=0.3590\tP(C=1|B=0,A=0)=0.2609\tP(A=0)=0.2440\tP(D=0|B=1,C=0,A=1)=0.0047\tP(D=0|B=0,C=0,A=1)=0.0551\tP(C=0|B=0,A=1)=0.6879\tP(A=1)=0.7560\tP(D=0|B=1,C=1,A=1)=0.0019\tP(D=0|B=0,C=1,A=1)=0.0259\tP(C=1|B=0,A=1)=0.3121\tP(A=1)=0.7560",
+        "Step 6": "NDE=(0.0875-0.5588)*0.7391*0.2440+(0.0386-0.3590)*0.2609*0.2440+(0.0047-0.0551)*0.6879*0.7560+(0.0019-0.0259)*0.3121*0.7560=-0.1373",
+        "Step 7": "NDE=-0.1373<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.13725810358672996
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "锻炼量为少(A=0)的概率为0.2440。在整体健康状况为不好(C=0), 身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.9125。在整体健康状况为不好(C=0), 身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.4412。在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。在整体健康状况为好(C=1), 身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.9614。在整体健康状况为好(C=1), 身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.6410。在整体健康状况为不好(C=0), 身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9953。在整体健康状况为不好(C=0), 身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9449。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。在整体健康状况为好(C=1), 身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9981。在整体健康状况为好(C=1), 身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9741。",
+        "data_info_math": "P(A=0)=0.2440; P(D=1|C=0,B=1,A=0)=0.9125; P(D=1|C=0,B=0,A=0)=0.4412; P(C=0|B=0,A=0)=0.7391; P(D=1|C=1,B=1,A=0)=0.9614; P(D=1|C=1,B=0,A=0)=0.6410; P(D=1|C=0,B=1,A=1)=0.9953; P(D=1|C=0,B=0,A=1)=0.9449; P(C=0|B=0,A=1)=0.6879; P(D=1|C=1,B=1,A=1)=0.9981; P(D=1|C=1,B=0,A=1)=0.9741; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体素质水平变化为好，那么life expectancy更有可能为长吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{C}sum_{A} [P(D=1|B=1,C,A)-P(D=1|B=0,C,A)]*P(C|B=0,A)*P(A)=[P(D=1|B=1,C=0,A=0) - P(D=1|B=0,C=0,A=0)]*P(C=0|B=0,A=0)*P(A=0)+[P(D=1|B=1,C=1,A=0) - P(D=1|B=0,C=1,A=0)]*P(C=1|B=0,A=0)*P(A=0)+[P(D=1|B=1,C=0,A=1) - P(D=1|B=0,C=0,A=1)]*P(C=0|B=0,A=1)*P(A=1)+[P(D=1|B=1,C=1,A=1) - P(D=1|B=0,C=1,A=1)]*P(C=1|B=0,A=1)*P(A=1)",
+        "Step 5": "P(D=1|B=1,C=0,A=0)=0.9125\tP(D=1|B=0,C=0,A=0)=0.4412\tP(C=0|B=0,A=0)=0.7391\tP(A=0)=0.2440\tP(D=1|B=1,C=1,A=0)=0.9614\tP(D=1|B=0,C=1,A=0)=0.6410\tP(C=1|B=0,A=0)=0.2609\tP(A=0)=0.2440\tP(D=1|B=1,C=0,A=1)=0.9953\tP(D=1|B=0,C=0,A=1)=0.9449\tP(C=0|B=0,A=1)=0.6879\tP(A=1)=0.7560\tP(D=1|B=1,C=1,A=1)=0.9981\tP(D=1|B=0,C=1,A=1)=0.9741\tP(C=1|B=0,A=1)=0.3121\tP(A=1)=0.7560",
+        "Step 6": "NDE=(0.9125-0.4412)*0.7391*0.2440+(0.9614-0.6410)*0.2609*0.2440+(0.9953-0.9449)*0.6879*0.7560+(0.9981-0.9741)*0.3121*0.7560=0.1373",
+        "Step 7": "NDE=0.1373>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.1372581035867299
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如锻炼量保持不变，而所有中间变量被改变为当它们在锻炼量变化为少下的取值，那么身体素质水平更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如锻炼量保持不变，而所有中间变量被改变为当它们在锻炼量变化为少下的取值，那么身体素质水平更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如锻炼量保持不变，而所有中间变量被改变为当它们在锻炼量变化为充足下的取值，那么身体素质水平更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如锻炼量保持不变，而所有中间变量被改变为当它们在锻炼量变化为充足下的取值，那么身体素质水平更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。在锻炼量为少(A=0)的条件下, 身体素质水平为差(B=0)的概率为0.7299。在锻炼量为充足(A=1)的条件下, 身体素质水平为差(B=0)的概率为0.1669。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6621。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.6879; P(B=0|A=0)=0.7299; P(B=0|A=1)=0.1669; P(C=0|B=1,A=1)=0.6621; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如锻炼量保持不变，而所有中间变量被改变为当它们在锻炼量变化为少下的取值，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=0|A=1,B=0)=0.6879\tP(B=0|A=0)=0.7299\tP(B=0|A=1)=0.1669\tP(C=0|A=1,B=1)=0.6621\tP(B=1|A=0)=0.2701\tP(B=1|A=1)=0.8331",
+        "Step 6": "NIE=0.6879*(0.7299-0.1669)+0.6621*(0.2701-0.8331)=0.0145",
+        "Step 7": "NIE=0.0145>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.014481536203399814
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3121。在锻炼量为少(A=0)的条件下, 身体素质水平为差(B=0)的概率为0.7299。在锻炼量为充足(A=1)的条件下, 身体素质水平为差(B=0)的概率为0.1669。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3379。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.3121; P(B=0|A=0)=0.7299; P(B=0|A=1)=0.1669; P(C=1|B=1,A=1)=0.3379; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如锻炼量保持不变，而所有中间变量被改变为当它们在锻炼量变化为少下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=1|A=1,B=0)=0.3121\tP(B=0|A=0)=0.7299\tP(B=0|A=1)=0.1669\tP(C=1|A=1,B=1)=0.3379\tP(B=1|A=0)=0.2701\tP(B=1|A=1)=0.8331",
+        "Step 6": "NIE=0.3121*(0.7299-0.1669)+0.3379*(0.2701-0.8331)=-0.0145",
+        "Step 7": "NIE=-0.0145<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.01448153620339962
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。在锻炼量为充足(A=1)的条件下, 身体素质水平为差(B=0)的概率为0.1669。在锻炼量为少(A=0)的条件下, 身体素质水平为差(B=0)的概率为0.7299。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7247。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.7391; P(B=0|A=1)=0.1669; P(B=0|A=0)=0.7299; P(C=0|B=1,A=0)=0.7247; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如锻炼量保持不变，而所有中间变量被改变为当它们在锻炼量变化为充足下的取值，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=0|A=0,B=0)=0.7391\tP(B=0|A=1)=0.1669\tP(B=0|A=0)=0.7299\tP(C=0|A=0,B=1)=0.7247\tP(B=1|A=1)=0.8331\tP(B=1|A=0)=0.2701",
+        "Step 6": "NIE=0.7391*(0.1669-0.7299)+0.7247*(0.8331-0.2701)=-0.0081",
+        "Step 7": "NIE=-0.0081<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.008108262520933718
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2609。在锻炼量为充足(A=1)的条件下, 身体素质水平为差(B=0)的概率为0.1669。在锻炼量为少(A=0)的条件下, 身体素质水平为差(B=0)的概率为0.7299。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2753。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.2609; P(B=0|A=1)=0.1669; P(B=0|A=0)=0.7299; P(C=1|B=1,A=0)=0.2753; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如锻炼量保持不变，而所有中间变量被改变为当它们在锻炼量变化为充足下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=1|A=0,B=0)=0.2609\tP(B=0|A=1)=0.1669\tP(B=0|A=0)=0.7299\tP(C=1|A=0,B=1)=0.2753\tP(B=1|A=1)=0.8331\tP(B=1|A=0)=0.2701",
+        "Step 6": "NIE=0.2609*(0.1669-0.7299)+0.2753*(0.8331-0.2701)=0.0081",
+        "Step 7": "NIE=0.0081>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.008108262520933524
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体素质水平保持不变，而所有中间变量被改变为当它们在身体素质水平变化为差下的取值，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体素质水平保持不变，而所有中间变量被改变为当它们在身体素质水平变化为差下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体素质水平保持不变，而所有中间变量被改变为当它们在身体素质水平变化为好下的取值，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体素质水平保持不变，而所有中间变量被改变为当它们在身体素质水平变化为好下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "锻炼量为少(A=0)的概率为0.2440。在整体健康状况为不好(C=0), 身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.0875。在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7247。在整体健康状况为好(C=1), 身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.0386。在整体健康状况为不好(C=0), 身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0047。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6621。在整体健康状况为好(C=1), 身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0019。",
+        "data_info_math": "P(A=0)=0.2440; P(D=0|C=0,B=1,A=0)=0.0875; P(C=0|B=0,A=0)=0.7391; P(C=0|B=1,A=0)=0.7247; P(D=0|C=1,B=1,A=0)=0.0386; P(D=0|C=0,B=1,A=1)=0.0047; P(C=0|B=0,A=1)=0.6879; P(C=0|B=1,A=1)=0.6621; P(D=0|C=1,B=1,A=1)=0.0019; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体素质水平保持不变，而所有中间变量被改变为当它们在身体素质水平变化为差下的取值，那么life expectancy更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=0|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=0|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,C=0,A=0)=0.0875\tP(C=0|B=0,A=0)=0.7391\tP(C=0|B=1,A=0)=0.7247\tP(A=0)=0.2440\tP(D=0|B=1,C=1,A=0)=0.0386\tP(C=1|B=0,A=0)=0.2609\tP(C=1|B=1,A=0)=0.2753\tP(A=0)=0.2440\tP(D=0|B=1,C=0,A=1)=0.0047\tP(C=0|B=0,A=1)=0.6879\tP(C=0|B=1,A=1)=0.6621\tP(A=1)=0.7560\tP(D=0|B=1,C=1,A=1)=0.0019\tP(C=1|B=0,A=1)=0.3121\tP(C=1|B=1,A=1)=0.3379\tP(A=1)=0.7560",
+        "Step 6": "NIE=0.0875*[0.7391-0.7247]*0.2440+0.0386*[0.2609-0.2753]*0.2440+0.0047*[0.6879-0.6621]*0.7560+0.0019*[0.3121-0.3379]*0.7560=0.0002",
+        "Step 7": "NIE=0.0002~=0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.00022677383405169513
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "锻炼量为少(A=0)的概率为0.2440。在整体健康状况为不好(C=0), 身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.9125。在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7247。在整体健康状况为好(C=1), 身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.9614。在整体健康状况为不好(C=0), 身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9953。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6621。在整体健康状况为好(C=1), 身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9981。",
+        "data_info_math": "P(A=0)=0.2440; P(D=1|C=0,B=1,A=0)=0.9125; P(C=0|B=0,A=0)=0.7391; P(C=0|B=1,A=0)=0.7247; P(D=1|C=1,B=1,A=0)=0.9614; P(D=1|C=0,B=1,A=1)=0.9953; P(C=0|B=0,A=1)=0.6879; P(C=0|B=1,A=1)=0.6621; P(D=1|C=1,B=1,A=1)=0.9981; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体素质水平保持不变，而所有中间变量被改变为当它们在身体素质水平变化为差下的取值，那么life expectancy更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=1|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=1|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,C=0,A=0)=0.9125\tP(C=0|B=0,A=0)=0.7391\tP(C=0|B=1,A=0)=0.7247\tP(A=0)=0.2440\tP(D=1|B=1,C=1,A=0)=0.9614\tP(C=1|B=0,A=0)=0.2609\tP(C=1|B=1,A=0)=0.2753\tP(A=0)=0.2440\tP(D=1|B=1,C=0,A=1)=0.9953\tP(C=0|B=0,A=1)=0.6879\tP(C=0|B=1,A=1)=0.6621\tP(A=1)=0.7560\tP(D=1|B=1,C=1,A=1)=0.9981\tP(C=1|B=0,A=1)=0.3121\tP(C=1|B=1,A=1)=0.3379\tP(A=1)=0.7560",
+        "Step 6": "NIE=0.9125*[0.7391-0.7247]*0.2440+0.9614*[0.2609-0.2753]*0.2440+0.9953*[0.6879-0.6621]*0.7560+0.9981*[0.3121-0.3379]*0.7560=-0.0002",
+        "Step 7": "NIE=-0.0002~=0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.00022677383405173696
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "锻炼量为少(A=0)的概率为0.2440。在整体健康状况为不好(C=0), 身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.5588。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7247。在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。在整体健康状况为好(C=1), 身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.3590。在整体健康状况为不好(C=0), 身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0551。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6621。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。在整体健康状况为好(C=1), 身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0259。",
+        "data_info_math": "P(A=0)=0.2440; P(D=0|C=0,B=0,A=0)=0.5588; P(C=0|B=1,A=0)=0.7247; P(C=0|B=0,A=0)=0.7391; P(D=0|C=1,B=0,A=0)=0.3590; P(D=0|C=0,B=0,A=1)=0.0551; P(C=0|B=1,A=1)=0.6621; P(C=0|B=0,A=1)=0.6879; P(D=0|C=1,B=0,A=1)=0.0259; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体素质水平保持不变，而所有中间变量被改变为当它们在身体素质水平变化为好下的取值，那么life expectancy更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=0|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=0|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,C=0,A=0)=0.5588\tP(C=0|B=1,A=0)=0.7247\tP(C=0|B=0,A=0)=0.7391\tP(A=0)=0.2440\tP(D=0|B=0,C=1,A=0)=0.3590\tP(C=1|B=1,A=0)=0.2753\tP(C=1|B=0,A=0)=0.2609\tP(A=0)=0.2440\tP(D=0|B=0,C=0,A=1)=0.0551\tP(C=0|B=1,A=1)=0.6621\tP(C=0|B=0,A=1)=0.6879\tP(A=1)=0.7560\tP(D=0|B=0,C=1,A=1)=0.0259\tP(C=1|B=1,A=1)=0.3379\tP(C=1|B=0,A=1)=0.3121\tP(A=1)=0.7560",
+        "Step 6": "NIE=0.5588*[0.7247-0.7391]*0.2440+0.3590*[0.2753-0.2609]*0.2440+0.0551*[0.6621-0.6879]*0.7560+0.0259*[0.3379-0.3121]*0.7560=-0.0013",
+        "Step 7": "NIE=-0.0013<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.0012693811573276353
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "锻炼量为少(A=0)的概率为0.2440。在整体健康状况为不好(C=0), 身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.4412。在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7247。在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。在整体健康状况为好(C=1), 身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.6410。在整体健康状况为不好(C=0), 身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9449。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6621。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。在整体健康状况为好(C=1), 身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9741。",
+        "data_info_math": "P(A=0)=0.2440; P(D=1|C=0,B=0,A=0)=0.4412; P(C=0|B=1,A=0)=0.7247; P(C=0|B=0,A=0)=0.7391; P(D=1|C=1,B=0,A=0)=0.6410; P(D=1|C=0,B=0,A=1)=0.9449; P(C=0|B=1,A=1)=0.6621; P(C=0|B=0,A=1)=0.6879; P(D=1|C=1,B=0,A=1)=0.9741; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体素质水平保持不变，而所有中间变量被改变为当它们在身体素质水平变化为好下的取值，那么life expectancy更有可能为长吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=1|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=1|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,C=0,A=0)=0.4412\tP(C=0|B=1,A=0)=0.7247\tP(C=0|B=0,A=0)=0.7391\tP(A=0)=0.2440\tP(D=1|B=0,C=1,A=0)=0.6410\tP(C=1|B=1,A=0)=0.2753\tP(C=1|B=0,A=0)=0.2609\tP(A=0)=0.2440\tP(D=1|B=0,C=0,A=1)=0.9449\tP(C=0|B=1,A=1)=0.6621\tP(C=0|B=0,A=1)=0.6879\tP(A=1)=0.7560\tP(D=1|B=0,C=1,A=1)=0.9741\tP(C=1|B=1,A=1)=0.3379\tP(C=1|B=0,A=1)=0.3121\tP(A=1)=0.7560",
+        "Step 6": "NIE=0.4412*[0.7247-0.7391]*0.2440+0.6410*[0.2753-0.2609]*0.2440+0.9449*[0.6621-0.6879]*0.7560+0.9741*[0.3379-0.3121]*0.7560=0.0013",
+        "Step 7": "NIE=0.0013>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.0012693811573276752
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于life expectancy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如整体健康状况保持不变，而所有中间变量被改变为当它们在整体健康状况变化为不好下的取值，那么life expectancy更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于life expectancy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如整体健康状况保持不变，而所有中间变量被改变为当它们在整体健康状况变化为不好下的取值，那么life expectancy更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于life expectancy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如整体健康状况保持不变，而所有中间变量被改变为当它们在整体健康状况变化为好下的取值，那么life expectancy更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于life expectancy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如整体健康状况保持不变，而所有中间变量被改变为当它们在整体健康状况变化为好下的取值，那么life expectancy更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, 身体素质水平为差(B=0)的概率为0.7299。在锻炼量为充足(A=1)的条件下, 身体素质水平为差(B=0)的概率为0.1669。",
+        "data_info_math": "P(B=0|A=0)=0.7299; P(B=0|A=1)=0.1669; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些锻炼量为少，假如锻炼量为充足，那么身体素质水平更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.7299\tP(B=0|A=1)=0.1669",
+        "Step 6": "ETT=0.7299-0.1669=0.5630",
+        "Step 7": "ETT=0.5630>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.5630397259085784
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, 身体素质水平为好(B=1)的概率为0.2701。在锻炼量为充足(A=1)的条件下, 身体素质水平为好(B=1)的概率为0.8331。",
+        "data_info_math": "P(B=1|A=0)=0.2701; P(B=1|A=1)=0.8331; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些锻炼量为少，假如锻炼量为充足，那么身体素质水平更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.2701\tP(B=1|A=1)=0.8331",
+        "Step 6": "ETT=0.2701-0.8331=-0.5630",
+        "Step 7": "ETT=-0.5630<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.5630397259085782
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, 身体素质水平为差(B=0)的概率为0.1669。在锻炼量为少(A=0)的条件下, 身体素质水平为差(B=0)的概率为0.7299。",
+        "data_info_math": "P(B=0|A=1)=0.1669; P(B=0|A=0)=0.7299; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些锻炼量为充足，假如锻炼量为少，那么身体素质水平更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.1669\tP(B=0|A=0)=0.7299",
+        "Step 6": "ETT=0.1669-0.7299=-0.5630",
+        "Step 7": "ETT=-0.5630<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.5630397259085784
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, 身体素质水平为好(B=1)的概率为0.8331。在锻炼量为少(A=0)的条件下, 身体素质水平为好(B=1)的概率为0.2701。",
+        "data_info_math": "P(B=1|A=1)=0.8331; P(B=1|A=0)=0.2701; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些锻炼量为充足，假如锻炼量为少，那么身体素质水平更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.8331\tP(B=1|A=0)=0.2701",
+        "Step 6": "ETT=0.8331-0.2701=0.5630",
+        "Step 7": "ETT=0.5630>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.5630397259085782
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7352。在锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6664。",
+        "data_info_math": "P(C=0|A=0)=0.7352; P(C=0|A=1)=0.6664; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些锻炼量为少，假如锻炼量为充足，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.7352\tP(C=0|A=1)=0.6664",
+        "Step 6": "ETT=0.7352-0.6664=0.0688",
+        "Step 7": "ETT=0.0688>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.06881733021077285
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2648。在锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3336。",
+        "data_info_math": "P(C=1|A=0)=0.2648; P(C=1|A=1)=0.3336; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些锻炼量为少，假如锻炼量为充足，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.2648\tP(C=1|A=1)=0.3336",
+        "Step 6": "ETT=0.2648-0.3336=-0.0688",
+        "Step 7": "ETT=-0.0688<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.0688173302107728
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6664。在锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7352。",
+        "data_info_math": "P(C=0|A=1)=0.6664; P(C=0|A=0)=0.7352; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些锻炼量为充足，假如锻炼量为少，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.6664\tP(C=0|A=0)=0.7352",
+        "Step 6": "ETT=0.6664-0.7352=-0.0688",
+        "Step 7": "ETT=-0.0688<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.06881733021077285
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3336。在锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2648。",
+        "data_info_math": "P(C=1|A=1)=0.3336; P(C=1|A=0)=0.2648; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些锻炼量为充足，假如锻炼量为少，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.3336\tP(C=1|A=0)=0.2648",
+        "Step 6": "ETT=0.3336-0.2648=0.0688",
+        "Step 7": "ETT=0.0688>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.0688173302107728
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.3898。在锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0108。",
+        "data_info_math": "P(D=0|A=0)=0.3898; P(D=0|A=1)=0.0108; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些锻炼量为少，假如锻炼量为充足，那么life expectancy更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.3898\tP(D=0|A=1)=0.0108",
+        "Step 6": "ETT=0.3898-0.0108=0.3790",
+        "Step 7": "ETT=0.3790>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.3790424147801197
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.6102。在锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9892。",
+        "data_info_math": "P(D=1|A=0)=0.6102; P(D=1|A=1)=0.9892; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些锻炼量为少，假如锻炼量为充足，那么life expectancy更有可能为长吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.6102\tP(D=1|A=1)=0.9892",
+        "Step 6": "ETT=0.6102-0.9892=-0.3790",
+        "Step 7": "ETT=-0.3790<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.37904241478011946
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0108。在锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.3898。",
+        "data_info_math": "P(D=0|A=1)=0.0108; P(D=0|A=0)=0.3898; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些锻炼量为充足，假如锻炼量为少，那么life expectancy更有可能为短吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.0108\tP(D=0|A=0)=0.3898",
+        "Step 6": "ETT=0.0108-0.3898=-0.3790",
+        "Step 7": "ETT=-0.3790<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.3790424147801197
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9892。在锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.6102。",
+        "data_info_math": "P(D=1|A=1)=0.9892; P(D=1|A=0)=0.6102; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些锻炼量为充足，假如锻炼量为少，那么life expectancy更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.9892\tP(D=1|A=0)=0.6102",
+        "Step 6": "ETT=0.9892-0.6102=0.3790",
+        "Step 7": "ETT=0.3790>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.37904241478011946
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体素质水平作用于锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体素质水平为差，假如身体素质水平为好，那么锻炼量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体素质水平作用于锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体素质水平为差，假如身体素质水平为好，那么锻炼量更有可能为充足吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体素质水平作用于锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体素质水平为好，假如身体素质水平为差，那么锻炼量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体素质水平作用于锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体素质水平为好，假如身体素质水平为差，那么锻炼量更有可能为充足吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7179。在锻炼量为少(A=0)且身体素质水平为好(B=1)的条件下, 整体健康状况为不好(C=0)的概率为0.7247。在身体素质水平为差(B=0)的条件下, 锻炼量为少(A=0)的概率为0.5854。在锻炼量为充足(A=1)且身体素质水平为好(B=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6621。在身体素质水平为差(B=0)的条件下, 锻炼量为充足(A=1)的概率为0.4146。",
+        "data_info_math": "P(C=0|B=0)=0.7179; P(C=0|A=0,B=1)=0.7247; P(A=0|B=0)=0.5854; P(C=0|A=1,B=1)=0.6621; P(A=1|B=0)=0.4146; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体素质水平为差，假如身体素质水平为好，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-sum_{A} P(C=0|B=1,A)*P(A|B=0)=P(C=0|B=0)-[P(C=0|B=1,A=0)*P(A=0|B=0)+P(C=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=0|B=0)=0.7179\tP(C=0|B=1,A=0)=0.7247\tP(A=0|B=0)=0.5854\tP(C=0|B=1,A=1)=0.6621\tP(A=1|B=0)=0.4146",
+        "Step 6": "ETT=0.7179-[0.7247*0.5854+0.6621*0.4146]=0.0191",
+        "Step 7": "ETT=0.0191>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.019094409230142162
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)的条件下, 整体健康状况为好(C=1)的概率为0.2821。在锻炼量为少(A=0)且身体素质水平为好(B=1)的条件下, 整体健康状况为好(C=1)的概率为0.2753。在身体素质水平为差(B=0)的条件下, 锻炼量为少(A=0)的概率为0.5854。在锻炼量为充足(A=1)且身体素质水平为好(B=1)的条件下, 整体健康状况为好(C=1)的概率为0.3379。在身体素质水平为差(B=0)的条件下, 锻炼量为充足(A=1)的概率为0.4146。",
+        "data_info_math": "P(C=1|B=0)=0.2821; P(C=1|A=0,B=1)=0.2753; P(A=0|B=0)=0.5854; P(C=1|A=1,B=1)=0.3379; P(A=1|B=0)=0.4146; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体素质水平为差，假如身体素质水平为好，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-sum_{A} P(C=1|B=1,A)*P(A|B=0)=P(C=1|B=0)-[P(C=1|B=1,A=0)*P(A=0|B=0)+P(C=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=1|B=0)=0.2821\tP(C=1|B=1,A=0)=0.2753\tP(A=0|B=0)=0.5854\tP(C=1|B=1,A=1)=0.3379\tP(A=1|B=0)=0.4146",
+        "Step 6": "ETT=0.2821-[0.2753*0.5854+0.3379*0.4146]=-0.0191",
+        "Step 7": "ETT=-0.0191<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.019094409230142217
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6681。在锻炼量为少(A=0)且身体素质水平为差(B=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。在身体素质水平为好(B=1)的条件下, 锻炼量为少(A=0)的概率为0.0947。在锻炼量为充足(A=1)且身体素质水平为差(B=0)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。在身体素质水平为好(B=1)的条件下, 锻炼量为充足(A=1)的概率为0.9053。",
+        "data_info_math": "P(C=0|B=1)=0.6681; P(C=0|A=0,B=0)=0.7391; P(A=0|B=1)=0.0947; P(C=0|A=1,B=0)=0.6879; P(A=1|B=1)=0.9053; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体素质水平为好，假如身体素质水平为差，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-sum_{A} P(C=0|B=0,A)*P(A|B=1)=P(C=0|B=1)-[P(C=0|B=0,A=0)*P(A=0|B=1)+P(C=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=0|B=1)=0.6681\tP(C=0|B=0,A=0)=0.7391\tP(A=0|B=1)=0.0947\tP(C=0|B=0,A=1)=0.6879\tP(A=1|B=1)=0.9053",
+        "Step 6": "ETT=0.6681-[0.7391*0.0947+0.6879*0.9053]=-0.0246",
+        "Step 7": "ETT=-0.0246<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.024648108465275653
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1)的条件下, 整体健康状况为好(C=1)的概率为0.3319。在锻炼量为少(A=0)且身体素质水平为差(B=0)的条件下, 整体健康状况为好(C=1)的概率为0.2609。在身体素质水平为好(B=1)的条件下, 锻炼量为少(A=0)的概率为0.0947。在锻炼量为充足(A=1)且身体素质水平为差(B=0)的条件下, 整体健康状况为好(C=1)的概率为0.3121。在身体素质水平为好(B=1)的条件下, 锻炼量为充足(A=1)的概率为0.9053。",
+        "data_info_math": "P(C=1|B=1)=0.3319; P(C=1|A=0,B=0)=0.2609; P(A=0|B=1)=0.0947; P(C=1|A=1,B=0)=0.3121; P(A=1|B=1)=0.9053; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体素质水平为好，假如身体素质水平为差，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-sum_{A} P(C=1|B=0,A)*P(A|B=1)=P(C=1|B=1)-[P(C=1|B=0,A=0)*P(A=0|B=1)+P(C=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=1|B=1)=0.3319\tP(C=1|B=0,A=0)=0.2609\tP(A=0|B=1)=0.0947\tP(C=1|B=0,A=1)=0.3121\tP(A=1|B=1)=0.9053",
+        "Step 6": "ETT=0.3319-[0.2609*0.0947+0.3121*0.9053]=0.0246",
+        "Step 7": "ETT=0.0246>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.024648108465275598
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)的条件下, life expectancy为短(D=0)的概率为0.3157。在锻炼量为少(A=0)且身体素质水平为好(B=1)的条件下, life expectancy为短(D=0)的概率为0.0741。在身体素质水平为差(B=0)的条件下, 锻炼量为少(A=0)的概率为0.5854。在锻炼量为充足(A=1)且身体素质水平为好(B=1)的条件下, life expectancy为短(D=0)的概率为0.0037。在身体素质水平为差(B=0)的条件下, 锻炼量为充足(A=1)的概率为0.4146。",
+        "data_info_math": "P(D=0|B=0)=0.3157; P(D=0|A=0,B=1)=0.0741; P(A=0|B=0)=0.5854; P(D=0|A=1,B=1)=0.0037; P(A=1|B=0)=0.4146; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体素质水平为差，假如身体素质水平为好，那么life expectancy更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-sum_{A} P(D=0|B=1,A)*P(A|B=0)=P(D=0|B=0)-[P(D=0|B=1,A=0)*P(A=0|B=0)+P(D=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=0|B=0)=0.3157\tP(D=0|B=1,A=0)=0.0741\tP(A=0|B=0)=0.5854\tP(D=0|B=1,A=1)=0.0037\tP(A=1|B=0)=0.4146",
+        "Step 6": "ETT=0.3157-[0.0741*0.5854+0.0037*0.4146]=0.2708",
+        "Step 7": "ETT=0.2708>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.2707509755088733
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)的条件下, life expectancy为长(D=1)的概率为0.6843。在锻炼量为少(A=0)且身体素质水平为好(B=1)的条件下, life expectancy为长(D=1)的概率为0.9259。在身体素质水平为差(B=0)的条件下, 锻炼量为少(A=0)的概率为0.5854。在锻炼量为充足(A=1)且身体素质水平为好(B=1)的条件下, life expectancy为长(D=1)的概率为0.9963。在身体素质水平为差(B=0)的条件下, 锻炼量为充足(A=1)的概率为0.4146。",
+        "data_info_math": "P(D=1|B=0)=0.6843; P(D=1|A=0,B=1)=0.9259; P(A=0|B=0)=0.5854; P(D=1|A=1,B=1)=0.9963; P(A=1|B=0)=0.4146; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体素质水平为差，假如身体素质水平为好，那么life expectancy更有可能为长吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-sum_{A} P(D=1|B=1,A)*P(A|B=0)=P(D=1|B=0)-[P(D=1|B=1,A=0)*P(A=0|B=0)+P(D=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=1|B=0)=0.6843\tP(D=1|B=1,A=0)=0.9259\tP(A=0|B=0)=0.5854\tP(D=1|B=1,A=1)=0.9963\tP(A=1|B=0)=0.4146",
+        "Step 6": "ETT=0.6843-[0.9259*0.5854+0.9963*0.4146]=-0.2708",
+        "Step 7": "ETT=-0.2708<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.2707509755088734
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1)的条件下, life expectancy为短(D=0)的概率为0.0104。在锻炼量为少(A=0)且身体素质水平为差(B=0)的条件下, life expectancy为短(D=0)的概率为0.5067。在身体素质水平为好(B=1)的条件下, 锻炼量为少(A=0)的概率为0.0947。在锻炼量为充足(A=1)且身体素质水平为差(B=0)的条件下, life expectancy为短(D=0)的概率为0.0460。在身体素质水平为好(B=1)的条件下, 锻炼量为充足(A=1)的概率为0.9053。",
+        "data_info_math": "P(D=0|B=1)=0.0104; P(D=0|A=0,B=0)=0.5067; P(A=0|B=1)=0.0947; P(D=0|A=1,B=0)=0.0460; P(A=1|B=1)=0.9053; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体素质水平为好，假如身体素质水平为差，那么life expectancy更有可能为短吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-sum_{A} P(D=0|B=0,A)*P(A|B=1)=P(D=0|B=1)-[P(D=0|B=0,A=0)*P(A=0|B=1)+P(D=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=0|B=1)=0.0104\tP(D=0|B=0,A=0)=0.5067\tP(A=0|B=1)=0.0947\tP(D=0|B=0,A=1)=0.0460\tP(A=1|B=1)=0.9053",
+        "Step 6": "ETT=0.0104-[0.5067*0.0947+0.0460*0.9053]=-0.0792",
+        "Step 7": "ETT=-0.0792<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.07920514216870077
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1)的条件下, life expectancy为长(D=1)的概率为0.9896。在锻炼量为少(A=0)且身体素质水平为差(B=0)的条件下, life expectancy为长(D=1)的概率为0.4933。在身体素质水平为好(B=1)的条件下, 锻炼量为少(A=0)的概率为0.0947。在锻炼量为充足(A=1)且身体素质水平为差(B=0)的条件下, life expectancy为长(D=1)的概率为0.9540。在身体素质水平为好(B=1)的条件下, 锻炼量为充足(A=1)的概率为0.9053。",
+        "data_info_math": "P(D=1|B=1)=0.9896; P(D=1|A=0,B=0)=0.4933; P(A=0|B=1)=0.0947; P(D=1|A=1,B=0)=0.9540; P(A=1|B=1)=0.9053; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体素质水平为好，假如身体素质水平为差，那么life expectancy更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-sum_{A} P(D=1|B=0,A)*P(A|B=1)=P(D=1|B=1)-[P(D=1|B=0,A=0)*P(A=0|B=1)+P(D=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=1|B=1)=0.9896\tP(D=1|B=0,A=0)=0.4933\tP(A=0|B=1)=0.0947\tP(D=1|B=0,A=1)=0.9540\tP(A=1|B=1)=0.9053",
+        "Step 6": "ETT=0.9896-[0.4933*0.0947+0.9540*0.9053]=0.0792",
+        "Step 7": "ETT=0.0792>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.07920514216870089
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为不好，假如整体健康状况为好，那么锻炼量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为不好，假如整体健康状况为好，那么锻炼量更有可能为充足吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为不好，那么锻炼量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为不好，那么锻炼量更有可能为充足吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于身体素质水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为不好，假如整体健康状况为好，那么身体素质水平更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于身体素质水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为不好，假如整体健康状况为好，那么身体素质水平更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于身体素质水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为不好，那么身体素质水平更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于身体素质水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为不好，那么身体素质水平更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些life expectancy为短，假如life expectancy为长，那么锻炼量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些life expectancy为短，假如life expectancy为长，那么锻炼量更有可能为充足吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些life expectancy为长，假如life expectancy为短，那么锻炼量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些life expectancy为长，假如life expectancy为短，那么锻炼量更有可能为充足吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于身体素质水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些life expectancy为短，假如life expectancy为长，那么身体素质水平更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于身体素质水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些life expectancy为短，假如life expectancy为长，那么身体素质水平更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于身体素质水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些life expectancy为长，假如life expectancy为短，那么身体素质水平更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于身体素质水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些life expectancy为长，假如life expectancy为短，那么身体素质水平更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些life expectancy为短，假如life expectancy为长，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些life expectancy为短，假如life expectancy为长，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些life expectancy为长，假如life expectancy为短，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑life expectancy作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些life expectancy为长，假如life expectancy为短，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)且身体素质水平为差(B=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。在锻炼量为充足(A=1)且身体素质水平为差(B=0)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。",
+        "data_info_math": "P(C=0|A=0,B=0)=0.7391; P(C=0|A=1,B=0)=0.6879; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在身体素质水平为差的条件下，假如锻炼量为少，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=0,B=0))-P(C=0|do(A=1,B=0))=P(C=0|A=0,B=0)-P(C=0|A=1,B=0)",
+        "Step 5": "P(C=0|A=0,B=0)=0.7391\tP(C=0|A=1,B=0)=0.6879",
+        "Step 6": "CDE=0.7391-0.6879=0.0513",
+        "Step 7": "CDE=0.0513>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.05127862731994204
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)且身体素质水平为好(B=1)的条件下, 整体健康状况为好(C=1)的概率为0.2753。在锻炼量为充足(A=1)且身体素质水平为好(B=1)的条件下, 整体健康状况为好(C=1)的概率为0.3379。",
+        "data_info_math": "P(C=1|A=0,B=1)=0.2753; P(C=1|A=1,B=1)=0.3379; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在身体素质水平为好的条件下，假如锻炼量为少，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=0,B=1))-P(C=1|do(A=1,B=1))=P(C=1|A=0,B=1)-P(C=1|A=1,B=1)",
+        "Step 5": "P(C=1|A=0,B=1)=0.2753\tP(C=1|A=1,B=1)=0.3379",
+        "Step 6": "CDE=0.2753-0.3379=-0.0626",
+        "Step 7": "CDE=-0.0626<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.06259803053288865
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)且身体素质水平为差(B=0)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。在锻炼量为少(A=0)且身体素质水平为差(B=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。",
+        "data_info_math": "P(C=0|A=1,B=0)=0.6879; P(C=0|A=0,B=0)=0.7391; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在身体素质水平为差的条件下，假如锻炼量为充足，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=1,B=0))-P(C=0|do(A=0,B=0))=P(C=0|A=1,B=0)-P(C=0|A=0,B=0)",
+        "Step 5": "P(C=0|A=1,B=0)=0.6879\tP(C=0|A=0,B=0)=0.7391",
+        "Step 6": "CDE=0.6879-0.7391=-0.0513",
+        "Step 7": "CDE=-0.0513<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.05127862731994204
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)且身体素质水平为差(B=0)的条件下, 整体健康状况为好(C=1)的概率为0.3121。在锻炼量为少(A=0)且身体素质水平为差(B=0)的条件下, 整体健康状况为好(C=1)的概率为0.2609。",
+        "data_info_math": "P(C=1|A=1,B=0)=0.3121; P(C=1|A=0,B=0)=0.2609; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在身体素质水平为差的条件下，假如锻炼量为充足，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=1,B=0))-P(C=1|do(A=0,B=0))=P(C=1|A=1,B=0)-P(C=1|A=0,B=0)",
+        "Step 5": "P(C=1|A=1,B=0)=0.3121\tP(C=1|A=0,B=0)=0.2609",
+        "Step 6": "CDE=0.3121-0.2609=0.0513",
+        "Step 7": "CDE=0.0513>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.05127862731994204
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0), 身体素质水平为好(B=1)且整体健康状况为不好(C=0)的条件下, life expectancy为短(D=0)的概率为0.0875。在锻炼量为充足(A=1), 身体素质水平为好(B=1)且整体健康状况为不好(C=0)的条件下, life expectancy为短(D=0)的概率为0.0047。",
+        "data_info_math": "P(D=0|A=0,B=1,C=0)=0.0875; P(D=0|A=1,B=1,C=0)=0.0047; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在身体素质水平为好且整体健康状况为不好的条件下，假如锻炼量为少，那么life expectancy更有可能为短吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=0,B=1,C=0))-P(D=0|do(A=1,B=1,C=0))=P(D=0|A=0,B=1,C=0)-P(D=0|A=1,B=1,C=0)",
+        "Step 5": "P(D=0|A=0,B=1,C=0)=0.0875\tP(D=0|A=1,B=1,C=0)=0.0047",
+        "Step 6": "CDE=0.0875-0.0047=0.0828",
+        "Step 7": "CDE=0.0828>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.08282114903438478
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0), 身体素质水平为好(B=1)且整体健康状况为好(C=1)的条件下, life expectancy为长(D=1)的概率为0.9614。在锻炼量为充足(A=1), 身体素质水平为好(B=1)且整体健康状况为好(C=1)的条件下, life expectancy为长(D=1)的概率为0.9981。",
+        "data_info_math": "P(D=1|A=0,B=1,C=1)=0.9614; P(D=1|A=1,B=1,C=1)=0.9981; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在身体素质水平为好且整体健康状况为好的条件下，假如锻炼量为少，那么life expectancy更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=0,B=1,C=1))-P(D=1|do(A=1,B=1,C=1))=P(D=1|A=0,B=1,C=1)-P(D=1|A=1,B=1,C=1)",
+        "Step 5": "P(D=1|A=0,B=1,C=1)=0.9614\tP(D=1|A=1,B=1,C=1)=0.9981",
+        "Step 6": "CDE=0.9614-0.9981=-0.0367",
+        "Step 7": "CDE=-0.0367<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.03670905488638909
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1), 身体素质水平为好(B=1)且整体健康状况为好(C=1)的条件下, life expectancy为短(D=0)的概率为0.0019。在锻炼量为少(A=0), 身体素质水平为好(B=1)且整体健康状况为好(C=1)的条件下, life expectancy为短(D=0)的概率为0.0386。",
+        "data_info_math": "P(D=0|A=1,B=1,C=1)=0.0019; P(D=0|A=0,B=1,C=1)=0.0386; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在身体素质水平为好且整体健康状况为好的条件下，假如锻炼量为充足，那么life expectancy更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=1,B=1,C=1))-P(D=0|do(A=0,B=1,C=1))=P(D=0|A=1,B=1,C=1)-P(D=0|A=0,B=1,C=1)",
+        "Step 5": "P(D=0|A=1,B=1,C=1)=0.0019\tP(D=0|A=0,B=1,C=1)=0.0386",
+        "Step 6": "CDE=0.0019-0.0386=-0.0367",
+        "Step 7": "CDE=-0.0367<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.03670905488638907
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1), 身体素质水平为好(B=1)且整体健康状况为不好(C=0)的条件下, life expectancy为长(D=1)的概率为0.9953。在锻炼量为少(A=0), 身体素质水平为好(B=1)且整体健康状况为不好(C=0)的条件下, life expectancy为长(D=1)的概率为0.9125。",
+        "data_info_math": "P(D=1|A=1,B=1,C=0)=0.9953; P(D=1|A=0,B=1,C=0)=0.9125; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在身体素质水平为好且整体健康状况为不好的条件下，假如锻炼量为充足，那么life expectancy更有可能为长吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=1,B=1,C=0))-P(D=1|do(A=0,B=1,C=0))=P(D=1|A=1,B=1,C=0)-P(D=1|A=0,B=1,C=0)",
+        "Step 5": "P(D=1|A=1,B=1,C=0)=0.9953\tP(D=1|A=0,B=1,C=0)=0.9125",
+        "Step 6": "CDE=0.9953-0.9125=0.0828",
+        "Step 7": "CDE=0.0828>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.08282114903438464
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0), 整体健康状况为不好(C=0)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.5588。在身体素质水平为好(B=1), 整体健康状况为不好(C=0)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.0875。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为差(B=0), 整体健康状况为不好(C=0)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0551。在身体素质水平为好(B=1), 整体健康状况为不好(C=0)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0047。锻炼量为充足(A=1)的概率为0.7560。",
+        "data_info_math": "P(D=0|B=0,C=0,A=0)=0.5588; P(D=0|B=1,C=0,A=0)=0.0875; P(A=0)=0.2440; P(D=0|B=0,C=0,A=1)=0.0551; P(D=0|B=1,C=0,A=1)=0.0047; P(A=1)=0.7560; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在整体健康状况为不好的条件下，假如身体素质水平为差，那么life expectancy更有可能为短吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "CDE=P(D=0|do(B=0,C=0))-P(D=0|do(B=1,C=0))=sum_{A} [P(D=0|B=0,C=0,A)-P(D=0|B=1,C=0,A)]*P(A)=[P(D=0|B=0,C=0,A=0)-P(D=0|B=1,C=0,A=0)]*P(A=0)+[P(D=0|B=0,C=0,A=1)-P(D=0|B=1,C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,C=0,A=0)=0.5588\tP(A=0)=0.2440\tP(D=0|B=1,C=0,A=0)=0.0875\tP(D=0|B=0,C=0,A=1)=0.0551\tP(A=1)=0.7560\tP(D=0|B=1,C=0,A=1)=0.0047",
+        "Step 6": "CDE=[0.5588-0.0875]*0.2440+[0.0551-0.0047]*0.7560=0.1531",
+        "Step 7": "CDE=0.1531>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.15308010287879456
+    },
+    {
+      "id": 133,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0), 整体健康状况为好(C=1)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.6410。在身体素质水平为好(B=1), 整体健康状况为好(C=1)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.9614。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为差(B=0), 整体健康状况为好(C=1)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9741。在身体素质水平为好(B=1), 整体健康状况为好(C=1)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9981。锻炼量为充足(A=1)的概率为0.7560。",
+        "data_info_math": "P(D=1|B=0,C=1,A=0)=0.6410; P(D=1|B=1,C=1,A=0)=0.9614; P(A=0)=0.2440; P(D=1|B=0,C=1,A=1)=0.9741; P(D=1|B=1,C=1,A=1)=0.9981; P(A=1)=0.7560; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在整体健康状况为好的条件下，假如身体素质水平为差，那么life expectancy更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "CDE=P(D=1|do(B=0,C=1))-P(D=1|do(B=1,C=1))=sum_{A} [P(D=1|B=0,C=1,A)-P(D=1|B=1,C=1,A)]*P(A)=[P(D=1|B=0,C=1,A=0)-P(D=1|B=1,C=1,A=0)]*P(A=0)+[P(D=1|B=0,C=1,A=1)-P(D=1|B=1,C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,C=1,A=0)=0.6410\tP(A=0)=0.2440\tP(D=1|B=1,C=1,A=0)=0.9614\tP(D=1|B=0,C=1,A=1)=0.9741\tP(A=1)=0.7560\tP(D=1|B=1,C=1,A=1)=0.9981",
+        "Step 6": "CDE=[0.6410-0.9614]*0.2440+[0.9741-0.9981]*0.7560=-0.0963",
+        "Step 7": "CDE=-0.0963<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.0963453213916057
+    },
+    {
+      "id": 134,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1), 整体健康状况为好(C=1)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.0386。在身体素质水平为差(B=0), 整体健康状况为好(C=1)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.3590。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为好(B=1), 整体健康状况为好(C=1)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0019。在身体素质水平为差(B=0), 整体健康状况为好(C=1)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0259。锻炼量为充足(A=1)的概率为0.7560。",
+        "data_info_math": "P(D=0|B=1,C=1,A=0)=0.0386; P(D=0|B=0,C=1,A=0)=0.3590; P(A=0)=0.2440; P(D=0|B=1,C=1,A=1)=0.0019; P(D=0|B=0,C=1,A=1)=0.0259; P(A=1)=0.7560; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在整体健康状况为好的条件下，假如身体素质水平为好，那么life expectancy更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "CDE=P(D=0|do(B=1,C=1))-P(D=0|do(B=0,C=1))=sum_{A} [P(D=0|B=1,C=1,A)-P(D=0|B=0,C=1,A)]*P(A)=[P(D=0|B=1,C=1,A=0)-P(D=0|B=0,C=1,A=0)]*P(A=0)+[P(D=0|B=1,C=1,A=1)-P(D=0|B=0,C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,C=1,A=0)=0.0386\tP(A=0)=0.2440\tP(D=0|B=0,C=1,A=0)=0.3590\tP(D=0|B=1,C=1,A=1)=0.0019\tP(A=1)=0.7560\tP(D=0|B=0,C=1,A=1)=0.0259",
+        "Step 6": "CDE=[0.0386-0.3590]*0.2440+[0.0019-0.0259]*0.7560=-0.0963",
+        "Step 7": "CDE=-0.0963<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.09634532139160568
+    },
+    {
+      "id": 135,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1), 整体健康状况为好(C=1)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.9614。在身体素质水平为差(B=0), 整体健康状况为好(C=1)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.6410。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为好(B=1), 整体健康状况为好(C=1)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9981。在身体素质水平为差(B=0), 整体健康状况为好(C=1)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9741。锻炼量为充足(A=1)的概率为0.7560。",
+        "data_info_math": "P(D=1|B=1,C=1,A=0)=0.9614; P(D=1|B=0,C=1,A=0)=0.6410; P(A=0)=0.2440; P(D=1|B=1,C=1,A=1)=0.9981; P(D=1|B=0,C=1,A=1)=0.9741; P(A=1)=0.7560; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在整体健康状况为好的条件下，假如身体素质水平为好，那么life expectancy更有可能为长吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "CDE=P(D=1|do(B=1,C=1))-P(D=1|do(B=0,C=1))=sum_{A} [P(D=1|B=1,C=1,A)-P(D=1|B=0,C=1,A)]*P(A)=[P(D=1|B=1,C=1,A=0)-P(D=1|B=0,C=1,A=0)]*P(A=0)+[P(D=1|B=1,C=1,A=1)-P(D=1|B=0,C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,C=1,A=0)=0.9614\tP(A=0)=0.2440\tP(D=1|B=0,C=1,A=0)=0.6410\tP(D=1|B=1,C=1,A=1)=0.9981\tP(A=1)=0.7560\tP(D=1|B=0,C=1,A=1)=0.9741",
+        "Step 6": "CDE=[0.9614-0.6410]*0.2440+[0.9981-0.9741]*0.7560=0.0963",
+        "Step 7": "CDE=0.0963>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.0963453213916057
+    },
+    {
+      "id": 136,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象锻炼量(A)和观察节点身体素质水平(B)的后门调整集合。",
+      "Question": "方法1: 根据整体健康状况的情况，我们逐个研究锻炼量和身体素质水平的关联。\n方法2：我们直接研究一般情况下锻炼量和身体素质水平的关联。\n为了理解锻炼量如何影响身体素质水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 137,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象锻炼量(A)和观察节点身体素质水平(B)的后门调整集合。",
+      "Question": "方法1: 根据整体健康状况的情况，我们逐个研究锻炼量和身体素质水平的关联。\n方法2：我们直接研究一般情况下锻炼量和身体素质水平的关联。\n为了理解锻炼量如何影响身体素质水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 138,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象锻炼量(A)和观察节点整体健康状况(C)的后门调整集合。",
+      "Question": "方法1: 根据life expectancy的情况，我们逐个研究锻炼量和整体健康状况的关联。\n方法2：我们直接研究一般情况下锻炼量和整体健康状况的关联。\n为了理解锻炼量如何影响整体健康状况，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 139,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象锻炼量(A)和观察节点整体健康状况(C)的后门调整集合。",
+      "Question": "方法1: 根据身体素质水平的情况，我们逐个研究锻炼量和整体健康状况的关联。\n方法2：我们直接研究一般情况下锻炼量和整体健康状况的关联。\n为了理解锻炼量如何影响整体健康状况，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 140,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象锻炼量(A)和观察节点life expectancy(D)的后门调整集合。",
+      "Question": "方法1: 根据身体素质水平的情况，我们逐个研究锻炼量和life expectancy的关联。\n方法2：我们直接研究一般情况下锻炼量和life expectancy的关联。\n为了理解锻炼量如何影响life expectancy，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 141,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象锻炼量(A)和观察节点life expectancy(D)的后门调整集合。",
+      "Question": "方法1: 根据整体健康状况的情况，我们逐个研究锻炼量和life expectancy的关联。\n方法2：我们直接研究一般情况下锻炼量和life expectancy的关联。\n为了理解锻炼量如何影响life expectancy，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 142,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象身体素质水平(B)和观察节点整体健康状况(C)的后门调整集合。",
+      "Question": "方法1: 根据锻炼量的情况，我们逐个研究身体素质水平和整体健康状况的关联。\n方法2：我们直接研究一般情况下身体素质水平和整体健康状况的关联。\n为了理解身体素质水平如何影响整体健康状况，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 143,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象身体素质水平(B)和观察节点整体健康状况(C)的后门调整集合。",
+      "Question": "方法1: 根据锻炼量的情况，我们逐个研究身体素质水平和整体健康状况的关联。\n方法2：我们直接研究一般情况下身体素质水平和整体健康状况的关联。\n为了理解身体素质水平如何影响整体健康状况，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 144,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象身体素质水平(B)和观察节点life expectancy(D)的后门调整集合。",
+      "Question": "方法1: 根据锻炼量的情况，我们逐个研究身体素质水平和life expectancy的关联。\n方法2：我们直接研究一般情况下身体素质水平和life expectancy的关联。\n为了理解身体素质水平如何影响life expectancy，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 145,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象身体素质水平(B)和观察节点life expectancy(D)的后门调整集合。",
+      "Question": "方法1: 根据锻炼量的情况，我们逐个研究身体素质水平和life expectancy的关联。\n方法2：我们直接研究一般情况下身体素质水平和life expectancy的关联。\n为了理解身体素质水平如何影响life expectancy，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 146,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, 身体素质水平为好(B=1)的概率为0.2701。身体素质水平为好(B=1)的概率为0.6957。锻炼量为充足(A=1)且身体素质水平为好(B=1)的概率为0.6298。",
+        "data_info_math": "P(B=1|A=0)=0.2701; P(B=1)=0.6957; P(A=1,B=1)=0.6298; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定锻炼量为充足且身体素质水平为好, 那么假如锻炼量为少，此时身体素质水平为差的概率的下界是多少？",
+      "Answer": "0.6758",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.2701",
+        "Step 2": "PN的下界: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.6957-0.2701)/0.6298}\n=max{0, 0.6758}\n=0.6758"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.6758193077398789
+    },
+    {
+      "id": 147,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, 身体素质水平为差(B=0)的概率为0.7299。锻炼量为少(A=0)且身体素质水平为差(B=0)的概率为0.1781。锻炼量为充足(A=1)且身体素质水平为好(B=1)的概率为0.6298。",
+        "data_info_math": "P(B=0|A=0)=0.7299; P(A=0,B=0)=0.1781; P(A=1,B=1)=0.6298; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定锻炼量为充足且身体素质水平为好, 那么假如锻炼量为少，此时身体素质水平为差的概率的上界是多少？",
+      "Answer": "0.8761",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.7299",
+        "Step 2": "PN的上界: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.7299-0.1781)/0.6298}\n=min{1, 0.8761}\n=0.8761"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.8761241470641516
+    },
+    {
+      "id": 148,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2648。整体健康状况为好(C=1)的概率为0.3168。锻炼量为充足(A=1)且整体健康状况为好(C=1)的概率为0.2522。",
+        "data_info_math": "P(C=1|A=0)=0.2648; P(C=1)=0.3168; P(A=1,C=1)=0.2522; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定锻炼量为充足且整体健康状况为好, 那么假如锻炼量为少，此时整体健康状况为不好的概率的下界是多少？",
+      "Answer": "0.2063",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.2648",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.3168-0.2648)/0.2522}\n=max{0, 0.2063}\n=0.2063"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.20630463018218823
+    },
+    {
+      "id": 149,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7352。锻炼量为少(A=0)且整体健康状况为不好(C=0)的概率为0.1794。锻炼量为充足(A=1)且整体健康状况为好(C=1)的概率为0.2522。",
+        "data_info_math": "P(C=0|A=0)=0.7352; P(A=0,C=0)=0.1794; P(A=1,C=1)=0.2522; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定锻炼量为充足且整体健康状况为好, 那么假如锻炼量为少，此时整体健康状况为不好的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.7352",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.7352-0.1794)/0.2522}\n=min{1, 2.2042}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 150,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.6102。life expectancy为长(D=1)的概率为0.8967。锻炼量为充足(A=1)且life expectancy为长(D=1)的概率为0.7478。",
+        "data_info_math": "P(D=1|A=0)=0.6102; P(D=1)=0.8967; P(A=1,D=1)=0.7478; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的必要性概率(probability of necessity, PN)。",
+      "Question": "给定锻炼量为充足且life expectancy为长, 那么假如锻炼量为少，此时life expectancy为短的概率的下界是多少？",
+      "Answer": "0.3832",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.6102",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.8967-0.6102)/0.7478}\n=max{0, 0.3832}\n=0.3832"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.38317830762431854
+    },
+    {
+      "id": 151,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.3898。锻炼量为少(A=0)且life expectancy为短(D=0)的概率为0.0951。锻炼量为充足(A=1)且life expectancy为长(D=1)的概率为0.7478。",
+        "data_info_math": "P(D=0|A=0)=0.3898; P(A=0,D=0)=0.0951; P(A=1,D=1)=0.7478; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的必要性概率(probability of necessity, PN)。",
+      "Question": "给定锻炼量为充足且life expectancy为长, 那么假如锻炼量为少，此时life expectancy为短的概率的上界是多少？",
+      "Answer": "0.3941",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.3898",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.3898-0.0951)/0.7478}\n=min{1, 0.3941}\n=0.3941"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.39408973252804147
+    },
+    {
+      "id": 152,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2609。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3121。锻炼量为充足(A=1)的概率为0.7560。整体健康状况为好(C=1)的概率为0.3168。身体素质水平为好(B=1)且整体健康状况为好(C=1)的概率为0.2309。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.2609; P(A=0)=0.2440; P(C=1|B=0,A=1)=0.3121; P(A=1)=0.7560; P(C=1)=0.3168; P(B=1,C=1)=0.2309; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定身体素质水平为好且整体健康状况为好, 那么假如身体素质水平为差，此时整体健康状况为不好的概率的下界是多少？",
+      "Answer": "0.0743",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=sum_{A} P(C=1|B=0,A)*P(A)=P(C=1|B=0,A=0)*P(A=0)+P(C=1|B=0,A=1)*P(A=1)\nP(C=1|B=0,A=0)=0.2609\tP(A=0)=0.2440\tP(C=1|B=0,A=1)=0.3121\tP(A=1)=0.7560\nP(C=1|do(B=0))=0.2609*0.2440+0.3121*0.7560=0.2996",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.3168-0.2996)/0.2309}\n=max{0, 0.0743}\n=0.0743"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.07425597550719179
+    },
+    {
+      "id": 153,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7391。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6879。锻炼量为充足(A=1)的概率为0.7560。身体素质水平为差(B=0)且整体健康状况为不好(C=0)的概率为0.2184。身体素质水平为好(B=1)且整体健康状况为好(C=1)的概率为0.2309。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.7391; P(A=0)=0.2440; P(C=0|B=0,A=1)=0.6879; P(A=1)=0.7560; P(B=0,C=0)=0.2184; P(B=1,C=1)=0.2309; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定身体素质水平为好且整体健康状况为好, 那么假如身体素质水平为差，此时整体健康状况为不好的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=sum_{A} P(C=0|B=0,A)*P(A)=P(C=0|B=0,A=0)*P(A=0)+P(C=0|B=0,A=1)*P(A=1)\nP(C=0|B=0,A=0)=0.7391\tP(A=0)=0.2440\tP(C=0|B=0,A=1)=0.6879\tP(A=1)=0.7560\nP(C=0|do(B=0))=0.7391*0.2440+0.6879*0.7560=0.7004",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.7004-0.2184)/0.2309}\n=min{1, 2.0869}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 154,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.4933。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9540。锻炼量为充足(A=1)的概率为0.7560。life expectancy为长(D=1)的概率为0.8967。身体素质水平为好(B=1)且life expectancy为长(D=1)的概率为0.6885。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.4933; P(A=0)=0.2440; P(D=1|B=0,A=1)=0.9540; P(A=1)=0.7560; P(D=1)=0.8967; P(B=1,D=1)=0.6885; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的必要性概率(probability of necessity, PN)。",
+      "Question": "给定身体素质水平为好且life expectancy为长, 那么假如身体素质水平为差，此时life expectancy为短的概率的下界是多少？",
+      "Answer": "0.0800",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=sum_{A} P(D=1|B=0,A)*P(A)=P(D=1|B=0,A=0)*P(A=0)+P(D=1|B=0,A=1)*P(A=1)\nP(D=1|B=0,A=0)=0.4933\tP(A=0)=0.2440\tP(D=1|B=0,A=1)=0.9540\tP(A=1)=0.7560\nP(D=1|do(B=0))=0.4933*0.2440+0.9540*0.7560=0.8416",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.8967-0.8416)/0.6885}\n=max{0, 0.0800}\n=0.0800"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.0800380328430673
+    },
+    {
+      "id": 155,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为差(B=0)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.5067。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为差(B=0)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0460。锻炼量为充足(A=1)的概率为0.7560。身体素质水平为差(B=0)且life expectancy为短(D=0)的概率为0.0960。身体素质水平为好(B=1)且life expectancy为长(D=1)的概率为0.6885。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.5067; P(A=0)=0.2440; P(D=0|B=0,A=1)=0.0460; P(A=1)=0.7560; P(B=0,D=0)=0.0960; P(B=1,D=1)=0.6885; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的必要性概率(probability of necessity, PN)。",
+      "Question": "给定身体素质水平为好且life expectancy为长, 那么假如身体素质水平为差，此时life expectancy为短的概率的上界是多少？",
+      "Answer": "0.0906",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=sum_{A} P(D=0|B=0,A)*P(A)=P(D=0|B=0,A=0)*P(A=0)+P(D=0|B=0,A=1)*P(A=1)\nP(D=0|B=0,A=0)=0.5067\tP(A=0)=0.2440\tP(D=0|B=0,A=1)=0.0460\tP(A=1)=0.7560\nP(D=0|do(B=0))=0.5067*0.2440+0.0460*0.7560=0.1584",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.1584-0.0960)/0.6885}\n=min{1, 0.0906}\n=0.0906"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.09055364649593592
+    },
+    {
+      "id": 156,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, 身体素质水平为差(B=0)的概率为0.1669。身体素质水平为差(B=0)的概率为0.3043。锻炼量为少(A=0)且身体素质水平为差(B=0)的概率为0.1781。",
+        "data_info_math": "P(B=0|A=1)=0.1669; P(B=0)=0.3043; P(A=0,B=0)=0.1781; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定锻炼量为少且身体素质水平为差, 假如锻炼量为充足，此时身体素质水平为好的概率的下界是多少？",
+      "Answer": "0.7714",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.1669",
+        "Step 2": "PS的下界: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.3043-0.1669)/0.1781}\n=max{0, 0.7714}\n=0.7714"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.7713739086001858
+    },
+    {
+      "id": 157,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, 身体素质水平为好(B=1)的概率为0.8331。锻炼量为少(A=0)且身体素质水平为差(B=0)的概率为0.1781。锻炼量为充足(A=1)且身体素质水平为好(B=1)的概率为0.6298。",
+        "data_info_math": "P(B=1|A=1)=0.8331; P(A=0,B=0)=0.1781; P(A=1,B=1)=0.6298; "
+      },
+      "Instruction": "考虑锻炼量作用于身体素质水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定锻炼量为少且身体素质水平为差, 假如锻炼量为充足，此时身体素质水平为好的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.8331",
+        "Step 2": "PS的上界: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.8331-0.6298)/0.1781}\n=min{1, 1.1414}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 158,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6664。整体健康状况为不好(C=0)的概率为0.6832。锻炼量为少(A=0)且整体健康状况为不好(C=0)的概率为0.1794。",
+        "data_info_math": "P(C=0|A=1)=0.6664; P(C=0)=0.6832; P(A=0,C=0)=0.1794; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定锻炼量为少且整体健康状况为不好, 假如锻炼量为充足，此时整体健康状况为好的概率的下界是多少？",
+      "Answer": "0.0936",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.6664",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.6832-0.6664)/0.1794}\n=max{0, 0.0936}\n=0.0936"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.09359770664118489
+    },
+    {
+      "id": 159,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3336。锻炼量为少(A=0)且整体健康状况为不好(C=0)的概率为0.1794。锻炼量为充足(A=1)且整体健康状况为好(C=1)的概率为0.2522。",
+        "data_info_math": "P(C=1|A=1)=0.3336; P(A=0,C=0)=0.1794; P(A=1,C=1)=0.2522; "
+      },
+      "Instruction": "考虑锻炼量作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定锻炼量为少且整体健康状况为不好, 假如锻炼量为充足，此时整体健康状况为好的概率的上界是多少？",
+      "Answer": "0.4537",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.3336",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.3336-0.2522)/0.1794}\n=min{1, 0.4537}\n=0.4537"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.45368689281732755
+    },
+    {
+      "id": 160,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0108。life expectancy为短(D=0)的概率为0.1033。锻炼量为少(A=0)且life expectancy为短(D=0)的概率为0.0951。",
+        "data_info_math": "P(D=0|A=1)=0.0108; P(D=0)=0.1033; P(A=0,D=0)=0.0951; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定锻炼量为少且life expectancy为短, 假如锻炼量为充足，此时life expectancy为长的概率的下界是多少？",
+      "Answer": "0.9723",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.0108",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.1033-0.0108)/0.0951}\n=max{0, 0.9723}\n=0.9723"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.972312333960778
+    },
+    {
+      "id": 161,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9892。锻炼量为少(A=0)且life expectancy为短(D=0)的概率为0.0951。锻炼量为充足(A=1)且life expectancy为长(D=1)的概率为0.7478。",
+        "data_info_math": "P(D=1|A=1)=0.9892; P(A=0,D=0)=0.0951; P(A=1,D=1)=0.7478; "
+      },
+      "Instruction": "考虑锻炼量作用于life expectancy的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定锻炼量为少且life expectancy为短, 假如锻炼量为充足，此时life expectancy为长的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.9892",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.9892-0.7478)/0.0951}\n=min{1, 2.5375}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 162,
+      "question_id": 160,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为不好(C=0)的概率为0.7247。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为不好(C=0)的概率为0.6621。锻炼量为充足(A=1)的概率为0.7560。整体健康状况为不好(C=0)的概率为0.6832。身体素质水平为差(B=0)且整体健康状况为不好(C=0)的概率为0.2184。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.7247; P(A=0)=0.2440; P(C=0|B=1,A=1)=0.6621; P(A=1)=0.7560; P(C=0)=0.6832; P(B=0,C=0)=0.2184; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定身体素质水平为差且整体健康状况为不好, 假如身体素质水平为好，此时整体健康状况为好的概率的下界是多少？",
+      "Answer": "0.0266",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=sum_{A} P(C=0|B=1,A)*P(A)=P(C=0|B=1,A=0)*P(A=0)+P(C=0|B=1,A=1)*P(A=1)\nP(C=0|B=1,A=0)=0.7247\tP(A=0)=0.2440\tP(C=0|B=1,A=1)=0.6621\tP(A=1)=0.7560\nP(C=0|do(B=1))=0.7247*0.2440+0.6621*0.7560=0.6774",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.6832-0.6774)/0.2184}\n=max{0, 0.0266}\n=0.0266"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.02659859423296001
+    },
+    {
+      "id": 163,
+      "question_id": 161,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, 整体健康状况为好(C=1)的概率为0.2753。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, 整体健康状况为好(C=1)的概率为0.3379。锻炼量为充足(A=1)的概率为0.7560。身体素质水平为差(B=0)且整体健康状况为不好(C=0)的概率为0.2184。身体素质水平为好(B=1)且整体健康状况为好(C=1)的概率为0.2309。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.2753; P(A=0)=0.2440; P(C=1|B=1,A=1)=0.3379; P(A=1)=0.7560; P(B=0,C=0)=0.2184; P(B=1,C=1)=0.2309; "
+      },
+      "Instruction": "考虑身体素质水平作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定身体素质水平为差且整体健康状况为不好, 假如身体素质水平为好，此时整体健康状况为好的概率的上界是多少？",
+      "Answer": "0.4196",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=sum_{A} P(C=1|B=1,A)*P(A)=P(C=1|B=1,A=0)*P(A=0)+P(C=1|B=1,A=1)*P(A=1)\nP(C=1|B=1,A=0)=0.2753\tP(A=0)=0.2440\tP(C=1|B=1,A=1)=0.3379\tP(A=1)=0.7560\nP(C=1|do(B=1))=0.2753*0.2440+0.3379*0.7560=0.3226",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.3226-0.2309)/0.2184}\n=min{1, 0.4196}\n=0.4196"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.41960289786815774
+    },
+    {
+      "id": 164,
+      "question_id": 162,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为短(D=0)的概率为0.0741。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为短(D=0)的概率为0.0037。锻炼量为充足(A=1)的概率为0.7560。life expectancy为短(D=0)的概率为0.1033。身体素质水平为差(B=0)且life expectancy为短(D=0)的概率为0.0960。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.0741; P(A=0)=0.2440; P(D=0|B=1,A=1)=0.0037; P(A=1)=0.7560; P(D=0)=0.1033; P(B=0,D=0)=0.0960; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定身体素质水平为差且life expectancy为短, 假如身体素质水平为好，此时life expectancy为长的概率的下界是多少？",
+      "Answer": "0.8578",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=sum_{A} P(D=0|B=1,A)*P(A)=P(D=0|B=1,A=0)*P(A=0)+P(D=0|B=1,A=1)*P(A=1)\nP(D=0|B=1,A=0)=0.0741\tP(A=0)=0.2440\tP(D=0|B=1,A=1)=0.0037\tP(A=1)=0.7560\nP(D=0|do(B=1))=0.0741*0.2440+0.0037*0.7560=0.0209",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.1033-0.0209)/0.0960}\n=max{0, 0.8578}\n=0.8578"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.8577539755136377
+    },
+    {
+      "id": 165,
+      "question_id": 163,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表锻炼量, B代表身体素质水平, C代表整体健康状况, D代表life expectancy。",
+        "data_info": "在身体素质水平为好(B=1)且锻炼量为少(A=0)的条件下, life expectancy为长(D=1)的概率为0.9259。锻炼量为少(A=0)的概率为0.2440。在身体素质水平为好(B=1)且锻炼量为充足(A=1)的条件下, life expectancy为长(D=1)的概率为0.9963。锻炼量为充足(A=1)的概率为0.7560。身体素质水平为差(B=0)且life expectancy为短(D=0)的概率为0.0960。身体素质水平为好(B=1)且life expectancy为长(D=1)的概率为0.6885。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.9259; P(A=0)=0.2440; P(D=1|B=1,A=1)=0.9963; P(A=1)=0.7560; P(B=0,D=0)=0.0960; P(B=1,D=1)=0.6885; "
+      },
+      "Instruction": "考虑身体素质水平作用于life expectancy的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定身体素质水平为差且life expectancy为短, 假如身体素质水平为好，此时life expectancy为长的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=sum_{A} P(D=1|B=1,A)*P(A)=P(D=1|B=1,A=0)*P(A=0)+P(D=1|B=1,A=1)*P(A=1)\nP(D=1|B=1,A=0)=0.9259\tP(A=0)=0.2440\tP(D=1|B=1,A=1)=0.9963\tP(A=1)=0.7560\nP(D=1|do(B=1))=0.9259*0.2440+0.9963*0.7560=0.9791",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.9791-0.6885)/0.0960}\n=min{1, 3.0258}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    }
+  ]
+}

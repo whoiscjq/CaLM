@@ -1,0 +1,3439 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->D",
+      "B->C"
+    ],
+    "node_name": {
+      "A": "bzra",
+      "B": "vwoq",
+      "C": "saqq",
+      "D": "llgh"
+    },
+    "node_value": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": -0.11293826762983161,
+      "B": 1.9687470983701203,
+      "C": 0.14691346886090015,
+      "D": -0.7663301935052088
+    },
+    "edge_weight": {
+      "A->B": 1.3942192542492635,
+      "A->D": -0.8277210794811889,
+      "B->C": -0.4225317000964749
+    },
+    "function_description": "P(A=1)=0.4718\nP(B=1|A)=sigmoid(1.9687470983701203 + 1.3942 * A)\nP(C=1|B)=sigmoid(0.14691346886090015 + -0.4225 * B)\nP(D=1|A)=sigmoid(-0.7663301935052088 + -0.8277 * A)\n",
+    "text_description": "The probability of bzra being high (A=1) is 0.4718. \nFor those with bzra being low (A=0), the probability of vwoq being high (B=1) is 0.8775. \nFor those with bzra being high (A=1), the probability of vwoq being high (B=1) is 0.9665. \nFor those with vwoq being low (B=0), the probability of saqq being high (C=1) is 0.5367. \nFor those with vwoq being high (B=1), the probability of saqq being high (C=1) is 0.4315. \nFor those with bzra being low (A=0), the probability of llgh being high (D=1) is 0.3173. \nFor those with bzra being high (A=1), the probability of llgh being high (D=1) is 0.1688. \n",
+    "Statistic_data": [
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 6898
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 8998
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 4062
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 8247
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 10812
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 1078
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 2184
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 1618
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 3102
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 529
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 358
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 443
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 71
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 1224
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 286
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 90
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, vwoq为低(B=0)的概率为0.1243。在bzra为高(A=1)的条件下, vwoq为低(B=0)的概率为0.0340。",
+        "data_info_math": "P(B=0|A=0)=0.1243; P(B=0|A=1)=0.0340; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bzra被改变为低，那么vwoq更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.1243\tP(B=0|A=1)=0.0340",
+        "Step 6": "ATE=0.1243-0.0340=0.0903",
+        "Step 7": "ATE=0.0903>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.09031092375397107
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, vwoq为高(B=1)的概率为0.8757。在bzra为高(A=1)的条件下, vwoq为高(B=1)的概率为0.9660。",
+        "data_info_math": "P(B=1|A=0)=0.8757; P(B=1|A=1)=0.9660; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bzra被改变为低，那么vwoq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.8757\tP(B=1|A=1)=0.9660",
+        "Step 6": "ATE=0.8757-0.9660=-0.0903",
+        "Step 7": "ATE=-0.0903<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.0903109237539711
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, vwoq为低(B=0)的概率为0.0340。在bzra为低(A=0)的条件下, vwoq为低(B=0)的概率为0.1243。",
+        "data_info_math": "P(B=0|A=1)=0.0340; P(B=0|A=0)=0.1243; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bzra被改变为高，那么vwoq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.0340\tP(B=0|A=0)=0.1243",
+        "Step 6": "ATE=0.0340-0.1243=-0.0903",
+        "Step 7": "ATE=-0.0903<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.09031092375397107
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, vwoq为高(B=1)的概率为0.9660。在bzra为低(A=0)的条件下, vwoq为高(B=1)的概率为0.8757。",
+        "data_info_math": "P(B=1|A=1)=0.9660; P(B=1|A=0)=0.8757; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bzra被改变为高，那么vwoq更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.9660\tP(B=1|A=0)=0.8757",
+        "Step 6": "ATE=0.9660-0.8757=0.0903",
+        "Step 7": "ATE=0.0903>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.0903109237539711
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, saqq为低(C=0)的概率为0.5537。在bzra为高(A=1)的条件下, saqq为低(C=0)的概率为0.5642。",
+        "data_info_math": "P(C=0|A=0)=0.5537; P(C=0|A=1)=0.5642; "
+      },
+      "Instruction": "考虑bzra作用于saqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bzra被改变为低，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.5537\tP(C=0|A=1)=0.5642",
+        "Step 6": "ATE=0.5537-0.5642=-0.0105",
+        "Step 7": "ATE=-0.0105<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.010532318159960807
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, saqq为高(C=1)的概率为0.4463。在bzra为高(A=1)的条件下, saqq为高(C=1)的概率为0.4358。",
+        "data_info_math": "P(C=1|A=0)=0.4463; P(C=1|A=1)=0.4358; "
+      },
+      "Instruction": "考虑bzra作用于saqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bzra被改变为低，那么saqq更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.4463\tP(C=1|A=1)=0.4358",
+        "Step 6": "ATE=0.4463-0.4358=0.0105",
+        "Step 7": "ATE=0.0105>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.010532318159960752
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, saqq为低(C=0)的概率为0.5642。在bzra为低(A=0)的条件下, saqq为低(C=0)的概率为0.5537。",
+        "data_info_math": "P(C=0|A=1)=0.5642; P(C=0|A=0)=0.5537; "
+      },
+      "Instruction": "考虑bzra作用于saqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bzra被改变为高，那么saqq更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.5642\tP(C=0|A=0)=0.5537",
+        "Step 6": "ATE=0.5642-0.5537=0.0105",
+        "Step 7": "ATE=0.0105>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.010532318159960807
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, saqq为高(C=1)的概率为0.4358。在bzra为低(A=0)的条件下, saqq为高(C=1)的概率为0.4463。",
+        "data_info_math": "P(C=1|A=1)=0.4358; P(C=1|A=0)=0.4463; "
+      },
+      "Instruction": "考虑bzra作用于saqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bzra被改变为高，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.4358\tP(C=1|A=0)=0.4463",
+        "Step 6": "ATE=0.4358-0.4463=-0.0105",
+        "Step 7": "ATE=-0.0105<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.010532318159960752
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, llgh为低(D=0)的概率为0.6910。在bzra为高(A=1)的条件下, llgh为低(D=0)的概率为0.8325。",
+        "data_info_math": "P(D=0|A=0)=0.6910; P(D=0|A=1)=0.8325; "
+      },
+      "Instruction": "考虑bzra作用于llgh的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bzra被改变为低，那么llgh更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6910\tP(D=0|A=1)=0.8325",
+        "Step 6": "ATE=0.6910-0.8325=-0.1415",
+        "Step 7": "ATE=-0.1415<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.1414987824115732
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, llgh为高(D=1)的概率为0.3090。在bzra为高(A=1)的条件下, llgh为高(D=1)的概率为0.1675。",
+        "data_info_math": "P(D=1|A=0)=0.3090; P(D=1|A=1)=0.1675; "
+      },
+      "Instruction": "考虑bzra作用于llgh的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bzra被改变为低，那么llgh更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3090\tP(D=1|A=1)=0.1675",
+        "Step 6": "ATE=0.3090-0.1675=0.1415",
+        "Step 7": "ATE=0.1415>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.1414987824115731
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, llgh为低(D=0)的概率为0.8325。在bzra为低(A=0)的条件下, llgh为低(D=0)的概率为0.6910。",
+        "data_info_math": "P(D=0|A=1)=0.8325; P(D=0|A=0)=0.6910; "
+      },
+      "Instruction": "考虑bzra作用于llgh的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bzra被改变为高，那么llgh更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.8325\tP(D=0|A=0)=0.6910",
+        "Step 6": "ATE=0.8325-0.6910=0.1415",
+        "Step 7": "ATE=0.1415>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.1414987824115732
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, llgh为高(D=1)的概率为0.1675。在bzra为低(A=0)的条件下, llgh为高(D=1)的概率为0.3090。",
+        "data_info_math": "P(D=1|A=1)=0.1675; P(D=1|A=0)=0.3090; "
+      },
+      "Instruction": "考虑bzra作用于llgh的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bzra被改变为高，那么llgh更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.1675\tP(D=1|A=0)=0.3090",
+        "Step 6": "ATE=0.1675-0.3090=-0.1415",
+        "Step 7": "ATE=-0.1415<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.1414987824115731
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于bzra的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果vwoq被改变为低，那么bzra更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于bzra的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果vwoq被改变为低，那么bzra更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于bzra的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果vwoq被改变为高，那么bzra更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于bzra的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果vwoq被改变为高，那么bzra更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为低(B=0)的条件下, saqq为低(C=0)的概率为0.4604。在vwoq为高(B=1)的条件下, saqq为低(C=0)的概率为0.5674。",
+        "data_info_math": "P(C=0|B=0)=0.4604; P(C=0|B=1)=0.5674; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果vwoq被改变为低，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.4604\tP(C=0|B=1)=0.5674",
+        "Step 6": "ATE=0.4604-0.5674=-0.1070",
+        "Step 7": "ATE=-0.1070<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.10700228382351584
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为低(B=0)的条件下, saqq为高(C=1)的概率为0.5396。在vwoq为高(B=1)的条件下, saqq为高(C=1)的概率为0.4326。",
+        "data_info_math": "P(C=1|B=0)=0.5396; P(C=1|B=1)=0.4326; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果vwoq被改变为低，那么saqq更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.5396\tP(C=1|B=1)=0.4326",
+        "Step 6": "ATE=0.5396-0.4326=0.1070",
+        "Step 7": "ATE=0.1070>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.10700228382351584
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为高(B=1)的条件下, saqq为低(C=0)的概率为0.5674。在vwoq为低(B=0)的条件下, saqq为低(C=0)的概率为0.4604。",
+        "data_info_math": "P(C=0|B=1)=0.5674; P(C=0|B=0)=0.4604; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果vwoq被改变为高，那么saqq更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.5674\tP(C=0|B=0)=0.4604",
+        "Step 6": "ATE=0.5674-0.4604=0.1070",
+        "Step 7": "ATE=0.1070>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.10700228382351584
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为高(B=1)的条件下, saqq为高(C=1)的概率为0.4326。在vwoq为低(B=0)的条件下, saqq为高(C=1)的概率为0.5396。",
+        "data_info_math": "P(C=1|B=1)=0.4326; P(C=1|B=0)=0.5396; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果vwoq被改变为高，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.4326\tP(C=1|B=0)=0.5396",
+        "Step 6": "ATE=0.4326-0.5396=-0.1070",
+        "Step 7": "ATE=-0.1070<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.10700228382351584
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于llgh的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果vwoq被改变为低，那么llgh更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于llgh的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果vwoq被改变为低，那么llgh更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于llgh的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果vwoq被改变为高，那么llgh更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于llgh的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果vwoq被改变为高，那么llgh更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于bzra的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果saqq被改变为低，那么bzra更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于bzra的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果saqq被改变为低，那么bzra更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于bzra的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果saqq被改变为高，那么bzra更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于bzra的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果saqq被改变为高，那么bzra更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于vwoq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果saqq被改变为低，那么vwoq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于vwoq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果saqq被改变为低，那么vwoq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于vwoq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果saqq被改变为高，那么vwoq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于vwoq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果saqq被改变为高，那么vwoq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于llgh的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果saqq被改变为低，那么llgh更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于llgh的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果saqq被改变为低，那么llgh更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于llgh的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果saqq被改变为高，那么llgh更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于llgh的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果saqq被改变为高，那么llgh更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于bzra的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果llgh被改变为低，那么bzra更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于bzra的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果llgh被改变为低，那么bzra更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于bzra的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果llgh被改变为高，那么bzra更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于bzra的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果llgh被改变为高，那么bzra更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于vwoq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果llgh被改变为低，那么vwoq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于vwoq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果llgh被改变为低，那么vwoq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于vwoq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果llgh被改变为高，那么vwoq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于vwoq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果llgh被改变为高，那么vwoq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于saqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果llgh被改变为低，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于saqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果llgh被改变为低，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于saqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果llgh被改变为高，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于saqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果llgh被改变为高，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, vwoq为低(B=0)的概率为0.1243。在bzra为高(A=1)的条件下, vwoq为低(B=0)的概率为0.0340。",
+        "data_info_math": "P(B=0|A=0)=0.1243; P(B=0|A=1)=0.0340; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而bzra变化为低，那么vwoq更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.1243\tP(B=0|A=1)=0.0340",
+        "Step 6": "NDE=0.1243-0.0340=0.0903",
+        "Step 7": "NDE=0.0903>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.09031092375397107
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, vwoq为高(B=1)的概率为0.8757。在bzra为高(A=1)的条件下, vwoq为高(B=1)的概率为0.9660。",
+        "data_info_math": "P(B=1|A=0)=0.8757; P(B=1|A=1)=0.9660; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而bzra变化为低，那么vwoq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.8757\tP(B=1|A=1)=0.9660",
+        "Step 6": "NDE=0.8757-0.9660=-0.0903",
+        "Step 7": "NDE=-0.0903<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.0903109237539711
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, vwoq为低(B=0)的概率为0.0340。在bzra为低(A=0)的条件下, vwoq为低(B=0)的概率为0.1243。",
+        "data_info_math": "P(B=0|A=1)=0.0340; P(B=0|A=0)=0.1243; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而bzra变化为高，那么vwoq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.0340\tP(B=0|A=0)=0.1243",
+        "Step 6": "NDE=0.0340-0.1243=-0.0903",
+        "Step 7": "NDE=-0.0903<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.09031092375397107
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, vwoq为高(B=1)的概率为0.9660。在bzra为低(A=0)的条件下, vwoq为高(B=1)的概率为0.8757。",
+        "data_info_math": "P(B=1|A=1)=0.9660; P(B=1|A=0)=0.8757; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而bzra变化为高，那么vwoq更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.9660\tP(B=1|A=0)=0.8757",
+        "Step 6": "NDE=0.9660-0.8757=0.0903",
+        "Step 7": "NDE=0.0903>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.0903109237539711
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于saqq的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而bzra变化为低，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于saqq的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而bzra变化为低，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于saqq的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而bzra变化为高，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于saqq的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而bzra变化为高，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, llgh为低(D=0)的概率为0.6910。在bzra为高(A=1)的条件下, llgh为低(D=0)的概率为0.8325。",
+        "data_info_math": "P(D=0|A=0)=0.6910; P(D=0|A=1)=0.8325; "
+      },
+      "Instruction": "考虑bzra作用于llgh的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而bzra变化为低，那么llgh更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6910\tP(D=0|A=1)=0.8325",
+        "Step 6": "NDE=0.6910-0.8325=-0.1415",
+        "Step 7": "NDE=-0.1415<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.1414987824115732
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, llgh为高(D=1)的概率为0.3090。在bzra为高(A=1)的条件下, llgh为高(D=1)的概率为0.1675。",
+        "data_info_math": "P(D=1|A=0)=0.3090; P(D=1|A=1)=0.1675; "
+      },
+      "Instruction": "考虑bzra作用于llgh的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而bzra变化为低，那么llgh更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3090\tP(D=1|A=1)=0.1675",
+        "Step 6": "NDE=0.3090-0.1675=0.1415",
+        "Step 7": "NDE=0.1415>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.1414987824115731
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, llgh为低(D=0)的概率为0.8325。在bzra为低(A=0)的条件下, llgh为低(D=0)的概率为0.6910。",
+        "data_info_math": "P(D=0|A=1)=0.8325; P(D=0|A=0)=0.6910; "
+      },
+      "Instruction": "考虑bzra作用于llgh的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而bzra变化为高，那么llgh更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.8325\tP(D=0|A=0)=0.6910",
+        "Step 6": "NDE=0.8325-0.6910=0.1415",
+        "Step 7": "NDE=0.1415>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.1414987824115732
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, llgh为高(D=1)的概率为0.1675。在bzra为低(A=0)的条件下, llgh为高(D=1)的概率为0.3090。",
+        "data_info_math": "P(D=1|A=1)=0.1675; P(D=1|A=0)=0.3090; "
+      },
+      "Instruction": "考虑bzra作用于llgh的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而bzra变化为高，那么llgh更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.1675\tP(D=1|A=0)=0.3090",
+        "Step 6": "NDE=0.1675-0.3090=-0.1415",
+        "Step 7": "NDE=-0.1415<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.1414987824115731
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为低(B=0)的条件下, saqq为低(C=0)的概率为0.4604。在vwoq为高(B=1)的条件下, saqq为低(C=0)的概率为0.5674。",
+        "data_info_math": "P(C=0|B=0)=0.4604; P(C=0|B=1)=0.5674; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而vwoq变化为低，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.4604\tP(C=0|B=1)=0.5674",
+        "Step 6": "NDE=0.4604-0.5674=-0.1070",
+        "Step 7": "NDE=-0.1070<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.10700228382351584
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为低(B=0)的条件下, saqq为高(C=1)的概率为0.5396。在vwoq为高(B=1)的条件下, saqq为高(C=1)的概率为0.4326。",
+        "data_info_math": "P(C=1|B=0)=0.5396; P(C=1|B=1)=0.4326; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而vwoq变化为低，那么saqq更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.5396\tP(C=1|B=1)=0.4326",
+        "Step 6": "NDE=0.5396-0.4326=0.1070",
+        "Step 7": "NDE=0.1070>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.10700228382351584
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为高(B=1)的条件下, saqq为低(C=0)的概率为0.5674。在vwoq为低(B=0)的条件下, saqq为低(C=0)的概率为0.4604。",
+        "data_info_math": "P(C=0|B=1)=0.5674; P(C=0|B=0)=0.4604; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而vwoq变化为高，那么saqq更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.5674\tP(C=0|B=0)=0.4604",
+        "Step 6": "NDE=0.5674-0.4604=0.1070",
+        "Step 7": "NDE=0.1070>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.10700228382351584
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为高(B=1)的条件下, saqq为高(C=1)的概率为0.4326。在vwoq为低(B=0)的条件下, saqq为高(C=1)的概率为0.5396。",
+        "data_info_math": "P(C=1|B=1)=0.4326; P(C=1|B=0)=0.5396; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而vwoq变化为高，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.4326\tP(C=1|B=0)=0.5396",
+        "Step 6": "NDE=0.4326-0.5396=-0.1070",
+        "Step 7": "NDE=-0.1070<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.10700228382351584
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于vwoq的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如bzra保持不变，而所有中间变量被改变为当它们在bzra变化为低下的取值，那么vwoq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于vwoq的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如bzra保持不变，而所有中间变量被改变为当它们在bzra变化为低下的取值，那么vwoq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于vwoq的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如bzra保持不变，而所有中间变量被改变为当它们在bzra变化为高下的取值，那么vwoq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于vwoq的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如bzra保持不变，而所有中间变量被改变为当它们在bzra变化为高下的取值，那么vwoq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为低(B=0)且bzra为高(A=1)的条件下, saqq为低(C=0)的概率为0.4435。在bzra为低(A=0)的条件下, vwoq为低(B=0)的概率为0.1243。在bzra为高(A=1)的条件下, vwoq为低(B=0)的概率为0.0340。在vwoq为高(B=1)且bzra为高(A=1)的条件下, saqq为低(C=0)的概率为0.5685。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.4435; P(B=0|A=0)=0.1243; P(B=0|A=1)=0.0340; P(C=0|B=1,A=1)=0.5685; "
+      },
+      "Instruction": "考虑bzra作用于saqq的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如bzra保持不变，而所有中间变量被改变为当它们在bzra变化为低下的取值，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=0|A=1,B=0)=0.4435\tP(B=0|A=0)=0.1243\tP(B=0|A=1)=0.0340\tP(C=0|A=1,B=1)=0.5685\tP(B=1|A=0)=0.8757\tP(B=1|A=1)=0.9660",
+        "Step 6": "NIE=0.4435*(0.1243-0.0340)+0.5685*(0.8757-0.9660)=-0.0113",
+        "Step 7": "NIE=-0.0113<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.01128893846643849
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为低(B=0)且bzra为高(A=1)的条件下, saqq为高(C=1)的概率为0.5565。在bzra为低(A=0)的条件下, vwoq为低(B=0)的概率为0.1243。在bzra为高(A=1)的条件下, vwoq为低(B=0)的概率为0.0340。在vwoq为高(B=1)且bzra为高(A=1)的条件下, saqq为高(C=1)的概率为0.4315。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.5565; P(B=0|A=0)=0.1243; P(B=0|A=1)=0.0340; P(C=1|B=1,A=1)=0.4315; "
+      },
+      "Instruction": "考虑bzra作用于saqq的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如bzra保持不变，而所有中间变量被改变为当它们在bzra变化为低下的取值，那么saqq更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=1|A=1,B=0)=0.5565\tP(B=0|A=0)=0.1243\tP(B=0|A=1)=0.0340\tP(C=1|A=1,B=1)=0.4315\tP(B=1|A=0)=0.8757\tP(B=1|A=1)=0.9660",
+        "Step 6": "NIE=0.5565*(0.1243-0.0340)+0.4315*(0.8757-0.9660)=0.0113",
+        "Step 7": "NIE=0.0113>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.01128893846643847
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为低(B=0)且bzra为低(A=0)的条件下, saqq为低(C=0)的概率为0.4646。在bzra为高(A=1)的条件下, vwoq为低(B=0)的概率为0.0340。在bzra为低(A=0)的条件下, vwoq为低(B=0)的概率为0.1243。在vwoq为高(B=1)且bzra为低(A=0)的条件下, saqq为低(C=0)的概率为0.5663。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.4646; P(B=0|A=1)=0.0340; P(B=0|A=0)=0.1243; P(C=0|B=1,A=0)=0.5663; "
+      },
+      "Instruction": "考虑bzra作用于saqq的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如bzra保持不变，而所有中间变量被改变为当它们在bzra变化为高下的取值，那么saqq更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=0|A=0,B=0)=0.4646\tP(B=0|A=1)=0.0340\tP(B=0|A=0)=0.1243\tP(C=0|A=0,B=1)=0.5663\tP(B=1|A=1)=0.9660\tP(B=1|A=0)=0.8757",
+        "Step 6": "NIE=0.4646*(0.0340-0.1243)+0.5663*(0.9660-0.8757)=0.0092",
+        "Step 7": "NIE=0.0092>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.009191784546697793
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为低(B=0)且bzra为低(A=0)的条件下, saqq为高(C=1)的概率为0.5354。在bzra为高(A=1)的条件下, vwoq为低(B=0)的概率为0.0340。在bzra为低(A=0)的条件下, vwoq为低(B=0)的概率为0.1243。在vwoq为高(B=1)且bzra为低(A=0)的条件下, saqq为高(C=1)的概率为0.4337。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.5354; P(B=0|A=1)=0.0340; P(B=0|A=0)=0.1243; P(C=1|B=1,A=0)=0.4337; "
+      },
+      "Instruction": "考虑bzra作用于saqq的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如bzra保持不变，而所有中间变量被改变为当它们在bzra变化为高下的取值，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=1|A=0,B=0)=0.5354\tP(B=0|A=1)=0.0340\tP(B=0|A=0)=0.1243\tP(C=1|A=0,B=1)=0.4337\tP(B=1|A=1)=0.9660\tP(B=1|A=0)=0.8757",
+        "Step 6": "NIE=0.5354*(0.0340-0.1243)+0.4337*(0.9660-0.8757)=-0.0092",
+        "Step 7": "NIE=-0.0092<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.009191784546697772
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于llgh的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如bzra保持不变，而所有中间变量被改变为当它们在bzra变化为低下的取值，那么llgh更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于llgh的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如bzra保持不变，而所有中间变量被改变为当它们在bzra变化为低下的取值，那么llgh更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于llgh的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如bzra保持不变，而所有中间变量被改变为当它们在bzra变化为高下的取值，那么llgh更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于llgh的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如bzra保持不变，而所有中间变量被改变为当它们在bzra变化为高下的取值，那么llgh更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于saqq的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如vwoq保持不变，而所有中间变量被改变为当它们在vwoq变化为低下的取值，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于saqq的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如vwoq保持不变，而所有中间变量被改变为当它们在vwoq变化为低下的取值，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于saqq的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如vwoq保持不变，而所有中间变量被改变为当它们在vwoq变化为高下的取值，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于saqq的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如vwoq保持不变，而所有中间变量被改变为当它们在vwoq变化为高下的取值，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, vwoq为低(B=0)的概率为0.1243。在bzra为高(A=1)的条件下, vwoq为低(B=0)的概率为0.0340。",
+        "data_info_math": "P(B=0|A=0)=0.1243; P(B=0|A=1)=0.0340; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bzra为低，假如bzra为高，那么vwoq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.1243\tP(B=0|A=1)=0.0340",
+        "Step 6": "ETT=0.1243-0.0340=0.0903",
+        "Step 7": "ETT=0.0903>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.09031092375397107
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, vwoq为高(B=1)的概率为0.8757。在bzra为高(A=1)的条件下, vwoq为高(B=1)的概率为0.9660。",
+        "data_info_math": "P(B=1|A=0)=0.8757; P(B=1|A=1)=0.9660; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bzra为低，假如bzra为高，那么vwoq更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.8757\tP(B=1|A=1)=0.9660",
+        "Step 6": "ETT=0.8757-0.9660=-0.0903",
+        "Step 7": "ETT=-0.0903<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.0903109237539711
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, vwoq为低(B=0)的概率为0.0340。在bzra为低(A=0)的条件下, vwoq为低(B=0)的概率为0.1243。",
+        "data_info_math": "P(B=0|A=1)=0.0340; P(B=0|A=0)=0.1243; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bzra为高，假如bzra为低，那么vwoq更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.0340\tP(B=0|A=0)=0.1243",
+        "Step 6": "ETT=0.0340-0.1243=-0.0903",
+        "Step 7": "ETT=-0.0903<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.09031092375397107
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, vwoq为高(B=1)的概率为0.9660。在bzra为低(A=0)的条件下, vwoq为高(B=1)的概率为0.8757。",
+        "data_info_math": "P(B=1|A=1)=0.9660; P(B=1|A=0)=0.8757; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bzra为高，假如bzra为低，那么vwoq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.9660\tP(B=1|A=0)=0.8757",
+        "Step 6": "ETT=0.9660-0.8757=0.0903",
+        "Step 7": "ETT=0.0903>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.0903109237539711
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, saqq为低(C=0)的概率为0.5537。在bzra为高(A=1)的条件下, saqq为低(C=0)的概率为0.5642。",
+        "data_info_math": "P(C=0|A=0)=0.5537; P(C=0|A=1)=0.5642; "
+      },
+      "Instruction": "考虑bzra作用于saqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bzra为低，假如bzra为高，那么saqq更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.5537\tP(C=0|A=1)=0.5642",
+        "Step 6": "ETT=0.5537-0.5642=-0.0105",
+        "Step 7": "ETT=-0.0105<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.010532318159960807
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, saqq为高(C=1)的概率为0.4463。在bzra为高(A=1)的条件下, saqq为高(C=1)的概率为0.4358。",
+        "data_info_math": "P(C=1|A=0)=0.4463; P(C=1|A=1)=0.4358; "
+      },
+      "Instruction": "考虑bzra作用于saqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bzra为低，假如bzra为高，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.4463\tP(C=1|A=1)=0.4358",
+        "Step 6": "ETT=0.4463-0.4358=0.0105",
+        "Step 7": "ETT=0.0105>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.010532318159960752
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, saqq为低(C=0)的概率为0.5642。在bzra为低(A=0)的条件下, saqq为低(C=0)的概率为0.5537。",
+        "data_info_math": "P(C=0|A=1)=0.5642; P(C=0|A=0)=0.5537; "
+      },
+      "Instruction": "考虑bzra作用于saqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bzra为高，假如bzra为低，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.5642\tP(C=0|A=0)=0.5537",
+        "Step 6": "ETT=0.5642-0.5537=0.0105",
+        "Step 7": "ETT=0.0105>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.010532318159960807
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, saqq为高(C=1)的概率为0.4358。在bzra为低(A=0)的条件下, saqq为高(C=1)的概率为0.4463。",
+        "data_info_math": "P(C=1|A=1)=0.4358; P(C=1|A=0)=0.4463; "
+      },
+      "Instruction": "考虑bzra作用于saqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bzra为高，假如bzra为低，那么saqq更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.4358\tP(C=1|A=0)=0.4463",
+        "Step 6": "ETT=0.4358-0.4463=-0.0105",
+        "Step 7": "ETT=-0.0105<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.010532318159960752
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, llgh为低(D=0)的概率为0.6910。在bzra为高(A=1)的条件下, llgh为低(D=0)的概率为0.8325。",
+        "data_info_math": "P(D=0|A=0)=0.6910; P(D=0|A=1)=0.8325; "
+      },
+      "Instruction": "考虑bzra作用于llgh的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bzra为低，假如bzra为高，那么llgh更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6910\tP(D=0|A=1)=0.8325",
+        "Step 6": "ETT=0.6910-0.8325=-0.1415",
+        "Step 7": "ETT=-0.1415<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.1414987824115732
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, llgh为高(D=1)的概率为0.3090。在bzra为高(A=1)的条件下, llgh为高(D=1)的概率为0.1675。",
+        "data_info_math": "P(D=1|A=0)=0.3090; P(D=1|A=1)=0.1675; "
+      },
+      "Instruction": "考虑bzra作用于llgh的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bzra为低，假如bzra为高，那么llgh更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3090\tP(D=1|A=1)=0.1675",
+        "Step 6": "ETT=0.3090-0.1675=0.1415",
+        "Step 7": "ETT=0.1415>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.1414987824115731
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, llgh为低(D=0)的概率为0.8325。在bzra为低(A=0)的条件下, llgh为低(D=0)的概率为0.6910。",
+        "data_info_math": "P(D=0|A=1)=0.8325; P(D=0|A=0)=0.6910; "
+      },
+      "Instruction": "考虑bzra作用于llgh的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bzra为高，假如bzra为低，那么llgh更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.8325\tP(D=0|A=0)=0.6910",
+        "Step 6": "ETT=0.8325-0.6910=0.1415",
+        "Step 7": "ETT=0.1415>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.1414987824115732
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, llgh为高(D=1)的概率为0.1675。在bzra为低(A=0)的条件下, llgh为高(D=1)的概率为0.3090。",
+        "data_info_math": "P(D=1|A=1)=0.1675; P(D=1|A=0)=0.3090; "
+      },
+      "Instruction": "考虑bzra作用于llgh的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bzra为高，假如bzra为低，那么llgh更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.1675\tP(D=1|A=0)=0.3090",
+        "Step 6": "ETT=0.1675-0.3090=-0.1415",
+        "Step 7": "ETT=-0.1415<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.1414987824115731
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于bzra的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些vwoq为低，假如vwoq为高，那么bzra更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于bzra的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些vwoq为低，假如vwoq为高，那么bzra更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于bzra的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些vwoq为高，假如vwoq为低，那么bzra更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于bzra的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些vwoq为高，假如vwoq为低，那么bzra更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为低(B=0)的条件下, saqq为低(C=0)的概率为0.4604。在vwoq为高(B=1)的条件下, saqq为低(C=0)的概率为0.5674。",
+        "data_info_math": "P(C=0|B=0)=0.4604; P(C=0|B=1)=0.5674; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些vwoq为低，假如vwoq为高，那么saqq更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.4604\tP(C=0|B=1)=0.5674",
+        "Step 6": "ETT=0.4604-0.5674=-0.1070",
+        "Step 7": "ETT=-0.1070<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.10700228382351584
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为低(B=0)的条件下, saqq为高(C=1)的概率为0.5396。在vwoq为高(B=1)的条件下, saqq为高(C=1)的概率为0.4326。",
+        "data_info_math": "P(C=1|B=0)=0.5396; P(C=1|B=1)=0.4326; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些vwoq为低，假如vwoq为高，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.5396\tP(C=1|B=1)=0.4326",
+        "Step 6": "ETT=0.5396-0.4326=0.1070",
+        "Step 7": "ETT=0.1070>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.10700228382351584
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为高(B=1)的条件下, saqq为低(C=0)的概率为0.5674。在vwoq为低(B=0)的条件下, saqq为低(C=0)的概率为0.4604。",
+        "data_info_math": "P(C=0|B=1)=0.5674; P(C=0|B=0)=0.4604; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些vwoq为高，假如vwoq为低，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.5674\tP(C=0|B=0)=0.4604",
+        "Step 6": "ETT=0.5674-0.4604=0.1070",
+        "Step 7": "ETT=0.1070>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.10700228382351584
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为高(B=1)的条件下, saqq为高(C=1)的概率为0.4326。在vwoq为低(B=0)的条件下, saqq为高(C=1)的概率为0.5396。",
+        "data_info_math": "P(C=1|B=1)=0.4326; P(C=1|B=0)=0.5396; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些vwoq为高，假如vwoq为低，那么saqq更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.4326\tP(C=1|B=0)=0.5396",
+        "Step 6": "ETT=0.4326-0.5396=-0.1070",
+        "Step 7": "ETT=-0.1070<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.10700228382351584
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于llgh的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些vwoq为低，假如vwoq为高，那么llgh更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于llgh的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些vwoq为低，假如vwoq为高，那么llgh更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于llgh的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些vwoq为高，假如vwoq为低，那么llgh更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑vwoq作用于llgh的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些vwoq为高，假如vwoq为低，那么llgh更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于bzra的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些saqq为低，假如saqq为高，那么bzra更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于bzra的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些saqq为低，假如saqq为高，那么bzra更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于bzra的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些saqq为高，假如saqq为低，那么bzra更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于bzra的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些saqq为高，假如saqq为低，那么bzra更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于vwoq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些saqq为低，假如saqq为高，那么vwoq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于vwoq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些saqq为低，假如saqq为高，那么vwoq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于vwoq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些saqq为高，假如saqq为低，那么vwoq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于vwoq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些saqq为高，假如saqq为低，那么vwoq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于llgh的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些saqq为低，假如saqq为高，那么llgh更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于llgh的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些saqq为低，假如saqq为高，那么llgh更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于llgh的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些saqq为高，假如saqq为低，那么llgh更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑saqq作用于llgh的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些saqq为高，假如saqq为低，那么llgh更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于bzra的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些llgh为低，假如llgh为高，那么bzra更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于bzra的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些llgh为低，假如llgh为高，那么bzra更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于bzra的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些llgh为高，假如llgh为低，那么bzra更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于bzra的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些llgh为高，假如llgh为低，那么bzra更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于vwoq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些llgh为低，假如llgh为高，那么vwoq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于vwoq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些llgh为低，假如llgh为高，那么vwoq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于vwoq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些llgh为高，假如llgh为低，那么vwoq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于vwoq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些llgh为高，假如llgh为低，那么vwoq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于saqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些llgh为低，假如llgh为高，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于saqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些llgh为低，假如llgh为高，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于saqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些llgh为高，假如llgh为低，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑llgh作用于saqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些llgh为高，假如llgh为低，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于saqq的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在vwoq为高的条件下，假如bzra为低，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于saqq的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在vwoq为高的条件下，假如bzra为低，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于saqq的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在vwoq为高的条件下，假如bzra为高，那么saqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bzra作用于saqq的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在vwoq为低的条件下，假如bzra为高，那么saqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象bzra(A)和观察节点vwoq(B)的后门调整集合。",
+      "Question": "方法1: 根据llgh的情况，我们逐个研究bzra和vwoq的关联。\n方法2：我们直接研究一般情况下bzra和vwoq的关联。\n为了理解bzra如何影响vwoq，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 133,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象bzra(A)和观察节点vwoq(B)的后门调整集合。",
+      "Question": "方法1: 根据saqq的情况，我们逐个研究bzra和vwoq的关联。\n方法2：我们直接研究一般情况下bzra和vwoq的关联。\n为了理解bzra如何影响vwoq，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 134,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象bzra(A)和观察节点saqq(C)的后门调整集合。",
+      "Question": "方法1: 根据llgh的情况，我们逐个研究bzra和saqq的关联。\n方法2：我们直接研究一般情况下bzra和saqq的关联。\n为了理解bzra如何影响saqq，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 135,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象bzra(A)和观察节点saqq(C)的后门调整集合。",
+      "Question": "方法1: 根据vwoq的情况，我们逐个研究bzra和saqq的关联。\n方法2：我们直接研究一般情况下bzra和saqq的关联。\n为了理解bzra如何影响saqq，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 136,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象bzra(A)和观察节点llgh(D)的后门调整集合。",
+      "Question": "方法1: 根据vwoq的情况，我们逐个研究bzra和llgh的关联。\n方法2：我们直接研究一般情况下bzra和llgh的关联。\n为了理解bzra如何影响llgh，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 137,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象bzra(A)和观察节点llgh(D)的后门调整集合。",
+      "Question": "方法1: 根据vwoq的情况，我们逐个研究bzra和llgh的关联。\n方法2：我们直接研究一般情况下bzra和llgh的关联。\n为了理解bzra如何影响llgh，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 138,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象vwoq(B)和观察节点saqq(C)的后门调整集合。",
+      "Question": "方法1: 根据llgh的情况，我们逐个研究vwoq和saqq的关联。\n方法2：我们直接研究一般情况下vwoq和saqq的关联。\n为了理解vwoq如何影响saqq，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 139,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象vwoq(B)和观察节点saqq(C)的后门调整集合。",
+      "Question": "方法1: 根据bzra的情况，我们逐个研究vwoq和saqq的关联。\n方法2：我们直接研究一般情况下vwoq和saqq的关联。\n为了理解vwoq如何影响saqq，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 140,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, vwoq为高(B=1)的概率为0.8757。vwoq为高(B=1)的概率为0.9184。bzra为高(A=1)且vwoq为高(B=1)的概率为0.4572。",
+        "data_info_math": "P(B=1|A=0)=0.8757; P(B=1)=0.9184; P(A=1,B=1)=0.4572; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的必要性概率(probability of necessity, PN)。",
+      "Question": "给定bzra为高且vwoq为高, 那么假如bzra为低，此时vwoq为低的概率的下界是多少？",
+      "Answer": "0.0935",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.8757",
+        "Step 2": "PN的下界: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.9184-0.8757)/0.4572}\n=max{0, 0.0935}\n=0.0935"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.09349102495785318
+    },
+    {
+      "id": 141,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, vwoq为低(B=0)的概率为0.1243。bzra为低(A=0)且vwoq为低(B=0)的概率为0.0655。bzra为高(A=1)且vwoq为高(B=1)的概率为0.4572。",
+        "data_info_math": "P(B=0|A=0)=0.1243; P(A=0,B=0)=0.0655; P(A=1,B=1)=0.4572; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的必要性概率(probability of necessity, PN)。",
+      "Question": "给定bzra为高且vwoq为高, 那么假如bzra为低，此时vwoq为低的概率的上界是多少？",
+      "Answer": "0.1287",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.1243",
+        "Step 2": "PN的上界: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.1243-0.0655)/0.4572}\n=min{1, 0.1287}\n=0.1287"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.12870383279653028
+    },
+    {
+      "id": 142,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, saqq为高(C=1)的概率为0.4463。saqq为高(C=1)的概率为0.4413。bzra为高(A=1)且saqq为高(C=1)的概率为0.2063。",
+        "data_info_math": "P(C=1|A=0)=0.4463; P(C=1)=0.4413; P(A=1,C=1)=0.2063; "
+      },
+      "Instruction": "考虑bzra作用于saqq的必要性概率(probability of necessity, PN)。",
+      "Question": "给定bzra为高且saqq为高, 那么假如bzra为低，此时saqq为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.4463",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.4413-0.4463)/0.2063}\n=max{0, -0.0242}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 143,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, saqq为低(C=0)的概率为0.5537。bzra为低(A=0)且saqq为低(C=0)的概率为0.2916。bzra为高(A=1)且saqq为高(C=1)的概率为0.2063。",
+        "data_info_math": "P(C=0|A=0)=0.5537; P(A=0,C=0)=0.2916; P(A=1,C=1)=0.2063; "
+      },
+      "Instruction": "考虑bzra作用于saqq的必要性概率(probability of necessity, PN)。",
+      "Question": "给定bzra为高且saqq为高, 那么假如bzra为低，此时saqq为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.5537",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.5537-0.2916)/0.2063}\n=min{1, 1.2706}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 144,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, llgh为高(D=1)的概率为0.3090。llgh为高(D=1)的概率为0.2420。bzra为高(A=1)且llgh为高(D=1)的概率为0.0793。",
+        "data_info_math": "P(D=1|A=0)=0.3090; P(D=1)=0.2420; P(A=1,D=1)=0.0793; "
+      },
+      "Instruction": "考虑bzra作用于llgh的必要性概率(probability of necessity, PN)。",
+      "Question": "给定bzra为高且llgh为高, 那么假如bzra为低，此时llgh为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.3090",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.2420-0.3090)/0.0793}\n=max{0, -0.8450}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 145,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为低(A=0)的条件下, llgh为低(D=0)的概率为0.6910。bzra为低(A=0)且llgh为低(D=0)的概率为0.3640。bzra为高(A=1)且llgh为高(D=1)的概率为0.0793。",
+        "data_info_math": "P(D=0|A=0)=0.6910; P(A=0,D=0)=0.3640; P(A=1,D=1)=0.0793; "
+      },
+      "Instruction": "考虑bzra作用于llgh的必要性概率(probability of necessity, PN)。",
+      "Question": "给定bzra为高且llgh为高, 那么假如bzra为低，此时llgh为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.6910",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.6910-0.3640)/0.0793}\n=min{1, 4.1267}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 146,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为低(B=0)的条件下, saqq为高(C=1)的概率为0.5396。saqq为高(C=1)的概率为0.4413。vwoq为高(B=1)且saqq为高(C=1)的概率为0.3973。",
+        "data_info_math": "P(C=1|B=0)=0.5396; P(C=1)=0.4413; P(B=1,C=1)=0.3973; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的必要性概率(probability of necessity, PN)。",
+      "Question": "给定vwoq为高且saqq为高, 那么假如vwoq为低，此时saqq为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=P(C=1|B=0)=0.5396",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.4413-0.5396)/0.3973}\n=max{0, -0.2474}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 147,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为低(B=0)的条件下, saqq为低(C=0)的概率为0.4604。vwoq为低(B=0)且saqq为低(C=0)的概率为0.0376。vwoq为高(B=1)且saqq为高(C=1)的概率为0.3973。",
+        "data_info_math": "P(C=0|B=0)=0.4604; P(B=0,C=0)=0.0376; P(B=1,C=1)=0.3973; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的必要性概率(probability of necessity, PN)。",
+      "Question": "给定vwoq为高且saqq为高, 那么假如vwoq为低，此时saqq为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=P(C=0|B=0)=0.4604",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.4604-0.0376)/0.3973}\n=min{1, 1.0643}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 148,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, vwoq为低(B=0)的概率为0.0340。vwoq为低(B=0)的概率为0.0816。bzra为低(A=0)且vwoq为低(B=0)的概率为0.0655。",
+        "data_info_math": "P(B=0|A=1)=0.0340; P(B=0)=0.0816; P(A=0,B=0)=0.0655; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定bzra为低且vwoq为低, 假如bzra为高，此时vwoq为高的概率的下界是多少？",
+      "Answer": "0.7264",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.0340",
+        "Step 2": "PS的下界: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.0816-0.0340)/0.0655}\n=max{0, 0.7264}\n=0.7264"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.7264043574028938
+    },
+    {
+      "id": 149,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, vwoq为高(B=1)的概率为0.9660。bzra为低(A=0)且vwoq为低(B=0)的概率为0.0655。bzra为高(A=1)且vwoq为高(B=1)的概率为0.4572。",
+        "data_info_math": "P(B=1|A=1)=0.9660; P(A=0,B=0)=0.0655; P(A=1,B=1)=0.4572; "
+      },
+      "Instruction": "考虑bzra作用于vwoq的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定bzra为低且vwoq为低, 假如bzra为高，此时vwoq为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.9660",
+        "Step 2": "PS的上界: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.9660-0.4572)/0.0655}\n=min{1, 7.7698}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 150,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, saqq为低(C=0)的概率为0.5642。saqq为低(C=0)的概率为0.5587。bzra为低(A=0)且saqq为低(C=0)的概率为0.2916。",
+        "data_info_math": "P(C=0|A=1)=0.5642; P(C=0)=0.5587; P(A=0,C=0)=0.2916; "
+      },
+      "Instruction": "考虑bzra作用于saqq的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定bzra为低且saqq为低, 假如bzra为高，此时saqq为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.5642",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.5587-0.5642)/0.2916}\n=max{0, -0.0190}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 151,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, saqq为高(C=1)的概率为0.4358。bzra为低(A=0)且saqq为低(C=0)的概率为0.2916。bzra为高(A=1)且saqq为高(C=1)的概率为0.2063。",
+        "data_info_math": "P(C=1|A=1)=0.4358; P(A=0,C=0)=0.2916; P(A=1,C=1)=0.2063; "
+      },
+      "Instruction": "考虑bzra作用于saqq的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定bzra为低且saqq为低, 假如bzra为高，此时saqq为高的概率的上界是多少？",
+      "Answer": "0.7870",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.4358",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.4358-0.2063)/0.2916}\n=min{1, 0.7870}\n=0.7870"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.7870270854931481
+    },
+    {
+      "id": 152,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, llgh为低(D=0)的概率为0.8325。llgh为低(D=0)的概率为0.7580。bzra为低(A=0)且llgh为低(D=0)的概率为0.3640。",
+        "data_info_math": "P(D=0|A=1)=0.8325; P(D=0)=0.7580; P(A=0,D=0)=0.3640; "
+      },
+      "Instruction": "考虑bzra作用于llgh的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定bzra为低且llgh为低, 假如bzra为高，此时llgh为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.8325",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.7580-0.8325)/0.3640}\n=max{0, -0.2048}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 153,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在bzra为高(A=1)的条件下, llgh为高(D=1)的概率为0.1675。bzra为低(A=0)且llgh为低(D=0)的概率为0.3640。bzra为高(A=1)且llgh为高(D=1)的概率为0.0793。",
+        "data_info_math": "P(D=1|A=1)=0.1675; P(A=0,D=0)=0.3640; P(A=1,D=1)=0.0793; "
+      },
+      "Instruction": "考虑bzra作用于llgh的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定bzra为低且llgh为低, 假如bzra为高，此时llgh为高的概率的上界是多少？",
+      "Answer": "0.2423",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.1675",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.1675-0.0793)/0.3640}\n=min{1, 0.2423}\n=0.2423"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.24232174216802027
+    },
+    {
+      "id": 154,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为高(B=1)的条件下, saqq为低(C=0)的概率为0.5674。saqq为低(C=0)的概率为0.5587。vwoq为低(B=0)且saqq为低(C=0)的概率为0.0376。",
+        "data_info_math": "P(C=0|B=1)=0.5674; P(C=0)=0.5587; P(B=0,C=0)=0.0376; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定vwoq为低且saqq为低, 假如vwoq为高，此时saqq为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=P(C=0|B=1)=0.5674",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.5587-0.5674)/0.0376}\n=max{0, -0.2324}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 155,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表bzra, B代表vwoq, C代表saqq, D代表llgh。",
+        "data_info": "在vwoq为高(B=1)的条件下, saqq为高(C=1)的概率为0.4326。vwoq为低(B=0)且saqq为低(C=0)的概率为0.0376。vwoq为高(B=1)且saqq为高(C=1)的概率为0.3973。",
+        "data_info_math": "P(C=1|B=1)=0.4326; P(B=0,C=0)=0.0376; P(B=1,C=1)=0.3973; "
+      },
+      "Instruction": "考虑vwoq作用于saqq的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定vwoq为低且saqq为低, 假如vwoq为高，此时saqq为高的概率的上界是多少？",
+      "Answer": "0.9396",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=P(C=1|B=1)=0.4326",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.4326-0.3973)/0.0376}\n=min{1, 0.9396}\n=0.9396"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.9395834314610643
+    }
+  ]
+}

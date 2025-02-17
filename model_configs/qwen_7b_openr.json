@@ -1,0 +1,13 @@
+
+
+{
+    "startup":
+        {
+            "ROOT_PATH": "/mnt/workspace/o1_like/openr_on_causal/train/mat/scripts/results/ms_single/causal/APPO/run2/models/episode_1561"
+        },
+    "query":
+    {
+        "default":{
+        }
+    }
+}

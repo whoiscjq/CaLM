@@ -1,0 +1,4547 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->C",
+      "A->D",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "呼吸系统疾病严重程度",
+      "B": "降雨量",
+      "C": "血压",
+      "D": "外貌水平"
+    },
+    "node_value": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": -0.21558762981827248,
+      "B": 0.5737913710374896,
+      "C": -1.8014077544223916,
+      "D": -1.1653296784634568
+    },
+    "edge_weight": {
+      "A->C": -0.773406709848389,
+      "A->D": 0.4041932165145604,
+      "B->C": -0.6729127337303009,
+      "C->D": 0.6107426642173781
+    },
+    "function_description": "P(A=1)=0.4463\nP(B=1)=0.6396\nP(C=1|B,A)=sigmoid(-1.8014077544223916 + -0.6729 * B + -0.7734 * A)\nP(D=1|A,C)=sigmoid(-1.1653296784634568 + 0.4042 * A + 0.6107 * C)\n",
+    "text_description": "The probability of severity of respiratory illnesses being high (A=1) is 0.4463. \nThe probability of rainfall being high (B=1) is 0.6396. \nFor those with rainfall being low (B=0) and severity of respiratory illnesses being low (A=0), the probability of blood pressure being high (C=1) is 0.1417. \nFor those with rainfall being low (B=0) and severity of respiratory illnesses being high (A=1), the probability of blood pressure being high (C=1) is 0.0708. \nFor those with rainfall being high (B=1) and severity of respiratory illnesses being low (A=0), the probability of blood pressure being high (C=1) is 0.0777. \nFor those with rainfall being high (B=1) and severity of respiratory illnesses being high (A=1), the probability of blood pressure being high (C=1) is 0.0374. \nFor those with severity of respiratory illnesses being low (A=0) and blood pressure being low (C=0), the probability of appearance being high (D=1) is 0.2377. \nFor those with severity of respiratory illnesses being low (A=0) and blood pressure being high (C=1), the probability of appearance being high (D=1) is 0.3648. \nFor those with severity of respiratory illnesses being high (A=1) and blood pressure being low (C=0), the probability of appearance being high (D=1) is 0.3184. \nFor those with severity of respiratory illnesses being high (A=1) and blood pressure being high (C=1), the probability of appearance being high (D=1) is 0.4625. \n",
+    "Statistic_data": [
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 4969
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 6696
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 4321
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 2427
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 9130
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 12522
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 3968
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 285
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 555
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 259
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 865
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 447
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 2055
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 915
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 245
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 341
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为低，那么降雨量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为低，那么降雨量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为高，那么降雨量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为高，那么降雨量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9007。在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9486。",
+        "data_info_math": "P(C=0|A=0)=0.9007; P(C=0|A=1)=0.9486; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为低，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.9007\tP(C=0|A=1)=0.9486",
+        "Step 6": "ATE=0.9007-0.9486=-0.0479",
+        "Step 7": "ATE=-0.0479<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.04785820413824837
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为高(C=1)的概率为0.0993。在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为高(C=1)的概率为0.0514。",
+        "data_info_math": "P(C=1|A=0)=0.0993; P(C=1|A=1)=0.0514; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为低，那么血压更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.0993\tP(C=1|A=1)=0.0514",
+        "Step 6": "ATE=0.0993-0.0514=0.0479",
+        "Step 7": "ATE=0.0479>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.0478582041382485
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9486。在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9007。",
+        "data_info_math": "P(C=0|A=1)=0.9486; P(C=0|A=0)=0.9007; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为高，那么血压更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.9486\tP(C=0|A=0)=0.9007",
+        "Step 6": "ATE=0.9486-0.9007=0.0479",
+        "Step 7": "ATE=0.0479>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.04785820413824837
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为高(C=1)的概率为0.0514。在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为高(C=1)的概率为0.0993。",
+        "data_info_math": "P(C=1|A=1)=0.0514; P(C=1|A=0)=0.0993; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为高，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.0514\tP(C=1|A=0)=0.0993",
+        "Step 6": "ATE=0.0514-0.0993=-0.0479",
+        "Step 7": "ATE=-0.0479<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.0478582041382485
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.7493。在呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.6700。",
+        "data_info_math": "P(D=0|A=0)=0.7493; P(D=0|A=1)=0.6700; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为低，那么外貌水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.7493\tP(D=0|A=1)=0.6700",
+        "Step 6": "ATE=0.7493-0.6700=0.0793",
+        "Step 7": "ATE=0.0793>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.07929440840113866
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.2507。在呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.3300。",
+        "data_info_math": "P(D=1|A=0)=0.2507; P(D=1|A=1)=0.3300; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.2507\tP(D=1|A=1)=0.3300",
+        "Step 6": "ATE=0.2507-0.3300=-0.0793",
+        "Step 7": "ATE=-0.0793<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.0792944084011386
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.6700。在呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.7493。",
+        "data_info_math": "P(D=0|A=1)=0.6700; P(D=0|A=0)=0.7493; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.6700\tP(D=0|A=0)=0.7493",
+        "Step 6": "ATE=0.6700-0.7493=-0.0793",
+        "Step 7": "ATE=-0.0793<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.07929440840113866
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.3300。在呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.2507。",
+        "data_info_math": "P(D=1|A=1)=0.3300; P(D=1|A=0)=0.2507; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为高，那么外貌水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.3300\tP(D=1|A=0)=0.2507",
+        "Step 6": "ATE=0.3300-0.2507=0.0793",
+        "Step 7": "ATE=0.0793>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.0792944084011386
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为低，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为低，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为高，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为高，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为低(B=0)的条件下, 血压为低(C=0)的概率为0.8888。在降雨量为高(B=1)的条件下, 血压为低(C=0)的概率为0.9406。",
+        "data_info_math": "P(C=0|B=0)=0.8888; P(C=0|B=1)=0.9406; "
+      },
+      "Instruction": "考虑降雨量作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为低，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.8888\tP(C=0|B=1)=0.9406",
+        "Step 6": "ATE=0.8888-0.9406=-0.0518",
+        "Step 7": "ATE=-0.0518<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.05175544302389001
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为低(B=0)的条件下, 血压为高(C=1)的概率为0.1112。在降雨量为高(B=1)的条件下, 血压为高(C=1)的概率为0.0594。",
+        "data_info_math": "P(C=1|B=0)=0.1112; P(C=1|B=1)=0.0594; "
+      },
+      "Instruction": "考虑降雨量作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为低，那么血压更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.1112\tP(C=1|B=1)=0.0594",
+        "Step 6": "ATE=0.1112-0.0594=0.0518",
+        "Step 7": "ATE=0.0518>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.05175544302388999
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为高(B=1)的条件下, 血压为低(C=0)的概率为0.9406。在降雨量为低(B=0)的条件下, 血压为低(C=0)的概率为0.8888。",
+        "data_info_math": "P(C=0|B=1)=0.9406; P(C=0|B=0)=0.8888; "
+      },
+      "Instruction": "考虑降雨量作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为高，那么血压更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.9406\tP(C=0|B=0)=0.8888",
+        "Step 6": "ATE=0.9406-0.8888=0.0518",
+        "Step 7": "ATE=0.0518>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.05175544302389001
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为高(B=1)的条件下, 血压为高(C=1)的概率为0.0594。在降雨量为低(B=0)的条件下, 血压为高(C=1)的概率为0.1112。",
+        "data_info_math": "P(C=1|B=1)=0.0594; P(C=1|B=0)=0.1112; "
+      },
+      "Instruction": "考虑降雨量作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为高，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.0594\tP(C=1|B=0)=0.1112",
+        "Step 6": "ATE=0.0594-0.1112=-0.0518",
+        "Step 7": "ATE=-0.0518<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.05175544302388999
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为低(B=0)的条件下, 外貌水平为低(D=0)的概率为0.7085。在降雨量为高(B=1)的条件下, 外貌水平为低(D=0)的概率为0.7179。",
+        "data_info_math": "P(D=0|B=0)=0.7085; P(D=0|B=1)=0.7179; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为低，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.7085\tP(D=0|B=1)=0.7179",
+        "Step 6": "ATE=0.7085-0.7179=-0.0094",
+        "Step 7": "ATE=-0.0094<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.009388978156738448
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为低(B=0)的条件下, 外貌水平为高(D=1)的概率为0.2915。在降雨量为高(B=1)的条件下, 外貌水平为高(D=1)的概率为0.2821。",
+        "data_info_math": "P(D=1|B=0)=0.2915; P(D=1|B=1)=0.2821; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为低，那么外貌水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.2915\tP(D=1|B=1)=0.2821",
+        "Step 6": "ATE=0.2915-0.2821=0.0094",
+        "Step 7": "ATE=0.0094>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.009388978156738448
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为高(B=1)的条件下, 外貌水平为低(D=0)的概率为0.7179。在降雨量为低(B=0)的条件下, 外貌水平为低(D=0)的概率为0.7085。",
+        "data_info_math": "P(D=0|B=1)=0.7179; P(D=0|B=0)=0.7085; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为高，那么外貌水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.7179\tP(D=0|B=0)=0.7085",
+        "Step 6": "ATE=0.7179-0.7085=0.0094",
+        "Step 7": "ATE=0.0094>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.009388978156738448
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为高(B=1)的条件下, 外貌水平为高(D=1)的概率为0.2821。在降雨量为低(B=0)的条件下, 外貌水平为高(D=1)的概率为0.2915。",
+        "data_info_math": "P(D=1|B=1)=0.2821; P(D=1|B=0)=0.2915; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为高，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.2821\tP(D=1|B=0)=0.2915",
+        "Step 6": "ATE=0.2821-0.2915=-0.0094",
+        "Step 7": "ATE=-0.0094<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.009388978156738448
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为低，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为低，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为高，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为高，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为低，那么降雨量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为低，那么降雨量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为高，那么降雨量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为高，那么降雨量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.7614。在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.6398。呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.6763。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.5540。呼吸系统疾病严重程度为高(A=1)的概率为0.4395。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.7614; P(D=0|C=1,A=0)=0.6398; P(A=0)=0.5605; P(D=0|C=0,A=1)=0.6763; P(D=0|C=1,A=1)=0.5540; P(A=1)=0.4395; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为低，那么外貌水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=0))-P(D=0|do(C=1))=sum_{A} [P(D=0|C=0,A)*P(A)-P(D=0|C=1,A)*P(A)]=[P(D=0|C=0,A=0)*P(A=0)-P(D=0|C=1,A=0)*P(A=0)]+[P(D=0|C=0,A=1)*P(A=1)-P(D=0|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=0,A=0)=0.7614\tP(D=0|C=1,A=0)=0.6398\tP(A=0)=0.5605\tP(D=0|C=0,A=1)=0.6763\tP(D=0|C=1,A=1)=0.5540\tP(A=1)=0.4395",
+        "Step 6": "ATE=[0.7614*0.5605-0.6398*0.5605]+[0.6763*0.4395-0.5540*0.4395]=0.1219",
+        "Step 7": "ATE=0.1219>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.12189268805158793
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.2386。在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.3602。呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.3237。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.4460。呼吸系统疾病严重程度为高(A=1)的概率为0.4395。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.2386; P(D=1|C=1,A=0)=0.3602; P(A=0)=0.5605; P(D=1|C=0,A=1)=0.3237; P(D=1|C=1,A=1)=0.4460; P(A=1)=0.4395; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=0))-P(D=1|do(C=1))=sum_{A} [P(D=1|C=0,A)*P(A)-P(D=1|C=1,A)*P(A)]=[P(D=1|C=0,A=0)*P(A=0)-P(D=1|C=1,A=0)*P(A=0)]+[P(D=1|C=0,A=1)*P(A=1)-P(D=1|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=0,A=0)=0.2386\tP(D=1|C=1,A=0)=0.3602\tP(A=0)=0.5605\tP(D=1|C=0,A=1)=0.3237\tP(D=1|C=1,A=1)=0.4460\tP(A=1)=0.4395",
+        "Step 6": "ATE=[0.2386*0.5605-0.3602*0.5605]+[0.3237*0.4395-0.4460*0.4395]=-0.1219",
+        "Step 7": "ATE=-0.1219<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.12189268805158804
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.6398。在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.7614。呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.5540。在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.6763。呼吸系统疾病严重程度为高(A=1)的概率为0.4395。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.6398; P(D=0|C=0,A=0)=0.7614; P(A=0)=0.5605; P(D=0|C=1,A=1)=0.5540; P(D=0|C=0,A=1)=0.6763; P(A=1)=0.4395; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=1))-P(D=0|do(C=0))=sum_{A} [P(D=0|C=1,A)*P(A)-P(D=0|C=0,A)*P(A)]=[P(D=0|C=1,A=0)*P(A=0)-P(D=0|C=0,A=0)*P(A=0)]+[P(D=0|C=1,A=1)*P(A=1)-P(D=0|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=1,A=0)=0.6398\tP(D=0|C=0,A=0)=0.7614\tP(A=0)=0.5605\tP(D=0|C=1,A=1)=0.5540\tP(D=0|C=0,A=1)=0.6763\tP(A=1)=0.4395",
+        "Step 6": "ATE=[0.6398*0.5605-0.7614*0.5605]+[0.5540*0.4395-0.6763*0.4395]=-0.1219",
+        "Step 7": "ATE=-0.1219<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.12189268805158793
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.3602。在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.2386。呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.4460。在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.3237。呼吸系统疾病严重程度为高(A=1)的概率为0.4395。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.3602; P(D=1|C=0,A=0)=0.2386; P(A=0)=0.5605; P(D=1|C=1,A=1)=0.4460; P(D=1|C=0,A=1)=0.3237; P(A=1)=0.4395; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压被改变为高，那么外貌水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=1))-P(D=1|do(C=0))=sum_{A} [P(D=1|C=1,A)*P(A)-P(D=1|C=0,A)*P(A)]=[P(D=1|C=1,A=0)*P(A=0)-P(D=1|C=0,A=0)*P(A=0)]+[P(D=1|C=1,A=1)*P(A=1)-P(D=1|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=1,A=0)=0.3602\tP(D=1|C=0,A=0)=0.2386\tP(A=0)=0.5605\tP(D=1|C=1,A=1)=0.4460\tP(D=1|C=0,A=1)=0.3237\tP(A=1)=0.4395",
+        "Step 6": "ATE=[0.3602*0.5605-0.2386*0.5605]+[0.4460*0.4395-0.3237*0.4395]=0.1219",
+        "Step 7": "ATE=0.1219>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.12189268805158804
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么降雨量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么降雨量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么降雨量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么降雨量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于血压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9007。在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9486。",
+        "data_info_math": "P(C=0|A=0)=0.9007; P(C=0|A=1)=0.9486; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而呼吸系统疾病严重程度变化为低，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.9007\tP(C=0|A=1)=0.9486",
+        "Step 6": "NDE=0.9007-0.9486=-0.0479",
+        "Step 7": "NDE=-0.0479<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.04785820413824837
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为高(C=1)的概率为0.0993。在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为高(C=1)的概率为0.0514。",
+        "data_info_math": "P(C=1|A=0)=0.0993; P(C=1|A=1)=0.0514; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而呼吸系统疾病严重程度变化为低，那么血压更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.0993\tP(C=1|A=1)=0.0514",
+        "Step 6": "NDE=0.0993-0.0514=0.0479",
+        "Step 7": "NDE=0.0479>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.0478582041382485
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9486。在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9007。",
+        "data_info_math": "P(C=0|A=1)=0.9486; P(C=0|A=0)=0.9007; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而呼吸系统疾病严重程度变化为高，那么血压更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.9486\tP(C=0|A=0)=0.9007",
+        "Step 6": "NDE=0.9486-0.9007=0.0479",
+        "Step 7": "NDE=0.0479>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.04785820413824837
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为高(C=1)的概率为0.0514。在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为高(C=1)的概率为0.0993。",
+        "data_info_math": "P(C=1|A=1)=0.0514; P(C=1|A=0)=0.0993; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而呼吸系统疾病严重程度变化为高，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.0514\tP(C=1|A=0)=0.0993",
+        "Step 6": "NDE=0.0514-0.0993=-0.0479",
+        "Step 7": "NDE=-0.0479<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.0478582041382485
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.7614。在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.6763。在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9486。在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.6398。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.5540。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.7614; P(D=0|C=0,A=1)=0.6763; P(C=0|A=1)=0.9486; P(D=0|C=1,A=0)=0.6398; P(D=0|C=1,A=1)=0.5540; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而呼吸系统疾病严重程度变化为低，那么外貌水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=0|A=0,C)-P(D=0|A=1,C)]*P(C|A=1)=[P(D=0|A=0,C=0)-P(D=0|A=1,C=0)]*P(C=0|A=1)+[P(D=0|A=0,C=1)-P(D=0|A=1,C=1)]*P(C=1|A=1)",
+        "Step 5": "P(D=0|A=0,C=0)=0.7614\tP(D=0|A=1,C=0)=0.6763\tP(C=0|A=1)=0.9486\tP(D=0|A=0,C=1)=0.6398\tP(D=0|A=1,C=1)=0.5540\tP(C=1|A=1)=0.0514",
+        "Step 6": "=(0.7614-0.6763)*0.9486+(0.6398-0.5540)*0.0514=0.0851",
+        "Step 7": "NDE=0.0851>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.08511170863464024
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.2386。在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.3237。在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9486。在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.3602。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.4460。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.2386; P(D=1|C=0,A=1)=0.3237; P(C=0|A=1)=0.9486; P(D=1|C=1,A=0)=0.3602; P(D=1|C=1,A=1)=0.4460; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而呼吸系统疾病严重程度变化为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=1|A=0,C)-P(D=1|A=1,C)]*P(C|A=1)=[P(D=1|A=0,C=0)-P(D=1|A=1,C=0)]*P(C=0|A=1)+[P(D=1|A=0,C=1)-P(D=1|A=1,C=1)]*P(C=1|A=1)",
+        "Step 5": "P(D=1|A=0,C=0)=0.2386\tP(D=1|A=1,C=0)=0.3237\tP(C=0|A=1)=0.9486\tP(D=1|A=0,C=1)=0.3602\tP(D=1|A=1,C=1)=0.4460\tP(C=1|A=1)=0.0514",
+        "Step 6": "=(0.2386-0.3237)*0.9486+(0.3602-0.4460)*0.0514=-0.0851",
+        "Step 7": "NDE=-0.0851<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.08511170863464045
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.6763。在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.7614。在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9007。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.5540。在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.6398。",
+        "data_info_math": "P(D=0|C=0,A=1)=0.6763; P(D=0|C=0,A=0)=0.7614; P(C=0|A=0)=0.9007; P(D=0|C=1,A=1)=0.5540; P(D=0|C=1,A=0)=0.6398; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而呼吸系统疾病严重程度变化为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=0|A=1,C)-P(D=0|A=0,C)]*P(C|A=0)=[P(D=0|A=1,C=0)-P(D=0|A=0,C=0)]*P(C=0|A=0)+[P(D=0|A=1,C=1)-P(D=0|A=0,C=1)]*P(C=1|A=0)",
+        "Step 5": "P(D=0|A=1,C=0)=0.6763\tP(D=0|A=0,C=0)=0.7614\tP(C=0|A=0)=0.9007\tP(D=0|A=1,C=1)=0.5540\tP(D=0|A=0,C=1)=0.6398\tP(C=1|A=0)=0.0993",
+        "Step 6": "=(0.6763-0.7614)*0.9007+(0.5540-0.6398)*0.0993=-0.0851",
+        "Step 7": "NDE=-0.0851<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.0851487130352203
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.3237。在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.2386。在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9007。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.4460。在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.3602。",
+        "data_info_math": "P(D=1|C=0,A=1)=0.3237; P(D=1|C=0,A=0)=0.2386; P(C=0|A=0)=0.9007; P(D=1|C=1,A=1)=0.4460; P(D=1|C=1,A=0)=0.3602; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而呼吸系统疾病严重程度变化为高，那么外貌水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=1|A=1,C)-P(D=1|A=0,C)]*P(C|A=0)=[P(D=1|A=1,C=0)-P(D=1|A=0,C=0)]*P(C=0|A=0)+[P(D=1|A=1,C=1)-P(D=1|A=0,C=1)]*P(C=1|A=0)",
+        "Step 5": "P(D=1|A=1,C=0)=0.3237\tP(D=1|A=0,C=0)=0.2386\tP(C=0|A=0)=0.9007\tP(D=1|A=1,C=1)=0.4460\tP(D=1|A=0,C=1)=0.3602\tP(C=1|A=0)=0.0993",
+        "Step 6": "=(0.3237-0.2386)*0.9007+(0.4460-0.3602)*0.0993=0.0851",
+        "Step 7": "NDE=0.0851>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.08514871303522051
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为低(B=0)的条件下, 血压为低(C=0)的概率为0.8888。在降雨量为高(B=1)的条件下, 血压为低(C=0)的概率为0.9406。",
+        "data_info_math": "P(C=0|B=0)=0.8888; P(C=0|B=1)=0.9406; "
+      },
+      "Instruction": "考虑降雨量作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为低，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.8888\tP(C=0|B=1)=0.9406",
+        "Step 6": "NDE=0.8888-0.9406=-0.0518",
+        "Step 7": "NDE=-0.0518<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.05175544302389001
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为低(B=0)的条件下, 血压为高(C=1)的概率为0.1112。在降雨量为高(B=1)的条件下, 血压为高(C=1)的概率为0.0594。",
+        "data_info_math": "P(C=1|B=0)=0.1112; P(C=1|B=1)=0.0594; "
+      },
+      "Instruction": "考虑降雨量作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为低，那么血压更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.1112\tP(C=1|B=1)=0.0594",
+        "Step 6": "NDE=0.1112-0.0594=0.0518",
+        "Step 7": "NDE=0.0518>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.05175544302388999
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为高(B=1)的条件下, 血压为低(C=0)的概率为0.9406。在降雨量为低(B=0)的条件下, 血压为低(C=0)的概率为0.8888。",
+        "data_info_math": "P(C=0|B=1)=0.9406; P(C=0|B=0)=0.8888; "
+      },
+      "Instruction": "考虑降雨量作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为高，那么血压更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.9406\tP(C=0|B=0)=0.8888",
+        "Step 6": "NDE=0.9406-0.8888=0.0518",
+        "Step 7": "NDE=0.0518>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.05175544302389001
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为高(B=1)的条件下, 血压为高(C=1)的概率为0.0594。在降雨量为低(B=0)的条件下, 血压为高(C=1)的概率为0.1112。",
+        "data_info_math": "P(C=1|B=1)=0.0594; P(C=1|B=0)=0.1112; "
+      },
+      "Instruction": "考虑降雨量作用于血压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为高，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.0594\tP(C=1|B=0)=0.1112",
+        "Step 6": "NDE=0.0594-0.1112=-0.0518",
+        "Step 7": "NDE=-0.0518<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.05175544302388999
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为低，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为高，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.7614。在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.6398。呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.6763。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.5540。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.7614; P(D=0|C=1,A=0)=0.6398; P(A=0)=0.5605; P(D=0|C=0,A=1)=0.6763; P(D=0|C=1,A=1)=0.5540; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而血压变化为低，那么外貌水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=0,A)-P(D=0|C=1,A)]*P(A)=[P(D=0|C=0,A=0)-P(D=0|C=1,A=0)]*P(A=0)+[P(D=0|C=0,A=1)-P(D=0|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=0,A=0)=0.7614\tP(D=0|C=1,A=0)=0.6398\tP(A=0)=0.5605\tP(D=0|C=0,A=1)=0.6763\tP(D=0|C=1,A=1)=0.5540\tP(A=1)=0.4395",
+        "Step 6": "NDE=[0.7614-0.6398]*0.5605+[0.6763-0.5540]*0.4395=0.1219",
+        "Step 7": "NDE=0.1219>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.12189268805158794
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.2386。在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.3602。呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.3237。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.4460。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.2386; P(D=1|C=1,A=0)=0.3602; P(A=0)=0.5605; P(D=1|C=0,A=1)=0.3237; P(D=1|C=1,A=1)=0.4460; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而血压变化为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=0,A)-P(D=1|C=1,A)]*P(A)=[P(D=1|C=0,A=0)-P(D=1|C=1,A=0)]*P(A=0)+[P(D=1|C=0,A=1)-P(D=1|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=0,A=0)=0.2386\tP(D=1|C=1,A=0)=0.3602\tP(A=0)=0.5605\tP(D=1|C=0,A=1)=0.3237\tP(D=1|C=1,A=1)=0.4460\tP(A=1)=0.4395",
+        "Step 6": "NDE=[0.2386-0.3602]*0.5605+[0.3237-0.4460]*0.4395=-0.1219",
+        "Step 7": "NDE=-0.1219<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.12189268805158804
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.6398。在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.7614。呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.5540。在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.6763。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.6398; P(D=0|C=0,A=0)=0.7614; P(A=0)=0.5605; P(D=0|C=1,A=1)=0.5540; P(D=0|C=0,A=1)=0.6763; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而血压变化为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=1,A)-P(D=0|C=0,A)]*P(A)=[P(D=0|C=1,A=0)-P(D=0|C=0,A=0)]*P(A=0)+[P(D=0|C=1,A=1)-P(D=0|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=1,A=0)=0.6398\tP(D=0|C=0,A=0)=0.7614\tP(A=0)=0.5605\tP(D=0|C=1,A=1)=0.5540\tP(D=0|C=0,A=1)=0.6763\tP(A=1)=0.4395",
+        "Step 6": "NDE=[0.6398-0.7614]*0.5605+[0.5540-0.6763]*0.4395=-0.1219",
+        "Step 7": "NDE=-0.1219<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.12189268805158794
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.3602。在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.2386。呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.4460。在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.3237。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.3602; P(D=1|C=0,A=0)=0.2386; P(A=0)=0.5605; P(D=1|C=1,A=1)=0.4460; P(D=1|C=0,A=1)=0.3237; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而血压变化为高，那么外貌水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=1,A)-P(D=1|C=0,A)]*P(A)=[P(D=1|C=1,A=0)-P(D=1|C=0,A=0)]*P(A=0)+[P(D=1|C=1,A=1)-P(D=1|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=1,A=0)=0.3602\tP(D=1|C=0,A=0)=0.2386\tP(A=0)=0.5605\tP(D=1|C=1,A=1)=0.4460\tP(D=1|C=0,A=1)=0.3237\tP(A=1)=0.4395",
+        "Step 6": "NDE=[0.3602-0.2386]*0.5605+[0.4460-0.3237]*0.4395=0.1219",
+        "Step 7": "NDE=0.1219>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.12189268805158804
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如呼吸系统疾病严重程度保持不变，而所有中间变量被改变为当它们在呼吸系统疾病严重程度变化为低下的取值，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如呼吸系统疾病严重程度保持不变，而所有中间变量被改变为当它们在呼吸系统疾病严重程度变化为低下的取值，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如呼吸系统疾病严重程度保持不变，而所有中间变量被改变为当它们在呼吸系统疾病严重程度变化为高下的取值，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如呼吸系统疾病严重程度保持不变，而所有中间变量被改变为当它们在呼吸系统疾病严重程度变化为高下的取值，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.6763。在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9007。在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9486。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.5540。",
+        "data_info_math": "P(D=0|C=0,A=1)=0.6763; P(C=0|A=0)=0.9007; P(C=0|A=1)=0.9486; P(D=0|C=1,A=1)=0.5540; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如呼吸系统疾病严重程度保持不变，而所有中间变量被改变为当它们在呼吸系统疾病严重程度变化为低下的取值，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=0|A=1,C)*[P(C|A=0)-P(C|A=1)]=P(D=0|A=1,C=0)*[P(C=0|A=0)-P(C=0|A=1)]+P(D=0|A=1,C=1)*[P(C=1|A=0)-P(C=1|A=1)]",
+        "Step 5": "P(D=0|A=1,C=0)=0.6763\tP(C=0|A=0)=0.9007\tP(C=0|A=1)=0.9486\tP(D=0|A=1,C=1)=0.5540\tP(C=1|A=0)=0.0993\tP(C=1|A=1)=0.0514",
+        "Step 6": "NIE=0.6763*(0.9007-0.9486)+0.5540*(0.0993-0.0514)=-0.0059",
+        "Step 7": "NIE=-0.0059<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.00585430463408175
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.3237。在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9007。在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9486。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.4460。",
+        "data_info_math": "P(D=1|C=0,A=1)=0.3237; P(C=0|A=0)=0.9007; P(C=0|A=1)=0.9486; P(D=1|C=1,A=1)=0.4460; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如呼吸系统疾病严重程度保持不变，而所有中间变量被改变为当它们在呼吸系统疾病严重程度变化为低下的取值，那么外貌水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=1|A=1,C)*[P(C|A=0)-P(C|A=1)]=P(D=1|A=1,C=0)*[P(C=0|A=0)-P(C=0|A=1)]+P(D=1|A=1,C=1)*[P(C=1|A=0)-P(C=1|A=1)]",
+        "Step 5": "P(D=1|A=1,C=0)=0.3237\tP(C=0|A=0)=0.9007\tP(C=0|A=1)=0.9486\tP(D=1|A=1,C=1)=0.4460\tP(C=1|A=0)=0.0993\tP(C=1|A=1)=0.0514",
+        "Step 6": "NIE=0.3237*(0.9007-0.9486)+0.4460*(0.0993-0.0514)=0.0059",
+        "Step 7": "NIE=0.0059>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.005854304634081875
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.7614。在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9486。在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9007。在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.6398。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.7614; P(C=0|A=1)=0.9486; P(C=0|A=0)=0.9007; P(D=0|C=1,A=0)=0.6398; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如呼吸系统疾病严重程度保持不变，而所有中间变量被改变为当它们在呼吸系统疾病严重程度变化为高下的取值，那么外貌水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=0|A=0,C)*[P(C|A=1)-P(C|A=0)]=P(D=0|A=0,C=0)*[P(C=0|A=1)-P(C=0|A=0)]+P(D=0|A=0,C=1)*[P(C=1|A=1)-P(C=1|A=0)]",
+        "Step 5": "P(D=0|A=0,C=0)=0.7614\tP(C=0|A=1)=0.9486\tP(C=0|A=0)=0.9007\tP(D=0|A=0,C=1)=0.6398\tP(C=1|A=1)=0.0514\tP(C=1|A=0)=0.0993",
+        "Step 6": "NIE=0.7614*(0.9486-0.9007)+0.6398*(0.0514-0.0993)=0.0058",
+        "Step 7": "NIE=0.0058>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.005817300233501691
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.2386。在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9486。在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9007。在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.3602。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.2386; P(C=0|A=1)=0.9486; P(C=0|A=0)=0.9007; P(D=1|C=1,A=0)=0.3602; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如呼吸系统疾病严重程度保持不变，而所有中间变量被改变为当它们在呼吸系统疾病严重程度变化为高下的取值，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=1|A=0,C)*[P(C|A=1)-P(C|A=0)]=P(D=1|A=0,C=0)*[P(C=0|A=1)-P(C=0|A=0)]+P(D=1|A=0,C=1)*[P(C=1|A=1)-P(C=1|A=0)]",
+        "Step 5": "P(D=1|A=0,C=0)=0.2386\tP(C=0|A=1)=0.9486\tP(C=0|A=0)=0.9007\tP(D=1|A=0,C=1)=0.3602\tP(C=1|A=1)=0.0514\tP(C=1|A=0)=0.0993",
+        "Step 6": "NIE=0.2386*(0.9486-0.9007)+0.3602*(0.0514-0.0993)=-0.0058",
+        "Step 7": "NIE=-0.0058<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.0058173002335018195
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为低下的取值，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为低下的取值，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为高下的取值，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于血压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为高下的取值，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为低(C=0), 降雨量为高(B=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.7594。在降雨量为低(B=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.8604。在降雨量为高(B=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9237。在血压为高(C=1), 降雨量为高(B=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.6718。在血压为低(C=0), 降雨量为高(B=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.6788。在降雨量为低(B=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9250。在降雨量为高(B=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9621。在血压为高(C=1), 降雨量为高(B=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.5377。",
+        "data_info_math": "P(A=0)=0.5605; P(D=0|C=0,B=1,A=0)=0.7594; P(C=0|B=0,A=0)=0.8604; P(C=0|B=1,A=0)=0.9237; P(D=0|C=1,B=1,A=0)=0.6718; P(D=0|C=0,B=1,A=1)=0.6788; P(C=0|B=0,A=1)=0.9250; P(C=0|B=1,A=1)=0.9621; P(D=0|C=1,B=1,A=1)=0.5377; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为低下的取值，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=0|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=0|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,C=0,A=0)=0.7594\tP(C=0|B=0,A=0)=0.8604\tP(C=0|B=1,A=0)=0.9237\tP(A=0)=0.5605\tP(D=0|B=1,C=1,A=0)=0.6718\tP(C=1|B=0,A=0)=0.1396\tP(C=1|B=1,A=0)=0.0763\tP(A=0)=0.5605\tP(D=0|B=1,C=0,A=1)=0.6788\tP(C=0|B=0,A=1)=0.9250\tP(C=0|B=1,A=1)=0.9621\tP(A=1)=0.4395\tP(D=0|B=1,C=1,A=1)=0.5377\tP(C=1|B=0,A=1)=0.0750\tP(C=1|B=1,A=1)=0.0379\tP(A=1)=0.4395",
+        "Step 6": "NIE=0.7594*[0.8604-0.9237]*0.5605+0.6718*[0.1396-0.0763]*0.5605+0.6788*[0.9250-0.9621]*0.4395+0.5377*[0.0750-0.0379]*0.4395=-0.0054",
+        "Step 7": "NIE=-0.0054<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.005408867199519472
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为低(C=0), 降雨量为高(B=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.2406。在降雨量为低(B=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.8604。在降雨量为高(B=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9237。在血压为高(C=1), 降雨量为高(B=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.3282。在血压为低(C=0), 降雨量为高(B=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.3212。在降雨量为低(B=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9250。在降雨量为高(B=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9621。在血压为高(C=1), 降雨量为高(B=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.4623。",
+        "data_info_math": "P(A=0)=0.5605; P(D=1|C=0,B=1,A=0)=0.2406; P(C=0|B=0,A=0)=0.8604; P(C=0|B=1,A=0)=0.9237; P(D=1|C=1,B=1,A=0)=0.3282; P(D=1|C=0,B=1,A=1)=0.3212; P(C=0|B=0,A=1)=0.9250; P(C=0|B=1,A=1)=0.9621; P(D=1|C=1,B=1,A=1)=0.4623; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为低下的取值，那么外貌水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=1|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=1|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,C=0,A=0)=0.2406\tP(C=0|B=0,A=0)=0.8604\tP(C=0|B=1,A=0)=0.9237\tP(A=0)=0.5605\tP(D=1|B=1,C=1,A=0)=0.3282\tP(C=1|B=0,A=0)=0.1396\tP(C=1|B=1,A=0)=0.0763\tP(A=0)=0.5605\tP(D=1|B=1,C=0,A=1)=0.3212\tP(C=0|B=0,A=1)=0.9250\tP(C=0|B=1,A=1)=0.9621\tP(A=1)=0.4395\tP(D=1|B=1,C=1,A=1)=0.4623\tP(C=1|B=0,A=1)=0.0750\tP(C=1|B=1,A=1)=0.0379\tP(A=1)=0.4395",
+        "Step 6": "NIE=0.2406*[0.8604-0.9237]*0.5605+0.3282*[0.1396-0.0763]*0.5605+0.3212*[0.9250-0.9621]*0.4395+0.4623*[0.0750-0.0379]*0.4395=0.0054",
+        "Step 7": "NIE=0.0054>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.005408867199519558
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为低(C=0), 降雨量为低(B=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.7652。在降雨量为高(B=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9237。在降雨量为低(B=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.8604。在血压为高(C=1), 降雨量为低(B=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.6092。在血压为低(C=0), 降雨量为低(B=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.6718。在降雨量为高(B=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9621。在降雨量为低(B=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9250。在血压为高(C=1), 降雨量为低(B=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.5683。",
+        "data_info_math": "P(A=0)=0.5605; P(D=0|C=0,B=0,A=0)=0.7652; P(C=0|B=1,A=0)=0.9237; P(C=0|B=0,A=0)=0.8604; P(D=0|C=1,B=0,A=0)=0.6092; P(D=0|C=0,B=0,A=1)=0.6718; P(C=0|B=1,A=1)=0.9621; P(C=0|B=0,A=1)=0.9250; P(D=0|C=1,B=0,A=1)=0.5683; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为高下的取值，那么外貌水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=0|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=0|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,C=0,A=0)=0.7652\tP(C=0|B=1,A=0)=0.9237\tP(C=0|B=0,A=0)=0.8604\tP(A=0)=0.5605\tP(D=0|B=0,C=1,A=0)=0.6092\tP(C=1|B=1,A=0)=0.0763\tP(C=1|B=0,A=0)=0.1396\tP(A=0)=0.5605\tP(D=0|B=0,C=0,A=1)=0.6718\tP(C=0|B=1,A=1)=0.9621\tP(C=0|B=0,A=1)=0.9250\tP(A=1)=0.4395\tP(D=0|B=0,C=1,A=1)=0.5683\tP(C=1|B=1,A=1)=0.0379\tP(C=1|B=0,A=1)=0.0750\tP(A=1)=0.4395",
+        "Step 6": "NIE=0.7652*[0.9237-0.8604]*0.5605+0.6092*[0.0763-0.1396]*0.5605+0.6718*[0.9621-0.9250]*0.4395+0.5683*[0.0379-0.0750]*0.4395=0.0072",
+        "Step 7": "NIE=0.0072>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.00722593507749769
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为低(C=0), 降雨量为低(B=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.2348。在降雨量为高(B=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9237。在降雨量为低(B=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.8604。在血压为高(C=1), 降雨量为低(B=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.3908。在血压为低(C=0), 降雨量为低(B=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.3282。在降雨量为高(B=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9621。在降雨量为低(B=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9250。在血压为高(C=1), 降雨量为低(B=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.4317。",
+        "data_info_math": "P(A=0)=0.5605; P(D=1|C=0,B=0,A=0)=0.2348; P(C=0|B=1,A=0)=0.9237; P(C=0|B=0,A=0)=0.8604; P(D=1|C=1,B=0,A=0)=0.3908; P(D=1|C=0,B=0,A=1)=0.3282; P(C=0|B=1,A=1)=0.9621; P(C=0|B=0,A=1)=0.9250; P(D=1|C=1,B=0,A=1)=0.4317; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为高下的取值，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=1|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=1|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,C=0,A=0)=0.2348\tP(C=0|B=1,A=0)=0.9237\tP(C=0|B=0,A=0)=0.8604\tP(A=0)=0.5605\tP(D=1|B=0,C=1,A=0)=0.3908\tP(C=1|B=1,A=0)=0.0763\tP(C=1|B=0,A=0)=0.1396\tP(A=0)=0.5605\tP(D=1|B=0,C=0,A=1)=0.3282\tP(C=0|B=1,A=1)=0.9621\tP(C=0|B=0,A=1)=0.9250\tP(A=1)=0.4395\tP(D=1|B=0,C=1,A=1)=0.4317\tP(C=1|B=1,A=1)=0.0379\tP(C=1|B=0,A=1)=0.0750\tP(A=1)=0.4395",
+        "Step 6": "NIE=0.2348*[0.9237-0.8604]*0.5605+0.3908*[0.0763-0.1396]*0.5605+0.3282*[0.9621-0.9250]*0.4395+0.4317*[0.0379-0.0750]*0.4395=-0.0072",
+        "Step 7": "NIE=-0.0072<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.007225935077497782
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如血压保持不变，而所有中间变量被改变为当它们在血压变化为低下的取值，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如血压保持不变，而所有中间变量被改变为当它们在血压变化为低下的取值，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如血压保持不变，而所有中间变量被改变为当它们在血压变化为高下的取值，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于外貌水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如血压保持不变，而所有中间变量被改变为当它们在血压变化为高下的取值，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为低，假如呼吸系统疾病严重程度为高，那么降雨量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为低，假如呼吸系统疾病严重程度为高，那么降雨量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为高，假如呼吸系统疾病严重程度为低，那么降雨量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为高，假如呼吸系统疾病严重程度为低，那么降雨量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9007。在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9486。",
+        "data_info_math": "P(C=0|A=0)=0.9007; P(C=0|A=1)=0.9486; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为低，假如呼吸系统疾病严重程度为高，那么血压更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.9007\tP(C=0|A=1)=0.9486",
+        "Step 6": "ETT=0.9007-0.9486=-0.0479",
+        "Step 7": "ETT=-0.0479<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.04785820413824837
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为高(C=1)的概率为0.0993。在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为高(C=1)的概率为0.0514。",
+        "data_info_math": "P(C=1|A=0)=0.0993; P(C=1|A=1)=0.0514; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为低，假如呼吸系统疾病严重程度为高，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.0993\tP(C=1|A=1)=0.0514",
+        "Step 6": "ETT=0.0993-0.0514=0.0479",
+        "Step 7": "ETT=0.0479>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.0478582041382485
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9486。在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9007。",
+        "data_info_math": "P(C=0|A=1)=0.9486; P(C=0|A=0)=0.9007; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为高，假如呼吸系统疾病严重程度为低，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.9486\tP(C=0|A=0)=0.9007",
+        "Step 6": "ETT=0.9486-0.9007=0.0479",
+        "Step 7": "ETT=0.0479>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.04785820413824837
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为高(C=1)的概率为0.0514。在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为高(C=1)的概率为0.0993。",
+        "data_info_math": "P(C=1|A=1)=0.0514; P(C=1|A=0)=0.0993; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为高，假如呼吸系统疾病严重程度为低，那么血压更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.0514\tP(C=1|A=0)=0.0993",
+        "Step 6": "ETT=0.0514-0.0993=-0.0479",
+        "Step 7": "ETT=-0.0479<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.0478582041382485
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.7493。在呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.6700。",
+        "data_info_math": "P(D=0|A=0)=0.7493; P(D=0|A=1)=0.6700; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为低，假如呼吸系统疾病严重程度为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.7493\tP(D=0|A=1)=0.6700",
+        "Step 6": "ETT=0.7493-0.6700=0.0793",
+        "Step 7": "ETT=0.0793>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.07929440840113866
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.2507。在呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.3300。",
+        "data_info_math": "P(D=1|A=0)=0.2507; P(D=1|A=1)=0.3300; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为低，假如呼吸系统疾病严重程度为高，那么外貌水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.2507\tP(D=1|A=1)=0.3300",
+        "Step 6": "ETT=0.2507-0.3300=-0.0793",
+        "Step 7": "ETT=-0.0793<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.0792944084011386
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.6700。在呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.7493。",
+        "data_info_math": "P(D=0|A=1)=0.6700; P(D=0|A=0)=0.7493; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为高，假如呼吸系统疾病严重程度为低，那么外貌水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.6700\tP(D=0|A=0)=0.7493",
+        "Step 6": "ETT=0.6700-0.7493=-0.0793",
+        "Step 7": "ETT=-0.0793<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.07929440840113866
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.3300。在呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.2507。",
+        "data_info_math": "P(D=1|A=1)=0.3300; P(D=1|A=0)=0.2507; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为高，假如呼吸系统疾病严重程度为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.3300\tP(D=1|A=0)=0.2507",
+        "Step 6": "ETT=0.3300-0.2507=0.0793",
+        "Step 7": "ETT=0.0793>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.0792944084011386
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为低，假如降雨量为高，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为低，假如降雨量为高，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为高，假如降雨量为低，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为高，假如降雨量为低，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为低(B=0)的条件下, 血压为低(C=0)的概率为0.8888。在降雨量为高(B=1)的条件下, 血压为低(C=0)的概率为0.9406。",
+        "data_info_math": "P(C=0|B=0)=0.8888; P(C=0|B=1)=0.9406; "
+      },
+      "Instruction": "考虑降雨量作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为低，假如降雨量为高，那么血压更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.8888\tP(C=0|B=1)=0.9406",
+        "Step 6": "ETT=0.8888-0.9406=-0.0518",
+        "Step 7": "ETT=-0.0518<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.05175544302389001
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为低(B=0)的条件下, 血压为高(C=1)的概率为0.1112。在降雨量为高(B=1)的条件下, 血压为高(C=1)的概率为0.0594。",
+        "data_info_math": "P(C=1|B=0)=0.1112; P(C=1|B=1)=0.0594; "
+      },
+      "Instruction": "考虑降雨量作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为低，假如降雨量为高，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.1112\tP(C=1|B=1)=0.0594",
+        "Step 6": "ETT=0.1112-0.0594=0.0518",
+        "Step 7": "ETT=0.0518>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.05175544302388999
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为高(B=1)的条件下, 血压为低(C=0)的概率为0.9406。在降雨量为低(B=0)的条件下, 血压为低(C=0)的概率为0.8888。",
+        "data_info_math": "P(C=0|B=1)=0.9406; P(C=0|B=0)=0.8888; "
+      },
+      "Instruction": "考虑降雨量作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为高，假如降雨量为低，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.9406\tP(C=0|B=0)=0.8888",
+        "Step 6": "ETT=0.9406-0.8888=0.0518",
+        "Step 7": "ETT=0.0518>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.05175544302389001
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为高(B=1)的条件下, 血压为高(C=1)的概率为0.0594。在降雨量为低(B=0)的条件下, 血压为高(C=1)的概率为0.1112。",
+        "data_info_math": "P(C=1|B=1)=0.0594; P(C=1|B=0)=0.1112; "
+      },
+      "Instruction": "考虑降雨量作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为高，假如降雨量为低，那么血压更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.0594\tP(C=1|B=0)=0.1112",
+        "Step 6": "ETT=0.0594-0.1112=-0.0518",
+        "Step 7": "ETT=-0.0518<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.05175544302388999
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为低(B=0)的条件下, 外貌水平为低(D=0)的概率为0.7085。在降雨量为高(B=1)的条件下, 外貌水平为低(D=0)的概率为0.7179。",
+        "data_info_math": "P(D=0|B=0)=0.7085; P(D=0|B=1)=0.7179; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为低，假如降雨量为高，那么外貌水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.7085\tP(D=0|B=1)=0.7179",
+        "Step 6": "ETT=0.7085-0.7179=-0.0094",
+        "Step 7": "ETT=-0.0094<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.009388978156738448
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为低(B=0)的条件下, 外貌水平为高(D=1)的概率为0.2915。在降雨量为高(B=1)的条件下, 外貌水平为高(D=1)的概率为0.2821。",
+        "data_info_math": "P(D=1|B=0)=0.2915; P(D=1|B=1)=0.2821; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为低，假如降雨量为高，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.2915\tP(D=1|B=1)=0.2821",
+        "Step 6": "ETT=0.2915-0.2821=0.0094",
+        "Step 7": "ETT=0.0094>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.009388978156738448
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为高(B=1)的条件下, 外貌水平为低(D=0)的概率为0.7179。在降雨量为低(B=0)的条件下, 外貌水平为低(D=0)的概率为0.7085。",
+        "data_info_math": "P(D=0|B=1)=0.7179; P(D=0|B=0)=0.7085; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为高，假如降雨量为低，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.7179\tP(D=0|B=0)=0.7085",
+        "Step 6": "ETT=0.7179-0.7085=0.0094",
+        "Step 7": "ETT=0.0094>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.009388978156738448
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为高(B=1)的条件下, 外貌水平为高(D=1)的概率为0.2821。在降雨量为低(B=0)的条件下, 外貌水平为高(D=1)的概率为0.2915。",
+        "data_info_math": "P(D=1|B=1)=0.2821; P(D=1|B=0)=0.2915; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为高，假如降雨量为低，那么外貌水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.2821\tP(D=1|B=0)=0.2915",
+        "Step 6": "ETT=0.2821-0.2915=-0.0094",
+        "Step 7": "ETT=-0.0094<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.009388978156738448
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为低，假如血压为高，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为低，假如血压为高，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为高，假如血压为低，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为高，假如血压为低，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为低，假如血压为高，那么降雨量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为低，假如血压为高，那么降雨量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为高，假如血压为低，那么降雨量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为高，假如血压为低，那么降雨量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)的条件下, 外貌水平为低(D=0)的概率为0.7229。在呼吸系统疾病严重程度为低(A=0)且血压为高(C=1)的条件下, 外貌水平为低(D=0)的概率为0.6398。在血压为低(C=0)的条件下, 呼吸系统疾病严重程度为低(A=0)的概率为0.5477。在呼吸系统疾病严重程度为高(A=1)且血压为高(C=1)的条件下, 外貌水平为低(D=0)的概率为0.5540。在血压为低(C=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4523。",
+        "data_info_math": "P(D=0|C=0)=0.7229; P(D=0|A=0,C=1)=0.6398; P(A=0|C=0)=0.5477; P(D=0|A=1,C=1)=0.5540; P(A=1|C=0)=0.4523; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为低，假如血压为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=0|C=0)-sum_{A} P(D=0|C=1,A)*P(A|C=0)=P(D=0|C=0)-[P(D=0|C=1,A=0)*P(A=0|C=0)+P(D=0|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=0|C=0)=0.7229\tP(D=0|C=1,A=0)=0.6398\tP(A=0|C=0)=0.5477\tP(D=0|C=1,A=1)=0.5540\tP(A=1|C=0)=0.4523",
+        "Step 6": "ETT=0.7229-[0.6398*0.5477+0.5540*0.4523]=0.1219",
+        "Step 7": "ETT=0.1219>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.12190257764739376
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)的条件下, 外貌水平为高(D=1)的概率为0.2771。在呼吸系统疾病严重程度为低(A=0)且血压为高(C=1)的条件下, 外貌水平为高(D=1)的概率为0.3602。在血压为低(C=0)的条件下, 呼吸系统疾病严重程度为低(A=0)的概率为0.5477。在呼吸系统疾病严重程度为高(A=1)且血压为高(C=1)的条件下, 外貌水平为高(D=1)的概率为0.4460。在血压为低(C=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4523。",
+        "data_info_math": "P(D=1|C=0)=0.2771; P(D=1|A=0,C=1)=0.3602; P(A=0|C=0)=0.5477; P(D=1|A=1,C=1)=0.4460; P(A=1|C=0)=0.4523; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为低，假如血压为高，那么外貌水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=1|C=0)-sum_{A} P(D=1|C=1,A)*P(A|C=0)=P(D=1|C=0)-[P(D=1|C=1,A=0)*P(A=0|C=0)+P(D=1|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=1|C=0)=0.2771\tP(D=1|C=1,A=0)=0.3602\tP(A=0|C=0)=0.5477\tP(D=1|C=1,A=1)=0.4460\tP(A=1|C=0)=0.4523",
+        "Step 6": "ETT=0.2771-[0.3602*0.5477+0.4460*0.4523]=-0.1219",
+        "Step 7": "ETT=-0.1219<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.12190257764739376
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)的条件下, 外貌水平为低(D=0)的概率为0.6150。在呼吸系统疾病严重程度为低(A=0)且血压为低(C=0)的条件下, 外貌水平为低(D=0)的概率为0.7614。在血压为高(C=1)的条件下, 呼吸系统疾病严重程度为低(A=0)的概率为0.7111。在呼吸系统疾病严重程度为高(A=1)且血压为低(C=0)的条件下, 外貌水平为低(D=0)的概率为0.6763。在血压为高(C=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.2889。",
+        "data_info_math": "P(D=0|C=1)=0.6150; P(D=0|A=0,C=0)=0.7614; P(A=0|C=1)=0.7111; P(D=0|A=1,C=0)=0.6763; P(A=1|C=1)=0.2889; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为高，假如血压为低，那么外貌水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=0|C=1)-sum_{A} P(D=0|C=0,A)*P(A|C=1)=P(D=0|C=1)-[P(D=0|C=0,A=0)*P(A=0|C=1)+P(D=0|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=0|C=1)=0.6150\tP(D=0|C=0,A=0)=0.7614\tP(A=0|C=1)=0.7111\tP(D=0|C=0,A=1)=0.6763\tP(A=1|C=1)=0.2889",
+        "Step 6": "ETT=0.6150-[0.7614*0.7111+0.6763*0.2889]=-0.1218",
+        "Step 7": "ETT=-0.1218<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.12177617688300563
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)的条件下, 外貌水平为高(D=1)的概率为0.3850。在呼吸系统疾病严重程度为低(A=0)且血压为低(C=0)的条件下, 外貌水平为高(D=1)的概率为0.2386。在血压为高(C=1)的条件下, 呼吸系统疾病严重程度为低(A=0)的概率为0.7111。在呼吸系统疾病严重程度为高(A=1)且血压为低(C=0)的条件下, 外貌水平为高(D=1)的概率为0.3237。在血压为高(C=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.2889。",
+        "data_info_math": "P(D=1|C=1)=0.3850; P(D=1|A=0,C=0)=0.2386; P(A=0|C=1)=0.7111; P(D=1|A=1,C=0)=0.3237; P(A=1|C=1)=0.2889; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压为高，假如血压为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=1|C=1)-sum_{A} P(D=1|C=0,A)*P(A|C=1)=P(D=1|C=1)-[P(D=1|C=0,A=0)*P(A=0|C=1)+P(D=1|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=1|C=1)=0.3850\tP(D=1|C=0,A=0)=0.2386\tP(A=0|C=1)=0.7111\tP(D=1|C=0,A=1)=0.3237\tP(A=1|C=1)=0.2889",
+        "Step 6": "ETT=0.3850-[0.2386*0.7111+0.3237*0.2889]=0.1218",
+        "Step 7": "ETT=0.1218>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.12177617688300571
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么降雨量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么降雨量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么降雨量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么降雨量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 133,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 134,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么血压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 135,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于血压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么血压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 136,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)且血压为低(C=0)的条件下, 外貌水平为低(D=0)的概率为0.7614。在呼吸系统疾病严重程度为高(A=1)且血压为低(C=0)的条件下, 外貌水平为低(D=0)的概率为0.6763。",
+        "data_info_math": "P(D=0|A=0,C=0)=0.7614; P(D=0|A=1,C=0)=0.6763; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在血压为低的条件下，假如呼吸系统疾病严重程度为低，那么外貌水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=0,C=0))-P(D=0|do(A=1,C=0))=P(D=0|A=0,C=0)-P(D=0|A=1,C=0)",
+        "Step 5": "P(D=0|A=0,C=0)=0.7614\tP(D=0|A=1,C=0)=0.6763",
+        "Step 6": "CDE=0.7614-0.6763=0.0851",
+        "Step 7": "CDE=0.0851>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.08507195223833941
+    },
+    {
+      "id": 137,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)且血压为高(C=1)的条件下, 外貌水平为高(D=1)的概率为0.3602。在呼吸系统疾病严重程度为高(A=1)且血压为高(C=1)的条件下, 外貌水平为高(D=1)的概率为0.4460。",
+        "data_info_math": "P(D=1|A=0,C=1)=0.3602; P(D=1|A=1,C=1)=0.4460; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在血压为高的条件下，假如呼吸系统疾病严重程度为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=0,C=1))-P(D=1|do(A=1,C=1))=P(D=1|A=0,C=1)-P(D=1|A=1,C=1)",
+        "Step 5": "P(D=1|A=0,C=1)=0.3602\tP(D=1|A=1,C=1)=0.4460",
+        "Step 6": "CDE=0.3602-0.4460=-0.0858",
+        "Step 7": "CDE=-0.0858<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.0858451613724131
+    },
+    {
+      "id": 138,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)且血压为高(C=1)的条件下, 外貌水平为低(D=0)的概率为0.5540。在呼吸系统疾病严重程度为低(A=0)且血压为高(C=1)的条件下, 外貌水平为低(D=0)的概率为0.6398。",
+        "data_info_math": "P(D=0|A=1,C=1)=0.5540; P(D=0|A=0,C=1)=0.6398; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在血压为高的条件下，假如呼吸系统疾病严重程度为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=1,C=1))-P(D=0|do(A=0,C=1))=P(D=0|A=1,C=1)-P(D=0|A=0,C=1)",
+        "Step 5": "P(D=0|A=1,C=1)=0.5540\tP(D=0|A=0,C=1)=0.6398",
+        "Step 6": "CDE=0.5540-0.6398=-0.0858",
+        "Step 7": "CDE=-0.0858<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.08584516137241294
+    },
+    {
+      "id": 139,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)且血压为高(C=1)的条件下, 外貌水平为高(D=1)的概率为0.4460。在呼吸系统疾病严重程度为低(A=0)且血压为高(C=1)的条件下, 外貌水平为高(D=1)的概率为0.3602。",
+        "data_info_math": "P(D=1|A=1,C=1)=0.4460; P(D=1|A=0,C=1)=0.3602; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在血压为高的条件下，假如呼吸系统疾病严重程度为高，那么外貌水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=1,C=1))-P(D=1|do(A=0,C=1))=P(D=1|A=1,C=1)-P(D=1|A=0,C=1)",
+        "Step 5": "P(D=1|A=1,C=1)=0.4460\tP(D=1|A=0,C=1)=0.3602",
+        "Step 6": "CDE=0.4460-0.3602=0.0858",
+        "Step 7": "CDE=0.0858>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.0858451613724131
+    },
+    {
+      "id": 140,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在血压为高的条件下，假如降雨量为低，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 141,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在血压为低的条件下，假如降雨量为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 142,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在血压为高的条件下，假如降雨量为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 143,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在血压为低的条件下，假如降雨量为高，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 144,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象呼吸系统疾病严重程度(A)和观察节点血压(C)的后门调整集合。",
+      "Question": "方法1: 根据降雨量的情况，我们逐个研究呼吸系统疾病严重程度和血压的关联。\n方法2：我们直接研究一般情况下呼吸系统疾病严重程度和血压的关联。\n为了理解呼吸系统疾病严重程度如何影响血压，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 145,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象呼吸系统疾病严重程度(A)和观察节点血压(C)的后门调整集合。",
+      "Question": "方法1: 根据外貌水平的情况，我们逐个研究呼吸系统疾病严重程度和血压的关联。\n方法2：我们直接研究一般情况下呼吸系统疾病严重程度和血压的关联。\n为了理解呼吸系统疾病严重程度如何影响血压，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 146,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象呼吸系统疾病严重程度(A)和观察节点外貌水平(D)的后门调整集合。",
+      "Question": "方法1: 根据降雨量的情况，我们逐个研究呼吸系统疾病严重程度和外貌水平的关联。\n方法2：我们直接研究一般情况下呼吸系统疾病严重程度和外貌水平的关联。\n为了理解呼吸系统疾病严重程度如何影响外貌水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 147,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象呼吸系统疾病严重程度(A)和观察节点外貌水平(D)的后门调整集合。",
+      "Question": "方法1: 根据降雨量的情况，我们逐个研究呼吸系统疾病严重程度和外貌水平的关联。\n方法2：我们直接研究一般情况下呼吸系统疾病严重程度和外貌水平的关联。\n为了理解呼吸系统疾病严重程度如何影响外貌水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 148,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象降雨量(B)和观察节点血压(C)的后门调整集合。",
+      "Question": "方法1: 根据呼吸系统疾病严重程度的情况，我们逐个研究降雨量和血压的关联。\n方法2：我们直接研究一般情况下降雨量和血压的关联。\n为了理解降雨量如何影响血压，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 149,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象降雨量(B)和观察节点血压(C)的后门调整集合。",
+      "Question": "方法1: 根据呼吸系统疾病严重程度的情况，我们逐个研究降雨量和血压的关联。\n方法2：我们直接研究一般情况下降雨量和血压的关联。\n为了理解降雨量如何影响血压，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 150,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象降雨量(B)和观察节点外貌水平(D)的后门调整集合。",
+      "Question": "方法1: 根据呼吸系统疾病严重程度的情况，我们逐个研究降雨量和外貌水平的关联。\n方法2：我们直接研究一般情况下降雨量和外貌水平的关联。\n为了理解降雨量如何影响外貌水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 151,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象降雨量(B)和观察节点外貌水平(D)的后门调整集合。",
+      "Question": "方法1: 根据呼吸系统疾病严重程度的情况，我们逐个研究降雨量和外貌水平的关联。\n方法2：我们直接研究一般情况下降雨量和外貌水平的关联。\n为了理解降雨量如何影响外貌水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 152,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象血压(C)和观察节点外貌水平(D)的后门调整集合。",
+      "Question": "方法1: 根据呼吸系统疾病严重程度的情况，我们逐个研究血压和外貌水平的关联。\n方法2：我们直接研究一般情况下血压和外貌水平的关联。\n为了理解血压如何影响外貌水平，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 153,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象血压(C)和观察节点外貌水平(D)的后门调整集合。",
+      "Question": "方法1: 根据呼吸系统疾病严重程度的情况，我们逐个研究血压和外貌水平的关联。\n方法2：我们直接研究一般情况下血压和外貌水平的关联。\n为了理解血压如何影响外貌水平，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 154,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为低(D=0)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4120。在外貌水平为低(D=0)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4126。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.4120; P(A=1|D=0,B=0)=0.4126; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为低的条件下，降雨量会影响呼吸系统疾病严重程度吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=0)-P(A=1|do(B=0),D=0)=P(A=1|D=0)-P(A=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 155,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为低(D=0)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4120。在外貌水平为低(D=0)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4126。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.4120; P(A=1|D=0,B=0)=0.4126; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为低的条件下，降雨量不会影响呼吸系统疾病严重程度吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=0)-P(A=1|do(B=0),D=0)=P(A=1|D=0)-P(A=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 156,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为低(D=0)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4120。在外貌水平为低(D=0)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4126。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.4120; P(A=1|D=0,B=0)=0.4126; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为低的条件下，降雨量是和呼吸系统疾病严重程度相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=0)-P(A=1|B=0,D=0)=0.4120-0.4126=-0.0006!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 157,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为低(D=0)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4120。在外貌水平为低(D=0)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4126。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.4120; P(A=1|D=0,B=0)=0.4126; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为低的条件下，降雨量是和呼吸系统疾病严重程度独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=0)-P(A=1|B=0,D=0)=0.4120-0.4126=-0.0006!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 158,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为高(D=1)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.5084。在外貌水平为高(D=1)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.5072。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.5084; P(A=1|D=1,B=0)=0.5072; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为高的条件下，降雨量会影响呼吸系统疾病严重程度吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=1)-P(A=1|do(B=0),D=1)=P(A=1|D=1)-P(A=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 159,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为高(D=1)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.5084。在外貌水平为高(D=1)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.5072。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.5084; P(A=1|D=1,B=0)=0.5072; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为高的条件下，降雨量不会影响呼吸系统疾病严重程度吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=1)-P(A=1|do(B=0),D=1)=P(A=1|D=1)-P(A=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 160,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为高(D=1)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.5084。在外貌水平为高(D=1)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.5072。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.5084; P(A=1|D=1,B=0)=0.5072; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为高的条件下，降雨量是和呼吸系统疾病严重程度相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=1)-P(A=1|B=0,D=1)=0.5084-0.5072=0.0012!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 161,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为高(D=1)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.5084。在外貌水平为高(D=1)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.5072。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.5084; P(A=1|D=1,B=0)=0.5072; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为高的条件下，降雨量是和呼吸系统疾病严重程度独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=1)-P(A=1|B=0,D=1)=0.5084-0.5072=0.0012!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 162,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4493。在血压为低(C=0)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4580。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.4493; P(A=1|C=0,B=0)=0.4580; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为低的条件下，降雨量会影响呼吸系统疾病严重程度吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=0)-P(A=1|do(B=0),C=0)=P(A=1|C=0)-P(A=1|C=0)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 163,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4493。在血压为低(C=0)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4580。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.4493; P(A=1|C=0,B=0)=0.4580; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为低的条件下，降雨量不会影响呼吸系统疾病严重程度吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=0)-P(A=1|do(B=0),C=0)=P(A=1|C=0)-P(A=1|C=0)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 164,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4493。在血压为低(C=0)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4580。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.4493; P(A=1|C=0,B=0)=0.4580; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为低的条件下，降雨量是和呼吸系统疾病严重程度相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=0)-P(A=1|B=0,C=0)=0.4493-0.4580=-0.0088!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 165,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4493。在血压为低(C=0)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.4580。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.4493; P(A=1|C=0,B=0)=0.4580; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为低的条件下，降雨量是和呼吸系统疾病严重程度独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=0)-P(A=1|B=0,C=0)=0.4493-0.4580=-0.0088!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 166,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.2801。在血压为高(C=1)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.2970。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.2801; P(A=1|C=1,B=0)=0.2970; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为高的条件下，降雨量会影响呼吸系统疾病严重程度吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=1)-P(A=1|do(B=0),C=1)=P(A=1|C=1)-P(A=1|C=1)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 167,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.2801。在血压为高(C=1)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.2970。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.2801; P(A=1|C=1,B=0)=0.2970; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为高的条件下，降雨量不会影响呼吸系统疾病严重程度吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=1)-P(A=1|do(B=0),C=1)=P(A=1|C=1)-P(A=1|C=1)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 168,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.2801。在血压为高(C=1)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.2970。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.2801; P(A=1|C=1,B=0)=0.2970; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为高的条件下，降雨量是和呼吸系统疾病严重程度相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=1)-P(A=1|B=0,C=1)=0.2801-0.2970=-0.0169!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 169,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)且降雨量为高(B=1)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.2801。在血压为高(C=1)且降雨量为低(B=0)的条件下, 呼吸系统疾病严重程度为高(A=1)的概率为0.2970。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.2801; P(A=1|C=1,B=0)=0.2970; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为高的条件下，降雨量是和呼吸系统疾病严重程度独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=1)-P(A=1|B=0,C=1)=0.2801-0.2970=-0.0169!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 170,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为低(D=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.6394。在外貌水平为低(D=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.6399。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.6394; P(B=1|D=0,A=0)=0.6399; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为低的条件下，呼吸系统疾病严重程度会影响降雨量吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=0)-P(B=1|do(A=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 171,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为低(D=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.6394。在外貌水平为低(D=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.6399。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.6394; P(B=1|D=0,A=0)=0.6399; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为低的条件下，呼吸系统疾病严重程度不会影响降雨量吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=0)-P(B=1|do(A=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 172,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为低(D=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.6394。在外貌水平为低(D=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.6399。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.6394; P(B=1|D=0,A=0)=0.6399; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为低的条件下，呼吸系统疾病严重程度是和降雨量相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=0)-P(B=1|A=0,D=0)=0.6394-0.6399=-0.0005!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 173,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为低(D=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.6394。在外貌水平为低(D=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.6399。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.6394; P(B=1|D=0,A=0)=0.6399; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为低的条件下，呼吸系统疾病严重程度是和降雨量独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=0)-P(B=1|A=0,D=0)=0.6394-0.6399=-0.0005!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 174,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为高(D=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.6296。在外貌水平为高(D=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.6285。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.6296; P(B=1|D=1,A=0)=0.6285; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为高的条件下，呼吸系统疾病严重程度会影响降雨量吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=1)-P(B=1|do(A=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 175,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为高(D=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.6296。在外貌水平为高(D=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.6285。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.6296; P(B=1|D=1,A=0)=0.6285; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为高的条件下，呼吸系统疾病严重程度不会影响降雨量吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=1)-P(B=1|do(A=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 176,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为高(D=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.6296。在外貌水平为高(D=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.6285。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.6296; P(B=1|D=1,A=0)=0.6285; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为高的条件下，呼吸系统疾病严重程度是和降雨量相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=1)-P(B=1|A=0,D=1)=0.6296-0.6285=0.0011!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 177,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在外貌水平为高(D=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.6296。在外貌水平为高(D=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.6285。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.6296; P(B=1|D=1,A=0)=0.6285; "
+      },
+      "Instruction": "",
+      "Question": "给定外貌水平为高的条件下，呼吸系统疾病严重程度是和降雨量独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=1)-P(B=1|A=0,D=1)=0.6296-0.6285=0.0011!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 178,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.6452。在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.6533。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.6452; P(B=1|C=0,A=0)=0.6533; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为低的条件下，呼吸系统疾病严重程度会影响降雨量吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=0)-P(B=1|do(A=0),C=0)=P(B=1|C=0)-P(B=1|C=0)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 179,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.6452。在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.6533。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.6452; P(B=1|C=0,A=0)=0.6533; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为低的条件下，呼吸系统疾病严重程度不会影响降雨量吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=0)-P(B=1|do(A=0),C=0)=P(B=1|C=0)-P(B=1|C=0)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 180,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.6452。在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.6533。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.6452; P(B=1|C=0,A=0)=0.6533; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为低的条件下，呼吸系统疾病严重程度是和降雨量相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=0)-P(B=1|A=0,C=0)=0.6452-0.6533=-0.0081!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 181,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.6452。在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.6533。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.6452; P(B=1|C=0,A=0)=0.6533; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为低的条件下，呼吸系统疾病严重程度是和降雨量独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=0)-P(B=1|A=0,C=0)=0.6452-0.6533=-0.0081!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 182,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.4690。在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.4896。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.4690; P(B=1|C=1,A=0)=0.4896; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为高的条件下，呼吸系统疾病严重程度会影响降雨量吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=1)-P(B=1|do(A=0),C=1)=P(B=1|C=1)-P(B=1|C=1)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 183,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.4690。在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.4896。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.4690; P(B=1|C=1,A=0)=0.4896; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为高的条件下，呼吸系统疾病严重程度不会影响降雨量吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=1)-P(B=1|do(A=0),C=1)=P(B=1|C=1)-P(B=1|C=1)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 184,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.4690。在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.4896。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.4690; P(B=1|C=1,A=0)=0.4896; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为高的条件下，呼吸系统疾病严重程度是和降雨量相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=1)-P(B=1|A=0,C=1)=0.4690-0.4896=-0.0205!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 185,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 降雨量为高(B=1)的概率为0.4690。在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 降雨量为高(B=1)的概率为0.4896。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.4690; P(B=1|C=1,A=0)=0.4896; "
+      },
+      "Instruction": "",
+      "Question": "给定血压为高的条件下，呼吸系统疾病严重程度是和降雨量独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=1)-P(B=1|A=0,C=1)=0.4690-0.4896=-0.0205!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 186,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为高(C=1)的概率为0.0993。血压为高(C=1)的概率为0.0782。呼吸系统疾病严重程度为高(A=1)且血压为高(C=1)的概率为0.0226。",
+        "data_info_math": "P(C=1|A=0)=0.0993; P(C=1)=0.0782; P(A=1,C=1)=0.0226; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的必要性概率(probability of necessity, PN)。",
+      "Question": "给定呼吸系统疾病严重程度为高且血压为高, 那么假如呼吸系统疾病严重程度为低，此时血压为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.0993",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.0782-0.0993)/0.0226}\n=max{0, -0.9308}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 187,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)的条件下, 血压为低(C=0)的概率为0.9007。呼吸系统疾病严重程度为低(A=0)且血压为低(C=0)的概率为0.5048。呼吸系统疾病严重程度为高(A=1)且血压为高(C=1)的概率为0.0226。",
+        "data_info_math": "P(C=0|A=0)=0.9007; P(A=0,C=0)=0.5048; P(A=1,C=1)=0.0226; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的必要性概率(probability of necessity, PN)。",
+      "Question": "给定呼吸系统疾病严重程度为高且血压为高, 那么假如呼吸系统疾病严重程度为低，此时血压为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.9007",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.9007-0.5048)/0.0226}\n=min{1, 17.5179}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 188,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.2507。外貌水平为高(D=1)的概率为0.2855。呼吸系统疾病严重程度为高(A=1)且外貌水平为高(D=1)的概率为0.1450。",
+        "data_info_math": "P(D=1|A=0)=0.2507; P(D=1)=0.2855; P(A=1,D=1)=0.1450; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定呼吸系统疾病严重程度为高且外貌水平为高, 那么假如呼吸系统疾病严重程度为低，此时外貌水平为低的概率的下界是多少？",
+      "Answer": "0.2403",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.2507",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.2855-0.2507)/0.1450}\n=max{0, 0.2403}\n=0.2403"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.24029967090896603
+    },
+    {
+      "id": 189,
+      "question_id": 160,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.7493。呼吸系统疾病严重程度为低(A=0)且外貌水平为低(D=0)的概率为0.4200。呼吸系统疾病严重程度为高(A=1)且外貌水平为高(D=1)的概率为0.1450。",
+        "data_info_math": "P(D=0|A=0)=0.7493; P(A=0,D=0)=0.4200; P(A=1,D=1)=0.1450; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定呼吸系统疾病严重程度为高且外貌水平为高, 那么假如呼吸系统疾病严重程度为低，此时外貌水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.7493",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.7493-0.4200)/0.1450}\n=min{1, 2.2708}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 190,
+      "question_id": 161,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为低(B=0)的条件下, 血压为高(C=1)的概率为0.1112。血压为高(C=1)的概率为0.0782。降雨量为高(B=1)且血压为高(C=1)的概率为0.0378。",
+        "data_info_math": "P(C=1|B=0)=0.1112; P(C=1)=0.0782; P(B=1,C=1)=0.0378; "
+      },
+      "Instruction": "考虑降雨量作用于血压的必要性概率(probability of necessity, PN)。",
+      "Question": "给定降雨量为高且血压为高, 那么假如降雨量为低，此时血压为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=P(C=1|B=0)=0.1112",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.0782-0.1112)/0.0378}\n=max{0, -0.8708}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 191,
+      "question_id": 162,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为低(B=0)的条件下, 血压为低(C=0)的概率为0.8888。降雨量为低(B=0)且血压为低(C=0)的概率为0.3229。降雨量为高(B=1)且血压为高(C=1)的概率为0.0378。",
+        "data_info_math": "P(C=0|B=0)=0.8888; P(B=0,C=0)=0.3229; P(B=1,C=1)=0.0378; "
+      },
+      "Instruction": "考虑降雨量作用于血压的必要性概率(probability of necessity, PN)。",
+      "Question": "给定降雨量为高且血压为高, 那么假如降雨量为低，此时血压为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=P(C=0|B=0)=0.8888",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.8888-0.3229)/0.0378}\n=min{1, 14.9543}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 192,
+      "question_id": 163,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为低(B=0)的条件下, 外貌水平为高(D=1)的概率为0.2915。外貌水平为高(D=1)的概率为0.2855。降雨量为高(B=1)且外貌水平为高(D=1)的概率为0.1796。",
+        "data_info_math": "P(D=1|B=0)=0.2915; P(D=1)=0.2855; P(B=1,D=1)=0.1796; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定降雨量为高且外貌水平为高, 那么假如降雨量为低，此时外貌水平为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=P(D=1|B=0)=0.2915",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.2855-0.2915)/0.1796}\n=max{0, -0.0333}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 193,
+      "question_id": 164,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为低(B=0)的条件下, 外貌水平为低(D=0)的概率为0.7085。降雨量为低(B=0)且外貌水平为低(D=0)的概率为0.2574。降雨量为高(B=1)且外貌水平为高(D=1)的概率为0.1796。",
+        "data_info_math": "P(D=0|B=0)=0.7085; P(B=0,D=0)=0.2574; P(B=1,D=1)=0.1796; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定降雨量为高且外貌水平为高, 那么假如降雨量为低，此时外貌水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=P(D=0|B=0)=0.7085",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.7085-0.2574)/0.1796}\n=min{1, 2.5112}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 194,
+      "question_id": 165,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.2386。呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.3237。呼吸系统疾病严重程度为高(A=1)的概率为0.4395。外貌水平为高(D=1)的概率为0.2855。血压为高(C=1)且外貌水平为高(D=1)的概率为0.0301。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.2386; P(A=0)=0.5605; P(D=1|C=0,A=1)=0.3237; P(A=1)=0.4395; P(D=1)=0.2855; P(C=1,D=1)=0.0301; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定血压为高且外貌水平为高, 那么假如血压为低，此时外貌水平为低的概率的下界是多少？",
+      "Answer": "0.3163",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=0))\nP(D=1|do(C=0))=sum_{A} P(D=1|C=0,A)*P(A)=P(D=1|C=0,A=0)*P(A=0)+P(D=1|C=0,A=1)*P(A=1)\nP(D=1|C=0,A=0)=0.2386\tP(A=0)=0.5605\tP(D=1|C=0,A=1)=0.3237\tP(A=1)=0.4395\nP(D=1|do(C=0))=0.2386*0.5605+0.3237*0.4395=0.2760",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(C=0))]/P(C=1,D=1)}\n=max{0, (0.2855-0.2760)/0.0301}\n=max{0, 0.3163}\n=0.3163"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.31632696146502076
+    },
+    {
+      "id": 195,
+      "question_id": 166,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为低(C=0)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.7614。呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为低(C=0)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.6763。呼吸系统疾病严重程度为高(A=1)的概率为0.4395。血压为低(C=0)且外貌水平为低(D=0)的概率为0.6663。血压为高(C=1)且外貌水平为高(D=1)的概率为0.0301。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.7614; P(A=0)=0.5605; P(D=0|C=0,A=1)=0.6763; P(A=1)=0.4395; P(C=0,D=0)=0.6663; P(C=1,D=1)=0.0301; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定血压为高且外貌水平为高, 那么假如血压为低，此时外貌水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=0))\nP(D=0|do(C=0))=sum_{A} P(D=0|C=0,A)*P(A)=P(D=0|C=0,A=0)*P(A=0)+P(D=0|C=0,A=1)*P(A=1)\nP(D=0|C=0,A=0)=0.7614\tP(A=0)=0.5605\tP(D=0|C=0,A=1)=0.6763\tP(A=1)=0.4395\nP(D=0|do(C=0))=0.7614*0.5605+0.6763*0.4395=0.7240",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(C=0)-P(C=0,D=0)]/P(C=1,D=1)}\n=min{1, (0.7240-0.6663)/0.0301}\n=min{1, 1.9139}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 196,
+      "question_id": 167,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为低(C=0)的概率为0.9486。血压为低(C=0)的概率为0.9218。呼吸系统疾病严重程度为低(A=0)且血压为低(C=0)的概率为0.5048。",
+        "data_info_math": "P(C=0|A=1)=0.9486; P(C=0)=0.9218; P(A=0,C=0)=0.5048; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定呼吸系统疾病严重程度为低且血压为低, 假如呼吸系统疾病严重程度为高，此时血压为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.9486",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.9218-0.9486)/0.5048}\n=max{0, -0.0531}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 197,
+      "question_id": 168,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)的条件下, 血压为高(C=1)的概率为0.0514。呼吸系统疾病严重程度为低(A=0)且血压为低(C=0)的概率为0.5048。呼吸系统疾病严重程度为高(A=1)且血压为高(C=1)的概率为0.0226。",
+        "data_info_math": "P(C=1|A=1)=0.0514; P(A=0,C=0)=0.5048; P(A=1,C=1)=0.0226; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于血压的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定呼吸系统疾病严重程度为低且血压为低, 假如呼吸系统疾病严重程度为高，此时血压为高的概率的上界是多少？",
+      "Answer": "0.0571",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.0514",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.0514-0.0226)/0.5048}\n=min{1, 0.0571}\n=0.0571"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.0570844873592117
+    },
+    {
+      "id": 198,
+      "question_id": 169,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.6700。外貌水平为低(D=0)的概率为0.7145。呼吸系统疾病严重程度为低(A=0)且外貌水平为低(D=0)的概率为0.4200。",
+        "data_info_math": "P(D=0|A=1)=0.6700; P(D=0)=0.7145; P(A=0,D=0)=0.4200; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定呼吸系统疾病严重程度为低且外貌水平为低, 假如呼吸系统疾病严重程度为高，此时外貌水平为高的概率的下界是多少？",
+      "Answer": "0.1058",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.6700",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.7145-0.6700)/0.4200}\n=max{0, 0.1058}\n=0.1058"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.10582280248714666
+    },
+    {
+      "id": 199,
+      "question_id": 170,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.3300。呼吸系统疾病严重程度为低(A=0)且外貌水平为低(D=0)的概率为0.4200。呼吸系统疾病严重程度为高(A=1)且外貌水平为高(D=1)的概率为0.1450。",
+        "data_info_math": "P(D=1|A=1)=0.3300; P(A=0,D=0)=0.4200; P(A=1,D=1)=0.1450; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于外貌水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定呼吸系统疾病严重程度为低且外貌水平为低, 假如呼吸系统疾病严重程度为高，此时外貌水平为高的概率的上界是多少？",
+      "Answer": "0.4404",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.3300",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.3300-0.1450)/0.4200}\n=min{1, 0.4404}\n=0.4404"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.4403784744559058
+    },
+    {
+      "id": 200,
+      "question_id": 171,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为高(B=1)的条件下, 血压为低(C=0)的概率为0.9406。血压为低(C=0)的概率为0.9218。降雨量为低(B=0)且血压为低(C=0)的概率为0.3229。",
+        "data_info_math": "P(C=0|B=1)=0.9406; P(C=0)=0.9218; P(B=0,C=0)=0.3229; "
+      },
+      "Instruction": "考虑降雨量作用于血压的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定降雨量为低且血压为低, 假如降雨量为高，此时血压为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=P(C=0|B=1)=0.9406",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.9218-0.9406)/0.3229}\n=max{0, -0.0582}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 201,
+      "question_id": 172,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为高(B=1)的条件下, 血压为高(C=1)的概率为0.0594。降雨量为低(B=0)且血压为低(C=0)的概率为0.3229。降雨量为高(B=1)且血压为高(C=1)的概率为0.0378。",
+        "data_info_math": "P(C=1|B=1)=0.0594; P(B=0,C=0)=0.3229; P(B=1,C=1)=0.0378; "
+      },
+      "Instruction": "考虑降雨量作用于血压的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定降雨量为低且血压为低, 假如降雨量为高，此时血压为高的概率的上界是多少？",
+      "Answer": "0.0669",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=P(C=1|B=1)=0.0594",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.0594-0.0378)/0.3229}\n=min{1, 0.0669}\n=0.0669"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.06687055592896453
+    },
+    {
+      "id": 202,
+      "question_id": 173,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为高(B=1)的条件下, 外貌水平为低(D=0)的概率为0.7179。外貌水平为低(D=0)的概率为0.7145。降雨量为低(B=0)且外貌水平为低(D=0)的概率为0.2574。",
+        "data_info_math": "P(D=0|B=1)=0.7179; P(D=0)=0.7145; P(B=0,D=0)=0.2574; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定降雨量为低且外貌水平为低, 假如降雨量为高，此时外貌水平为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=P(D=0|B=1)=0.7179",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.7145-0.7179)/0.2574}\n=max{0, -0.0133}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 203,
+      "question_id": 174,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在降雨量为高(B=1)的条件下, 外貌水平为高(D=1)的概率为0.2821。降雨量为低(B=0)且外貌水平为低(D=0)的概率为0.2574。降雨量为高(B=1)且外貌水平为高(D=1)的概率为0.1796。",
+        "data_info_math": "P(D=1|B=1)=0.2821; P(B=0,D=0)=0.2574; P(B=1,D=1)=0.1796; "
+      },
+      "Instruction": "考虑降雨量作用于外貌水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定降雨量为低且外貌水平为低, 假如降雨量为高，此时外貌水平为高的概率的上界是多少？",
+      "Answer": "0.3982",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=P(D=1|B=1)=0.2821",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.2821-0.1796)/0.2574}\n=min{1, 0.3982}\n=0.3982"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.39821540158701996
+    },
+    {
+      "id": 204,
+      "question_id": 175,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为低(D=0)的概率为0.6398。呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为低(D=0)的概率为0.5540。呼吸系统疾病严重程度为高(A=1)的概率为0.4395。外貌水平为低(D=0)的概率为0.7145。血压为低(C=0)且外貌水平为低(D=0)的概率为0.6663。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.6398; P(A=0)=0.5605; P(D=0|C=1,A=1)=0.5540; P(A=1)=0.4395; P(D=0)=0.7145; P(C=0,D=0)=0.6663; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定血压为低且外貌水平为低, 假如血压为高，此时外貌水平为高的概率的下界是多少？",
+      "Answer": "0.1686",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=1))\nP(D=0|do(C=1))=sum_{A} P(D=0|C=1,A)*P(A)=P(D=0|C=1,A=0)*P(A=0)+P(D=0|C=1,A=1)*P(A=1)\nP(D=0|C=1,A=0)=0.6398\tP(A=0)=0.5605\tP(D=0|C=1,A=1)=0.5540\tP(A=1)=0.4395\nP(D=0|do(C=1))=0.6398*0.5605+0.5540*0.4395=0.6021",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(C=1))]/P(C=0,D=0)}\n=max{0, (0.7145-0.6021)/0.6663}\n=max{0, 0.1686}\n=0.1686"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.16863000866263728
+    },
+    {
+      "id": 205,
+      "question_id": 176,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表呼吸系统疾病严重程度, B代表降雨量, C代表血压, D代表外貌水平。",
+        "data_info": "在血压为高(C=1)且呼吸系统疾病严重程度为低(A=0)的条件下, 外貌水平为高(D=1)的概率为0.3602。呼吸系统疾病严重程度为低(A=0)的概率为0.5605。在血压为高(C=1)且呼吸系统疾病严重程度为高(A=1)的条件下, 外貌水平为高(D=1)的概率为0.4460。呼吸系统疾病严重程度为高(A=1)的概率为0.4395。血压为低(C=0)且外貌水平为低(D=0)的概率为0.6663。血压为高(C=1)且外貌水平为高(D=1)的概率为0.0301。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.3602; P(A=0)=0.5605; P(D=1|C=1,A=1)=0.4460; P(A=1)=0.4395; P(C=0,D=0)=0.6663; P(C=1,D=1)=0.0301; "
+      },
+      "Instruction": "考虑血压作用于外貌水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定血压为低且外貌水平为低, 假如血压为高，此时外貌水平为高的概率的上界是多少？",
+      "Answer": "0.5519",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=1))\nP(D=1|do(C=1))=sum_{A} P(D=1|C=1,A)*P(A)=P(D=1|C=1,A=0)*P(A=0)+P(D=1|C=1,A=1)*P(A=1)\nP(D=1|C=1,A=0)=0.3602\tP(A=0)=0.5605\tP(D=1|C=1,A=1)=0.4460\tP(A=1)=0.4395\nP(D=1|do(C=1))=0.3602*0.5605+0.4460*0.4395=0.3979",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(C=1)-P(C=1,D=1)]/P(C=0,D=0)}\n=min{1, (0.3979-0.0301)/0.6663}\n=min{1, 0.5519}\n=0.5519"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.551947834397247
+    }
+  ]
+}

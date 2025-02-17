@@ -1,0 +1,4202 @@
+{
+  "education level": [
+    "low",
+    "high",
+    "教育水平",
+    "低",
+    "高"
+  ],
+  "amount of rainfall": [
+    "small",
+    "large",
+    "降雨量",
+    "小",
+    "大"
+  ],
+  "happiness": [
+    "not happy",
+    "happy",
+    "幸福程度",
+    "不幸福",
+    "幸福"
+  ],
+  "groundwater level": [
+    "low",
+    "high",
+    "地下水位",
+    "低",
+    "高"
+  ],
+  "temperature": [
+    "cold",
+    "hot",
+    "温度",
+    "冷",
+    "热"
+  ],
+  "crop growth": [
+    "stunted",
+    "healthy",
+    "作物生长",
+    "萎缩",
+    "健康"
+  ],
+  "harvest yield": [
+    "low",
+    "high",
+    "收成产量",
+    "低",
+    "高"
+  ],
+  "the number of hours studied for an exam": [
+    "few",
+    "many",
+    "考试学习时间",
+    "少",
+    "多"
+  ],
+  "the amount of sleep the night before the exam": [
+    "not enough",
+    "enough",
+    "考试前一晚的睡眠时间",
+    "睡眠不足",
+    "充足"
+  ],
+  "the exam score": [
+    "low",
+    "high",
+    "考试成绩",
+    "低",
+    "高"
+  ],
+  "the amount of rainfall": [
+    "low",
+    "high",
+    "降雨量",
+    "小",
+    "大"
+  ],
+  "the soil moisture level": [
+    "dry",
+    "moist",
+    "土壤湿度水平",
+    "干燥",
+    "湿润"
+  ],
+  "crop yield": [
+    "low",
+    "high",
+    "农作物产量",
+    "低",
+    "高"
+  ],
+  "time spent exercising": [
+    "not enough",
+    "adequate",
+    "锻炼时间",
+    "不够",
+    "适当"
+  ],
+  "physical fitness level": [
+    "poor",
+    "good",
+    "身体素质水平",
+    "差",
+    "好"
+  ],
+  "overall health condition": [
+    "poor",
+    "good",
+    "整体健康状况",
+    "不好",
+    "好"
+  ],
+  "student's attendance in class": [
+    "poor",
+    "good",
+    "学生出勤情况",
+    "差",
+    "好"
+  ],
+  "student's performance on exams": [
+    "poor",
+    "excellent",
+    "学生的考试表现",
+    "差",
+    "优秀"
+  ],
+  "student's final grade in the course": [
+    "low",
+    "high",
+    "学生课程最终成绩",
+    "低",
+    "高"
+  ],
+  "the number of hours spent studying for an exam": [
+    "few",
+    "many",
+    "备考时间",
+    "少",
+    "多"
+  ],
+  "the number of hours spent sleeping the night before the exam": [
+    "insufficient",
+    "sufficient",
+    "考试前一晚睡眠时间",
+    "不足够",
+    "足够"
+  ],
+  "number of hours studied for an exam": [
+    "few",
+    "many",
+    "考试学习时间",
+    "少",
+    "多"
+  ],
+  "exam score": [
+    "low",
+    "high",
+    "考试成绩",
+    "低",
+    "高"
+  ],
+  "grade in the course": [
+    "low",
+    "high",
+    "课程成绩",
+    "低",
+    "高"
+  ],
+  "the amount of exercise a person does per week": [
+    "little",
+    "a lot",
+    "每周运动量",
+    "少",
+    "多"
+  ],
+  "the person's physical fitness level": [
+    "poor",
+    "excellent",
+    "人的身体健康程度",
+    "差",
+    "优秀"
+  ],
+  "the person's risk of developing chronic diseases": [
+    "low",
+    "high",
+    "患慢性疾病的风险",
+    "低",
+    "高"
+  ],
+  "soil moisture": [
+    "dry",
+    "moist",
+    "土壤湿度",
+    "干燥",
+    "湿润"
+  ],
+  "investment in advertising": [
+    "low",
+    "high",
+    "广告投资",
+    "低",
+    "高"
+  ],
+  "number of website visits": [
+    "low",
+    "high",
+    "网站访问量",
+    "低",
+    "高"
+  ],
+  "sales revenue": [
+    "low",
+    "high",
+    "销售收入",
+    "低",
+    "高"
+  ],
+  "weather conditions": [
+    "bad",
+    "good",
+    "天气状况",
+    "不好",
+    "好"
+  ],
+  "humidity": [
+    "low",
+    "high",
+    "湿度",
+    "低",
+    "高"
+  ],
+  "number of hours spent studying": [
+    "few",
+    "many",
+    "学习时间",
+    "少",
+    "多"
+  ],
+  "amount of sleep obtained": [
+    "insufficient",
+    "sufficient",
+    "睡眠时间",
+    "不足",
+    "充足"
+  ],
+  "academic performance": [
+    "poor",
+    "excellent",
+    "学业表现",
+    "差",
+    "优秀"
+  ],
+  "number of people going to the beach": [
+    "few",
+    "many",
+    "去海滩的人数",
+    "少",
+    "多"
+  ],
+  "amount of trash left on the beach": [
+    "little",
+    "a lot",
+    "沙滩上的垃圾量",
+    "少",
+    "很多"
+  ],
+  "amount of exercise": [
+    "little",
+    "ample",
+    "锻炼量",
+    "少",
+    "充足"
+  ],
+  "heart rate": [
+    "low",
+    "high",
+    "心率",
+    "低",
+    "高"
+  ],
+  "blood pressure": [
+    "low",
+    "high",
+    "血压",
+    "低",
+    "高"
+  ],
+  "the growth rate of plants": [
+    "slow",
+    "fast",
+    "植物生长速度",
+    "慢",
+    "快"
+  ],
+  "the yield of crops": [
+    "low",
+    "high",
+    "农作物产量",
+    "低",
+    "高"
+  ],
+  "number of hours studied": [
+    "few",
+    "many",
+    "学习小时数",
+    "少",
+    "多"
+  ],
+  "amount of sleep": [
+    "not enough",
+    "sufficient",
+    "睡眠时间",
+    "不足",
+    "充足"
+  ],
+  "availability of public transportation": [
+    "limited",
+    "abundant",
+    "公共交通可用性",
+    "有限",
+    "充足"
+  ],
+  "traffic congestion": [
+    "light",
+    "heavy",
+    "交通拥堵程度",
+    "轻",
+    "重"
+  ],
+  "travel time to work": [
+    "short",
+    "long",
+    "上班时间",
+    "短",
+    "长"
+  ],
+  "grade received in the course": [
+    "low",
+    "high",
+    "课程成绩",
+    "低",
+    "高"
+  ],
+  "number of hours of studying for a test": [
+    "few",
+    "many",
+    "考试复习时间",
+    "少",
+    "多"
+  ],
+  "test score": [
+    "low",
+    "high",
+    "考试成绩",
+    "低",
+    "高"
+  ],
+  "final grade in the class": [
+    "low",
+    "high",
+    "课程最终成绩",
+    "低",
+    "高"
+  ],
+  "caloric intake": [
+    "low",
+    "high",
+    "热量摄入",
+    "低",
+    "高"
+  ],
+  "weight loss/gain": [
+    "weight gain",
+    "weight loss",
+    "体重增加/增长",
+    "体重减少/减轻",
+    "体重增加/增长/减少/减轻"
+  ],
+  "whether a person studies for an exam": [
+    "not studying",
+    "studying",
+    "是否为考试而学习",
+    "不学习",
+    "学习"
+  ],
+  "whether a person passes the exam": [
+    "not passing",
+    "passing",
+    "考试是否通过",
+    "未通过",
+    "通过"
+  ],
+  "whether a person gets a good grade in the course": [
+    "not good",
+    "good",
+    "课程成绩",
+    "不好",
+    "好"
+  ],
+  "growth rate of plants": [
+    "slow",
+    "fast",
+    "植物生长速度",
+    "慢",
+    "快"
+  ],
+  "water level in a nearby river": [
+    "low",
+    "high",
+    "附近河流水位",
+    "低",
+    "高"
+  ],
+  "the availability of public transportation": [
+    "limited",
+    "abundant",
+    "公共交通的可用性",
+    "有限",
+    "充足"
+  ],
+  "the cost of fuel": [
+    "expensive",
+    "affordable",
+    "燃料费用",
+    "昂贵",
+    "实惠"
+  ],
+  "the number of cars on the road": [
+    "few",
+    "many",
+    "道路上的汽车数量",
+    "少",
+    "多"
+  ],
+  "grade in the class": [
+    "low",
+    "high",
+    "班级成绩",
+    "低",
+    "高"
+  ],
+  "the growth rate of crops": [
+    "low",
+    "high",
+    "作物的生长速度",
+    "低",
+    "高"
+  ],
+  "the water level in the river": [
+    "low",
+    "high",
+    "河水水位",
+    "低",
+    "高"
+  ],
+  "overall health status": [
+    "poor",
+    "good",
+    "整体健康状况",
+    "差",
+    "好"
+  ],
+  "rainfall": [
+    "dry",
+    "wet",
+    "降雨量",
+    "干燥",
+    "湿润"
+  ],
+  "amount of money saved": [
+    "little",
+    "much",
+    "储蓄金额",
+    "少",
+    "多"
+  ],
+  "investment in stocks": [
+    "risky",
+    "profitable",
+    "股票投资",
+    "风险高",
+    "有利可图"
+  ],
+  "financial return on investment": [
+    "negative",
+    "positive",
+    "投资回报率",
+    "负面",
+    "正面"
+  ],
+  "water level in a river": [
+    "low",
+    "high",
+    "河水水位",
+    "低",
+    "高"
+  ],
+  "likelihood of flooding": [
+    "low",
+    "high",
+    "发生洪水的可能性",
+    "低",
+    "高"
+  ],
+  "environmental pollution": [
+    "low",
+    "high",
+    "环境污染",
+    "低",
+    "高"
+  ],
+  "exposure to toxic chemicals": [
+    "not exposed",
+    "exposed",
+    "接触有毒化学物质程度",
+    "未接触",
+    "接触"
+  ],
+  "respiratory diseases": [
+    "non-existent",
+    "prevalent",
+    "呼吸系统疾病",
+    "不存在",
+    "普遍存在"
+  ],
+  "amount of sunscreen sold": [
+    "low",
+    "high",
+    "防晒霜销量",
+    "低",
+    "高"
+  ],
+  "the growth of crops": [
+    "poor",
+    "healthy",
+    "农作物的生长",
+    "差",
+    "健康"
+  ],
+  "the water level of a river": [
+    "low",
+    "high",
+    "河水水位",
+    "低",
+    "高"
+  ],
+  "whether a student studies for an exam or not": [
+    "not studying",
+    "studying",
+    "是否为考试而学习",
+    "不学习",
+    "学习"
+  ],
+  "the grade obtained on the exam": [
+    "low",
+    "high",
+    "考试成绩",
+    "低",
+    "高"
+  ],
+  "whether the student passes the course or not": [
+    "fail",
+    "pass",
+    "学生是否通过课程",
+    "不及格",
+    "及格"
+  ],
+  "the weather condition": [
+    "bad",
+    "good",
+    "天气状况",
+    "不好",
+    "好"
+  ],
+  "the amount of water poured": [
+    "small",
+    "large",
+    "倒水量",
+    "少",
+    "多"
+  ],
+  "parents' income": [
+    "low",
+    "high",
+    "父母收入",
+    "低",
+    "高"
+  ],
+  "child's education level": [
+    "low",
+    "high",
+    "孩子的教育水平",
+    "低",
+    "高"
+  ],
+  "child's health status": [
+    "poor",
+    "good",
+    "儿童健康状况",
+    "差",
+    "好"
+  ],
+  "child's social skills": [
+    "poor",
+    "good",
+    "孩子的社交技能",
+    "差",
+    "好"
+  ],
+  "amount of time spent studying": [
+    "little",
+    "much",
+    "学习时间",
+    "少",
+    "多"
+  ],
+  "availability of study materials": [
+    "limited",
+    "abundant",
+    "学习资料的可用性",
+    "有限",
+    "充足"
+  ],
+  "income level": [
+    "low",
+    "high",
+    "收入水平",
+    "低",
+    "高"
+  ],
+  "job satisfaction": [
+    "low",
+    "high",
+    "工作满意度",
+    "低",
+    "高"
+  ],
+  "work-life balance": [
+    "poor",
+    "good",
+    "工作与生活的平衡",
+    "不好",
+    "好"
+  ],
+  "a person's income": [
+    "low",
+    "high",
+    "一个人的收入",
+    "低",
+    "高"
+  ],
+  "a person's education level": [
+    "low",
+    "high",
+    "一个人的教育水平",
+    "低",
+    "高"
+  ],
+  "a person's job status": [
+    "unemployed",
+    "employed",
+    "人的就业状况",
+    "失业",
+    "就业"
+  ],
+  "a person's financial stability": [
+    "unstable",
+    "stable",
+    "个人财务稳定性",
+    "不稳定",
+    "稳定"
+  ],
+  "the number of hours spent studying": [
+    "low",
+    "high",
+    "学习时间的总小时数",
+    "少",
+    "多"
+  ],
+  "the grade achieved in an exam": [
+    "low",
+    "high",
+    "考试成绩",
+    "低",
+    "高"
+  ],
+  "the likelihood of getting admitted to a university": [
+    "low",
+    "high",
+    "被录取的可能性",
+    "低",
+    "高"
+  ],
+  "the likelihood of getting a scholarship": [
+    "low",
+    "high",
+    "获得奖学金的可能性",
+    "低",
+    "高"
+  ],
+  "precipitation": [
+    "little",
+    "abundant",
+    "降水量",
+    "少",
+    "丰富"
+  ],
+  "amount of sunlight": [
+    "lack of sunlight",
+    "abundance of sunlight",
+    "阳光照射量",
+    "缺乏",
+    "充足"
+  ],
+  "crop quality": [
+    "poor",
+    "high",
+    "农作物质量",
+    "差",
+    "高"
+  ],
+  "parent": [
+    "supportive",
+    "neglectful",
+    "父母",
+    "支持性的",
+    "疏忽的"
+  ],
+  "first-born child": [
+    "favored",
+    "neglected",
+    "长子",
+    "受宠",
+    "被忽视"
+  ],
+  "second-born child": [
+    "less attention",
+    "more attention",
+    "二胎",
+    "较少关注",
+    "较多关注"
+  ],
+  "third-born child": [
+    "oldest",
+    "youngest",
+    "三胎",
+    "最大",
+    "最小"
+  ],
+  "a person waking up in the morning": [
+    "tired",
+    "refreshed",
+    "早上醒来的人",
+    "疲倦",
+    "精神焕发"
+  ],
+  "drinking a cup of coffee": [
+    "decaffeinated",
+    "caffeinated",
+    "喝一杯咖啡",
+    "无咖啡因",
+    "含咖啡因"
+  ],
+  "feeling more alert and energized": [
+    "tired",
+    "energized",
+    "感觉更加警觉和充满活力",
+    "疲倦",
+    "充满活力"
+  ],
+  "being more productive throughout the day": [
+    "less productive",
+    "more productive",
+    "一天中更有效率",
+    "不够高效",
+    "更高效"
+  ],
+  "dietary habits": [
+    "unhealthy",
+    "healthy",
+    "饮食习惯",
+    "不健康",
+    "健康"
+  ],
+  "body weight": [
+    "light",
+    "heavy",
+    "体重",
+    "轻",
+    "重"
+  ],
+  "risk of developing chronic diseases": [
+    "high",
+    "low",
+    "患慢性病的风险",
+    "高",
+    "低"
+  ],
+  "level of education": [
+    "low",
+    "high",
+    "教育水平",
+    "低",
+    "高"
+  ],
+  "overall happiness": [
+    "unhappy",
+    "happy",
+    "整体幸福感",
+    "不快乐",
+    "快乐"
+  ],
+  "the amount of exercise a person gets": [
+    "little",
+    "sufficient",
+    "锻炼量",
+    "少",
+    "足够"
+  ],
+  "the amount of sleep a person gets": [
+    "insufficient",
+    "sufficient",
+    "人的睡眠时间",
+    "不足",
+    "充足"
+  ],
+  "the person's overall health": [
+    "poor",
+    "good",
+    "人的整体健康状况",
+    "差",
+    "好"
+  ],
+  "the person's energy level": [
+    "low",
+    "high",
+    "人的能量水平",
+    "低",
+    "高"
+  ],
+  "customer satisfaction with a product": [
+    "low",
+    "high",
+    "顾客对产品的满意度",
+    "低",
+    "高"
+  ],
+  "number of positive reviews for the product": [
+    "low",
+    "high",
+    "产品的正面评价数量",
+    "低",
+    "高"
+  ],
+  "sales performance of the product": [
+    "poor",
+    "excellent",
+    "产品销售表现",
+    "不佳",
+    "出色"
+  ],
+  "revenue generated from the product": [
+    "low",
+    "high",
+    "产品收入",
+    "低",
+    "高"
+  ],
+  "years of work experience": [
+    "little",
+    "a lot",
+    "工作经验年数",
+    "少",
+    "很多"
+  ],
+  "job performance": [
+    "poor",
+    "excellent",
+    "工作表现",
+    "差劲",
+    "出色"
+  ],
+  "salary level": [
+    "low",
+    "high",
+    "薪水水平",
+    "低",
+    "高"
+  ],
+  "happiness level": [
+    "unhappy",
+    "happy",
+    "幸福水平",
+    "不幸福",
+    "幸福"
+  ],
+  "the productivity level of the person": [
+    "low",
+    "high",
+    "人的生产力水平",
+    "低",
+    "高"
+  ],
+  "the amount of exercise the person does": [
+    "little",
+    "plenty",
+    "锻炼量",
+    "少",
+    "多"
+  ],
+  "the overall health of the person": [
+    "poor",
+    "good",
+    "人的整体健康",
+    "差",
+    "好"
+  ],
+  "availability of alternative routes": [
+    "limited",
+    "abundant",
+    "可选择的路线的可用性",
+    "有限的",
+    "丰富的"
+  ],
+  "road construction": [
+    "poorly constructed",
+    "well constructed",
+    "道路施工",
+    "施工不良",
+    "施工良好"
+  ],
+  "travel time to destination": [
+    "long",
+    "short",
+    "到达目的地的旅行时间",
+    "长",
+    "短"
+  ],
+  "amount of studying": [
+    "little",
+    "a lot",
+    "学习的数量",
+    "少",
+    "很多"
+  ],
+  "test performance": [
+    "poor",
+    "excellent",
+    "考试成绩",
+    "不好",
+    "出色"
+  ],
+  "grade in class": [
+    "low",
+    "high",
+    "班级成绩",
+    "低",
+    "高"
+  ],
+  "overall academic achievement": [
+    "poor",
+    "excellent",
+    "整体学业成绩",
+    "差",
+    "优秀"
+  ],
+  "the amount of rainfall in a region": [
+    "insufficient",
+    "plentiful",
+    "区域降雨量",
+    "不足",
+    "丰富"
+  ],
+  "the water level in a river": [
+    "low",
+    "high",
+    "河流水位",
+    "低",
+    "高"
+  ],
+  "the availability of water for irrigation": [
+    "limited",
+    "abundant",
+    "灌溉用水的可获得性",
+    "有限",
+    "丰富"
+  ],
+  "the crop yield in the region": [
+    "low",
+    "high",
+    "该地区的农作物产量",
+    "低",
+    "高"
+  ],
+  "the amount of water in a reservoir": [
+    "low",
+    "high",
+    "水库储水量",
+    "低",
+    "高"
+  ],
+  "the availability of drinking water": [
+    "limited",
+    "abundant",
+    "饮用水的可用性",
+    "有限",
+    "丰富"
+  ],
+  "quality of life": [
+    "poor",
+    "good",
+    "生活质量",
+    "差",
+    "好"
+  ],
+  "business owner": [
+    "incompetent",
+    "successful",
+    "企业主",
+    "无能",
+    "成功"
+  ],
+  "number of employees": [
+    "few",
+    "many",
+    "员工数量",
+    "少",
+    "多"
+  ],
+  "revenue": [
+    "low",
+    "high",
+    "收入",
+    "低",
+    "高"
+  ],
+  "profit": [
+    "negative",
+    "positive",
+    "利润",
+    "负面",
+    "正面"
+  ],
+  "employment status": [
+    "unemployed",
+    "employed",
+    "就业状态",
+    "失业",
+    "就业"
+  ],
+  "income": [
+    "low",
+    "high",
+    "收入",
+    "低",
+    "高"
+  ],
+  "parent's income": [
+    "low",
+    "high",
+    "父母收入",
+    "低",
+    "高"
+  ],
+  "career success": [
+    "unsuccessful",
+    "successful",
+    "事业成功",
+    "不成功",
+    "成功"
+  ],
+  "access to educational resources": [
+    "limited",
+    "abundant",
+    "教育资源获取",
+    "有限",
+    "丰富"
+  ],
+  "the person's income": [
+    "low",
+    "high",
+    "人的收入",
+    "低",
+    "高"
+  ],
+  "the person's job title": [
+    "low",
+    "high",
+    "人的职位",
+    "低",
+    "高"
+  ],
+  "the person's salary": [
+    "low",
+    "high",
+    "人的薪水",
+    "低",
+    "高"
+  ],
+  "a company": [
+    "inefficient",
+    "efficient",
+    "一个公司",
+    "低效",
+    "高效"
+  ],
+  "company revenue": [
+    "low",
+    "high",
+    "公司收入",
+    "低",
+    "高"
+  ],
+  "company expenses": [
+    "high",
+    "low",
+    "公司费用",
+    "高",
+    "低"
+  ],
+  "company profit": [
+    "low",
+    "high",
+    "公司利润",
+    "低",
+    "高"
+  ],
+  "the weather forecast": [
+    "unreliable",
+    "accurate",
+    "天气预报",
+    "不可靠",
+    "准确"
+  ],
+  "the decision to bring an umbrella": [
+    "unnecessary",
+    "necessary",
+    "带伞的决定",
+    "不必要的",
+    "必要的"
+  ],
+  "whether the person stays dry": [
+    "wet",
+    "dry",
+    "人是否保持干燥",
+    "湿",
+    "干"
+  ],
+  "whether the person gets wet": [
+    "dry",
+    "wet",
+    "人是否被淋湿",
+    "干燥",
+    "湿润"
+  ],
+  "humidity level": [
+    "low",
+    "high",
+    "湿度水平",
+    "低",
+    "高"
+  ],
+  "probability of rain": [
+    "low",
+    "high",
+    "降雨概率",
+    "低",
+    "高"
+  ],
+  "probability of flooding": [
+    "low",
+    "high",
+    "洪水概率",
+    "低",
+    "高"
+  ],
+  "job performance rating": [
+    "poor",
+    "excellent",
+    "工作表现评级",
+    "差",
+    "优秀"
+  ],
+  "salary": [
+    "low",
+    "high",
+    "薪水",
+    "低",
+    "高"
+  ],
+  "a manufacturing plant": [
+    "inefficient",
+    "productive",
+    "制造工厂",
+    "低效",
+    "高产"
+  ],
+  "the production output of the plant": [
+    "low",
+    "high",
+    "工厂的产量",
+    "低",
+    "高"
+  ],
+  "the efficiency of the plant's machinery": [
+    "inefficient",
+    "efficient",
+    "工厂机械的效率",
+    "低效",
+    "高效"
+  ],
+  "the overall profitability of the plant": [
+    "low",
+    "high",
+    "工厂的整体盈利能力",
+    "低",
+    "高"
+  ],
+  "overall gpa": [
+    "low",
+    "high",
+    "总平均成绩",
+    "低",
+    "高"
+  ],
+  "customer satisfaction": [
+    "low",
+    "high",
+    "客户满意度",
+    "低",
+    "高"
+  ],
+  "product quality": [
+    "poor",
+    "high",
+    "产品质量",
+    "差",
+    "高"
+  ],
+  "sales": [
+    "low",
+    "high",
+    "销售额",
+    "低",
+    "高"
+  ],
+  "overall health": [
+    "poor",
+    "good",
+    "整体健康状况",
+    "差",
+    "好"
+  ],
+  "whether a person eats a healthy diet": [
+    "unhealthy",
+    "healthy",
+    "一个人是否吃健康饮食",
+    "不健康",
+    "健康"
+  ],
+  "whether a person exercises regularly": [
+    "irregular",
+    "regular",
+    "是否定期锻炼",
+    "不定期",
+    "定期"
+  ],
+  "whether a person maintains a healthy weight": [
+    "overweight",
+    "healthy",
+    "一个人是否保持健康体重",
+    "超重",
+    "健康"
+  ],
+  "whether a person has good cardiovascular health": [
+    "poor",
+    "good",
+    "人的心血管健康状况",
+    "差",
+    "好"
+  ],
+  "soil moisture level": [
+    "low",
+    "high",
+    "土壤湿度水平",
+    "低",
+    "高"
+  ],
+  "the score obtained on the exam": [
+    "low",
+    "high",
+    "考试得分",
+    "低",
+    "高"
+  ],
+  "the overall performance in the course": [
+    "poor",
+    "excellent",
+    "课程整体表现",
+    "差",
+    "优秀"
+  ],
+  "wind speed": [
+    "low",
+    "high",
+    "风速",
+    "低",
+    "高"
+  ],
+  "the number of hours a student studies": [
+    "few",
+    "many",
+    "学生学习时间",
+    "少",
+    "多"
+  ],
+  "the grade the student receives on a test": [
+    "low",
+    "high",
+    "学生在考试中获得的分数",
+    "低",
+    "高"
+  ],
+  "the amount of sleep the student gets": [
+    "low",
+    "high",
+    "学生的睡眠时间",
+    "少",
+    "多"
+  ],
+  "the overall academic performance of the student": [
+    "poor",
+    "excellent",
+    "学生整体学术表现",
+    "差",
+    "优秀"
+  ],
+  "savings amount": [
+    "low",
+    "high",
+    "储蓄金额",
+    "低",
+    "高"
+  ],
+  "credit score": [
+    "low",
+    "high",
+    "信用评分",
+    "低",
+    "高"
+  ],
+  "loan approval status": [
+    "rejected",
+    "approved",
+    "贷款批准状态",
+    "拒绝",
+    "批准"
+  ],
+  "the amount of time spent studying": [
+    "limited",
+    "ample",
+    "学习时间的数量",
+    "有限",
+    "充足"
+  ],
+  "the level of understanding of the subject": [
+    "lack of understanding",
+    "deep understanding",
+    "对该科目的理解水平",
+    "缺乏理解",
+    "深刻理解"
+  ],
+  "the test score obtained": [
+    "low",
+    "high",
+    "得分",
+    "低",
+    "高"
+  ],
+  "the final grade in the course": [
+    "not good",
+    "good",
+    "课程最终成绩",
+    "不好",
+    "好"
+  ],
+  "job experience": [
+    "lack of",
+    "abundance of",
+    "工作经验",
+    "缺乏",
+    "丰富"
+  ],
+  "harvest quality": [
+    "poor",
+    "good",
+    "收成品质",
+    "差",
+    "好"
+  ],
+  "a person's job title": [
+    "low-ranking",
+    "high-ranking",
+    "一个人的职位",
+    "低级",
+    "高级"
+  ],
+  "a person's social status": [
+    "low",
+    "high",
+    "一个人的社会地位",
+    "低",
+    "高"
+  ],
+  "a person's level of education": [
+    "low",
+    "high",
+    "一个人的教育水平",
+    "低",
+    "高"
+  ],
+  "the person's job position": [
+    "low",
+    "high",
+    "人的职位",
+    "低",
+    "高"
+  ],
+  "the person's work performance": [
+    "poor",
+    "excellent",
+    "人的工作表现",
+    "差",
+    "优秀"
+  ],
+  "the person's job satisfaction": [
+    "dissatisfied",
+    "satisfied",
+    "人的工作满意度",
+    "不满意",
+    "满意"
+  ],
+  "the person's overall happiness": [
+    "unhappy",
+    "happy",
+    "个人整体幸福感",
+    "不快乐",
+    "快乐"
+  ],
+  "the person's annual income": [
+    "low",
+    "high",
+    "个人年收入",
+    "低",
+    "高"
+  ],
+  "the person's years of experience": [
+    "limited",
+    "extensive",
+    "个人的工作经验",
+    "有限",
+    "丰富"
+  ],
+  "the amount of exercise an individual gets": [
+    "little",
+    "adequate",
+    "个人运动量",
+    "少",
+    "适当"
+  ],
+  "the amount of stress an individual experiences": [
+    "low",
+    "high",
+    "个体经历的压力程度",
+    "低",
+    "高"
+  ],
+  "the individual's heart rate": [
+    "low",
+    "high",
+    "个体心率",
+    "低",
+    "高"
+  ],
+  "the individual's blood pressure": [
+    "high",
+    "normal",
+    "个人的血压",
+    "高",
+    "正常"
+  ],
+  "the individual's overall health": [
+    "poor",
+    "good",
+    "个人整体健康状况",
+    "差",
+    "好"
+  ],
+  "the individual's sleep quality": [
+    "poor",
+    "good",
+    "个体的睡眠质量",
+    "差",
+    "好"
+  ],
+  "marketing campaigns": [
+    "ineffective",
+    "successful",
+    "营销活动",
+    "无效",
+    "成功"
+  ],
+  "customer loyalty": [
+    "low",
+    "high",
+    "客户忠诚度",
+    "低",
+    "高"
+  ],
+  "repeat purchases": [
+    "infrequent",
+    "frequent",
+    "重复购买",
+    "不频繁",
+    "频繁"
+  ],
+  "marketing campaign effectiveness": [
+    "ineffective",
+    "effective",
+    "市场营销活动效果",
+    "无效",
+    "有效"
+  ],
+  "sales volume": [
+    "low",
+    "high",
+    "销售量",
+    "低",
+    "高"
+  ],
+  "air quality": [
+    "poor",
+    "good",
+    "空气质量",
+    "差",
+    "好"
+  ],
+  "outdoor activities": [
+    "indoor",
+    "outdoor",
+    "户外活动",
+    "室内",
+    "户外"
+  ],
+  "parent's education level": [
+    "low education level",
+    "high education level",
+    "父母教育水平",
+    "低",
+    "高"
+  ],
+  "parent's occupation": [
+    "unemployed",
+    "employed",
+    "父母的职业",
+    "失业",
+    "从业"
+  ],
+  "child's academic performance": [
+    "poor",
+    "excellent",
+    "孩子的学业表现",
+    "差",
+    "优秀"
+  ],
+  "child's extracurricular activities": [
+    "limited",
+    "abundant",
+    "孩子的课外活动",
+    "有限",
+    "丰富"
+  ],
+  "child's overall happiness": [
+    "unhappy",
+    "happy",
+    "孩子的整体幸福感",
+    "不快乐",
+    "快乐"
+  ],
+  "ceo of a company": [
+    "ineffective",
+    "effective",
+    "公司首席执行官",
+    "无效",
+    "有效"
+  ],
+  "marketing team": [
+    "ineffective",
+    "effective",
+    "营销团队",
+    "无效",
+    "有效"
+  ],
+  "product development team": [
+    "ineffective",
+    "efficient",
+    "产品开发团队",
+    "无效",
+    "高效"
+  ],
+  "sales team": [
+    "ineffective",
+    "successful",
+    "销售团队",
+    "无效",
+    "成功"
+  ],
+  "company's profit": [
+    "low",
+    "high",
+    "公司利润",
+    "低",
+    "高"
+  ],
+  "company": [
+    "unsuccessful",
+    "successful",
+    "公司",
+    "不成功",
+    "成功"
+  ],
+  "marketing strategy": [
+    "ineffective",
+    "effective",
+    "营销策略",
+    "无效",
+    "有效"
+  ],
+  "sales performance": [
+    "poor",
+    "excellent",
+    "销售业绩",
+    "糟糕",
+    "出色"
+  ],
+  "financial performance": [
+    "poor",
+    "strong",
+    "财务表现",
+    "差",
+    "强"
+  ],
+  "skillset": [
+    "lacking",
+    "proficient",
+    "技能组合",
+    "缺乏",
+    "熟练"
+  ],
+  "career growth": [
+    "stagnant",
+    "promising",
+    "职业发展",
+    "停滞不前",
+    "有前途"
+  ],
+  "the weather": [
+    "bad",
+    "good",
+    "天气",
+    "糟糕",
+    "好"
+  ],
+  "the time taken to commute": [
+    "short",
+    "long",
+    "通勤时间",
+    "短",
+    "长"
+  ],
+  "the quality of work-life balance": [
+    "poor",
+    "good",
+    "工作与生活平衡的质量",
+    "糟糕",
+    "良好"
+  ],
+  "employee productivity": [
+    "low",
+    "high",
+    "员工生产力",
+    "低",
+    "高"
+  ],
+  "level of education (high school/college)": [
+    "low",
+    "high",
+    "教育程度（高中/大学）",
+    "低",
+    "高"
+  ],
+  "work experience (years)": [
+    "no work experience",
+    "experienced",
+    "工作经验（年）",
+    "无工作经验",
+    "有经验"
+  ],
+  "technical skills": [
+    "lacking",
+    "proficient",
+    "技术技能",
+    "欠缺",
+    "熟练"
+  ],
+  "communication skills": [
+    "poor",
+    "excellent",
+    "沟通技巧",
+    "差",
+    "优秀"
+  ],
+  "leadership abilities": [
+    "poor",
+    "strong",
+    "领导能力",
+    "差",
+    "强"
+  ],
+  "promotion status (promoted/not promoted)": [
+    "not promoted",
+    "promoted",
+    "晋升状态（未晋升/已晋升）",
+    "未晋升",
+    "已晋升"
+  ],
+  "employee performance": [
+    "poor",
+    "excellent",
+    "员工表现",
+    "差",
+    "优秀"
+  ],
+  "stress level": [
+    "low",
+    "high",
+    "压力水平",
+    "低",
+    "高"
+  ],
+  "mental health": [
+    "poor",
+    "healthy",
+    "mental health",
+    "不良的心理健康",
+    "健康的心理健康"
+  ],
+  "productivity": [
+    "low",
+    "high",
+    "生产力",
+    "低",
+    "高"
+  ],
+  "the person's diet": [
+    "unhealthy",
+    "healthy",
+    "个人的饮食",
+    "不健康",
+    "健康"
+  ],
+  "the person's stress levels": [
+    "high",
+    "low",
+    "人的压力水平",
+    "高",
+    "低"
+  ],
+  "the person's weight": [
+    "underweight",
+    "overweight",
+    "体重",
+    "体重过轻",
+    "体重过重"
+  ],
+  "the person's cholesterol levels": [
+    "high",
+    "low",
+    "人的胆固醇水平",
+    "高",
+    "低"
+  ],
+  "the person's lifespan": [
+    "short",
+    "long",
+    "人的寿命",
+    "短",
+    "长"
+  ],
+  "road conditions": [
+    "poor",
+    "good",
+    "道路状况",
+    "糟糕",
+    "良好"
+  ],
+  "accidents": [
+    "unfortunate",
+    "preventable",
+    "事故",
+    "不幸",
+    "可预防"
+  ],
+  "delayed flights": [
+    "delayed flights",
+    "on-time flights",
+    "延误的航班",
+    "延误的",
+    "准点的"
+  ],
+  "public transportation delays": [
+    "delayed",
+    "on time",
+    "公共交通延误",
+    "延迟",
+    "准时"
+  ],
+  "commute time": [
+    "long commute",
+    "short commute",
+    "通勤时间",
+    "长时间通勤",
+    "短时间通勤"
+  ],
+  "job promotion": [
+    "unlikely",
+    "likely",
+    "职位晋升",
+    "不太可能",
+    "有可能"
+  ],
+  "job stability": [
+    "unstable",
+    "secure",
+    "工作稳定性",
+    "不稳定",
+    "稳定"
+  ],
+  "education level of students": [
+    "low",
+    "high",
+    "学生教育水平",
+    "低",
+    "高"
+  ],
+  "availability of scholarships": [
+    "limited",
+    "abundant",
+    "奖学金的可获得性",
+    "有限",
+    "丰富"
+  ],
+  "quality of teaching": [
+    "poor",
+    "good",
+    "教学质量",
+    "差",
+    "好"
+  ],
+  "parental income": [
+    "low",
+    "high",
+    "父母收入",
+    "低",
+    "高"
+  ],
+  "academic performance of students": [
+    "poor",
+    "excellent",
+    "学生的学业表现",
+    "差",
+    "优秀"
+  ],
+  "college admission": [
+    "difficult",
+    "easy",
+    "大学入学",
+    "困难",
+    "容易"
+  ],
+  "employment prospects": [
+    "limited",
+    "promising",
+    "就业前景",
+    "有限",
+    "充满希望"
+  ],
+  "promotion status": [
+    "unpromoted",
+    "promoted",
+    "晋升状态",
+    "未晋升",
+    "已晋升"
+  ],
+  "occupation": [
+    "unemployed",
+    "employed",
+    "职业",
+    "失业",
+    "就业"
+  ],
+  "physical health": [
+    "poor",
+    "good",
+    "身体健康",
+    "差",
+    "好"
+  ],
+  "access to healthcare": [
+    "limited",
+    "unrestricted",
+    "医疗保健的获取",
+    "有限的",
+    "无限制的"
+  ],
+  "health condition": [
+    "poor",
+    "good",
+    "健康状况",
+    "糟糕",
+    "良好"
+  ],
+  "social support": [
+    "low",
+    "high",
+    "社会支持",
+    "低",
+    "高"
+  ],
+  "overall well-being": [
+    "poor",
+    "good",
+    "整体幸福感",
+    "差",
+    "好"
+  ],
+  "a company's ceo": [
+    "ineffective",
+    "effective",
+    "公司首席执行官",
+    "无效的",
+    "有效的"
+  ],
+  "marketing strategies": [
+    "ineffective",
+    "effective",
+    "市场营销策略",
+    "无效的",
+    "有效的"
+  ],
+  "competitor analysis": [
+    "inadequate",
+    "thorough",
+    "竞争对手分析",
+    "不充分",
+    "彻底"
+  ],
+  "overall business success": [
+    "poor",
+    "excellent",
+    "整体业务成功",
+    "差",
+    "优秀"
+  ],
+  "employee engagement": [
+    "disengaged",
+    "engaged",
+    "员工参与度",
+    "无动于衷",
+    "参与度"
+  ],
+  "job position": [
+    "low-level",
+    "high-level",
+    "工作职位",
+    "低层次",
+    "高层次"
+  ],
+  "overall life satisfaction": [
+    "low",
+    "high",
+    "整体生活满意度",
+    "低",
+    "高"
+  ],
+  "exercise frequency": [
+    "low",
+    "high",
+    "锻炼频率",
+    "低",
+    "高"
+  ],
+  "life satisfaction": [
+    "low",
+    "high",
+    "生活满意度",
+    "低",
+    "高"
+  ],
+  "season": [
+    "cold",
+    "warm",
+    "季节",
+    "寒冷",
+    "温暖"
+  ],
+  "pesticide usage": [
+    "low",
+    "high",
+    "杀虫剂使用量",
+    "低",
+    "高"
+  ],
+  "soil quality": [
+    "poor",
+    "good",
+    "soil quality",
+    "贫瘠的土壤质量",
+    "良好的土壤质量"
+  ],
+  "harvest output": [
+    "low",
+    "high",
+    "收成产量",
+    "低",
+    "高"
+  ],
+  "employee": [
+    "unproductive",
+    "productive",
+    "员工",
+    "无生产力的",
+    "有生产力的"
+  ],
+  "work performance": [
+    "poor",
+    "excellent",
+    "工作表现",
+    "差劲",
+    "出色"
+  ],
+  "promotion": [
+    "missed",
+    "achieved",
+    "晋升",
+    "错过的",
+    "实现的"
+  ],
+  "job engagement": [
+    "low",
+    "high",
+    "工作投入度",
+    "低",
+    "高"
+  ],
+  "employee retention": [
+    "low",
+    "high",
+    "员工保留率",
+    "低",
+    "高"
+  ],
+  "air pressure": [
+    "low",
+    "high",
+    "气压",
+    "低",
+    "高"
+  ],
+  "market demand": [
+    "low",
+    "high",
+    "市场需求",
+    "低",
+    "高"
+  ],
+  "product development": [
+    "slow",
+    "fast",
+    "产品开发",
+    "慢速的",
+    "快速的"
+  ],
+  "customer feedback": [
+    "negative",
+    "positive",
+    "客户反馈",
+    "负面的",
+    "积极的"
+  ],
+  "a person's genetic predisposition to a certain disease": [
+    "non-predisposed",
+    "predisposed",
+    "某种疾病的遗传易感性",
+    "无易感性",
+    "易感性"
+  ],
+  "a person's lifestyle choices (e.g., diet, exercise)": [
+    "unhealthy",
+    "healthy",
+    "个人的生活方式选择（例如饮食、运动）",
+    "不健康",
+    "健康"
+  ],
+  "the presence of certain environmental factors (e.g., pollution)": [
+    "negative",
+    "positive",
+    "特定环境因素的存在（例如污染）",
+    "负面",
+    "正面"
+  ],
+  "the development of symptoms related to the disease": [
+    "absence",
+    "presence",
+    "疾病相关症状的发展",
+    "缺乏",
+    "存在"
+  ],
+  "the severity of the disease": [
+    "severe",
+    "mild",
+    "疾病严重程度",
+    "严重",
+    "轻微"
+  ],
+  "the effectiveness of a particular treatment": [
+    "ineffective",
+    "effective",
+    "特定治疗的有效性",
+    "无效",
+    "有效"
+  ],
+  "the patient's overall health condition": [
+    "poor",
+    "good",
+    "病人的整体健康状况",
+    "差",
+    "好"
+  ],
+  "the outcome of the disease (e.g., recovery, death)": [
+    "negative",
+    "positive",
+    "疾病的结果（如康复，死亡）",
+    "消极",
+    "积极"
+  ],
+  "the temperature in a region": [
+    "cold",
+    "hot",
+    "地区的温度",
+    "冷",
+    "热"
+  ],
+  "the humidity in a region": [
+    "low",
+    "high",
+    "一个地区的湿度",
+    "低",
+    "高"
+  ],
+  "the soil moisture in a region": [
+    "dry",
+    "moist",
+    "地区土壤湿度",
+    "干燥",
+    "湿润"
+  ],
+  "the crop yield in a region": [
+    "low",
+    "high",
+    "作物产量",
+    "低",
+    "高"
+  ],
+  "the pest infestation in a region": [
+    "minor",
+    "severe",
+    "地区的害虫侵扰",
+    "轻微的",
+    "严重的"
+  ],
+  "the agricultural productivity in a region": [
+    "low",
+    "high",
+    "某地区的农业生产力",
+    "低",
+    "高"
+  ],
+  "the economic growth in a region": [
+    "slow",
+    "fast",
+    "地区的经济增长",
+    "缓慢",
+    "快速"
+  ],
+  "pollution levels": [
+    "high",
+    "low",
+    "污染水平",
+    "高",
+    "低"
+  ],
+  "respiratory health": [
+    "poor",
+    "good",
+    "呼吸系统健康",
+    "不佳",
+    "良好"
+  ],
+  "allergy symptoms": [
+    "symptom-free",
+    "symptomatic",
+    "过敏症状",
+    "无症状",
+    "有症状"
+  ],
+  "rate of asthma attacks": [
+    "low",
+    "high",
+    "哮喘发作率",
+    "低",
+    "高"
+  ],
+  "a person's genetic predisposition to a specific disease": [
+    "low",
+    "high",
+    "一个人对特定疾病的遗传易感性",
+    "低",
+    "高"
+  ],
+  "lifestyle choices (such as diet and exercise) that can impact the disease": [
+    "unhealthy",
+    "healthy",
+    "生活方式选择（如饮食和锻炼）对疾病的影响",
+    "不健康",
+    "健康"
+  ],
+  "environmental factors (such as pollution or exposure to toxins) that can impact the disease": [
+    "negative",
+    "positive",
+    "环境因素（如污染或接触毒素）对疾病的影响",
+    "负面",
+    "正面"
+  ],
+  "the presence or absence of early symptoms of the disease": [
+    "absent",
+    "present",
+    "疾病早期症状的存在与否",
+    "缺失",
+    "存在"
+  ],
+  "access to healthcare and medical interventions": [
+    "limited",
+    "unlimited",
+    "医疗保健和医疗干预的获得",
+    "有限的",
+    "无限的"
+  ],
+  "the progression of the disease over time": [
+    "slow",
+    "rapid",
+    "疾病的发展过程",
+    "缓慢",
+    "迅速"
+  ],
+  "the overall health status of the individual": [
+    "poor",
+    "excellent",
+    "个人的整体健康状况",
+    "不良",
+    "优秀"
+  ],
+  "the presence or absence of the specific disease": [
+    "negative",
+    "positive",
+    "特定疾病的存在或缺席",
+    "阴性",
+    "阳性"
+  ],
+  "education level of a student": [
+    "low",
+    "high",
+    "学生的教育水平",
+    "低",
+    "高"
+  ],
+  "academic performance of the student": [
+    "poor",
+    "excellent",
+    "学生的学术表现",
+    "差",
+    "优秀"
+  ],
+  "quality of sleep of the student": [
+    "poor",
+    "good",
+    "学生的睡眠质量",
+    "差",
+    "好"
+  ],
+  "stress level of the student": [
+    "high stress level",
+    "low stress level",
+    "学生的压力水平",
+    "高",
+    "低"
+  ],
+  "participation in extracurricular activities": [
+    "limited",
+    "active",
+    "参与课外活动",
+    "有限",
+    "积极"
+  ],
+  "overall mental health of the student": [
+    "poor",
+    "good",
+    "学生的整体心理健康",
+    "差",
+    "好"
+  ],
+  "physical health of the student": [
+    "poor",
+    "good",
+    "学生的身体健康",
+    "不好",
+    "好"
+  ],
+  "overall well-being of the student": [
+    "poor",
+    "good",
+    "学生的整体幸福感",
+    "差",
+    "好"
+  ],
+  "company management": [
+    "inefficient",
+    "effective",
+    "公司管理",
+    "低效",
+    "高效"
+  ],
+  "marketing department": [
+    "ineffective",
+    "efficient",
+    "市场部门",
+    "无效",
+    "高效"
+  ],
+  "sales department": [
+    "ineffective",
+    "efficient",
+    "销售部门",
+    "无效",
+    "高效"
+  ],
+  "product development department": [
+    "inefficient",
+    "innovative",
+    "产品开发部门",
+    "低效的",
+    "创新的"
+  ],
+  "research and development department": [
+    "ineffective",
+    "innovative",
+    "研发部门",
+    "无效",
+    "创新"
+  ],
+  "advertising department": [
+    "inefficient",
+    "efficient",
+    "广告部门",
+    "低效",
+    "高效"
+  ],
+  "human resources department": [
+    "inefficient",
+    "efficient",
+    "人力资源部门",
+    "低效",
+    "高效"
+  ],
+  "training department": [
+    "ineffective",
+    "efficient",
+    "培训部门",
+    "无效",
+    "高效"
+  ],
+  "customer complaints": [
+    "unresolved",
+    "resolved",
+    "顾客投诉",
+    "未解决的",
+    "已解决的"
+  ],
+  "customer reviews": [
+    "negative",
+    "positive",
+    "顾客评论",
+    "负面的",
+    "正面的"
+  ],
+  "customer retention": [
+    "low",
+    "high",
+    "客户保留率",
+    "低",
+    "高"
+  ],
+  "customer engagement": [
+    "low",
+    "high",
+    "客户参与度",
+    "低",
+    "高"
+  ],
+  "customer referrals": [
+    "limited",
+    "abundant",
+    "客户推荐",
+    "有限",
+    "丰富"
+  ],
+  "business growth": [
+    "stagnation",
+    "expansion",
+    "业务增长",
+    "停滞",
+    "扩张"
+  ],
+  "socioeconomic status": [
+    "low",
+    "high",
+    "社会经济地位",
+    "低",
+    "高"
+  ],
+  "career advancement": [
+    "limited",
+    "promising",
+    "职业发展",
+    "有限",
+    "有前途"
+  ],
+  "employees": [
+    "unproductive",
+    "productive",
+    "员工",
+    "无生产力",
+    "有生产力"
+  ],
+  "department": [
+    "inefficient",
+    "efficient",
+    "部门",
+    "效率低下",
+    "高效"
+  ],
+  "projects": [
+    "unsuccessful",
+    "successful",
+    "项目",
+    "不成功",
+    "成功"
+  ],
+  "skills": [
+    "lacking",
+    "proficient",
+    "技能",
+    "欠缺",
+    "熟练"
+  ],
+  "managers": [
+    "incompetent",
+    "competent",
+    "经理",
+    "无能的",
+    "能干的"
+  ],
+  "team": [
+    "dysfunctional",
+    "cohesive",
+    "团队",
+    "不协调",
+    "有凝聚力"
+  ],
+  "team leaders": [
+    "ineffective leaders",
+    "effective leaders",
+    "团队领导者",
+    "无效",
+    "有效"
+  ],
+  "workload distribution": [
+    "uneven",
+    "balanced",
+    "工作量分配",
+    "不均衡",
+    "均衡"
+  ],
+  "training programs": [
+    "ineffective",
+    "effective",
+    "培训计划",
+    "无效的",
+    "有效的"
+  ],
+  "employee motivation": [
+    "low",
+    "high",
+    "员工动力",
+    "低",
+    "高"
+  ],
+  "work environment": [
+    "toxic",
+    "positive",
+    "工作环境",
+    "有毒",
+    "积极"
+  ],
+  "business success": [
+    "lackluster",
+    "thriving",
+    "商业成功",
+    "平淡无奇",
+    "蓬勃发展"
+  ],
+  "education level of a person": [
+    "low",
+    "high",
+    "一个人的教育水平",
+    "低",
+    "高"
+  ],
+  "income level of a person": [
+    "low",
+    "high",
+    "个人收入水平",
+    "低",
+    "高"
+  ],
+  "employment status of a person": [
+    "unemployed",
+    "employed",
+    "人的就业状态",
+    "失业",
+    "就业"
+  ],
+  "happiness level of a person": [
+    "low",
+    "high",
+    "一个人的幸福水平",
+    "低",
+    "高"
+  ],
+  "marital status of a person": [
+    "single",
+    "married",
+    "marital status of a person",
+    "单身",
+    "已婚"
+  ],
+  "health condition of a person": [
+    "poor",
+    "good",
+    "个人健康状况",
+    "不好的",
+    "良好的"
+  ],
+  "social support received by a person": [
+    "lack of support",
+    "strong support",
+    "个人获得的社会支持",
+    "缺乏支持",
+    "强大支持"
+  ],
+  "life satisfaction of a person": [
+    "low",
+    "high",
+    "一个人的生活满意度",
+    "低",
+    "高"
+  ],
+  "access to recreational activities": [
+    "limited",
+    "abundant",
+    "娱乐活动的获取途径",
+    "有限的",
+    "丰富的"
+  ],
+  "manager": [
+    "incompetent",
+    "competent",
+    "经理",
+    "无能",
+    "能干"
+  ],
+  "team collaboration": [
+    "dysfunctional",
+    "productive",
+    "团队合作",
+    "不协调",
+    "有效"
+  ],
+  "employee satisfaction": [
+    "low",
+    "high",
+    "员工满意度",
+    "低",
+    "高"
+  ],
+  "number of years of work experience": [
+    "limited",
+    "extensive",
+    "工作经验的年限",
+    "有限",
+    "丰富"
+  ],
+  "professional skills": [
+    "lacking",
+    "strong",
+    "专业技能",
+    "缺乏",
+    "强大"
+  ],
+  "company performance": [
+    "poor",
+    "strong",
+    "公司业绩",
+    "差",
+    "强劲"
+  ],
+  "financial success": [
+    "poor",
+    "successful",
+    "财务成功",
+    "差",
+    "成功"
+  ],
+  "weather condition": [
+    "bad",
+    "good",
+    "天气状况",
+    "差",
+    "好"
+  ],
+  "availability of outdoor activities": [
+    "limited",
+    "plentiful",
+    "户外活动的可用性",
+    "有限",
+    "丰富"
+  ],
+  "number of people participating in outdoor activities": [
+    "low",
+    "high",
+    "户外活动参与人数",
+    "低",
+    "高"
+  ],
+  "number of accidents": [
+    "high",
+    "low",
+    "事故数量",
+    "高",
+    "低"
+  ],
+  "accident rate": [
+    "high",
+    "low",
+    "事故率",
+    "高",
+    "低"
+  ],
+  "a company's marketing strategy": [
+    "ineffective",
+    "successful",
+    "公司的营销策略",
+    "无效",
+    "成功"
+  ],
+  "competitor's market share": [
+    "small",
+    "large",
+    "竞争对手的市场份额",
+    "小",
+    "大"
+  ],
+  "brand reputation": [
+    "negative",
+    "positive",
+    "品牌声誉",
+    "负面",
+    "正面"
+  ],
+  "management decisions": [
+    "poor",
+    "effective",
+    "管理决策",
+    "差",
+    "有效"
+  ],
+  "company reputation": [
+    "poor",
+    "good",
+    "公司声誉",
+    "差",
+    "好"
+  ],
+  "a company's annual revenue": [
+    "low",
+    "high",
+    "公司的年收入",
+    "低",
+    "高"
+  ],
+  "marketing budget": [
+    "limited",
+    "ample",
+    "市场预算",
+    "有限",
+    "充足"
+  ],
+  "number of new customers acquired": [
+    "low",
+    "high",
+    "新客户数量",
+    "少",
+    "多"
+  ],
+  "customer satisfaction rating": [
+    "low",
+    "high",
+    "客户满意度评级",
+    "低",
+    "高"
+  ],
+  "customer retention rate": [
+    "low",
+    "high",
+    "客户保留率",
+    "低",
+    "高"
+  ],
+  "company's overall performance": [
+    "poor",
+    "excellent",
+    "公司的整体表现",
+    "差",
+    "优秀"
+  ],
+  "travel time": [
+    "short",
+    "long",
+    "旅行时间",
+    "短",
+    "长"
+  ],
+  "arrival time": [
+    "late",
+    "early",
+    "到达时间",
+    "迟到",
+    "提前"
+  ],
+  "punctuality": [
+    "late",
+    "on time",
+    "准时度",
+    "迟到",
+    "准时"
+  ],
+  "child's overall achievement": [
+    "underachiever",
+    "high achiever",
+    "孩子的整体成绩",
+    "表现不佳",
+    "高成就"
+  ],
+  "child's emotional well-being": [
+    "unstable",
+    "stable",
+    "儿童情绪健康",
+    "不稳定",
+    "稳定"
+  ],
+  "government policies": [
+    "restrictive",
+    "progressive",
+    "政府政策",
+    "限制性的",
+    "进步的"
+  ],
+  "economic growth": [
+    "stagnant",
+    "robust",
+    "经济增长",
+    "停滞",
+    "强劲"
+  ],
+  "employment rate": [
+    "low",
+    "high",
+    "就业率",
+    "低",
+    "高"
+  ],
+  "income inequality": [
+    "high",
+    "low",
+    "收入不平等",
+    "高",
+    "低"
+  ],
+  "social welfare": [
+    "insufficient",
+    "abundant",
+    "社会福利",
+    "不足",
+    "丰富"
+  ],
+  "crime rate": [
+    "high",
+    "low",
+    "犯罪率",
+    "高",
+    "低"
+  ],
+  "the weather conditions": [
+    "bad",
+    "good",
+    "天气条件",
+    "糟糕",
+    "好"
+  ],
+  "the temperature": [
+    "low",
+    "high",
+    "temperature",
+    "低",
+    "高"
+  ],
+  "the humidity": [
+    "low",
+    "high",
+    "湿度",
+    "低",
+    "高"
+  ],
+  "the comfort level": [
+    "uncomfortable",
+    "comfortable",
+    "舒适程度",
+    "不舒服",
+    "舒适"
+  ],
+  "the amount of clothing worn": [
+    "insufficient",
+    "excessive",
+    "穿着的衣物数量",
+    "不足",
+    "过多"
+  ],
+  "the level of physical activity": [
+    "low",
+    "high",
+    "身体活动水平",
+    "低",
+    "高"
+  ],
+  "the perception of comfort": [
+    "uncomfortable",
+    "comfortable",
+    "舒适感知",
+    "不舒适",
+    "舒适"
+  ],
+  "finance department": [
+    "inefficient",
+    "efficient",
+    "财务部门",
+    "低效",
+    "高效"
+  ],
+  "management team": [
+    "ineffective",
+    "efficient",
+    "管理团队",
+    "无效",
+    "高效"
+  ],
+  "work experience": [
+    "limited",
+    "valuable",
+    "工作经验",
+    "有限",
+    "有价值"
+  ],
+  "skill level": [
+    "low",
+    "high",
+    "技能水平",
+    "低",
+    "高"
+  ],
+  "the manager of a company": [
+    "ineffective",
+    "effective",
+    "公司经理",
+    "无效",
+    "有效"
+  ],
+  "the marketing team": [
+    "ineffective",
+    "effective",
+    "市场营销团队",
+    "无效",
+    "有效"
+  ],
+  "the sales team": [
+    "successful",
+    "unproductive",
+    "销售团队",
+    "成功的",
+    "无生产力的"
+  ],
+  "company profitability": [
+    "low",
+    "high",
+    "公司盈利能力",
+    "低",
+    "高"
+  ],
+  "company growth": [
+    "stagnant",
+    "rapid",
+    "公司发展",
+    "停滞",
+    "迅猛"
+  ],
+  "productivity at work": [
+    "low",
+    "high",
+    "工作效率",
+    "低",
+    "高"
+  ],
+  "respiratory illness": [
+    "mild",
+    "severe",
+    "呼吸系统疾病",
+    "轻微",
+    "严重"
+  ],
+  "pollution sources": [
+    "harmful",
+    "clean",
+    "污染源",
+    "有害的",
+    "清洁的"
+  ],
+  "lung health": [
+    "poor lung health",
+    "good lung health",
+    "肺健康程度",
+    "不良肺健康",
+    "良好肺健康"
+  ],
+  "respiratory symptoms": [
+    "severe",
+    "mild",
+    "呼吸系统症状",
+    "严重",
+    "轻微"
+  ],
+  "lung function": [
+    "poor lung function",
+    "good lung function",
+    "肺功能",
+    "差",
+    "好"
+  ],
+  "company's ceo": [
+    "incompetent",
+    "competent",
+    "公司首席执行官",
+    "无能的",
+    "能干的"
+  ],
+  "company's reputation": [
+    "negative",
+    "positive",
+    "公司的声誉",
+    "不好",
+    "好"
+  ],
+  "career choice": [
+    "unfulfilling",
+    "fulfilling",
+    "职业选择",
+    "不充实",
+    "充实"
+  ],
+  "parental education level": [
+    "low",
+    "high",
+    "父母教育水平",
+    "低",
+    "高"
+  ],
+  "the person's iq score": [
+    "low",
+    "high",
+    "人的智商得分",
+    "低",
+    "高"
+  ],
+  "the person's academic performance": [
+    "poor",
+    "excellent",
+    "个人学业表现",
+    "差",
+    "优秀"
+  ],
+  "the person's work experience": [
+    "extensive",
+    "limited",
+    "人的工作经历",
+    "丰富的",
+    "有限的"
+  ],
+  "the person's job performance": [
+    "poor",
+    "excellent",
+    "the person's job performance",
+    "糟糕",
+    "出色"
+  ],
+  "the person's promotion likelihood": [
+    "unlikely",
+    "likely",
+    "晋升可能性",
+    "不大",
+    "较大"
+  ],
+  "pollution level": [
+    "high",
+    "low",
+    "污染水平",
+    "高",
+    "低"
+  ],
+  "plant growth": [
+    "stunted",
+    "vigorous",
+    "植物生长",
+    "发育不良的",
+    "旺盛的"
+  ],
+  "stress levels": [
+    "high",
+    "low",
+    "压力水平",
+    "高",
+    "低"
+  ],
+  "quality of sleep": [
+    "poor",
+    "good",
+    "睡眠质量",
+    "差",
+    "好"
+  ],
+  "immune system strength": [
+    "weak",
+    "strong",
+    "免疫系统的强度",
+    "弱",
+    "强"
+  ],
+  "life expectancy": [
+    "short",
+    "long",
+    "life expectancy",
+    "短",
+    "长"
+  ],
+  "allergens": [
+    "harmful",
+    "hypoallergenic",
+    "过敏原",
+    "有害的",
+    "低过敏性的"
+  ],
+  "comfort level": [
+    "uncomfortable",
+    "comfortable",
+    "舒适程度",
+    "不舒适",
+    "舒适"
+  ],
+  "general health": [
+    "poor",
+    "good",
+    "整体健康",
+    "不佳",
+    "良好"
+  ],
+  "the ceo of a company": [
+    "ineffective",
+    "effective",
+    "公司的首席执行官",
+    "无效",
+    "有效"
+  ],
+  "the marketing strategy": [
+    "ineffective",
+    "successful",
+    "市场营销策略",
+    "无效",
+    "成功"
+  ],
+  "the financial performance": [
+    "poor",
+    "strong",
+    "财务表现",
+    "糟糕",
+    "强劲"
+  ],
+  "the company's reputation": [
+    "poor",
+    "good",
+    "the company's reputation",
+    "差",
+    "好"
+  ],
+  "the sales revenue": [
+    "low",
+    "high",
+    "销售收入",
+    "低",
+    "高"
+  ],
+  "the customer satisfaction": [
+    "dissatisfied",
+    "satisfied",
+    "客户满意度",
+    "不满意",
+    "满意"
+  ],
+  "the market share": [
+    "small market share",
+    "large market share",
+    "市场份额",
+    "小",
+    "大"
+  ],
+  "the profitability": [
+    "low",
+    "high",
+    "盈利能力",
+    "低",
+    "高"
+  ],
+  "air pollution": [
+    "high",
+    "low",
+    "空气污染",
+    "高",
+    "低"
+  ],
+  "ocean currents": [
+    "weak ocean currents",
+    "strong ocean currents",
+    "海洋洋流",
+    "弱",
+    "强"
+  ],
+  "soil fertility": [
+    "poor",
+    "rich",
+    "土壤肥力",
+    "贫瘠",
+    "富饶"
+  ],
+  "the presence of a genetic mutation": [
+    "absence",
+    "presence",
+    "遗传突变的存在",
+    "不存在",
+    "存在"
+  ],
+  "exposure to a certain environmental toxin": [
+    "harmful",
+    "beneficial",
+    "接触某种环境毒素",
+    "有害",
+    "有益"
+  ],
+  "the development of a specific disease": [
+    "slow",
+    "rapid",
+    "特定疾病的发展",
+    "缓慢",
+    "迅速"
+  ],
+  "the patient's overall health": [
+    "poor",
+    "good",
+    "病人的整体健康",
+    "差",
+    "好"
+  ],
+  "the patient's prognosis": [
+    "poor",
+    "good",
+    "病人的预后",
+    "不好",
+    "好"
+  ],
+  "the amount of exercise": [
+    "insufficient",
+    "sufficient",
+    "锻炼的数量",
+    "不足",
+    "充足"
+  ],
+  "the type of diet": [
+    "unhealthy",
+    "healthy",
+    "饮食类型",
+    "不健康",
+    "健康"
+  ],
+  "the body weight": [
+    "overweight",
+    "healthy",
+    "体重",
+    "超重的",
+    "健康的"
+  ],
+  "the blood pressure": [
+    "low blood pressure",
+    "high blood pressure",
+    "血压",
+    "低血压",
+    "高血压"
+  ],
+  "the stress level": [
+    "low",
+    "high",
+    "压力水平",
+    "低",
+    "高"
+  ],
+  "the cholesterol level": [
+    "high",
+    "low",
+    "胆固醇水平",
+    "高",
+    "低"
+  ],
+  "the heart disease risk": [
+    "low",
+    "high",
+    "心脏病风险",
+    "低",
+    "高"
+  ],
+  "the medication taken": [
+    "ineffective",
+    "effective",
+    "所服用的药物",
+    "无效",
+    "有效"
+  ],
+  "parents' education level": [
+    "low",
+    "high",
+    "父母的教育水平",
+    "低",
+    "高"
+  ],
+  "parents' occupation": [
+    "unemployed",
+    "employed",
+    "父母的职业",
+    "失业",
+    "就业"
+  ],
+  "child's educational attainment": [
+    "low",
+    "high",
+    "孩子的教育成就",
+    "低",
+    "高"
+  ],
+  "quality of early childhood education": [
+    "poor",
+    "excellent",
+    "早期儿童教育的质量",
+    "差",
+    "优秀"
+  ],
+  "availability of extracurricular activities": [
+    "limited",
+    "abundant",
+    "课外活动的可用性",
+    "有限",
+    "丰富"
+  ],
+  "peer influence": [
+    "negative",
+    "positive",
+    "同龄人的影响",
+    "负面",
+    "积极"
+  ],
+  "future career success": [
+    "uncertain",
+    "promising",
+    "未来职业成功",
+    "不确定",
+    "有前途"
+  ],
+  "marketing efforts": [
+    "ineffective marketing efforts",
+    "successful marketing efforts",
+    "营销努力",
+    "无效",
+    "成功"
+  ],
+  "advertising budget": [
+    "limited",
+    "generous",
+    "广告预算",
+    "有限",
+    "慷慨"
+  ],
+  "market competition": [
+    "fierce",
+    "mild",
+    "市场竞争",
+    "激烈",
+    "温和"
+  ],
+  "whether a person is experiencing a particular symptom": [
+    "positive",
+    "negative",
+    "是否出现特定症状",
+    "有",
+    "无"
+  ],
+  "whether the person has a certain medical condition": [
+    "negative",
+    "positive",
+    "人是否有某种疾病",
+    "否定的",
+    "肯定的"
+  ],
+  "whether the person is taking a specific medication": [
+    "not taking a specific medication",
+    "taking a specific medication",
+    "是否服用特定药物",
+    "否",
+    "是"
+  ],
+  "whether the person's symptoms worsen": [
+    "stable",
+    "worsen",
+    "症状是否恶化",
+    "稳定",
+    "恶化"
+  ],
+  "whether the person is exposed to a certain environmental factor": [
+    "unexposed",
+    "exposed",
+    "个人是否暴露于某种环境因素",
+    "未暴露",
+    "暴露"
+  ],
+  "whether the person's condition deteriorates": [
+    "deteriorating condition",
+    "improving condition",
+    "人的情况恶化",
+    "恶化的",
+    "改善的"
+  ],
+  "whether the person undergoes a specific medical procedure": [
+    "not undergo",
+    "undergo",
+    "是否接受特定医疗程序",
+    "不接受",
+    "接受"
+  ],
+  "whether the person's health improves": [
+    "worsening",
+    "improving",
+    "人的健康状况是否改善",
+    "恶化",
+    "改善"
+  ],
+  "whether the person's overall health outcome is positive or negative": [
+    "negative",
+    "positive",
+    "whether the person's overall health outcome is positive or negative",
+    "消极的",
+    "积极的"
+  ],
+  "a student's intelligence": [
+    "low",
+    "high",
+    "学生的智力",
+    "低",
+    "高"
+  ],
+  "the amount of time a student spends studying": [
+    "insufficient",
+    "sufficient",
+    "学生学习时间",
+    "不足",
+    "充足"
+  ],
+  "a student's social skills": [
+    "poor",
+    "strong",
+    "学生的社交能力",
+    "差",
+    "强"
+  ],
+  "the student's motivation": [
+    "low",
+    "high",
+    "学生的动力",
+    "低",
+    "高"
+  ],
+  "the student's problem-solving ability": [
+    "poor",
+    "strong",
+    "学生的问题解决能力",
+    "不佳",
+    "强"
+  ],
+  "the student's academic performance": [
+    "poor",
+    "excellent",
+    "学生的学术表现",
+    "差",
+    "优秀"
+  ],
+  "the student's extracurricular activities": [
+    "limited",
+    "diverse",
+    "学生的课外活动",
+    "有限",
+    "多样"
+  ],
+  "the student's sleep duration": [
+    "inadequate",
+    "sufficient",
+    "学生的睡眠时间",
+    "不足的",
+    "充足的"
+  ],
+  "the student's grades": [
+    "poor",
+    "excellent",
+    "学生的成绩",
+    "差",
+    "优秀"
+  ],
+  "whether a person eats a balanced diet": [
+    "unbalanced",
+    "balanced",
+    "一个人是否吃均衡饮食",
+    "不均衡的",
+    "均衡的"
+  ],
+  "whether a person has high blood pressure": [
+    "high",
+    "normal",
+    "一个人是否有高血压",
+    "高",
+    "正常"
+  ],
+  "whether a person has diabetes": [
+    "diabetic",
+    "non-diabetic",
+    "是否患有糖尿病",
+    "糖尿病患者",
+    "非糖尿病患者"
+  ],
+  "whether a person smokes": [
+    "non-smoker",
+    "smoker",
+    "是否吸烟",
+    "非吸烟者",
+    "吸烟者"
+  ],
+  "whether a person has lung cancer": [
+    "negative",
+    "positive",
+    "肺癌患者",
+    "无",
+    "有"
+  ],
+  "whether a person has respiratory issues": [
+    "healthy",
+    "unhealthy",
+    "一个人是否有呼吸问题",
+    "健康",
+    "不健康"
+  ],
+  "whether a person has difficulty breathing": [
+    "difficult",
+    "easy",
+    "呼吸困难",
+    "困难",
+    "容易"
+  ],
+  "whether a person requires medical treatment": [
+    "unnecessary",
+    "necessary",
+    "是否需要医疗治疗",
+    "不必要",
+    "必要"
+  ],
+  "parent's income level": [
+    "low",
+    "high",
+    "父母收入水平",
+    "低",
+    "高"
+  ],
+  "child's nutrition": [
+    "poor",
+    "healthy",
+    "儿童的营养",
+    "差",
+    "健康"
+  ],
+  "child's cognitive development": [
+    "underdeveloped",
+    "developed",
+    "儿童的认知发展",
+    "未发展完全",
+    "已发展完全"
+  ],
+  "parent's mental health": [
+    "poor",
+    "good",
+    "父母的心理健康",
+    "差",
+    "好"
+  ],
+  "child's social environment": [
+    "negative",
+    "positive",
+    "孩子的社交环境",
+    "负面的",
+    "积极的"
+  ],
+  "overall child's well-being": [
+    "poor",
+    "good",
+    "孩子的整体幸福感",
+    "差",
+    "好"
+  ],
+  "promotion opportunities": [
+    "limited",
+    "abundant",
+    "晋升机会",
+    "有限",
+    "丰富"
+  ],
+  "career growth opportunities": [
+    "limited",
+    "abundant",
+    "职业发展机会",
+    "有限的",
+    "丰富的"
+  ],
+  "workplace environment": [
+    "unpleasant",
+    "positive",
+    "工作环境",
+    "不愉快",
+    "积极"
+  ],
+  "amount of money spent on advertising": [
+    "low",
+    "high",
+    "广告支出金额",
+    "低",
+    "高"
+  ],
+  "profit margin": [
+    "low",
+    "high",
+    "利润率",
+    "低",
+    "高"
+  ],
+  "amount of rainfall in a region": [
+    "low",
+    "high",
+    "amount of rainfall in a region",
+    "少",
+    "高"
+  ],
+  "water level in a local reservoir": [
+    "low",
+    "high",
+    "当地水库水位",
+    "低",
+    "高"
+  ],
+  "availability of water for irrigation": [
+    "limited",
+    "abundant",
+    "灌溉用水的可用性",
+    "有限",
+    "充足"
+  ],
+  "crop yield in the region": [
+    "low",
+    "high",
+    "该地区的农作物产量",
+    "低",
+    "高"
+  ],
+  "amount of exercise done": [
+    "little",
+    "intense",
+    "运动量",
+    "少",
+    "强烈"
+  ],
+  "diet quality": [
+    "poor",
+    "good",
+    "饮食质量",
+    "差",
+    "好"
+  ],
+  "weight": [
+    "underweight",
+    "overweight",
+    "体重",
+    "体重不足",
+    "超重"
+  ],
+  "risk of developing heart disease": [
+    "high",
+    "low",
+    "心脏病发病风险",
+    "高",
+    "低"
+  ],
+  "amount of time spent studying for an exam": [
+    "short",
+    "long",
+    "备考时间",
+    "短",
+    "长"
+  ],
+  "grade received on the exam": [
+    "low",
+    "high",
+    "考试得分",
+    "低",
+    "高"
+  ],
+  "likelihood of getting accepted into a graduate program": [
+    "low",
+    "high",
+    "研究生项目录取可能性",
+    "低",
+    "高"
+  ],
+  "amount of physical exercise": [
+    "sedentary",
+    "active",
+    "体育锻炼量",
+    "久坐的",
+    "积极的"
+  ],
+  "cardiovascular health": [
+    "poor",
+    "good",
+    "心血管健康",
+    "不佳",
+    "良好"
+  ],
+  "blood pressure levels": [
+    "high",
+    "normal",
+    "血压水平",
+    "高",
+    "正常"
+  ],
+  "risk of heart disease": [
+    "high",
+    "low",
+    "心脏病风险",
+    "高",
+    "低"
+  ],
+  "parental involvement in child's education": [
+    "low",
+    "high",
+    "家长参与孩子教育",
+    "低",
+    "高"
+  ],
+  "likelihood of the child graduating from high school": [
+    "unlikely",
+    "likely",
+    "孩子高中毕业的可能性",
+    "不太可能",
+    "可能"
+  ],
+  "likelihood of the child attending college": [
+    "unlikely",
+    "likely",
+    "孩子上大学的可能性",
+    "不太可能",
+    "可能"
+  ],
+  "level of stress experienced before the exam": [
+    "high",
+    "low",
+    "考试前经历的压力水平",
+    "高",
+    "低"
+  ],
+  "exam performance": [
+    "poor",
+    "excellent",
+    "考试表现",
+    "差劲的",
+    "优秀的"
+  ],
+  "overall grade in the course": [
+    "low",
+    "high",
+    "课程总成绩",
+    "低",
+    "高"
+  ],
+  "amount of exercise done by a person": [
+    "low",
+    "high",
+    "一个人的运动量",
+    "低",
+    "高"
+  ],
+  "physical fitness level of a person": [
+    "unfit",
+    "fit",
+    "个人身体健康水平",
+    "不健康",
+    "健康"
+  ],
+  "risk of developing a health condition": [
+    "low",
+    "high",
+    "患病风险",
+    "低",
+    "高"
+  ],
+  "actual development of the health condition": [
+    "deteriorating",
+    "improving",
+    "健康状况的实际发展",
+    "恶化的",
+    "改善的"
+  ],
+  "quality of diet": [
+    "poor",
+    "healthy",
+    "饮食质量",
+    "差",
+    "健康"
+  ],
+  "longevity": [
+    "short lifespan",
+    "long lifespan",
+    "长寿",
+    "短命",
+    "长寿/短命"
+  ],
+  "amount of exercise the person gets": [
+    "little",
+    "adequate",
+    "amount of exercise the person gets",
+    "少",
+    "充足"
+  ],
+  "dietary habits of the person": [
+    "unhealthy",
+    "healthy",
+    "人的饮食习惯",
+    "不健康的",
+    "健康的"
+  ],
+  "overall health of the person": [
+    "poor",
+    "good",
+    "人的整体健康",
+    "差",
+    "好"
+  ],
+  "life expectancy of the person": [
+    "short",
+    "long",
+    "人的预期寿命",
+    "短",
+    "长"
+  ],
+  "overall agricultural productivity in the region": [
+    "low",
+    "high",
+    "overall agricultural productivity in the region",
+    "低",
+    "高"
+  ],
+  "amount of exercise done by an individual": [
+    "little",
+    "regular",
+    "个人的运动量",
+    "少",
+    "规律"
+  ],
+  "dietary habits of an individual": [
+    "unhealthy dietary habits of an individual",
+    "healthy dietary habits of an individual",
+    "个人饮食习惯",
+    "不健康",
+    "健康"
+  ],
+  "overall health status of an individual": [
+    "poor",
+    "good",
+    "一个人的整体健康状况",
+    "差",
+    "好"
+  ],
+  "risk of developing a chronic disease": [
+    "prevention",
+    "likelihood",
+    "慢性疾病的风险",
+    "预防",
+    "可能性"
+  ],
+  "level of understanding of the material": [
+    "superficial",
+    "deep",
+    "材料的理解水平",
+    "肤浅",
+    "深刻"
+  ],
+  "exam score received": [
+    "low",
+    "high",
+    "考试分数",
+    "低",
+    "高"
+  ],
+  "overall grade in the class": [
+    "low",
+    "high",
+    "班级总体成绩",
+    "低",
+    "高"
+  ],
+  "level of physical activity": [
+    "sedentary",
+    "active",
+    "身体活动水平",
+    "久坐的",
+    "活跃的"
+  ],
+  "body mass index (bmi)": [
+    "unhealthy",
+    "healthy",
+    "身体质量指数（BMI）",
+    "不健康",
+    "健康"
+  ],
+  "genetic predisposition to certain diseases": [
+    "negative",
+    "positive",
+    "特定疾病的遗传易感性",
+    "负面的",
+    "积极的"
+  ],
+  "genetic predisposition to health issues": [
+    "unhealthy",
+    "healthy",
+    "遗传疾病倾向",
+    "不健康",
+    "健康"
+  ],
+  "profit of the farmer": [
+    "low",
+    "high",
+    "农民的利润",
+    "低",
+    "高"
+  ],
+  "skill set": [
+    "limited",
+    "diverse",
+    "技能组合",
+    "有限",
+    "多样化"
+  ],
+  "cholesterol levels": [
+    "high",
+    "low",
+    "胆固醇水平",
+    "高",
+    "低"
+  ],
+  "amount of traffic on the road": [
+    "congested",
+    "smooth",
+    "道路交通量",
+    "拥挤的",
+    "顺畅的"
+  ],
+  "probability of a car accident": [
+    "low",
+    "high",
+    "车祸概率",
+    "低",
+    "高"
+  ],
+  "severity of injuries in a car accident": [
+    "severe",
+    "minor",
+    "车祸受伤程度",
+    "严重的",
+    "轻微的"
+  ],
+  "level of understanding the material": [
+    "poor",
+    "good",
+    "对材料的理解水平",
+    "差",
+    "好"
+  ],
+  "performance on a practice exam": [
+    "poor",
+    "excellent",
+    "模拟考试成绩",
+    "差",
+    "优秀"
+  ],
+  "final exam score": [
+    "low",
+    "high",
+    "期末考试成绩",
+    "低",
+    "高"
+  ],
+  "temperature outside": [
+    "cold",
+    "hot",
+    "外面的温度",
+    "冷",
+    "热"
+  ],
+  "number of people wearing winter coats": [
+    "few",
+    "many",
+    "穿冬大衣的人数",
+    "少",
+    "多"
+  ],
+  "likelihood of snowfall": [
+    "unlikely",
+    "likely",
+    "降雪可能性",
+    "不太可能",
+    "可能"
+  ],
+  "amount of snow accumulation": [
+    "minimal",
+    "excessive",
+    "积雪量",
+    "最少的",
+    "过多的"
+  ],
+  "amount of exercise done by an individual per week": [
+    "low",
+    "high",
+    "个人每周运动量",
+    "低",
+    "高"
+  ],
+  "caloric intake of the individual": [
+    "low",
+    "high",
+    "个人热量摄入量",
+    "低",
+    "高"
+  ],
+  "body weight of the individual": [
+    "light",
+    "heavy",
+    "个体的体重",
+    "轻",
+    "重"
+  ],
+  "risk of developing obesity": [
+    "high",
+    "low",
+    "发展肥胖的风险",
+    "高",
+    "低"
+  ],
+  "the amount of rainfall in a specific region": [
+    "low",
+    "high",
+    "the amount of rainfall in a specific region",
+    "低",
+    "高"
+  ],
+  "the temperature in the same region": [
+    "low",
+    "high",
+    "同一地区的温度",
+    "低",
+    "高"
+  ],
+  "the growth of crops in the region": [
+    "poor",
+    "strong",
+    "该地区作物的生长",
+    "差",
+    "强"
+  ],
+  "the number of pests infesting the crops": [
+    "high",
+    "low",
+    "作物上害虫的数量",
+    "高",
+    "低"
+  ],
+  "grade on a test": [
+    "low",
+    "high",
+    "考试成绩",
+    "低",
+    "高"
+  ],
+  "overall academic performance": [
+    "poor academic performance",
+    "excellent academic performance",
+    "整体学术表现",
+    "不佳",
+    "优秀"
+  ],
+  "likelihood of getting into a top university": [
+    "low",
+    "high",
+    "进入顶级大学的可能性",
+    "低",
+    "高"
+  ],
+  "number of customers visiting the store": [
+    "few",
+    "many",
+    "顾客来店数量",
+    "少",
+    "多"
+  ],
+  "total sales revenue": [
+    "low",
+    "high",
+    "总销售收入",
+    "低",
+    "高"
+  ],
+  "profit generated by the store": [
+    "low",
+    "high",
+    "商店产生的利润",
+    "低",
+    "高"
+  ],
+  "soil moisture content": [
+    "low",
+    "high",
+    "土壤湿度",
+    "低",
+    "高"
+  ],
+  "amount of sunlight exposure": [
+    "limited",
+    "abundant",
+    "日照量",
+    "有限的",
+    "充足的"
+  ],
+  "vitamin d levels": [
+    "low",
+    "optimal",
+    "维生素D水平",
+    "低",
+    "最佳"
+  ],
+  "bone density": [
+    "low",
+    "high",
+    "骨密度",
+    "低",
+    "高"
+  ],
+  "risk of osteoporosis": [
+    "high",
+    "low",
+    "骨质疏松的风险",
+    "高",
+    "低"
+  ],
+  "amount of studying done for an exam": [
+    "little",
+    "much",
+    "考试复习量",
+    "少",
+    "多"
+  ],
+  "amount of sleep the night before the exam": [
+    "insufficient",
+    "adequate",
+    "考试前一晚的睡眠时间",
+    "不足",
+    "充足"
+  ],
+  "academic performance of the child": [
+    "poor",
+    "excellent",
+    "学业成绩",
+    "差",
+    "优秀"
+  ],
+  "extracurricular activities of the child": [
+    "neglectful",
+    "enriching",
+    "孩子的课外活动",
+    "疏忽的",
+    "丰富的"
+  ],
+  "college admission status": [
+    "rejected",
+    "accepted",
+    "大学录取状态",
+    "被拒绝的",
+    "被接受的"
+  ],
+  "the level of soil moisture in the ground": [
+    "low",
+    "high",
+    "土壤含水量",
+    "低",
+    "高"
+  ],
+  "the yield of the crops at harvest": [
+    "low",
+    "high",
+    "收成产量",
+    "低",
+    "高"
+  ],
+  "amount of daily exercise": [
+    "insufficient",
+    "adequate",
+    "每日锻炼量",
+    "不足",
+    "充足"
+  ]
+}

@@ -1,0 +1,3912 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->C",
+      "B->C",
+      "B->D"
+    ],
+    "node_name": {
+      "A": "个人每周运动量",
+      "B": "个人热量摄入量",
+      "C": "个体的体重",
+      "D": "发展肥胖的风险"
+    },
+    "node_value": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "轻",
+        "重"
+      ],
+      "D": [
+        "高",
+        "低"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {
+      "A->B": 1,
+      "A->C": 1,
+      "B->C": 1,
+      "B->D": 1
+    },
+    "node_bias": {
+      "A": -0.7824574810067627,
+      "B": 1.2387733866420845,
+      "C": -1.133557143137409,
+      "D": 0.3342710173904901
+    },
+    "edge_weight": {
+      "A->B": 0.5733119316031409,
+      "A->C": 0.06613051916786905,
+      "B->C": 1.5225109568539767,
+      "B->D": 2.5790661979971885
+    },
+    "function_description": "P(A=1)=0.3138\nP(B=1|A)=sigmoid(1.2387733866420845 + 0.5733 * A)\nP(C=1|A,B)=sigmoid(-1.133557143137409 + 0.0661 * A + 1.5225 * B)\nP(D=1|B)=sigmoid(0.3342710173904901 + 2.5791 * B)\n",
+    "text_description": "The probability of amount of exercise done by an individual per week being high (A=1) is 0.3138. \nFor those with amount of exercise done by an individual per week being low (A=0), the probability of caloric intake of the individual being high (B=1) is 0.7754. \nFor those with amount of exercise done by an individual per week being high (A=1), the probability of caloric intake of the individual being high (B=1) is 0.8596. \nFor those with amount of exercise done by an individual per week being low (A=0) and caloric intake of the individual being low (B=0), the probability of body weight of the individual being heavy (C=1) is 0.2435. \nFor those with amount of exercise done by an individual per week being low (A=0) and caloric intake of the individual being high (B=1), the probability of body weight of the individual being heavy (C=1) is 0.5960. \nFor those with amount of exercise done by an individual per week being high (A=1) and caloric intake of the individual being low (B=0), the probability of body weight of the individual being heavy (C=1) is 0.2559. \nFor those with amount of exercise done by an individual per week being high (A=1) and caloric intake of the individual being high (B=1), the probability of body weight of the individual being heavy (C=1) is 0.6118. \nFor those with caloric intake of the individual being low (B=0), the probability of risk of developing obesity being low (D=1) is 0.5828. \nFor those with caloric intake of the individual being high (B=1), the probability of risk of developing obesity being low (D=1) is 0.9485. \n",
+    "Statistic_data": [
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 3360
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 10199
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 15077
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 7867
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 5079
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 1100
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 813
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 2361
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 391
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 260
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 334
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 657
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 569
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 787
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 928
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 218
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。",
+        "data_info_math": "P(B=0|A=0)=0.2220; P(B=0|A=1)=0.1358; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人每周运动量被改变为低，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.2220\tP(B=0|A=1)=0.1358",
+        "Step 6": "ATE=0.2220-0.1358=0.0862",
+        "Step 7": "ATE=0.0862>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.0862071498280699
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为高(B=1)的概率为0.7780。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为高(B=1)的概率为0.8642。",
+        "data_info_math": "P(B=1|A=0)=0.7780; P(B=1|A=1)=0.8642; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人每周运动量被改变为低，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.7780\tP(B=1|A=1)=0.8642",
+        "Step 6": "ATE=0.7780-0.8642=-0.0862",
+        "Step 7": "ATE=-0.0862<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.08620714982806998
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。",
+        "data_info_math": "P(B=0|A=1)=0.1358; P(B=0|A=0)=0.2220; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人每周运动量被改变为高，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.1358\tP(B=0|A=0)=0.2220",
+        "Step 6": "ATE=0.1358-0.2220=-0.0862",
+        "Step 7": "ATE=-0.0862<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.0862071498280699
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为高(B=1)的概率为0.8642。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为高(B=1)的概率为0.7780。",
+        "data_info_math": "P(B=1|A=1)=0.8642; P(B=1|A=0)=0.7780; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人每周运动量被改变为高，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.8642\tP(B=1|A=0)=0.7780",
+        "Step 6": "ATE=0.8642-0.7780=0.0862",
+        "Step 7": "ATE=0.0862>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.08620714982806998
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.4812。在个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.4401。",
+        "data_info_math": "P(C=0|A=0)=0.4812; P(C=0|A=1)=0.4401; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人每周运动量被改变为低，那么个体的体重更有可能为轻吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.4812\tP(C=0|A=1)=0.4401",
+        "Step 6": "ATE=0.4812-0.4401=0.0411",
+        "Step 7": "ATE=0.0411>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.04113976114207285
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.5188。在个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.5599。",
+        "data_info_math": "P(C=1|A=0)=0.5188; P(C=1|A=1)=0.5599; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人每周运动量被改变为低，那么个体的体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.5188\tP(C=1|A=1)=0.5599",
+        "Step 6": "ATE=0.5188-0.5599=-0.0411",
+        "Step 7": "ATE=-0.0411<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.04113976114207274
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.4401。在个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.4812。",
+        "data_info_math": "P(C=0|A=1)=0.4401; P(C=0|A=0)=0.4812; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人每周运动量被改变为高，那么个体的体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.4401\tP(C=0|A=0)=0.4812",
+        "Step 6": "ATE=0.4401-0.4812=-0.0411",
+        "Step 7": "ATE=-0.0411<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.04113976114207285
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.5599。在个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.5188。",
+        "data_info_math": "P(C=1|A=1)=0.5599; P(C=1|A=0)=0.5188; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人每周运动量被改变为高，那么个体的体重更有可能为重吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.5599\tP(C=1|A=0)=0.5188",
+        "Step 6": "ATE=0.5599-0.5188=0.0411",
+        "Step 7": "ATE=0.0411>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.04113976114207274
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 发展肥胖的风险为高(D=0)的概率为0.1322。在个人每周运动量为高(A=1)的条件下, 发展肥胖的风险为高(D=0)的概率为0.0970。",
+        "data_info_math": "P(D=0|A=0)=0.1322; P(D=0|A=1)=0.0970; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人每周运动量被改变为低，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.1322\tP(D=0|A=1)=0.0970",
+        "Step 6": "ATE=0.1322-0.0970=0.0352",
+        "Step 7": "ATE=0.0352>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.03521359979649415
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 发展肥胖的风险为低(D=1)的概率为0.8678。在个人每周运动量为高(A=1)的条件下, 发展肥胖的风险为低(D=1)的概率为0.9030。",
+        "data_info_math": "P(D=1|A=0)=0.8678; P(D=1|A=1)=0.9030; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人每周运动量被改变为低，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.8678\tP(D=1|A=1)=0.9030",
+        "Step 6": "ATE=0.8678-0.9030=-0.0352",
+        "Step 7": "ATE=-0.0352<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.03521359979649419
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 发展肥胖的风险为高(D=0)的概率为0.0970。在个人每周运动量为低(A=0)的条件下, 发展肥胖的风险为高(D=0)的概率为0.1322。",
+        "data_info_math": "P(D=0|A=1)=0.0970; P(D=0|A=0)=0.1322; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人每周运动量被改变为高，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.0970\tP(D=0|A=0)=0.1322",
+        "Step 6": "ATE=0.0970-0.1322=-0.0352",
+        "Step 7": "ATE=-0.0352<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.03521359979649415
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 发展肥胖的风险为低(D=1)的概率为0.9030。在个人每周运动量为低(A=0)的条件下, 发展肥胖的风险为低(D=1)的概率为0.8678。",
+        "data_info_math": "P(D=1|A=1)=0.9030; P(D=1|A=0)=0.8678; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人每周运动量被改变为高，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.9030\tP(D=1|A=0)=0.8678",
+        "Step 6": "ATE=0.9030-0.8678=0.0352",
+        "Step 7": "ATE=0.0352>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.03521359979649419
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于个人每周运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人热量摄入量被改变为低，那么个人每周运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于个人每周运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人热量摄入量被改变为低，那么个人每周运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于个人每周运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人热量摄入量被改变为高，那么个人每周运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于个人每周运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人热量摄入量被改变为高，那么个人每周运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.7520。在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.4039。个人每周运动量为低(A=0)的概率为0.6853。在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.7417。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.3927。个人每周运动量为高(A=1)的概率为0.3147。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.7520; P(C=0|B=1,A=0)=0.4039; P(A=0)=0.6853; P(C=0|B=0,A=1)=0.7417; P(C=0|B=1,A=1)=0.3927; P(A=1)=0.3147; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人热量摄入量被改变为低，那么个体的体重更有可能为轻吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=sum_{A} [P(C=0|B=0,A)*P(A)-P(C=0|B=1,A)*P(A)]=[P(C=0|B=0,A=0)*P(A=0)-P(C=0|B=1,A=0)*P(A=0)]+[P(C=0|B=0,A=1)*P(A=1)-P(C=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=0,A=0)=0.7520\tP(C=0|B=1,A=0)=0.4039\tP(A=0)=0.6853\tP(C=0|B=0,A=1)=0.7417\tP(C=0|B=1,A=1)=0.3927\tP(A=1)=0.3147",
+        "Step 6": "ATE=[0.7520*0.6853-0.4039*0.6853]+[0.7417*0.3147-0.3927*0.3147]=0.3484",
+        "Step 7": "ATE=0.3484>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.3483529615661961
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.2480。在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.5961。个人每周运动量为低(A=0)的概率为0.6853。在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.2583。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.6073。个人每周运动量为高(A=1)的概率为0.3147。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.2480; P(C=1|B=1,A=0)=0.5961; P(A=0)=0.6853; P(C=1|B=0,A=1)=0.2583; P(C=1|B=1,A=1)=0.6073; P(A=1)=0.3147; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人热量摄入量被改变为低，那么个体的体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=sum_{A} [P(C=1|B=0,A)*P(A)-P(C=1|B=1,A)*P(A)]=[P(C=1|B=0,A=0)*P(A=0)-P(C=1|B=1,A=0)*P(A=0)]+[P(C=1|B=0,A=1)*P(A=1)-P(C=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=0,A=0)=0.2480\tP(C=1|B=1,A=0)=0.5961\tP(A=0)=0.6853\tP(C=1|B=0,A=1)=0.2583\tP(C=1|B=1,A=1)=0.6073\tP(A=1)=0.3147",
+        "Step 6": "ATE=[0.2480*0.6853-0.5961*0.6853]+[0.2583*0.3147-0.6073*0.3147]=-0.3484",
+        "Step 7": "ATE=-0.3484<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.3483529615661962
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.4039。在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.7520。个人每周运动量为低(A=0)的概率为0.6853。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.3927。在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.7417。个人每周运动量为高(A=1)的概率为0.3147。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.4039; P(C=0|B=0,A=0)=0.7520; P(A=0)=0.6853; P(C=0|B=1,A=1)=0.3927; P(C=0|B=0,A=1)=0.7417; P(A=1)=0.3147; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人热量摄入量被改变为高，那么个体的体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=sum_{A} [P(C=0|B=1,A)*P(A)-P(C=0|B=0,A)*P(A)]=[P(C=0|B=1,A=0)*P(A=0)-P(C=0|B=0,A=0)*P(A=0)]+[P(C=0|B=1,A=1)*P(A=1)-P(C=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=1,A=0)=0.4039\tP(C=0|B=0,A=0)=0.7520\tP(A=0)=0.6853\tP(C=0|B=1,A=1)=0.3927\tP(C=0|B=0,A=1)=0.7417\tP(A=1)=0.3147",
+        "Step 6": "ATE=[0.4039*0.6853-0.7520*0.6853]+[0.3927*0.3147-0.7417*0.3147]=-0.3484",
+        "Step 7": "ATE=-0.3484<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.3483529615661961
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.5961。在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.2480。个人每周运动量为低(A=0)的概率为0.6853。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.6073。在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.2583。个人每周运动量为高(A=1)的概率为0.3147。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.5961; P(C=1|B=0,A=0)=0.2480; P(A=0)=0.6853; P(C=1|B=1,A=1)=0.6073; P(C=1|B=0,A=1)=0.2583; P(A=1)=0.3147; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人热量摄入量被改变为高，那么个体的体重更有可能为重吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=sum_{A} [P(C=1|B=1,A)*P(A)-P(C=1|B=0,A)*P(A)]=[P(C=1|B=1,A=0)*P(A=0)-P(C=1|B=0,A=0)*P(A=0)]+[P(C=1|B=1,A=1)*P(A=1)-P(C=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=1,A=0)=0.5961\tP(C=1|B=0,A=0)=0.2480\tP(A=0)=0.6853\tP(C=1|B=1,A=1)=0.6073\tP(C=1|B=0,A=1)=0.2583\tP(A=1)=0.3147",
+        "Step 6": "ATE=[0.5961*0.6853-0.2480*0.6853]+[0.6073*0.3147-0.2583*0.3147]=0.3484",
+        "Step 7": "ATE=0.3484>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.3483529615661962
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)的条件下, 发展肥胖的风险为高(D=0)的概率为0.4128。在个人热量摄入量为高(B=1)的条件下, 发展肥胖的风险为高(D=0)的概率为0.0505。",
+        "data_info_math": "P(D=0|B=0)=0.4128; P(D=0|B=1)=0.0505; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人热量摄入量被改变为低，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.4128\tP(D=0|B=1)=0.0505",
+        "Step 6": "ATE=0.4128-0.0505=0.3623",
+        "Step 7": "ATE=0.3623>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.36232404771556703
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)的条件下, 发展肥胖的风险为低(D=1)的概率为0.5872。在个人热量摄入量为高(B=1)的条件下, 发展肥胖的风险为低(D=1)的概率为0.9495。",
+        "data_info_math": "P(D=1|B=0)=0.5872; P(D=1|B=1)=0.9495; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人热量摄入量被改变为低，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.5872\tP(D=1|B=1)=0.9495",
+        "Step 6": "ATE=0.5872-0.9495=-0.3623",
+        "Step 7": "ATE=-0.3623<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.3623240477155669
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)的条件下, 发展肥胖的风险为高(D=0)的概率为0.0505。在个人热量摄入量为低(B=0)的条件下, 发展肥胖的风险为高(D=0)的概率为0.4128。",
+        "data_info_math": "P(D=0|B=1)=0.0505; P(D=0|B=0)=0.4128; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人热量摄入量被改变为高，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.0505\tP(D=0|B=0)=0.4128",
+        "Step 6": "ATE=0.0505-0.4128=-0.3623",
+        "Step 7": "ATE=-0.3623<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.36232404771556703
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)的条件下, 发展肥胖的风险为低(D=1)的概率为0.9495。在个人热量摄入量为低(B=0)的条件下, 发展肥胖的风险为低(D=1)的概率为0.5872。",
+        "data_info_math": "P(D=1|B=1)=0.9495; P(D=1|B=0)=0.5872; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个人热量摄入量被改变为高，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.9495\tP(D=1|B=0)=0.5872",
+        "Step 6": "ATE=0.9495-0.5872=0.3623",
+        "Step 7": "ATE=0.3623>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.3623240477155669
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人每周运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个体的体重被改变为轻，那么个人每周运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人每周运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个体的体重被改变为轻，那么个人每周运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人每周运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个体的体重被改变为重，那么个人每周运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人每周运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个体的体重被改变为重，那么个人每周运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人热量摄入量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个体的体重被改变为轻，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人热量摄入量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个体的体重被改变为轻，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人热量摄入量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个体的体重被改变为重，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人热量摄入量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个体的体重被改变为重，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于发展肥胖的风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个体的体重被改变为轻，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于发展肥胖的风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个体的体重被改变为轻，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于发展肥胖的风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个体的体重被改变为重，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于发展肥胖的风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果个体的体重被改变为重，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人每周运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果发展肥胖的风险被改变为高，那么个人每周运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人每周运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果发展肥胖的风险被改变为高，那么个人每周运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人每周运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果发展肥胖的风险被改变为低，那么个人每周运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人每周运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果发展肥胖的风险被改变为低，那么个人每周运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人热量摄入量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果发展肥胖的风险被改变为高，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人热量摄入量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果发展肥胖的风险被改变为高，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人热量摄入量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果发展肥胖的风险被改变为低，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人热量摄入量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果发展肥胖的风险被改变为低，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个体的体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果发展肥胖的风险被改变为高，那么个体的体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个体的体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果发展肥胖的风险被改变为高，那么个体的体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个体的体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果发展肥胖的风险被改变为低，那么个体的体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个体的体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果发展肥胖的风险被改变为低，那么个体的体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。",
+        "data_info_math": "P(B=0|A=0)=0.2220; P(B=0|A=1)=0.1358; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人每周运动量变化为低，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.2220\tP(B=0|A=1)=0.1358",
+        "Step 6": "NDE=0.2220-0.1358=0.0862",
+        "Step 7": "NDE=0.0862>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.0862071498280699
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为高(B=1)的概率为0.7780。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为高(B=1)的概率为0.8642。",
+        "data_info_math": "P(B=1|A=0)=0.7780; P(B=1|A=1)=0.8642; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人每周运动量变化为低，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.7780\tP(B=1|A=1)=0.8642",
+        "Step 6": "NDE=0.7780-0.8642=-0.0862",
+        "Step 7": "NDE=-0.0862<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.08620714982806998
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。",
+        "data_info_math": "P(B=0|A=1)=0.1358; P(B=0|A=0)=0.2220; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人每周运动量变化为高，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.1358\tP(B=0|A=0)=0.2220",
+        "Step 6": "NDE=0.1358-0.2220=-0.0862",
+        "Step 7": "NDE=-0.0862<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.0862071498280699
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为高(B=1)的概率为0.8642。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为高(B=1)的概率为0.7780。",
+        "data_info_math": "P(B=1|A=1)=0.8642; P(B=1|A=0)=0.7780; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人每周运动量变化为高，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.8642\tP(B=1|A=0)=0.7780",
+        "Step 6": "NDE=0.8642-0.7780=0.0862",
+        "Step 7": "NDE=0.0862>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.08620714982806998
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.7520。在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.7417。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.4039。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.3927。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.7520; P(C=0|B=0,A=1)=0.7417; P(B=0|A=1)=0.1358; P(C=0|B=1,A=0)=0.4039; P(C=0|B=1,A=1)=0.3927; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人每周运动量变化为低，那么个体的体重更有可能为轻吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=0,B)-P(C=0|A=1,B)]*P(B|A=1)=[P(C=0|A=0,B=0)-P(C=0|A=1,B=0)]*P(B=0|A=1)+[P(C=0|A=0,B=1)-P(C=0|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=0|A=0,B=0)=0.7520\tP(C=0|A=1,B=0)=0.7417\tP(B=0|A=1)=0.1358\tP(C=0|A=0,B=1)=0.4039\tP(C=0|A=1,B=1)=0.3927\tP(B=1|A=1)=0.8642",
+        "Step 6": "=(0.7520-0.7417)*0.1358+(0.4039-0.3927)*0.8642=0.0111",
+        "Step 7": "NDE=0.0111>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.011136196166899405
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.2480。在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.2583。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.5961。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.6073。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.2480; P(C=1|B=0,A=1)=0.2583; P(B=0|A=1)=0.1358; P(C=1|B=1,A=0)=0.5961; P(C=1|B=1,A=1)=0.6073; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人每周运动量变化为低，那么个体的体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=0,B)-P(C=1|A=1,B)]*P(B|A=1)=[P(C=1|A=0,B=0)-P(C=1|A=1,B=0)]*P(B=0|A=1)+[P(C=1|A=0,B=1)-P(C=1|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=1|A=0,B=0)=0.2480\tP(C=1|A=1,B=0)=0.2583\tP(B=0|A=1)=0.1358\tP(C=1|A=0,B=1)=0.5961\tP(C=1|A=1,B=1)=0.6073\tP(B=1|A=1)=0.8642",
+        "Step 6": "=(0.2480-0.2583)*0.1358+(0.5961-0.6073)*0.8642=-0.0111",
+        "Step 7": "NDE=-0.0111<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.01113619616689921
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.7417。在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.7520。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.3927。在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.4039。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.7417; P(C=0|B=0,A=0)=0.7520; P(B=0|A=0)=0.2220; P(C=0|B=1,A=1)=0.3927; P(C=0|B=1,A=0)=0.4039; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人每周运动量变化为高，那么个体的体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=1,B)-P(C=0|A=0,B)]*P(B|A=0)=[P(C=0|A=1,B=0)-P(C=0|A=0,B=0)]*P(B=0|A=0)+[P(C=0|A=1,B=1)-P(C=0|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=0|A=1,B=0)=0.7417\tP(C=0|A=0,B=0)=0.7520\tP(B=0|A=0)=0.2220\tP(C=0|A=1,B=1)=0.3927\tP(C=0|A=0,B=1)=0.4039\tP(B=1|A=0)=0.7780",
+        "Step 6": "=(0.7417-0.7520)*0.2220+(0.3927-0.4039)*0.7780=-0.0111",
+        "Step 7": "NDE=-0.0111<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.01105055050903908
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.2583。在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.2480。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.6073。在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.5961。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.2583; P(C=1|B=0,A=0)=0.2480; P(B=0|A=0)=0.2220; P(C=1|B=1,A=1)=0.6073; P(C=1|B=1,A=0)=0.5961; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人每周运动量变化为高，那么个体的体重更有可能为重吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=1,B)-P(C=1|A=0,B)]*P(B|A=0)=[P(C=1|A=1,B=0)-P(C=1|A=0,B=0)]*P(B=0|A=0)+[P(C=1|A=1,B=1)-P(C=1|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=1|A=1,B=0)=0.2583\tP(C=1|A=0,B=0)=0.2480\tP(B=0|A=0)=0.2220\tP(C=1|A=1,B=1)=0.6073\tP(C=1|A=0,B=1)=0.5961\tP(B=1|A=0)=0.7780",
+        "Step 6": "=(0.2583-0.2480)*0.2220+(0.6073-0.5961)*0.7780=0.0111",
+        "Step 7": "NDE=0.0111>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.0110505505090389
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人每周运动量变化为低，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人每周运动量变化为低，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人每周运动量变化为高，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人每周运动量变化为高，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.7520。在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.4039。个人每周运动量为低(A=0)的概率为0.6853。在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.7417。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.3927。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.7520; P(C=0|B=1,A=0)=0.4039; P(A=0)=0.6853; P(C=0|B=0,A=1)=0.7417; P(C=0|B=1,A=1)=0.3927; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人热量摄入量变化为低，那么个体的体重更有可能为轻吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=0,A)-P(C=0|B=1,A)]*P(A)=[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=0,A=0)=0.7520\tP(C=0|B=1,A=0)=0.4039\tP(A=0)=0.6853\tP(C=0|B=0,A=1)=0.7417\tP(C=0|B=1,A=1)=0.3927\tP(A=1)=0.3147",
+        "Step 6": "NDE=[0.7520-0.4039]*0.6853+[0.7417-0.3927]*0.3147=0.3484",
+        "Step 7": "NDE=0.3484>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.34835296156619616
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.2480。在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.5961。个人每周运动量为低(A=0)的概率为0.6853。在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.2583。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.6073。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.2480; P(C=1|B=1,A=0)=0.5961; P(A=0)=0.6853; P(C=1|B=0,A=1)=0.2583; P(C=1|B=1,A=1)=0.6073; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人热量摄入量变化为低，那么个体的体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=0,A)-P(C=1|B=1,A)]*P(A)=[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=0,A=0)=0.2480\tP(C=1|B=1,A=0)=0.5961\tP(A=0)=0.6853\tP(C=1|B=0,A=1)=0.2583\tP(C=1|B=1,A=1)=0.6073\tP(A=1)=0.3147",
+        "Step 6": "NDE=[0.2480-0.5961]*0.6853+[0.2583-0.6073]*0.3147=-0.3484",
+        "Step 7": "NDE=-0.3484<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.3483529615661962
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.4039。在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.7520。个人每周运动量为低(A=0)的概率为0.6853。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.3927。在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.7417。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.4039; P(C=0|B=0,A=0)=0.7520; P(A=0)=0.6853; P(C=0|B=1,A=1)=0.3927; P(C=0|B=0,A=1)=0.7417; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人热量摄入量变化为高，那么个体的体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=1,A)-P(C=0|B=0,A)]*P(A)=[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=1,A=0)=0.4039\tP(C=0|B=0,A=0)=0.7520\tP(A=0)=0.6853\tP(C=0|B=1,A=1)=0.3927\tP(C=0|B=0,A=1)=0.7417\tP(A=1)=0.3147",
+        "Step 6": "NDE=[0.4039-0.7520]*0.6853+[0.3927-0.7417]*0.3147=-0.3484",
+        "Step 7": "NDE=-0.3484<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.34835296156619616
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.5961。在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.2480。个人每周运动量为低(A=0)的概率为0.6853。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.6073。在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.2583。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.5961; P(C=1|B=0,A=0)=0.2480; P(A=0)=0.6853; P(C=1|B=1,A=1)=0.6073; P(C=1|B=0,A=1)=0.2583; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人热量摄入量变化为高，那么个体的体重更有可能为重吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=1,A)-P(C=1|B=0,A)]*P(A)=[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=1,A=0)=0.5961\tP(C=1|B=0,A=0)=0.2480\tP(A=0)=0.6853\tP(C=1|B=1,A=1)=0.6073\tP(C=1|B=0,A=1)=0.2583\tP(A=1)=0.3147",
+        "Step 6": "NDE=[0.5961-0.2480]*0.6853+[0.6073-0.2583]*0.3147=0.3484",
+        "Step 7": "NDE=0.3484>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.3483529615661962
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)的条件下, 发展肥胖的风险为高(D=0)的概率为0.4128。在个人热量摄入量为高(B=1)的条件下, 发展肥胖的风险为高(D=0)的概率为0.0505。",
+        "data_info_math": "P(D=0|B=0)=0.4128; P(D=0|B=1)=0.0505; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人热量摄入量变化为低，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.4128\tP(D=0|B=1)=0.0505",
+        "Step 6": "NDE=0.4128-0.0505=0.3623",
+        "Step 7": "NDE=0.3623>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.36232404771556703
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)的条件下, 发展肥胖的风险为低(D=1)的概率为0.5872。在个人热量摄入量为高(B=1)的条件下, 发展肥胖的风险为低(D=1)的概率为0.9495。",
+        "data_info_math": "P(D=1|B=0)=0.5872; P(D=1|B=1)=0.9495; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人热量摄入量变化为低，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.5872\tP(D=1|B=1)=0.9495",
+        "Step 6": "NDE=0.5872-0.9495=-0.3623",
+        "Step 7": "NDE=-0.3623<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.3623240477155669
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)的条件下, 发展肥胖的风险为高(D=0)的概率为0.0505。在个人热量摄入量为低(B=0)的条件下, 发展肥胖的风险为高(D=0)的概率为0.4128。",
+        "data_info_math": "P(D=0|B=1)=0.0505; P(D=0|B=0)=0.4128; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人热量摄入量变化为高，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.0505\tP(D=0|B=0)=0.4128",
+        "Step 6": "NDE=0.0505-0.4128=-0.3623",
+        "Step 7": "NDE=-0.3623<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.36232404771556703
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)的条件下, 发展肥胖的风险为低(D=1)的概率为0.9495。在个人热量摄入量为低(B=0)的条件下, 发展肥胖的风险为低(D=1)的概率为0.5872。",
+        "data_info_math": "P(D=1|B=1)=0.9495; P(D=1|B=0)=0.5872; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而个人热量摄入量变化为高，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.9495\tP(D=1|B=0)=0.5872",
+        "Step 6": "NDE=0.9495-0.5872=0.3623",
+        "Step 7": "NDE=0.3623>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.3623240477155669
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人每周运动量保持不变，而所有中间变量被改变为当它们在个人每周运动量变化为低下的取值，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人每周运动量保持不变，而所有中间变量被改变为当它们在个人每周运动量变化为低下的取值，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人每周运动量保持不变，而所有中间变量被改变为当它们在个人每周运动量变化为高下的取值，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人每周运动量保持不变，而所有中间变量被改变为当它们在个人每周运动量变化为高下的取值，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.7417。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.3927。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.7417; P(B=0|A=0)=0.2220; P(B=0|A=1)=0.1358; P(C=0|B=1,A=1)=0.3927; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人每周运动量保持不变，而所有中间变量被改变为当它们在个人每周运动量变化为低下的取值，那么个体的体重更有可能为轻吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=0|A=1,B=0)=0.7417\tP(B=0|A=0)=0.2220\tP(B=0|A=1)=0.1358\tP(C=0|A=1,B=1)=0.3927\tP(B=1|A=0)=0.7780\tP(B=1|A=1)=0.8642",
+        "Step 6": "NIE=0.7417*(0.2220-0.1358)+0.3927*(0.7780-0.8642)=0.0301",
+        "Step 7": "NIE=0.0301>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.030089210633033756
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.2583。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.6073。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.2583; P(B=0|A=0)=0.2220; P(B=0|A=1)=0.1358; P(C=1|B=1,A=1)=0.6073; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人每周运动量保持不变，而所有中间变量被改变为当它们在个人每周运动量变化为低下的取值，那么个体的体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=1|A=1,B=0)=0.2583\tP(B=0|A=0)=0.2220\tP(B=0|A=1)=0.1358\tP(C=1|A=1,B=1)=0.6073\tP(B=1|A=0)=0.7780\tP(B=1|A=1)=0.8642",
+        "Step 6": "NIE=0.2583*(0.2220-0.1358)+0.6073*(0.7780-0.8642)=-0.0301",
+        "Step 7": "NIE=-0.0301<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.03008921063303383
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.7520。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.4039。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.7520; P(B=0|A=1)=0.1358; P(B=0|A=0)=0.2220; P(C=0|B=1,A=0)=0.4039; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人每周运动量保持不变，而所有中间变量被改变为当它们在个人每周运动量变化为高下的取值，那么个体的体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=0|A=0,B=0)=0.7520\tP(B=0|A=1)=0.1358\tP(B=0|A=0)=0.2220\tP(C=0|A=0,B=1)=0.4039\tP(B=1|A=1)=0.8642\tP(B=1|A=0)=0.7780",
+        "Step 6": "NIE=0.7520*(0.1358-0.2220)+0.4039*(0.8642-0.7780)=-0.0300",
+        "Step 7": "NIE=-0.0300<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.03000356497517343
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.2480。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.5961。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.2480; P(B=0|A=1)=0.1358; P(B=0|A=0)=0.2220; P(C=1|B=1,A=0)=0.5961; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人每周运动量保持不变，而所有中间变量被改变为当它们在个人每周运动量变化为高下的取值，那么个体的体重更有可能为重吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=1|A=0,B=0)=0.2480\tP(B=0|A=1)=0.1358\tP(B=0|A=0)=0.2220\tP(C=1|A=0,B=1)=0.5961\tP(B=1|A=1)=0.8642\tP(B=1|A=0)=0.7780",
+        "Step 6": "NIE=0.2480*(0.1358-0.2220)+0.5961*(0.8642-0.7780)=0.0300",
+        "Step 7": "NIE=0.0300>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.03000356497517352
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 发展肥胖的风险为高(D=0)的概率为0.4095。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 发展肥胖的风险为高(D=0)的概率为0.0479。",
+        "data_info_math": "P(D=0|B=0,A=1)=0.4095; P(B=0|A=0)=0.2220; P(B=0|A=1)=0.1358; P(D=0|B=1,A=1)=0.0479; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人每周运动量保持不变，而所有中间变量被改变为当它们在个人每周运动量变化为低下的取值，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(D=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(D=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(D=0|A=1,B=0)=0.4095\tP(B=0|A=0)=0.2220\tP(B=0|A=1)=0.1358\tP(D=0|A=1,B=1)=0.0479\tP(B=1|A=0)=0.7780\tP(B=1|A=1)=0.8642",
+        "Step 6": "NIE=0.4095*(0.2220-0.1358)+0.0479*(0.7780-0.8642)=0.0312",
+        "Step 7": "NIE=0.0312>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.03117028943004921
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 发展肥胖的风险为低(D=1)的概率为0.5905。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 发展肥胖的风险为低(D=1)的概率为0.9521。",
+        "data_info_math": "P(D=1|B=0,A=1)=0.5905; P(B=0|A=0)=0.2220; P(B=0|A=1)=0.1358; P(D=1|B=1,A=1)=0.9521; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人每周运动量保持不变，而所有中间变量被改变为当它们在个人每周运动量变化为低下的取值，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(D=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(D=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(D=1|A=1,B=0)=0.5905\tP(B=0|A=0)=0.2220\tP(B=0|A=1)=0.1358\tP(D=1|A=1,B=1)=0.9521\tP(B=1|A=0)=0.7780\tP(B=1|A=1)=0.8642",
+        "Step 6": "NIE=0.5905*(0.2220-0.1358)+0.9521*(0.7780-0.8642)=-0.0312",
+        "Step 7": "NIE=-0.0312<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.031170289430049285
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 发展肥胖的风险为高(D=0)的概率为0.4138。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 发展肥胖的风险为高(D=0)的概率为0.0518。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.4138; P(B=0|A=1)=0.1358; P(B=0|A=0)=0.2220; P(D=0|B=1,A=0)=0.0518; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人每周运动量保持不变，而所有中间变量被改变为当它们在个人每周运动量变化为高下的取值，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(D=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(D=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(D=0|A=0,B=0)=0.4138\tP(B=0|A=1)=0.1358\tP(B=0|A=0)=0.2220\tP(D=0|A=0,B=1)=0.0518\tP(B=1|A=1)=0.8642\tP(B=1|A=0)=0.7780",
+        "Step 6": "NIE=0.4138*(0.1358-0.2220)+0.0518*(0.8642-0.7780)=-0.0312",
+        "Step 7": "NIE=-0.0312<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.031201223144193047
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 发展肥胖的风险为低(D=1)的概率为0.5862。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 发展肥胖的风险为低(D=1)的概率为0.9482。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.5862; P(B=0|A=1)=0.1358; P(B=0|A=0)=0.2220; P(D=1|B=1,A=0)=0.9482; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人每周运动量保持不变，而所有中间变量被改变为当它们在个人每周运动量变化为高下的取值，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(D=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(D=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(D=1|A=0,B=0)=0.5862\tP(B=0|A=1)=0.1358\tP(B=0|A=0)=0.2220\tP(D=1|A=0,B=1)=0.9482\tP(B=1|A=1)=0.8642\tP(B=1|A=0)=0.7780",
+        "Step 6": "NIE=0.5862*(0.1358-0.2220)+0.9482*(0.8642-0.7780)=0.0312",
+        "Step 7": "NIE=0.0312>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.03120122314419313
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人热量摄入量保持不变，而所有中间变量被改变为当它们在个人热量摄入量变化为低下的取值，那么个体的体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人热量摄入量保持不变，而所有中间变量被改变为当它们在个人热量摄入量变化为低下的取值，那么个体的体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人热量摄入量保持不变，而所有中间变量被改变为当它们在个人热量摄入量变化为高下的取值，那么个体的体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人热量摄入量保持不变，而所有中间变量被改变为当它们在个人热量摄入量变化为高下的取值，那么个体的体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人热量摄入量保持不变，而所有中间变量被改变为当它们在个人热量摄入量变化为低下的取值，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人热量摄入量保持不变，而所有中间变量被改变为当它们在个人热量摄入量变化为低下的取值，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人热量摄入量保持不变，而所有中间变量被改变为当它们在个人热量摄入量变化为高下的取值，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如个人热量摄入量保持不变，而所有中间变量被改变为当它们在个人热量摄入量变化为高下的取值，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。",
+        "data_info_math": "P(B=0|A=0)=0.2220; P(B=0|A=1)=0.1358; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人每周运动量为低，假如个人每周运动量为高，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.2220\tP(B=0|A=1)=0.1358",
+        "Step 6": "ETT=0.2220-0.1358=0.0862",
+        "Step 7": "ETT=0.0862>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.0862071498280699
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为高(B=1)的概率为0.7780。在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为高(B=1)的概率为0.8642。",
+        "data_info_math": "P(B=1|A=0)=0.7780; P(B=1|A=1)=0.8642; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人每周运动量为低，假如个人每周运动量为高，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.7780\tP(B=1|A=1)=0.8642",
+        "Step 6": "ETT=0.7780-0.8642=-0.0862",
+        "Step 7": "ETT=-0.0862<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.08620714982806998
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。",
+        "data_info_math": "P(B=0|A=1)=0.1358; P(B=0|A=0)=0.2220; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人每周运动量为高，假如个人每周运动量为低，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.1358\tP(B=0|A=0)=0.2220",
+        "Step 6": "ETT=0.1358-0.2220=-0.0862",
+        "Step 7": "ETT=-0.0862<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.0862071498280699
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为高(B=1)的概率为0.8642。在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为高(B=1)的概率为0.7780。",
+        "data_info_math": "P(B=1|A=1)=0.8642; P(B=1|A=0)=0.7780; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人每周运动量为高，假如个人每周运动量为低，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.8642\tP(B=1|A=0)=0.7780",
+        "Step 6": "ETT=0.8642-0.7780=0.0862",
+        "Step 7": "ETT=0.0862>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.08620714982806998
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.4812。在个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.4401。",
+        "data_info_math": "P(C=0|A=0)=0.4812; P(C=0|A=1)=0.4401; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人每周运动量为低，假如个人每周运动量为高，那么个体的体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.4812\tP(C=0|A=1)=0.4401",
+        "Step 6": "ETT=0.4812-0.4401=0.0411",
+        "Step 7": "ETT=0.0411>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.04113976114207285
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.5188。在个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.5599。",
+        "data_info_math": "P(C=1|A=0)=0.5188; P(C=1|A=1)=0.5599; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人每周运动量为低，假如个人每周运动量为高，那么个体的体重更有可能为重吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.5188\tP(C=1|A=1)=0.5599",
+        "Step 6": "ETT=0.5188-0.5599=-0.0411",
+        "Step 7": "ETT=-0.0411<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.04113976114207274
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.4401。在个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.4812。",
+        "data_info_math": "P(C=0|A=1)=0.4401; P(C=0|A=0)=0.4812; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人每周运动量为高，假如个人每周运动量为低，那么个体的体重更有可能为轻吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.4401\tP(C=0|A=0)=0.4812",
+        "Step 6": "ETT=0.4401-0.4812=-0.0411",
+        "Step 7": "ETT=-0.0411<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.04113976114207285
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.5599。在个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.5188。",
+        "data_info_math": "P(C=1|A=1)=0.5599; P(C=1|A=0)=0.5188; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人每周运动量为高，假如个人每周运动量为低，那么个体的体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.5599\tP(C=1|A=0)=0.5188",
+        "Step 6": "ETT=0.5599-0.5188=0.0411",
+        "Step 7": "ETT=0.0411>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.04113976114207274
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 发展肥胖的风险为高(D=0)的概率为0.1322。在个人每周运动量为高(A=1)的条件下, 发展肥胖的风险为高(D=0)的概率为0.0970。",
+        "data_info_math": "P(D=0|A=0)=0.1322; P(D=0|A=1)=0.0970; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人每周运动量为低，假如个人每周运动量为高，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.1322\tP(D=0|A=1)=0.0970",
+        "Step 6": "ETT=0.1322-0.0970=0.0352",
+        "Step 7": "ETT=0.0352>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.03521359979649415
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 发展肥胖的风险为低(D=1)的概率为0.8678。在个人每周运动量为高(A=1)的条件下, 发展肥胖的风险为低(D=1)的概率为0.9030。",
+        "data_info_math": "P(D=1|A=0)=0.8678; P(D=1|A=1)=0.9030; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人每周运动量为低，假如个人每周运动量为高，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.8678\tP(D=1|A=1)=0.9030",
+        "Step 6": "ETT=0.8678-0.9030=-0.0352",
+        "Step 7": "ETT=-0.0352<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.03521359979649419
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 发展肥胖的风险为高(D=0)的概率为0.0970。在个人每周运动量为低(A=0)的条件下, 发展肥胖的风险为高(D=0)的概率为0.1322。",
+        "data_info_math": "P(D=0|A=1)=0.0970; P(D=0|A=0)=0.1322; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人每周运动量为高，假如个人每周运动量为低，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.0970\tP(D=0|A=0)=0.1322",
+        "Step 6": "ETT=0.0970-0.1322=-0.0352",
+        "Step 7": "ETT=-0.0352<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.03521359979649415
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 发展肥胖的风险为低(D=1)的概率为0.9030。在个人每周运动量为低(A=0)的条件下, 发展肥胖的风险为低(D=1)的概率为0.8678。",
+        "data_info_math": "P(D=1|A=1)=0.9030; P(D=1|A=0)=0.8678; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人每周运动量为高，假如个人每周运动量为低，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.9030\tP(D=1|A=0)=0.8678",
+        "Step 6": "ETT=0.9030-0.8678=0.0352",
+        "Step 7": "ETT=0.0352>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.03521359979649419
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于个人每周运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人热量摄入量为低，假如个人热量摄入量为高，那么个人每周运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于个人每周运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人热量摄入量为低，假如个人热量摄入量为高，那么个人每周运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于个人每周运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人热量摄入量为高，假如个人热量摄入量为低，那么个人每周运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人热量摄入量作用于个人每周运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人热量摄入量为高，假如个人热量摄入量为低，那么个人每周运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)的条件下, 个体的体重为轻(C=0)的概率为0.7497。在个人每周运动量为低(A=0)且个人热量摄入量为高(B=1)的条件下, 个体的体重为轻(C=0)的概率为0.4039。在个人热量摄入量为低(B=0)的条件下, 个人每周运动量为低(A=0)的概率为0.7807。在个人每周运动量为高(A=1)且个人热量摄入量为高(B=1)的条件下, 个体的体重为轻(C=0)的概率为0.3927。在个人热量摄入量为低(B=0)的条件下, 个人每周运动量为高(A=1)的概率为0.2193。",
+        "data_info_math": "P(C=0|B=0)=0.7497; P(C=0|A=0,B=1)=0.4039; P(A=0|B=0)=0.7807; P(C=0|A=1,B=1)=0.3927; P(A=1|B=0)=0.2193; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人热量摄入量为低，假如个人热量摄入量为高，那么个体的体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-sum_{A} P(C=0|B=1,A)*P(A|B=0)=P(C=0|B=0)-[P(C=0|B=1,A=0)*P(A=0|B=0)+P(C=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=0|B=0)=0.7497\tP(C=0|B=1,A=0)=0.4039\tP(A=0|B=0)=0.7807\tP(C=0|B=1,A=1)=0.3927\tP(A=1|B=0)=0.2193",
+        "Step 6": "ETT=0.7497-[0.4039*0.7807+0.3927*0.2193]=0.3483",
+        "Step 7": "ETT=0.3483>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.34825819480063014
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)的条件下, 个体的体重为重(C=1)的概率为0.2503。在个人每周运动量为低(A=0)且个人热量摄入量为高(B=1)的条件下, 个体的体重为重(C=1)的概率为0.5961。在个人热量摄入量为低(B=0)的条件下, 个人每周运动量为低(A=0)的概率为0.7807。在个人每周运动量为高(A=1)且个人热量摄入量为高(B=1)的条件下, 个体的体重为重(C=1)的概率为0.6073。在个人热量摄入量为低(B=0)的条件下, 个人每周运动量为高(A=1)的概率为0.2193。",
+        "data_info_math": "P(C=1|B=0)=0.2503; P(C=1|A=0,B=1)=0.5961; P(A=0|B=0)=0.7807; P(C=1|A=1,B=1)=0.6073; P(A=1|B=0)=0.2193; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人热量摄入量为低，假如个人热量摄入量为高，那么个体的体重更有可能为重吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-sum_{A} P(C=1|B=1,A)*P(A|B=0)=P(C=1|B=0)-[P(C=1|B=1,A=0)*P(A=0|B=0)+P(C=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=1|B=0)=0.2503\tP(C=1|B=1,A=0)=0.5961\tP(A=0|B=0)=0.7807\tP(C=1|B=1,A=1)=0.6073\tP(A=1|B=0)=0.2193",
+        "Step 6": "ETT=0.2503-[0.5961*0.7807+0.6073*0.2193]=-0.3483",
+        "Step 7": "ETT=-0.3483<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.34825819480063025
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)的条件下, 个体的体重为轻(C=0)的概率为0.4001。在个人每周运动量为低(A=0)且个人热量摄入量为低(B=0)的条件下, 个体的体重为轻(C=0)的概率为0.7520。在个人热量摄入量为高(B=1)的条件下, 个人每周运动量为低(A=0)的概率为0.6622。在个人每周运动量为高(A=1)且个人热量摄入量为低(B=0)的条件下, 个体的体重为轻(C=0)的概率为0.7417。在个人热量摄入量为高(B=1)的条件下, 个人每周运动量为高(A=1)的概率为0.3378。",
+        "data_info_math": "P(C=0|B=1)=0.4001; P(C=0|A=0,B=0)=0.7520; P(A=0|B=1)=0.6622; P(C=0|A=1,B=0)=0.7417; P(A=1|B=1)=0.3378; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人热量摄入量为高，假如个人热量摄入量为低，那么个体的体重更有可能为轻吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-sum_{A} P(C=0|B=0,A)*P(A|B=1)=P(C=0|B=1)-[P(C=0|B=0,A=0)*P(A=0|B=1)+P(C=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=0|B=1)=0.4001\tP(C=0|B=0,A=0)=0.7520\tP(A=0|B=1)=0.6622\tP(C=0|B=0,A=1)=0.7417\tP(A=1|B=1)=0.3378",
+        "Step 6": "ETT=0.4001-[0.7520*0.6622+0.7417*0.3378]=-0.3484",
+        "Step 7": "ETT=-0.3484<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.3483759028686539
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)的条件下, 个体的体重为重(C=1)的概率为0.5999。在个人每周运动量为低(A=0)且个人热量摄入量为低(B=0)的条件下, 个体的体重为重(C=1)的概率为0.2480。在个人热量摄入量为高(B=1)的条件下, 个人每周运动量为低(A=0)的概率为0.6622。在个人每周运动量为高(A=1)且个人热量摄入量为低(B=0)的条件下, 个体的体重为重(C=1)的概率为0.2583。在个人热量摄入量为高(B=1)的条件下, 个人每周运动量为高(A=1)的概率为0.3378。",
+        "data_info_math": "P(C=1|B=1)=0.5999; P(C=1|A=0,B=0)=0.2480; P(A=0|B=1)=0.6622; P(C=1|A=1,B=0)=0.2583; P(A=1|B=1)=0.3378; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人热量摄入量为高，假如个人热量摄入量为低，那么个体的体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-sum_{A} P(C=1|B=0,A)*P(A|B=1)=P(C=1|B=1)-[P(C=1|B=0,A=0)*P(A=0|B=1)+P(C=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=1|B=1)=0.5999\tP(C=1|B=0,A=0)=0.2480\tP(A=0|B=1)=0.6622\tP(C=1|B=0,A=1)=0.2583\tP(A=1|B=1)=0.3378",
+        "Step 6": "ETT=0.5999-[0.2480*0.6622+0.2583*0.3378]=0.3484",
+        "Step 7": "ETT=0.3484>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.3483759028686539
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)的条件下, 发展肥胖的风险为高(D=0)的概率为0.4128。在个人热量摄入量为高(B=1)的条件下, 发展肥胖的风险为高(D=0)的概率为0.0505。",
+        "data_info_math": "P(D=0|B=0)=0.4128; P(D=0|B=1)=0.0505; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人热量摄入量为低，假如个人热量摄入量为高，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.4128\tP(D=0|B=1)=0.0505",
+        "Step 6": "ETT=0.4128-0.0505=0.3623",
+        "Step 7": "ETT=0.3623>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.36232404771556703
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)的条件下, 发展肥胖的风险为低(D=1)的概率为0.5872。在个人热量摄入量为高(B=1)的条件下, 发展肥胖的风险为低(D=1)的概率为0.9495。",
+        "data_info_math": "P(D=1|B=0)=0.5872; P(D=1|B=1)=0.9495; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人热量摄入量为低，假如个人热量摄入量为高，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.5872\tP(D=1|B=1)=0.9495",
+        "Step 6": "ETT=0.5872-0.9495=-0.3623",
+        "Step 7": "ETT=-0.3623<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.3623240477155669
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)的条件下, 发展肥胖的风险为高(D=0)的概率为0.0505。在个人热量摄入量为低(B=0)的条件下, 发展肥胖的风险为高(D=0)的概率为0.4128。",
+        "data_info_math": "P(D=0|B=1)=0.0505; P(D=0|B=0)=0.4128; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人热量摄入量为高，假如个人热量摄入量为低，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.0505\tP(D=0|B=0)=0.4128",
+        "Step 6": "ETT=0.0505-0.4128=-0.3623",
+        "Step 7": "ETT=-0.3623<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.36232404771556703
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)的条件下, 发展肥胖的风险为低(D=1)的概率为0.9495。在个人热量摄入量为低(B=0)的条件下, 发展肥胖的风险为低(D=1)的概率为0.5872。",
+        "data_info_math": "P(D=1|B=1)=0.9495; P(D=1|B=0)=0.5872; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个人热量摄入量为高，假如个人热量摄入量为低，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.9495\tP(D=1|B=0)=0.5872",
+        "Step 6": "ETT=0.9495-0.5872=0.3623",
+        "Step 7": "ETT=0.3623>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.3623240477155669
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人每周运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个体的体重为轻，假如个体的体重为重，那么个人每周运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人每周运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个体的体重为轻，假如个体的体重为重，那么个人每周运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人每周运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个体的体重为重，假如个体的体重为轻，那么个人每周运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人每周运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个体的体重为重，假如个体的体重为轻，那么个人每周运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人热量摄入量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个体的体重为轻，假如个体的体重为重，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人热量摄入量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个体的体重为轻，假如个体的体重为重，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人热量摄入量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个体的体重为重，假如个体的体重为轻，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于个人热量摄入量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个体的体重为重，假如个体的体重为轻，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于发展肥胖的风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个体的体重为轻，假如个体的体重为重，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于发展肥胖的风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个体的体重为轻，假如个体的体重为重，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于发展肥胖的风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个体的体重为重，假如个体的体重为轻，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个体的体重作用于发展肥胖的风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些个体的体重为重，假如个体的体重为轻，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人每周运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些发展肥胖的风险为高，假如发展肥胖的风险为低，那么个人每周运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人每周运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些发展肥胖的风险为高，假如发展肥胖的风险为低，那么个人每周运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人每周运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些发展肥胖的风险为低，假如发展肥胖的风险为高，那么个人每周运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人每周运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些发展肥胖的风险为低，假如发展肥胖的风险为高，那么个人每周运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人热量摄入量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些发展肥胖的风险为高，假如发展肥胖的风险为低，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人热量摄入量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些发展肥胖的风险为高，假如发展肥胖的风险为低，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人热量摄入量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些发展肥胖的风险为低，假如发展肥胖的风险为高，那么个人热量摄入量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个人热量摄入量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些发展肥胖的风险为低，假如发展肥胖的风险为高，那么个人热量摄入量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个体的体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些发展肥胖的风险为高，假如发展肥胖的风险为低，那么个体的体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 133,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个体的体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些发展肥胖的风险为高，假如发展肥胖的风险为低，那么个体的体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 134,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个体的体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些发展肥胖的风险为低，假如发展肥胖的风险为高，那么个体的体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 135,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑发展肥胖的风险作用于个体的体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些发展肥胖的风险为低，假如发展肥胖的风险为高，那么个体的体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 136,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)且个人热量摄入量为低(B=0)的条件下, 个体的体重为轻(C=0)的概率为0.7520。在个人每周运动量为高(A=1)且个人热量摄入量为低(B=0)的条件下, 个体的体重为轻(C=0)的概率为0.7417。",
+        "data_info_math": "P(C=0|A=0,B=0)=0.7520; P(C=0|A=1,B=0)=0.7417; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在个人热量摄入量为低的条件下，假如个人每周运动量为低，那么个体的体重更有可能为轻吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=0,B=0))-P(C=0|do(A=1,B=0))=P(C=0|A=0,B=0)-P(C=0|A=1,B=0)",
+        "Step 5": "P(C=0|A=0,B=0)=0.7520\tP(C=0|A=1,B=0)=0.7417",
+        "Step 6": "CDE=0.7520-0.7417=0.0103",
+        "Step 7": "CDE=0.0103>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.010277645332573582
+    },
+    {
+      "id": 137,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)且个人热量摄入量为高(B=1)的条件下, 个体的体重为重(C=1)的概率为0.5961。在个人每周运动量为高(A=1)且个人热量摄入量为高(B=1)的条件下, 个体的体重为重(C=1)的概率为0.6073。",
+        "data_info_math": "P(C=1|A=0,B=1)=0.5961; P(C=1|A=1,B=1)=0.6073; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在个人热量摄入量为高的条件下，假如个人每周运动量为低，那么个体的体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=0,B=1))-P(C=1|do(A=1,B=1))=P(C=1|A=0,B=1)-P(C=1|A=1,B=1)",
+        "Step 5": "P(C=1|A=0,B=1)=0.5961\tP(C=1|A=1,B=1)=0.6073",
+        "Step 6": "CDE=0.5961-0.6073=-0.0113",
+        "Step 7": "CDE=-0.0113<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.011271132044883614
+    },
+    {
+      "id": 138,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)且个人热量摄入量为高(B=1)的条件下, 个体的体重为轻(C=0)的概率为0.3927。在个人每周运动量为低(A=0)且个人热量摄入量为高(B=1)的条件下, 个体的体重为轻(C=0)的概率为0.4039。",
+        "data_info_math": "P(C=0|A=1,B=1)=0.3927; P(C=0|A=0,B=1)=0.4039; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在个人热量摄入量为高的条件下，假如个人每周运动量为高，那么个体的体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=1,B=1))-P(C=0|do(A=0,B=1))=P(C=0|A=1,B=1)-P(C=0|A=0,B=1)",
+        "Step 5": "P(C=0|A=1,B=1)=0.3927\tP(C=0|A=0,B=1)=0.4039",
+        "Step 6": "CDE=0.3927-0.4039=-0.0113",
+        "Step 7": "CDE=-0.0113<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.011271132044883836
+    },
+    {
+      "id": 139,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)且个人热量摄入量为低(B=0)的条件下, 个体的体重为重(C=1)的概率为0.2583。在个人每周运动量为低(A=0)且个人热量摄入量为低(B=0)的条件下, 个体的体重为重(C=1)的概率为0.2480。",
+        "data_info_math": "P(C=1|A=1,B=0)=0.2583; P(C=1|A=0,B=0)=0.2480; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在个人热量摄入量为低的条件下，假如个人每周运动量为高，那么个体的体重更有可能为重吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=1,B=0))-P(C=1|do(A=0,B=0))=P(C=1|A=1,B=0)-P(C=1|A=0,B=0)",
+        "Step 5": "P(C=1|A=1,B=0)=0.2583\tP(C=1|A=0,B=0)=0.2480",
+        "Step 6": "CDE=0.2583-0.2480=0.0103",
+        "Step 7": "CDE=0.0103>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.010277645332573554
+    },
+    {
+      "id": 140,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在个人热量摄入量为高的条件下，假如个人每周运动量为低，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 141,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在个人热量摄入量为低的条件下，假如个人每周运动量为低，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 142,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在个人热量摄入量为高的条件下，假如个人每周运动量为高，那么发展肥胖的风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 143,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在个人热量摄入量为高的条件下，假如个人每周运动量为高，那么发展肥胖的风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 144,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象个人每周运动量(A)和观察节点个人热量摄入量(B)的后门调整集合。",
+      "Question": "方法1: 根据个体的体重的情况，我们逐个研究个人每周运动量和个人热量摄入量的关联。\n方法2：我们直接研究一般情况下个人每周运动量和个人热量摄入量的关联。\n为了理解个人每周运动量如何影响个人热量摄入量，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 145,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象个人每周运动量(A)和观察节点个人热量摄入量(B)的后门调整集合。",
+      "Question": "方法1: 根据个体的体重的情况，我们逐个研究个人每周运动量和个人热量摄入量的关联。\n方法2：我们直接研究一般情况下个人每周运动量和个人热量摄入量的关联。\n为了理解个人每周运动量如何影响个人热量摄入量，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 146,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象个人每周运动量(A)和观察节点个体的体重(C)的后门调整集合。",
+      "Question": "方法1: 根据发展肥胖的风险的情况，我们逐个研究个人每周运动量和个体的体重的关联。\n方法2：我们直接研究一般情况下个人每周运动量和个体的体重的关联。\n为了理解个人每周运动量如何影响个体的体重，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 147,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象个人每周运动量(A)和观察节点个体的体重(C)的后门调整集合。",
+      "Question": "方法1: 根据个人热量摄入量的情况，我们逐个研究个人每周运动量和个体的体重的关联。\n方法2：我们直接研究一般情况下个人每周运动量和个体的体重的关联。\n为了理解个人每周运动量如何影响个体的体重，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 148,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象个人每周运动量(A)和观察节点发展肥胖的风险(D)的后门调整集合。",
+      "Question": "方法1: 根据个人热量摄入量的情况，我们逐个研究个人每周运动量和发展肥胖的风险的关联。\n方法2：我们直接研究一般情况下个人每周运动量和发展肥胖的风险的关联。\n为了理解个人每周运动量如何影响发展肥胖的风险，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 149,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象个人每周运动量(A)和观察节点发展肥胖的风险(D)的后门调整集合。",
+      "Question": "方法1: 根据个体的体重的情况，我们逐个研究个人每周运动量和发展肥胖的风险的关联。\n方法2：我们直接研究一般情况下个人每周运动量和发展肥胖的风险的关联。\n为了理解个人每周运动量如何影响发展肥胖的风险，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 150,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象个人热量摄入量(B)和观察节点个体的体重(C)的后门调整集合。",
+      "Question": "方法1: 根据个人每周运动量的情况，我们逐个研究个人热量摄入量和个体的体重的关联。\n方法2：我们直接研究一般情况下个人热量摄入量和个体的体重的关联。\n为了理解个人热量摄入量如何影响个体的体重，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 151,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象个人热量摄入量(B)和观察节点个体的体重(C)的后门调整集合。",
+      "Question": "方法1: 根据个人每周运动量的情况，我们逐个研究个人热量摄入量和个体的体重的关联。\n方法2：我们直接研究一般情况下个人热量摄入量和个体的体重的关联。\n为了理解个人热量摄入量如何影响个体的体重，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 152,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象个人热量摄入量(B)和观察节点发展肥胖的风险(D)的后门调整集合。",
+      "Question": "方法1: 根据个体的体重的情况，我们逐个研究个人热量摄入量和发展肥胖的风险的关联。\n方法2：我们直接研究一般情况下个人热量摄入量和发展肥胖的风险的关联。\n为了理解个人热量摄入量如何影响发展肥胖的风险，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 153,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象个人热量摄入量(B)和观察节点发展肥胖的风险(D)的后门调整集合。",
+      "Question": "方法1: 根据个人每周运动量的情况，我们逐个研究个人热量摄入量和发展肥胖的风险的关联。\n方法2：我们直接研究一般情况下个人热量摄入量和发展肥胖的风险的关联。\n为了理解个人热量摄入量如何影响发展肥胖的风险，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 154,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为高(B=1)的概率为0.7780。个人热量摄入量为高(B=1)的概率为0.8051。个人每周运动量为高(A=1)且个人热量摄入量为高(B=1)的概率为0.2719。",
+        "data_info_math": "P(B=1|A=0)=0.7780; P(B=1)=0.8051; P(A=1,B=1)=0.2719; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的必要性概率(probability of necessity, PN)。",
+      "Question": "给定个人每周运动量为高且个人热量摄入量为高, 那么假如个人每周运动量为低，此时个人热量摄入量为低的概率的下界是多少？",
+      "Answer": "0.0998",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.7780",
+        "Step 2": "PN的下界: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.8051-0.7780)/0.2719}\n=max{0, 0.0998}\n=0.0998"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.09975607085348669
+    },
+    {
+      "id": 155,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 个人热量摄入量为低(B=0)的概率为0.2220。个人每周运动量为低(A=0)且个人热量摄入量为低(B=0)的概率为0.1522。个人每周运动量为高(A=1)且个人热量摄入量为高(B=1)的概率为0.2719。",
+        "data_info_math": "P(B=0|A=0)=0.2220; P(A=0,B=0)=0.1522; P(A=1,B=1)=0.2719; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的必要性概率(probability of necessity, PN)。",
+      "Question": "给定个人每周运动量为高且个人热量摄入量为高, 那么假如个人每周运动量为低，此时个人热量摄入量为低的概率的上界是多少？",
+      "Answer": "0.2569",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.2220",
+        "Step 2": "PN的上界: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.2220-0.1522)/0.2719}\n=min{1, 0.2569}\n=0.2569"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.2569230929907223
+    },
+    {
+      "id": 156,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.5188。个体的体重为重(C=1)的概率为0.5317。个人每周运动量为高(A=1)且个体的体重为重(C=1)的概率为0.1762。",
+        "data_info_math": "P(C=1|A=0)=0.5188; P(C=1)=0.5317; P(A=1,C=1)=0.1762; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的必要性概率(probability of necessity, PN)。",
+      "Question": "给定个人每周运动量为高且个体的体重为重, 那么假如个人每周运动量为低，此时个体的体重为轻的概率的下界是多少？",
+      "Answer": "0.0735",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.5188",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.5317-0.5188)/0.1762}\n=max{0, 0.0735}\n=0.0735"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.0734725314199062
+    },
+    {
+      "id": 157,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.4812。个人每周运动量为低(A=0)且个体的体重为轻(C=0)的概率为0.3298。个人每周运动量为高(A=1)且个体的体重为重(C=1)的概率为0.1762。",
+        "data_info_math": "P(C=0|A=0)=0.4812; P(A=0,C=0)=0.3298; P(A=1,C=1)=0.1762; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的必要性概率(probability of necessity, PN)。",
+      "Question": "给定个人每周运动量为高且个体的体重为重, 那么假如个人每周运动量为低，此时个体的体重为轻的概率的上界是多少？",
+      "Answer": "0.8594",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.4812",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.4812-0.3298)/0.1762}\n=min{1, 0.8594}\n=0.8594"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.8593976165504397
+    },
+    {
+      "id": 158,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 发展肥胖的风险为低(D=1)的概率为0.8678。发展肥胖的风险为低(D=1)的概率为0.8789。个人每周运动量为高(A=1)且发展肥胖的风险为低(D=1)的概率为0.2842。",
+        "data_info_math": "P(D=1|A=0)=0.8678; P(D=1)=0.8789; P(A=1,D=1)=0.2842; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的必要性概率(probability of necessity, PN)。",
+      "Question": "给定个人每周运动量为高且发展肥胖的风险为低, 那么假如个人每周运动量为低，此时发展肥胖的风险为高的概率的下界是多少？",
+      "Answer": "0.0390",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.8678",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.8789-0.8678)/0.2842}\n=max{0, 0.0390}\n=0.0390"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.03899569110346564
+    },
+    {
+      "id": 159,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为低(A=0)的条件下, 发展肥胖的风险为高(D=0)的概率为0.1322。个人每周运动量为低(A=0)且发展肥胖的风险为高(D=0)的概率为0.0906。个人每周运动量为高(A=1)且发展肥胖的风险为低(D=1)的概率为0.2842。",
+        "data_info_math": "P(D=0|A=0)=0.1322; P(A=0,D=0)=0.0906; P(A=1,D=1)=0.2842; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的必要性概率(probability of necessity, PN)。",
+      "Question": "给定个人每周运动量为高且发展肥胖的风险为低, 那么假如个人每周运动量为低，此时发展肥胖的风险为高的概率的上界是多少？",
+      "Answer": "0.1464",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.1322",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.1322-0.0906)/0.2842}\n=min{1, 0.1464}\n=0.1464"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.14639997038274483
+    },
+    {
+      "id": 160,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.2480。个人每周运动量为低(A=0)的概率为0.6853。在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.2583。个人每周运动量为高(A=1)的概率为0.3147。个体的体重为重(C=1)的概率为0.5317。个人热量摄入量为高(B=1)且个体的体重为重(C=1)的概率为0.4830。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.2480; P(A=0)=0.6853; P(C=1|B=0,A=1)=0.2583; P(A=1)=0.3147; P(C=1)=0.5317; P(B=1,C=1)=0.4830; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的必要性概率(probability of necessity, PN)。",
+      "Question": "给定个人热量摄入量为高且个体的体重为重, 那么假如个人热量摄入量为低，此时个体的体重为轻的概率的下界是多少？",
+      "Answer": "0.5807",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=sum_{A} P(C=1|B=0,A)*P(A)=P(C=1|B=0,A=0)*P(A=0)+P(C=1|B=0,A=1)*P(A=1)\nP(C=1|B=0,A=0)=0.2480\tP(A=0)=0.6853\tP(C=1|B=0,A=1)=0.2583\tP(A=1)=0.3147\nP(C=1|do(B=0))=0.2480*0.6853+0.2583*0.3147=0.2513",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.5317-0.2513)/0.4830}\n=max{0, 0.5807}\n=0.5807"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.580746727264273
+    },
+    {
+      "id": 161,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.7520。个人每周运动量为低(A=0)的概率为0.6853。在个人热量摄入量为低(B=0)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.7417。个人每周运动量为高(A=1)的概率为0.3147。个人热量摄入量为低(B=0)且个体的体重为轻(C=0)的概率为0.1461。个人热量摄入量为高(B=1)且个体的体重为重(C=1)的概率为0.4830。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.7520; P(A=0)=0.6853; P(C=0|B=0,A=1)=0.7417; P(A=1)=0.3147; P(B=0,C=0)=0.1461; P(B=1,C=1)=0.4830; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的必要性概率(probability of necessity, PN)。",
+      "Question": "给定个人热量摄入量为高且个体的体重为重, 那么假如个人热量摄入量为低，此时个体的体重为轻的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=sum_{A} P(C=0|B=0,A)*P(A)=P(C=0|B=0,A=0)*P(A=0)+P(C=0|B=0,A=1)*P(A=1)\nP(C=0|B=0,A=0)=0.7520\tP(A=0)=0.6853\tP(C=0|B=0,A=1)=0.7417\tP(A=1)=0.3147\nP(C=0|do(B=0))=0.7520*0.6853+0.7417*0.3147=0.7487",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.7487-0.1461)/0.4830}\n=min{1, 1.2478}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 162,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)的条件下, 发展肥胖的风险为低(D=1)的概率为0.5872。发展肥胖的风险为低(D=1)的概率为0.8789。个人热量摄入量为高(B=1)且发展肥胖的风险为低(D=1)的概率为0.7644。",
+        "data_info_math": "P(D=1|B=0)=0.5872; P(D=1)=0.8789; P(B=1,D=1)=0.7644; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的必要性概率(probability of necessity, PN)。",
+      "Question": "给定个人热量摄入量为高且发展肥胖的风险为低, 那么假如个人热量摄入量为低，此时发展肥胖的风险为高的概率的下界是多少？",
+      "Answer": "0.3816",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=P(D=1|B=0)=0.5872",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.8789-0.5872)/0.7644}\n=max{0, 0.3816}\n=0.3816"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.38159579668228105
+    },
+    {
+      "id": 163,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为低(B=0)的条件下, 发展肥胖的风险为高(D=0)的概率为0.4128。个人热量摄入量为低(B=0)且发展肥胖的风险为高(D=0)的概率为0.0805。个人热量摄入量为高(B=1)且发展肥胖的风险为低(D=1)的概率为0.7644。",
+        "data_info_math": "P(D=0|B=0)=0.4128; P(B=0,D=0)=0.0805; P(B=1,D=1)=0.7644; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的必要性概率(probability of necessity, PN)。",
+      "Question": "给定个人热量摄入量为高且发展肥胖的风险为低, 那么假如个人热量摄入量为低，此时发展肥胖的风险为高的概率的上界是多少？",
+      "Answer": "0.4348",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=P(D=0|B=0)=0.4128",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.4128-0.0805)/0.7644}\n=min{1, 0.4348}\n=0.4348"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.4347850594105529
+    },
+    {
+      "id": 164,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为低(B=0)的概率为0.1358。个人热量摄入量为低(B=0)的概率为0.1949。个人每周运动量为低(A=0)且个人热量摄入量为低(B=0)的概率为0.1522。",
+        "data_info_math": "P(B=0|A=1)=0.1358; P(B=0)=0.1949; P(A=0,B=0)=0.1522; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定个人每周运动量为低且个人热量摄入量为低, 假如个人每周运动量为高，此时个人热量摄入量为高的概率的下界是多少？",
+      "Answer": "0.3883",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.1358",
+        "Step 2": "PS的下界: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.1949-0.1358)/0.1522}\n=max{0, 0.3883}\n=0.3883"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.388272107782419
+    },
+    {
+      "id": 165,
+      "question_id": 160,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 个人热量摄入量为高(B=1)的概率为0.8642。个人每周运动量为低(A=0)且个人热量摄入量为低(B=0)的概率为0.1522。个人每周运动量为高(A=1)且个人热量摄入量为高(B=1)的概率为0.2719。",
+        "data_info_math": "P(B=1|A=1)=0.8642; P(A=0,B=0)=0.1522; P(A=1,B=1)=0.2719; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个人热量摄入量的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定个人每周运动量为低且个人热量摄入量为低, 假如个人每周运动量为高，此时个人热量摄入量为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.8642",
+        "Step 2": "PS的上界: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.8642-0.2719)/0.1522}\n=min{1, 3.8922}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 166,
+      "question_id": 161,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.4401。个体的体重为轻(C=0)的概率为0.4683。个人每周运动量为低(A=0)且个体的体重为轻(C=0)的概率为0.3298。",
+        "data_info_math": "P(C=0|A=1)=0.4401; P(C=0)=0.4683; P(A=0,C=0)=0.3298; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定个人每周运动量为低且个体的体重为轻, 假如个人每周运动量为高，此时个体的体重为重的概率的下界是多少？",
+      "Answer": "0.0855",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.4401",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.4683-0.4401)/0.3298}\n=max{0, 0.0855}\n=0.0855"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.08549305933011515
+    },
+    {
+      "id": 167,
+      "question_id": 162,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.5599。个人每周运动量为低(A=0)且个体的体重为轻(C=0)的概率为0.3298。个人每周运动量为高(A=1)且个体的体重为重(C=1)的概率为0.1762。",
+        "data_info_math": "P(C=1|A=1)=0.5599; P(A=0,C=0)=0.3298; P(A=1,C=1)=0.1762; "
+      },
+      "Instruction": "考虑个人每周运动量作用于个体的体重的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定个人每周运动量为低且个体的体重为轻, 假如个人每周运动量为高，此时个体的体重为重的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.5599",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.5599-0.1762)/0.3298}\n=min{1, 1.1636}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 168,
+      "question_id": 163,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 发展肥胖的风险为高(D=0)的概率为0.0970。发展肥胖的风险为高(D=0)的概率为0.1211。个人每周运动量为低(A=0)且发展肥胖的风险为高(D=0)的概率为0.0906。",
+        "data_info_math": "P(D=0|A=1)=0.0970; P(D=0)=0.1211; P(A=0,D=0)=0.0906; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定个人每周运动量为低且发展肥胖的风险为高, 假如个人每周运动量为高，此时发展肥胖的风险为低的概率的下界是多少？",
+      "Answer": "0.2664",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.0970",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.1211-0.0970)/0.0906}\n=max{0, 0.2664}\n=0.2664"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.26636406415599756
+    },
+    {
+      "id": 169,
+      "question_id": 164,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人每周运动量为高(A=1)的条件下, 发展肥胖的风险为低(D=1)的概率为0.9030。个人每周运动量为低(A=0)且发展肥胖的风险为高(D=0)的概率为0.0906。个人每周运动量为高(A=1)且发展肥胖的风险为低(D=1)的概率为0.2842。",
+        "data_info_math": "P(D=1|A=1)=0.9030; P(A=0,D=0)=0.0906; P(A=1,D=1)=0.2842; "
+      },
+      "Instruction": "考虑个人每周运动量作用于发展肥胖的风险的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定个人每周运动量为低且发展肥胖的风险为高, 假如个人每周运动量为高，此时发展肥胖的风险为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.9030",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.9030-0.2842)/0.0906}\n=min{1, 6.8306}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 170,
+      "question_id": 165,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为轻(C=0)的概率为0.4039。个人每周运动量为低(A=0)的概率为0.6853。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为轻(C=0)的概率为0.3927。个人每周运动量为高(A=1)的概率为0.3147。个体的体重为轻(C=0)的概率为0.4683。个人热量摄入量为低(B=0)且个体的体重为轻(C=0)的概率为0.1461。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.4039; P(A=0)=0.6853; P(C=0|B=1,A=1)=0.3927; P(A=1)=0.3147; P(C=0)=0.4683; P(B=0,C=0)=0.1461; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定个人热量摄入量为低且个体的体重为轻, 假如个人热量摄入量为高，此时个体的体重为重的概率的下界是多少？",
+      "Answer": "0.4645",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=sum_{A} P(C=0|B=1,A)*P(A)=P(C=0|B=1,A=0)*P(A=0)+P(C=0|B=1,A=1)*P(A=1)\nP(C=0|B=1,A=0)=0.4039\tP(A=0)=0.6853\tP(C=0|B=1,A=1)=0.3927\tP(A=1)=0.3147\nP(C=0|do(B=1))=0.4039*0.6853+0.3927*0.3147=0.4004",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.4683-0.4004)/0.1461}\n=max{0, 0.4645}\n=0.4645"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.464519040286359
+    },
+    {
+      "id": 171,
+      "question_id": 166,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)且个人每周运动量为低(A=0)的条件下, 个体的体重为重(C=1)的概率为0.5961。个人每周运动量为低(A=0)的概率为0.6853。在个人热量摄入量为高(B=1)且个人每周运动量为高(A=1)的条件下, 个体的体重为重(C=1)的概率为0.6073。个人每周运动量为高(A=1)的概率为0.3147。个人热量摄入量为低(B=0)且个体的体重为轻(C=0)的概率为0.1461。个人热量摄入量为高(B=1)且个体的体重为重(C=1)的概率为0.4830。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.5961; P(A=0)=0.6853; P(C=1|B=1,A=1)=0.6073; P(A=1)=0.3147; P(B=0,C=0)=0.1461; P(B=1,C=1)=0.4830; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于个体的体重的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定个人热量摄入量为低且个体的体重为轻, 假如个人热量摄入量为高，此时个体的体重为重的概率的上界是多少？",
+      "Answer": "0.7984",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=sum_{A} P(C=1|B=1,A)*P(A)=P(C=1|B=1,A=0)*P(A=0)+P(C=1|B=1,A=1)*P(A=1)\nP(C=1|B=1,A=0)=0.5961\tP(A=0)=0.6853\tP(C=1|B=1,A=1)=0.6073\tP(A=1)=0.3147\nP(C=1|do(B=1))=0.5961*0.6853+0.6073*0.3147=0.5996",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.5996-0.4830)/0.1461}\n=min{1, 0.7984}\n=0.7984"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.7983542442283256
+    },
+    {
+      "id": 172,
+      "question_id": 167,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)的条件下, 发展肥胖的风险为高(D=0)的概率为0.0505。发展肥胖的风险为高(D=0)的概率为0.1211。个人热量摄入量为低(B=0)且发展肥胖的风险为高(D=0)的概率为0.0805。",
+        "data_info_math": "P(D=0|B=1)=0.0505; P(D=0)=0.1211; P(B=0,D=0)=0.0805; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定个人热量摄入量为低且发展肥胖的风险为高, 假如个人热量摄入量为高，此时发展肥胖的风险为低的概率的下界是多少？",
+      "Answer": "0.8777",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=P(D=0|B=1)=0.0505",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.1211-0.0505)/0.0805}\n=max{0, 0.8777}\n=0.8777"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.8776653852816804
+    },
+    {
+      "id": 173,
+      "question_id": 168,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表个人每周运动量, B代表个人热量摄入量, C代表个体的体重, D代表发展肥胖的风险。",
+        "data_info": "在个人热量摄入量为高(B=1)的条件下, 发展肥胖的风险为低(D=1)的概率为0.9495。个人热量摄入量为低(B=0)且发展肥胖的风险为高(D=0)的概率为0.0805。个人热量摄入量为高(B=1)且发展肥胖的风险为低(D=1)的概率为0.7644。",
+        "data_info_math": "P(D=1|B=1)=0.9495; P(B=0,D=0)=0.0805; P(B=1,D=1)=0.7644; "
+      },
+      "Instruction": "考虑个人热量摄入量作用于发展肥胖的风险的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定个人热量摄入量为低且发展肥胖的风险为高, 假如个人热量摄入量为高，此时发展肥胖的风险为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=P(D=1|B=1)=0.9495",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.9495-0.7644)/0.0805}\n=min{1, 2.3000}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    }
+  ]
+}

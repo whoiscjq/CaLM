@@ -1,0 +1,4 @@
+[2025-02-03 00:12:20,442 - ./output_deepseek/analysis_loggers/evaluate_log_2025-02-03-00-12-20 - INFO] error analysis saved to ./output_deepseek/counterfactual/effect_of_the_treatment_on_the_treated/ETT-P_ETT-hard_EN/deepseek_qwen_errors.csv
+[2025-02-03 00:12:20,445 - ./output_deepseek/analysis_loggers/evaluate_log_2025-02-03-00-12-20 - INFO] accuracy saved to ./output_deepseek/counterfactual/effect_of_the_treatment_on_the_treated/ETT-P_ETT-hard_EN_models_acc.csv
+[2025-02-03 00:12:20,447 - ./output_deepseek/analysis_loggers/evaluate_log_2025-02-03-00-12-20 - INFO] robustness saved to ./output_deepseek/models_robustness.csv
+[2025-02-03 00:12:20,462 - ./output_deepseek/analysis_loggers/evaluate_log_2025-02-03-00-12-20 - INFO] aggregate metrics save to models_volatility.csv, prompts_volatility.csv, task_metrics.csv in ./output_deepseek

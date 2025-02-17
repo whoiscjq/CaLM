@@ -1,0 +1,3021 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->C",
+      "A->D"
+    ],
+    "node_name": {
+      "A": "stress level",
+      "B": "job satisfaction",
+      "C": "appearance",
+      "D": "traffic congestion"
+    },
+    "node_value": {
+      "A": [
+        "low",
+        "high"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "low",
+        "high"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": 1.287536227067235,
+      "B": 1.0272689407958182,
+      "C": 0.6226965648596859,
+      "D": 0.5266264635169986
+    },
+    "edge_weight": {
+      "A->B": -1.6980135893644923,
+      "A->C": 0.007236068105674898,
+      "A->D": -0.03724362832319228
+    },
+    "function_description": "P(A=1)=0.7837\nP(B=1|A)=sigmoid(1.0272689407958182 + -1.6980 * A)\nP(C=1|A)=sigmoid(0.6226965648596859 + 0.0072 * A)\nP(D=1|A)=sigmoid(0.5266264635169986 + -0.0372 * A)\n",
+    "text_description": "The probability of stress level being high (A=1) is 0.7837. \nFor those with stress level being low (A=0), the probability of job satisfaction being high (B=1) is 0.7364. \nFor those with stress level being high (A=1), the probability of job satisfaction being high (B=1) is 0.3383. \nFor those with stress level being low (A=0), the probability of appearance being high (C=1) is 0.6508. \nFor those with stress level being high (A=1), the probability of appearance being high (C=1) is 0.6525. \nFor those with stress level being low (A=0), the probability of traffic congestion being high (D=1) is 0.6287. \nFor those with stress level being high (A=1), the probability of traffic congestion being high (D=1) is 0.6200. \n",
+    "Statistic_data": [
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 400
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 10639
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 2738
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 3175
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 1766
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 6573
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 5586
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 3416
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 1900
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 5270
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 1059
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 660
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 3239
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 658
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 1731
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 1190
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of job satisfaction being low (B=0) is 0.2683. For those with stress level being high (A=1), the probability of job satisfaction being low (B=0) is 0.6694. ",
+        "data_info_math": "P(B=0|A=0)=0.2683; P(B=0|A=1)=0.6694; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of stress level on job satisfaction.",
+      "Question": "If stress level is changed to be low, will job satisfaction be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.2683\tP(B=0|A=1)=0.6694",
+        "Step 6": "ATE=0.2683-0.6694=-0.4010",
+        "Step 7": "ATE=-0.4010<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.40101633368274514
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of job satisfaction being high (B=1) is 0.7317. For those with stress level being high (A=1), the probability of job satisfaction being high (B=1) is 0.3306. ",
+        "data_info_math": "P(B=1|A=0)=0.7317; P(B=1|A=1)=0.3306; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of stress level on job satisfaction.",
+      "Question": "If stress level is changed to be low, will job satisfaction be more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.7317\tP(B=1|A=1)=0.3306",
+        "Step 6": "ATE=0.7317-0.3306=0.4010",
+        "Step 7": "ATE=0.4010>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.4010163336827452
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of job satisfaction being low (B=0) is 0.6694. For those with stress level being low (A=0), the probability of job satisfaction being low (B=0) is 0.2683. ",
+        "data_info_math": "P(B=0|A=1)=0.6694; P(B=0|A=0)=0.2683; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of stress level on job satisfaction.",
+      "Question": "If stress level is changed to be high, will job satisfaction be more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.6694\tP(B=0|A=0)=0.2683",
+        "Step 6": "ATE=0.6694-0.2683=0.4010",
+        "Step 7": "ATE=0.4010>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.40101633368274514
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of job satisfaction being high (B=1) is 0.3306. For those with stress level being low (A=0), the probability of job satisfaction being high (B=1) is 0.7317. ",
+        "data_info_math": "P(B=1|A=1)=0.3306; P(B=1|A=0)=0.7317; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of stress level on job satisfaction.",
+      "Question": "If stress level is changed to be high, will job satisfaction be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.3306\tP(B=1|A=0)=0.7317",
+        "Step 6": "ATE=0.3306-0.7317=-0.4010",
+        "Step 7": "ATE=-0.4010<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.4010163336827452
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of appearance being low (C=0) is 0.3551. For those with stress level being high (A=1), the probability of appearance being low (C=0) is 0.3449. ",
+        "data_info_math": "P(C=0|A=0)=0.3551; P(C=0|A=1)=0.3449; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of stress level on appearance.",
+      "Question": "If stress level is changed to be low, will appearance be more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.3551\tP(C=0|A=1)=0.3449",
+        "Step 6": "ATE=0.3551-0.3449=0.0102",
+        "Step 7": "ATE=0.0102>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.010213491226588711
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of appearance being high (C=1) is 0.6449. For those with stress level being high (A=1), the probability of appearance being high (C=1) is 0.6551. ",
+        "data_info_math": "P(C=1|A=0)=0.6449; P(C=1|A=1)=0.6551; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of stress level on appearance.",
+      "Question": "If stress level is changed to be low, will appearance be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.6449\tP(C=1|A=1)=0.6551",
+        "Step 6": "ATE=0.6449-0.6551=-0.0102",
+        "Step 7": "ATE=-0.0102<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.010213491226588878
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of appearance being low (C=0) is 0.3449. For those with stress level being low (A=0), the probability of appearance being low (C=0) is 0.3551. ",
+        "data_info_math": "P(C=0|A=1)=0.3449; P(C=0|A=0)=0.3551; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of stress level on appearance.",
+      "Question": "If stress level is changed to be high, will appearance be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.3449\tP(C=0|A=0)=0.3551",
+        "Step 6": "ATE=0.3449-0.3551=-0.0102",
+        "Step 7": "ATE=-0.0102<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.010213491226588711
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of appearance being high (C=1) is 0.6551. For those with stress level being low (A=0), the probability of appearance being high (C=1) is 0.6449. ",
+        "data_info_math": "P(C=1|A=1)=0.6551; P(C=1|A=0)=0.6449; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of stress level on appearance.",
+      "Question": "If stress level is changed to be high, will appearance be more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.6551\tP(C=1|A=0)=0.6449",
+        "Step 6": "ATE=0.6551-0.6449=0.0102",
+        "Step 7": "ATE=0.0102>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.010213491226588878
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of traffic congestion being low (D=0) is 0.3709. For those with stress level being high (A=1), the probability of traffic congestion being low (D=0) is 0.3812. ",
+        "data_info_math": "P(D=0|A=0)=0.3709; P(D=0|A=1)=0.3812; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of stress level on traffic congestion.",
+      "Question": "If stress level is changed to be low, will traffic congestion be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.3709\tP(D=0|A=1)=0.3812",
+        "Step 6": "ATE=0.3709-0.3812=-0.0104",
+        "Step 7": "ATE=-0.0104<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.010368084869442962
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of traffic congestion being high (D=1) is 0.6291. For those with stress level being high (A=1), the probability of traffic congestion being high (D=1) is 0.6188. ",
+        "data_info_math": "P(D=1|A=0)=0.6291; P(D=1|A=1)=0.6188; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of stress level on traffic congestion.",
+      "Question": "If stress level is changed to be low, will traffic congestion be more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.6291\tP(D=1|A=1)=0.6188",
+        "Step 6": "ATE=0.6291-0.6188=0.0104",
+        "Step 7": "ATE=0.0104>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.010368084869443073
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of traffic congestion being low (D=0) is 0.3812. For those with stress level being low (A=0), the probability of traffic congestion being low (D=0) is 0.3709. ",
+        "data_info_math": "P(D=0|A=1)=0.3812; P(D=0|A=0)=0.3709; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of stress level on traffic congestion.",
+      "Question": "If stress level is changed to be high, will traffic congestion be more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.3812\tP(D=0|A=0)=0.3709",
+        "Step 6": "ATE=0.3812-0.3709=0.0104",
+        "Step 7": "ATE=0.0104>0 so the answer is Yes."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.010368084869442962
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of traffic congestion being high (D=1) is 0.6188. For those with stress level being low (A=0), the probability of traffic congestion being high (D=1) is 0.6291. ",
+        "data_info_math": "P(D=1|A=1)=0.6188; P(D=1|A=0)=0.6291; "
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of stress level on traffic congestion.",
+      "Question": "If stress level is changed to be high, will traffic congestion be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.6188\tP(D=1|A=0)=0.6291",
+        "Step 6": "ATE=0.6188-0.6291=-0.0104",
+        "Step 7": "ATE=-0.0104<0 so the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.010368084869443073
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of job satisfaction on stress level.",
+      "Question": "If job satisfaction is changed to be low, will stress level be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of job satisfaction on stress level.",
+      "Question": "If job satisfaction is changed to be low, will stress level be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of job satisfaction on stress level.",
+      "Question": "If job satisfaction is changed to be high, will stress level be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of job satisfaction on stress level.",
+      "Question": "If job satisfaction is changed to be high, will stress level be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of job satisfaction on appearance.",
+      "Question": "If job satisfaction is changed to be low, will appearance be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of job satisfaction on appearance.",
+      "Question": "If job satisfaction is changed to be low, will appearance be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of job satisfaction on appearance.",
+      "Question": "If job satisfaction is changed to be high, will appearance be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of job satisfaction on appearance.",
+      "Question": "If job satisfaction is changed to be high, will appearance be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of job satisfaction on traffic congestion.",
+      "Question": "If job satisfaction is changed to be low, will traffic congestion be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of job satisfaction on traffic congestion.",
+      "Question": "If job satisfaction is changed to be low, will traffic congestion be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of job satisfaction on traffic congestion.",
+      "Question": "If job satisfaction is changed to be high, will traffic congestion be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of job satisfaction on traffic congestion.",
+      "Question": "If job satisfaction is changed to be high, will traffic congestion be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of appearance on stress level.",
+      "Question": "If appearance is changed to be low, will stress level be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of appearance on stress level.",
+      "Question": "If appearance is changed to be low, will stress level be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of appearance on stress level.",
+      "Question": "If appearance is changed to be high, will stress level be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of appearance on stress level.",
+      "Question": "If appearance is changed to be high, will stress level be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of appearance on job satisfaction.",
+      "Question": "If appearance is changed to be low, will job satisfaction be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of appearance on job satisfaction.",
+      "Question": "If appearance is changed to be low, will job satisfaction be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of appearance on job satisfaction.",
+      "Question": "If appearance is changed to be high, will job satisfaction be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of appearance on job satisfaction.",
+      "Question": "If appearance is changed to be high, will job satisfaction be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of appearance on traffic congestion.",
+      "Question": "If appearance is changed to be low, will traffic congestion be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of appearance on traffic congestion.",
+      "Question": "If appearance is changed to be low, will traffic congestion be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of appearance on traffic congestion.",
+      "Question": "If appearance is changed to be high, will traffic congestion be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of appearance on traffic congestion.",
+      "Question": "If appearance is changed to be high, will traffic congestion be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of traffic congestion on stress level.",
+      "Question": "If traffic congestion is changed to be low, will stress level be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of traffic congestion on stress level.",
+      "Question": "If traffic congestion is changed to be low, will stress level be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of traffic congestion on stress level.",
+      "Question": "If traffic congestion is changed to be high, will stress level be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of traffic congestion on stress level.",
+      "Question": "If traffic congestion is changed to be high, will stress level be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of traffic congestion on job satisfaction.",
+      "Question": "If traffic congestion is changed to be low, will job satisfaction be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of traffic congestion on job satisfaction.",
+      "Question": "If traffic congestion is changed to be low, will job satisfaction be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of traffic congestion on job satisfaction.",
+      "Question": "If traffic congestion is changed to be high, will job satisfaction be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of traffic congestion on job satisfaction.",
+      "Question": "If traffic congestion is changed to be high, will job satisfaction be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of traffic congestion on appearance.",
+      "Question": "If traffic congestion is changed to be low, will appearance be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of traffic congestion on appearance.",
+      "Question": "If traffic congestion is changed to be low, will appearance be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of traffic congestion on appearance.",
+      "Question": "If traffic congestion is changed to be high, will appearance be more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the average treatment effect (ATE) of traffic congestion on appearance.",
+      "Question": "If traffic congestion is changed to be high, will appearance be more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of job satisfaction being low (B=0) is 0.2683. For those with stress level being high (A=1), the probability of job satisfaction being low (B=0) is 0.6694. ",
+        "data_info_math": "P(B=0|A=0)=0.2683; P(B=0|A=1)=0.6694; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of stress level on job satisfaction.",
+      "Question": "Suppose the mediator keeps constant when stress level is changed to be low, would the job satisfaction have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (B). The edge A->B exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.2683\tP(B=0|A=1)=0.6694",
+        "Step 6": "NDE=0.2683-0.6694=-0.4010",
+        "Step 7": "NDE=-0.4010<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.40101633368274514
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of job satisfaction being high (B=1) is 0.7317. For those with stress level being high (A=1), the probability of job satisfaction being high (B=1) is 0.3306. ",
+        "data_info_math": "P(B=1|A=0)=0.7317; P(B=1|A=1)=0.3306; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of stress level on job satisfaction.",
+      "Question": "Suppose the mediator keeps constant when stress level is changed to be low, would the job satisfaction have been more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (B). The edge A->B exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.7317\tP(B=1|A=1)=0.3306",
+        "Step 6": "NDE=0.7317-0.3306=0.4010",
+        "Step 7": "NDE=0.4010>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.4010163336827452
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of job satisfaction being low (B=0) is 0.6694. For those with stress level being low (A=0), the probability of job satisfaction being low (B=0) is 0.2683. ",
+        "data_info_math": "P(B=0|A=1)=0.6694; P(B=0|A=0)=0.2683; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of stress level on job satisfaction.",
+      "Question": "Suppose the mediator keeps constant when stress level is changed to be high, would the job satisfaction have been more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (B). The edge A->B exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.6694\tP(B=0|A=0)=0.2683",
+        "Step 6": "NDE=0.6694-0.2683=0.4010",
+        "Step 7": "NDE=0.4010>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.40101633368274514
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of job satisfaction being high (B=1) is 0.3306. For those with stress level being low (A=0), the probability of job satisfaction being high (B=1) is 0.7317. ",
+        "data_info_math": "P(B=1|A=1)=0.3306; P(B=1|A=0)=0.7317; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of stress level on job satisfaction.",
+      "Question": "Suppose the mediator keeps constant when stress level is changed to be high, would the job satisfaction have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (B). The edge A->B exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.3306\tP(B=1|A=0)=0.7317",
+        "Step 6": "NDE=0.3306-0.7317=-0.4010",
+        "Step 7": "NDE=-0.4010<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.4010163336827452
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of appearance being low (C=0) is 0.3551. For those with stress level being high (A=1), the probability of appearance being low (C=0) is 0.3449. ",
+        "data_info_math": "P(C=0|A=0)=0.3551; P(C=0|A=1)=0.3449; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of stress level on appearance.",
+      "Question": "Suppose the mediator keeps constant when stress level is changed to be low, would the appearance have been more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (C). The edge A->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.3551\tP(C=0|A=1)=0.3449",
+        "Step 6": "NDE=0.3551-0.3449=0.0102",
+        "Step 7": "NDE=0.0102>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.010213491226588711
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of appearance being high (C=1) is 0.6449. For those with stress level being high (A=1), the probability of appearance being high (C=1) is 0.6551. ",
+        "data_info_math": "P(C=1|A=0)=0.6449; P(C=1|A=1)=0.6551; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of stress level on appearance.",
+      "Question": "Suppose the mediator keeps constant when stress level is changed to be low, would the appearance have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (C). The edge A->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.6449\tP(C=1|A=1)=0.6551",
+        "Step 6": "NDE=0.6449-0.6551=-0.0102",
+        "Step 7": "NDE=-0.0102<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.010213491226588878
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of appearance being low (C=0) is 0.3449. For those with stress level being low (A=0), the probability of appearance being low (C=0) is 0.3551. ",
+        "data_info_math": "P(C=0|A=1)=0.3449; P(C=0|A=0)=0.3551; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of stress level on appearance.",
+      "Question": "Suppose the mediator keeps constant when stress level is changed to be high, would the appearance have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (C). The edge A->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.3449\tP(C=0|A=0)=0.3551",
+        "Step 6": "NDE=0.3449-0.3551=-0.0102",
+        "Step 7": "NDE=-0.0102<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.010213491226588711
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of appearance being high (C=1) is 0.6551. For those with stress level being low (A=0), the probability of appearance being high (C=1) is 0.6449. ",
+        "data_info_math": "P(C=1|A=1)=0.6551; P(C=1|A=0)=0.6449; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of stress level on appearance.",
+      "Question": "Suppose the mediator keeps constant when stress level is changed to be high, would the appearance have been more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (C). The edge A->C exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.6551\tP(C=1|A=0)=0.6449",
+        "Step 6": "NDE=0.6551-0.6449=0.0102",
+        "Step 7": "NDE=0.0102>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.010213491226588878
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of traffic congestion being low (D=0) is 0.3709. For those with stress level being high (A=1), the probability of traffic congestion being low (D=0) is 0.3812. ",
+        "data_info_math": "P(D=0|A=0)=0.3709; P(D=0|A=1)=0.3812; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of stress level on traffic congestion.",
+      "Question": "Suppose the mediator keeps constant when stress level is changed to be low, would the traffic congestion have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (D). The edge A->D exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.3709\tP(D=0|A=1)=0.3812",
+        "Step 6": "NDE=0.3709-0.3812=-0.0104",
+        "Step 7": "NDE=-0.0104<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.010368084869442962
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of traffic congestion being high (D=1) is 0.6291. For those with stress level being high (A=1), the probability of traffic congestion being high (D=1) is 0.6188. ",
+        "data_info_math": "P(D=1|A=0)=0.6291; P(D=1|A=1)=0.6188; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of stress level on traffic congestion.",
+      "Question": "Suppose the mediator keeps constant when stress level is changed to be low, would the traffic congestion have been more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (D). The edge A->D exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.6291\tP(D=1|A=1)=0.6188",
+        "Step 6": "NDE=0.6291-0.6188=0.0104",
+        "Step 7": "NDE=0.0104>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.010368084869443073
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of traffic congestion being low (D=0) is 0.3812. For those with stress level being low (A=0), the probability of traffic congestion being low (D=0) is 0.3709. ",
+        "data_info_math": "P(D=0|A=1)=0.3812; P(D=0|A=0)=0.3709; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of stress level on traffic congestion.",
+      "Question": "Suppose the mediator keeps constant when stress level is changed to be high, would the traffic congestion have been more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (D). The edge A->D exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.3812\tP(D=0|A=0)=0.3709",
+        "Step 6": "NDE=0.3812-0.3709=0.0104",
+        "Step 7": "NDE=0.0104>0 so the answer is Yes."
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.010368084869442962
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of traffic congestion being high (D=1) is 0.6188. For those with stress level being low (A=0), the probability of traffic congestion being high (D=1) is 0.6291. ",
+        "data_info_math": "P(D=1|A=1)=0.6188; P(D=1|A=0)=0.6291; "
+      },
+      "Instruction": "Consider the natural direct effect (NDE) of stress level on traffic congestion.",
+      "Question": "Suppose the mediator keeps constant when stress level is changed to be high, would the traffic congestion have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an edge from treatment (A) to outcome (D). The edge A->D exists.",
+        "Step 2": "Find a valid mediator set: empty set.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "NDE=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.6188\tP(D=1|A=0)=0.6291",
+        "Step 6": "NDE=0.6188-0.6291=-0.0104",
+        "Step 7": "NDE=-0.0104<0 so the answer is No."
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.010368084869443073
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of stress level on job satisfaction.",
+      "Question": "Suppose stress level is held constant and the mediator changes to whatever value it would have attained under stress level changing to be low, would job satisfaction have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (B). There is no directed path with three or more vertices from A to B. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of stress level on job satisfaction.",
+      "Question": "Suppose stress level is held constant and the mediator changes to whatever value it would have attained under stress level changing to be low, would job satisfaction have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (B). There is no directed path with three or more vertices from A to B. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of stress level on job satisfaction.",
+      "Question": "Suppose stress level is held constant and the mediator changes to whatever value it would have attained under stress level changing to be high, would job satisfaction have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (B). There is no directed path with three or more vertices from A to B. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of stress level on job satisfaction.",
+      "Question": "Suppose stress level is held constant and the mediator changes to whatever value it would have attained under stress level changing to be high, would job satisfaction have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (B). There is no directed path with three or more vertices from A to B. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of stress level on appearance.",
+      "Question": "Suppose stress level is held constant and the mediator changes to whatever value it would have attained under stress level changing to be low, would appearance have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (C). There is no directed path with three or more vertices from A to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of stress level on appearance.",
+      "Question": "Suppose stress level is held constant and the mediator changes to whatever value it would have attained under stress level changing to be low, would appearance have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (C). There is no directed path with three or more vertices from A to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of stress level on appearance.",
+      "Question": "Suppose stress level is held constant and the mediator changes to whatever value it would have attained under stress level changing to be high, would appearance have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (C). There is no directed path with three or more vertices from A to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of stress level on appearance.",
+      "Question": "Suppose stress level is held constant and the mediator changes to whatever value it would have attained under stress level changing to be high, would appearance have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (C). There is no directed path with three or more vertices from A to C. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of stress level on traffic congestion.",
+      "Question": "Suppose stress level is held constant and the mediator changes to whatever value it would have attained under stress level changing to be low, would traffic congestion have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (D). There is no directed path with three or more vertices from A to D. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of stress level on traffic congestion.",
+      "Question": "Suppose stress level is held constant and the mediator changes to whatever value it would have attained under stress level changing to be low, would traffic congestion have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (D). There is no directed path with three or more vertices from A to D. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of stress level on traffic congestion.",
+      "Question": "Suppose stress level is held constant and the mediator changes to whatever value it would have attained under stress level changing to be high, would traffic congestion have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (D). There is no directed path with three or more vertices from A to D. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the natural indirect effect (NIE) of stress level on traffic congestion.",
+      "Question": "Suppose stress level is held constant and the mediator changes to whatever value it would have attained under stress level changing to be high, would traffic congestion have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether there is an indirect connect between treatment (A) and outcome (D). There is no directed path with three or more vertices from A to D. So the answer is No."
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of job satisfaction being low (B=0) is 0.2683. For those with stress level being high (A=1), the probability of job satisfaction being low (B=0) is 0.6694. ",
+        "data_info_math": "P(B=0|A=0)=0.2683; P(B=0|A=1)=0.6694; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of stress level on job satisfaction.",
+      "Question": "For those with stress level being low, if their stress level had been high, would the job satisfaction have been more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.2683\tP(B=0|A=1)=0.6694",
+        "Step 6": "ETT=0.2683-0.6694=-0.4010",
+        "Step 7": "ETT=-0.4010<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.40101633368274514
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of job satisfaction being high (B=1) is 0.7317. For those with stress level being high (A=1), the probability of job satisfaction being high (B=1) is 0.3306. ",
+        "data_info_math": "P(B=1|A=0)=0.7317; P(B=1|A=1)=0.3306; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of stress level on job satisfaction.",
+      "Question": "For those with stress level being low, if their stress level had been high, would the job satisfaction have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.7317\tP(B=1|A=1)=0.3306",
+        "Step 6": "ETT=0.7317-0.3306=0.4010",
+        "Step 7": "ETT=0.4010>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.4010163336827452
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of job satisfaction being low (B=0) is 0.6694. For those with stress level being low (A=0), the probability of job satisfaction being low (B=0) is 0.2683. ",
+        "data_info_math": "P(B=0|A=1)=0.6694; P(B=0|A=0)=0.2683; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of stress level on job satisfaction.",
+      "Question": "For those with stress level being high, if their stress level had been low, would the job satisfaction have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.6694\tP(B=0|A=0)=0.2683",
+        "Step 6": "ETT=0.6694-0.2683=0.4010",
+        "Step 7": "ETT=0.4010>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.40101633368274514
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of job satisfaction being high (B=1) is 0.3306. For those with stress level being low (A=0), the probability of job satisfaction being high (B=1) is 0.7317. ",
+        "data_info_math": "P(B=1|A=1)=0.3306; P(B=1|A=0)=0.7317; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of stress level on job satisfaction.",
+      "Question": "For those with stress level being high, if their stress level had been low, would the job satisfaction have been more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (B). Node A is a cause of node B because there is one or more directed paths from A to B (e.g. A->B).",
+        "Step 2": "Identification of the Causal Effect. P(B|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.3306\tP(B=1|A=0)=0.7317",
+        "Step 6": "ETT=0.3306-0.7317=-0.4010",
+        "Step 7": "ETT=-0.4010<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.4010163336827452
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of appearance being low (C=0) is 0.3551. For those with stress level being high (A=1), the probability of appearance being low (C=0) is 0.3449. ",
+        "data_info_math": "P(C=0|A=0)=0.3551; P(C=0|A=1)=0.3449; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of stress level on appearance.",
+      "Question": "For those with stress level being low, if their stress level had been high, would the appearance have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.3551\tP(C=0|A=1)=0.3449",
+        "Step 6": "ETT=0.3551-0.3449=0.0102",
+        "Step 7": "ETT=0.0102>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.010213491226588711
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of appearance being high (C=1) is 0.6449. For those with stress level being high (A=1), the probability of appearance being high (C=1) is 0.6551. ",
+        "data_info_math": "P(C=1|A=0)=0.6449; P(C=1|A=1)=0.6551; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of stress level on appearance.",
+      "Question": "For those with stress level being low, if their stress level had been high, would the appearance have been more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.6449\tP(C=1|A=1)=0.6551",
+        "Step 6": "ETT=0.6449-0.6551=-0.0102",
+        "Step 7": "ETT=-0.0102<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.010213491226588878
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of appearance being low (C=0) is 0.3449. For those with stress level being low (A=0), the probability of appearance being low (C=0) is 0.3551. ",
+        "data_info_math": "P(C=0|A=1)=0.3449; P(C=0|A=0)=0.3551; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of stress level on appearance.",
+      "Question": "For those with stress level being high, if their stress level had been low, would the appearance have been more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.3449\tP(C=0|A=0)=0.3551",
+        "Step 6": "ETT=0.3449-0.3551=-0.0102",
+        "Step 7": "ETT=-0.0102<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.010213491226588711
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of appearance being high (C=1) is 0.6551. For those with stress level being low (A=0), the probability of appearance being high (C=1) is 0.6449. ",
+        "data_info_math": "P(C=1|A=1)=0.6551; P(C=1|A=0)=0.6449; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of stress level on appearance.",
+      "Question": "For those with stress level being high, if their stress level had been low, would the appearance have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (C). Node A is a cause of node C because there is one or more directed paths from A to C (e.g. A->C).",
+        "Step 2": "Identification of the Causal Effect. P(C|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.6551\tP(C=1|A=0)=0.6449",
+        "Step 6": "ETT=0.6551-0.6449=0.0102",
+        "Step 7": "ETT=0.0102>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.010213491226588878
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of traffic congestion being low (D=0) is 0.3709. For those with stress level being high (A=1), the probability of traffic congestion being low (D=0) is 0.3812. ",
+        "data_info_math": "P(D=0|A=0)=0.3709; P(D=0|A=1)=0.3812; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of stress level on traffic congestion.",
+      "Question": "For those with stress level being low, if their stress level had been high, would the traffic congestion have been more likely to be low?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.3709\tP(D=0|A=1)=0.3812",
+        "Step 6": "ETT=0.3709-0.3812=-0.0104",
+        "Step 7": "ETT=-0.0104<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.010368084869442962
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of traffic congestion being high (D=1) is 0.6291. For those with stress level being high (A=1), the probability of traffic congestion being high (D=1) is 0.6188. ",
+        "data_info_math": "P(D=1|A=0)=0.6291; P(D=1|A=1)=0.6188; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of stress level on traffic congestion.",
+      "Question": "For those with stress level being low, if their stress level had been high, would the traffic congestion have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.6291\tP(D=1|A=1)=0.6188",
+        "Step 6": "ETT=0.6291-0.6188=0.0104",
+        "Step 7": "ETT=0.0104>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.010368084869443073
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of traffic congestion being low (D=0) is 0.3812. For those with stress level being low (A=0), the probability of traffic congestion being low (D=0) is 0.3709. ",
+        "data_info_math": "P(D=0|A=1)=0.3812; P(D=0|A=0)=0.3709; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of stress level on traffic congestion.",
+      "Question": "For those with stress level being high, if their stress level had been low, would the traffic congestion have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.3812\tP(D=0|A=0)=0.3709",
+        "Step 6": "ETT=0.3812-0.3709=0.0104",
+        "Step 7": "ETT=0.0104>0 so the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.010368084869442962
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of traffic congestion being high (D=1) is 0.6188. For those with stress level being low (A=0), the probability of traffic congestion being high (D=1) is 0.6291. ",
+        "data_info_math": "P(D=1|A=1)=0.6188; P(D=1|A=0)=0.6291; "
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of stress level on traffic congestion.",
+      "Question": "For those with stress level being high, if their stress level had been low, would the traffic congestion have been more likely to be high?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Check whether treatment (A) is a cause of outcome (D). Node A is a cause of node D because there is one or more directed paths from A to D (e.g. A->D).",
+        "Step 2": "Identification of the Causal Effect. P(D|do(A)) can be identified.",
+        "Step 3": "Find a valid backdoor adjustment set: empty set.",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.6188\tP(D=1|A=0)=0.6291",
+        "Step 6": "ETT=0.6188-0.6291=-0.0104",
+        "Step 7": "ETT=-0.0104<0 so the answer is Yes."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.010368084869443073
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of job satisfaction on stress level.",
+      "Question": "For those with job satisfaction being low, if their job satisfaction had been high, would the stress level have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of job satisfaction on stress level.",
+      "Question": "For those with job satisfaction being low, if their job satisfaction had been high, would the stress level have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of job satisfaction on stress level.",
+      "Question": "For those with job satisfaction being high, if their job satisfaction had been low, would the stress level have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of job satisfaction on stress level.",
+      "Question": "For those with job satisfaction being high, if their job satisfaction had been low, would the stress level have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (A). Node B is not a cause of node A because there is no directed path from B to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of job satisfaction on appearance.",
+      "Question": "For those with job satisfaction being low, if their job satisfaction had been high, would the appearance have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of job satisfaction on appearance.",
+      "Question": "For those with job satisfaction being low, if their job satisfaction had been high, would the appearance have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of job satisfaction on appearance.",
+      "Question": "For those with job satisfaction being high, if their job satisfaction had been low, would the appearance have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of job satisfaction on appearance.",
+      "Question": "For those with job satisfaction being high, if their job satisfaction had been low, would the appearance have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (C). Node B is not a cause of node C because there is no directed path from B to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of job satisfaction on traffic congestion.",
+      "Question": "For those with job satisfaction being low, if their job satisfaction had been high, would the traffic congestion have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of job satisfaction on traffic congestion.",
+      "Question": "For those with job satisfaction being low, if their job satisfaction had been high, would the traffic congestion have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of job satisfaction on traffic congestion.",
+      "Question": "For those with job satisfaction being high, if their job satisfaction had been low, would the traffic congestion have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of job satisfaction on traffic congestion.",
+      "Question": "For those with job satisfaction being high, if their job satisfaction had been low, would the traffic congestion have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (B) is a cause of outcome (D). Node B is not a cause of node D because there is no directed path from B to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of appearance on stress level.",
+      "Question": "For those with appearance being low, if their appearance had been high, would the stress level have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of appearance on stress level.",
+      "Question": "For those with appearance being low, if their appearance had been high, would the stress level have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of appearance on stress level.",
+      "Question": "For those with appearance being high, if their appearance had been low, would the stress level have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of appearance on stress level.",
+      "Question": "For those with appearance being high, if their appearance had been low, would the stress level have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (A). Node C is not a cause of node A because there is no directed path from C to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of appearance on job satisfaction.",
+      "Question": "For those with appearance being low, if their appearance had been high, would the job satisfaction have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of appearance on job satisfaction.",
+      "Question": "For those with appearance being low, if their appearance had been high, would the job satisfaction have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of appearance on job satisfaction.",
+      "Question": "For those with appearance being high, if their appearance had been low, would the job satisfaction have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of appearance on job satisfaction.",
+      "Question": "For those with appearance being high, if their appearance had been low, would the job satisfaction have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (B). Node C is not a cause of node B because there is no directed path from C to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of appearance on traffic congestion.",
+      "Question": "For those with appearance being low, if their appearance had been high, would the traffic congestion have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of appearance on traffic congestion.",
+      "Question": "For those with appearance being low, if their appearance had been high, would the traffic congestion have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of appearance on traffic congestion.",
+      "Question": "For those with appearance being high, if their appearance had been low, would the traffic congestion have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of appearance on traffic congestion.",
+      "Question": "For those with appearance being high, if their appearance had been low, would the traffic congestion have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (C) is a cause of outcome (D). Node C is not a cause of node D because there is no directed path from C to D. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of traffic congestion on stress level.",
+      "Question": "For those with traffic congestion being low, if their traffic congestion had been high, would the stress level have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of traffic congestion on stress level.",
+      "Question": "For those with traffic congestion being low, if their traffic congestion had been high, would the stress level have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of traffic congestion on stress level.",
+      "Question": "For those with traffic congestion being high, if their traffic congestion had been low, would the stress level have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of traffic congestion on stress level.",
+      "Question": "For those with traffic congestion being high, if their traffic congestion had been low, would the stress level have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (A). Node D is not a cause of node A because there is no directed path from D to A. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of traffic congestion on job satisfaction.",
+      "Question": "For those with traffic congestion being low, if their traffic congestion had been high, would the job satisfaction have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of traffic congestion on job satisfaction.",
+      "Question": "For those with traffic congestion being low, if their traffic congestion had been high, would the job satisfaction have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of traffic congestion on job satisfaction.",
+      "Question": "For those with traffic congestion being high, if their traffic congestion had been low, would the job satisfaction have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of traffic congestion on job satisfaction.",
+      "Question": "For those with traffic congestion being high, if their traffic congestion had been low, would the job satisfaction have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (B). Node D is not a cause of node B because there is no directed path from D to B. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of traffic congestion on appearance.",
+      "Question": "For those with traffic congestion being low, if their traffic congestion had been high, would the appearance have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of traffic congestion on appearance.",
+      "Question": "For those with traffic congestion being low, if their traffic congestion had been high, would the appearance have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of traffic congestion on appearance.",
+      "Question": "For those with traffic congestion being high, if their traffic congestion had been low, would the appearance have been more likely to be low?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the effect of treatment on the treated (ETT) of traffic congestion on appearance.",
+      "Question": "For those with traffic congestion being high, if their traffic congestion had been low, would the appearance have been more likely to be high?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Check whether treatment (D) is a cause of outcome (C). Node D is not a cause of node C because there is no directed path from D to C. So the answer is No."
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment stress level (A) and outcome job satisfaction (B).",
+      "Question": "Method 1: We look at how stress level correlates with job satisfaction case by case according to traffic congestion.\nMethod 2: We look directly at how stress level correlates with job satisfaction in general.\nTo understand how stress level affects job satisfaction, is it more correct to use the Method 1 than Method 2?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is no."
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 121,
+      "question_id": 120,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment stress level (A) and outcome job satisfaction (B).",
+      "Question": "Method 1: We look at how stress level correlates with job satisfaction case by case according to appearance.\nMethod 2: We look directly at how stress level correlates with job satisfaction in general.\nTo understand how stress level affects job satisfaction, is it more correct to use the Method 2 than Method 1?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is yes."
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 122,
+      "question_id": 121,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment stress level (A) and outcome appearance (C).",
+      "Question": "Method 1: We look at how stress level correlates with appearance case by case according to traffic congestion.\nMethod 2: We look directly at how stress level correlates with appearance in general.\nTo understand how stress level affects appearance, is it more correct to use the Method 1 than Method 2?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is no."
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 123,
+      "question_id": 121,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment stress level (A) and outcome appearance (C).",
+      "Question": "Method 1: We look at how stress level correlates with appearance case by case according to job satisfaction.\nMethod 2: We look directly at how stress level correlates with appearance in general.\nTo understand how stress level affects appearance, is it more correct to use the Method 2 than Method 1?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is yes."
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 124,
+      "question_id": 122,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment stress level (A) and outcome traffic congestion (D).",
+      "Question": "Method 1: We look at how stress level correlates with traffic congestion case by case according to appearance.\nMethod 2: We look directly at how stress level correlates with traffic congestion in general.\nTo understand how stress level affects traffic congestion, is it more correct to use the Method 1 than Method 2?",
+      "Answer": "No",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is no."
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 125,
+      "question_id": 122,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "Consider the backdoor adjustment set for treatment stress level (A) and outcome traffic congestion (D).",
+      "Question": "Method 1: We look at how stress level correlates with traffic congestion case by case according to appearance.\nMethod 2: We look directly at how stress level correlates with traffic congestion in general.\nTo understand how stress level affects traffic congestion, is it more correct to use the Method 2 than Method 1?",
+      "Answer": "Yes",
+      "Reason": {
+        "Step 1": "Find a valid backdoor adjustment set: empty set. So method 2 is preferred and the answer is yes."
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 126,
+      "question_id": 123,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of job satisfaction being high (B=1) is 0.7317. The probability of job satisfaction being high (B=1) is 0.4176. The probability of stress level being high (A=1) and job satisfaction being high (B=1) is 0.2590. ",
+        "data_info_math": "P(B=1|A=0)=0.7317; P(B=1)=0.4176; P(A=1,B=1)=0.2590; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of stress level on job satisfaction.",
+      "Question": "Given that stress level was high and job satisfaction was high, what is the lower bound of the probability of the job satisfaction would have been low if the stress level had been low?",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "Calculate P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.7317",
+        "Step 2": "Lower bound of PN: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.4176-0.7317)/0.2590}\n=max{0, -1.2128}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 124,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of job satisfaction being low (B=0) is 0.2683. The probability of stress level being low (A=0) and job satisfaction being low (B=0) is 0.0582. The probability of stress level being high (A=1) and job satisfaction being high (B=1) is 0.2590. ",
+        "data_info_math": "P(B=0|A=0)=0.2683; P(A=0,B=0)=0.0582; P(A=1,B=1)=0.2590; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of stress level on job satisfaction.",
+      "Question": "Given that stress level was high and job satisfaction was high, what is the upper bound of the probability of the job satisfaction would have been low if the stress level had been low?",
+      "Answer": "0.8116",
+      "Reason": {
+        "Step 1": "Calculate P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.2683",
+        "Step 2": "Upper bound of PN: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.2683-0.0582)/0.2590}\n=min{1, 0.8116}\n=0.8116"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.8115682542267862
+    },
+    {
+      "id": 128,
+      "question_id": 125,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of appearance being high (C=1) is 0.6449. The probability of appearance being high (C=1) is 0.6529. The probability of stress level being high (A=1) and appearance being high (C=1) is 0.5131. ",
+        "data_info_math": "P(C=1|A=0)=0.6449; P(C=1)=0.6529; P(A=1,C=1)=0.5131; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of stress level on appearance.",
+      "Question": "Given that stress level was high and appearance was high, what is the lower bound of the probability of the appearance would have been low if the stress level had been low?",
+      "Answer": "0.0156",
+      "Reason": {
+        "Step 1": "Calculate P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.6449",
+        "Step 2": "Lower bound of PN: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.6529-0.6449)/0.5131}\n=max{0, 0.0156}\n=0.0156"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.015589934789994646
+    },
+    {
+      "id": 129,
+      "question_id": 126,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of appearance being low (C=0) is 0.3551. The probability of stress level being low (A=0) and appearance being low (C=0) is 0.0770. The probability of stress level being high (A=1) and appearance being high (C=1) is 0.5131. ",
+        "data_info_math": "P(C=0|A=0)=0.3551; P(A=0,C=0)=0.0770; P(A=1,C=1)=0.5131; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of stress level on appearance.",
+      "Question": "Given that stress level was high and appearance was high, what is the upper bound of the probability of the appearance would have been low if the stress level had been low?",
+      "Answer": "0.5420",
+      "Reason": {
+        "Step 1": "Calculate P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.3551",
+        "Step 2": "Upper bound of PN: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.3551-0.0770)/0.5131}\n=min{1, 0.5420}\n=0.5420"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.5419959838214481
+    },
+    {
+      "id": 130,
+      "question_id": 127,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of traffic congestion being high (D=1) is 0.6291. The probability of traffic congestion being high (D=1) is 0.6210. The probability of stress level being high (A=1) and traffic congestion being high (D=1) is 0.4847. ",
+        "data_info_math": "P(D=1|A=0)=0.6291; P(D=1)=0.6210; P(A=1,D=1)=0.4847; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of stress level on traffic congestion.",
+      "Question": "Given that stress level was high and traffic congestion was high, what is the lower bound of the probability of the traffic congestion would have been low if the stress level had been low?",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "Calculate P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.6291",
+        "Step 2": "Lower bound of PN: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.6210-0.6291)/0.4847}\n=max{0, -0.0168}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 131,
+      "question_id": 128,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being low (A=0), the probability of traffic congestion being low (D=0) is 0.3709. The probability of stress level being low (A=0) and traffic congestion being low (D=0) is 0.0804. The probability of stress level being high (A=1) and traffic congestion being high (D=1) is 0.4847. ",
+        "data_info_math": "P(D=0|A=0)=0.3709; P(A=0,D=0)=0.0804; P(A=1,D=1)=0.4847; "
+      },
+      "Instruction": "Consider the probability of necessity (PN) of stress level on traffic congestion.",
+      "Question": "Given that stress level was high and traffic congestion was high, what is the upper bound of the probability of the traffic congestion would have been low if the stress level had been low?",
+      "Answer": "0.5993",
+      "Reason": {
+        "Step 1": "Calculate P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.3709",
+        "Step 2": "Upper bound of PN: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.3709-0.0804)/0.4847}\n=min{1, 0.5993}\n=0.5993"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.5993461268624605
+    },
+    {
+      "id": 132,
+      "question_id": 129,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of job satisfaction being low (B=0) is 0.6694. The probability of job satisfaction being low (B=0) is 0.5824. The probability of stress level being low (A=0) and job satisfaction being low (B=0) is 0.0582. ",
+        "data_info_math": "P(B=0|A=1)=0.6694; P(B=0)=0.5824; P(A=0,B=0)=0.0582; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of stress level on job satisfaction.",
+      "Question": "Given that stress level was low and job satisfaction was low, what is the lower bound of the probability that job satisfaction would have been high if the stress level had been high?",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "Calculate P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.6694",
+        "Step 2": "Lower bound of PS: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.5824-0.6694)/0.0582}\n=max{0, -1.4944}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 133,
+      "question_id": 130,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of job satisfaction being high (B=1) is 0.3306. The probability of stress level being low (A=0) and job satisfaction being low (B=0) is 0.0582. The probability of stress level being high (A=1) and job satisfaction being high (B=1) is 0.2590. ",
+        "data_info_math": "P(B=1|A=1)=0.3306; P(A=0,B=0)=0.0582; P(A=1,B=1)=0.2590; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of stress level on job satisfaction.",
+      "Question": "Given that stress level was low and job satisfaction was low, what is the upper bound of the probability that job satisfaction would have been high if the stress level had been high?",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "Calculate P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.3306",
+        "Step 2": "Upper bound of PS: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.3306-0.2590)/0.0582}\n=min{1, 1.2322}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 134,
+      "question_id": 131,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of appearance being low (C=0) is 0.3449. The probability of appearance being low (C=0) is 0.3471. The probability of stress level being low (A=0) and appearance being low (C=0) is 0.0770. ",
+        "data_info_math": "P(C=0|A=1)=0.3449; P(C=0)=0.3471; P(A=0,C=0)=0.0770; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of stress level on appearance.",
+      "Question": "Given that stress level was low and appearance was low, what is the lower bound of the probability that appearance would have been high if the stress level had been high?",
+      "Answer": "0.0288",
+      "Reason": {
+        "Step 1": "Calculate P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.3449",
+        "Step 2": "Lower bound of PS: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.3471-0.3449)/0.0770}\n=max{0, 0.0288}\n=0.0288"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.028763930463238073
+    },
+    {
+      "id": 135,
+      "question_id": 132,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of appearance being high (C=1) is 0.6551. The probability of stress level being low (A=0) and appearance being low (C=0) is 0.0770. The probability of stress level being high (A=1) and appearance being high (C=1) is 0.5131. ",
+        "data_info_math": "P(C=1|A=1)=0.6551; P(A=0,C=0)=0.0770; P(A=1,C=1)=0.5131; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of stress level on appearance.",
+      "Question": "Given that stress level was low and appearance was low, what is the upper bound of the probability that appearance would have been high if the stress level had been high?",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "Calculate P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.6551",
+        "Step 2": "Upper bound of PS: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.6551-0.5131)/0.0770}\n=min{1, 1.8450}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 136,
+      "question_id": 133,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of traffic congestion being low (D=0) is 0.3812. The probability of traffic congestion being low (D=0) is 0.3790. The probability of stress level being low (A=0) and traffic congestion being low (D=0) is 0.0804. ",
+        "data_info_math": "P(D=0|A=1)=0.3812; P(D=0)=0.3790; P(A=0,D=0)=0.0804; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of stress level on traffic congestion.",
+      "Question": "Given that stress level was low and traffic congestion was low, what is the lower bound of the probability that traffic congestion would have been high if the stress level had been high?",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "Calculate P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.3812",
+        "Step 2": "Lower bound of PS: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.3790-0.3812)/0.0804}\n=max{0, -0.0280}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 137,
+      "question_id": 134,
+      "Background": {
+        "graph": "Given a causal graph with 4 nodes A, B, C, D, and 3 edges A->B, A->C, A->D.",
+        "real_world_meaning": "The real world meaning of each node is defined as follows: A represents stress level, B represents job satisfaction, C represents appearance and D represents traffic congestion. ",
+        "data_info": "For those with stress level being high (A=1), the probability of traffic congestion being high (D=1) is 0.6188. The probability of stress level being low (A=0) and traffic congestion being low (D=0) is 0.0804. The probability of stress level being high (A=1) and traffic congestion being high (D=1) is 0.4847. ",
+        "data_info_math": "P(D=1|A=1)=0.6188; P(A=0,D=0)=0.0804; P(A=1,D=1)=0.4847; "
+      },
+      "Instruction": "Consider the probability of sufficiency (PS) of stress level on traffic congestion.",
+      "Question": "Given that stress level was low and traffic congestion was low, what is the upper bound of the probability that traffic congestion would have been high if the stress level had been high?",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "Calculate P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.6188",
+        "Step 2": "Upper bound of PS: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.6188-0.4847)/0.0804}\n=min{1, 1.6685}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 1
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+    "startup":
+        {
+            "ROOT_PATH": "/mnt/workspace/LLM/Qwen/"
+        },
+    "query":
+    {
+        "default":{
+        }
+    }
+}

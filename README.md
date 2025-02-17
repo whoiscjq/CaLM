@@ -47,6 +47,9 @@ python calm/run.py --models vicuna_33b -p zero-shot-IcL -t PCD-B_E-CARE_EN  -mcf
 For CaLM Lite version, add argument `-l` or `--lite_version`:
 ```
 python calm/run.py --models vicuna_33b -p zero-shot-IcL -t PCD-B_E-CARE_EN  -mcfg ./model_configs -o ./output -l
+python calm/run.py --models qwen_7b -p basic -t NDE  -mcfg ./model_configs -o ./output -l
+
+python calm/run.py --models deepseek_qwen -p basic -t NDE-P_NDE-basic_EN -mcfg ./model_configs -o ./output -l
 ```
 #### Required Arguments
 - `-m`, `--models`

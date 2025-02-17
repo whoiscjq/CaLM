@@ -1,0 +1,4 @@
+[2025-02-03 00:12:25,079 - ./output_deepseek/analysis_loggers/evaluate_log_2025-02-03-00-12-24 - INFO] error analysis saved to ./output_deepseek/counterfactual/probability_of_necessity/PN-P_PN-basic_EN/deepseek_qwen_errors.csv
+[2025-02-03 00:12:25,081 - ./output_deepseek/analysis_loggers/evaluate_log_2025-02-03-00-12-24 - INFO] accuracy saved to ./output_deepseek/counterfactual/probability_of_necessity/PN-P_PN-basic_EN_models_acc.csv
+[2025-02-03 00:12:25,083 - ./output_deepseek/analysis_loggers/evaluate_log_2025-02-03-00-12-24 - INFO] robustness saved to ./output_deepseek/models_robustness.csv
+[2025-02-03 00:12:25,095 - ./output_deepseek/analysis_loggers/evaluate_log_2025-02-03-00-12-24 - INFO] aggregate metrics save to models_volatility.csv, prompts_volatility.csv, task_metrics.csv in ./output_deepseek

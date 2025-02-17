@@ -1,0 +1,3489 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->C"
+    ],
+    "node_name": {
+      "A": "精神健康水平",
+      "B": "呼吸系统疾病严重程度",
+      "C": "湿度水平",
+      "D": "运动量"
+    },
+    "node_value": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": 1.3971911023168972,
+      "B": 1.0579365136331245,
+      "C": -1.9317363804902545,
+      "D": -0.3836175459413381
+    },
+    "edge_weight": {
+      "A->B": -1.4373570800817128,
+      "A->C": 2.4899529576971684,
+      "A->D": -1.303147726794462,
+      "B->C": 0.7452031382622144
+    },
+    "function_description": "P(A=1)=0.8017\nP(B=1|A)=sigmoid(1.0579365136331245 + -1.4374 * A)\nP(C=1|A,B)=sigmoid(-1.9317363804902545 + 2.4900 * A + 0.7452 * B)\nP(D=1|A)=sigmoid(-0.3836175459413381 + -1.3031 * A)\n",
+    "text_description": "The probability of mental health being high (A=1) is 0.8017. \nFor those with mental health being low (A=0), the probability of severity of respiratory illnesses being high (B=1) is 0.7423. \nFor those with mental health being high (A=1), the probability of severity of respiratory illnesses being high (B=1) is 0.4063. \nFor those with mental health being low (A=0) and severity of respiratory illnesses being low (B=0), the probability of humidity level being high (C=1) is 0.1266. \nFor those with mental health being low (A=0) and severity of respiratory illnesses being high (B=1), the probability of humidity level being high (C=1) is 0.2339. \nFor those with mental health being high (A=1) and severity of respiratory illnesses being low (B=0), the probability of humidity level being high (C=1) is 0.6360. \nFor those with mental health being high (A=1) and severity of respiratory illnesses being high (B=1), the probability of humidity level being high (C=1) is 0.7864. \nFor those with mental health being low (A=0), the probability of amount of exercise being high (D=1) is 0.4053. \nFor those with mental health being high (A=1), the probability of amount of exercise being high (D=1) is 0.1562. \n",
+    "Statistic_data": [
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 12664
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 7261
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 877
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 2260
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 3429
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 2340
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 2048
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 11033
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 1404
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 2841
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 688
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 515
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 984
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 1302
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 195
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 159
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.2560。在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.5902。",
+        "data_info_math": "P(B=0|A=0)=0.2560; P(B=0|A=1)=0.5902; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为低，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.2560\tP(B=0|A=1)=0.5902",
+        "Step 6": "ATE=0.2560-0.5902=-0.3341",
+        "Step 7": "ATE=-0.3341<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.33414732745166886
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为高(B=1)的概率为0.7440。在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为高(B=1)的概率为0.4098。",
+        "data_info_math": "P(B=1|A=0)=0.7440; P(B=1|A=1)=0.4098; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为低，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.7440\tP(B=1|A=1)=0.4098",
+        "Step 6": "ATE=0.7440-0.4098=0.3341",
+        "Step 7": "ATE=0.3341>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.33414732745166886
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.5902。在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.2560。",
+        "data_info_math": "P(B=0|A=1)=0.5902; P(B=0|A=0)=0.2560; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为高，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.5902\tP(B=0|A=0)=0.2560",
+        "Step 6": "ATE=0.5902-0.2560=0.3341",
+        "Step 7": "ATE=0.3341>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.33414732745166886
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为高(B=1)的概率为0.4098。在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为高(B=1)的概率为0.7440。",
+        "data_info_math": "P(B=1|A=1)=0.4098; P(B=1|A=0)=0.7440; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为高，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.4098\tP(B=1|A=0)=0.7440",
+        "Step 6": "ATE=0.4098-0.7440=-0.3341",
+        "Step 7": "ATE=-0.3341<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.33414732745166886
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.7952。在精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.2997。",
+        "data_info_math": "P(C=0|A=0)=0.7952; P(C=0|A=1)=0.2997; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为低，那么湿度水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.7952\tP(C=0|A=1)=0.2997",
+        "Step 6": "ATE=0.7952-0.2997=0.4955",
+        "Step 7": "ATE=0.4955>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.49549871837004084
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.2048。在精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.7003。",
+        "data_info_math": "P(C=1|A=0)=0.2048; P(C=1|A=1)=0.7003; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为低，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.2048\tP(C=1|A=1)=0.7003",
+        "Step 6": "ATE=0.2048-0.7003=-0.4955",
+        "Step 7": "ATE=-0.4955<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.4954987183700407
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.2997。在精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.7952。",
+        "data_info_math": "P(C=0|A=1)=0.2997; P(C=0|A=0)=0.7952; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为高，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.2997\tP(C=0|A=0)=0.7952",
+        "Step 6": "ATE=0.2997-0.7952=-0.4955",
+        "Step 7": "ATE=-0.4955<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.49549871837004084
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.7003。在精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.2048。",
+        "data_info_math": "P(C=1|A=1)=0.7003; P(C=1|A=0)=0.2048; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为高，那么湿度水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.7003\tP(C=1|A=0)=0.2048",
+        "Step 6": "ATE=0.7003-0.2048=0.4955",
+        "Step 7": "ATE=0.4955>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.4954987183700407
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 运动量为低(D=0)的概率为0.5973。在精神健康水平为高(A=1)的条件下, 运动量为低(D=0)的概率为0.8427。",
+        "data_info_math": "P(D=0|A=0)=0.5973; P(D=0|A=1)=0.8427; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为低，那么运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.5973\tP(D=0|A=1)=0.8427",
+        "Step 6": "ATE=0.5973-0.8427=-0.2454",
+        "Step 7": "ATE=-0.2454<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.24541001821219854
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 运动量为高(D=1)的概率为0.4027。在精神健康水平为高(A=1)的条件下, 运动量为高(D=1)的概率为0.1573。",
+        "data_info_math": "P(D=1|A=0)=0.4027; P(D=1|A=1)=0.1573; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为低，那么运动量更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.4027\tP(D=1|A=1)=0.1573",
+        "Step 6": "ATE=0.4027-0.1573=0.2454",
+        "Step 7": "ATE=0.2454>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.24541001821219857
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 运动量为低(D=0)的概率为0.8427。在精神健康水平为低(A=0)的条件下, 运动量为低(D=0)的概率为0.5973。",
+        "data_info_math": "P(D=0|A=1)=0.8427; P(D=0|A=0)=0.5973; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为高，那么运动量更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.8427\tP(D=0|A=0)=0.5973",
+        "Step 6": "ATE=0.8427-0.5973=0.2454",
+        "Step 7": "ATE=0.2454>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.24541001821219854
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 运动量为高(D=1)的概率为0.1573。在精神健康水平为低(A=0)的条件下, 运动量为高(D=1)的概率为0.4027。",
+        "data_info_math": "P(D=1|A=1)=0.1573; P(D=1|A=0)=0.4027; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为高，那么运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.1573\tP(D=1|A=0)=0.4027",
+        "Step 6": "ATE=0.1573-0.4027=-0.2454",
+        "Step 7": "ATE=-0.2454<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.24541001821219857
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为低，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为低，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为高，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为高，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.8602。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.7729。精神健康水平为低(A=0)的概率为0.1979。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.3661。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.2042。精神健康水平为高(A=1)的概率为0.8021。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.8602; P(C=0|B=1,A=0)=0.7729; P(A=0)=0.1979; P(C=0|B=0,A=1)=0.3661; P(C=0|B=1,A=1)=0.2042; P(A=1)=0.8021; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为低，那么湿度水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=sum_{A} [P(C=0|B=0,A)*P(A)-P(C=0|B=1,A)*P(A)]=[P(C=0|B=0,A=0)*P(A=0)-P(C=0|B=1,A=0)*P(A=0)]+[P(C=0|B=0,A=1)*P(A=1)-P(C=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=0,A=0)=0.8602\tP(C=0|B=1,A=0)=0.7729\tP(A=0)=0.1979\tP(C=0|B=0,A=1)=0.3661\tP(C=0|B=1,A=1)=0.2042\tP(A=1)=0.8021",
+        "Step 6": "ATE=[0.8602*0.1979-0.7729*0.1979]+[0.3661*0.8021-0.2042*0.8021]=0.1472",
+        "Step 7": "ATE=0.1472>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.1471692911537361
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.1398。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.2271。精神健康水平为低(A=0)的概率为0.1979。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.6339。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.7958。精神健康水平为高(A=1)的概率为0.8021。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.1398; P(C=1|B=1,A=0)=0.2271; P(A=0)=0.1979; P(C=1|B=0,A=1)=0.6339; P(C=1|B=1,A=1)=0.7958; P(A=1)=0.8021; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为低，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=sum_{A} [P(C=1|B=0,A)*P(A)-P(C=1|B=1,A)*P(A)]=[P(C=1|B=0,A=0)*P(A=0)-P(C=1|B=1,A=0)*P(A=0)]+[P(C=1|B=0,A=1)*P(A=1)-P(C=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=0,A=0)=0.1398\tP(C=1|B=1,A=0)=0.2271\tP(A=0)=0.1979\tP(C=1|B=0,A=1)=0.6339\tP(C=1|B=1,A=1)=0.7958\tP(A=1)=0.8021",
+        "Step 6": "ATE=[0.1398*0.1979-0.2271*0.1979]+[0.6339*0.8021-0.7958*0.8021]=-0.1472",
+        "Step 7": "ATE=-0.1472<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.1471692911537362
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.7729。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.8602。精神健康水平为低(A=0)的概率为0.1979。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.2042。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.3661。精神健康水平为高(A=1)的概率为0.8021。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.7729; P(C=0|B=0,A=0)=0.8602; P(A=0)=0.1979; P(C=0|B=1,A=1)=0.2042; P(C=0|B=0,A=1)=0.3661; P(A=1)=0.8021; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为高，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=sum_{A} [P(C=0|B=1,A)*P(A)-P(C=0|B=0,A)*P(A)]=[P(C=0|B=1,A=0)*P(A=0)-P(C=0|B=0,A=0)*P(A=0)]+[P(C=0|B=1,A=1)*P(A=1)-P(C=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=1,A=0)=0.7729\tP(C=0|B=0,A=0)=0.8602\tP(A=0)=0.1979\tP(C=0|B=1,A=1)=0.2042\tP(C=0|B=0,A=1)=0.3661\tP(A=1)=0.8021",
+        "Step 6": "ATE=[0.7729*0.1979-0.8602*0.1979]+[0.2042*0.8021-0.3661*0.8021]=-0.1472",
+        "Step 7": "ATE=-0.1472<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.1471692911537361
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.2271。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.1398。精神健康水平为低(A=0)的概率为0.1979。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.7958。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.6339。精神健康水平为高(A=1)的概率为0.8021。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.2271; P(C=1|B=0,A=0)=0.1398; P(A=0)=0.1979; P(C=1|B=1,A=1)=0.7958; P(C=1|B=0,A=1)=0.6339; P(A=1)=0.8021; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为高，那么湿度水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=sum_{A} [P(C=1|B=1,A)*P(A)-P(C=1|B=0,A)*P(A)]=[P(C=1|B=1,A=0)*P(A=0)-P(C=1|B=0,A=0)*P(A=0)]+[P(C=1|B=1,A=1)*P(A=1)-P(C=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=1,A=0)=0.2271\tP(C=1|B=0,A=0)=0.1398\tP(A=0)=0.1979\tP(C=1|B=1,A=1)=0.7958\tP(C=1|B=0,A=1)=0.6339\tP(A=1)=0.8021",
+        "Step 6": "ATE=[0.2271*0.1979-0.1398*0.1979]+[0.7958*0.8021-0.6339*0.8021]=0.1472",
+        "Step 7": "ATE=0.1472>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.1471692911537362
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为低，那么运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为低，那么运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为高，那么运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果呼吸系统疾病严重程度被改变为高，那么运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为低，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为低，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为高，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为高，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为低，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为低，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为高，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为高，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为低，那么运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为低，那么运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为高，那么运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果湿度水平被改变为高，那么运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为低，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为低，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为高，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为高，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为低，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为低，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为高，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于呼吸系统疾病严重程度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为高，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为低，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为低，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为高，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为高，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.2560。在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.5902。",
+        "data_info_math": "P(B=0|A=0)=0.2560; P(B=0|A=1)=0.5902; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而精神健康水平变化为低，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.2560\tP(B=0|A=1)=0.5902",
+        "Step 6": "NDE=0.2560-0.5902=-0.3341",
+        "Step 7": "NDE=-0.3341<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.33414732745166886
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为高(B=1)的概率为0.7440。在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为高(B=1)的概率为0.4098。",
+        "data_info_math": "P(B=1|A=0)=0.7440; P(B=1|A=1)=0.4098; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而精神健康水平变化为低，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.7440\tP(B=1|A=1)=0.4098",
+        "Step 6": "NDE=0.7440-0.4098=0.3341",
+        "Step 7": "NDE=0.3341>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.33414732745166886
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.5902。在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.2560。",
+        "data_info_math": "P(B=0|A=1)=0.5902; P(B=0|A=0)=0.2560; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而精神健康水平变化为高，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.5902\tP(B=0|A=0)=0.2560",
+        "Step 6": "NDE=0.5902-0.2560=0.3341",
+        "Step 7": "NDE=0.3341>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.33414732745166886
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为高(B=1)的概率为0.4098。在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为高(B=1)的概率为0.7440。",
+        "data_info_math": "P(B=1|A=1)=0.4098; P(B=1|A=0)=0.7440; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而精神健康水平变化为高，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.4098\tP(B=1|A=0)=0.7440",
+        "Step 6": "NDE=0.4098-0.7440=-0.3341",
+        "Step 7": "NDE=-0.3341<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.33414732745166886
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.8602。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.3661。在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.5902。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.7729。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.2042。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.8602; P(C=0|B=0,A=1)=0.3661; P(B=0|A=1)=0.5902; P(C=0|B=1,A=0)=0.7729; P(C=0|B=1,A=1)=0.2042; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而精神健康水平变化为低，那么湿度水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=0,B)-P(C=0|A=1,B)]*P(B|A=1)=[P(C=0|A=0,B=0)-P(C=0|A=1,B=0)]*P(B=0|A=1)+[P(C=0|A=0,B=1)-P(C=0|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=0|A=0,B=0)=0.8602\tP(C=0|A=1,B=0)=0.3661\tP(B=0|A=1)=0.5902\tP(C=0|A=0,B=1)=0.7729\tP(C=0|A=1,B=1)=0.2042\tP(B=1|A=1)=0.4098",
+        "Step 6": "=(0.8602-0.3661)*0.5902+(0.7729-0.2042)*0.4098=0.5247",
+        "Step 7": "NDE=0.5247>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.5246991249632258
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.1398。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.6339。在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.5902。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.2271。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.7958。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.1398; P(C=1|B=0,A=1)=0.6339; P(B=0|A=1)=0.5902; P(C=1|B=1,A=0)=0.2271; P(C=1|B=1,A=1)=0.7958; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而精神健康水平变化为低，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=0,B)-P(C=1|A=1,B)]*P(B|A=1)=[P(C=1|A=0,B=0)-P(C=1|A=1,B=0)]*P(B=0|A=1)+[P(C=1|A=0,B=1)-P(C=1|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=1|A=0,B=0)=0.1398\tP(C=1|A=1,B=0)=0.6339\tP(B=0|A=1)=0.5902\tP(C=1|A=0,B=1)=0.2271\tP(C=1|A=1,B=1)=0.7958\tP(B=1|A=1)=0.4098",
+        "Step 6": "=(0.1398-0.6339)*0.5902+(0.2271-0.7958)*0.4098=-0.5247",
+        "Step 7": "NDE=-0.5247<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.5246991249632257
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.3661。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.8602。在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.2560。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.2042。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.7729。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.3661; P(C=0|B=0,A=0)=0.8602; P(B=0|A=0)=0.2560; P(C=0|B=1,A=1)=0.2042; P(C=0|B=1,A=0)=0.7729; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而精神健康水平变化为高，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=1,B)-P(C=0|A=0,B)]*P(B|A=0)=[P(C=0|A=1,B=0)-P(C=0|A=0,B=0)]*P(B=0|A=0)+[P(C=0|A=1,B=1)-P(C=0|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=0|A=1,B=0)=0.3661\tP(C=0|A=0,B=0)=0.8602\tP(B=0|A=0)=0.2560\tP(C=0|A=1,B=1)=0.2042\tP(C=0|A=0,B=1)=0.7729\tP(B=1|A=0)=0.7440",
+        "Step 6": "=(0.3661-0.8602)*0.2560+(0.2042-0.7729)*0.7440=-0.5496",
+        "Step 7": "NDE=-0.5496<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.5496029033614611
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.6339。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.1398。在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.2560。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.7958。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.2271。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.6339; P(C=1|B=0,A=0)=0.1398; P(B=0|A=0)=0.2560; P(C=1|B=1,A=1)=0.7958; P(C=1|B=1,A=0)=0.2271; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而精神健康水平变化为高，那么湿度水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=1,B)-P(C=1|A=0,B)]*P(B|A=0)=[P(C=1|A=1,B=0)-P(C=1|A=0,B=0)]*P(B=0|A=0)+[P(C=1|A=1,B=1)-P(C=1|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=1|A=1,B=0)=0.6339\tP(C=1|A=0,B=0)=0.1398\tP(B=0|A=0)=0.2560\tP(C=1|A=1,B=1)=0.7958\tP(C=1|A=0,B=1)=0.2271\tP(B=1|A=0)=0.7440",
+        "Step 6": "=(0.6339-0.1398)*0.2560+(0.7958-0.2271)*0.7440=0.5496",
+        "Step 7": "NDE=0.5496>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.5496029033614611
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 运动量为低(D=0)的概率为0.5973。在精神健康水平为高(A=1)的条件下, 运动量为低(D=0)的概率为0.8427。",
+        "data_info_math": "P(D=0|A=0)=0.5973; P(D=0|A=1)=0.8427; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而精神健康水平变化为低，那么运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.5973\tP(D=0|A=1)=0.8427",
+        "Step 6": "NDE=0.5973-0.8427=-0.2454",
+        "Step 7": "NDE=-0.2454<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.24541001821219854
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 运动量为高(D=1)的概率为0.4027。在精神健康水平为高(A=1)的条件下, 运动量为高(D=1)的概率为0.1573。",
+        "data_info_math": "P(D=1|A=0)=0.4027; P(D=1|A=1)=0.1573; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而精神健康水平变化为低，那么运动量更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.4027\tP(D=1|A=1)=0.1573",
+        "Step 6": "NDE=0.4027-0.1573=0.2454",
+        "Step 7": "NDE=0.2454>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.24541001821219857
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 运动量为低(D=0)的概率为0.8427。在精神健康水平为低(A=0)的条件下, 运动量为低(D=0)的概率为0.5973。",
+        "data_info_math": "P(D=0|A=1)=0.8427; P(D=0|A=0)=0.5973; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而精神健康水平变化为高，那么运动量更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.8427\tP(D=0|A=0)=0.5973",
+        "Step 6": "NDE=0.8427-0.5973=0.2454",
+        "Step 7": "NDE=0.2454>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.24541001821219854
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 运动量为高(D=1)的概率为0.1573。在精神健康水平为低(A=0)的条件下, 运动量为高(D=1)的概率为0.4027。",
+        "data_info_math": "P(D=1|A=1)=0.1573; P(D=1|A=0)=0.4027; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而精神健康水平变化为高，那么运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.1573\tP(D=1|A=0)=0.4027",
+        "Step 6": "NDE=0.1573-0.4027=-0.2454",
+        "Step 7": "NDE=-0.2454<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.24541001821219857
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.8602。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.7729。精神健康水平为低(A=0)的概率为0.1979。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.3661。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.2042。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.8602; P(C=0|B=1,A=0)=0.7729; P(A=0)=0.1979; P(C=0|B=0,A=1)=0.3661; P(C=0|B=1,A=1)=0.2042; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而呼吸系统疾病严重程度变化为低，那么湿度水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=0,A)-P(C=0|B=1,A)]*P(A)=[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=0,A=0)=0.8602\tP(C=0|B=1,A=0)=0.7729\tP(A=0)=0.1979\tP(C=0|B=0,A=1)=0.3661\tP(C=0|B=1,A=1)=0.2042\tP(A=1)=0.8021",
+        "Step 6": "NDE=[0.8602-0.7729]*0.1979+[0.3661-0.2042]*0.8021=0.1472",
+        "Step 7": "NDE=0.1472>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.1471692911537361
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.1398。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.2271。精神健康水平为低(A=0)的概率为0.1979。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.6339。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.7958。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.1398; P(C=1|B=1,A=0)=0.2271; P(A=0)=0.1979; P(C=1|B=0,A=1)=0.6339; P(C=1|B=1,A=1)=0.7958; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而呼吸系统疾病严重程度变化为低，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=0,A)-P(C=1|B=1,A)]*P(A)=[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=0,A=0)=0.1398\tP(C=1|B=1,A=0)=0.2271\tP(A=0)=0.1979\tP(C=1|B=0,A=1)=0.6339\tP(C=1|B=1,A=1)=0.7958\tP(A=1)=0.8021",
+        "Step 6": "NDE=[0.1398-0.2271]*0.1979+[0.6339-0.7958]*0.8021=-0.1472",
+        "Step 7": "NDE=-0.1472<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.14716929115373623
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.7729。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.8602。精神健康水平为低(A=0)的概率为0.1979。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.2042。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.3661。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.7729; P(C=0|B=0,A=0)=0.8602; P(A=0)=0.1979; P(C=0|B=1,A=1)=0.2042; P(C=0|B=0,A=1)=0.3661; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而呼吸系统疾病严重程度变化为高，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=1,A)-P(C=0|B=0,A)]*P(A)=[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=1,A=0)=0.7729\tP(C=0|B=0,A=0)=0.8602\tP(A=0)=0.1979\tP(C=0|B=1,A=1)=0.2042\tP(C=0|B=0,A=1)=0.3661\tP(A=1)=0.8021",
+        "Step 6": "NDE=[0.7729-0.8602]*0.1979+[0.2042-0.3661]*0.8021=-0.1472",
+        "Step 7": "NDE=-0.1472<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.1471692911537361
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.2271。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.1398。精神健康水平为低(A=0)的概率为0.1979。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.7958。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.6339。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.2271; P(C=1|B=0,A=0)=0.1398; P(A=0)=0.1979; P(C=1|B=1,A=1)=0.7958; P(C=1|B=0,A=1)=0.6339; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而呼吸系统疾病严重程度变化为高，那么湿度水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=1,A)-P(C=1|B=0,A)]*P(A)=[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=1,A=0)=0.2271\tP(C=1|B=0,A=0)=0.1398\tP(A=0)=0.1979\tP(C=1|B=1,A=1)=0.7958\tP(C=1|B=0,A=1)=0.6339\tP(A=1)=0.8021",
+        "Step 6": "NDE=[0.2271-0.1398]*0.1979+[0.7958-0.6339]*0.8021=0.1472",
+        "Step 7": "NDE=0.1472>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.14716929115373623
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为低下的取值，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为低下的取值，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为高下的取值，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为高下的取值，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.3661。在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.2560。在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.5902。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.2042。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.3661; P(B=0|A=0)=0.2560; P(B=0|A=1)=0.5902; P(C=0|B=1,A=1)=0.2042; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为低下的取值，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=0|A=1,B=0)=0.3661\tP(B=0|A=0)=0.2560\tP(B=0|A=1)=0.5902\tP(C=0|A=1,B=1)=0.2042\tP(B=1|A=0)=0.7440\tP(B=1|A=1)=0.4098",
+        "Step 6": "NIE=0.3661*(0.2560-0.5902)+0.2042*(0.7440-0.4098)=-0.0541",
+        "Step 7": "NIE=-0.0541<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.054104184991420265
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.6339。在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.2560。在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.5902。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.7958。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.6339; P(B=0|A=0)=0.2560; P(B=0|A=1)=0.5902; P(C=1|B=1,A=1)=0.7958; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为低下的取值，那么湿度水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=1|A=1,B=0)=0.6339\tP(B=0|A=0)=0.2560\tP(B=0|A=1)=0.5902\tP(C=1|A=1,B=1)=0.7958\tP(B=1|A=0)=0.7440\tP(B=1|A=1)=0.4098",
+        "Step 6": "NIE=0.6339*(0.2560-0.5902)+0.7958*(0.7440-0.4098)=0.0541",
+        "Step 7": "NIE=0.0541>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.05410418499142031
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.8602。在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.5902。在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.2560。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.7729。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.8602; P(B=0|A=1)=0.5902; P(B=0|A=0)=0.2560; P(C=0|B=1,A=0)=0.7729; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为高下的取值，那么湿度水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=0|A=0,B=0)=0.8602\tP(B=0|A=1)=0.5902\tP(B=0|A=0)=0.2560\tP(C=0|A=0,B=1)=0.7729\tP(B=1|A=1)=0.4098\tP(B=1|A=0)=0.7440",
+        "Step 6": "NIE=0.8602*(0.5902-0.2560)+0.7729*(0.4098-0.7440)=0.0292",
+        "Step 7": "NIE=0.0292>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.029200406593184847
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.1398。在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.5902。在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.2560。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.2271。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.1398; P(B=0|A=1)=0.5902; P(B=0|A=0)=0.2560; P(C=1|B=1,A=0)=0.2271; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为高下的取值，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=1|A=0,B=0)=0.1398\tP(B=0|A=1)=0.5902\tP(B=0|A=0)=0.2560\tP(C=1|A=0,B=1)=0.2271\tP(B=1|A=1)=0.4098\tP(B=1|A=0)=0.7440",
+        "Step 6": "NIE=0.1398*(0.5902-0.2560)+0.2271*(0.4098-0.7440)=-0.0292",
+        "Step 7": "NIE=-0.0292<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.02920040659318489
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为低下的取值，那么运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为低下的取值，那么运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为高下的取值，那么运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为高下的取值，那么运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如呼吸系统疾病严重程度保持不变，而所有中间变量被改变为当它们在呼吸系统疾病严重程度变化为低下的取值，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如呼吸系统疾病严重程度保持不变，而所有中间变量被改变为当它们在呼吸系统疾病严重程度变化为低下的取值，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如呼吸系统疾病严重程度保持不变，而所有中间变量被改变为当它们在呼吸系统疾病严重程度变化为高下的取值，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如呼吸系统疾病严重程度保持不变，而所有中间变量被改变为当它们在呼吸系统疾病严重程度变化为高下的取值，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.2560。在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.5902。",
+        "data_info_math": "P(B=0|A=0)=0.2560; P(B=0|A=1)=0.5902; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为低，假如精神健康水平为高，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.2560\tP(B=0|A=1)=0.5902",
+        "Step 6": "ETT=0.2560-0.5902=-0.3341",
+        "Step 7": "ETT=-0.3341<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.33414732745166886
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为高(B=1)的概率为0.7440。在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为高(B=1)的概率为0.4098。",
+        "data_info_math": "P(B=1|A=0)=0.7440; P(B=1|A=1)=0.4098; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为低，假如精神健康水平为高，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.7440\tP(B=1|A=1)=0.4098",
+        "Step 6": "ETT=0.7440-0.4098=0.3341",
+        "Step 7": "ETT=0.3341>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.33414732745166886
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.5902。在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.2560。",
+        "data_info_math": "P(B=0|A=1)=0.5902; P(B=0|A=0)=0.2560; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为高，假如精神健康水平为低，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.5902\tP(B=0|A=0)=0.2560",
+        "Step 6": "ETT=0.5902-0.2560=0.3341",
+        "Step 7": "ETT=0.3341>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.33414732745166886
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为高(B=1)的概率为0.4098。在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为高(B=1)的概率为0.7440。",
+        "data_info_math": "P(B=1|A=1)=0.4098; P(B=1|A=0)=0.7440; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为高，假如精神健康水平为低，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.4098\tP(B=1|A=0)=0.7440",
+        "Step 6": "ETT=0.4098-0.7440=-0.3341",
+        "Step 7": "ETT=-0.3341<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.33414732745166886
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.7952。在精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.2997。",
+        "data_info_math": "P(C=0|A=0)=0.7952; P(C=0|A=1)=0.2997; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为低，假如精神健康水平为高，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.7952\tP(C=0|A=1)=0.2997",
+        "Step 6": "ETT=0.7952-0.2997=0.4955",
+        "Step 7": "ETT=0.4955>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.49549871837004084
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.2048。在精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.7003。",
+        "data_info_math": "P(C=1|A=0)=0.2048; P(C=1|A=1)=0.7003; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为低，假如精神健康水平为高，那么湿度水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.2048\tP(C=1|A=1)=0.7003",
+        "Step 6": "ETT=0.2048-0.7003=-0.4955",
+        "Step 7": "ETT=-0.4955<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.4954987183700407
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.2997。在精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.7952。",
+        "data_info_math": "P(C=0|A=1)=0.2997; P(C=0|A=0)=0.7952; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为高，假如精神健康水平为低，那么湿度水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.2997\tP(C=0|A=0)=0.7952",
+        "Step 6": "ETT=0.2997-0.7952=-0.4955",
+        "Step 7": "ETT=-0.4955<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.49549871837004084
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.7003。在精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.2048。",
+        "data_info_math": "P(C=1|A=1)=0.7003; P(C=1|A=0)=0.2048; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为高，假如精神健康水平为低，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.7003\tP(C=1|A=0)=0.2048",
+        "Step 6": "ETT=0.7003-0.2048=0.4955",
+        "Step 7": "ETT=0.4955>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.4954987183700407
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 运动量为低(D=0)的概率为0.5973。在精神健康水平为高(A=1)的条件下, 运动量为低(D=0)的概率为0.8427。",
+        "data_info_math": "P(D=0|A=0)=0.5973; P(D=0|A=1)=0.8427; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为低，假如精神健康水平为高，那么运动量更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.5973\tP(D=0|A=1)=0.8427",
+        "Step 6": "ETT=0.5973-0.8427=-0.2454",
+        "Step 7": "ETT=-0.2454<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.24541001821219854
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 运动量为高(D=1)的概率为0.4027。在精神健康水平为高(A=1)的条件下, 运动量为高(D=1)的概率为0.1573。",
+        "data_info_math": "P(D=1|A=0)=0.4027; P(D=1|A=1)=0.1573; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为低，假如精神健康水平为高，那么运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.4027\tP(D=1|A=1)=0.1573",
+        "Step 6": "ETT=0.4027-0.1573=0.2454",
+        "Step 7": "ETT=0.2454>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.24541001821219857
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 运动量为低(D=0)的概率为0.8427。在精神健康水平为低(A=0)的条件下, 运动量为低(D=0)的概率为0.5973。",
+        "data_info_math": "P(D=0|A=1)=0.8427; P(D=0|A=0)=0.5973; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为高，假如精神健康水平为低，那么运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.8427\tP(D=0|A=0)=0.5973",
+        "Step 6": "ETT=0.8427-0.5973=0.2454",
+        "Step 7": "ETT=0.2454>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.24541001821219854
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 运动量为高(D=1)的概率为0.1573。在精神健康水平为低(A=0)的条件下, 运动量为高(D=1)的概率为0.4027。",
+        "data_info_math": "P(D=1|A=1)=0.1573; P(D=1|A=0)=0.4027; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为高，假如精神健康水平为低，那么运动量更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.1573\tP(D=1|A=0)=0.4027",
+        "Step 6": "ETT=0.1573-0.4027=-0.2454",
+        "Step 7": "ETT=-0.2454<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.24541001821219857
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为低，假如呼吸系统疾病严重程度为高，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为低，假如呼吸系统疾病严重程度为高，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为高，假如呼吸系统疾病严重程度为低，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为高，假如呼吸系统疾病严重程度为低，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)的条件下, 湿度水平为低(C=0)的概率为0.4139。在精神健康水平为低(A=0)且呼吸系统疾病严重程度为高(B=1)的条件下, 湿度水平为低(C=0)的概率为0.7729。在呼吸系统疾病严重程度为低(B=0)的条件下, 精神健康水平为低(A=0)的概率为0.0967。在精神健康水平为高(A=1)且呼吸系统疾病严重程度为高(B=1)的条件下, 湿度水平为低(C=0)的概率为0.2042。在呼吸系统疾病严重程度为低(B=0)的条件下, 精神健康水平为高(A=1)的概率为0.9033。",
+        "data_info_math": "P(C=0|B=0)=0.4139; P(C=0|A=0,B=1)=0.7729; P(A=0|B=0)=0.0967; P(C=0|A=1,B=1)=0.2042; P(A=1|B=0)=0.9033; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为低，假如呼吸系统疾病严重程度为高，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-sum_{A} P(C=0|B=1,A)*P(A|B=0)=P(C=0|B=0)-[P(C=0|B=1,A=0)*P(A=0|B=0)+P(C=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=0|B=0)=0.4139\tP(C=0|B=1,A=0)=0.7729\tP(A=0|B=0)=0.0967\tP(C=0|B=1,A=1)=0.2042\tP(A=1|B=0)=0.9033",
+        "Step 6": "ETT=0.4139-[0.7729*0.0967+0.2042*0.9033]=0.1547",
+        "Step 7": "ETT=0.1547>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.15471225545045666
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)的条件下, 湿度水平为高(C=1)的概率为0.5861。在精神健康水平为低(A=0)且呼吸系统疾病严重程度为高(B=1)的条件下, 湿度水平为高(C=1)的概率为0.2271。在呼吸系统疾病严重程度为低(B=0)的条件下, 精神健康水平为低(A=0)的概率为0.0967。在精神健康水平为高(A=1)且呼吸系统疾病严重程度为高(B=1)的条件下, 湿度水平为高(C=1)的概率为0.7958。在呼吸系统疾病严重程度为低(B=0)的条件下, 精神健康水平为高(A=1)的概率为0.9033。",
+        "data_info_math": "P(C=1|B=0)=0.5861; P(C=1|A=0,B=1)=0.2271; P(A=0|B=0)=0.0967; P(C=1|A=1,B=1)=0.7958; P(A=1|B=0)=0.9033; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为低，假如呼吸系统疾病严重程度为高，那么湿度水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-sum_{A} P(C=1|B=1,A)*P(A|B=0)=P(C=1|B=0)-[P(C=1|B=1,A=0)*P(A=0|B=0)+P(C=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=1|B=0)=0.5861\tP(C=1|B=1,A=0)=0.2271\tP(A=0|B=0)=0.0967\tP(C=1|B=1,A=1)=0.7958\tP(A=1|B=0)=0.9033",
+        "Step 6": "ETT=0.5861-[0.2271*0.0967+0.7958*0.9033]=-0.1547",
+        "Step 7": "ETT=-0.1547<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.15471225545045697
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为高(B=1)的条件下, 湿度水平为低(C=0)的概率为0.3801。在精神健康水平为低(A=0)且呼吸系统疾病严重程度为低(B=0)的条件下, 湿度水平为低(C=0)的概率为0.8602。在呼吸系统疾病严重程度为高(B=1)的条件下, 精神健康水平为低(A=0)的概率为0.3093。在精神健康水平为高(A=1)且呼吸系统疾病严重程度为低(B=0)的条件下, 湿度水平为低(C=0)的概率为0.3661。在呼吸系统疾病严重程度为高(B=1)的条件下, 精神健康水平为高(A=1)的概率为0.6907。",
+        "data_info_math": "P(C=0|B=1)=0.3801; P(C=0|A=0,B=0)=0.8602; P(A=0|B=1)=0.3093; P(C=0|A=1,B=0)=0.3661; P(A=1|B=1)=0.6907; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为高，假如呼吸系统疾病严重程度为低，那么湿度水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-sum_{A} P(C=0|B=0,A)*P(A|B=1)=P(C=0|B=1)-[P(C=0|B=0,A=0)*P(A=0|B=1)+P(C=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=0|B=1)=0.3801\tP(C=0|B=0,A=0)=0.8602\tP(A=0|B=1)=0.3093\tP(C=0|B=0,A=1)=0.3661\tP(A=1|B=1)=0.6907",
+        "Step 6": "ETT=0.3801-[0.8602*0.3093+0.3661*0.6907]=-0.1389",
+        "Step 7": "ETT=-0.1389<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.13886436004596764
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为高(B=1)的条件下, 湿度水平为高(C=1)的概率为0.6199。在精神健康水平为低(A=0)且呼吸系统疾病严重程度为低(B=0)的条件下, 湿度水平为高(C=1)的概率为0.1398。在呼吸系统疾病严重程度为高(B=1)的条件下, 精神健康水平为低(A=0)的概率为0.3093。在精神健康水平为高(A=1)且呼吸系统疾病严重程度为低(B=0)的条件下, 湿度水平为高(C=1)的概率为0.6339。在呼吸系统疾病严重程度为高(B=1)的条件下, 精神健康水平为高(A=1)的概率为0.6907。",
+        "data_info_math": "P(C=1|B=1)=0.6199; P(C=1|A=0,B=0)=0.1398; P(A=0|B=1)=0.3093; P(C=1|A=1,B=0)=0.6339; P(A=1|B=1)=0.6907; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为高，假如呼吸系统疾病严重程度为低，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-sum_{A} P(C=1|B=0,A)*P(A|B=1)=P(C=1|B=1)-[P(C=1|B=0,A=0)*P(A=0|B=1)+P(C=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=1|B=1)=0.6199\tP(C=1|B=0,A=0)=0.1398\tP(A=0|B=1)=0.3093\tP(C=1|B=0,A=1)=0.6339\tP(A=1|B=1)=0.6907",
+        "Step 6": "ETT=0.6199-[0.1398*0.3093+0.6339*0.6907]=0.1389",
+        "Step 7": "ETT=0.1389>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.1388643600459677
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为低，假如呼吸系统疾病严重程度为高，那么运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为低，假如呼吸系统疾病严重程度为高，那么运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为高，假如呼吸系统疾病严重程度为低，那么运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些呼吸系统疾病严重程度为高，假如呼吸系统疾病严重程度为低，那么运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为低，假如湿度水平为高，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为低，假如湿度水平为高，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为高，假如湿度水平为低，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为高，假如湿度水平为低，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为低，假如湿度水平为高，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为低，假如湿度水平为高，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为高，假如湿度水平为低，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为高，假如湿度水平为低，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为低，假如湿度水平为高，那么运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为低，假如湿度水平为高，那么运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为高，假如湿度水平为低，那么运动量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑湿度水平作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些湿度水平为高，假如湿度水平为低，那么运动量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为低，假如运动量为高，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为低，假如运动量为高，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为高，假如运动量为低，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为高，假如运动量为低，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为低，假如运动量为高，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为低，假如运动量为高，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为高，假如运动量为低，那么呼吸系统疾病严重程度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于呼吸系统疾病严重程度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为高，假如运动量为低，那么呼吸系统疾病严重程度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为低，假如运动量为高，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为低，假如运动量为高，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为高，假如运动量为低，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为高，假如运动量为低，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)且呼吸系统疾病严重程度为高(B=1)的条件下, 湿度水平为低(C=0)的概率为0.7729。在精神健康水平为高(A=1)且呼吸系统疾病严重程度为高(B=1)的条件下, 湿度水平为低(C=0)的概率为0.2042。",
+        "data_info_math": "P(C=0|A=0,B=1)=0.7729; P(C=0|A=1,B=1)=0.2042; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在呼吸系统疾病严重程度为高的条件下，假如精神健康水平为低，那么湿度水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=0,B=1))-P(C=0|do(A=1,B=1))=P(C=0|A=0,B=1)-P(C=0|A=1,B=1)",
+        "Step 5": "P(C=0|A=0,B=1)=0.7729\tP(C=0|A=1,B=1)=0.2042",
+        "Step 6": "CDE=0.7729-0.2042=0.5687",
+        "Step 7": "CDE=0.5687>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.56868343780281
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)且呼吸系统疾病严重程度为低(B=0)的条件下, 湿度水平为高(C=1)的概率为0.1398。在精神健康水平为高(A=1)且呼吸系统疾病严重程度为低(B=0)的条件下, 湿度水平为高(C=1)的概率为0.6339。",
+        "data_info_math": "P(C=1|A=0,B=0)=0.1398; P(C=1|A=1,B=0)=0.6339; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在呼吸系统疾病严重程度为低的条件下，假如精神健康水平为低，那么湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=0,B=0))-P(C=1|do(A=1,B=0))=P(C=1|A=0,B=0)-P(C=1|A=1,B=0)",
+        "Step 5": "P(C=1|A=0,B=0)=0.1398\tP(C=1|A=1,B=0)=0.6339",
+        "Step 6": "CDE=0.1398-0.6339=-0.4942",
+        "Step 7": "CDE=-0.4942<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.4941541019312325
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)且呼吸系统疾病严重程度为高(B=1)的条件下, 湿度水平为低(C=0)的概率为0.2042。在精神健康水平为低(A=0)且呼吸系统疾病严重程度为高(B=1)的条件下, 湿度水平为低(C=0)的概率为0.7729。",
+        "data_info_math": "P(C=0|A=1,B=1)=0.2042; P(C=0|A=0,B=1)=0.7729; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在呼吸系统疾病严重程度为高的条件下，假如精神健康水平为高，那么湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=1,B=1))-P(C=0|do(A=0,B=1))=P(C=0|A=1,B=1)-P(C=0|A=0,B=1)",
+        "Step 5": "P(C=0|A=1,B=1)=0.2042\tP(C=0|A=0,B=1)=0.7729",
+        "Step 6": "CDE=0.2042-0.7729=-0.5687",
+        "Step 7": "CDE=-0.5687<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.56868343780281
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)且呼吸系统疾病严重程度为低(B=0)的条件下, 湿度水平为高(C=1)的概率为0.6339。在精神健康水平为低(A=0)且呼吸系统疾病严重程度为低(B=0)的条件下, 湿度水平为高(C=1)的概率为0.1398。",
+        "data_info_math": "P(C=1|A=1,B=0)=0.6339; P(C=1|A=0,B=0)=0.1398; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在呼吸系统疾病严重程度为低的条件下，假如精神健康水平为高，那么湿度水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=1,B=0))-P(C=1|do(A=0,B=0))=P(C=1|A=1,B=0)-P(C=1|A=0,B=0)",
+        "Step 5": "P(C=1|A=1,B=0)=0.6339\tP(C=1|A=0,B=0)=0.1398",
+        "Step 6": "CDE=0.6339-0.1398=0.4942",
+        "Step 7": "CDE=0.4942>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.4941541019312325
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象精神健康水平(A)和观察节点呼吸系统疾病严重程度(B)的后门调整集合。",
+      "Question": "方法1: 根据湿度水平的情况，我们逐个研究精神健康水平和呼吸系统疾病严重程度的关联。\n方法2：我们直接研究一般情况下精神健康水平和呼吸系统疾病严重程度的关联。\n为了理解精神健康水平如何影响呼吸系统疾病严重程度，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 133,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象精神健康水平(A)和观察节点呼吸系统疾病严重程度(B)的后门调整集合。",
+      "Question": "方法1: 根据湿度水平的情况，我们逐个研究精神健康水平和呼吸系统疾病严重程度的关联。\n方法2：我们直接研究一般情况下精神健康水平和呼吸系统疾病严重程度的关联。\n为了理解精神健康水平如何影响呼吸系统疾病严重程度，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 134,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象精神健康水平(A)和观察节点湿度水平(C)的后门调整集合。",
+      "Question": "方法1: 根据运动量的情况，我们逐个研究精神健康水平和湿度水平的关联。\n方法2：我们直接研究一般情况下精神健康水平和湿度水平的关联。\n为了理解精神健康水平如何影响湿度水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 135,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象精神健康水平(A)和观察节点湿度水平(C)的后门调整集合。",
+      "Question": "方法1: 根据运动量的情况，我们逐个研究精神健康水平和湿度水平的关联。\n方法2：我们直接研究一般情况下精神健康水平和湿度水平的关联。\n为了理解精神健康水平如何影响湿度水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 136,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象精神健康水平(A)和观察节点运动量(D)的后门调整集合。",
+      "Question": "方法1: 根据呼吸系统疾病严重程度的情况，我们逐个研究精神健康水平和运动量的关联。\n方法2：我们直接研究一般情况下精神健康水平和运动量的关联。\n为了理解精神健康水平如何影响运动量，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 137,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象精神健康水平(A)和观察节点运动量(D)的后门调整集合。",
+      "Question": "方法1: 根据呼吸系统疾病严重程度的情况，我们逐个研究精神健康水平和运动量的关联。\n方法2：我们直接研究一般情况下精神健康水平和运动量的关联。\n为了理解精神健康水平如何影响运动量，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 138,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象呼吸系统疾病严重程度(B)和观察节点湿度水平(C)的后门调整集合。",
+      "Question": "方法1: 根据精神健康水平的情况，我们逐个研究呼吸系统疾病严重程度和湿度水平的关联。\n方法2：我们直接研究一般情况下呼吸系统疾病严重程度和湿度水平的关联。\n为了理解呼吸系统疾病严重程度如何影响湿度水平，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 139,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象呼吸系统疾病严重程度(B)和观察节点湿度水平(C)的后门调整集合。",
+      "Question": "方法1: 根据精神健康水平的情况，我们逐个研究呼吸系统疾病严重程度和湿度水平的关联。\n方法2：我们直接研究一般情况下呼吸系统疾病严重程度和湿度水平的关联。\n为了理解呼吸系统疾病严重程度如何影响湿度水平，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 140,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为高(B=1)的概率为0.7440。呼吸系统疾病严重程度为高(B=1)的概率为0.4760。精神健康水平为高(A=1)且呼吸系统疾病严重程度为高(B=1)的概率为0.3287。",
+        "data_info_math": "P(B=1|A=0)=0.7440; P(B=1)=0.4760; P(A=1,B=1)=0.3287; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定精神健康水平为高且呼吸系统疾病严重程度为高, 那么假如精神健康水平为低，此时呼吸系统疾病严重程度为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.7440",
+        "Step 2": "PN的下界: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.4760-0.7440)/0.3287}\n=max{0, -0.8153}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 141,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.2560。精神健康水平为低(A=0)且呼吸系统疾病严重程度为低(B=0)的概率为0.0507。精神健康水平为高(A=1)且呼吸系统疾病严重程度为高(B=1)的概率为0.3287。",
+        "data_info_math": "P(B=0|A=0)=0.2560; P(A=0,B=0)=0.0507; P(A=1,B=1)=0.3287; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定精神健康水平为高且呼吸系统疾病严重程度为高, 那么假如精神健康水平为低，此时呼吸系统疾病严重程度为低的概率的上界是多少？",
+      "Answer": "0.6247",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.2560",
+        "Step 2": "PN的上界: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.2560-0.0507)/0.3287}\n=min{1, 0.6247}\n=0.6247"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.6246691783916388
+    },
+    {
+      "id": 142,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.2048。湿度水平为高(C=1)的概率为0.6022。精神健康水平为高(A=1)且湿度水平为高(C=1)的概率为0.5617。",
+        "data_info_math": "P(C=1|A=0)=0.2048; P(C=1)=0.6022; P(A=1,C=1)=0.5617; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定精神健康水平为高且湿度水平为高, 那么假如精神健康水平为低，此时湿度水平为低的概率的下界是多少？",
+      "Answer": "0.7076",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.2048",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.6022-0.2048)/0.5617}\n=max{0, 0.7076}\n=0.7076"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.7075831083834381
+    },
+    {
+      "id": 143,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.7952。精神健康水平为低(A=0)且湿度水平为低(C=0)的概率为0.1574。精神健康水平为高(A=1)且湿度水平为高(C=1)的概率为0.5617。",
+        "data_info_math": "P(C=0|A=0)=0.7952; P(A=0,C=0)=0.1574; P(A=1,C=1)=0.5617; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定精神健康水平为高且湿度水平为高, 那么假如精神健康水平为低，此时湿度水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.7952",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.7952-0.1574)/0.5617}\n=min{1, 1.1356}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 144,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 运动量为高(D=1)的概率为0.4027。运动量为高(D=1)的概率为0.2058。精神健康水平为高(A=1)且运动量为高(D=1)的概率为0.1261。",
+        "data_info_math": "P(D=1|A=0)=0.4027; P(D=1)=0.2058; P(A=1,D=1)=0.1261; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的必要性概率(probability of necessity, PN)。",
+      "Question": "给定精神健康水平为高且运动量为高, 那么假如精神健康水平为低，此时运动量为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.4027",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.2058-0.4027)/0.1261}\n=max{0, -1.5606}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 145,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为低(A=0)的条件下, 运动量为低(D=0)的概率为0.5973。精神健康水平为低(A=0)且运动量为低(D=0)的概率为0.1182。精神健康水平为高(A=1)且运动量为高(D=1)的概率为0.1261。",
+        "data_info_math": "P(D=0|A=0)=0.5973; P(A=0,D=0)=0.1182; P(A=1,D=1)=0.1261; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的必要性概率(probability of necessity, PN)。",
+      "Question": "给定精神健康水平为高且运动量为高, 那么假如精神健康水平为低，此时运动量为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.5973",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.5973-0.1182)/0.1261}\n=min{1, 3.7984}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 146,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.1398。精神健康水平为低(A=0)的概率为0.1979。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.6339。精神健康水平为高(A=1)的概率为0.8021。湿度水平为高(C=1)的概率为0.6022。呼吸系统疾病严重程度为高(B=1)且湿度水平为高(C=1)的概率为0.2951。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.1398; P(A=0)=0.1979; P(C=1|B=0,A=1)=0.6339; P(A=1)=0.8021; P(C=1)=0.6022; P(B=1,C=1)=0.2951; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定呼吸系统疾病严重程度为高且湿度水平为高, 那么假如呼吸系统疾病严重程度为低，此时湿度水平为低的概率的下界是多少？",
+      "Answer": "0.2240",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=sum_{A} P(C=1|B=0,A)*P(A)=P(C=1|B=0,A=0)*P(A=0)+P(C=1|B=0,A=1)*P(A=1)\nP(C=1|B=0,A=0)=0.1398\tP(A=0)=0.1979\tP(C=1|B=0,A=1)=0.6339\tP(A=1)=0.8021\nP(C=1|do(B=0))=0.1398*0.1979+0.6339*0.8021=0.5361",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.6022-0.5361)/0.2951}\n=max{0, 0.2240}\n=0.2240"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.224001493958784
+    },
+    {
+      "id": 147,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为低(B=0)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.8602。精神健康水平为低(A=0)的概率为0.1979。在呼吸系统疾病严重程度为低(B=0)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.3661。精神健康水平为高(A=1)的概率为0.8021。呼吸系统疾病严重程度为低(B=0)且湿度水平为低(C=0)的概率为0.2169。呼吸系统疾病严重程度为高(B=1)且湿度水平为高(C=1)的概率为0.2951。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.8602; P(A=0)=0.1979; P(C=0|B=0,A=1)=0.3661; P(A=1)=0.8021; P(B=0,C=0)=0.2169; P(B=1,C=1)=0.2951; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定呼吸系统疾病严重程度为高且湿度水平为高, 那么假如呼吸系统疾病严重程度为低，此时湿度水平为低的概率的上界是多少？",
+      "Answer": "0.8371",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=sum_{A} P(C=0|B=0,A)*P(A)=P(C=0|B=0,A=0)*P(A=0)+P(C=0|B=0,A=1)*P(A=1)\nP(C=0|B=0,A=0)=0.8602\tP(A=0)=0.1979\tP(C=0|B=0,A=1)=0.3661\tP(A=1)=0.8021\nP(C=0|do(B=0))=0.8602*0.1979+0.3661*0.8021=0.4639",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.4639-0.2169)/0.2951}\n=min{1, 0.8371}\n=0.8371"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.8370971355232117
+    },
+    {
+      "id": 148,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为低(B=0)的概率为0.5902。呼吸系统疾病严重程度为低(B=0)的概率为0.5240。精神健康水平为低(A=0)且呼吸系统疾病严重程度为低(B=0)的概率为0.0507。",
+        "data_info_math": "P(B=0|A=1)=0.5902; P(B=0)=0.5240; P(A=0,B=0)=0.0507; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定精神健康水平为低且呼吸系统疾病严重程度为低, 假如精神健康水平为高，此时呼吸系统疾病严重程度为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.5902",
+        "Step 2": "PS的下界: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.5240-0.5902)/0.0507}\n=max{0, -1.3052}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 149,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 呼吸系统疾病严重程度为高(B=1)的概率为0.4098。精神健康水平为低(A=0)且呼吸系统疾病严重程度为低(B=0)的概率为0.0507。精神健康水平为高(A=1)且呼吸系统疾病严重程度为高(B=1)的概率为0.3287。",
+        "data_info_math": "P(B=1|A=1)=0.4098; P(A=0,B=0)=0.0507; P(A=1,B=1)=0.3287; "
+      },
+      "Instruction": "考虑精神健康水平作用于呼吸系统疾病严重程度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定精神健康水平为低且呼吸系统疾病严重程度为低, 假如精神健康水平为高，此时呼吸系统疾病严重程度为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.4098",
+        "Step 2": "PS的上界: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.4098-0.3287)/0.0507}\n=min{1, 1.6008}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 150,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.2997。湿度水平为低(C=0)的概率为0.3978。精神健康水平为低(A=0)且湿度水平为低(C=0)的概率为0.1574。",
+        "data_info_math": "P(C=0|A=1)=0.2997; P(C=0)=0.3978; P(A=0,C=0)=0.1574; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定精神健康水平为低且湿度水平为低, 假如精神健康水平为高，此时湿度水平为高的概率的下界是多少？",
+      "Answer": "0.6231",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.2997",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.3978-0.2997)/0.1574}\n=max{0, 0.6231}\n=0.6231"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.6230890085858144
+    },
+    {
+      "id": 151,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.7003。精神健康水平为低(A=0)且湿度水平为低(C=0)的概率为0.1574。精神健康水平为高(A=1)且湿度水平为高(C=1)的概率为0.5617。",
+        "data_info_math": "P(C=1|A=1)=0.7003; P(A=0,C=0)=0.1574; P(A=1,C=1)=0.5617; "
+      },
+      "Instruction": "考虑精神健康水平作用于湿度水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定精神健康水平为低且湿度水平为低, 假如精神健康水平为高，此时湿度水平为高的概率的上界是多少？",
+      "Answer": "0.8806",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.7003",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.7003-0.5617)/0.1574}\n=min{1, 0.8806}\n=0.8806"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.8805877376147915
+    },
+    {
+      "id": 152,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 运动量为低(D=0)的概率为0.8427。运动量为低(D=0)的概率为0.7942。精神健康水平为低(A=0)且运动量为低(D=0)的概率为0.1182。",
+        "data_info_math": "P(D=0|A=1)=0.8427; P(D=0)=0.7942; P(A=0,D=0)=0.1182; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定精神健康水平为低且运动量为低, 假如精神健康水平为高，此时运动量为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.8427",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.7942-0.8427)/0.1182}\n=max{0, -0.4108}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 153,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在精神健康水平为高(A=1)的条件下, 运动量为高(D=1)的概率为0.1573。精神健康水平为低(A=0)且运动量为低(D=0)的概率为0.1182。精神健康水平为高(A=1)且运动量为高(D=1)的概率为0.1261。",
+        "data_info_math": "P(D=1|A=1)=0.1573; P(A=0,D=0)=0.1182; P(A=1,D=1)=0.1261; "
+      },
+      "Instruction": "考虑精神健康水平作用于运动量的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定精神健康水平为低且运动量为低, 假如精神健康水平为高，此时运动量为高的概率的上界是多少？",
+      "Answer": "0.2633",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.1573",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.1573-0.1261)/0.1182}\n=min{1, 0.2633}\n=0.2633"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.2632678984447559
+    },
+    {
+      "id": 154,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为低(C=0)的概率为0.7729。精神健康水平为低(A=0)的概率为0.1979。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为低(C=0)的概率为0.2042。精神健康水平为高(A=1)的概率为0.8021。湿度水平为低(C=0)的概率为0.3978。呼吸系统疾病严重程度为低(B=0)且湿度水平为低(C=0)的概率为0.2169。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.7729; P(A=0)=0.1979; P(C=0|B=1,A=1)=0.2042; P(A=1)=0.8021; P(C=0)=0.3978; P(B=0,C=0)=0.2169; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定呼吸系统疾病严重程度为低且湿度水平为低, 假如呼吸系统疾病严重程度为高，此时湿度水平为高的概率的下界是多少？",
+      "Answer": "0.3738",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=sum_{A} P(C=0|B=1,A)*P(A)=P(C=0|B=1,A=0)*P(A=0)+P(C=0|B=1,A=1)*P(A=1)\nP(C=0|B=1,A=0)=0.7729\tP(A=0)=0.1979\tP(C=0|B=1,A=1)=0.2042\tP(A=1)=0.8021\nP(C=0|do(B=1))=0.7729*0.1979+0.2042*0.8021=0.3167",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.3978-0.3167)/0.2169}\n=max{0, 0.3738}\n=0.3738"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.3738261266426472
+    },
+    {
+      "id": 155,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表精神健康水平, B代表呼吸系统疾病严重程度, C代表湿度水平, D代表运动量。",
+        "data_info": "在呼吸系统疾病严重程度为高(B=1)且精神健康水平为低(A=0)的条件下, 湿度水平为高(C=1)的概率为0.2271。精神健康水平为低(A=0)的概率为0.1979。在呼吸系统疾病严重程度为高(B=1)且精神健康水平为高(A=1)的条件下, 湿度水平为高(C=1)的概率为0.7958。精神健康水平为高(A=1)的概率为0.8021。呼吸系统疾病严重程度为低(B=0)且湿度水平为低(C=0)的概率为0.2169。呼吸系统疾病严重程度为高(B=1)且湿度水平为高(C=1)的概率为0.2951。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.2271; P(A=0)=0.1979; P(C=1|B=1,A=1)=0.7958; P(A=1)=0.8021; P(B=0,C=0)=0.2169; P(B=1,C=1)=0.2951; "
+      },
+      "Instruction": "考虑呼吸系统疾病严重程度作用于湿度水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定呼吸系统疾病严重程度为低且湿度水平为低, 假如呼吸系统疾病严重程度为高，此时湿度水平为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=sum_{A} P(C=1|B=1,A)*P(A)=P(C=1|B=1,A=0)*P(A=0)+P(C=1|B=1,A=1)*P(A=1)\nP(C=1|B=1,A=0)=0.2271\tP(A=0)=0.1979\tP(C=1|B=1,A=1)=0.7958\tP(A=1)=0.8021\nP(C=1|do(B=1))=0.2271*0.1979+0.7958*0.8021=0.6833",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.6833-0.2951)/0.2169}\n=min{1, 1.7901}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 1
+    }
+  ]
+}

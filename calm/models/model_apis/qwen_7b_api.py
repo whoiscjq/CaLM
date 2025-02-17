@@ -13,10 +13,12 @@ from os import path
 def startup(ROOT_PATH):
     rtpt = RTPT(name_initials='MW', experiment_name='', max_iterations=300)
     rtpt.start()
-    model_path =  os.path.join(ROOT_PATH, "Qwen-7B" )
-    model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", trust_remote_code=True).eval()
-    model.generation_config = GenerationConfig.from_pretrained(model_path, trust_remote_code=True)
-    tokenizer = AutoTokenizer.from_pretrained(model_path,trust_remote_code=True)
+    
+    model_path =  os.path.join(ROOT_PATH, "Qwen2.5-Math-7B-Instruct" )
+    #print(model_path)
+    model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", trust_remote_code=False).eval()
+    model.generation_config = GenerationConfig.from_pretrained(model_path, trust_remote_code=False)
+    tokenizer = AutoTokenizer.from_pretrained(model_path,trust_remote_code=False)
 
     return model, tokenizer
 
@@ -30,3 +32,15 @@ def query(context, query_text, dry_run=False, max_new_tokens=400):
 
     results = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)
     return results[0][len(query_text):]
+
+import torch
+from transformers import AutoModelForCausalLM
+model_path="/mnt/workspace/LLM/Qwen/Qwen2.5-Math-7B-Instruct"
+model = AutoModelForCausalLM.from_pretrained(
+model_path,
+load_in_8bit=True,   # Enables 8-bit quantization
+device_map="auto",   # Automatically assigns the model to available GPUs/CPUs
+# torch_dtype=torch.float16,  # Mixed precision for faster inference
+torch_dtype=torch.bfloat16,
+#attn_implementation="flash_attention_2",
+)   

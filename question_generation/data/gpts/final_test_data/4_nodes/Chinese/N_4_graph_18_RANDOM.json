@@ -1,0 +1,3953 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "外貌水平",
+      "B": "气压",
+      "C": "雇员表现水平",
+      "D": "温度"
+    },
+    "node_value": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": 0.9015968784576037,
+      "B": -1.016285754612705,
+      "C": -1.5993860034834897,
+      "D": 0.8306411391623572
+    },
+    "edge_weight": {
+      "A->B": 1.0085804568823977,
+      "A->C": 2.6525586530603187,
+      "A->D": 2.0412376916005615,
+      "B->D": -0.3024748906349549,
+      "C->D": -0.8055020184125127
+    },
+    "function_description": "P(A=1)=0.7113\nP(B=1|A)=sigmoid(-1.016285754612705 + 1.0086 * A)\nP(C=1|A)=sigmoid(-1.5993860034834897 + 2.6526 * A)\nP(D=1|A,B,C)=sigmoid(0.8306411391623572 + 2.0412 * A + -0.3025 * B + -0.8055 * C)\n",
+    "text_description": "The probability of appearance being high (A=1) is 0.7113. \nFor those with appearance being low (A=0), the probability of air pressure being high (B=1) is 0.2658. \nFor those with appearance being high (A=1), the probability of air pressure being high (B=1) is 0.4981. \nFor those with appearance being low (A=0), the probability of employee performance being high (C=1) is 0.1681. \nFor those with appearance being high (A=1), the probability of employee performance being high (C=1) is 0.7414. \nFor those with appearance being low (A=0), air pressure being low (B=0) and employee performance being low (C=0), the probability of temperature being high (D=1) is 0.6965. \nFor those with appearance being low (A=0), air pressure being low (B=0) and employee performance being high (C=1), the probability of temperature being high (D=1) is 0.5063. \nFor those with appearance being low (A=0), air pressure being high (B=1) and employee performance being low (C=0), the probability of temperature being high (D=1) is 0.6291. \nFor those with appearance being low (A=0), air pressure being high (B=1) and employee performance being high (C=1), the probability of temperature being high (D=1) is 0.4311. \nFor those with appearance being high (A=1), air pressure being low (B=0) and employee performance being low (C=0), the probability of temperature being high (D=1) is 0.9464. \nFor those with appearance being high (A=1), air pressure being low (B=0) and employee performance being high (C=1), the probability of temperature being high (D=1) is 0.8876. \nFor those with appearance being high (A=1), air pressure being high (B=1) and employee performance being low (C=0), the probability of temperature being high (D=1) is 0.9289. \nFor those with appearance being high (A=1), air pressure being high (B=1) and employee performance being high (C=1), the probability of temperature being high (D=1) is 0.8537. \n",
+    "Statistic_data": [
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 1932
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 11871
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 4339
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 926
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 11114
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 6173
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 2648
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 1200
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 1819
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 4386
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 917
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 1448
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 324
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 378
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 305
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 220
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 气压为低(B=0)的概率为0.7365。在外貌水平为高(A=1)的条件下, 气压为低(B=0)的概率为0.5046。",
+        "data_info_math": "P(B=0|A=0)=0.7365; P(B=0|A=1)=0.5046; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么气压更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.7365\tP(B=0|A=1)=0.5046",
+        "Step 6": "ATE=0.7365-0.5046=0.2319",
+        "Step 7": "ATE=0.2319>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.23188388937544402
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 气压为高(B=1)的概率为0.2635。在外貌水平为高(A=1)的条件下, 气压为高(B=1)的概率为0.4954。",
+        "data_info_math": "P(B=1|A=0)=0.2635; P(B=1|A=1)=0.4954; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.2635\tP(B=1|A=1)=0.4954",
+        "Step 6": "ATE=0.2635-0.4954=-0.2319",
+        "Step 7": "ATE=-0.2319<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.2318838893754439
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 气压为低(B=0)的概率为0.5046。在外貌水平为低(A=0)的条件下, 气压为低(B=0)的概率为0.7365。",
+        "data_info_math": "P(B=0|A=1)=0.5046; P(B=0|A=0)=0.7365; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.5046\tP(B=0|A=0)=0.7365",
+        "Step 6": "ATE=0.5046-0.7365=-0.2319",
+        "Step 7": "ATE=-0.2319<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.23188388937544402
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 气压为高(B=1)的概率为0.4954。在外貌水平为低(A=0)的条件下, 气压为高(B=1)的概率为0.2635。",
+        "data_info_math": "P(B=1|A=1)=0.4954; P(B=1|A=0)=0.2635; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么气压更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.4954\tP(B=1|A=0)=0.2635",
+        "Step 6": "ATE=0.4954-0.2635=0.2319",
+        "Step 7": "ATE=0.2319>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.2318838893754439
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 雇员表现水平为低(C=0)的概率为0.8255。在外貌水平为高(A=1)的条件下, 雇员表现水平为低(C=0)的概率为0.2609。",
+        "data_info_math": "P(C=0|A=0)=0.8255; P(C=0|A=1)=0.2609; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.8255\tP(C=0|A=1)=0.2609",
+        "Step 6": "ATE=0.8255-0.2609=0.5646",
+        "Step 7": "ATE=0.5646>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.5645962077018438
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 雇员表现水平为高(C=1)的概率为0.1745。在外貌水平为高(A=1)的条件下, 雇员表现水平为高(C=1)的概率为0.7391。",
+        "data_info_math": "P(C=1|A=0)=0.1745; P(C=1|A=1)=0.7391; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.1745\tP(C=1|A=1)=0.7391",
+        "Step 6": "ATE=0.1745-0.7391=-0.5646",
+        "Step 7": "ATE=-0.5646<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.5645962077018437
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 雇员表现水平为低(C=0)的概率为0.2609。在外貌水平为低(A=0)的条件下, 雇员表现水平为低(C=0)的概率为0.8255。",
+        "data_info_math": "P(C=0|A=1)=0.2609; P(C=0|A=0)=0.8255; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.2609\tP(C=0|A=0)=0.8255",
+        "Step 6": "ATE=0.2609-0.8255=-0.5646",
+        "Step 7": "ATE=-0.5646<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.5645962077018438
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 雇员表现水平为高(C=1)的概率为0.7391。在外貌水平为低(A=0)的条件下, 雇员表现水平为高(C=1)的概率为0.1745。",
+        "data_info_math": "P(C=1|A=1)=0.7391; P(C=1|A=0)=0.1745; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.7391\tP(C=1|A=0)=0.1745",
+        "Step 6": "ATE=0.7391-0.1745=0.5646",
+        "Step 7": "ATE=0.5646>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.5645962077018437
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.3552。在外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.1073。",
+        "data_info_math": "P(D=0|A=0)=0.3552; P(D=0|A=1)=0.1073; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.3552\tP(D=0|A=1)=0.1073",
+        "Step 6": "ATE=0.3552-0.1073=0.2479",
+        "Step 7": "ATE=0.2479>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.24791544252717757
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.6448。在外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.8927。",
+        "data_info_math": "P(D=1|A=0)=0.6448; P(D=1|A=1)=0.8927; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为低，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.6448\tP(D=1|A=1)=0.8927",
+        "Step 6": "ATE=0.6448-0.8927=-0.2479",
+        "Step 7": "ATE=-0.2479<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.24791544252717745
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.1073。在外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.3552。",
+        "data_info_math": "P(D=0|A=1)=0.1073; P(D=0|A=0)=0.3552; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.1073\tP(D=0|A=0)=0.3552",
+        "Step 6": "ATE=0.1073-0.3552=-0.2479",
+        "Step 7": "ATE=-0.2479<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.24791544252717757
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.8927。在外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.6448。",
+        "data_info_math": "P(D=1|A=1)=0.8927; P(D=1|A=0)=0.6448; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果外貌水平被改变为高，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.8927\tP(D=1|A=0)=0.6448",
+        "Step 6": "ATE=0.8927-0.6448=0.2479",
+        "Step 7": "ATE=0.2479>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.24791544252717745
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为低(B=0)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.3343。在气压为高(B=1)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.4136。外貌水平为低(A=0)的概率为0.2896。在气压为低(B=0)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.0931。在气压为高(B=1)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.1218。外貌水平为高(A=1)的概率为0.7104。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.3343; P(D=0|B=1,A=0)=0.4136; P(A=0)=0.2896; P(D=0|B=0,A=1)=0.0931; P(D=0|B=1,A=1)=0.1218; P(A=1)=0.7104; "
+      },
+      "Instruction": "考虑气压作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=sum_{A} [P(D=0|B=0,A)*P(A)-P(D=0|B=1,A)*P(A)]=[P(D=0|B=0,A=0)*P(A=0)-P(D=0|B=1,A=0)*P(A=0)]+[P(D=0|B=0,A=1)*P(A=1)-P(D=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=0,A=0)=0.3343\tP(D=0|B=1,A=0)=0.4136\tP(A=0)=0.2896\tP(D=0|B=0,A=1)=0.0931\tP(D=0|B=1,A=1)=0.1218\tP(A=1)=0.7104",
+        "Step 6": "ATE=[0.3343*0.2896-0.4136*0.2896]+[0.0931*0.7104-0.1218*0.7104]=-0.0434",
+        "Step 7": "ATE=-0.0434<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.043385495422529716
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为低(B=0)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.6657。在气压为高(B=1)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.5864。外貌水平为低(A=0)的概率为0.2896。在气压为低(B=0)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.9069。在气压为高(B=1)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.8782。外貌水平为高(A=1)的概率为0.7104。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.6657; P(D=1|B=1,A=0)=0.5864; P(A=0)=0.2896; P(D=1|B=0,A=1)=0.9069; P(D=1|B=1,A=1)=0.8782; P(A=1)=0.7104; "
+      },
+      "Instruction": "考虑气压作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=sum_{A} [P(D=1|B=0,A)*P(A)-P(D=1|B=1,A)*P(A)]=[P(D=1|B=0,A=0)*P(A=0)-P(D=1|B=1,A=0)*P(A=0)]+[P(D=1|B=0,A=1)*P(A=1)-P(D=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=0,A=0)=0.6657\tP(D=1|B=1,A=0)=0.5864\tP(A=0)=0.2896\tP(D=1|B=0,A=1)=0.9069\tP(D=1|B=1,A=1)=0.8782\tP(A=1)=0.7104",
+        "Step 6": "ATE=[0.6657*0.2896-0.5864*0.2896]+[0.9069*0.7104-0.8782*0.7104]=0.0434",
+        "Step 7": "ATE=0.0434>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.04338549542252987
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为高(B=1)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.4136。在气压为低(B=0)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.3343。外貌水平为低(A=0)的概率为0.2896。在气压为高(B=1)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.1218。在气压为低(B=0)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.0931。外貌水平为高(A=1)的概率为0.7104。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.4136; P(D=0|B=0,A=0)=0.3343; P(A=0)=0.2896; P(D=0|B=1,A=1)=0.1218; P(D=0|B=0,A=1)=0.0931; P(A=1)=0.7104; "
+      },
+      "Instruction": "考虑气压作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=sum_{A} [P(D=0|B=1,A)*P(A)-P(D=0|B=0,A)*P(A)]=[P(D=0|B=1,A=0)*P(A=0)-P(D=0|B=0,A=0)*P(A=0)]+[P(D=0|B=1,A=1)*P(A=1)-P(D=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=1,A=0)=0.4136\tP(D=0|B=0,A=0)=0.3343\tP(A=0)=0.2896\tP(D=0|B=1,A=1)=0.1218\tP(D=0|B=0,A=1)=0.0931\tP(A=1)=0.7104",
+        "Step 6": "ATE=[0.4136*0.2896-0.3343*0.2896]+[0.1218*0.7104-0.0931*0.7104]=0.0434",
+        "Step 7": "ATE=0.0434>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.043385495422529716
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为高(B=1)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.5864。在气压为低(B=0)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.6657。外貌水平为低(A=0)的概率为0.2896。在气压为高(B=1)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.8782。在气压为低(B=0)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.9069。外貌水平为高(A=1)的概率为0.7104。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.5864; P(D=1|B=0,A=0)=0.6657; P(A=0)=0.2896; P(D=1|B=1,A=1)=0.8782; P(D=1|B=0,A=1)=0.9069; P(A=1)=0.7104; "
+      },
+      "Instruction": "考虑气压作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=sum_{A} [P(D=1|B=1,A)*P(A)-P(D=1|B=0,A)*P(A)]=[P(D=1|B=1,A=0)*P(A=0)-P(D=1|B=0,A=0)*P(A=0)]+[P(D=1|B=1,A=1)*P(A=1)-P(D=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=1,A=0)=0.5864\tP(D=1|B=0,A=0)=0.6657\tP(A=0)=0.2896\tP(D=1|B=1,A=1)=0.8782\tP(D=1|B=0,A=1)=0.9069\tP(A=1)=0.7104",
+        "Step 6": "ATE=[0.5864*0.2896-0.6657*0.2896]+[0.8782*0.7104-0.9069*0.7104]=-0.0434",
+        "Step 7": "ATE=-0.0434<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.04338549542252987
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为低，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为高，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为低(C=0)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.3219。在雇员表现水平为高(C=1)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.5127。外貌水平为低(A=0)的概率为0.2896。在雇员表现水平为低(C=0)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.0587。在雇员表现水平为高(C=1)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.1244。外貌水平为高(A=1)的概率为0.7104。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.3219; P(D=0|C=1,A=0)=0.5127; P(A=0)=0.2896; P(D=0|C=0,A=1)=0.0587; P(D=0|C=1,A=1)=0.1244; P(A=1)=0.7104; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=0))-P(D=0|do(C=1))=sum_{A} [P(D=0|C=0,A)*P(A)-P(D=0|C=1,A)*P(A)]=[P(D=0|C=0,A=0)*P(A=0)-P(D=0|C=1,A=0)*P(A=0)]+[P(D=0|C=0,A=1)*P(A=1)-P(D=0|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=0,A=0)=0.3219\tP(D=0|C=1,A=0)=0.5127\tP(A=0)=0.2896\tP(D=0|C=0,A=1)=0.0587\tP(D=0|C=1,A=1)=0.1244\tP(A=1)=0.7104",
+        "Step 6": "ATE=[0.3219*0.2896-0.5127*0.2896]+[0.0587*0.7104-0.1244*0.7104]=-0.1020",
+        "Step 7": "ATE=-0.1020<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.10195006652756956
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为低(C=0)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.6781。在雇员表现水平为高(C=1)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.4873。外貌水平为低(A=0)的概率为0.2896。在雇员表现水平为低(C=0)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.9413。在雇员表现水平为高(C=1)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.8756。外貌水平为高(A=1)的概率为0.7104。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.6781; P(D=1|C=1,A=0)=0.4873; P(A=0)=0.2896; P(D=1|C=0,A=1)=0.9413; P(D=1|C=1,A=1)=0.8756; P(A=1)=0.7104; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=0))-P(D=1|do(C=1))=sum_{A} [P(D=1|C=0,A)*P(A)-P(D=1|C=1,A)*P(A)]=[P(D=1|C=0,A=0)*P(A=0)-P(D=1|C=1,A=0)*P(A=0)]+[P(D=1|C=0,A=1)*P(A=1)-P(D=1|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=0,A=0)=0.6781\tP(D=1|C=1,A=0)=0.4873\tP(A=0)=0.2896\tP(D=1|C=0,A=1)=0.9413\tP(D=1|C=1,A=1)=0.8756\tP(A=1)=0.7104",
+        "Step 6": "ATE=[0.6781*0.2896-0.4873*0.2896]+[0.9413*0.7104-0.8756*0.7104]=0.1020",
+        "Step 7": "ATE=0.1020>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.10195006652756958
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为高(C=1)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.5127。在雇员表现水平为低(C=0)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.3219。外貌水平为低(A=0)的概率为0.2896。在雇员表现水平为高(C=1)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.1244。在雇员表现水平为低(C=0)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.0587。外貌水平为高(A=1)的概率为0.7104。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.5127; P(D=0|C=0,A=0)=0.3219; P(A=0)=0.2896; P(D=0|C=1,A=1)=0.1244; P(D=0|C=0,A=1)=0.0587; P(A=1)=0.7104; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=1))-P(D=0|do(C=0))=sum_{A} [P(D=0|C=1,A)*P(A)-P(D=0|C=0,A)*P(A)]=[P(D=0|C=1,A=0)*P(A=0)-P(D=0|C=0,A=0)*P(A=0)]+[P(D=0|C=1,A=1)*P(A=1)-P(D=0|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=1,A=0)=0.5127\tP(D=0|C=0,A=0)=0.3219\tP(A=0)=0.2896\tP(D=0|C=1,A=1)=0.1244\tP(D=0|C=0,A=1)=0.0587\tP(A=1)=0.7104",
+        "Step 6": "ATE=[0.5127*0.2896-0.3219*0.2896]+[0.1244*0.7104-0.0587*0.7104]=0.1020",
+        "Step 7": "ATE=0.1020>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.10195006652756956
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为高(C=1)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.4873。在雇员表现水平为低(C=0)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.6781。外貌水平为低(A=0)的概率为0.2896。在雇员表现水平为高(C=1)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.8756。在雇员表现水平为低(C=0)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.9413。外貌水平为高(A=1)的概率为0.7104。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.4873; P(D=1|C=0,A=0)=0.6781; P(A=0)=0.2896; P(D=1|C=1,A=1)=0.8756; P(D=1|C=0,A=1)=0.9413; P(A=1)=0.7104; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果雇员表现水平被改变为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=1))-P(D=1|do(C=0))=sum_{A} [P(D=1|C=1,A)*P(A)-P(D=1|C=0,A)*P(A)]=[P(D=1|C=1,A=0)*P(A=0)-P(D=1|C=0,A=0)*P(A=0)]+[P(D=1|C=1,A=1)*P(A=1)-P(D=1|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=1,A=0)=0.4873\tP(D=1|C=0,A=0)=0.6781\tP(A=0)=0.2896\tP(D=1|C=1,A=1)=0.8756\tP(D=1|C=0,A=1)=0.9413\tP(A=1)=0.7104",
+        "Step 6": "ATE=[0.4873*0.2896-0.6781*0.2896]+[0.8756*0.7104-0.9413*0.7104]=-0.1020",
+        "Step 7": "ATE=-0.1020<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.10195006652756958
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于外貌水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于雇员表现水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 气压为低(B=0)的概率为0.7365。在外貌水平为高(A=1)的条件下, 气压为低(B=0)的概率为0.5046。",
+        "data_info_math": "P(B=0|A=0)=0.7365; P(B=0|A=1)=0.5046; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而外貌水平变化为低，那么气压更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.7365\tP(B=0|A=1)=0.5046",
+        "Step 6": "NDE=0.7365-0.5046=0.2319",
+        "Step 7": "NDE=0.2319>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.23188388937544402
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 气压为高(B=1)的概率为0.2635。在外貌水平为高(A=1)的条件下, 气压为高(B=1)的概率为0.4954。",
+        "data_info_math": "P(B=1|A=0)=0.2635; P(B=1|A=1)=0.4954; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而外貌水平变化为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.2635\tP(B=1|A=1)=0.4954",
+        "Step 6": "NDE=0.2635-0.4954=-0.2319",
+        "Step 7": "NDE=-0.2319<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.2318838893754439
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 气压为低(B=0)的概率为0.5046。在外貌水平为低(A=0)的条件下, 气压为低(B=0)的概率为0.7365。",
+        "data_info_math": "P(B=0|A=1)=0.5046; P(B=0|A=0)=0.7365; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而外貌水平变化为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.5046\tP(B=0|A=0)=0.7365",
+        "Step 6": "NDE=0.5046-0.7365=-0.2319",
+        "Step 7": "NDE=-0.2319<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.23188388937544402
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 气压为高(B=1)的概率为0.4954。在外貌水平为低(A=0)的条件下, 气压为高(B=1)的概率为0.2635。",
+        "data_info_math": "P(B=1|A=1)=0.4954; P(B=1|A=0)=0.2635; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而外貌水平变化为高，那么气压更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.4954\tP(B=1|A=0)=0.2635",
+        "Step 6": "NDE=0.4954-0.2635=0.2319",
+        "Step 7": "NDE=0.2319>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.2318838893754439
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 雇员表现水平为低(C=0)的概率为0.8255。在外貌水平为高(A=1)的条件下, 雇员表现水平为低(C=0)的概率为0.2609。",
+        "data_info_math": "P(C=0|A=0)=0.8255; P(C=0|A=1)=0.2609; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而外貌水平变化为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.8255\tP(C=0|A=1)=0.2609",
+        "Step 6": "NDE=0.8255-0.2609=0.5646",
+        "Step 7": "NDE=0.5646>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.5645962077018438
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 雇员表现水平为高(C=1)的概率为0.1745。在外貌水平为高(A=1)的条件下, 雇员表现水平为高(C=1)的概率为0.7391。",
+        "data_info_math": "P(C=1|A=0)=0.1745; P(C=1|A=1)=0.7391; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而外貌水平变化为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.1745\tP(C=1|A=1)=0.7391",
+        "Step 6": "NDE=0.1745-0.7391=-0.5646",
+        "Step 7": "NDE=-0.5646<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.5645962077018437
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 雇员表现水平为低(C=0)的概率为0.2609。在外貌水平为低(A=0)的条件下, 雇员表现水平为低(C=0)的概率为0.8255。",
+        "data_info_math": "P(C=0|A=1)=0.2609; P(C=0|A=0)=0.8255; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而外貌水平变化为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.2609\tP(C=0|A=0)=0.8255",
+        "Step 6": "NDE=0.2609-0.8255=-0.5646",
+        "Step 7": "NDE=-0.5646<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.5645962077018438
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 雇员表现水平为高(C=1)的概率为0.7391。在外貌水平为低(A=0)的条件下, 雇员表现水平为高(C=1)的概率为0.1745。",
+        "data_info_math": "P(C=1|A=1)=0.7391; P(C=1|A=0)=0.1745; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而外貌水平变化为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.7391\tP(C=1|A=0)=0.1745",
+        "Step 6": "NDE=0.7391-0.1745=0.5646",
+        "Step 7": "NDE=0.5646>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.5645962077018437
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为低(B=0)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.3343。在气压为高(B=1)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.4136。外貌水平为低(A=0)的概率为0.2896。在气压为低(B=0)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.0931。在气压为高(B=1)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.1218。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.3343; P(D=0|B=1,A=0)=0.4136; P(A=0)=0.2896; P(D=0|B=0,A=1)=0.0931; P(D=0|B=1,A=1)=0.1218; "
+      },
+      "Instruction": "考虑气压作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|B=0,A)-P(D=0|B=1,A)]*P(A)=[P(D=0|B=0,A=0)-P(D=0|B=1,A=0)]*P(A=0)+[P(D=0|B=0,A=1)-P(D=0|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,A=0)=0.3343\tP(D=0|B=1,A=0)=0.4136\tP(A=0)=0.2896\tP(D=0|B=0,A=1)=0.0931\tP(D=0|B=1,A=1)=0.1218\tP(A=1)=0.7104",
+        "Step 6": "NDE=[0.3343-0.4136]*0.2896+[0.0931-0.1218]*0.7104=-0.0434",
+        "Step 7": "NDE=-0.0434<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.043385495422529716
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为低(B=0)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.6657。在气压为高(B=1)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.5864。外貌水平为低(A=0)的概率为0.2896。在气压为低(B=0)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.9069。在气压为高(B=1)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.8782。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.6657; P(D=1|B=1,A=0)=0.5864; P(A=0)=0.2896; P(D=1|B=0,A=1)=0.9069; P(D=1|B=1,A=1)=0.8782; "
+      },
+      "Instruction": "考虑气压作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|B=0,A)-P(D=1|B=1,A)]*P(A)=[P(D=1|B=0,A=0)-P(D=1|B=1,A=0)]*P(A=0)+[P(D=1|B=0,A=1)-P(D=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,A=0)=0.6657\tP(D=1|B=1,A=0)=0.5864\tP(A=0)=0.2896\tP(D=1|B=0,A=1)=0.9069\tP(D=1|B=1,A=1)=0.8782\tP(A=1)=0.7104",
+        "Step 6": "NDE=[0.6657-0.5864]*0.2896+[0.9069-0.8782]*0.7104=0.0434",
+        "Step 7": "NDE=0.0434>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.04338549542252983
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为高(B=1)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.4136。在气压为低(B=0)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.3343。外貌水平为低(A=0)的概率为0.2896。在气压为高(B=1)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.1218。在气压为低(B=0)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.0931。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.4136; P(D=0|B=0,A=0)=0.3343; P(A=0)=0.2896; P(D=0|B=1,A=1)=0.1218; P(D=0|B=0,A=1)=0.0931; "
+      },
+      "Instruction": "考虑气压作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|B=1,A)-P(D=0|B=0,A)]*P(A)=[P(D=0|B=1,A=0)-P(D=0|B=0,A=0)]*P(A=0)+[P(D=0|B=1,A=1)-P(D=0|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,A=0)=0.4136\tP(D=0|B=0,A=0)=0.3343\tP(A=0)=0.2896\tP(D=0|B=1,A=1)=0.1218\tP(D=0|B=0,A=1)=0.0931\tP(A=1)=0.7104",
+        "Step 6": "NDE=[0.4136-0.3343]*0.2896+[0.1218-0.0931]*0.7104=0.0434",
+        "Step 7": "NDE=0.0434>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.043385495422529716
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为高(B=1)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.5864。在气压为低(B=0)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.6657。外貌水平为低(A=0)的概率为0.2896。在气压为高(B=1)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.8782。在气压为低(B=0)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.9069。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.5864; P(D=1|B=0,A=0)=0.6657; P(A=0)=0.2896; P(D=1|B=1,A=1)=0.8782; P(D=1|B=0,A=1)=0.9069; "
+      },
+      "Instruction": "考虑气压作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|B=1,A)-P(D=1|B=0,A)]*P(A)=[P(D=1|B=1,A=0)-P(D=1|B=0,A=0)]*P(A=0)+[P(D=1|B=1,A=1)-P(D=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,A=0)=0.5864\tP(D=1|B=0,A=0)=0.6657\tP(A=0)=0.2896\tP(D=1|B=1,A=1)=0.8782\tP(D=1|B=0,A=1)=0.9069\tP(A=1)=0.7104",
+        "Step 6": "NDE=[0.5864-0.6657]*0.2896+[0.8782-0.9069]*0.7104=-0.0434",
+        "Step 7": "NDE=-0.0434<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.04338549542252983
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为低(C=0)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.3219。在雇员表现水平为高(C=1)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.5127。外貌水平为低(A=0)的概率为0.2896。在雇员表现水平为低(C=0)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.0587。在雇员表现水平为高(C=1)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.1244。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.3219; P(D=0|C=1,A=0)=0.5127; P(A=0)=0.2896; P(D=0|C=0,A=1)=0.0587; P(D=0|C=1,A=1)=0.1244; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而雇员表现水平变化为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=0,A)-P(D=0|C=1,A)]*P(A)=[P(D=0|C=0,A=0)-P(D=0|C=1,A=0)]*P(A=0)+[P(D=0|C=0,A=1)-P(D=0|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=0,A=0)=0.3219\tP(D=0|C=1,A=0)=0.5127\tP(A=0)=0.2896\tP(D=0|C=0,A=1)=0.0587\tP(D=0|C=1,A=1)=0.1244\tP(A=1)=0.7104",
+        "Step 6": "NDE=[0.3219-0.5127]*0.2896+[0.0587-0.1244]*0.7104=-0.1020",
+        "Step 7": "NDE=-0.1020<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.10195006652756955
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为低(C=0)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.6781。在雇员表现水平为高(C=1)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.4873。外貌水平为低(A=0)的概率为0.2896。在雇员表现水平为低(C=0)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.9413。在雇员表现水平为高(C=1)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.8756。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.6781; P(D=1|C=1,A=0)=0.4873; P(A=0)=0.2896; P(D=1|C=0,A=1)=0.9413; P(D=1|C=1,A=1)=0.8756; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而雇员表现水平变化为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=0,A)-P(D=1|C=1,A)]*P(A)=[P(D=1|C=0,A=0)-P(D=1|C=1,A=0)]*P(A=0)+[P(D=1|C=0,A=1)-P(D=1|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=0,A=0)=0.6781\tP(D=1|C=1,A=0)=0.4873\tP(A=0)=0.2896\tP(D=1|C=0,A=1)=0.9413\tP(D=1|C=1,A=1)=0.8756\tP(A=1)=0.7104",
+        "Step 6": "NDE=[0.6781-0.4873]*0.2896+[0.9413-0.8756]*0.7104=0.1020",
+        "Step 7": "NDE=0.1020>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.10195006652756952
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为高(C=1)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.5127。在雇员表现水平为低(C=0)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.3219。外貌水平为低(A=0)的概率为0.2896。在雇员表现水平为高(C=1)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.1244。在雇员表现水平为低(C=0)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.0587。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.5127; P(D=0|C=0,A=0)=0.3219; P(A=0)=0.2896; P(D=0|C=1,A=1)=0.1244; P(D=0|C=0,A=1)=0.0587; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而雇员表现水平变化为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=1,A)-P(D=0|C=0,A)]*P(A)=[P(D=0|C=1,A=0)-P(D=0|C=0,A=0)]*P(A=0)+[P(D=0|C=1,A=1)-P(D=0|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=1,A=0)=0.5127\tP(D=0|C=0,A=0)=0.3219\tP(A=0)=0.2896\tP(D=0|C=1,A=1)=0.1244\tP(D=0|C=0,A=1)=0.0587\tP(A=1)=0.7104",
+        "Step 6": "NDE=[0.5127-0.3219]*0.2896+[0.1244-0.0587]*0.7104=0.1020",
+        "Step 7": "NDE=0.1020>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.10195006652756955
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为高(C=1)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.4873。在雇员表现水平为低(C=0)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.6781。外貌水平为低(A=0)的概率为0.2896。在雇员表现水平为高(C=1)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.8756。在雇员表现水平为低(C=0)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.9413。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.4873; P(D=1|C=0,A=0)=0.6781; P(A=0)=0.2896; P(D=1|C=1,A=1)=0.8756; P(D=1|C=0,A=1)=0.9413; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而雇员表现水平变化为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=1,A)-P(D=1|C=0,A)]*P(A)=[P(D=1|C=1,A=0)-P(D=1|C=0,A=0)]*P(A=0)+[P(D=1|C=1,A=1)-P(D=1|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=1,A=0)=0.4873\tP(D=1|C=0,A=0)=0.6781\tP(A=0)=0.2896\tP(D=1|C=1,A=1)=0.8756\tP(D=1|C=0,A=1)=0.9413\tP(A=1)=0.7104",
+        "Step 6": "NDE=[0.4873-0.6781]*0.2896+[0.8756-0.9413]*0.7104=-0.1020",
+        "Step 7": "NDE=-0.1020<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.10195006652756952
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于气压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如外貌水平保持不变，而所有中间变量被改变为当它们在外貌水平变化为低下的取值，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于气压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如外貌水平保持不变，而所有中间变量被改变为当它们在外貌水平变化为低下的取值，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于气压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如外貌水平保持不变，而所有中间变量被改变为当它们在外貌水平变化为高下的取值，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于气压的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如外貌水平保持不变，而所有中间变量被改变为当它们在外貌水平变化为高下的取值，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如外貌水平保持不变，而所有中间变量被改变为当它们在外貌水平变化为低下的取值，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如外貌水平保持不变，而所有中间变量被改变为当它们在外貌水平变化为低下的取值，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如外貌水平保持不变，而所有中间变量被改变为当它们在外貌水平变化为高下的取值，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如外貌水平保持不变，而所有中间变量被改变为当它们在外貌水平变化为高下的取值，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为低下的取值，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为低下的取值，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为高下的取值，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为高下的取值，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如雇员表现水平保持不变，而所有中间变量被改变为当它们在雇员表现水平变化为低下的取值，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如雇员表现水平保持不变，而所有中间变量被改变为当它们在雇员表现水平变化为低下的取值，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如雇员表现水平保持不变，而所有中间变量被改变为当它们在雇员表现水平变化为高下的取值，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如雇员表现水平保持不变，而所有中间变量被改变为当它们在雇员表现水平变化为高下的取值，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 气压为低(B=0)的概率为0.7365。在外貌水平为高(A=1)的条件下, 气压为低(B=0)的概率为0.5046。",
+        "data_info_math": "P(B=0|A=0)=0.7365; P(B=0|A=1)=0.5046; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.7365\tP(B=0|A=1)=0.5046",
+        "Step 6": "ETT=0.7365-0.5046=0.2319",
+        "Step 7": "ETT=0.2319>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.23188388937544402
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 气压为高(B=1)的概率为0.2635。在外貌水平为高(A=1)的条件下, 气压为高(B=1)的概率为0.4954。",
+        "data_info_math": "P(B=1|A=0)=0.2635; P(B=1|A=1)=0.4954; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么气压更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.2635\tP(B=1|A=1)=0.4954",
+        "Step 6": "ETT=0.2635-0.4954=-0.2319",
+        "Step 7": "ETT=-0.2319<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.2318838893754439
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 气压为低(B=0)的概率为0.5046。在外貌水平为低(A=0)的条件下, 气压为低(B=0)的概率为0.7365。",
+        "data_info_math": "P(B=0|A=1)=0.5046; P(B=0|A=0)=0.7365; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么气压更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.5046\tP(B=0|A=0)=0.7365",
+        "Step 6": "ETT=0.5046-0.7365=-0.2319",
+        "Step 7": "ETT=-0.2319<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.23188388937544402
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 气压为高(B=1)的概率为0.4954。在外貌水平为低(A=0)的条件下, 气压为高(B=1)的概率为0.2635。",
+        "data_info_math": "P(B=1|A=1)=0.4954; P(B=1|A=0)=0.2635; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.4954\tP(B=1|A=0)=0.2635",
+        "Step 6": "ETT=0.4954-0.2635=0.2319",
+        "Step 7": "ETT=0.2319>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.2318838893754439
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 雇员表现水平为低(C=0)的概率为0.8255。在外貌水平为高(A=1)的条件下, 雇员表现水平为低(C=0)的概率为0.2609。",
+        "data_info_math": "P(C=0|A=0)=0.8255; P(C=0|A=1)=0.2609; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.8255\tP(C=0|A=1)=0.2609",
+        "Step 6": "ETT=0.8255-0.2609=0.5646",
+        "Step 7": "ETT=0.5646>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.5645962077018438
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 雇员表现水平为高(C=1)的概率为0.1745。在外貌水平为高(A=1)的条件下, 雇员表现水平为高(C=1)的概率为0.7391。",
+        "data_info_math": "P(C=1|A=0)=0.1745; P(C=1|A=1)=0.7391; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.1745\tP(C=1|A=1)=0.7391",
+        "Step 6": "ETT=0.1745-0.7391=-0.5646",
+        "Step 7": "ETT=-0.5646<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.5645962077018437
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 雇员表现水平为低(C=0)的概率为0.2609。在外貌水平为低(A=0)的条件下, 雇员表现水平为低(C=0)的概率为0.8255。",
+        "data_info_math": "P(C=0|A=1)=0.2609; P(C=0|A=0)=0.8255; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.2609\tP(C=0|A=0)=0.8255",
+        "Step 6": "ETT=0.2609-0.8255=-0.5646",
+        "Step 7": "ETT=-0.5646<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.5645962077018438
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 雇员表现水平为高(C=1)的概率为0.7391。在外貌水平为低(A=0)的条件下, 雇员表现水平为高(C=1)的概率为0.1745。",
+        "data_info_math": "P(C=1|A=1)=0.7391; P(C=1|A=0)=0.1745; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.7391\tP(C=1|A=0)=0.1745",
+        "Step 6": "ETT=0.7391-0.1745=0.5646",
+        "Step 7": "ETT=0.5646>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.5645962077018437
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.3552。在外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.1073。",
+        "data_info_math": "P(D=0|A=0)=0.3552; P(D=0|A=1)=0.1073; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.3552\tP(D=0|A=1)=0.1073",
+        "Step 6": "ETT=0.3552-0.1073=0.2479",
+        "Step 7": "ETT=0.2479>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.24791544252717757
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.6448。在外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.8927。",
+        "data_info_math": "P(D=1|A=0)=0.6448; P(D=1|A=1)=0.8927; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为低，假如外貌水平为高，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.6448\tP(D=1|A=1)=0.8927",
+        "Step 6": "ETT=0.6448-0.8927=-0.2479",
+        "Step 7": "ETT=-0.2479<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.24791544252717745
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.1073。在外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.3552。",
+        "data_info_math": "P(D=0|A=1)=0.1073; P(D=0|A=0)=0.3552; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.1073\tP(D=0|A=0)=0.3552",
+        "Step 6": "ETT=0.1073-0.3552=-0.2479",
+        "Step 7": "ETT=-0.2479<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.24791544252717757
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.8927。在外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.6448。",
+        "data_info_math": "P(D=1|A=1)=0.8927; P(D=1|A=0)=0.6448; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些外貌水平为高，假如外貌水平为低，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.8927\tP(D=1|A=0)=0.6448",
+        "Step 6": "ETT=0.8927-0.6448=0.2479",
+        "Step 7": "ETT=0.2479>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.24791544252717745
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为低(B=0)的条件下, 温度为低(D=0)的概率为0.1830。在外貌水平为低(A=0)且气压为高(B=1)的条件下, 温度为低(D=0)的概率为0.4136。在气压为低(B=0)的条件下, 外貌水平为低(A=0)的概率为0.3730。在外貌水平为高(A=1)且气压为高(B=1)的条件下, 温度为低(D=0)的概率为0.1218。在气压为低(B=0)的条件下, 外貌水平为高(A=1)的概率为0.6270。",
+        "data_info_math": "P(D=0|B=0)=0.1830; P(D=0|A=0,B=1)=0.4136; P(A=0|B=0)=0.3730; P(D=0|A=1,B=1)=0.1218; P(A=1|B=0)=0.6270; "
+      },
+      "Instruction": "考虑气压作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-sum_{A} P(D=0|B=1,A)*P(A|B=0)=P(D=0|B=0)-[P(D=0|B=1,A=0)*P(A=0|B=0)+P(D=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=0|B=0)=0.1830\tP(D=0|B=1,A=0)=0.4136\tP(A=0|B=0)=0.3730\tP(D=0|B=1,A=1)=0.1218\tP(A=1|B=0)=0.6270",
+        "Step 6": "ETT=0.1830-[0.4136*0.3730+0.1218*0.6270]=-0.0476",
+        "Step 7": "ETT=-0.0476<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.04760653565434328
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为低(B=0)的条件下, 温度为高(D=1)的概率为0.8170。在外貌水平为低(A=0)且气压为高(B=1)的条件下, 温度为高(D=1)的概率为0.5864。在气压为低(B=0)的条件下, 外貌水平为低(A=0)的概率为0.3730。在外貌水平为高(A=1)且气压为高(B=1)的条件下, 温度为高(D=1)的概率为0.8782。在气压为低(B=0)的条件下, 外貌水平为高(A=1)的概率为0.6270。",
+        "data_info_math": "P(D=1|B=0)=0.8170; P(D=1|A=0,B=1)=0.5864; P(A=0|B=0)=0.3730; P(D=1|A=1,B=1)=0.8782; P(A=1|B=0)=0.6270; "
+      },
+      "Instruction": "考虑气压作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-sum_{A} P(D=1|B=1,A)*P(A|B=0)=P(D=1|B=0)-[P(D=1|B=1,A=0)*P(A=0|B=0)+P(D=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=1|B=0)=0.8170\tP(D=1|B=1,A=0)=0.5864\tP(A=0|B=0)=0.3730\tP(D=1|B=1,A=1)=0.8782\tP(A=1|B=0)=0.6270",
+        "Step 6": "ETT=0.8170-[0.5864*0.3730+0.8782*0.6270]=0.0476",
+        "Step 7": "ETT=0.0476>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.04760653565434336
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为高(B=1)的条件下, 温度为低(D=0)的概率为0.1738。在外貌水平为低(A=0)且气压为低(B=0)的条件下, 温度为低(D=0)的概率为0.3343。在气压为高(B=1)的条件下, 外貌水平为低(A=0)的概率为0.1782。在外貌水平为高(A=1)且气压为低(B=0)的条件下, 温度为低(D=0)的概率为0.0931。在气压为高(B=1)的条件下, 外貌水平为高(A=1)的概率为0.8218。",
+        "data_info_math": "P(D=0|B=1)=0.1738; P(D=0|A=0,B=0)=0.3343; P(A=0|B=1)=0.1782; P(D=0|A=1,B=0)=0.0931; P(A=1|B=1)=0.8218; "
+      },
+      "Instruction": "考虑气压作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-sum_{A} P(D=0|B=0,A)*P(A|B=1)=P(D=0|B=1)-[P(D=0|B=0,A=0)*P(A=0|B=1)+P(D=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=0|B=1)=0.1738\tP(D=0|B=0,A=0)=0.3343\tP(A=0|B=1)=0.1782\tP(D=0|B=0,A=1)=0.0931\tP(A=1|B=1)=0.8218",
+        "Step 6": "ETT=0.1738-[0.3343*0.1782+0.0931*0.8218]=0.0377",
+        "Step 7": "ETT=0.0377>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.037749358895169116
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为高(B=1)的条件下, 温度为高(D=1)的概率为0.8262。在外貌水平为低(A=0)且气压为低(B=0)的条件下, 温度为高(D=1)的概率为0.6657。在气压为高(B=1)的条件下, 外貌水平为低(A=0)的概率为0.1782。在外貌水平为高(A=1)且气压为低(B=0)的条件下, 温度为高(D=1)的概率为0.9069。在气压为高(B=1)的条件下, 外貌水平为高(A=1)的概率为0.8218。",
+        "data_info_math": "P(D=1|B=1)=0.8262; P(D=1|A=0,B=0)=0.6657; P(A=0|B=1)=0.1782; P(D=1|A=1,B=0)=0.9069; P(A=1|B=1)=0.8218; "
+      },
+      "Instruction": "考虑气压作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-sum_{A} P(D=1|B=0,A)*P(A|B=1)=P(D=1|B=1)-[P(D=1|B=0,A=0)*P(A=0|B=1)+P(D=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=1|B=1)=0.8262\tP(D=1|B=0,A=0)=0.6657\tP(A=0|B=1)=0.1782\tP(D=1|B=0,A=1)=0.9069\tP(A=1|B=1)=0.8218",
+        "Step 6": "ETT=0.8262-[0.6657*0.1782+0.9069*0.8218]=-0.0377",
+        "Step 7": "ETT=-0.0377<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.03774935889516917
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为低，假如雇员表现水平为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为低，假如雇员表现水平为高，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为高，假如雇员表现水平为低，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为高，假如雇员表现水平为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为低，假如雇员表现水平为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为低，假如雇员表现水平为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为高，假如雇员表现水平为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑雇员表现水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为高，假如雇员表现水平为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为低(C=0)的条件下, 温度为低(D=0)的概率为0.2070。在外貌水平为低(A=0)且雇员表现水平为高(C=1)的条件下, 温度为低(D=0)的概率为0.5127。在雇员表现水平为低(C=0)的条件下, 外貌水平为低(A=0)的概率为0.5632。在外貌水平为高(A=1)且雇员表现水平为高(C=1)的条件下, 温度为低(D=0)的概率为0.1244。在雇员表现水平为低(C=0)的条件下, 外貌水平为高(A=1)的概率为0.4368。",
+        "data_info_math": "P(D=0|C=0)=0.2070; P(D=0|A=0,C=1)=0.5127; P(A=0|C=0)=0.5632; P(D=0|A=1,C=1)=0.1244; P(A=1|C=0)=0.4368; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为低，假如雇员表现水平为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=0|C=0)-sum_{A} P(D=0|C=1,A)*P(A|C=0)=P(D=0|C=0)-[P(D=0|C=1,A=0)*P(A=0|C=0)+P(D=0|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=0|C=0)=0.2070\tP(D=0|C=1,A=0)=0.5127\tP(A=0|C=0)=0.5632\tP(D=0|C=1,A=1)=0.1244\tP(A=1|C=0)=0.4368",
+        "Step 6": "ETT=0.2070-[0.5127*0.5632+0.1244*0.4368]=-0.1362",
+        "Step 7": "ETT=-0.1362<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.13615252877369446
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为低(C=0)的条件下, 温度为高(D=1)的概率为0.7930。在外貌水平为低(A=0)且雇员表现水平为高(C=1)的条件下, 温度为高(D=1)的概率为0.4873。在雇员表现水平为低(C=0)的条件下, 外貌水平为低(A=0)的概率为0.5632。在外貌水平为高(A=1)且雇员表现水平为高(C=1)的条件下, 温度为高(D=1)的概率为0.8756。在雇员表现水平为低(C=0)的条件下, 外貌水平为高(A=1)的概率为0.4368。",
+        "data_info_math": "P(D=1|C=0)=0.7930; P(D=1|A=0,C=1)=0.4873; P(A=0|C=0)=0.5632; P(D=1|A=1,C=1)=0.8756; P(A=1|C=0)=0.4368; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为低，假如雇员表现水平为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=1|C=0)-sum_{A} P(D=1|C=1,A)*P(A|C=0)=P(D=1|C=0)-[P(D=1|C=1,A=0)*P(A=0|C=0)+P(D=1|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=1|C=0)=0.7930\tP(D=1|C=1,A=0)=0.4873\tP(A=0|C=0)=0.5632\tP(D=1|C=1,A=1)=0.8756\tP(A=1|C=0)=0.4368",
+        "Step 6": "ETT=0.7930-[0.4873*0.5632+0.8756*0.4368]=0.1362",
+        "Step 7": "ETT=0.1362>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.1361525287736946
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为高(C=1)的条件下, 温度为低(D=0)的概率为0.1585。在外貌水平为低(A=0)且雇员表现水平为低(C=0)的条件下, 温度为低(D=0)的概率为0.3219。在雇员表现水平为高(C=1)的条件下, 外貌水平为低(A=0)的概率为0.0878。在外貌水平为高(A=1)且雇员表现水平为低(C=0)的条件下, 温度为低(D=0)的概率为0.0587。在雇员表现水平为高(C=1)的条件下, 外貌水平为高(A=1)的概率为0.9122。",
+        "data_info_math": "P(D=0|C=1)=0.1585; P(D=0|A=0,C=0)=0.3219; P(A=0|C=1)=0.0878; P(D=0|A=1,C=0)=0.0587; P(A=1|C=1)=0.9122; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为高，假如雇员表现水平为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=0|C=1)-sum_{A} P(D=0|C=0,A)*P(A|C=1)=P(D=0|C=1)-[P(D=0|C=0,A=0)*P(A=0|C=1)+P(D=0|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=0|C=1)=0.1585\tP(D=0|C=0,A=0)=0.3219\tP(A=0|C=1)=0.0878\tP(D=0|C=0,A=1)=0.0587\tP(A=1|C=1)=0.9122",
+        "Step 6": "ETT=0.1585-[0.3219*0.0878+0.0587*0.9122]=0.0767",
+        "Step 7": "ETT=0.0767>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.07672786019678687
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为高(C=1)的条件下, 温度为高(D=1)的概率为0.8415。在外貌水平为低(A=0)且雇员表现水平为低(C=0)的条件下, 温度为高(D=1)的概率为0.6781。在雇员表现水平为高(C=1)的条件下, 外貌水平为低(A=0)的概率为0.0878。在外貌水平为高(A=1)且雇员表现水平为低(C=0)的条件下, 温度为高(D=1)的概率为0.9413。在雇员表现水平为高(C=1)的条件下, 外貌水平为高(A=1)的概率为0.9122。",
+        "data_info_math": "P(D=1|C=1)=0.8415; P(D=1|A=0,C=0)=0.6781; P(A=0|C=1)=0.0878; P(D=1|A=1,C=0)=0.9413; P(A=1|C=1)=0.9122; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些雇员表现水平为高，假如雇员表现水平为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=1|C=1)-sum_{A} P(D=1|C=0,A)*P(A|C=1)=P(D=1|C=1)-[P(D=1|C=0,A=0)*P(A=0|C=1)+P(D=1|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=1|C=1)=0.8415\tP(D=1|C=0,A=0)=0.6781\tP(A=0|C=1)=0.0878\tP(D=1|C=0,A=1)=0.9413\tP(A=1|C=1)=0.9122",
+        "Step 6": "ETT=0.8415-[0.6781*0.0878+0.9413*0.9122]=-0.0767",
+        "Step 7": "ETT=-0.0767<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.0767278601967869
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么外貌水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于外貌水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么外貌水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么雇员表现水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于雇员表现水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么雇员表现水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0), 气压为高(B=1)且雇员表现水平为低(C=0)的条件下, 温度为低(D=0)的概率为0.3831。在外貌水平为高(A=1), 气压为高(B=1)且雇员表现水平为低(C=0)的条件下, 温度为低(D=0)的概率为0.0695。",
+        "data_info_math": "P(D=0|A=0,B=1,C=0)=0.3831; P(D=0|A=1,B=1,C=0)=0.0695; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在气压为高且雇员表现水平为低的条件下，假如外貌水平为低，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=0,B=1,C=0))-P(D=0|do(A=1,B=1,C=0))=P(D=0|A=0,B=1,C=0)-P(D=0|A=1,B=1,C=0)",
+        "Step 5": "P(D=0|A=0,B=1,C=0)=0.3831\tP(D=0|A=1,B=1,C=0)=0.0695",
+        "Step 6": "CDE=0.3831-0.0695=0.3137",
+        "Step 7": "CDE=0.3137>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.3136585971079083
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0), 气压为低(B=0)且雇员表现水平为低(C=0)的条件下, 温度为高(D=1)的概率为0.6998。在外貌水平为高(A=1), 气压为低(B=0)且雇员表现水平为低(C=0)的条件下, 温度为高(D=1)的概率为0.9522。",
+        "data_info_math": "P(D=1|A=0,B=0,C=0)=0.6998; P(D=1|A=1,B=0,C=0)=0.9522; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在气压为低且雇员表现水平为低的条件下，假如外貌水平为低，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=0,B=0,C=0))-P(D=1|do(A=1,B=0,C=0))=P(D=1|A=0,B=0,C=0)-P(D=1|A=1,B=0,C=0)",
+        "Step 5": "P(D=1|A=0,B=0,C=0)=0.6998\tP(D=1|A=1,B=0,C=0)=0.9522",
+        "Step 6": "CDE=0.6998-0.9522=-0.2524",
+        "Step 7": "CDE=-0.2524<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.2524289355480053
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1), 气压为高(B=1)且雇员表现水平为高(C=1)的条件下, 温度为低(D=0)的概率为0.1406。在外貌水平为低(A=0), 气压为高(B=1)且雇员表现水平为高(C=1)的条件下, 温度为低(D=0)的概率为0.5534。",
+        "data_info_math": "P(D=0|A=1,B=1,C=1)=0.1406; P(D=0|A=0,B=1,C=1)=0.5534; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在气压为高且雇员表现水平为高的条件下，假如外貌水平为高，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=1,B=1,C=1))-P(D=0|do(A=0,B=1,C=1))=P(D=0|A=1,B=1,C=1)-P(D=0|A=0,B=1,C=1)",
+        "Step 5": "P(D=0|A=1,B=1,C=1)=0.1406\tP(D=0|A=0,B=1,C=1)=0.5534",
+        "Step 6": "CDE=0.1406-0.5534=-0.4128",
+        "Step 7": "CDE=-0.4128<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.41279274793764775
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1), 气压为高(B=1)且雇员表现水平为低(C=0)的条件下, 温度为高(D=1)的概率为0.9305。在外貌水平为低(A=0), 气压为高(B=1)且雇员表现水平为低(C=0)的条件下, 温度为高(D=1)的概率为0.6169。",
+        "data_info_math": "P(D=1|A=1,B=1,C=0)=0.9305; P(D=1|A=0,B=1,C=0)=0.6169; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在气压为高且雇员表现水平为低的条件下，假如外貌水平为高，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=1,B=1,C=0))-P(D=1|do(A=0,B=1,C=0))=P(D=1|A=1,B=1,C=0)-P(D=1|A=0,B=1,C=0)",
+        "Step 5": "P(D=1|A=1,B=1,C=0)=0.9305\tP(D=1|A=0,B=1,C=0)=0.6169",
+        "Step 6": "CDE=0.9305-0.6169=0.3137",
+        "Step 7": "CDE=0.3137>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.31365859710790833
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象外貌水平(A)和观察节点气压(B)的后门调整集合。",
+      "Question": "方法1: 根据温度的情况，我们逐个研究外貌水平和气压的关联。\n方法2：我们直接研究一般情况下外貌水平和气压的关联。\n为了理解外貌水平如何影响气压，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 133,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象外貌水平(A)和观察节点气压(B)的后门调整集合。",
+      "Question": "方法1: 根据雇员表现水平的情况，我们逐个研究外貌水平和气压的关联。\n方法2：我们直接研究一般情况下外貌水平和气压的关联。\n为了理解外貌水平如何影响气压，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 134,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象外貌水平(A)和观察节点雇员表现水平(C)的后门调整集合。",
+      "Question": "方法1: 根据温度的情况，我们逐个研究外貌水平和雇员表现水平的关联。\n方法2：我们直接研究一般情况下外貌水平和雇员表现水平的关联。\n为了理解外貌水平如何影响雇员表现水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 135,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象外貌水平(A)和观察节点雇员表现水平(C)的后门调整集合。",
+      "Question": "方法1: 根据气压的情况，我们逐个研究外貌水平和雇员表现水平的关联。\n方法2：我们直接研究一般情况下外貌水平和雇员表现水平的关联。\n为了理解外貌水平如何影响雇员表现水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 136,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象外貌水平(A)和观察节点温度(D)的后门调整集合。",
+      "Question": "方法1: 根据气压的情况，我们逐个研究外貌水平和温度的关联。\n方法2：我们直接研究一般情况下外貌水平和温度的关联。\n为了理解外貌水平如何影响温度，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 137,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象外貌水平(A)和观察节点温度(D)的后门调整集合。",
+      "Question": "方法1: 根据气压的情况，我们逐个研究外貌水平和温度的关联。\n方法2：我们直接研究一般情况下外貌水平和温度的关联。\n为了理解外貌水平如何影响温度，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 138,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象气压(B)和观察节点温度(D)的后门调整集合。",
+      "Question": "方法1: 根据外貌水平的情况，我们逐个研究气压和温度的关联。\n方法2：我们直接研究一般情况下气压和温度的关联。\n为了理解气压如何影响温度，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 139,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象气压(B)和观察节点温度(D)的后门调整集合。",
+      "Question": "方法1: 根据外貌水平的情况，我们逐个研究气压和温度的关联。\n方法2：我们直接研究一般情况下气压和温度的关联。\n为了理解气压如何影响温度，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 140,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象雇员表现水平(C)和观察节点温度(D)的后门调整集合。",
+      "Question": "方法1: 根据外貌水平的情况，我们逐个研究雇员表现水平和温度的关联。\n方法2：我们直接研究一般情况下雇员表现水平和温度的关联。\n为了理解雇员表现水平如何影响温度，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 141,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象雇员表现水平(C)和观察节点温度(D)的后门调整集合。",
+      "Question": "方法1: 根据外貌水平的情况，我们逐个研究雇员表现水平和温度的关联。\n方法2：我们直接研究一般情况下雇员表现水平和温度的关联。\n为了理解雇员表现水平如何影响温度，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 142,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为低(D=0)且气压为高(B=1)的条件下, 雇员表现水平为高(C=1)的概率为0.5904。在温度为低(D=0)且气压为低(B=0)的条件下, 雇员表现水平为高(C=1)的概率为0.4519。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.5904; P(C=1|D=0,B=0)=0.4519; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为低的条件下，气压会影响雇员表现水平吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=0)-P(C=1|do(B=0),D=0)=P(C=1|D=0)-P(C=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 143,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为低(D=0)且气压为高(B=1)的条件下, 雇员表现水平为高(C=1)的概率为0.5904。在温度为低(D=0)且气压为低(B=0)的条件下, 雇员表现水平为高(C=1)的概率为0.4519。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.5904; P(C=1|D=0,B=0)=0.4519; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为低的条件下，气压不会影响雇员表现水平吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=0)-P(C=1|do(B=0),D=0)=P(C=1|D=0)-P(C=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 144,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为低(D=0)且气压为高(B=1)的条件下, 雇员表现水平为高(C=1)的概率为0.5904。在温度为低(D=0)且气压为低(B=0)的条件下, 雇员表现水平为高(C=1)的概率为0.4519。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.5904; P(C=1|D=0,B=0)=0.4519; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为低的条件下，气压是和雇员表现水平相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=0)-P(C=1|B=0,D=0)=0.5904-0.4519=0.1385!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 145,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为低(D=0)且气压为高(B=1)的条件下, 雇员表现水平为高(C=1)的概率为0.5904。在温度为低(D=0)且气压为低(B=0)的条件下, 雇员表现水平为高(C=1)的概率为0.4519。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.5904; P(C=1|D=0,B=0)=0.4519; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为低的条件下，气压是和雇员表现水平独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=0)-P(C=1|B=0,D=0)=0.5904-0.4519=0.1385!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 146,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为高(D=1)且气压为高(B=1)的条件下, 雇员表现水平为高(C=1)的概率为0.6455。在温度为高(D=1)且气压为低(B=0)的条件下, 雇员表现水平为高(C=1)的概率为0.5479。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.6455; P(C=1|D=1,B=0)=0.5479; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为高的条件下，气压会影响雇员表现水平吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=1)-P(C=1|do(B=0),D=1)=P(C=1|D=1)-P(C=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 147,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为高(D=1)且气压为高(B=1)的条件下, 雇员表现水平为高(C=1)的概率为0.6455。在温度为高(D=1)且气压为低(B=0)的条件下, 雇员表现水平为高(C=1)的概率为0.5479。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.6455; P(C=1|D=1,B=0)=0.5479; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为高的条件下，气压不会影响雇员表现水平吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=1)-P(C=1|do(B=0),D=1)=P(C=1|D=1)-P(C=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 148,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为高(D=1)且气压为高(B=1)的条件下, 雇员表现水平为高(C=1)的概率为0.6455。在温度为高(D=1)且气压为低(B=0)的条件下, 雇员表现水平为高(C=1)的概率为0.5479。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.6455; P(C=1|D=1,B=0)=0.5479; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为高的条件下，气压是和雇员表现水平相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=1)-P(C=1|B=0,D=1)=0.6455-0.5479=0.0976!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 149,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为高(D=1)且气压为高(B=1)的条件下, 雇员表现水平为高(C=1)的概率为0.6455。在温度为高(D=1)且气压为低(B=0)的条件下, 雇员表现水平为高(C=1)的概率为0.5479。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.6455; P(C=1|D=1,B=0)=0.5479; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为高的条件下，气压是和雇员表现水平独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=1)-P(C=1|B=0,D=1)=0.6455-0.5479=0.0976!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 150,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为低(D=0)且雇员表现水平为高(C=1)的条件下, 气压为高(B=1)的概率为0.4816。在温度为低(D=0)且雇员表现水平为低(C=0)的条件下, 气压为高(B=1)的概率为0.3470。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.4816; P(B=1|D=0,C=0)=0.3470; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为低的条件下，雇员表现水平会影响气压吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=0)-P(B=1|do(C=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 151,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为低(D=0)且雇员表现水平为高(C=1)的条件下, 气压为高(B=1)的概率为0.4816。在温度为低(D=0)且雇员表现水平为低(C=0)的条件下, 气压为高(B=1)的概率为0.3470。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.4816; P(B=1|D=0,C=0)=0.3470; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为低的条件下，雇员表现水平不会影响气压吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=0)-P(B=1|do(C=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 152,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为低(D=0)且雇员表现水平为高(C=1)的条件下, 气压为高(B=1)的概率为0.4816。在温度为低(D=0)且雇员表现水平为低(C=0)的条件下, 气压为高(B=1)的概率为0.3470。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.4816; P(B=1|D=0,C=0)=0.3470; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为低的条件下，雇员表现水平是和气压相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=0)-P(B=1|C=0,D=0)=0.4816-0.3470=0.1346!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 153,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为低(D=0)且雇员表现水平为高(C=1)的条件下, 气压为高(B=1)的概率为0.4816。在温度为低(D=0)且雇员表现水平为低(C=0)的条件下, 气压为高(B=1)的概率为0.3470。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.4816; P(B=1|D=0,C=0)=0.3470; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为低的条件下，雇员表现水平是和气压独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=0)-P(B=1|C=0,D=0)=0.4816-0.3470=0.1346!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 154,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为高(D=1)且雇员表现水平为高(C=1)的条件下, 气压为高(B=1)的概率为0.4715。在温度为高(D=1)且雇员表现水平为低(C=0)的条件下, 气压为高(B=1)的概率为0.3726。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.4715; P(B=1|D=1,C=0)=0.3726; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为高的条件下，雇员表现水平会影响气压吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=1)-P(B=1|do(C=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 155,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为高(D=1)且雇员表现水平为高(C=1)的条件下, 气压为高(B=1)的概率为0.4715。在温度为高(D=1)且雇员表现水平为低(C=0)的条件下, 气压为高(B=1)的概率为0.3726。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.4715; P(B=1|D=1,C=0)=0.3726; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为高的条件下，雇员表现水平不会影响气压吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=1)-P(B=1|do(C=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 156,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为高(D=1)且雇员表现水平为高(C=1)的条件下, 气压为高(B=1)的概率为0.4715。在温度为高(D=1)且雇员表现水平为低(C=0)的条件下, 气压为高(B=1)的概率为0.3726。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.4715; P(B=1|D=1,C=0)=0.3726; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为高的条件下，雇员表现水平是和气压相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=1)-P(B=1|C=0,D=1)=0.4715-0.3726=0.0989!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 157,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在温度为高(D=1)且雇员表现水平为高(C=1)的条件下, 气压为高(B=1)的概率为0.4715。在温度为高(D=1)且雇员表现水平为低(C=0)的条件下, 气压为高(B=1)的概率为0.3726。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.4715; P(B=1|D=1,C=0)=0.3726; "
+      },
+      "Instruction": "",
+      "Question": "给定温度为高的条件下，雇员表现水平是和气压独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=1)-P(B=1|C=0,D=1)=0.4715-0.3726=0.0989!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 158,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 气压为高(B=1)的概率为0.2635。气压为高(B=1)的概率为0.4282。外貌水平为高(A=1)且气压为高(B=1)的概率为0.3519。",
+        "data_info_math": "P(B=1|A=0)=0.2635; P(B=1)=0.4282; P(A=1,B=1)=0.3519; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的必要性概率(probability of necessity, PN)。",
+      "Question": "给定外貌水平为高且气压为高, 那么假如外貌水平为低，此时气压为低的概率的下界是多少？",
+      "Answer": "0.4681",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.2635",
+        "Step 2": "PN的下界: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.4282-0.2635)/0.3519}\n=max{0, 0.4681}\n=0.4681"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.46810341182684373
+    },
+    {
+      "id": 159,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 气压为低(B=0)的概率为0.7365。外貌水平为低(A=0)且气压为低(B=0)的概率为0.2133。外貌水平为高(A=1)且气压为高(B=1)的概率为0.3519。",
+        "data_info_math": "P(B=0|A=0)=0.7365; P(A=0,B=0)=0.2133; P(A=1,B=1)=0.3519; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的必要性概率(probability of necessity, PN)。",
+      "Question": "给定外貌水平为高且气压为高, 那么假如外貌水平为低，此时气压为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.7365",
+        "Step 2": "PN的上界: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.7365-0.2133)/0.3519}\n=min{1, 1.4868}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 160,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 雇员表现水平为高(C=1)的概率为0.1745。雇员表现水平为高(C=1)的概率为0.5756。外貌水平为高(A=1)且雇员表现水平为高(C=1)的概率为0.5250。",
+        "data_info_math": "P(C=1|A=0)=0.1745; P(C=1)=0.5756; P(A=1,C=1)=0.5250; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定外貌水平为高且雇员表现水平为高, 那么假如外貌水平为低，此时雇员表现水平为低的概率的下界是多少？",
+      "Answer": "0.7639",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.1745",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.5756-0.1745)/0.5250}\n=max{0, 0.7639}\n=0.7639"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.7639426288959772
+    },
+    {
+      "id": 161,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 雇员表现水平为低(C=0)的概率为0.8255。外貌水平为低(A=0)且雇员表现水平为低(C=0)的概率为0.2391。外貌水平为高(A=1)且雇员表现水平为高(C=1)的概率为0.5250。",
+        "data_info_math": "P(C=0|A=0)=0.8255; P(A=0,C=0)=0.2391; P(A=1,C=1)=0.5250; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定外貌水平为高且雇员表现水平为高, 那么假如外貌水平为低，此时雇员表现水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.8255",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.8255-0.2391)/0.5250}\n=min{1, 1.1170}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 162,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.6448。温度为高(D=1)的概率为0.8209。外貌水平为高(A=1)且温度为高(D=1)的概率为0.6342。",
+        "data_info_math": "P(D=1|A=0)=0.6448; P(D=1)=0.8209; P(A=1,D=1)=0.6342; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定外貌水平为高且温度为高, 那么假如外貌水平为低，此时温度为低的概率的下界是多少？",
+      "Answer": "0.2777",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.6448",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.8209-0.6448)/0.6342}\n=max{0, 0.2777}\n=0.2777"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.27771064124906575
+    },
+    {
+      "id": 163,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.3552。外貌水平为低(A=0)且温度为低(D=0)的概率为0.1029。外貌水平为高(A=1)且温度为高(D=1)的概率为0.6342。",
+        "data_info_math": "P(D=0|A=0)=0.3552; P(A=0,D=0)=0.1029; P(A=1,D=1)=0.6342; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定外貌水平为高且温度为高, 那么假如外貌水平为低，此时温度为低的概率的上界是多少？",
+      "Answer": "0.3979",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.3552",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.3552-0.1029)/0.6342}\n=min{1, 0.3979}\n=0.3979"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.3978935488491918
+    },
+    {
+      "id": 164,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为低(B=0)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.6657。外貌水平为低(A=0)的概率为0.2896。在气压为低(B=0)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.9069。外貌水平为高(A=1)的概率为0.7104。温度为高(D=1)的概率为0.8209。气压为高(B=1)且温度为高(D=1)的概率为0.3538。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.6657; P(A=0)=0.2896; P(D=1|B=0,A=1)=0.9069; P(A=1)=0.7104; P(D=1)=0.8209; P(B=1,D=1)=0.3538; "
+      },
+      "Instruction": "考虑气压作用于温度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定气压为高且温度为高, 那么假如气压为低，此时温度为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=sum_{A} P(D=1|B=0,A)*P(A)=P(D=1|B=0,A=0)*P(A=0)+P(D=1|B=0,A=1)*P(A=1)\nP(D=1|B=0,A=0)=0.6657\tP(A=0)=0.2896\tP(D=1|B=0,A=1)=0.9069\tP(A=1)=0.7104\nP(D=1|do(B=0))=0.6657*0.2896+0.9069*0.7104=0.8371",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.8209-0.8371)/0.3538}\n=max{0, -0.0457}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 165,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为低(B=0)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.3343。外貌水平为低(A=0)的概率为0.2896。在气压为低(B=0)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.0931。外貌水平为高(A=1)的概率为0.7104。气压为低(B=0)且温度为低(D=0)的概率为0.1047。气压为高(B=1)且温度为高(D=1)的概率为0.3538。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.3343; P(A=0)=0.2896; P(D=0|B=0,A=1)=0.0931; P(A=1)=0.7104; P(B=0,D=0)=0.1047; P(B=1,D=1)=0.3538; "
+      },
+      "Instruction": "考虑气压作用于温度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定气压为高且温度为高, 那么假如气压为低，此时温度为低的概率的上界是多少？",
+      "Answer": "0.1647",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=sum_{A} P(D=0|B=0,A)*P(A)=P(D=0|B=0,A=0)*P(A=0)+P(D=0|B=0,A=1)*P(A=1)\nP(D=0|B=0,A=0)=0.3343\tP(A=0)=0.2896\tP(D=0|B=0,A=1)=0.0931\tP(A=1)=0.7104\nP(D=0|do(B=0))=0.3343*0.2896+0.0931*0.7104=0.1629",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.1629-0.1047)/0.3538}\n=min{1, 0.1647}\n=0.1647"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.16465508630274367
+    },
+    {
+      "id": 166,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为低(C=0)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.6781。外貌水平为低(A=0)的概率为0.2896。在雇员表现水平为低(C=0)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.9413。外貌水平为高(A=1)的概率为0.7104。温度为高(D=1)的概率为0.8209。雇员表现水平为高(C=1)且温度为高(D=1)的概率为0.4843。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.6781; P(A=0)=0.2896; P(D=1|C=0,A=1)=0.9413; P(A=1)=0.7104; P(D=1)=0.8209; P(C=1,D=1)=0.4843; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定雇员表现水平为高且温度为高, 那么假如雇员表现水平为低，此时温度为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=0))\nP(D=1|do(C=0))=sum_{A} P(D=1|C=0,A)*P(A)=P(D=1|C=0,A=0)*P(A=0)+P(D=1|C=0,A=1)*P(A=1)\nP(D=1|C=0,A=0)=0.6781\tP(A=0)=0.2896\tP(D=1|C=0,A=1)=0.9413\tP(A=1)=0.7104\nP(D=1|do(C=0))=0.6781*0.2896+0.9413*0.7104=0.8651",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(C=0))]/P(C=1,D=1)}\n=max{0, (0.8209-0.8651)/0.4843}\n=max{0, -0.0912}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 167,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为低(C=0)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.3219。外貌水平为低(A=0)的概率为0.2896。在雇员表现水平为低(C=0)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.0587。外貌水平为高(A=1)的概率为0.7104。雇员表现水平为低(C=0)且温度为低(D=0)的概率为0.0878。雇员表现水平为高(C=1)且温度为高(D=1)的概率为0.4843。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.3219; P(A=0)=0.2896; P(D=0|C=0,A=1)=0.0587; P(A=1)=0.7104; P(C=0,D=0)=0.0878; P(C=1,D=1)=0.4843; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定雇员表现水平为高且温度为高, 那么假如雇员表现水平为低，此时温度为低的概率的上界是多少？",
+      "Answer": "0.0972",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=0))\nP(D=0|do(C=0))=sum_{A} P(D=0|C=0,A)*P(A)=P(D=0|C=0,A=0)*P(A=0)+P(D=0|C=0,A=1)*P(A=1)\nP(D=0|C=0,A=0)=0.3219\tP(A=0)=0.2896\tP(D=0|C=0,A=1)=0.0587\tP(A=1)=0.7104\nP(D=0|do(C=0))=0.3219*0.2896+0.0587*0.7104=0.1349",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(C=0)-P(C=0,D=0)]/P(C=1,D=1)}\n=min{1, (0.1349-0.0878)/0.4843}\n=min{1, 0.0972}\n=0.0972"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.09720538649062054
+    },
+    {
+      "id": 168,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 气压为低(B=0)的概率为0.5046。气压为低(B=0)的概率为0.5718。外貌水平为低(A=0)且气压为低(B=0)的概率为0.2133。",
+        "data_info_math": "P(B=0|A=1)=0.5046; P(B=0)=0.5718; P(A=0,B=0)=0.2133; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定外貌水平为低且气压为低, 假如外貌水平为高，此时气压为高的概率的下界是多少？",
+      "Answer": "0.3148",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.5046",
+        "Step 2": "PS的下界: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.5718-0.5046)/0.2133}\n=max{0, 0.3148}\n=0.3148"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.31483935055017376
+    },
+    {
+      "id": 169,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 气压为高(B=1)的概率为0.4954。外貌水平为低(A=0)且气压为低(B=0)的概率为0.2133。外貌水平为高(A=1)且气压为高(B=1)的概率为0.3519。",
+        "data_info_math": "P(B=1|A=1)=0.4954; P(A=0,B=0)=0.2133; P(A=1,B=1)=0.3519; "
+      },
+      "Instruction": "考虑外貌水平作用于气压的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定外貌水平为低且气压为低, 假如外貌水平为高，此时气压为高的概率的上界是多少？",
+      "Answer": "0.6726",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.4954",
+        "Step 2": "PS的上界: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.4954-0.3519)/0.2133}\n=min{1, 0.6726}\n=0.6726"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.6725850369717791
+    },
+    {
+      "id": 170,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 雇员表现水平为低(C=0)的概率为0.2609。雇员表现水平为低(C=0)的概率为0.4244。外貌水平为低(A=0)且雇员表现水平为低(C=0)的概率为0.2391。",
+        "data_info_math": "P(C=0|A=1)=0.2609; P(C=0)=0.4244; P(A=0,C=0)=0.2391; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定外貌水平为低且雇员表现水平为低, 假如外貌水平为高，此时雇员表现水平为高的概率的下界是多少？",
+      "Answer": "0.6839",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.2609",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.4244-0.2609)/0.2391}\n=max{0, 0.6839}\n=0.6839"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.6839110257939427
+    },
+    {
+      "id": 171,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 雇员表现水平为高(C=1)的概率为0.7391。外貌水平为低(A=0)且雇员表现水平为低(C=0)的概率为0.2391。外貌水平为高(A=1)且雇员表现水平为高(C=1)的概率为0.5250。",
+        "data_info_math": "P(C=1|A=1)=0.7391; P(A=0,C=0)=0.2391; P(A=1,C=1)=0.5250; "
+      },
+      "Instruction": "考虑外貌水平作用于雇员表现水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定外貌水平为低且雇员表现水平为低, 假如外貌水平为高，此时雇员表现水平为高的概率的上界是多少？",
+      "Answer": "0.8952",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.7391",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.7391-0.5250)/0.2391}\n=min{1, 0.8952}\n=0.8952"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.8952387259528984
+    },
+    {
+      "id": 172,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.1073。温度为低(D=0)的概率为0.1791。外貌水平为低(A=0)且温度为低(D=0)的概率为0.1029。",
+        "data_info_math": "P(D=0|A=1)=0.1073; P(D=0)=0.1791; P(A=0,D=0)=0.1029; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定外貌水平为低且温度为低, 假如外貌水平为高，此时温度为高的概率的下界是多少？",
+      "Answer": "0.6980",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.1073",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.1791-0.1073)/0.1029}\n=max{0, 0.6980}\n=0.6980"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.697952108176357
+    },
+    {
+      "id": 173,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.8927。外貌水平为低(A=0)且温度为低(D=0)的概率为0.1029。外貌水平为高(A=1)且温度为高(D=1)的概率为0.6342。",
+        "data_info_math": "P(D=1|A=1)=0.8927; P(A=0,D=0)=0.1029; P(A=1,D=1)=0.6342; "
+      },
+      "Instruction": "考虑外貌水平作用于温度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定外貌水平为低且温度为低, 假如外貌水平为高，此时温度为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.8927",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.8927-0.6342)/0.1029}\n=min{1, 2.5132}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 174,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为高(B=1)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.4136。外貌水平为低(A=0)的概率为0.2896。在气压为高(B=1)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.1218。外貌水平为高(A=1)的概率为0.7104。温度为低(D=0)的概率为0.1791。气压为低(B=0)且温度为低(D=0)的概率为0.1047。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.4136; P(A=0)=0.2896; P(D=0|B=1,A=1)=0.1218; P(A=1)=0.7104; P(D=0)=0.1791; P(B=0,D=0)=0.1047; "
+      },
+      "Instruction": "考虑气压作用于温度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定气压为低且温度为低, 假如气压为高，此时温度为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=sum_{A} P(D=0|B=1,A)*P(A)=P(D=0|B=1,A=0)*P(A=0)+P(D=0|B=1,A=1)*P(A=1)\nP(D=0|B=1,A=0)=0.4136\tP(A=0)=0.2896\tP(D=0|B=1,A=1)=0.1218\tP(A=1)=0.7104\nP(D=0|do(B=1))=0.4136*0.2896+0.1218*0.7104=0.2063",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.1791-0.2063)/0.1047}\n=max{0, -0.2601}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 175,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在气压为高(B=1)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.5864。外貌水平为低(A=0)的概率为0.2896。在气压为高(B=1)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.8782。外貌水平为高(A=1)的概率为0.7104。气压为低(B=0)且温度为低(D=0)的概率为0.1047。气压为高(B=1)且温度为高(D=1)的概率为0.3538。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.5864; P(A=0)=0.2896; P(D=1|B=1,A=1)=0.8782; P(A=1)=0.7104; P(B=0,D=0)=0.1047; P(B=1,D=1)=0.3538; "
+      },
+      "Instruction": "考虑气压作用于温度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定气压为低且温度为低, 假如气压为高，此时温度为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=sum_{A} P(D=1|B=1,A)*P(A)=P(D=1|B=1,A=0)*P(A=0)+P(D=1|B=1,A=1)*P(A=1)\nP(D=1|B=1,A=0)=0.5864\tP(A=0)=0.2896\tP(D=1|B=1,A=1)=0.8782\tP(A=1)=0.7104\nP(D=1|do(B=1))=0.5864*0.2896+0.8782*0.7104=0.7937",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.7937-0.3538)/0.1047}\n=min{1, 4.2031}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 176,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为高(C=1)且外貌水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.5127。外貌水平为低(A=0)的概率为0.2896。在雇员表现水平为高(C=1)且外貌水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.1244。外貌水平为高(A=1)的概率为0.7104。温度为低(D=0)的概率为0.1791。雇员表现水平为低(C=0)且温度为低(D=0)的概率为0.0878。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.5127; P(A=0)=0.2896; P(D=0|C=1,A=1)=0.1244; P(A=1)=0.7104; P(D=0)=0.1791; P(C=0,D=0)=0.0878; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定雇员表现水平为低且温度为低, 假如雇员表现水平为高，此时温度为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=1))\nP(D=0|do(C=1))=sum_{A} P(D=0|C=1,A)*P(A)=P(D=0|C=1,A=0)*P(A=0)+P(D=0|C=1,A=1)*P(A=1)\nP(D=0|C=1,A=0)=0.5127\tP(A=0)=0.2896\tP(D=0|C=1,A=1)=0.1244\tP(A=1)=0.7104\nP(D=0|do(C=1))=0.5127*0.2896+0.1244*0.7104=0.2369",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(C=1))]/P(C=0,D=0)}\n=max{0, (0.1791-0.2369)/0.0878}\n=max{0, -0.6579}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 177,
+      "question_id": 160,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表外貌水平, B代表气压, C代表雇员表现水平, D代表温度。",
+        "data_info": "在雇员表现水平为高(C=1)且外貌水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.4873。外貌水平为低(A=0)的概率为0.2896。在雇员表现水平为高(C=1)且外貌水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.8756。外貌水平为高(A=1)的概率为0.7104。雇员表现水平为低(C=0)且温度为低(D=0)的概率为0.0878。雇员表现水平为高(C=1)且温度为高(D=1)的概率为0.4843。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.4873; P(A=0)=0.2896; P(D=1|C=1,A=1)=0.8756; P(A=1)=0.7104; P(C=0,D=0)=0.0878; P(C=1,D=1)=0.4843; "
+      },
+      "Instruction": "考虑雇员表现水平作用于温度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定雇员表现水平为低且温度为低, 假如雇员表现水平为高，此时温度为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=1))\nP(D=1|do(C=1))=sum_{A} P(D=1|C=1,A)*P(A)=P(D=1|C=1,A=0)*P(A=0)+P(D=1|C=1,A=1)*P(A=1)\nP(D=1|C=1,A=0)=0.4873\tP(A=0)=0.2896\tP(D=1|C=1,A=1)=0.8756\tP(A=1)=0.7104\nP(D=1|do(C=1))=0.4873*0.2896+0.8756*0.7104=0.7631",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(C=1)-P(C=1,D=1)]/P(C=0,D=0)}\n=min{1, (0.7631-0.4843)/0.0878}\n=min{1, 3.1741}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 1
+    }
+  ]
+}

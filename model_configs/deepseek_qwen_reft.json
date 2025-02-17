@@ -1,0 +1,11 @@
+{
+    "startup":
+        {
+            "ROOT_PATH": "/mnt/workspace/o1_like/OpenRLHF/checkpoint/deepseek_qwen_rf"
+        },
+    "query":
+    {
+        "default":{
+        }
+    }
+}

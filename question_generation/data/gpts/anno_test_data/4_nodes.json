@@ -1,0 +1,3842 @@
+[
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "A->D"
+    ],
+    "node_name": {
+      "A": "amount of money spent on advertising",
+      "B": "sales revenue",
+      "C": "customer satisfaction",
+      "D": "profit margin"
+    },
+    "node_name_CN": {
+      "A": "广告支出金额",
+      "B": "销售收入",
+      "C": "客户满意度",
+      "D": "利润率"
+    },
+    "node_value": {
+      "A": [
+        "low",
+        "high"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "low",
+        "high"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of money spent on advertising -> sales revenue",
+        "value": 1
+      },
+      "A->C": {
+        "str": "amount of money spent on advertising -> customer satisfaction",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of money spent on advertising -> profit margin",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->D",
+      "B->C"
+    ],
+    "node_name": {
+      "A": "amount of rainfall in a region",
+      "B": "water level in a local reservoir",
+      "C": "availability of water for irrigation",
+      "D": "crop yield in the region"
+    },
+    "node_name_CN": {
+      "A": "amount of rainfall in a region",
+      "B": "当地水库水位",
+      "C": "灌溉用水的可用性",
+      "D": "该地区的农作物产量"
+    },
+    "node_value": {
+      "A": [
+        "low",
+        "high"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "limited",
+        "abundant"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "有限",
+        "充足"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of rainfall in a region -> water level in a local reservoir",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of rainfall in a region -> crop yield in the region",
+        "value": 1
+      },
+      "B->C": {
+        "str": "water level in a local reservoir -> availability of water for irrigation",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->C",
+      "A->D",
+      "B->C"
+    ],
+    "node_name": {
+      "A": "amount of exercise done",
+      "B": "diet quality",
+      "C": "weight",
+      "D": "risk of developing heart disease"
+    },
+    "node_name_CN": {
+      "A": "运动量",
+      "B": "饮食质量",
+      "C": "体重",
+      "D": "心脏病发病风险"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "intense"
+      ],
+      "B": [
+        "poor",
+        "good"
+      ],
+      "C": [
+        "underweight",
+        "overweight"
+      ],
+      "D": [
+        "high",
+        "low"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "强烈"
+      ],
+      "B": [
+        "差",
+        "好"
+      ],
+      "C": [
+        "体重不足",
+        "超重"
+      ],
+      "D": [
+        "高",
+        "低"
+      ]
+    },
+    "edge_sign": {
+      "A->C": {
+        "str": "amount of exercise done -> weight",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of exercise done -> risk of developing heart disease",
+        "value": 1
+      },
+      "B->C": {
+        "str": "diet quality -> weight",
+        "value": -1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->C"
+    ],
+    "node_name": {
+      "A": "amount of time spent studying for an exam",
+      "B": "grade received on the exam",
+      "C": "overall gpa",
+      "D": "likelihood of getting accepted into a graduate program"
+    },
+    "node_name_CN": {
+      "A": "备考时间",
+      "B": "考试得分",
+      "C": "总平均成绩",
+      "D": "研究生项目录取可能性"
+    },
+    "node_value": {
+      "A": [
+        "short",
+        "long"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "low",
+        "high"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "短",
+        "长"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of time spent studying for an exam -> grade received on the exam",
+        "value": 1
+      },
+      "A->C": {
+        "str": "amount of time spent studying for an exam -> overall gpa",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of time spent studying for an exam -> likelihood of getting accepted into a graduate program",
+        "value": 1
+      },
+      "B->C": {
+        "str": "grade received on the exam -> overall gpa",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "B->C",
+      "B->D"
+    ],
+    "node_name": {
+      "A": "amount of physical exercise",
+      "B": "cardiovascular health",
+      "C": "blood pressure levels",
+      "D": "risk of heart disease"
+    },
+    "node_name_CN": {
+      "A": "体育锻炼量",
+      "B": "心血管健康",
+      "C": "血压水平",
+      "D": "心脏病风险"
+    },
+    "node_value": {
+      "A": [
+        "sedentary",
+        "active"
+      ],
+      "B": [
+        "poor",
+        "good"
+      ],
+      "C": [
+        "high",
+        "normal"
+      ],
+      "D": [
+        "high",
+        "low"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "久坐的",
+        "积极的"
+      ],
+      "B": [
+        "不佳",
+        "良好"
+      ],
+      "C": [
+        "高",
+        "正常"
+      ],
+      "D": [
+        "高",
+        "低"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of physical exercise -> cardiovascular health",
+        "value": 1
+      },
+      "B->C": {
+        "str": "cardiovascular health -> blood pressure levels",
+        "value": 1
+      },
+      "B->D": {
+        "str": "cardiovascular health -> risk of heart disease",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "B->C",
+      "B->D"
+    ],
+    "node_name": {
+      "A": "parental involvement in child's education",
+      "B": "child's academic performance",
+      "C": "likelihood of the child graduating from high school",
+      "D": "likelihood of the child attending college"
+    },
+    "node_name_CN": {
+      "A": "家长参与孩子教育",
+      "B": "孩子的学业表现",
+      "C": "孩子高中毕业的可能性",
+      "D": "孩子上大学的可能性"
+    },
+    "node_value": {
+      "A": [
+        "low",
+        "high"
+      ],
+      "B": [
+        "poor",
+        "excellent"
+      ],
+      "C": [
+        "unlikely",
+        "likely"
+      ],
+      "D": [
+        "unlikely",
+        "likely"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "差",
+        "优秀"
+      ],
+      "C": [
+        "不太可能",
+        "可能"
+      ],
+      "D": [
+        "不太可能",
+        "可能"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "parental involvement in child's education -> child's academic performance",
+        "value": 1
+      },
+      "A->C": {
+        "str": "parental involvement in child's education -> likelihood of the child graduating from high school",
+        "value": 1
+      },
+      "B->C": {
+        "str": "child's academic performance -> likelihood of the child graduating from high school",
+        "value": 1
+      },
+      "B->D": {
+        "str": "child's academic performance -> likelihood of the child attending college",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->C",
+      "A->D",
+      "B->C",
+      "B->D"
+    ],
+    "node_name": {
+      "A": "amount of time spent studying for an exam",
+      "B": "level of stress experienced before the exam",
+      "C": "exam performance",
+      "D": "overall grade in the course"
+    },
+    "node_name_CN": {
+      "A": "备考时间",
+      "B": "考试前经历的压力水平",
+      "C": "考试表现",
+      "D": "课程总成绩"
+    },
+    "node_value": {
+      "A": [
+        "short",
+        "long"
+      ],
+      "B": [
+        "high",
+        "low"
+      ],
+      "C": [
+        "poor",
+        "excellent"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "短",
+        "长"
+      ],
+      "B": [
+        "高",
+        "低"
+      ],
+      "C": [
+        "差劲的",
+        "优秀的"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->C": {
+        "str": "amount of time spent studying for an exam -> exam performance",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of time spent studying for an exam -> overall grade in the course",
+        "value": 1
+      },
+      "B->C": {
+        "str": "level of stress experienced before the exam -> exam performance",
+        "value": 1
+      },
+      "B->D": {
+        "str": "level of stress experienced before the exam -> overall grade in the course",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->C",
+      "B->D"
+    ],
+    "node_name": {
+      "A": "amount of rainfall",
+      "B": "soil moisture level",
+      "C": "plant growth",
+      "D": "crop yield"
+    },
+    "node_name_CN": {
+      "A": "降雨量",
+      "B": "土壤湿度水平",
+      "C": "植物生长",
+      "D": "农作物产量"
+    },
+    "node_value": {
+      "A": [
+        "small",
+        "large"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "stunted",
+        "vigorous"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "小",
+        "大"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "发育不良的",
+        "旺盛的"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of rainfall -> soil moisture level",
+        "value": 1
+      },
+      "A->C": {
+        "str": "amount of rainfall -> plant growth",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of rainfall -> crop yield",
+        "value": 1
+      },
+      "B->C": {
+        "str": "soil moisture level -> plant growth",
+        "value": 1
+      },
+      "B->D": {
+        "str": "soil moisture level -> crop yield",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of exercise done by a person",
+      "B": "physical fitness level of a person",
+      "C": "risk of developing a health condition",
+      "D": "actual development of the health condition"
+    },
+    "node_name_CN": {
+      "A": "一个人的运动量",
+      "B": "个人身体健康水平",
+      "C": "患病风险",
+      "D": "健康状况的实际发展"
+    },
+    "node_value": {
+      "A": [
+        "low",
+        "high"
+      ],
+      "B": [
+        "unfit",
+        "fit"
+      ],
+      "C": [
+        "low",
+        "high"
+      ],
+      "D": [
+        "deteriorating",
+        "improving"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "不健康",
+        "健康"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "恶化的",
+        "改善的"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of exercise done by a person -> physical fitness level of a person",
+        "value": 1
+      },
+      "B->C": {
+        "str": "physical fitness level of a person -> risk of developing a health condition",
+        "value": -1
+      },
+      "C->D": {
+        "str": "risk of developing a health condition -> actual development of the health condition",
+        "value": -1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->C",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of exercise",
+      "B": "quality of diet",
+      "C": "overall health",
+      "D": "longevity"
+    },
+    "node_name_CN": {
+      "A": "锻炼量",
+      "B": "饮食质量",
+      "C": "整体健康状况",
+      "D": "长寿"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "ample"
+      ],
+      "B": [
+        "poor",
+        "healthy"
+      ],
+      "C": [
+        "poor",
+        "good"
+      ],
+      "D": [
+        "short lifespan",
+        "long lifespan"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "充足"
+      ],
+      "B": [
+        "差",
+        "健康"
+      ],
+      "C": [
+        "差",
+        "好"
+      ],
+      "D": [
+        "短命",
+        "长寿/短命"
+      ]
+    },
+    "edge_sign": {
+      "A->C": {
+        "str": "amount of exercise -> overall health",
+        "value": 1
+      },
+      "B->C": {
+        "str": "quality of diet -> overall health",
+        "value": 1
+      },
+      "C->D": {
+        "str": "overall health -> longevity",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of exercise",
+      "B": "physical fitness level",
+      "C": "overall health",
+      "D": "longevity"
+    },
+    "node_name_CN": {
+      "A": "锻炼量",
+      "B": "身体素质水平",
+      "C": "整体健康状况",
+      "D": "长寿"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "ample"
+      ],
+      "B": [
+        "poor",
+        "good"
+      ],
+      "C": [
+        "poor",
+        "good"
+      ],
+      "D": [
+        "short lifespan",
+        "long lifespan"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "充足"
+      ],
+      "B": [
+        "差",
+        "好"
+      ],
+      "C": [
+        "差",
+        "好"
+      ],
+      "D": [
+        "短命",
+        "长寿/短命"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of exercise -> physical fitness level",
+        "value": 1
+      },
+      "A->C": {
+        "str": "amount of exercise -> overall health",
+        "value": 1
+      },
+      "B->C": {
+        "str": "physical fitness level -> overall health",
+        "value": 1
+      },
+      "C->D": {
+        "str": "overall health -> longevity",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->D",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of exercise the person gets",
+      "B": "dietary habits of the person",
+      "C": "overall health of the person",
+      "D": "life expectancy of the person"
+    },
+    "node_name_CN": {
+      "A": "amount of exercise the person gets",
+      "B": "人的饮食习惯",
+      "C": "人的整体健康",
+      "D": "人的预期寿命"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "adequate"
+      ],
+      "B": [
+        "unhealthy",
+        "healthy"
+      ],
+      "C": [
+        "poor",
+        "good"
+      ],
+      "D": [
+        "short",
+        "long"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "充足"
+      ],
+      "B": [
+        "不健康的",
+        "健康的"
+      ],
+      "C": [
+        "差",
+        "好"
+      ],
+      "D": [
+        "短",
+        "长"
+      ]
+    },
+    "edge_sign": {
+      "A->D": {
+        "str": "amount of exercise the person gets -> life expectancy of the person",
+        "value": 1
+      },
+      "B->C": {
+        "str": "dietary habits of the person -> overall health of the person",
+        "value": 1
+      },
+      "C->D": {
+        "str": "overall health of the person -> life expectancy of the person",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->D",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of rainfall in a region",
+      "B": "crop yield in the region",
+      "C": "availability of water for irrigation",
+      "D": "overall agricultural productivity in the region"
+    },
+    "node_name_CN": {
+      "A": "amount of rainfall in a region",
+      "B": "该地区的农作物产量",
+      "C": "灌溉用水的可用性",
+      "D": "overall agricultural productivity in the region"
+    },
+    "node_value": {
+      "A": [
+        "low",
+        "high"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "limited",
+        "abundant"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "有限",
+        "充足"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of rainfall in a region -> crop yield in the region",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of rainfall in a region -> overall agricultural productivity in the region",
+        "value": 1
+      },
+      "B->C": {
+        "str": "crop yield in the region -> availability of water for irrigation",
+        "value": 1
+      },
+      "C->D": {
+        "str": "availability of water for irrigation -> overall agricultural productivity in the region",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->C",
+      "A->D",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of exercise done by an individual",
+      "B": "dietary habits of an individual",
+      "C": "overall health status of an individual",
+      "D": "risk of developing a chronic disease"
+    },
+    "node_name_CN": {
+      "A": "个人的运动量",
+      "B": "个人饮食习惯",
+      "C": "一个人的整体健康状况",
+      "D": "慢性疾病的风险"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "regular"
+      ],
+      "B": [
+        "unhealthy dietary habits of an individual",
+        "healthy dietary habits of an individual"
+      ],
+      "C": [
+        "poor",
+        "good"
+      ],
+      "D": [
+        "prevention",
+        "likelihood"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "规律"
+      ],
+      "B": [
+        "不健康",
+        "健康"
+      ],
+      "C": [
+        "差",
+        "好"
+      ],
+      "D": [
+        "预防",
+        "可能性"
+      ]
+    },
+    "edge_sign": {
+      "A->C": {
+        "str": "amount of exercise done by an individual -> overall health status of an individual",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of exercise done by an individual -> risk of developing a chronic disease",
+        "value": 1
+      },
+      "B->C": {
+        "str": "dietary habits of an individual -> overall health status of an individual",
+        "value": 1
+      },
+      "C->D": {
+        "str": "overall health status of an individual -> risk of developing a chronic disease",
+        "value": -1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of time spent studying for an exam",
+      "B": "level of understanding of the material",
+      "C": "exam score received",
+      "D": "overall grade in the class"
+    },
+    "node_name_CN": {
+      "A": "备考时间",
+      "B": "材料的理解水平",
+      "C": "考试分数",
+      "D": "班级总体成绩"
+    },
+    "node_value": {
+      "A": [
+        "short",
+        "long"
+      ],
+      "B": [
+        "superficial",
+        "deep"
+      ],
+      "C": [
+        "low",
+        "high"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "短",
+        "长"
+      ],
+      "B": [
+        "肤浅",
+        "深刻"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of time spent studying for an exam -> level of understanding of the material",
+        "value": 1
+      },
+      "A->C": {
+        "str": "amount of time spent studying for an exam -> exam score received",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of time spent studying for an exam -> overall grade in the class",
+        "value": 1
+      },
+      "B->C": {
+        "str": "level of understanding of the material -> exam score received",
+        "value": 1
+      },
+      "C->D": {
+        "str": "exam score received -> overall grade in the class",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "level of physical activity",
+      "B": "dietary habits",
+      "C": "body mass index (bmi)",
+      "D": "risk of developing chronic diseases"
+    },
+    "node_name_CN": {
+      "A": "身体活动水平",
+      "B": "饮食习惯",
+      "C": "身体质量指数（BMI）",
+      "D": "患慢性病的风险"
+    },
+    "node_value": {
+      "A": [
+        "sedentary",
+        "active"
+      ],
+      "B": [
+        "unhealthy",
+        "healthy"
+      ],
+      "C": [
+        "unhealthy",
+        "healthy"
+      ],
+      "D": [
+        "high",
+        "low"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "久坐的",
+        "活跃的"
+      ],
+      "B": [
+        "不健康",
+        "健康"
+      ],
+      "C": [
+        "不健康",
+        "健康"
+      ],
+      "D": [
+        "高",
+        "低"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "level of physical activity -> dietary habits",
+        "value": 1
+      },
+      "A->C": {
+        "str": "level of physical activity -> body mass index (bmi)",
+        "value": 1
+      },
+      "B->D": {
+        "str": "dietary habits -> risk of developing chronic diseases",
+        "value": 1
+      },
+      "C->D": {
+        "str": "body mass index (bmi) -> risk of developing chronic diseases",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->D",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of exercise done",
+      "B": "dietary habits",
+      "C": "genetic predisposition to certain diseases",
+      "D": "overall health status"
+    },
+    "node_name_CN": {
+      "A": "运动量",
+      "B": "饮食习惯",
+      "C": "特定疾病的遗传易感性",
+      "D": "整体健康状况"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "intense"
+      ],
+      "B": [
+        "unhealthy",
+        "healthy"
+      ],
+      "C": [
+        "negative",
+        "positive"
+      ],
+      "D": [
+        "poor",
+        "good"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "强烈"
+      ],
+      "B": [
+        "不健康",
+        "健康"
+      ],
+      "C": [
+        "负面的",
+        "积极的"
+      ],
+      "D": [
+        "差",
+        "好"
+      ]
+    },
+    "edge_sign": {
+      "A->D": {
+        "str": "amount of exercise done -> overall health status",
+        "value": 1
+      },
+      "B->D": {
+        "str": "dietary habits -> overall health status",
+        "value": 1
+      },
+      "C->D": {
+        "str": "genetic predisposition to certain diseases -> overall health status",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->D",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of exercise done",
+      "B": "diet quality",
+      "C": "genetic predisposition to health issues",
+      "D": "overall health status"
+    },
+    "node_name_CN": {
+      "A": "运动量",
+      "B": "饮食质量",
+      "C": "遗传疾病倾向",
+      "D": "整体健康状况"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "intense"
+      ],
+      "B": [
+        "poor",
+        "good"
+      ],
+      "C": [
+        "unhealthy",
+        "healthy"
+      ],
+      "D": [
+        "poor",
+        "good"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "强烈"
+      ],
+      "B": [
+        "差",
+        "好"
+      ],
+      "C": [
+        "不健康",
+        "健康"
+      ],
+      "D": [
+        "差",
+        "好"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of exercise done -> diet quality",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of exercise done -> overall health status",
+        "value": 1
+      },
+      "B->D": {
+        "str": "diet quality -> overall health status",
+        "value": 1
+      },
+      "C->D": {
+        "str": "genetic predisposition to health issues -> overall health status",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of physical exercise",
+      "B": "dietary habits",
+      "C": "stress levels",
+      "D": "overall health"
+    },
+    "node_name_CN": {
+      "A": "体育锻炼量",
+      "B": "饮食习惯",
+      "C": "压力水平",
+      "D": "整体健康状况"
+    },
+    "node_value": {
+      "A": [
+        "sedentary",
+        "active"
+      ],
+      "B": [
+        "unhealthy",
+        "healthy"
+      ],
+      "C": [
+        "high",
+        "low"
+      ],
+      "D": [
+        "poor",
+        "good"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "久坐的",
+        "积极的"
+      ],
+      "B": [
+        "不健康",
+        "健康"
+      ],
+      "C": [
+        "高",
+        "低"
+      ],
+      "D": [
+        "差",
+        "好"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of physical exercise -> dietary habits",
+        "value": 1
+      },
+      "A->C": {
+        "str": "amount of physical exercise -> stress levels",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of physical exercise -> overall health",
+        "value": 1
+      },
+      "B->D": {
+        "str": "dietary habits -> overall health",
+        "value": 1
+      },
+      "C->D": {
+        "str": "stress levels -> overall health",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "B->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of rainfall",
+      "B": "soil moisture level",
+      "C": "crop yield",
+      "D": "profit of the farmer"
+    },
+    "node_name_CN": {
+      "A": "降雨量",
+      "B": "土壤湿度水平",
+      "C": "农作物产量",
+      "D": "农民的利润"
+    },
+    "node_value": {
+      "A": [
+        "small",
+        "large"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "low",
+        "high"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "小",
+        "大"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of rainfall -> soil moisture level",
+        "value": 1
+      },
+      "B->C": {
+        "str": "soil moisture level -> crop yield",
+        "value": 1
+      },
+      "B->D": {
+        "str": "soil moisture level -> profit of the farmer",
+        "value": 1
+      },
+      "C->D": {
+        "str": "crop yield -> profit of the farmer",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "B->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of exercise",
+      "B": "physical fitness level",
+      "C": "dietary habits",
+      "D": "overall health condition"
+    },
+    "node_name_CN": {
+      "A": "锻炼量",
+      "B": "身体素质水平",
+      "C": "饮食习惯",
+      "D": "整体健康状况"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "ample"
+      ],
+      "B": [
+        "poor",
+        "good"
+      ],
+      "C": [
+        "unhealthy",
+        "healthy"
+      ],
+      "D": [
+        "poor",
+        "good"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "充足"
+      ],
+      "B": [
+        "差",
+        "好"
+      ],
+      "C": [
+        "不健康",
+        "健康"
+      ],
+      "D": [
+        "不好",
+        "好"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of exercise -> physical fitness level",
+        "value": 1
+      },
+      "A->C": {
+        "str": "amount of exercise -> dietary habits",
+        "value": 1
+      },
+      "B->C": {
+        "str": "physical fitness level -> dietary habits",
+        "value": 1
+      },
+      "B->D": {
+        "str": "physical fitness level -> overall health condition",
+        "value": 1
+      },
+      "C->D": {
+        "str": "dietary habits -> overall health condition",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->D",
+      "B->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "level of physical activity",
+      "B": "dietary habits",
+      "C": "body weight",
+      "D": "overall health status"
+    },
+    "node_name_CN": {
+      "A": "身体活动水平",
+      "B": "饮食习惯",
+      "C": "体重",
+      "D": "整体健康状况"
+    },
+    "node_value": {
+      "A": [
+        "sedentary",
+        "active"
+      ],
+      "B": [
+        "unhealthy",
+        "healthy"
+      ],
+      "C": [
+        "light",
+        "heavy"
+      ],
+      "D": [
+        "poor",
+        "good"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "久坐的",
+        "活跃的"
+      ],
+      "B": [
+        "不健康",
+        "健康"
+      ],
+      "C": [
+        "轻",
+        "重"
+      ],
+      "D": [
+        "差",
+        "好"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "level of physical activity -> dietary habits",
+        "value": 1
+      },
+      "A->D": {
+        "str": "level of physical activity -> overall health status",
+        "value": 1
+      },
+      "B->C": {
+        "str": "dietary habits -> body weight",
+        "value": -1
+      },
+      "B->D": {
+        "str": "dietary habits -> overall health status",
+        "value": 1
+      },
+      "C->D": {
+        "str": "body weight -> overall health status",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->C",
+      "A->D",
+      "B->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of rainfall",
+      "B": "temperature",
+      "C": "soil moisture",
+      "D": "crop yield"
+    },
+    "node_name_CN": {
+      "A": "降雨量",
+      "B": "温度",
+      "C": "土壤湿度",
+      "D": "农作物产量"
+    },
+    "node_value": {
+      "A": [
+        "small",
+        "large"
+      ],
+      "B": [
+        "cold",
+        "hot"
+      ],
+      "C": [
+        "dry",
+        "moist"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "小",
+        "大"
+      ],
+      "B": [
+        "冷",
+        "热"
+      ],
+      "C": [
+        "干燥",
+        "湿润"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->C": {
+        "str": "amount of rainfall -> soil moisture",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of rainfall -> crop yield",
+        "value": 1
+      },
+      "B->C": {
+        "str": "temperature -> soil moisture",
+        "value": 1
+      },
+      "B->D": {
+        "str": "temperature -> crop yield",
+        "value": -1
+      },
+      "C->D": {
+        "str": "soil moisture -> crop yield",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "education level",
+      "B": "job experience",
+      "C": "skill set",
+      "D": "salary"
+    },
+    "node_name_CN": {
+      "A": "教育水平",
+      "B": "工作经验",
+      "C": "技能组合",
+      "D": "薪水"
+    },
+    "node_value": {
+      "A": [
+        "low",
+        "high"
+      ],
+      "B": [
+        "lack of",
+        "abundance of"
+      ],
+      "C": [
+        "limited",
+        "diverse"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "缺乏",
+        "丰富"
+      ],
+      "C": [
+        "有限",
+        "多样化"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "education level -> job experience",
+        "value": 1
+      },
+      "A->C": {
+        "str": "education level -> skill set",
+        "value": 1
+      },
+      "A->D": {
+        "str": "education level -> salary",
+        "value": 1
+      },
+      "B->C": {
+        "str": "job experience -> skill set",
+        "value": 1
+      },
+      "B->D": {
+        "str": "job experience -> salary",
+        "value": 1
+      },
+      "C->D": {
+        "str": "skill set -> salary",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "A->D"
+    ],
+    "node_name": {
+      "A": "weather conditions",
+      "B": "temperature",
+      "C": "humidity",
+      "D": "precipitation"
+    },
+    "node_name_CN": {
+      "A": "天气状况",
+      "B": "温度",
+      "C": "湿度",
+      "D": "降水量"
+    },
+    "node_value": {
+      "A": [
+        "bad",
+        "good"
+      ],
+      "B": [
+        "cold",
+        "hot"
+      ],
+      "C": [
+        "low",
+        "high"
+      ],
+      "D": [
+        "little",
+        "abundant"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "不好",
+        "好"
+      ],
+      "B": [
+        "冷",
+        "热"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "少",
+        "丰富"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "weather conditions -> temperature",
+        "value": -1
+      },
+      "A->C": {
+        "str": "weather conditions -> humidity",
+        "value": -1
+      },
+      "A->D": {
+        "str": "weather conditions -> precipitation",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->D",
+      "B->C"
+    ],
+    "node_name": {
+      "A": "amount of exercise",
+      "B": "body weight",
+      "C": "cholesterol levels",
+      "D": "diet quality"
+    },
+    "node_name_CN": {
+      "A": "锻炼量",
+      "B": "体重",
+      "C": "胆固醇水平",
+      "D": "饮食质量"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "ample"
+      ],
+      "B": [
+        "light",
+        "heavy"
+      ],
+      "C": [
+        "high",
+        "low"
+      ],
+      "D": [
+        "poor",
+        "good"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "充足"
+      ],
+      "B": [
+        "轻",
+        "重"
+      ],
+      "C": [
+        "高",
+        "低"
+      ],
+      "D": [
+        "差",
+        "好"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of exercise -> body weight",
+        "value": -1
+      },
+      "A->D": {
+        "str": "amount of exercise -> diet quality",
+        "value": 1
+      },
+      "B->C": {
+        "str": "body weight -> cholesterol levels",
+        "value": -1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->C",
+      "A->D",
+      "B->C"
+    ],
+    "node_name": {
+      "A": "weather conditions",
+      "B": "amount of traffic on the road",
+      "C": "probability of a car accident",
+      "D": "severity of injuries in a car accident"
+    },
+    "node_name_CN": {
+      "A": "天气状况",
+      "B": "道路交通量",
+      "C": "车祸概率",
+      "D": "车祸受伤程度"
+    },
+    "node_value": {
+      "A": [
+        "bad",
+        "good"
+      ],
+      "B": [
+        "congested",
+        "smooth"
+      ],
+      "C": [
+        "low",
+        "high"
+      ],
+      "D": [
+        "severe",
+        "minor"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "不好",
+        "好"
+      ],
+      "B": [
+        "拥挤的",
+        "顺畅的"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "严重的",
+        "轻微的"
+      ]
+    },
+    "edge_sign": {
+      "A->C": {
+        "str": "weather conditions -> probability of a car accident",
+        "value": -1
+      },
+      "A->D": {
+        "str": "weather conditions -> severity of injuries in a car accident",
+        "value": 1
+      },
+      "B->C": {
+        "str": "amount of traffic on the road -> probability of a car accident",
+        "value": -1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->C"
+    ],
+    "node_name": {
+      "A": "amount of time spent studying",
+      "B": "level of understanding the material",
+      "C": "performance on a practice exam",
+      "D": "final exam score"
+    },
+    "node_name_CN": {
+      "A": "学习时间",
+      "B": "对材料的理解水平",
+      "C": "模拟考试成绩",
+      "D": "期末考试成绩"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "much"
+      ],
+      "B": [
+        "poor",
+        "good"
+      ],
+      "C": [
+        "poor",
+        "excellent"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "多"
+      ],
+      "B": [
+        "差",
+        "好"
+      ],
+      "C": [
+        "差",
+        "优秀"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of time spent studying -> level of understanding the material",
+        "value": 1
+      },
+      "A->C": {
+        "str": "amount of time spent studying -> performance on a practice exam",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of time spent studying -> final exam score",
+        "value": 1
+      },
+      "B->C": {
+        "str": "level of understanding the material -> performance on a practice exam",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "B->C",
+      "B->D"
+    ],
+    "node_name": {
+      "A": "temperature outside",
+      "B": "number of people wearing winter coats",
+      "C": "likelihood of snowfall",
+      "D": "amount of snow accumulation"
+    },
+    "node_name_CN": {
+      "A": "外面的温度",
+      "B": "穿冬大衣的人数",
+      "C": "降雪可能性",
+      "D": "积雪量"
+    },
+    "node_value": {
+      "A": [
+        "cold",
+        "hot"
+      ],
+      "B": [
+        "few",
+        "many"
+      ],
+      "C": [
+        "unlikely",
+        "likely"
+      ],
+      "D": [
+        "minimal",
+        "excessive"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "冷",
+        "热"
+      ],
+      "B": [
+        "少",
+        "多"
+      ],
+      "C": [
+        "不太可能",
+        "可能"
+      ],
+      "D": [
+        "最少的",
+        "过多的"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "temperature outside -> number of people wearing winter coats",
+        "value": -1
+      },
+      "B->C": {
+        "str": "number of people wearing winter coats -> likelihood of snowfall",
+        "value": 1
+      },
+      "B->D": {
+        "str": "number of people wearing winter coats -> amount of snow accumulation",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "B->C",
+      "B->D"
+    ],
+    "node_name": {
+      "A": "amount of exercise done by an individual per week",
+      "B": "caloric intake of the individual",
+      "C": "body weight of the individual",
+      "D": "risk of developing obesity"
+    },
+    "node_name_CN": {
+      "A": "个人每周运动量",
+      "B": "个人热量摄入量",
+      "C": "个体的体重",
+      "D": "发展肥胖的风险"
+    },
+    "node_value": {
+      "A": [
+        "low",
+        "high"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "light",
+        "heavy"
+      ],
+      "D": [
+        "high",
+        "low"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "轻",
+        "重"
+      ],
+      "D": [
+        "高",
+        "低"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of exercise done by an individual per week -> caloric intake of the individual",
+        "value": 1
+      },
+      "A->C": {
+        "str": "amount of exercise done by an individual per week -> body weight of the individual",
+        "value": 1
+      },
+      "B->C": {
+        "str": "caloric intake of the individual -> body weight of the individual",
+        "value": 1
+      },
+      "B->D": {
+        "str": "caloric intake of the individual -> risk of developing obesity",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->C",
+      "A->D",
+      "B->C",
+      "B->D"
+    ],
+    "node_name": {
+      "A": "the amount of rainfall in a specific region",
+      "B": "the temperature in the same region",
+      "C": "the growth of crops in the region",
+      "D": "the number of pests infesting the crops"
+    },
+    "node_name_CN": {
+      "A": "the amount of rainfall in a specific region",
+      "B": "同一地区的温度",
+      "C": "该地区作物的生长",
+      "D": "作物上害虫的数量"
+    },
+    "node_value": {
+      "A": [
+        "low",
+        "high"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "poor",
+        "strong"
+      ],
+      "D": [
+        "high",
+        "low"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "差",
+        "强"
+      ],
+      "D": [
+        "高",
+        "低"
+      ]
+    },
+    "edge_sign": {
+      "A->C": {
+        "str": "the amount of rainfall in a specific region -> the growth of crops in the region",
+        "value": 1
+      },
+      "A->D": {
+        "str": "the amount of rainfall in a specific region -> the number of pests infesting the crops",
+        "value": 1
+      },
+      "B->C": {
+        "str": "the temperature in the same region -> the growth of crops in the region",
+        "value": 1
+      },
+      "B->D": {
+        "str": "the temperature in the same region -> the number of pests infesting the crops",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->C",
+      "B->D"
+    ],
+    "node_name": {
+      "A": "amount of time spent studying",
+      "B": "grade on a test",
+      "C": "overall academic performance",
+      "D": "likelihood of getting into a top university"
+    },
+    "node_name_CN": {
+      "A": "学习时间",
+      "B": "考试成绩",
+      "C": "整体学术表现",
+      "D": "进入顶级大学的可能性"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "much"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "poor academic performance",
+        "excellent academic performance"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "多"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "不佳",
+        "优秀"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of time spent studying -> grade on a test",
+        "value": 1
+      },
+      "A->C": {
+        "str": "amount of time spent studying -> overall academic performance",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of time spent studying -> likelihood of getting into a top university",
+        "value": 1
+      },
+      "B->C": {
+        "str": "grade on a test -> overall academic performance",
+        "value": 1
+      },
+      "B->D": {
+        "str": "grade on a test -> likelihood of getting into a top university",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of exercise",
+      "B": "physical fitness level",
+      "C": "overall health",
+      "D": "life expectancy"
+    },
+    "node_name_CN": {
+      "A": "锻炼量",
+      "B": "身体素质水平",
+      "C": "整体健康状况",
+      "D": "life expectancy"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "ample"
+      ],
+      "B": [
+        "poor",
+        "good"
+      ],
+      "C": [
+        "poor",
+        "good"
+      ],
+      "D": [
+        "short",
+        "long"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "充足"
+      ],
+      "B": [
+        "差",
+        "好"
+      ],
+      "C": [
+        "差",
+        "好"
+      ],
+      "D": [
+        "短",
+        "长"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of exercise -> physical fitness level",
+        "value": 1
+      },
+      "B->C": {
+        "str": "physical fitness level -> overall health",
+        "value": 1
+      },
+      "C->D": {
+        "str": "overall health -> life expectancy",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->C",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of money spent on advertising",
+      "B": "number of customers visiting the store",
+      "C": "total sales revenue",
+      "D": "profit generated by the store"
+    },
+    "node_name_CN": {
+      "A": "广告支出金额",
+      "B": "顾客来店数量",
+      "C": "总销售收入",
+      "D": "商店产生的利润"
+    },
+    "node_value": {
+      "A": [
+        "low",
+        "high"
+      ],
+      "B": [
+        "few",
+        "many"
+      ],
+      "C": [
+        "low",
+        "high"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "少",
+        "多"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->C": {
+        "str": "amount of money spent on advertising -> total sales revenue",
+        "value": 1
+      },
+      "B->C": {
+        "str": "number of customers visiting the store -> total sales revenue",
+        "value": 1
+      },
+      "C->D": {
+        "str": "total sales revenue -> profit generated by the store",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "level of education",
+      "B": "job satisfaction",
+      "C": "salary",
+      "D": "overall happiness"
+    },
+    "node_name_CN": {
+      "A": "教育水平",
+      "B": "工作满意度",
+      "C": "薪水",
+      "D": "整体幸福感"
+    },
+    "node_value": {
+      "A": [
+        "low",
+        "high"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "low",
+        "high"
+      ],
+      "D": [
+        "unhappy",
+        "happy"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "不快乐",
+        "快乐"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "level of education -> job satisfaction",
+        "value": 1
+      },
+      "A->C": {
+        "str": "level of education -> salary",
+        "value": 1
+      },
+      "B->C": {
+        "str": "job satisfaction -> salary",
+        "value": 1
+      },
+      "C->D": {
+        "str": "salary -> overall happiness",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->D",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of rainfall",
+      "B": "humidity level",
+      "C": "soil moisture content",
+      "D": "crop yield"
+    },
+    "node_name_CN": {
+      "A": "降雨量",
+      "B": "湿度水平",
+      "C": "土壤湿度",
+      "D": "农作物产量"
+    },
+    "node_value": {
+      "A": [
+        "small",
+        "large"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "low",
+        "high"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "小",
+        "大"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->D": {
+        "str": "amount of rainfall -> crop yield",
+        "value": 1
+      },
+      "B->C": {
+        "str": "humidity level -> soil moisture content",
+        "value": 1
+      },
+      "C->D": {
+        "str": "soil moisture content -> crop yield",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->D",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of exercise",
+      "B": "physical fitness level",
+      "C": "overall health status",
+      "D": "life expectancy"
+    },
+    "node_name_CN": {
+      "A": "锻炼量",
+      "B": "身体素质水平",
+      "C": "整体健康状况",
+      "D": "life expectancy"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "ample"
+      ],
+      "B": [
+        "poor",
+        "good"
+      ],
+      "C": [
+        "poor",
+        "good"
+      ],
+      "D": [
+        "short",
+        "long"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "充足"
+      ],
+      "B": [
+        "差",
+        "好"
+      ],
+      "C": [
+        "差",
+        "好"
+      ],
+      "D": [
+        "短",
+        "长"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of exercise -> physical fitness level",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of exercise -> life expectancy",
+        "value": 1
+      },
+      "B->C": {
+        "str": "physical fitness level -> overall health status",
+        "value": 1
+      },
+      "C->D": {
+        "str": "overall health status -> life expectancy",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->C",
+      "A->D",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of exercise done",
+      "B": "dietary habits",
+      "C": "body weight",
+      "D": "overall health condition"
+    },
+    "node_name_CN": {
+      "A": "运动量",
+      "B": "饮食习惯",
+      "C": "体重",
+      "D": "整体健康状况"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "intense"
+      ],
+      "B": [
+        "unhealthy",
+        "healthy"
+      ],
+      "C": [
+        "light",
+        "heavy"
+      ],
+      "D": [
+        "poor",
+        "good"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "强烈"
+      ],
+      "B": [
+        "不健康",
+        "健康"
+      ],
+      "C": [
+        "轻",
+        "重"
+      ],
+      "D": [
+        "不好",
+        "好"
+      ]
+    },
+    "edge_sign": {
+      "A->C": {
+        "str": "amount of exercise done -> body weight",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of exercise done -> overall health condition",
+        "value": 1
+      },
+      "B->C": {
+        "str": "dietary habits -> body weight",
+        "value": -1
+      },
+      "C->D": {
+        "str": "body weight -> overall health condition",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of sunlight exposure",
+      "B": "vitamin d levels",
+      "C": "bone density",
+      "D": "risk of osteoporosis"
+    },
+    "node_name_CN": {
+      "A": "日照量",
+      "B": "维生素D水平",
+      "C": "骨密度",
+      "D": "骨质疏松的风险"
+    },
+    "node_value": {
+      "A": [
+        "limited",
+        "abundant"
+      ],
+      "B": [
+        "low",
+        "optimal"
+      ],
+      "C": [
+        "low",
+        "high"
+      ],
+      "D": [
+        "high",
+        "low"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "有限的",
+        "充足的"
+      ],
+      "B": [
+        "低",
+        "最佳"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "高",
+        "低"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of sunlight exposure -> vitamin d levels",
+        "value": 1
+      },
+      "A->C": {
+        "str": "amount of sunlight exposure -> bone density",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of sunlight exposure -> risk of osteoporosis",
+        "value": 1
+      },
+      "B->C": {
+        "str": "vitamin d levels -> bone density",
+        "value": 1
+      },
+      "C->D": {
+        "str": "bone density -> risk of osteoporosis",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of studying done for an exam",
+      "B": "level of understanding of the material",
+      "C": "amount of sleep the night before the exam",
+      "D": "exam performance"
+    },
+    "node_name_CN": {
+      "A": "考试复习量",
+      "B": "材料的理解水平",
+      "C": "考试前一晚的睡眠时间",
+      "D": "考试表现"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "much"
+      ],
+      "B": [
+        "superficial",
+        "deep"
+      ],
+      "C": [
+        "insufficient",
+        "adequate"
+      ],
+      "D": [
+        "poor",
+        "excellent"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "多"
+      ],
+      "B": [
+        "肤浅",
+        "深刻"
+      ],
+      "C": [
+        "不足",
+        "充足"
+      ],
+      "D": [
+        "差劲的",
+        "优秀的"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of studying done for an exam -> level of understanding of the material",
+        "value": 1
+      },
+      "A->C": {
+        "str": "amount of studying done for an exam -> amount of sleep the night before the exam",
+        "value": 1
+      },
+      "B->D": {
+        "str": "level of understanding of the material -> exam performance",
+        "value": 1
+      },
+      "C->D": {
+        "str": "amount of sleep the night before the exam -> exam performance",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->D",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "level of physical activity",
+      "B": "dietary habits",
+      "C": "genetic predisposition to certain diseases",
+      "D": "overall health status"
+    },
+    "node_name_CN": {
+      "A": "身体活动水平",
+      "B": "饮食习惯",
+      "C": "特定疾病的遗传易感性",
+      "D": "整体健康状况"
+    },
+    "node_value": {
+      "A": [
+        "sedentary",
+        "active"
+      ],
+      "B": [
+        "unhealthy",
+        "healthy"
+      ],
+      "C": [
+        "negative",
+        "positive"
+      ],
+      "D": [
+        "poor",
+        "good"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "久坐的",
+        "活跃的"
+      ],
+      "B": [
+        "不健康",
+        "健康"
+      ],
+      "C": [
+        "负面的",
+        "积极的"
+      ],
+      "D": [
+        "差",
+        "好"
+      ]
+    },
+    "edge_sign": {
+      "A->D": {
+        "str": "level of physical activity -> overall health status",
+        "value": 1
+      },
+      "B->D": {
+        "str": "dietary habits -> overall health status",
+        "value": 1
+      },
+      "C->D": {
+        "str": "genetic predisposition to certain diseases -> overall health status",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->D",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "level of education",
+      "B": "salary level",
+      "C": "work experience",
+      "D": "job satisfaction"
+    },
+    "node_name_CN": {
+      "A": "教育水平",
+      "B": "薪水水平",
+      "C": "工作经验",
+      "D": "工作满意度"
+    },
+    "node_value": {
+      "A": [
+        "low",
+        "high"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "limited",
+        "valuable"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "有限",
+        "有价值"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "level of education -> salary level",
+        "value": 1
+      },
+      "A->D": {
+        "str": "level of education -> job satisfaction",
+        "value": 1
+      },
+      "B->D": {
+        "str": "salary level -> job satisfaction",
+        "value": 1
+      },
+      "C->D": {
+        "str": "work experience -> job satisfaction",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "parental involvement in child's education",
+      "B": "academic performance of the child",
+      "C": "extracurricular activities of the child",
+      "D": "college admission status"
+    },
+    "node_name_CN": {
+      "A": "家长参与孩子教育",
+      "B": "学业成绩",
+      "C": "孩子的课外活动",
+      "D": "大学录取状态"
+    },
+    "node_value": {
+      "A": [
+        "low",
+        "high"
+      ],
+      "B": [
+        "poor",
+        "excellent"
+      ],
+      "C": [
+        "neglectful",
+        "enriching"
+      ],
+      "D": [
+        "rejected",
+        "accepted"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "差",
+        "优秀"
+      ],
+      "C": [
+        "疏忽的",
+        "丰富的"
+      ],
+      "D": [
+        "被拒绝的",
+        "被接受的"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "parental involvement in child's education -> academic performance of the child",
+        "value": 1
+      },
+      "A->C": {
+        "str": "parental involvement in child's education -> extracurricular activities of the child",
+        "value": 1
+      },
+      "A->D": {
+        "str": "parental involvement in child's education -> college admission status",
+        "value": 1
+      },
+      "B->D": {
+        "str": "academic performance of the child -> college admission status",
+        "value": 1
+      },
+      "C->D": {
+        "str": "extracurricular activities of the child -> college admission status",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "B->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "level of education",
+      "B": "job satisfaction",
+      "C": "income level",
+      "D": "quality of life"
+    },
+    "node_name_CN": {
+      "A": "教育水平",
+      "B": "工作满意度",
+      "C": "收入水平",
+      "D": "生活质量"
+    },
+    "node_value": {
+      "A": [
+        "low",
+        "high"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "low",
+        "high"
+      ],
+      "D": [
+        "poor",
+        "good"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "差",
+        "好"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "level of education -> job satisfaction",
+        "value": 1
+      },
+      "B->C": {
+        "str": "job satisfaction -> income level",
+        "value": 1
+      },
+      "B->D": {
+        "str": "job satisfaction -> quality of life",
+        "value": 1
+      },
+      "C->D": {
+        "str": "income level -> quality of life",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "B->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "the amount of rainfall in a region",
+      "B": "the level of soil moisture in the ground",
+      "C": "the growth of crops in the region",
+      "D": "the yield of the crops at harvest"
+    },
+    "node_name_CN": {
+      "A": "区域降雨量",
+      "B": "土壤含水量",
+      "C": "该地区作物的生长",
+      "D": "收成产量"
+    },
+    "node_value": {
+      "A": [
+        "insufficient",
+        "plentiful"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "poor",
+        "strong"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "不足",
+        "丰富"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "差",
+        "强"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "the amount of rainfall in a region -> the level of soil moisture in the ground",
+        "value": 1
+      },
+      "A->C": {
+        "str": "the amount of rainfall in a region -> the growth of crops in the region",
+        "value": 1
+      },
+      "B->C": {
+        "str": "the level of soil moisture in the ground -> the growth of crops in the region",
+        "value": 1
+      },
+      "B->D": {
+        "str": "the level of soil moisture in the ground -> the yield of the crops at harvest",
+        "value": 1
+      },
+      "C->D": {
+        "str": "the growth of crops in the region -> the yield of the crops at harvest",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->D",
+      "B->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of time spent studying",
+      "B": "grade on a test",
+      "C": "overall gpa",
+      "D": "likelihood of getting into a top university"
+    },
+    "node_name_CN": {
+      "A": "学习时间",
+      "B": "考试成绩",
+      "C": "总平均成绩",
+      "D": "进入顶级大学的可能性"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "much"
+      ],
+      "B": [
+        "low",
+        "high"
+      ],
+      "C": [
+        "low",
+        "high"
+      ],
+      "D": [
+        "low",
+        "high"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "多"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of time spent studying -> grade on a test",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of time spent studying -> likelihood of getting into a top university",
+        "value": 1
+      },
+      "B->C": {
+        "str": "grade on a test -> overall gpa",
+        "value": 1
+      },
+      "B->D": {
+        "str": "grade on a test -> likelihood of getting into a top university",
+        "value": 1
+      },
+      "C->D": {
+        "str": "overall gpa -> likelihood of getting into a top university",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->C",
+      "A->D",
+      "B->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of daily exercise",
+      "B": "quality of diet",
+      "C": "overall health condition",
+      "D": "longevity"
+    },
+    "node_name_CN": {
+      "A": "每日锻炼量",
+      "B": "饮食质量",
+      "C": "整体健康状况",
+      "D": "长寿"
+    },
+    "node_value": {
+      "A": [
+        "insufficient",
+        "adequate"
+      ],
+      "B": [
+        "poor",
+        "healthy"
+      ],
+      "C": [
+        "poor",
+        "good"
+      ],
+      "D": [
+        "short lifespan",
+        "long lifespan"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "不足",
+        "充足"
+      ],
+      "B": [
+        "差",
+        "健康"
+      ],
+      "C": [
+        "不好",
+        "好"
+      ],
+      "D": [
+        "短命",
+        "长寿/短命"
+      ]
+    },
+    "edge_sign": {
+      "A->C": {
+        "str": "amount of daily exercise -> overall health condition",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of daily exercise -> longevity",
+        "value": 1
+      },
+      "B->C": {
+        "str": "quality of diet -> overall health condition",
+        "value": 1
+      },
+      "B->D": {
+        "str": "quality of diet -> longevity",
+        "value": 1
+      },
+      "C->D": {
+        "str": "overall health condition -> longevity",
+        "value": 1
+      }
+    }
+  },
+  {
+    "nodes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edges": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "amount of exercise",
+      "B": "physical fitness level",
+      "C": "overall health condition",
+      "D": "life expectancy"
+    },
+    "node_name_CN": {
+      "A": "锻炼量",
+      "B": "身体素质水平",
+      "C": "整体健康状况",
+      "D": "life expectancy"
+    },
+    "node_value": {
+      "A": [
+        "little",
+        "ample"
+      ],
+      "B": [
+        "poor",
+        "good"
+      ],
+      "C": [
+        "poor",
+        "good"
+      ],
+      "D": [
+        "short",
+        "long"
+      ]
+    },
+    "node_value_CN": {
+      "A": [
+        "少",
+        "充足"
+      ],
+      "B": [
+        "差",
+        "好"
+      ],
+      "C": [
+        "不好",
+        "好"
+      ],
+      "D": [
+        "短",
+        "长"
+      ]
+    },
+    "edge_sign": {
+      "A->B": {
+        "str": "amount of exercise -> physical fitness level",
+        "value": 1
+      },
+      "A->C": {
+        "str": "amount of exercise -> overall health condition",
+        "value": 1
+      },
+      "A->D": {
+        "str": "amount of exercise -> life expectancy",
+        "value": 1
+      },
+      "B->C": {
+        "str": "physical fitness level -> overall health condition",
+        "value": 1
+      },
+      "B->D": {
+        "str": "physical fitness level -> life expectancy",
+        "value": 1
+      },
+      "C->D": {
+        "str": "overall health condition -> life expectancy",
+        "value": 1
+      }
+    }
+  }
+]

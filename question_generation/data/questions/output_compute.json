@@ -1,0 +1,787 @@
+[
+  {
+    "name": "candle",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Blowing out the candle directly causes the dark room. The candle out of wax directly causes the dark room.",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "alarm",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: The husband setting the alarm directly causes the alarm ringing the next morning. The wife setting the alarm directly causes the alarm ringing the next morning.",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "celebrity",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: The person's appearance has a direct effect on the person's fame. The person's talent has a direct effect on the person's fame. ",
+    "data": "We define the symbols as follows:\nX=0 represents the person is considered unattractive.\nX=1 represents the person is considered attractive.\nY=0 represents the person is not famous.\nY=1 represents the person is famous.\nZ=0 represents the person is not talented.\nZ=1 represents the person is talented.\nThe statistics are as follows:\n[{'X': 0, 'Z': 0, 'Y': 0, 'count': 800}, {'X': 0, 'Z': 0, 'Y': 1, 'count': 1}, {'X': 0, 'Z': 1, 'Y': 0, 'count': 90}, {'X': 0, 'Z': 1, 'Y': 1, 'count': 10}, {'X': 1, 'Z': 0, 'Y': 0, 'count': 195}, {'X': 1, 'Z': 0, 'Y': 1, 'count': 5}, {'X': 1, 'Z': 1, 'Y': 0, 'count': 5}, {'X': 1, 'Z': 1, 'Y': 1, 'count': 5}]",
+    "questions": [
+      {
+        "question": "What is the probability that the person is considered unattractive?",
+        "answer": "0.810981",
+        "reason": "P(X=0)=0.810981",
+        "detail_type": "marginal probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered attractive?",
+        "answer": "0.189019",
+        "reason": "P(X=1)=0.189019",
+        "detail_type": "marginal probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not famous?",
+        "answer": "0.977443",
+        "reason": "P(Y=0)=0.977443",
+        "detail_type": "marginal probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is famous?",
+        "answer": "0.022557",
+        "reason": "P(Y=1)=0.022557",
+        "detail_type": "marginal probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not talented?",
+        "answer": "0.900990",
+        "reason": "P(Z=0)=0.900990",
+        "detail_type": "marginal probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is talented?",
+        "answer": "0.099010",
+        "reason": "P(Z=1)=0.099010",
+        "detail_type": "marginal probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been considered unattractive, would it be more likely that the person is not famous",
+        "answer": "yes",
+        "reason": "P(Y=0|do(X=0)) - P(Y=0|do(X=1)) = 0.988974 - 0.927970 = 0.061004 > 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been considered unattractive, would it be more likely that the person is famous",
+        "answer": "no",
+        "reason": "P(Y=1|do(X=0)) - P(Y=1|do(X=1)) = 0.011026 - 0.072030 = -0.061004 <= 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been considered unattractive, would it be more likely that the person is not talented",
+        "answer": "no",
+        "reason": "P(Z=0|do(X=0)) - P(Z=0|do(X=1)) = 0.900990 - 0.900990 = 0.000000 <= 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been considered unattractive, would it be more likely that the person is talented",
+        "answer": "no",
+        "reason": "P(Z=1|do(X=0)) - P(Z=1|do(X=1)) = 0.099010 - 0.099010 = 0.000000 <= 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been considered attractive, would it be more likely that the person is not famous",
+        "answer": "no",
+        "reason": "P(Y=0|do(X=1)) - P(Y=0|do(X=0)) = 0.927970 - 0.988974 = -0.061004 <= 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been considered attractive, would it be more likely that the person is famous",
+        "answer": "yes",
+        "reason": "P(Y=1|do(X=1)) - P(Y=1|do(X=0)) = 0.072030 - 0.011026 = 0.061004 > 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been considered attractive, would it be more likely that the person is not talented",
+        "answer": "no",
+        "reason": "P(Z=0|do(X=1)) - P(Z=0|do(X=0)) = 0.900990 - 0.900990 = 0.000000 <= 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been considered attractive, would it be more likely that the person is talented",
+        "answer": "no",
+        "reason": "P(Z=1|do(X=1)) - P(Z=1|do(X=0)) = 0.099010 - 0.099010 = 0.000000 <= 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been not talented, would it be more likely that the person is considered unattractive",
+        "answer": "no",
+        "reason": "P(X=0|do(Z=0)) - P(X=0|do(Z=1)) = 0.810981 - 0.810981 = 0.000000 <= 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been not talented, would it be more likely that the person is considered attractive",
+        "answer": "no",
+        "reason": "P(X=1|do(Z=0)) - P(X=1|do(Z=1)) = 0.189019 - 0.189019 = 0.000000 <= 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been not talented, would it be more likely that the person is not famous",
+        "answer": "yes",
+        "reason": "P(Y=0|do(Z=0)) - P(Y=0|do(Z=1)) = 0.994262 - 0.824392 = 0.169870 > 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been not talented, would it be more likely that the person is famous",
+        "answer": "no",
+        "reason": "P(Y=1|do(Z=0)) - P(Y=1|do(Z=1)) = 0.005738 - 0.175608 = -0.169870 <= 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been talented, would it be more likely that the person is considered unattractive",
+        "answer": "no",
+        "reason": "P(X=0|do(Z=1)) - P(X=0|do(Z=0)) = 0.810981 - 0.810981 = 0.000000 <= 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been talented, would it be more likely that the person is considered attractive",
+        "answer": "no",
+        "reason": "P(X=1|do(Z=1)) - P(X=1|do(Z=0)) = 0.189019 - 0.189019 = 0.000000 <= 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been talented, would it be more likely that the person is not famous",
+        "answer": "no",
+        "reason": "P(Y=0|do(Z=1)) - P(Y=0|do(Z=0)) = 0.824392 - 0.994262 = -0.169870 <= 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "If the person had been talented, would it be more likely that the person is famous",
+        "answer": "yes",
+        "reason": "P(Y=1|do(Z=1)) - P(Y=1|do(Z=0)) = 0.175608 - 0.005738 = 0.169870 > 0",
+        "detail_type": "intervention probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered unattractive AND the person is not famous?",
+        "answer": "0.802039",
+        "reason": "P(X=0,Y=0)=0.802039",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered unattractive AND the person is famous?",
+        "answer": "0.008942",
+        "reason": "P(X=0,Y=1)=0.008942",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered unattractive AND the person is not talented?",
+        "answer": "0.730685",
+        "reason": "P(X=0,Z=0)=0.730685",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered unattractive AND the person is talented?",
+        "answer": "0.080295",
+        "reason": "P(X=0,Z=1)=0.080295",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered attractive AND the person is not famous?",
+        "answer": "0.175404",
+        "reason": "P(X=1,Y=0)=0.175404",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered attractive AND the person is famous?",
+        "answer": "0.013615",
+        "reason": "P(X=1,Y=1)=0.013615",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered attractive AND the person is not talented?",
+        "answer": "0.170304",
+        "reason": "P(X=1,Z=0)=0.170304",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered attractive AND the person is talented?",
+        "answer": "0.018715",
+        "reason": "P(X=1,Z=1)=0.018715",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not famous AND the person is considered unattractive?",
+        "answer": "0.802039",
+        "reason": "P(Y=0,X=0)=0.802039",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not famous AND the person is considered attractive?",
+        "answer": "0.175404",
+        "reason": "P(Y=0,X=1)=0.175404",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not famous AND the person is not talented?",
+        "answer": "0.895820",
+        "reason": "P(Y=0,Z=0)=0.895820",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not famous AND the person is talented?",
+        "answer": "0.081623",
+        "reason": "P(Y=0,Z=1)=0.081623",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is famous AND the person is considered unattractive?",
+        "answer": "0.008942",
+        "reason": "P(Y=1,X=0)=0.008942",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is famous AND the person is considered attractive?",
+        "answer": "0.013615",
+        "reason": "P(Y=1,X=1)=0.013615",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is famous AND the person is not talented?",
+        "answer": "0.005170",
+        "reason": "P(Y=1,Z=0)=0.005170",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is famous AND the person is talented?",
+        "answer": "0.017387",
+        "reason": "P(Y=1,Z=1)=0.017387",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not talented AND the person is considered unattractive?",
+        "answer": "0.730685",
+        "reason": "P(Z=0,X=0)=0.730685",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not talented AND the person is considered attractive?",
+        "answer": "0.170304",
+        "reason": "P(Z=0,X=1)=0.170304",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not talented AND the person is not famous?",
+        "answer": "0.895820",
+        "reason": "P(Z=0,Y=0)=0.895820",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not talented AND the person is famous?",
+        "answer": "0.005170",
+        "reason": "P(Z=0,Y=1)=0.005170",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is talented AND the person is considered unattractive?",
+        "answer": "0.080295",
+        "reason": "P(Z=1,X=0)=0.080295",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is talented AND the person is considered attractive?",
+        "answer": "0.018715",
+        "reason": "P(Z=1,X=1)=0.018715",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is talented AND the person is not famous?",
+        "answer": "0.081623",
+        "reason": "P(Z=1,Y=0)=0.081623",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is talented AND the person is famous?",
+        "answer": "0.017387",
+        "reason": "P(Z=1,Y=1)=0.017387",
+        "detail_type": "joint probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not famous conditional on that the person is considered unattractive?",
+        "answer": "0.988974",
+        "reason": "P(Y=0|X=0)=P(Y=0,X=0)/P(X=0)=0.802039/0.810981=0.988974",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is famous conditional on that the person is considered unattractive?",
+        "answer": "0.011026",
+        "reason": "P(Y=1|X=0)=P(Y=1,X=0)/P(X=0)=0.008942/0.810981=0.011026",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not talented conditional on that the person is considered unattractive?",
+        "answer": "0.900990",
+        "reason": "P(Z=0|X=0)=P(Z=0,X=0)/P(X=0)=0.730685/0.810981=0.900990",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is talented conditional on that the person is considered unattractive?",
+        "answer": "0.099010",
+        "reason": "P(Z=1|X=0)=P(Z=1,X=0)/P(X=0)=0.080295/0.810981=0.099010",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not famous conditional on that the person is considered attractive?",
+        "answer": "0.927970",
+        "reason": "P(Y=0|X=1)=P(Y=0,X=1)/P(X=1)=0.175404/0.189019=0.927970",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is famous conditional on that the person is considered attractive?",
+        "answer": "0.072030",
+        "reason": "P(Y=1|X=1)=P(Y=1,X=1)/P(X=1)=0.013615/0.189019=0.072030",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not talented conditional on that the person is considered attractive?",
+        "answer": "0.900990",
+        "reason": "P(Z=0|X=1)=P(Z=0,X=1)/P(X=1)=0.170304/0.189019=0.900990",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is talented conditional on that the person is considered attractive?",
+        "answer": "0.099010",
+        "reason": "P(Z=1|X=1)=P(Z=1,X=1)/P(X=1)=0.018715/0.189019=0.099010",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered unattractive conditional on that the person is not famous?",
+        "answer": "0.820548",
+        "reason": "P(X=0|Y=0)=P(X=0,Y=0)/P(Y=0)=0.802039/0.977443=0.820548",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered attractive conditional on that the person is not famous?",
+        "answer": "0.179452",
+        "reason": "P(X=1|Y=0)=P(X=1,Y=0)/P(Y=0)=0.175404/0.977443=0.179452",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not talented conditional on that the person is not famous?",
+        "answer": "0.916493",
+        "reason": "P(Z=0|Y=0)=P(Z=0,Y=0)/P(Y=0)=0.895820/0.977443=0.916493",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is talented conditional on that the person is not famous?",
+        "answer": "0.083507",
+        "reason": "P(Z=1|Y=0)=P(Z=1,Y=0)/P(Y=0)=0.081623/0.977443=0.083507",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered unattractive conditional on that the person is famous?",
+        "answer": "0.396411",
+        "reason": "P(X=0|Y=1)=P(X=0,Y=1)/P(Y=1)=0.008942/0.022557=0.396411",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered attractive conditional on that the person is famous?",
+        "answer": "0.603589",
+        "reason": "P(X=1|Y=1)=P(X=1,Y=1)/P(Y=1)=0.013615/0.022557=0.603589",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not talented conditional on that the person is famous?",
+        "answer": "0.229191",
+        "reason": "P(Z=0|Y=1)=P(Z=0,Y=1)/P(Y=1)=0.005170/0.022557=0.229191",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is talented conditional on that the person is famous?",
+        "answer": "0.770809",
+        "reason": "P(Z=1|Y=1)=P(Z=1,Y=1)/P(Y=1)=0.017387/0.022557=0.770809",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered unattractive conditional on that the person is not talented?",
+        "answer": "0.810981",
+        "reason": "P(X=0|Z=0)=P(X=0,Z=0)/P(Z=0)=0.730685/0.900990=0.810981",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered attractive conditional on that the person is not talented?",
+        "answer": "0.189019",
+        "reason": "P(X=1|Z=0)=P(X=1,Z=0)/P(Z=0)=0.170304/0.900990=0.189019",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not famous conditional on that the person is not talented?",
+        "answer": "0.994262",
+        "reason": "P(Y=0|Z=0)=P(Y=0,Z=0)/P(Z=0)=0.895820/0.900990=0.994262",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is famous conditional on that the person is not talented?",
+        "answer": "0.005738",
+        "reason": "P(Y=1|Z=0)=P(Y=1,Z=0)/P(Z=0)=0.005170/0.900990=0.005738",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered unattractive conditional on that the person is talented?",
+        "answer": "0.810981",
+        "reason": "P(X=0|Z=1)=P(X=0,Z=1)/P(Z=1)=0.080295/0.099010=0.810981",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is considered attractive conditional on that the person is talented?",
+        "answer": "0.189019",
+        "reason": "P(X=1|Z=1)=P(X=1,Z=1)/P(Z=1)=0.018715/0.099010=0.189019",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is not famous conditional on that the person is talented?",
+        "answer": "0.824392",
+        "reason": "P(Y=0|Z=1)=P(Y=0,Z=1)/P(Z=1)=0.081623/0.099010=0.824392",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      },
+      {
+        "question": "What is the probability that the person is famous conditional on that the person is talented?",
+        "answer": "0.175608",
+        "reason": "P(Y=1|Z=1)=P(Y=1,Z=1)/P(Z=1)=0.017387/0.099010=0.175608",
+        "detail_type": "conditional probability",
+        "type": "compute"
+      }
+    ]
+  },
+  {
+    "name": "drug_taken",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Unobserved confounders has a direct effect on drug taken. Treatment assignment has a direct effect on drug taken. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "cholesterol_level",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Drug taken has a direct effect on cholesterol level. Unobserved confounders has a directly effect on cholesterol level. Unobserved confounders has a directly effect on drug taken.",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "drug_taken_and_cholesterol_level",
+    "type": "IV",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Unobserved confounders has a direct effect on drug taken. Treatment assignment has a direct effect on drug taken. Unobserved confounders has a direct effect on cholesterol level. Drug taken has a direct effect on cholesterol level. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "blood_pressure",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Medication taken has a direct effect on blood pressure. Blood pressure has a direct effect on heart condition. Medication taken has a direct effect on heart condition. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "education_skill_salary",
+    "type": "chain",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Education level has a direct effect on skill level. Skill level has a direct effect on salary. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "elite_students",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: The student's talent has a direct effect on elite institution admission status. The student's effort has a direct effect on elite institution admission status. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "distance_education",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Unobserved confounders has a direct effect on education level. Whether living closed to a college or not has a direct effect on education level. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "education_salary",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Unobserved confounders has a direct effect on education level. Unobserved confounders has a direct effect on salary. Education level has a direct effect on salary. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "distance_education_salary",
+    "type": "IV",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Unobserved confounders has a direct effect on education level. Whether living closed to a college or not has a direct effect on education level. Unobserved confounders has a direct effect on salary. Education level has a direct effect on salary. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "encouragement_program",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Encouragement level has a direct effect on whether the student studies hard. Encouragement level has a direct effect on exam score. Whether the student studies hard has a direct effect on exam score. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "firing_emplyee",
+    "type": "diamondcut",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: The CEO's decision to retain or fire the employee has a direct effect on whether the manager signs the termination letter. The CEO's decision to retain or fire the employee has a direct effect on whether the director signs the termination letter. Whether the manager signs the termination letter has a direct effect on whether the employee is fired. Whether the director signs the termination letter has a direct effect on whether the employee is fired. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "firing_squad",
+    "type": "diamondcut",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the captain orders to execute the prisoner or not has a direct effect on whether the private shoots or not. Whether the captain orders to execute the prisoner or not has a direct effect on whether the corporal shoots or not. Whether the private shoots or not has a direct effect on whether the prisoner is alive or dead. Whether the corporal shoots or not has a direct effect on whether the prisoner is alive or dead. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "floor_wet",
+    "type": "diamondcut",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Season has a direct effect on whether the sprinkler is on or off. Season has a direct effect on weather there is rain. Whether the sprinkler is on or off has a direct effect on whether the ground is wet or dry. Weather there is rain has a direct effect on whether the ground is wet or dry. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "forest_fire",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the camper lights a match has a direct effect on the forest fire. Whether the chain-smoker lights a match has a direct effect on the forest fire. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "gender_admission_state",
+    "type": "arrowhead",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender of the applicant (male/female) has a direct effect on competitiveness of the applied department. Residency status (out-of-state/in-stage) has a direct effect on competitiveness of the applied department. Competitiveness of the applied department has a direct effect on admission status (rejected/admitted). Gender of the applicant (male/female) has a direct effect on admission status (rejected/admitted). Residency status (out-of-state/in-stage) has a direct effect on admission status (rejected/admitted). ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "gender_admission",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender of the applicant (male/female) has a direct effect on competitiveness of the applied department. Competitiveness of the applied department has a direct effect on admission status (rejected/admitted). Gender of the applicant (male/female) has a direct effect on admission status (rejected/admitted). ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "gender_state_competitive",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender of the applicant (male/female) has a direct effect on competitiveness of the applied department. Residency status (out-of-state/in-stage) has a direct effect on competitiveness of the applied department. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "admission",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Competitiveness of the applied department has a direct effect on admission status (rejected/admitted). Gender of the applicant (male/female) has a direct effect on admission status (rejected/admitted). Residency status (out-of-state/in-stage) has a direct effect on admission status (rejected/admitted). ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "gender_pay",
+    "type": "arrowhead",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender of the employee has a direct effect on occupation type (blue-collar/white-collar). Occupation type (blue-collar/white-collar) has a direct effect on salary level. Gender of the employee has a direct effect on salary level. Skill level of the employee has a direct effect on occupation type (blue-collar/white-collar). Skill level of the employee has a direct effect on salary level.",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "getting_late",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether Alice gets up on time or late has a direct effect on whether Alice arrives at school on time or late. Traffic condition has a direct effect on whether Alice arrives at school on time or late. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "getting_tanned",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Tanning salon treatment has a direct effect on whether the person has pale skin or tanned skin. Whether the person goes to the beach has a direct effect on whether the person has pale skin or tanned skin. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "hospitalization",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the person has respiratory issues has a direct effect on whether the person is hospitalized. Whether the person has broken bones has a direct effect on whether the person is hospitalized. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "man_in_relationship",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the person is mean or kind has a direct effect on the person's relationship status. Whether the person is considered attractive has a direct effect on the person's relationship status. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "nature_vs_nurture",
+    "type": "arrowhead",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Parents' intelligence has a direct effect on parents' social status. Unobserved confounders has a direct effect on parents' social status. Parents' social status has a direct effect on child's intelligence. Parents' intelligence has a direct effect on child's intelligence. Unobserved confounders has a direct effect on child's intelligence. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "neg_mediation",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the student is a smoker has a direct effect on whether the strudent is lazy or hard working. Whether the strudent is lazy or hard working has a direct effect on whether the student gets admitted to college. Whether the student is a smoker has a direct effect on whether the student gets admitted to college.",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "obesity_mortality",
+    "type": "arrowhead",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Obesity has a direct effect on whether the person has diabetes. Whether the person has diabetes has a direct effect on the person's lifespan. Obesity has a direct effect on the person's lifespan. Whether the person is a smoker has a direct effect on whether the person has diabetes. Whether the person is a smoker has a direct effect on the person's lifespan.",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "orange_scurvy",
+    "type": "chain",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the patient eats citrus has a direct effect on whether the patient has sufficient vitamin C. Whether the patient has sufficient vitamin C has direct effect on whether the patient recovers from scurvy.",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "price",
+    "type": "IV",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Demand has a direct effect on supply. Yield per acre has a direct effect on supply. Demand has a direct effect on price. Supply has a direct effect on price. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "simpson_drup",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on whether the patient receives treatment. Whether the patient receives treatment has a direct effect on whether the patient recovers. Gender has a direct effect on whether the patient recovers. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "simpson_hospital",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Age of the patient has a direct effect on hospital costs. Hospital costs has a direct effect on whether the patient recovers. Age of the patient has a direct effect on whether the patient recovers. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "simpson_kisneyston",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Kidney stone size has a direct effect on whether the patient receives treatment. Whether the patient receives treatment has a direct effect on whether the patient recovers. Kidney stone size has a direct effect on whether the patient recovers. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "simpson_vaccine",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the person has pre-conditions has a direct effect on whether the person gets the vaccine or refuses the vaccine. Whether the person gets the vaccine or refuses the vaccine has a direct effect on whether the preson dies or recovers from the disease. Whether the person has pre-conditions has a direct effect on whether the preson dies or recovers from the disease. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "smoke_birthWeight",
+    "type": "arrowhead",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Maternal smoking status has a direct effect on infant's birth weight. Health condition has a direct effect on infant's birth weight. Infant's birth weight has a direct effect on infant mortality. Maternal smoking status has a direct effect on infant mortality. Health condition has a direct effect on infant mortality. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "smoking_frontdoor",
+    "type": "frontdoor",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on smoking or not. Smoking or not has a direct effect on whether the person has a high tar deposit in lungs. Whether the person has a high tar deposit in lungs has a direct effect on whether the person has lung cancer. Gender has a direct effect on whether the person has lung cancer. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "smoking_gene_cancer",
+    "type": "arrowhead",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the person has a smoking gene has a direct effect on smoking or not. Pollution status of the living place has a direct effect on smoking or not. Smoking or not has a direct effect on whether the person has lung cancer. Whether the person has a smoking gene has a direct effect on whether the person has lung cancer. Pollution status of the living place has a direct effect on whether the person has lung cancer. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "smoking_tar_cancer",
+    "type": "chain",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Smoking or not has a direct effect on whether the person has a high tar deposit in lungs. Whether the person has a high tar deposit in lungs has a direct effect on whether the person has lung cancer. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "tax_smoke_birthWeight",
+    "type": "IV",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Unobserved confounders has a direct effect on maternal smoking status. Cigarette tax has a direct effect on maternal smoking status. Unobserved confounders has a direct effect on infant's birth weight. Maternal smoking status has a direct effect on infant's birth weight. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "vaccine_kills",
+    "type": "diamondcut",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the person is vaccinated has a direct effect on whether the person has a severe reaction to the vaccine. Whether the person is vaccinated has a direct effect on whether the person has smallpox or not. Whether the person has a severe reaction to the vaccine has a direct effect on whether the person dies from smallpox. Whether the person has smallpox or not has a direct effect on whether the person dies from smallpox. ",
+    "data": "",
+    "questions": []
+  },
+  {
+    "name": "water_cholera",
+    "type": "IV",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Poverty of the region has a direct effect on water quality which the person drinks. Whether the person is served by a local water company or a global water company has a direct effect on water quality which the person drinks. Poverty of the region has a direct effect on whether the person gets cholera. Water quality which the person drinks has a direct effect on whether the person gets cholera. ",
+    "data": "",
+    "questions": []
+  }
+]

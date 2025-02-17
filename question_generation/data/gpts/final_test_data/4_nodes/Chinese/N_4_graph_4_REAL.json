@@ -1,0 +1,3861 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "B->C",
+      "B->D"
+    ],
+    "node_name": {
+      "A": "体育锻炼量",
+      "B": "心血管健康",
+      "C": "血压水平",
+      "D": "心脏病风险"
+    },
+    "node_value": {
+      "A": [
+        "久坐",
+        "积极"
+      ],
+      "B": [
+        "不佳",
+        "良好"
+      ],
+      "C": [
+        "高",
+        "正常"
+      ],
+      "D": [
+        "高",
+        "低"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {
+      "A->B": 1,
+      "B->C": 1,
+      "B->D": 1
+    },
+    "node_bias": {
+      "A": -0.772151883754646,
+      "B": -0.7464247354025584,
+      "C": -0.27211706005062475,
+      "D": -0.35488916698569384
+    },
+    "edge_weight": {
+      "A->B": 1.676992218397893,
+      "B->C": 1.4594716793344564,
+      "B->D": 1.9906091218668986
+    },
+    "function_description": "P(A=1)=0.3160\nP(B=1|A)=sigmoid(-0.7464247354025584 + 1.6770 * A)\nP(C=1|B)=sigmoid(-0.27211706005062475 + 1.4595 * B)\nP(D=1|B)=sigmoid(-0.35488916698569384 + 1.9906 * B)\n",
+    "text_description": "The probability of amount of physical exercise being active (A=1) is 0.3160. \nFor those with amount of physical exercise being sedentary (A=0), the probability of cardiovascular health being good (B=1) is 0.3216. \nFor those with amount of physical exercise being active (A=1), the probability of cardiovascular health being good (B=1) is 0.7172. \nFor those with cardiovascular health being poor (B=0), the probability of blood pressure levels being normal (C=1) is 0.4324. \nFor those with cardiovascular health being good (B=1), the probability of blood pressure levels being normal (C=1) is 0.7663. \nFor those with cardiovascular health being poor (B=0), the probability of risk of heart disease being low (D=1) is 0.4122. \nFor those with cardiovascular health being good (B=1), the probability of risk of heart disease being low (D=1) is 0.8370. \n",
+    "Statistic_data": [
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 6015
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 4169
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 1402
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 2268
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 5422
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 6926
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 7316
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 1520
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 7698
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 1115
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 402
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 445
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 2092
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 1411
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 776
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 1023
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 心血管健康为不佳(B=0)的概率为0.6827。在体育锻炼量为积极(A=1)的条件下, 心血管健康为不佳(B=0)的概率为0.2795。",
+        "data_info_math": "P(B=0|A=0)=0.6827; P(B=0|A=1)=0.2795; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体育锻炼量被改变为久坐，那么心血管健康更有可能为不佳吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.6827\tP(B=0|A=1)=0.2795",
+        "Step 6": "ATE=0.6827-0.2795=0.4032",
+        "Step 7": "ATE=0.4032>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.4032179010030943
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 心血管健康为良好(B=1)的概率为0.3173。在体育锻炼量为积极(A=1)的条件下, 心血管健康为良好(B=1)的概率为0.7205。",
+        "data_info_math": "P(B=1|A=0)=0.3173; P(B=1|A=1)=0.7205; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体育锻炼量被改变为久坐，那么心血管健康更有可能为良好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.3173\tP(B=1|A=1)=0.7205",
+        "Step 6": "ATE=0.3173-0.7205=-0.4032",
+        "Step 7": "ATE=-0.4032<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.4032179010030942
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 心血管健康为不佳(B=0)的概率为0.2795。在体育锻炼量为久坐(A=0)的条件下, 心血管健康为不佳(B=0)的概率为0.6827。",
+        "data_info_math": "P(B=0|A=1)=0.2795; P(B=0|A=0)=0.6827; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体育锻炼量被改变为积极，那么心血管健康更有可能为不佳吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.2795\tP(B=0|A=0)=0.6827",
+        "Step 6": "ATE=0.2795-0.6827=-0.4032",
+        "Step 7": "ATE=-0.4032<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.4032179010030943
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 心血管健康为良好(B=1)的概率为0.7205。在体育锻炼量为久坐(A=0)的条件下, 心血管健康为良好(B=1)的概率为0.3173。",
+        "data_info_math": "P(B=1|A=1)=0.7205; P(B=1|A=0)=0.3173; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体育锻炼量被改变为积极，那么心血管健康更有可能为良好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.7205\tP(B=1|A=0)=0.3173",
+        "Step 6": "ATE=0.7205-0.3173=0.4032",
+        "Step 7": "ATE=0.4032>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.4032179010030942
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 血压水平为高(C=0)的概率为0.4574。在体育锻炼量为积极(A=1)的条件下, 血压水平为高(C=0)的概率为0.3313。",
+        "data_info_math": "P(C=0|A=0)=0.4574; P(C=0|A=1)=0.3313; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体育锻炼量被改变为久坐，那么血压水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.4574\tP(C=0|A=1)=0.3313",
+        "Step 6": "ATE=0.4574-0.3313=0.1261",
+        "Step 7": "ATE=0.1261>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.12612376720582258
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 血压水平为正常(C=1)的概率为0.5426。在体育锻炼量为积极(A=1)的条件下, 血压水平为正常(C=1)的概率为0.6687。",
+        "data_info_math": "P(C=1|A=0)=0.5426; P(C=1|A=1)=0.6687; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体育锻炼量被改变为久坐，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.5426\tP(C=1|A=1)=0.6687",
+        "Step 6": "ATE=0.5426-0.6687=-0.1261",
+        "Step 7": "ATE=-0.1261<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.1261237672058224
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 血压水平为高(C=0)的概率为0.3313。在体育锻炼量为久坐(A=0)的条件下, 血压水平为高(C=0)的概率为0.4574。",
+        "data_info_math": "P(C=0|A=1)=0.3313; P(C=0|A=0)=0.4574; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体育锻炼量被改变为积极，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.3313\tP(C=0|A=0)=0.4574",
+        "Step 6": "ATE=0.3313-0.4574=-0.1261",
+        "Step 7": "ATE=-0.1261<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.12612376720582258
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 血压水平为正常(C=1)的概率为0.6687。在体育锻炼量为久坐(A=0)的条件下, 血压水平为正常(C=1)的概率为0.5426。",
+        "data_info_math": "P(C=1|A=1)=0.6687; P(C=1|A=0)=0.5426; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体育锻炼量被改变为积极，那么血压水平更有可能为正常吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.6687\tP(C=1|A=0)=0.5426",
+        "Step 6": "ATE=0.6687-0.5426=0.1261",
+        "Step 7": "ATE=0.1261>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.1261237672058224
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 心脏病风险为高(D=0)的概率为0.4548。在体育锻炼量为积极(A=1)的条件下, 心脏病风险为高(D=0)的概率为0.2825。",
+        "data_info_math": "P(D=0|A=0)=0.4548; P(D=0|A=1)=0.2825; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体育锻炼量被改变为久坐，那么心脏病风险更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.4548\tP(D=0|A=1)=0.2825",
+        "Step 6": "ATE=0.4548-0.2825=0.1723",
+        "Step 7": "ATE=0.1723>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.17233240533649813
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 心脏病风险为低(D=1)的概率为0.5452。在体育锻炼量为积极(A=1)的条件下, 心脏病风险为低(D=1)的概率为0.7175。",
+        "data_info_math": "P(D=1|A=0)=0.5452; P(D=1|A=1)=0.7175; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体育锻炼量被改变为久坐，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.5452\tP(D=1|A=1)=0.7175",
+        "Step 6": "ATE=0.5452-0.7175=-0.1723",
+        "Step 7": "ATE=-0.1723<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.17233240533649796
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 心脏病风险为高(D=0)的概率为0.2825。在体育锻炼量为久坐(A=0)的条件下, 心脏病风险为高(D=0)的概率为0.4548。",
+        "data_info_math": "P(D=0|A=1)=0.2825; P(D=0|A=0)=0.4548; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体育锻炼量被改变为积极，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.2825\tP(D=0|A=0)=0.4548",
+        "Step 6": "ATE=0.2825-0.4548=-0.1723",
+        "Step 7": "ATE=-0.1723<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.17233240533649813
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 心脏病风险为低(D=1)的概率为0.7175。在体育锻炼量为久坐(A=0)的条件下, 心脏病风险为低(D=1)的概率为0.5452。",
+        "data_info_math": "P(D=1|A=1)=0.7175; P(D=1|A=0)=0.5452; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体育锻炼量被改变为积极，那么心脏病风险更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.7175\tP(D=1|A=0)=0.5452",
+        "Step 6": "ATE=0.7175-0.5452=0.1723",
+        "Step 7": "ATE=0.1723>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.17233240533649796
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于体育锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心血管健康被改变为不佳，那么体育锻炼量更有可能为久坐吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于体育锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心血管健康被改变为不佳，那么体育锻炼量更有可能为积极吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于体育锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心血管健康被改变为良好，那么体育锻炼量更有可能为久坐吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于体育锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心血管健康被改变为良好，那么体育锻炼量更有可能为积极吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 血压水平为高(C=0)的概率为0.5647。在心血管健康为良好(B=1)的条件下, 血压水平为高(C=0)的概率为0.2339。",
+        "data_info_math": "P(C=0|B=0)=0.5647; P(C=0|B=1)=0.2339; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心血管健康被改变为不佳，那么血压水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.5647\tP(C=0|B=1)=0.2339",
+        "Step 6": "ATE=0.5647-0.2339=0.3308",
+        "Step 7": "ATE=0.3308>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.3307802913382061
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 血压水平为正常(C=1)的概率为0.4353。在心血管健康为良好(B=1)的条件下, 血压水平为正常(C=1)的概率为0.7661。",
+        "data_info_math": "P(C=1|B=0)=0.4353; P(C=1|B=1)=0.7661; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心血管健康被改变为不佳，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.4353\tP(C=1|B=1)=0.7661",
+        "Step 6": "ATE=0.4353-0.7661=-0.3308",
+        "Step 7": "ATE=-0.3308<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.3307802913382061
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 血压水平为高(C=0)的概率为0.2339。在心血管健康为不佳(B=0)的条件下, 血压水平为高(C=0)的概率为0.5647。",
+        "data_info_math": "P(C=0|B=1)=0.2339; P(C=0|B=0)=0.5647; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心血管健康被改变为良好，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.2339\tP(C=0|B=0)=0.5647",
+        "Step 6": "ATE=0.2339-0.5647=-0.3308",
+        "Step 7": "ATE=-0.3308<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.3307802913382061
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 血压水平为正常(C=1)的概率为0.7661。在心血管健康为不佳(B=0)的条件下, 血压水平为正常(C=1)的概率为0.4353。",
+        "data_info_math": "P(C=1|B=1)=0.7661; P(C=1|B=0)=0.4353; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心血管健康被改变为良好，那么血压水平更有可能为正常吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.7661\tP(C=1|B=0)=0.4353",
+        "Step 6": "ATE=0.7661-0.4353=0.3308",
+        "Step 7": "ATE=0.3308>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.3307802913382061
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 心脏病风险为高(D=0)的概率为0.5894。在心血管健康为良好(B=1)的条件下, 心脏病风险为高(D=0)的概率为0.1644。",
+        "data_info_math": "P(D=0|B=0)=0.5894; P(D=0|B=1)=0.1644; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心血管健康被改变为不佳，那么心脏病风险更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.5894\tP(D=0|B=1)=0.1644",
+        "Step 6": "ATE=0.5894-0.1644=0.4250",
+        "Step 7": "ATE=0.4250>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.424966266903981
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 心脏病风险为低(D=1)的概率为0.4106。在心血管健康为良好(B=1)的条件下, 心脏病风险为低(D=1)的概率为0.8356。",
+        "data_info_math": "P(D=1|B=0)=0.4106; P(D=1|B=1)=0.8356; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心血管健康被改变为不佳，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.4106\tP(D=1|B=1)=0.8356",
+        "Step 6": "ATE=0.4106-0.8356=-0.4250",
+        "Step 7": "ATE=-0.4250<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.4249662669039809
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 心脏病风险为高(D=0)的概率为0.1644。在心血管健康为不佳(B=0)的条件下, 心脏病风险为高(D=0)的概率为0.5894。",
+        "data_info_math": "P(D=0|B=1)=0.1644; P(D=0|B=0)=0.5894; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心血管健康被改变为良好，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.1644\tP(D=0|B=0)=0.5894",
+        "Step 6": "ATE=0.1644-0.5894=-0.4250",
+        "Step 7": "ATE=-0.4250<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.424966266903981
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 心脏病风险为低(D=1)的概率为0.8356。在心血管健康为不佳(B=0)的条件下, 心脏病风险为低(D=1)的概率为0.4106。",
+        "data_info_math": "P(D=1|B=1)=0.8356; P(D=1|B=0)=0.4106; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心血管健康被改变为良好，那么心脏病风险更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.8356\tP(D=1|B=0)=0.4106",
+        "Step 6": "ATE=0.8356-0.4106=0.4250",
+        "Step 7": "ATE=0.4250>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.4249662669039809
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于体育锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压水平被改变为高，那么体育锻炼量更有可能为久坐吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于体育锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压水平被改变为高，那么体育锻炼量更有可能为积极吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于体育锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压水平被改变为正常，那么体育锻炼量更有可能为久坐吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于体育锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压水平被改变为正常，那么体育锻炼量更有可能为积极吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心血管健康的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压水平被改变为高，那么心血管健康更有可能为不佳吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心血管健康的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压水平被改变为高，那么心血管健康更有可能为良好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心血管健康的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压水平被改变为正常，那么心血管健康更有可能为不佳吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心血管健康的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压水平被改变为正常，那么心血管健康更有可能为良好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心脏病风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压水平被改变为高，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心脏病风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压水平被改变为高，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心脏病风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压水平被改变为正常，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心脏病风险的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果血压水平被改变为正常，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于体育锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心脏病风险被改变为高，那么体育锻炼量更有可能为久坐吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于体育锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心脏病风险被改变为高，那么体育锻炼量更有可能为积极吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于体育锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心脏病风险被改变为低，那么体育锻炼量更有可能为久坐吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于体育锻炼量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心脏病风险被改变为低，那么体育锻炼量更有可能为积极吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于心血管健康的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心脏病风险被改变为高，那么心血管健康更有可能为不佳吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于心血管健康的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心脏病风险被改变为高，那么心血管健康更有可能为良好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于心血管健康的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心脏病风险被改变为低，那么心血管健康更有可能为不佳吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于心血管健康的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心脏病风险被改变为低，那么心血管健康更有可能为良好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于血压水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心脏病风险被改变为高，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于血压水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心脏病风险被改变为高，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于血压水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心脏病风险被改变为低，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于血压水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果心脏病风险被改变为低，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 心血管健康为不佳(B=0)的概率为0.6827。在体育锻炼量为积极(A=1)的条件下, 心血管健康为不佳(B=0)的概率为0.2795。",
+        "data_info_math": "P(B=0|A=0)=0.6827; P(B=0|A=1)=0.2795; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体育锻炼量变化为久坐，那么心血管健康更有可能为不佳吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.6827\tP(B=0|A=1)=0.2795",
+        "Step 6": "NDE=0.6827-0.2795=0.4032",
+        "Step 7": "NDE=0.4032>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.4032179010030943
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 心血管健康为良好(B=1)的概率为0.3173。在体育锻炼量为积极(A=1)的条件下, 心血管健康为良好(B=1)的概率为0.7205。",
+        "data_info_math": "P(B=1|A=0)=0.3173; P(B=1|A=1)=0.7205; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体育锻炼量变化为久坐，那么心血管健康更有可能为良好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.3173\tP(B=1|A=1)=0.7205",
+        "Step 6": "NDE=0.3173-0.7205=-0.4032",
+        "Step 7": "NDE=-0.4032<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.4032179010030942
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 心血管健康为不佳(B=0)的概率为0.2795。在体育锻炼量为久坐(A=0)的条件下, 心血管健康为不佳(B=0)的概率为0.6827。",
+        "data_info_math": "P(B=0|A=1)=0.2795; P(B=0|A=0)=0.6827; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体育锻炼量变化为积极，那么心血管健康更有可能为不佳吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.2795\tP(B=0|A=0)=0.6827",
+        "Step 6": "NDE=0.2795-0.6827=-0.4032",
+        "Step 7": "NDE=-0.4032<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.4032179010030943
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 心血管健康为良好(B=1)的概率为0.7205。在体育锻炼量为久坐(A=0)的条件下, 心血管健康为良好(B=1)的概率为0.3173。",
+        "data_info_math": "P(B=1|A=1)=0.7205; P(B=1|A=0)=0.3173; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体育锻炼量变化为积极，那么心血管健康更有可能为良好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.7205\tP(B=1|A=0)=0.3173",
+        "Step 6": "NDE=0.7205-0.3173=0.4032",
+        "Step 7": "NDE=0.4032>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.4032179010030942
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体育锻炼量变化为久坐，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体育锻炼量变化为久坐，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体育锻炼量变化为积极，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体育锻炼量变化为积极，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体育锻炼量变化为久坐，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体育锻炼量变化为久坐，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体育锻炼量变化为积极，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体育锻炼量变化为积极，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 血压水平为高(C=0)的概率为0.5647。在心血管健康为良好(B=1)的条件下, 血压水平为高(C=0)的概率为0.2339。",
+        "data_info_math": "P(C=0|B=0)=0.5647; P(C=0|B=1)=0.2339; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而心血管健康变化为不佳，那么血压水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.5647\tP(C=0|B=1)=0.2339",
+        "Step 6": "NDE=0.5647-0.2339=0.3308",
+        "Step 7": "NDE=0.3308>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.3307802913382061
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 血压水平为正常(C=1)的概率为0.4353。在心血管健康为良好(B=1)的条件下, 血压水平为正常(C=1)的概率为0.7661。",
+        "data_info_math": "P(C=1|B=0)=0.4353; P(C=1|B=1)=0.7661; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而心血管健康变化为不佳，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.4353\tP(C=1|B=1)=0.7661",
+        "Step 6": "NDE=0.4353-0.7661=-0.3308",
+        "Step 7": "NDE=-0.3308<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.3307802913382061
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 血压水平为高(C=0)的概率为0.2339。在心血管健康为不佳(B=0)的条件下, 血压水平为高(C=0)的概率为0.5647。",
+        "data_info_math": "P(C=0|B=1)=0.2339; P(C=0|B=0)=0.5647; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而心血管健康变化为良好，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.2339\tP(C=0|B=0)=0.5647",
+        "Step 6": "NDE=0.2339-0.5647=-0.3308",
+        "Step 7": "NDE=-0.3308<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.3307802913382061
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 血压水平为正常(C=1)的概率为0.7661。在心血管健康为不佳(B=0)的条件下, 血压水平为正常(C=1)的概率为0.4353。",
+        "data_info_math": "P(C=1|B=1)=0.7661; P(C=1|B=0)=0.4353; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而心血管健康变化为良好，那么血压水平更有可能为正常吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.7661\tP(C=1|B=0)=0.4353",
+        "Step 6": "NDE=0.7661-0.4353=0.3308",
+        "Step 7": "NDE=0.3308>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.3307802913382061
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 心脏病风险为高(D=0)的概率为0.5894。在心血管健康为良好(B=1)的条件下, 心脏病风险为高(D=0)的概率为0.1644。",
+        "data_info_math": "P(D=0|B=0)=0.5894; P(D=0|B=1)=0.1644; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而心血管健康变化为不佳，那么心脏病风险更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.5894\tP(D=0|B=1)=0.1644",
+        "Step 6": "NDE=0.5894-0.1644=0.4250",
+        "Step 7": "NDE=0.4250>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.424966266903981
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 心脏病风险为低(D=1)的概率为0.4106。在心血管健康为良好(B=1)的条件下, 心脏病风险为低(D=1)的概率为0.8356。",
+        "data_info_math": "P(D=1|B=0)=0.4106; P(D=1|B=1)=0.8356; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而心血管健康变化为不佳，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.4106\tP(D=1|B=1)=0.8356",
+        "Step 6": "NDE=0.4106-0.8356=-0.4250",
+        "Step 7": "NDE=-0.4250<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.4249662669039809
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 心脏病风险为高(D=0)的概率为0.1644。在心血管健康为不佳(B=0)的条件下, 心脏病风险为高(D=0)的概率为0.5894。",
+        "data_info_math": "P(D=0|B=1)=0.1644; P(D=0|B=0)=0.5894; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而心血管健康变化为良好，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.1644\tP(D=0|B=0)=0.5894",
+        "Step 6": "NDE=0.1644-0.5894=-0.4250",
+        "Step 7": "NDE=-0.4250<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.424966266903981
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 心脏病风险为低(D=1)的概率为0.8356。在心血管健康为不佳(B=0)的条件下, 心脏病风险为低(D=1)的概率为0.4106。",
+        "data_info_math": "P(D=1|B=1)=0.8356; P(D=1|B=0)=0.4106; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而心血管健康变化为良好，那么心脏病风险更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.8356\tP(D=1|B=0)=0.4106",
+        "Step 6": "NDE=0.8356-0.4106=0.4250",
+        "Step 7": "NDE=0.4250>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.4249662669039809
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体育锻炼量保持不变，而所有中间变量被改变为当它们在体育锻炼量变化为久坐下的取值，那么心血管健康更有可能为不佳吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体育锻炼量保持不变，而所有中间变量被改变为当它们在体育锻炼量变化为久坐下的取值，那么心血管健康更有可能为良好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体育锻炼量保持不变，而所有中间变量被改变为当它们在体育锻炼量变化为积极下的取值，那么心血管健康更有可能为不佳吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体育锻炼量保持不变，而所有中间变量被改变为当它们在体育锻炼量变化为积极下的取值，那么心血管健康更有可能为良好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)且体育锻炼量为积极(A=1)的条件下, 血压水平为高(C=0)的概率为0.5735。在体育锻炼量为久坐(A=0)的条件下, 心血管健康为不佳(B=0)的概率为0.6827。在体育锻炼量为积极(A=1)的条件下, 心血管健康为不佳(B=0)的概率为0.2795。在心血管健康为良好(B=1)且体育锻炼量为积极(A=1)的条件下, 血压水平为高(C=0)的概率为0.2373。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.5735; P(B=0|A=0)=0.6827; P(B=0|A=1)=0.2795; P(C=0|B=1,A=1)=0.2373; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体育锻炼量保持不变，而所有中间变量被改变为当它们在体育锻炼量变化为久坐下的取值，那么血压水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=0|A=1,B=0)=0.5735\tP(B=0|A=0)=0.6827\tP(B=0|A=1)=0.2795\tP(C=0|A=1,B=1)=0.2373\tP(B=1|A=0)=0.3173\tP(B=1|A=1)=0.7205",
+        "Step 6": "NIE=0.5735*(0.6827-0.2795)+0.2373*(0.3173-0.7205)=0.1356",
+        "Step 7": "NIE=0.1356>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.13555609740439892
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)且体育锻炼量为积极(A=1)的条件下, 血压水平为正常(C=1)的概率为0.4265。在体育锻炼量为久坐(A=0)的条件下, 心血管健康为不佳(B=0)的概率为0.6827。在体育锻炼量为积极(A=1)的条件下, 心血管健康为不佳(B=0)的概率为0.2795。在心血管健康为良好(B=1)且体育锻炼量为积极(A=1)的条件下, 血压水平为正常(C=1)的概率为0.7627。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.4265; P(B=0|A=0)=0.6827; P(B=0|A=1)=0.2795; P(C=1|B=1,A=1)=0.7627; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体育锻炼量保持不变，而所有中间变量被改变为当它们在体育锻炼量变化为久坐下的取值，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=1|A=1,B=0)=0.4265\tP(B=0|A=0)=0.6827\tP(B=0|A=1)=0.2795\tP(C=1|A=1,B=1)=0.7627\tP(B=1|A=0)=0.3173\tP(B=1|A=1)=0.7205",
+        "Step 6": "NIE=0.4265*(0.6827-0.2795)+0.7627*(0.3173-0.7205)=-0.1356",
+        "Step 7": "NIE=-0.1356<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.13555609740439875
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)且体育锻炼量为久坐(A=0)的条件下, 血压水平为高(C=0)的概率为0.5630。在体育锻炼量为积极(A=1)的条件下, 心血管健康为不佳(B=0)的概率为0.2795。在体育锻炼量为久坐(A=0)的条件下, 心血管健康为不佳(B=0)的概率为0.6827。在心血管健康为良好(B=1)且体育锻炼量为久坐(A=0)的条件下, 血压水平为高(C=0)的概率为0.2303。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5630; P(B=0|A=1)=0.2795; P(B=0|A=0)=0.6827; P(C=0|B=1,A=0)=0.2303; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体育锻炼量保持不变，而所有中间变量被改变为当它们在体育锻炼量变化为积极下的取值，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=0|A=0,B=0)=0.5630\tP(B=0|A=1)=0.2795\tP(B=0|A=0)=0.6827\tP(C=0|A=0,B=1)=0.2303\tP(B=1|A=1)=0.7205\tP(B=1|A=0)=0.3173",
+        "Step 6": "NIE=0.5630*(0.2795-0.6827)+0.2303*(0.7205-0.3173)=-0.1342",
+        "Step 7": "NIE=-0.1342<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.13416208631143667
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)且体育锻炼量为久坐(A=0)的条件下, 血压水平为正常(C=1)的概率为0.4370。在体育锻炼量为积极(A=1)的条件下, 心血管健康为不佳(B=0)的概率为0.2795。在体育锻炼量为久坐(A=0)的条件下, 心血管健康为不佳(B=0)的概率为0.6827。在心血管健康为良好(B=1)且体育锻炼量为久坐(A=0)的条件下, 血压水平为正常(C=1)的概率为0.7697。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4370; P(B=0|A=1)=0.2795; P(B=0|A=0)=0.6827; P(C=1|B=1,A=0)=0.7697; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体育锻炼量保持不变，而所有中间变量被改变为当它们在体育锻炼量变化为积极下的取值，那么血压水平更有可能为正常吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=1|A=0,B=0)=0.4370\tP(B=0|A=1)=0.2795\tP(B=0|A=0)=0.6827\tP(C=1|A=0,B=1)=0.7697\tP(B=1|A=1)=0.7205\tP(B=1|A=0)=0.3173",
+        "Step 6": "NIE=0.4370*(0.2795-0.6827)+0.7697*(0.7205-0.3173)=0.1342",
+        "Step 7": "NIE=0.1342>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.13416208631143647
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)且体育锻炼量为积极(A=1)的条件下, 心脏病风险为高(D=0)的概率为0.5943。在体育锻炼量为久坐(A=0)的条件下, 心血管健康为不佳(B=0)的概率为0.6827。在体育锻炼量为积极(A=1)的条件下, 心血管健康为不佳(B=0)的概率为0.2795。在心血管健康为良好(B=1)且体育锻炼量为积极(A=1)的条件下, 心脏病风险为高(D=0)的概率为0.1616。",
+        "data_info_math": "P(D=0|B=0,A=1)=0.5943; P(B=0|A=0)=0.6827; P(B=0|A=1)=0.2795; P(D=0|B=1,A=1)=0.1616; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体育锻炼量保持不变，而所有中间变量被改变为当它们在体育锻炼量变化为久坐下的取值，那么心脏病风险更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(D=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(D=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(D=0|A=1,B=0)=0.5943\tP(B=0|A=0)=0.6827\tP(B=0|A=1)=0.2795\tP(D=0|A=1,B=1)=0.1616\tP(B=1|A=0)=0.3173\tP(B=1|A=1)=0.7205",
+        "Step 6": "NIE=0.5943*(0.6827-0.2795)+0.1616*(0.3173-0.7205)=0.1745",
+        "Step 7": "NIE=0.1745>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.17446971383035814
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)且体育锻炼量为积极(A=1)的条件下, 心脏病风险为低(D=1)的概率为0.4057。在体育锻炼量为久坐(A=0)的条件下, 心血管健康为不佳(B=0)的概率为0.6827。在体育锻炼量为积极(A=1)的条件下, 心血管健康为不佳(B=0)的概率为0.2795。在心血管健康为良好(B=1)且体育锻炼量为积极(A=1)的条件下, 心脏病风险为低(D=1)的概率为0.8384。",
+        "data_info_math": "P(D=1|B=0,A=1)=0.4057; P(B=0|A=0)=0.6827; P(B=0|A=1)=0.2795; P(D=1|B=1,A=1)=0.8384; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体育锻炼量保持不变，而所有中间变量被改变为当它们在体育锻炼量变化为久坐下的取值，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(D=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(D=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(D=1|A=1,B=0)=0.4057\tP(B=0|A=0)=0.6827\tP(B=0|A=1)=0.2795\tP(D=1|A=1,B=1)=0.8384\tP(B=1|A=0)=0.3173\tP(B=1|A=1)=0.7205",
+        "Step 6": "NIE=0.4057*(0.6827-0.2795)+0.8384*(0.3173-0.7205)=-0.1745",
+        "Step 7": "NIE=-0.1745<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.17446971383035806
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)且体育锻炼量为久坐(A=0)的条件下, 心脏病风险为高(D=0)的概率为0.5884。在体育锻炼量为积极(A=1)的条件下, 心血管健康为不佳(B=0)的概率为0.2795。在体育锻炼量为久坐(A=0)的条件下, 心血管健康为不佳(B=0)的概率为0.6827。在心血管健康为良好(B=1)且体育锻炼量为久坐(A=0)的条件下, 心脏病风险为高(D=0)的概率为0.1674。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.5884; P(B=0|A=1)=0.2795; P(B=0|A=0)=0.6827; P(D=0|B=1,A=0)=0.1674; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体育锻炼量保持不变，而所有中间变量被改变为当它们在体育锻炼量变化为积极下的取值，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(D=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(D=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(D=0|A=0,B=0)=0.5884\tP(B=0|A=1)=0.2795\tP(B=0|A=0)=0.6827\tP(D=0|A=0,B=1)=0.1674\tP(B=1|A=1)=0.7205\tP(B=1|A=0)=0.3173",
+        "Step 6": "NIE=0.5884*(0.2795-0.6827)+0.1674*(0.7205-0.3173)=-0.1698",
+        "Step 7": "NIE=-0.1698<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.16977483813350808
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)且体育锻炼量为久坐(A=0)的条件下, 心脏病风险为低(D=1)的概率为0.4116。在体育锻炼量为积极(A=1)的条件下, 心血管健康为不佳(B=0)的概率为0.2795。在体育锻炼量为久坐(A=0)的条件下, 心血管健康为不佳(B=0)的概率为0.6827。在心血管健康为良好(B=1)且体育锻炼量为久坐(A=0)的条件下, 心脏病风险为低(D=1)的概率为0.8326。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.4116; P(B=0|A=1)=0.2795; P(B=0|A=0)=0.6827; P(D=1|B=1,A=0)=0.8326; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体育锻炼量保持不变，而所有中间变量被改变为当它们在体育锻炼量变化为积极下的取值，那么心脏病风险更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(D=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(D=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(D=1|A=0,B=0)=0.4116\tP(B=0|A=1)=0.2795\tP(B=0|A=0)=0.6827\tP(D=1|A=0,B=1)=0.8326\tP(B=1|A=1)=0.7205\tP(B=1|A=0)=0.3173",
+        "Step 6": "NIE=0.4116*(0.2795-0.6827)+0.8326*(0.7205-0.3173)=0.1698",
+        "Step 7": "NIE=0.1698>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.16977483813350794
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如心血管健康保持不变，而所有中间变量被改变为当它们在心血管健康变化为不佳下的取值，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如心血管健康保持不变，而所有中间变量被改变为当它们在心血管健康变化为不佳下的取值，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如心血管健康保持不变，而所有中间变量被改变为当它们在心血管健康变化为良好下的取值，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如心血管健康保持不变，而所有中间变量被改变为当它们在心血管健康变化为良好下的取值，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如心血管健康保持不变，而所有中间变量被改变为当它们在心血管健康变化为不佳下的取值，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如心血管健康保持不变，而所有中间变量被改变为当它们在心血管健康变化为不佳下的取值，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如心血管健康保持不变，而所有中间变量被改变为当它们在心血管健康变化为良好下的取值，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如心血管健康保持不变，而所有中间变量被改变为当它们在心血管健康变化为良好下的取值，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 心血管健康为不佳(B=0)的概率为0.6827。在体育锻炼量为积极(A=1)的条件下, 心血管健康为不佳(B=0)的概率为0.2795。",
+        "data_info_math": "P(B=0|A=0)=0.6827; P(B=0|A=1)=0.2795; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体育锻炼量为久坐，假如体育锻炼量为积极，那么心血管健康更有可能为不佳吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.6827\tP(B=0|A=1)=0.2795",
+        "Step 6": "ETT=0.6827-0.2795=0.4032",
+        "Step 7": "ETT=0.4032>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.4032179010030943
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 心血管健康为良好(B=1)的概率为0.3173。在体育锻炼量为积极(A=1)的条件下, 心血管健康为良好(B=1)的概率为0.7205。",
+        "data_info_math": "P(B=1|A=0)=0.3173; P(B=1|A=1)=0.7205; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体育锻炼量为久坐，假如体育锻炼量为积极，那么心血管健康更有可能为良好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.3173\tP(B=1|A=1)=0.7205",
+        "Step 6": "ETT=0.3173-0.7205=-0.4032",
+        "Step 7": "ETT=-0.4032<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.4032179010030942
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 心血管健康为不佳(B=0)的概率为0.2795。在体育锻炼量为久坐(A=0)的条件下, 心血管健康为不佳(B=0)的概率为0.6827。",
+        "data_info_math": "P(B=0|A=1)=0.2795; P(B=0|A=0)=0.6827; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体育锻炼量为积极，假如体育锻炼量为久坐，那么心血管健康更有可能为不佳吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.2795\tP(B=0|A=0)=0.6827",
+        "Step 6": "ETT=0.2795-0.6827=-0.4032",
+        "Step 7": "ETT=-0.4032<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.4032179010030943
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 心血管健康为良好(B=1)的概率为0.7205。在体育锻炼量为久坐(A=0)的条件下, 心血管健康为良好(B=1)的概率为0.3173。",
+        "data_info_math": "P(B=1|A=1)=0.7205; P(B=1|A=0)=0.3173; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体育锻炼量为积极，假如体育锻炼量为久坐，那么心血管健康更有可能为良好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.7205\tP(B=1|A=0)=0.3173",
+        "Step 6": "ETT=0.7205-0.3173=0.4032",
+        "Step 7": "ETT=0.4032>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.4032179010030942
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 血压水平为高(C=0)的概率为0.4574。在体育锻炼量为积极(A=1)的条件下, 血压水平为高(C=0)的概率为0.3313。",
+        "data_info_math": "P(C=0|A=0)=0.4574; P(C=0|A=1)=0.3313; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体育锻炼量为久坐，假如体育锻炼量为积极，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.4574\tP(C=0|A=1)=0.3313",
+        "Step 6": "ETT=0.4574-0.3313=0.1261",
+        "Step 7": "ETT=0.1261>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.12612376720582258
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 血压水平为正常(C=1)的概率为0.5426。在体育锻炼量为积极(A=1)的条件下, 血压水平为正常(C=1)的概率为0.6687。",
+        "data_info_math": "P(C=1|A=0)=0.5426; P(C=1|A=1)=0.6687; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体育锻炼量为久坐，假如体育锻炼量为积极，那么血压水平更有可能为正常吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.5426\tP(C=1|A=1)=0.6687",
+        "Step 6": "ETT=0.5426-0.6687=-0.1261",
+        "Step 7": "ETT=-0.1261<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.1261237672058224
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 血压水平为高(C=0)的概率为0.3313。在体育锻炼量为久坐(A=0)的条件下, 血压水平为高(C=0)的概率为0.4574。",
+        "data_info_math": "P(C=0|A=1)=0.3313; P(C=0|A=0)=0.4574; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体育锻炼量为积极，假如体育锻炼量为久坐，那么血压水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.3313\tP(C=0|A=0)=0.4574",
+        "Step 6": "ETT=0.3313-0.4574=-0.1261",
+        "Step 7": "ETT=-0.1261<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.12612376720582258
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 血压水平为正常(C=1)的概率为0.6687。在体育锻炼量为久坐(A=0)的条件下, 血压水平为正常(C=1)的概率为0.5426。",
+        "data_info_math": "P(C=1|A=1)=0.6687; P(C=1|A=0)=0.5426; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体育锻炼量为积极，假如体育锻炼量为久坐，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.6687\tP(C=1|A=0)=0.5426",
+        "Step 6": "ETT=0.6687-0.5426=0.1261",
+        "Step 7": "ETT=0.1261>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.1261237672058224
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 心脏病风险为高(D=0)的概率为0.4548。在体育锻炼量为积极(A=1)的条件下, 心脏病风险为高(D=0)的概率为0.2825。",
+        "data_info_math": "P(D=0|A=0)=0.4548; P(D=0|A=1)=0.2825; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体育锻炼量为久坐，假如体育锻炼量为积极，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.4548\tP(D=0|A=1)=0.2825",
+        "Step 6": "ETT=0.4548-0.2825=0.1723",
+        "Step 7": "ETT=0.1723>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.17233240533649813
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 心脏病风险为低(D=1)的概率为0.5452。在体育锻炼量为积极(A=1)的条件下, 心脏病风险为低(D=1)的概率为0.7175。",
+        "data_info_math": "P(D=1|A=0)=0.5452; P(D=1|A=1)=0.7175; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体育锻炼量为久坐，假如体育锻炼量为积极，那么心脏病风险更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.5452\tP(D=1|A=1)=0.7175",
+        "Step 6": "ETT=0.5452-0.7175=-0.1723",
+        "Step 7": "ETT=-0.1723<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.17233240533649796
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 心脏病风险为高(D=0)的概率为0.2825。在体育锻炼量为久坐(A=0)的条件下, 心脏病风险为高(D=0)的概率为0.4548。",
+        "data_info_math": "P(D=0|A=1)=0.2825; P(D=0|A=0)=0.4548; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体育锻炼量为积极，假如体育锻炼量为久坐，那么心脏病风险更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.2825\tP(D=0|A=0)=0.4548",
+        "Step 6": "ETT=0.2825-0.4548=-0.1723",
+        "Step 7": "ETT=-0.1723<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.17233240533649813
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 心脏病风险为低(D=1)的概率为0.7175。在体育锻炼量为久坐(A=0)的条件下, 心脏病风险为低(D=1)的概率为0.5452。",
+        "data_info_math": "P(D=1|A=1)=0.7175; P(D=1|A=0)=0.5452; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体育锻炼量为积极，假如体育锻炼量为久坐，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.7175\tP(D=1|A=0)=0.5452",
+        "Step 6": "ETT=0.7175-0.5452=0.1723",
+        "Step 7": "ETT=0.1723>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.17233240533649796
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于体育锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心血管健康为不佳，假如心血管健康为良好，那么体育锻炼量更有可能为久坐吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于体育锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心血管健康为不佳，假如心血管健康为良好，那么体育锻炼量更有可能为积极吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于体育锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心血管健康为良好，假如心血管健康为不佳，那么体育锻炼量更有可能为久坐吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心血管健康作用于体育锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心血管健康为良好，假如心血管健康为不佳，那么体育锻炼量更有可能为积极吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 血压水平为高(C=0)的概率为0.5647。在心血管健康为良好(B=1)的条件下, 血压水平为高(C=0)的概率为0.2339。",
+        "data_info_math": "P(C=0|B=0)=0.5647; P(C=0|B=1)=0.2339; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心血管健康为不佳，假如心血管健康为良好，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.5647\tP(C=0|B=1)=0.2339",
+        "Step 6": "ETT=0.5647-0.2339=0.3308",
+        "Step 7": "ETT=0.3308>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.3307802913382061
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 血压水平为正常(C=1)的概率为0.4353。在心血管健康为良好(B=1)的条件下, 血压水平为正常(C=1)的概率为0.7661。",
+        "data_info_math": "P(C=1|B=0)=0.4353; P(C=1|B=1)=0.7661; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心血管健康为不佳，假如心血管健康为良好，那么血压水平更有可能为正常吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.4353\tP(C=1|B=1)=0.7661",
+        "Step 6": "ETT=0.4353-0.7661=-0.3308",
+        "Step 7": "ETT=-0.3308<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.3307802913382061
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 血压水平为高(C=0)的概率为0.2339。在心血管健康为不佳(B=0)的条件下, 血压水平为高(C=0)的概率为0.5647。",
+        "data_info_math": "P(C=0|B=1)=0.2339; P(C=0|B=0)=0.5647; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心血管健康为良好，假如心血管健康为不佳，那么血压水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.2339\tP(C=0|B=0)=0.5647",
+        "Step 6": "ETT=0.2339-0.5647=-0.3308",
+        "Step 7": "ETT=-0.3308<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.3307802913382061
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 血压水平为正常(C=1)的概率为0.7661。在心血管健康为不佳(B=0)的条件下, 血压水平为正常(C=1)的概率为0.4353。",
+        "data_info_math": "P(C=1|B=1)=0.7661; P(C=1|B=0)=0.4353; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心血管健康为良好，假如心血管健康为不佳，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.7661\tP(C=1|B=0)=0.4353",
+        "Step 6": "ETT=0.7661-0.4353=0.3308",
+        "Step 7": "ETT=0.3308>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.3307802913382061
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 心脏病风险为高(D=0)的概率为0.5894。在心血管健康为良好(B=1)的条件下, 心脏病风险为高(D=0)的概率为0.1644。",
+        "data_info_math": "P(D=0|B=0)=0.5894; P(D=0|B=1)=0.1644; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心血管健康为不佳，假如心血管健康为良好，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.5894\tP(D=0|B=1)=0.1644",
+        "Step 6": "ETT=0.5894-0.1644=0.4250",
+        "Step 7": "ETT=0.4250>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.424966266903981
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 心脏病风险为低(D=1)的概率为0.4106。在心血管健康为良好(B=1)的条件下, 心脏病风险为低(D=1)的概率为0.8356。",
+        "data_info_math": "P(D=1|B=0)=0.4106; P(D=1|B=1)=0.8356; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心血管健康为不佳，假如心血管健康为良好，那么心脏病风险更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.4106\tP(D=1|B=1)=0.8356",
+        "Step 6": "ETT=0.4106-0.8356=-0.4250",
+        "Step 7": "ETT=-0.4250<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.4249662669039809
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 心脏病风险为高(D=0)的概率为0.1644。在心血管健康为不佳(B=0)的条件下, 心脏病风险为高(D=0)的概率为0.5894。",
+        "data_info_math": "P(D=0|B=1)=0.1644; P(D=0|B=0)=0.5894; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心血管健康为良好，假如心血管健康为不佳，那么心脏病风险更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.1644\tP(D=0|B=0)=0.5894",
+        "Step 6": "ETT=0.1644-0.5894=-0.4250",
+        "Step 7": "ETT=-0.4250<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.424966266903981
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 心脏病风险为低(D=1)的概率为0.8356。在心血管健康为不佳(B=0)的条件下, 心脏病风险为低(D=1)的概率为0.4106。",
+        "data_info_math": "P(D=1|B=1)=0.8356; P(D=1|B=0)=0.4106; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心血管健康为良好，假如心血管健康为不佳，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.8356\tP(D=1|B=0)=0.4106",
+        "Step 6": "ETT=0.8356-0.4106=0.4250",
+        "Step 7": "ETT=0.4250>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.4249662669039809
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于体育锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压水平为高，假如血压水平为正常，那么体育锻炼量更有可能为久坐吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于体育锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压水平为高，假如血压水平为正常，那么体育锻炼量更有可能为积极吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于体育锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压水平为正常，假如血压水平为高，那么体育锻炼量更有可能为久坐吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于体育锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压水平为正常，假如血压水平为高，那么体育锻炼量更有可能为积极吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心血管健康的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压水平为高，假如血压水平为正常，那么心血管健康更有可能为不佳吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心血管健康的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压水平为高，假如血压水平为正常，那么心血管健康更有可能为良好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心血管健康的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压水平为正常，假如血压水平为高，那么心血管健康更有可能为不佳吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心血管健康的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压水平为正常，假如血压水平为高，那么心血管健康更有可能为良好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心脏病风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压水平为高，假如血压水平为正常，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心脏病风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压水平为高，假如血压水平为正常，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心脏病风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压水平为正常，假如血压水平为高，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑血压水平作用于心脏病风险的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些血压水平为正常，假如血压水平为高，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于体育锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心脏病风险为高，假如心脏病风险为低，那么体育锻炼量更有可能为久坐吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于体育锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心脏病风险为高，假如心脏病风险为低，那么体育锻炼量更有可能为积极吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于体育锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心脏病风险为低，假如心脏病风险为高，那么体育锻炼量更有可能为久坐吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于体育锻炼量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心脏病风险为低，假如心脏病风险为高，那么体育锻炼量更有可能为积极吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于心血管健康的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心脏病风险为高，假如心脏病风险为低，那么心血管健康更有可能为不佳吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于心血管健康的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心脏病风险为高，假如心脏病风险为低，那么心血管健康更有可能为良好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于心血管健康的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心脏病风险为低，假如心脏病风险为高，那么心血管健康更有可能为不佳吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于心血管健康的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心脏病风险为低，假如心脏病风险为高，那么心血管健康更有可能为良好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于血压水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心脏病风险为高，假如心脏病风险为低，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 133,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于血压水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心脏病风险为高，假如心脏病风险为低，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 134,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于血压水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心脏病风险为低，假如心脏病风险为高，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 135,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑心脏病风险作用于血压水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些心脏病风险为低，假如心脏病风险为高，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 136,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在心血管健康为不佳的条件下，假如体育锻炼量为久坐，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 137,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在心血管健康为良好的条件下，假如体育锻炼量为久坐，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 138,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在心血管健康为不佳的条件下，假如体育锻炼量为积极，那么血压水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 139,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在心血管健康为不佳的条件下，假如体育锻炼量为积极，那么血压水平更有可能为正常吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 140,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在心血管健康为不佳的条件下，假如体育锻炼量为久坐，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 141,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在心血管健康为不佳的条件下，假如体育锻炼量为久坐，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 142,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在心血管健康为不佳的条件下，假如体育锻炼量为积极，那么心脏病风险更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 143,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在心血管健康为不佳的条件下，假如体育锻炼量为积极，那么心脏病风险更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 144,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象体育锻炼量(A)和观察节点心血管健康(B)的后门调整集合。",
+      "Question": "方法1: 根据心脏病风险的情况，我们逐个研究体育锻炼量和心血管健康的关联。\n方法2：我们直接研究一般情况下体育锻炼量和心血管健康的关联。\n为了理解体育锻炼量如何影响心血管健康，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 145,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象体育锻炼量(A)和观察节点心血管健康(B)的后门调整集合。",
+      "Question": "方法1: 根据心脏病风险的情况，我们逐个研究体育锻炼量和心血管健康的关联。\n方法2：我们直接研究一般情况下体育锻炼量和心血管健康的关联。\n为了理解体育锻炼量如何影响心血管健康，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 146,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象体育锻炼量(A)和观察节点血压水平(C)的后门调整集合。",
+      "Question": "方法1: 根据心血管健康的情况，我们逐个研究体育锻炼量和血压水平的关联。\n方法2：我们直接研究一般情况下体育锻炼量和血压水平的关联。\n为了理解体育锻炼量如何影响血压水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 147,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象体育锻炼量(A)和观察节点血压水平(C)的后门调整集合。",
+      "Question": "方法1: 根据心血管健康的情况，我们逐个研究体育锻炼量和血压水平的关联。\n方法2：我们直接研究一般情况下体育锻炼量和血压水平的关联。\n为了理解体育锻炼量如何影响血压水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 148,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象体育锻炼量(A)和观察节点心脏病风险(D)的后门调整集合。",
+      "Question": "方法1: 根据心血管健康的情况，我们逐个研究体育锻炼量和心脏病风险的关联。\n方法2：我们直接研究一般情况下体育锻炼量和心脏病风险的关联。\n为了理解体育锻炼量如何影响心脏病风险，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 149,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象体育锻炼量(A)和观察节点心脏病风险(D)的后门调整集合。",
+      "Question": "方法1: 根据血压水平的情况，我们逐个研究体育锻炼量和心脏病风险的关联。\n方法2：我们直接研究一般情况下体育锻炼量和心脏病风险的关联。\n为了理解体育锻炼量如何影响心脏病风险，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 150,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象心血管健康(B)和观察节点血压水平(C)的后门调整集合。",
+      "Question": "方法1: 根据心脏病风险的情况，我们逐个研究心血管健康和血压水平的关联。\n方法2：我们直接研究一般情况下心血管健康和血压水平的关联。\n为了理解心血管健康如何影响血压水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 151,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象心血管健康(B)和观察节点血压水平(C)的后门调整集合。",
+      "Question": "方法1: 根据体育锻炼量的情况，我们逐个研究心血管健康和血压水平的关联。\n方法2：我们直接研究一般情况下心血管健康和血压水平的关联。\n为了理解心血管健康如何影响血压水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 152,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象心血管健康(B)和观察节点心脏病风险(D)的后门调整集合。",
+      "Question": "方法1: 根据体育锻炼量的情况，我们逐个研究心血管健康和心脏病风险的关联。\n方法2：我们直接研究一般情况下心血管健康和心脏病风险的关联。\n为了理解心血管健康如何影响心脏病风险，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 153,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象心血管健康(B)和观察节点心脏病风险(D)的后门调整集合。",
+      "Question": "方法1: 根据体育锻炼量的情况，我们逐个研究心血管健康和心脏病风险的关联。\n方法2：我们直接研究一般情况下心血管健康和心脏病风险的关联。\n为了理解心血管健康如何影响心脏病风险，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 154,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 心血管健康为良好(B=1)的概率为0.3173。心血管健康为良好(B=1)的概率为0.4452。体育锻炼量为积极(A=1)且心血管健康为良好(B=1)的概率为0.2286。",
+        "data_info_math": "P(B=1|A=0)=0.3173; P(B=1)=0.4452; P(A=1,B=1)=0.2286; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的必要性概率(probability of necessity, PN)。",
+      "Question": "给定体育锻炼量为积极且心血管健康为良好, 那么假如体育锻炼量为久坐，此时心血管健康为不佳的概率的下界是多少？",
+      "Answer": "0.5596",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.3173",
+        "Step 2": "PN的下界: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.4452-0.3173)/0.2286}\n=max{0, 0.5596}\n=0.5596"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.5596231300336009
+    },
+    {
+      "id": 155,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 心血管健康为不佳(B=0)的概率为0.6827。体育锻炼量为久坐(A=0)且心血管健康为不佳(B=0)的概率为0.4661。体育锻炼量为积极(A=1)且心血管健康为良好(B=1)的概率为0.2286。",
+        "data_info_math": "P(B=0|A=0)=0.6827; P(A=0,B=0)=0.4661; P(A=1,B=1)=0.2286; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的必要性概率(probability of necessity, PN)。",
+      "Question": "给定体育锻炼量为积极且心血管健康为良好, 那么假如体育锻炼量为久坐，此时心血管健康为不佳的概率的上界是多少？",
+      "Answer": "0.9475",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.6827",
+        "Step 2": "PN的上界: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.6827-0.4661)/0.2286}\n=min{1, 0.9475}\n=0.9475"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.9475157028618748
+    },
+    {
+      "id": 156,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 血压水平为正常(C=1)的概率为0.5426。血压水平为正常(C=1)的概率为0.5826。体育锻炼量为积极(A=1)且血压水平为正常(C=1)的概率为0.2122。",
+        "data_info_math": "P(C=1|A=0)=0.5426; P(C=1)=0.5826; P(A=1,C=1)=0.2122; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定体育锻炼量为积极且血压水平为正常, 那么假如体育锻炼量为久坐，此时血压水平为高的概率的下界是多少？",
+      "Answer": "0.1886",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.5426",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.5826-0.5426)/0.2122}\n=max{0, 0.1886}\n=0.1886"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.18860906463572158
+    },
+    {
+      "id": 157,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 血压水平为高(C=0)的概率为0.4574。体育锻炼量为久坐(A=0)且血压水平为高(C=0)的概率为0.3123。体育锻炼量为积极(A=1)且血压水平为正常(C=1)的概率为0.2122。",
+        "data_info_math": "P(C=0|A=0)=0.4574; P(A=0,C=0)=0.3123; P(A=1,C=1)=0.2122; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定体育锻炼量为积极且血压水平为正常, 那么假如体育锻炼量为久坐，此时血压水平为高的概率的上界是多少？",
+      "Answer": "0.6840",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.4574",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.4574-0.3123)/0.2122}\n=min{1, 0.6840}\n=0.6840"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.6840374744764234
+    },
+    {
+      "id": 158,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 心脏病风险为低(D=1)的概率为0.5452。心脏病风险为低(D=1)的概率为0.5998。体育锻炼量为积极(A=1)且心脏病风险为低(D=1)的概率为0.2277。",
+        "data_info_math": "P(D=1|A=0)=0.5452; P(D=1)=0.5998; P(A=1,D=1)=0.2277; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的必要性概率(probability of necessity, PN)。",
+      "Question": "给定体育锻炼量为积极且心脏病风险为低, 那么假如体育锻炼量为久坐，此时心脏病风险为高的概率的下界是多少？",
+      "Answer": "0.2402",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.5452",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.5998-0.5452)/0.2277}\n=max{0, 0.2402}\n=0.2402"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.2401874383434542
+    },
+    {
+      "id": 159,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为久坐(A=0)的条件下, 心脏病风险为高(D=0)的概率为0.4548。体育锻炼量为久坐(A=0)且心脏病风险为高(D=0)的概率为0.3105。体育锻炼量为积极(A=1)且心脏病风险为低(D=1)的概率为0.2277。",
+        "data_info_math": "P(D=0|A=0)=0.4548; P(A=0,D=0)=0.3105; P(A=1,D=1)=0.2277; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的必要性概率(probability of necessity, PN)。",
+      "Question": "给定体育锻炼量为积极且心脏病风险为低, 那么假如体育锻炼量为久坐，此时心脏病风险为高的概率的上界是多少？",
+      "Answer": "0.6339",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.4548",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.4548-0.3105)/0.2277}\n=min{1, 0.6339}\n=0.6339"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.633932496763906
+    },
+    {
+      "id": 160,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 血压水平为正常(C=1)的概率为0.4353。血压水平为正常(C=1)的概率为0.5826。心血管健康为良好(B=1)且血压水平为正常(C=1)的概率为0.3411。",
+        "data_info_math": "P(C=1|B=0)=0.4353; P(C=1)=0.5826; P(B=1,C=1)=0.3411; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定心血管健康为良好且血压水平为正常, 那么假如心血管健康为不佳，此时血压水平为高的概率的下界是多少？",
+      "Answer": "0.4318",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=P(C=1|B=0)=0.4353",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.5826-0.4353)/0.3411}\n=max{0, 0.4318}\n=0.4318"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.4317696186321399
+    },
+    {
+      "id": 161,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 血压水平为高(C=0)的概率为0.5647。心血管健康为不佳(B=0)且血压水平为高(C=0)的概率为0.3133。心血管健康为良好(B=1)且血压水平为正常(C=1)的概率为0.3411。",
+        "data_info_math": "P(C=0|B=0)=0.5647; P(B=0,C=0)=0.3133; P(B=1,C=1)=0.3411; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定心血管健康为良好且血压水平为正常, 那么假如心血管健康为不佳，此时血压水平为高的概率的上界是多少？",
+      "Answer": "0.7371",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=P(C=0|B=0)=0.5647",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.5647-0.3133)/0.3411}\n=min{1, 0.7371}\n=0.7371"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.7370759804028814
+    },
+    {
+      "id": 162,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 心脏病风险为低(D=1)的概率为0.4106。心脏病风险为低(D=1)的概率为0.5998。心血管健康为良好(B=1)且心脏病风险为低(D=1)的概率为0.3720。",
+        "data_info_math": "P(D=1|B=0)=0.4106; P(D=1)=0.5998; P(B=1,D=1)=0.3720; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的必要性概率(probability of necessity, PN)。",
+      "Question": "给定心血管健康为良好且心脏病风险为低, 那么假如心血管健康为不佳，此时心脏病风险为高的概率的下界是多少？",
+      "Answer": "0.5086",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=P(D=1|B=0)=0.4106",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.5998-0.4106)/0.3720}\n=max{0, 0.5086}\n=0.5086"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.5085796706707035
+    },
+    {
+      "id": 163,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为不佳(B=0)的条件下, 心脏病风险为高(D=0)的概率为0.5894。心血管健康为不佳(B=0)且心脏病风险为高(D=0)的概率为0.3270。心血管健康为良好(B=1)且心脏病风险为低(D=1)的概率为0.3720。",
+        "data_info_math": "P(D=0|B=0)=0.5894; P(B=0,D=0)=0.3270; P(B=1,D=1)=0.3720; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的必要性概率(probability of necessity, PN)。",
+      "Question": "给定心血管健康为良好且心脏病风险为低, 那么假如心血管健康为不佳，此时心脏病风险为高的概率的上界是多少？",
+      "Answer": "0.7053",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=P(D=0|B=0)=0.5894",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.5894-0.3270)/0.3720}\n=min{1, 0.7053}\n=0.7053"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.7053327079785198
+    },
+    {
+      "id": 164,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 心血管健康为不佳(B=0)的概率为0.2795。心血管健康为不佳(B=0)的概率为0.5548。体育锻炼量为久坐(A=0)且心血管健康为不佳(B=0)的概率为0.4661。",
+        "data_info_math": "P(B=0|A=1)=0.2795; P(B=0)=0.5548; P(A=0,B=0)=0.4661; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定体育锻炼量为久坐且心血管健康为不佳, 假如体育锻炼量为积极，此时心血管健康为良好的概率的下界是多少？",
+      "Answer": "0.5906",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.2795",
+        "Step 2": "PS的下界: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.5548-0.2795)/0.4661}\n=max{0, 0.5906}\n=0.5906"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.5906214834681011
+    },
+    {
+      "id": 165,
+      "question_id": 160,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 心血管健康为良好(B=1)的概率为0.7205。体育锻炼量为久坐(A=0)且心血管健康为不佳(B=0)的概率为0.4661。体育锻炼量为积极(A=1)且心血管健康为良好(B=1)的概率为0.2286。",
+        "data_info_math": "P(B=1|A=1)=0.7205; P(A=0,B=0)=0.4661; P(A=1,B=1)=0.2286; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心血管健康的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定体育锻炼量为久坐且心血管健康为不佳, 假如体育锻炼量为积极，此时心血管健康为良好的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.7205",
+        "Step 2": "PS的上界: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.7205-0.2286)/0.4661}\n=min{1, 1.0554}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 166,
+      "question_id": 161,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 血压水平为高(C=0)的概率为0.3313。血压水平为高(C=0)的概率为0.4174。体育锻炼量为久坐(A=0)且血压水平为高(C=0)的概率为0.3123。",
+        "data_info_math": "P(C=0|A=1)=0.3313; P(C=0)=0.4174; P(A=0,C=0)=0.3123; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定体育锻炼量为久坐且血压水平为高, 假如体育锻炼量为积极，此时血压水平为正常的概率的下界是多少？",
+      "Answer": "0.2757",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.3313",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.4174-0.3313)/0.3123}\n=max{0, 0.2757}\n=0.2757"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.2757291401031608
+    },
+    {
+      "id": 167,
+      "question_id": 162,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 血压水平为正常(C=1)的概率为0.6687。体育锻炼量为久坐(A=0)且血压水平为高(C=0)的概率为0.3123。体育锻炼量为积极(A=1)且血压水平为正常(C=1)的概率为0.2122。",
+        "data_info_math": "P(C=1|A=1)=0.6687; P(A=0,C=0)=0.3123; P(A=1,C=1)=0.2122; "
+      },
+      "Instruction": "考虑体育锻炼量作用于血压水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定体育锻炼量为久坐且血压水平为高, 假如体育锻炼量为积极，此时血压水平为正常的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.6687",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.6687-0.2122)/0.3123}\n=min{1, 1.4619}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 168,
+      "question_id": 163,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 心脏病风险为高(D=0)的概率为0.2825。心脏病风险为高(D=0)的概率为0.4002。体育锻炼量为久坐(A=0)且心脏病风险为高(D=0)的概率为0.3105。",
+        "data_info_math": "P(D=0|A=1)=0.2825; P(D=0)=0.4002; P(A=0,D=0)=0.3105; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定体育锻炼量为久坐且心脏病风险为高, 假如体育锻炼量为积极，此时心脏病风险为低的概率的下界是多少？",
+      "Answer": "0.3789",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.2825",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.4002-0.2825)/0.3105}\n=max{0, 0.3789}\n=0.3789"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.3788848805977949
+    },
+    {
+      "id": 169,
+      "question_id": 164,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在体育锻炼量为积极(A=1)的条件下, 心脏病风险为低(D=1)的概率为0.7175。体育锻炼量为久坐(A=0)且心脏病风险为高(D=0)的概率为0.3105。体育锻炼量为积极(A=1)且心脏病风险为低(D=1)的概率为0.2277。",
+        "data_info_math": "P(D=1|A=1)=0.7175; P(A=0,D=0)=0.3105; P(A=1,D=1)=0.2277; "
+      },
+      "Instruction": "考虑体育锻炼量作用于心脏病风险的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定体育锻炼量为久坐且心脏病风险为高, 假如体育锻炼量为积极，此时心脏病风险为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.7175",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.7175-0.2277)/0.3105}\n=min{1, 1.5775}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 170,
+      "question_id": 165,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 血压水平为高(C=0)的概率为0.2339。血压水平为高(C=0)的概率为0.4174。心血管健康为不佳(B=0)且血压水平为高(C=0)的概率为0.3133。",
+        "data_info_math": "P(C=0|B=1)=0.2339; P(C=0)=0.4174; P(B=0,C=0)=0.3133; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定心血管健康为不佳且血压水平为高, 假如心血管健康为良好，此时血压水平为正常的概率的下界是多少？",
+      "Answer": "0.5858",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=P(C=0|B=1)=0.2339",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.4174-0.2339)/0.3133}\n=max{0, 0.5858}\n=0.5858"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.5857871238676602
+    },
+    {
+      "id": 171,
+      "question_id": 166,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 血压水平为正常(C=1)的概率为0.7661。心血管健康为不佳(B=0)且血压水平为高(C=0)的概率为0.3133。心血管健康为良好(B=1)且血压水平为正常(C=1)的概率为0.3411。",
+        "data_info_math": "P(C=1|B=1)=0.7661; P(B=0,C=0)=0.3133; P(B=1,C=1)=0.3411; "
+      },
+      "Instruction": "考虑心血管健康作用于血压水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定心血管健康为不佳且血压水平为高, 假如心血管健康为良好，此时血压水平为正常的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=P(C=1|B=1)=0.7661",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.7661-0.3411)/0.3133}\n=min{1, 1.3567}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 172,
+      "question_id": 167,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 心脏病风险为高(D=0)的概率为0.1644。心脏病风险为高(D=0)的概率为0.4002。心血管健康为不佳(B=0)且心脏病风险为高(D=0)的概率为0.3270。",
+        "data_info_math": "P(D=0|B=1)=0.1644; P(D=0)=0.4002; P(B=0,D=0)=0.3270; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定心血管健康为不佳且心脏病风险为高, 假如心血管健康为良好，此时心脏病风险为低的概率的下界是多少？",
+      "Answer": "0.7210",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=P(D=0|B=1)=0.1644",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.4002-0.1644)/0.3270}\n=max{0, 0.7210}\n=0.7210"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.7210493217141318
+    },
+    {
+      "id": 173,
+      "question_id": 168,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->B, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表体育锻炼量, B代表心血管健康, C代表血压水平, D代表心脏病风险。",
+        "data_info": "在心血管健康为良好(B=1)的条件下, 心脏病风险为低(D=1)的概率为0.8356。心血管健康为不佳(B=0)且心脏病风险为高(D=0)的概率为0.3270。心血管健康为良好(B=1)且心脏病风险为低(D=1)的概率为0.3720。",
+        "data_info_math": "P(D=1|B=1)=0.8356; P(B=0,D=0)=0.3270; P(B=1,D=1)=0.3720; "
+      },
+      "Instruction": "考虑心血管健康作用于心脏病风险的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定心血管健康为不佳且心脏病风险为高, 假如心血管健康为良好，此时心脏病风险为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=P(D=1|B=1)=0.8356",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.8356-0.3720)/0.3270}\n=min{1, 1.4178}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    }
+  ]
+}

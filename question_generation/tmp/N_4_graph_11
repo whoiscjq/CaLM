@@ -1,0 +1,9 @@
+digraph {
+	A [height=.5 shape=plaintext width=.5]
+	B [height=.5 shape=plaintext width=.5]
+	C [height=.5 shape=plaintext width=.5]
+	D [height=.5 shape=plaintext width=.5]
+	A -> D [color=blue]
+	C -> D [color=blue]
+	B -> C [color=blue]
+}

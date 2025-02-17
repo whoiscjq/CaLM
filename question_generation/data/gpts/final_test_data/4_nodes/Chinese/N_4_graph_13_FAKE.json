@@ -1,0 +1,4547 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->C",
+      "A->D",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "odge",
+      "B": "wxck",
+      "C": "sjaa",
+      "D": "bswu"
+    },
+    "node_value": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": -0.4849758469688746,
+      "B": 0.7609096737342202,
+      "C": -0.38054543246083233,
+      "D": 1.0405277044308519
+    },
+    "edge_weight": {
+      "A->C": -0.1680533838091085,
+      "A->D": 1.1725538584451625,
+      "B->C": 0.7592742627953142,
+      "C->D": -0.82053863652861
+    },
+    "function_description": "P(A=1)=0.3811\nP(B=1)=0.6816\nP(C=1|B,A)=sigmoid(-0.38054543246083233 + 0.7593 * B + -0.1681 * A)\nP(D=1|A,C)=sigmoid(1.0405277044308519 + 1.1726 * A + -0.8205 * C)\n",
+    "text_description": "The probability of odge being high (A=1) is 0.3811. \nThe probability of wxck being high (B=1) is 0.6816. \nFor those with wxck being low (B=0) and odge being low (A=0), the probability of sjaa being high (C=1) is 0.4060. \nFor those with wxck being low (B=0) and odge being high (A=1), the probability of sjaa being high (C=1) is 0.3662. \nFor those with wxck being high (B=1) and odge being low (A=0), the probability of sjaa being high (C=1) is 0.5936. \nFor those with wxck being high (B=1) and odge being high (A=1), the probability of sjaa being high (C=1) is 0.5525. \nFor those with odge being low (A=0) and sjaa being low (C=0), the probability of bswu being high (D=1) is 0.7390. \nFor those with odge being low (A=0) and sjaa being high (C=1), the probability of bswu being high (D=1) is 0.5548. \nFor those with odge being high (A=1) and sjaa being low (C=0), the probability of bswu being high (D=1) is 0.9014. \nFor those with odge being high (A=1) and sjaa being high (C=1), the probability of bswu being high (D=1) is 0.8010. \n",
+    "Statistic_data": [
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 5747
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 4356
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 6349
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 2216
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 5545
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 5198
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 1801
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 1543
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 6994
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 1689
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 2156
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 457
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 3569
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 385
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 585
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 1410
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑odge作用于wxck的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果odge被改变为低，那么wxck更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑odge作用于wxck的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果odge被改变为低，那么wxck更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑odge作用于wxck的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果odge被改变为高，那么wxck更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑odge作用于wxck的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果odge被改变为高，那么wxck更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4652。在odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.5114。",
+        "data_info_math": "P(C=0|A=0)=0.4652; P(C=0|A=1)=0.5114; "
+      },
+      "Instruction": "考虑odge作用于sjaa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果odge被改变为低，那么sjaa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.4652\tP(C=0|A=1)=0.5114",
+        "Step 6": "ATE=0.4652-0.5114=-0.0462",
+        "Step 7": "ATE=-0.0462<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.04615158078735365
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)的条件下, sjaa为高(C=1)的概率为0.5348。在odge为高(A=1)的条件下, sjaa为高(C=1)的概率为0.4886。",
+        "data_info_math": "P(C=1|A=0)=0.5348; P(C=1|A=1)=0.4886; "
+      },
+      "Instruction": "考虑odge作用于sjaa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果odge被改变为低，那么sjaa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.5348\tP(C=1|A=1)=0.4886",
+        "Step 6": "ATE=0.5348-0.4886=0.0462",
+        "Step 7": "ATE=0.0462>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.04615158078735376
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.5114。在odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4652。",
+        "data_info_math": "P(C=0|A=1)=0.5114; P(C=0|A=0)=0.4652; "
+      },
+      "Instruction": "考虑odge作用于sjaa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果odge被改变为高，那么sjaa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.5114\tP(C=0|A=0)=0.4652",
+        "Step 6": "ATE=0.5114-0.4652=0.0462",
+        "Step 7": "ATE=0.0462>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.04615158078735365
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)的条件下, sjaa为高(C=1)的概率为0.4886。在odge为低(A=0)的条件下, sjaa为高(C=1)的概率为0.5348。",
+        "data_info_math": "P(C=1|A=1)=0.4886; P(C=1|A=0)=0.5348; "
+      },
+      "Instruction": "考虑odge作用于sjaa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果odge被改变为高，那么sjaa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.4886\tP(C=1|A=0)=0.5348",
+        "Step 6": "ATE=0.4886-0.5348=-0.0462",
+        "Step 7": "ATE=-0.0462<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.04615158078735376
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.3568。在odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.1490。",
+        "data_info_math": "P(D=0|A=0)=0.3568; P(D=0|A=1)=0.1490; "
+      },
+      "Instruction": "考虑odge作用于bswu的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果odge被改变为低，那么bswu更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.3568\tP(D=0|A=1)=0.1490",
+        "Step 6": "ATE=0.3568-0.1490=0.2077",
+        "Step 7": "ATE=0.2077>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.20774854515449595
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.6432。在odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.8510。",
+        "data_info_math": "P(D=1|A=0)=0.6432; P(D=1|A=1)=0.8510; "
+      },
+      "Instruction": "考虑odge作用于bswu的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果odge被改变为低，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.6432\tP(D=1|A=1)=0.8510",
+        "Step 6": "ATE=0.6432-0.8510=-0.2077",
+        "Step 7": "ATE=-0.2077<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.20774854515449592
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.1490。在odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.3568。",
+        "data_info_math": "P(D=0|A=1)=0.1490; P(D=0|A=0)=0.3568; "
+      },
+      "Instruction": "考虑odge作用于bswu的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果odge被改变为高，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.1490\tP(D=0|A=0)=0.3568",
+        "Step 6": "ATE=0.1490-0.3568=-0.2077",
+        "Step 7": "ATE=-0.2077<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.20774854515449595
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.8510。在odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.6432。",
+        "data_info_math": "P(D=1|A=1)=0.8510; P(D=1|A=0)=0.6432; "
+      },
+      "Instruction": "考虑odge作用于bswu的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果odge被改变为高，那么bswu更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.8510\tP(D=1|A=0)=0.6432",
+        "Step 6": "ATE=0.8510-0.6432=0.2077",
+        "Step 7": "ATE=0.2077>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.20774854515449592
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于odge的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果wxck被改变为低，那么odge更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于odge的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果wxck被改变为低，那么odge更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于odge的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果wxck被改变为高，那么odge更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于odge的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果wxck被改变为高，那么odge更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为低(B=0)的条件下, sjaa为低(C=0)的概率为0.6152。在wxck为高(B=1)的条件下, sjaa为低(C=0)的概率为0.4204。",
+        "data_info_math": "P(C=0|B=0)=0.6152; P(C=0|B=1)=0.4204; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果wxck被改变为低，那么sjaa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.6152\tP(C=0|B=1)=0.4204",
+        "Step 6": "ATE=0.6152-0.4204=0.1948",
+        "Step 7": "ATE=0.1948>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.19476415768788652
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为低(B=0)的条件下, sjaa为高(C=1)的概率为0.3848。在wxck为高(B=1)的条件下, sjaa为高(C=1)的概率为0.5796。",
+        "data_info_math": "P(C=1|B=0)=0.3848; P(C=1|B=1)=0.5796; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果wxck被改变为低，那么sjaa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.3848\tP(C=1|B=1)=0.5796",
+        "Step 6": "ATE=0.3848-0.5796=-0.1948",
+        "Step 7": "ATE=-0.1948<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.19476415768788652
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为高(B=1)的条件下, sjaa为低(C=0)的概率为0.4204。在wxck为低(B=0)的条件下, sjaa为低(C=0)的概率为0.6152。",
+        "data_info_math": "P(C=0|B=1)=0.4204; P(C=0|B=0)=0.6152; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果wxck被改变为高，那么sjaa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.4204\tP(C=0|B=0)=0.6152",
+        "Step 6": "ATE=0.4204-0.6152=-0.1948",
+        "Step 7": "ATE=-0.1948<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.19476415768788652
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为高(B=1)的条件下, sjaa为高(C=1)的概率为0.5796。在wxck为低(B=0)的条件下, sjaa为高(C=1)的概率为0.3848。",
+        "data_info_math": "P(C=1|B=1)=0.5796; P(C=1|B=0)=0.3848; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果wxck被改变为高，那么sjaa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.5796\tP(C=1|B=0)=0.3848",
+        "Step 6": "ATE=0.5796-0.3848=0.1948",
+        "Step 7": "ATE=0.1948>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.19476415768788652
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为低(B=0)的条件下, bswu为低(D=0)的概率为0.2614。在wxck为高(B=1)的条件下, bswu为低(D=0)的概率为0.2853。",
+        "data_info_math": "P(D=0|B=0)=0.2614; P(D=0|B=1)=0.2853; "
+      },
+      "Instruction": "考虑wxck作用于bswu的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果wxck被改变为低，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.2614\tP(D=0|B=1)=0.2853",
+        "Step 6": "ATE=0.2614-0.2853=-0.0239",
+        "Step 7": "ATE=-0.0239<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.023947098099640518
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为低(B=0)的条件下, bswu为高(D=1)的概率为0.7386。在wxck为高(B=1)的条件下, bswu为高(D=1)的概率为0.7147。",
+        "data_info_math": "P(D=1|B=0)=0.7386; P(D=1|B=1)=0.7147; "
+      },
+      "Instruction": "考虑wxck作用于bswu的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果wxck被改变为低，那么bswu更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.7386\tP(D=1|B=1)=0.7147",
+        "Step 6": "ATE=0.7386-0.7147=0.0239",
+        "Step 7": "ATE=0.0239>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.02394709809964035
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为高(B=1)的条件下, bswu为低(D=0)的概率为0.2853。在wxck为低(B=0)的条件下, bswu为低(D=0)的概率为0.2614。",
+        "data_info_math": "P(D=0|B=1)=0.2853; P(D=0|B=0)=0.2614; "
+      },
+      "Instruction": "考虑wxck作用于bswu的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果wxck被改变为高，那么bswu更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.2853\tP(D=0|B=0)=0.2614",
+        "Step 6": "ATE=0.2853-0.2614=0.0239",
+        "Step 7": "ATE=0.0239>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.023947098099640518
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为高(B=1)的条件下, bswu为高(D=1)的概率为0.7147。在wxck为低(B=0)的条件下, bswu为高(D=1)的概率为0.7386。",
+        "data_info_math": "P(D=1|B=1)=0.7147; P(D=1|B=0)=0.7386; "
+      },
+      "Instruction": "考虑wxck作用于bswu的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果wxck被改变为高，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.7147\tP(D=1|B=0)=0.7386",
+        "Step 6": "ATE=0.7147-0.7386=-0.0239",
+        "Step 7": "ATE=-0.0239<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.02394709809964035
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于odge的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果sjaa被改变为低，那么odge更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于odge的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果sjaa被改变为低，那么odge更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于odge的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果sjaa被改变为高，那么odge更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于odge的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果sjaa被改变为高，那么odge更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于wxck的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果sjaa被改变为低，那么wxck更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于wxck的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果sjaa被改变为低，那么wxck更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于wxck的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果sjaa被改变为高，那么wxck更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于wxck的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果sjaa被改变为高，那么wxck更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.2568。在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.4437。odge为低(A=0)的概率为0.6192。在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.0996。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.2007。odge为高(A=1)的概率为0.3808。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.2568; P(D=0|C=1,A=0)=0.4437; P(A=0)=0.6192; P(D=0|C=0,A=1)=0.0996; P(D=0|C=1,A=1)=0.2007; P(A=1)=0.3808; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果sjaa被改变为低，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=0))-P(D=0|do(C=1))=sum_{A} [P(D=0|C=0,A)*P(A)-P(D=0|C=1,A)*P(A)]=[P(D=0|C=0,A=0)*P(A=0)-P(D=0|C=1,A=0)*P(A=0)]+[P(D=0|C=0,A=1)*P(A=1)-P(D=0|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=0,A=0)=0.2568\tP(D=0|C=1,A=0)=0.4437\tP(A=0)=0.6192\tP(D=0|C=0,A=1)=0.0996\tP(D=0|C=1,A=1)=0.2007\tP(A=1)=0.3808",
+        "Step 6": "ATE=[0.2568*0.6192-0.4437*0.6192]+[0.0996*0.3808-0.2007*0.3808]=-0.1542",
+        "Step 7": "ATE=-0.1542<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.1542167280458229
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.7432。在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.5563。odge为低(A=0)的概率为0.6192。在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.9004。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.7993。odge为高(A=1)的概率为0.3808。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.7432; P(D=1|C=1,A=0)=0.5563; P(A=0)=0.6192; P(D=1|C=0,A=1)=0.9004; P(D=1|C=1,A=1)=0.7993; P(A=1)=0.3808; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果sjaa被改变为低，那么bswu更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=0))-P(D=1|do(C=1))=sum_{A} [P(D=1|C=0,A)*P(A)-P(D=1|C=1,A)*P(A)]=[P(D=1|C=0,A=0)*P(A=0)-P(D=1|C=1,A=0)*P(A=0)]+[P(D=1|C=0,A=1)*P(A=1)-P(D=1|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=0,A=0)=0.7432\tP(D=1|C=1,A=0)=0.5563\tP(A=0)=0.6192\tP(D=1|C=0,A=1)=0.9004\tP(D=1|C=1,A=1)=0.7993\tP(A=1)=0.3808",
+        "Step 6": "ATE=[0.7432*0.6192-0.5563*0.6192]+[0.9004*0.3808-0.7993*0.3808]=0.1542",
+        "Step 7": "ATE=0.1542>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.15421672804582298
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.4437。在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.2568。odge为低(A=0)的概率为0.6192。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.2007。在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.0996。odge为高(A=1)的概率为0.3808。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.4437; P(D=0|C=0,A=0)=0.2568; P(A=0)=0.6192; P(D=0|C=1,A=1)=0.2007; P(D=0|C=0,A=1)=0.0996; P(A=1)=0.3808; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果sjaa被改变为高，那么bswu更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=1))-P(D=0|do(C=0))=sum_{A} [P(D=0|C=1,A)*P(A)-P(D=0|C=0,A)*P(A)]=[P(D=0|C=1,A=0)*P(A=0)-P(D=0|C=0,A=0)*P(A=0)]+[P(D=0|C=1,A=1)*P(A=1)-P(D=0|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=1,A=0)=0.4437\tP(D=0|C=0,A=0)=0.2568\tP(A=0)=0.6192\tP(D=0|C=1,A=1)=0.2007\tP(D=0|C=0,A=1)=0.0996\tP(A=1)=0.3808",
+        "Step 6": "ATE=[0.4437*0.6192-0.2568*0.6192]+[0.2007*0.3808-0.0996*0.3808]=0.1542",
+        "Step 7": "ATE=0.1542>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.1542167280458229
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.5563。在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.7432。odge为低(A=0)的概率为0.6192。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.7993。在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.9004。odge为高(A=1)的概率为0.3808。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.5563; P(D=1|C=0,A=0)=0.7432; P(A=0)=0.6192; P(D=1|C=1,A=1)=0.7993; P(D=1|C=0,A=1)=0.9004; P(A=1)=0.3808; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果sjaa被改变为高，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=1))-P(D=1|do(C=0))=sum_{A} [P(D=1|C=1,A)*P(A)-P(D=1|C=0,A)*P(A)]=[P(D=1|C=1,A=0)*P(A=0)-P(D=1|C=0,A=0)*P(A=0)]+[P(D=1|C=1,A=1)*P(A=1)-P(D=1|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=1,A=0)=0.5563\tP(D=1|C=0,A=0)=0.7432\tP(A=0)=0.6192\tP(D=1|C=1,A=1)=0.7993\tP(D=1|C=0,A=1)=0.9004\tP(A=1)=0.3808",
+        "Step 6": "ATE=[0.5563*0.6192-0.7432*0.6192]+[0.7993*0.3808-0.9004*0.3808]=-0.1542",
+        "Step 7": "ATE=-0.1542<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.15421672804582298
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于odge的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bswu被改变为低，那么odge更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于odge的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bswu被改变为低，那么odge更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于odge的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bswu被改变为高，那么odge更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于odge的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bswu被改变为高，那么odge更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于wxck的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bswu被改变为低，那么wxck更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于wxck的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bswu被改变为低，那么wxck更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于wxck的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bswu被改变为高，那么wxck更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于wxck的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bswu被改变为高，那么wxck更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于sjaa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bswu被改变为低，那么sjaa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于sjaa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bswu被改变为低，那么sjaa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于sjaa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bswu被改变为高，那么sjaa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于sjaa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果bswu被改变为高，那么sjaa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4652。在odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.5114。",
+        "data_info_math": "P(C=0|A=0)=0.4652; P(C=0|A=1)=0.5114; "
+      },
+      "Instruction": "考虑odge作用于sjaa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而odge变化为低，那么sjaa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.4652\tP(C=0|A=1)=0.5114",
+        "Step 6": "NDE=0.4652-0.5114=-0.0462",
+        "Step 7": "NDE=-0.0462<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.04615158078735365
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)的条件下, sjaa为高(C=1)的概率为0.5348。在odge为高(A=1)的条件下, sjaa为高(C=1)的概率为0.4886。",
+        "data_info_math": "P(C=1|A=0)=0.5348; P(C=1|A=1)=0.4886; "
+      },
+      "Instruction": "考虑odge作用于sjaa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而odge变化为低，那么sjaa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.5348\tP(C=1|A=1)=0.4886",
+        "Step 6": "NDE=0.5348-0.4886=0.0462",
+        "Step 7": "NDE=0.0462>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.04615158078735376
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.5114。在odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4652。",
+        "data_info_math": "P(C=0|A=1)=0.5114; P(C=0|A=0)=0.4652; "
+      },
+      "Instruction": "考虑odge作用于sjaa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而odge变化为高，那么sjaa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.5114\tP(C=0|A=0)=0.4652",
+        "Step 6": "NDE=0.5114-0.4652=0.0462",
+        "Step 7": "NDE=0.0462>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.04615158078735365
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)的条件下, sjaa为高(C=1)的概率为0.4886。在odge为低(A=0)的条件下, sjaa为高(C=1)的概率为0.5348。",
+        "data_info_math": "P(C=1|A=1)=0.4886; P(C=1|A=0)=0.5348; "
+      },
+      "Instruction": "考虑odge作用于sjaa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而odge变化为高，那么sjaa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.4886\tP(C=1|A=0)=0.5348",
+        "Step 6": "NDE=0.4886-0.5348=-0.0462",
+        "Step 7": "NDE=-0.0462<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.04615158078735376
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.2568。在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.0996。在odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.5114。在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.4437。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.2007。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.2568; P(D=0|C=0,A=1)=0.0996; P(C=0|A=1)=0.5114; P(D=0|C=1,A=0)=0.4437; P(D=0|C=1,A=1)=0.2007; "
+      },
+      "Instruction": "考虑odge作用于bswu的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而odge变化为低，那么bswu更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=0|A=0,C)-P(D=0|A=1,C)]*P(C|A=1)=[P(D=0|A=0,C=0)-P(D=0|A=1,C=0)]*P(C=0|A=1)+[P(D=0|A=0,C=1)-P(D=0|A=1,C=1)]*P(C=1|A=1)",
+        "Step 5": "P(D=0|A=0,C=0)=0.2568\tP(D=0|A=1,C=0)=0.0996\tP(C=0|A=1)=0.5114\tP(D=0|A=0,C=1)=0.4437\tP(D=0|A=1,C=1)=0.2007\tP(C=1|A=1)=0.4886",
+        "Step 6": "=(0.2568-0.0996)*0.5114+(0.4437-0.2007)*0.4886=0.1991",
+        "Step 7": "NDE=0.1991>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.19912269731506232
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.7432。在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.9004。在odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.5114。在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.5563。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.7993。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.7432; P(D=1|C=0,A=1)=0.9004; P(C=0|A=1)=0.5114; P(D=1|C=1,A=0)=0.5563; P(D=1|C=1,A=1)=0.7993; "
+      },
+      "Instruction": "考虑odge作用于bswu的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而odge变化为低，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=1|A=0,C)-P(D=1|A=1,C)]*P(C|A=1)=[P(D=1|A=0,C=0)-P(D=1|A=1,C=0)]*P(C=0|A=1)+[P(D=1|A=0,C=1)-P(D=1|A=1,C=1)]*P(C=1|A=1)",
+        "Step 5": "P(D=1|A=0,C=0)=0.7432\tP(D=1|A=1,C=0)=0.9004\tP(C=0|A=1)=0.5114\tP(D=1|A=0,C=1)=0.5563\tP(D=1|A=1,C=1)=0.7993\tP(C=1|A=1)=0.4886",
+        "Step 6": "=(0.7432-0.9004)*0.5114+(0.5563-0.7993)*0.4886=-0.1991",
+        "Step 7": "NDE=-0.1991<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.19912269731506232
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.0996。在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.2568。在odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4652。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.2007。在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.4437。",
+        "data_info_math": "P(D=0|C=0,A=1)=0.0996; P(D=0|C=0,A=0)=0.2568; P(C=0|A=0)=0.4652; P(D=0|C=1,A=1)=0.2007; P(D=0|C=1,A=0)=0.4437; "
+      },
+      "Instruction": "考虑odge作用于bswu的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而odge变化为高，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=0|A=1,C)-P(D=0|A=0,C)]*P(C|A=0)=[P(D=0|A=1,C=0)-P(D=0|A=0,C=0)]*P(C=0|A=0)+[P(D=0|A=1,C=1)-P(D=0|A=0,C=1)]*P(C=1|A=0)",
+        "Step 5": "P(D=0|A=1,C=0)=0.0996\tP(D=0|A=0,C=0)=0.2568\tP(C=0|A=0)=0.4652\tP(D=0|A=1,C=1)=0.2007\tP(D=0|A=0,C=1)=0.4437\tP(C=1|A=0)=0.5348",
+        "Step 6": "=(0.0996-0.2568)*0.4652+(0.2007-0.4437)*0.5348=-0.2031",
+        "Step 7": "NDE=-0.2031<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.20308409977374253
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.9004。在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.7432。在odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4652。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.7993。在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.5563。",
+        "data_info_math": "P(D=1|C=0,A=1)=0.9004; P(D=1|C=0,A=0)=0.7432; P(C=0|A=0)=0.4652; P(D=1|C=1,A=1)=0.7993; P(D=1|C=1,A=0)=0.5563; "
+      },
+      "Instruction": "考虑odge作用于bswu的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而odge变化为高，那么bswu更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=1|A=1,C)-P(D=1|A=0,C)]*P(C|A=0)=[P(D=1|A=1,C=0)-P(D=1|A=0,C=0)]*P(C=0|A=0)+[P(D=1|A=1,C=1)-P(D=1|A=0,C=1)]*P(C=1|A=0)",
+        "Step 5": "P(D=1|A=1,C=0)=0.9004\tP(D=1|A=0,C=0)=0.7432\tP(C=0|A=0)=0.4652\tP(D=1|A=1,C=1)=0.7993\tP(D=1|A=0,C=1)=0.5563\tP(C=1|A=0)=0.5348",
+        "Step 6": "=(0.9004-0.7432)*0.4652+(0.7993-0.5563)*0.5348=0.2031",
+        "Step 7": "NDE=0.2031>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.20308409977374253
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为低(B=0)的条件下, sjaa为低(C=0)的概率为0.6152。在wxck为高(B=1)的条件下, sjaa为低(C=0)的概率为0.4204。",
+        "data_info_math": "P(C=0|B=0)=0.6152; P(C=0|B=1)=0.4204; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而wxck变化为低，那么sjaa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.6152\tP(C=0|B=1)=0.4204",
+        "Step 6": "NDE=0.6152-0.4204=0.1948",
+        "Step 7": "NDE=0.1948>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.19476415768788652
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为低(B=0)的条件下, sjaa为高(C=1)的概率为0.3848。在wxck为高(B=1)的条件下, sjaa为高(C=1)的概率为0.5796。",
+        "data_info_math": "P(C=1|B=0)=0.3848; P(C=1|B=1)=0.5796; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而wxck变化为低，那么sjaa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.3848\tP(C=1|B=1)=0.5796",
+        "Step 6": "NDE=0.3848-0.5796=-0.1948",
+        "Step 7": "NDE=-0.1948<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.19476415768788652
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为高(B=1)的条件下, sjaa为低(C=0)的概率为0.4204。在wxck为低(B=0)的条件下, sjaa为低(C=0)的概率为0.6152。",
+        "data_info_math": "P(C=0|B=1)=0.4204; P(C=0|B=0)=0.6152; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而wxck变化为高，那么sjaa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.4204\tP(C=0|B=0)=0.6152",
+        "Step 6": "NDE=0.4204-0.6152=-0.1948",
+        "Step 7": "NDE=-0.1948<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.19476415768788652
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为高(B=1)的条件下, sjaa为高(C=1)的概率为0.5796。在wxck为低(B=0)的条件下, sjaa为高(C=1)的概率为0.3848。",
+        "data_info_math": "P(C=1|B=1)=0.5796; P(C=1|B=0)=0.3848; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而wxck变化为高，那么sjaa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.5796\tP(C=1|B=0)=0.3848",
+        "Step 6": "NDE=0.5796-0.3848=0.1948",
+        "Step 7": "NDE=0.1948>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.19476415768788652
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于bswu的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而wxck变化为低，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于bswu的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而wxck变化为低，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于bswu的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而wxck变化为高，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于bswu的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而wxck变化为高，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.2568。在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.4437。odge为低(A=0)的概率为0.6192。在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.0996。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.2007。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.2568; P(D=0|C=1,A=0)=0.4437; P(A=0)=0.6192; P(D=0|C=0,A=1)=0.0996; P(D=0|C=1,A=1)=0.2007; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而sjaa变化为低，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=0,A)-P(D=0|C=1,A)]*P(A)=[P(D=0|C=0,A=0)-P(D=0|C=1,A=0)]*P(A=0)+[P(D=0|C=0,A=1)-P(D=0|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=0,A=0)=0.2568\tP(D=0|C=1,A=0)=0.4437\tP(A=0)=0.6192\tP(D=0|C=0,A=1)=0.0996\tP(D=0|C=1,A=1)=0.2007\tP(A=1)=0.3808",
+        "Step 6": "NDE=[0.2568-0.4437]*0.6192+[0.0996-0.2007]*0.3808=-0.1542",
+        "Step 7": "NDE=-0.1542<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.15421672804582287
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.7432。在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.5563。odge为低(A=0)的概率为0.6192。在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.9004。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.7993。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.7432; P(D=1|C=1,A=0)=0.5563; P(A=0)=0.6192; P(D=1|C=0,A=1)=0.9004; P(D=1|C=1,A=1)=0.7993; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而sjaa变化为低，那么bswu更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=0,A)-P(D=1|C=1,A)]*P(A)=[P(D=1|C=0,A=0)-P(D=1|C=1,A=0)]*P(A=0)+[P(D=1|C=0,A=1)-P(D=1|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=0,A=0)=0.7432\tP(D=1|C=1,A=0)=0.5563\tP(A=0)=0.6192\tP(D=1|C=0,A=1)=0.9004\tP(D=1|C=1,A=1)=0.7993\tP(A=1)=0.3808",
+        "Step 6": "NDE=[0.7432-0.5563]*0.6192+[0.9004-0.7993]*0.3808=0.1542",
+        "Step 7": "NDE=0.1542>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.15421672804582298
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.4437。在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.2568。odge为低(A=0)的概率为0.6192。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.2007。在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.0996。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.4437; P(D=0|C=0,A=0)=0.2568; P(A=0)=0.6192; P(D=0|C=1,A=1)=0.2007; P(D=0|C=0,A=1)=0.0996; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而sjaa变化为高，那么bswu更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=1,A)-P(D=0|C=0,A)]*P(A)=[P(D=0|C=1,A=0)-P(D=0|C=0,A=0)]*P(A=0)+[P(D=0|C=1,A=1)-P(D=0|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=1,A=0)=0.4437\tP(D=0|C=0,A=0)=0.2568\tP(A=0)=0.6192\tP(D=0|C=1,A=1)=0.2007\tP(D=0|C=0,A=1)=0.0996\tP(A=1)=0.3808",
+        "Step 6": "NDE=[0.4437-0.2568]*0.6192+[0.2007-0.0996]*0.3808=0.1542",
+        "Step 7": "NDE=0.1542>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.15421672804582287
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.5563。在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.7432。odge为低(A=0)的概率为0.6192。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.7993。在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.9004。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.5563; P(D=1|C=0,A=0)=0.7432; P(A=0)=0.6192; P(D=1|C=1,A=1)=0.7993; P(D=1|C=0,A=1)=0.9004; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而sjaa变化为高，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=1,A)-P(D=1|C=0,A)]*P(A)=[P(D=1|C=1,A=0)-P(D=1|C=0,A=0)]*P(A=0)+[P(D=1|C=1,A=1)-P(D=1|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=1,A=0)=0.5563\tP(D=1|C=0,A=0)=0.7432\tP(A=0)=0.6192\tP(D=1|C=1,A=1)=0.7993\tP(D=1|C=0,A=1)=0.9004\tP(A=1)=0.3808",
+        "Step 6": "NDE=[0.5563-0.7432]*0.6192+[0.7993-0.9004]*0.3808=-0.1542",
+        "Step 7": "NDE=-0.1542<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.15421672804582298
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑odge作用于sjaa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如odge保持不变，而所有中间变量被改变为当它们在odge变化为低下的取值，那么sjaa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑odge作用于sjaa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如odge保持不变，而所有中间变量被改变为当它们在odge变化为低下的取值，那么sjaa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑odge作用于sjaa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如odge保持不变，而所有中间变量被改变为当它们在odge变化为高下的取值，那么sjaa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑odge作用于sjaa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如odge保持不变，而所有中间变量被改变为当它们在odge变化为高下的取值，那么sjaa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.0996。在odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4652。在odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.5114。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.2007。",
+        "data_info_math": "P(D=0|C=0,A=1)=0.0996; P(C=0|A=0)=0.4652; P(C=0|A=1)=0.5114; P(D=0|C=1,A=1)=0.2007; "
+      },
+      "Instruction": "考虑odge作用于bswu的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如odge保持不变，而所有中间变量被改变为当它们在odge变化为低下的取值，那么bswu更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=0|A=1,C)*[P(C|A=0)-P(C|A=1)]=P(D=0|A=1,C=0)*[P(C=0|A=0)-P(C=0|A=1)]+P(D=0|A=1,C=1)*[P(C=1|A=0)-P(C=1|A=1)]",
+        "Step 5": "P(D=0|A=1,C=0)=0.0996\tP(C=0|A=0)=0.4652\tP(C=0|A=1)=0.5114\tP(D=0|A=1,C=1)=0.2007\tP(C=1|A=0)=0.5348\tP(C=1|A=1)=0.4886",
+        "Step 6": "NIE=0.0996*(0.4652-0.5114)+0.2007*(0.5348-0.4886)=0.0047",
+        "Step 7": "NIE=0.0047>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.004664445380753403
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.9004。在odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4652。在odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.5114。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.7993。",
+        "data_info_math": "P(D=1|C=0,A=1)=0.9004; P(C=0|A=0)=0.4652; P(C=0|A=1)=0.5114; P(D=1|C=1,A=1)=0.7993; "
+      },
+      "Instruction": "考虑odge作用于bswu的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如odge保持不变，而所有中间变量被改变为当它们在odge变化为低下的取值，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=1|A=1,C)*[P(C|A=0)-P(C|A=1)]=P(D=1|A=1,C=0)*[P(C=0|A=0)-P(C=0|A=1)]+P(D=1|A=1,C=1)*[P(C=1|A=0)-P(C=1|A=1)]",
+        "Step 5": "P(D=1|A=1,C=0)=0.9004\tP(C=0|A=0)=0.4652\tP(C=0|A=1)=0.5114\tP(D=1|A=1,C=1)=0.7993\tP(C=1|A=0)=0.5348\tP(C=1|A=1)=0.4886",
+        "Step 6": "NIE=0.9004*(0.4652-0.5114)+0.7993*(0.5348-0.4886)=-0.0047",
+        "Step 7": "NIE=-0.0047<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.004664445380753293
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.2568。在odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.5114。在odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4652。在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.4437。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.2568; P(C=0|A=1)=0.5114; P(C=0|A=0)=0.4652; P(D=0|C=1,A=0)=0.4437; "
+      },
+      "Instruction": "考虑odge作用于bswu的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如odge保持不变，而所有中间变量被改变为当它们在odge变化为高下的取值，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=0|A=0,C)*[P(C|A=1)-P(C|A=0)]=P(D=0|A=0,C=0)*[P(C=0|A=1)-P(C=0|A=0)]+P(D=0|A=0,C=1)*[P(C=1|A=1)-P(C=1|A=0)]",
+        "Step 5": "P(D=0|A=0,C=0)=0.2568\tP(C=0|A=1)=0.5114\tP(C=0|A=0)=0.4652\tP(D=0|A=0,C=1)=0.4437\tP(C=1|A=1)=0.4886\tP(C=1|A=0)=0.5348",
+        "Step 6": "NIE=0.2568*(0.5114-0.4652)+0.4437*(0.4886-0.5348)=-0.0086",
+        "Step 7": "NIE=-0.0086<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.008625847839433598
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.7432。在odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.5114。在odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4652。在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.5563。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.7432; P(C=0|A=1)=0.5114; P(C=0|A=0)=0.4652; P(D=1|C=1,A=0)=0.5563; "
+      },
+      "Instruction": "考虑odge作用于bswu的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如odge保持不变，而所有中间变量被改变为当它们在odge变化为高下的取值，那么bswu更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=1|A=0,C)*[P(C|A=1)-P(C|A=0)]=P(D=1|A=0,C=0)*[P(C=0|A=1)-P(C=0|A=0)]+P(D=1|A=0,C=1)*[P(C=1|A=1)-P(C=1|A=0)]",
+        "Step 5": "P(D=1|A=0,C=0)=0.7432\tP(C=0|A=1)=0.5114\tP(C=0|A=0)=0.4652\tP(D=1|A=0,C=1)=0.5563\tP(C=1|A=1)=0.4886\tP(C=1|A=0)=0.5348",
+        "Step 6": "NIE=0.7432*(0.5114-0.4652)+0.5563*(0.4886-0.5348)=0.0086",
+        "Step 7": "NIE=0.0086>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.008625847839433494
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于sjaa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如wxck保持不变，而所有中间变量被改变为当它们在wxck变化为低下的取值，那么sjaa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于sjaa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如wxck保持不变，而所有中间变量被改变为当它们在wxck变化为低下的取值，那么sjaa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于sjaa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如wxck保持不变，而所有中间变量被改变为当它们在wxck变化为高下的取值，那么sjaa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于sjaa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如wxck保持不变，而所有中间变量被改变为当它们在wxck变化为高下的取值，那么sjaa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "odge为低(A=0)的概率为0.6192。在sjaa为低(C=0), wxck为高(B=1)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.2535。在wxck为低(B=0)且odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.5949。在wxck为高(B=1)且odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4042。在sjaa为高(C=1), wxck为高(B=1)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.4422。在sjaa为低(C=0), wxck为高(B=1)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.1012。在wxck为低(B=0)且odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.6482。在wxck为高(B=1)且odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.4469。在sjaa为高(C=1), wxck为高(B=1)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.1970。",
+        "data_info_math": "P(A=0)=0.6192; P(D=0|C=0,B=1,A=0)=0.2535; P(C=0|B=0,A=0)=0.5949; P(C=0|B=1,A=0)=0.4042; P(D=0|C=1,B=1,A=0)=0.4422; P(D=0|C=0,B=1,A=1)=0.1012; P(C=0|B=0,A=1)=0.6482; P(C=0|B=1,A=1)=0.4469; P(D=0|C=1,B=1,A=1)=0.1970; "
+      },
+      "Instruction": "考虑wxck作用于bswu的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如wxck保持不变，而所有中间变量被改变为当它们在wxck变化为低下的取值，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=0|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=0|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,C=0,A=0)=0.2535\tP(C=0|B=0,A=0)=0.5949\tP(C=0|B=1,A=0)=0.4042\tP(A=0)=0.6192\tP(D=0|B=1,C=1,A=0)=0.4422\tP(C=1|B=0,A=0)=0.4051\tP(C=1|B=1,A=0)=0.5958\tP(A=0)=0.6192\tP(D=0|B=1,C=0,A=1)=0.1012\tP(C=0|B=0,A=1)=0.6482\tP(C=0|B=1,A=1)=0.4469\tP(A=1)=0.3808\tP(D=0|B=1,C=1,A=1)=0.1970\tP(C=1|B=0,A=1)=0.3518\tP(C=1|B=1,A=1)=0.5531\tP(A=1)=0.3808",
+        "Step 6": "NIE=0.2535*[0.5949-0.4042]*0.6192+0.4422*[0.4051-0.5958]*0.6192+0.1012*[0.6482-0.4469]*0.3808+0.1970*[0.3518-0.5531]*0.3808=-0.0296",
+        "Step 7": "NIE=-0.0296<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.029636786413952048
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "odge为低(A=0)的概率为0.6192。在sjaa为低(C=0), wxck为高(B=1)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.7465。在wxck为低(B=0)且odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.5949。在wxck为高(B=1)且odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4042。在sjaa为高(C=1), wxck为高(B=1)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.5578。在sjaa为低(C=0), wxck为高(B=1)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.8988。在wxck为低(B=0)且odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.6482。在wxck为高(B=1)且odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.4469。在sjaa为高(C=1), wxck为高(B=1)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.8030。",
+        "data_info_math": "P(A=0)=0.6192; P(D=1|C=0,B=1,A=0)=0.7465; P(C=0|B=0,A=0)=0.5949; P(C=0|B=1,A=0)=0.4042; P(D=1|C=1,B=1,A=0)=0.5578; P(D=1|C=0,B=1,A=1)=0.8988; P(C=0|B=0,A=1)=0.6482; P(C=0|B=1,A=1)=0.4469; P(D=1|C=1,B=1,A=1)=0.8030; "
+      },
+      "Instruction": "考虑wxck作用于bswu的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如wxck保持不变，而所有中间变量被改变为当它们在wxck变化为低下的取值，那么bswu更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=1|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=1|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,C=0,A=0)=0.7465\tP(C=0|B=0,A=0)=0.5949\tP(C=0|B=1,A=0)=0.4042\tP(A=0)=0.6192\tP(D=1|B=1,C=1,A=0)=0.5578\tP(C=1|B=0,A=0)=0.4051\tP(C=1|B=1,A=0)=0.5958\tP(A=0)=0.6192\tP(D=1|B=1,C=0,A=1)=0.8988\tP(C=0|B=0,A=1)=0.6482\tP(C=0|B=1,A=1)=0.4469\tP(A=1)=0.3808\tP(D=1|B=1,C=1,A=1)=0.8030\tP(C=1|B=0,A=1)=0.3518\tP(C=1|B=1,A=1)=0.5531\tP(A=1)=0.3808",
+        "Step 6": "NIE=0.7465*[0.5949-0.4042]*0.6192+0.5578*[0.4051-0.5958]*0.6192+0.8988*[0.6482-0.4469]*0.3808+0.8030*[0.3518-0.5531]*0.3808=0.0296",
+        "Step 7": "NIE=0.0296>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.02963678641395205
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "odge为低(A=0)的概率为0.6192。在sjaa为低(C=0), wxck为低(B=0)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.2616。在wxck为高(B=1)且odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4042。在wxck为低(B=0)且odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.5949。在sjaa为高(C=1), wxck为低(B=0)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.4483。在sjaa为低(C=0), wxck为低(B=0)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.0974。在wxck为高(B=1)且odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.4469。在wxck为低(B=0)且odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.6482。在sjaa为高(C=1), wxck为低(B=0)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.2130。",
+        "data_info_math": "P(A=0)=0.6192; P(D=0|C=0,B=0,A=0)=0.2616; P(C=0|B=1,A=0)=0.4042; P(C=0|B=0,A=0)=0.5949; P(D=0|C=1,B=0,A=0)=0.4483; P(D=0|C=0,B=0,A=1)=0.0974; P(C=0|B=1,A=1)=0.4469; P(C=0|B=0,A=1)=0.6482; P(D=0|C=1,B=0,A=1)=0.2130; "
+      },
+      "Instruction": "考虑wxck作用于bswu的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如wxck保持不变，而所有中间变量被改变为当它们在wxck变化为高下的取值，那么bswu更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=0|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=0|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,C=0,A=0)=0.2616\tP(C=0|B=1,A=0)=0.4042\tP(C=0|B=0,A=0)=0.5949\tP(A=0)=0.6192\tP(D=0|B=0,C=1,A=0)=0.4483\tP(C=1|B=1,A=0)=0.5958\tP(C=1|B=0,A=0)=0.4051\tP(A=0)=0.6192\tP(D=0|B=0,C=0,A=1)=0.0974\tP(C=0|B=1,A=1)=0.4469\tP(C=0|B=0,A=1)=0.6482\tP(A=1)=0.3808\tP(D=0|B=0,C=1,A=1)=0.2130\tP(C=1|B=1,A=1)=0.5531\tP(C=1|B=0,A=1)=0.3518\tP(A=1)=0.3808",
+        "Step 6": "NIE=0.2616*[0.4042-0.5949]*0.6192+0.4483*[0.5958-0.4051]*0.6192+0.0974*[0.4469-0.6482]*0.3808+0.2130*[0.5531-0.3518]*0.3808=0.0309",
+        "Step 7": "NIE=0.0309>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.030919324309561926
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "odge为低(A=0)的概率为0.6192。在sjaa为低(C=0), wxck为低(B=0)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.7384。在wxck为高(B=1)且odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4042。在wxck为低(B=0)且odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.5949。在sjaa为高(C=1), wxck为低(B=0)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.5517。在sjaa为低(C=0), wxck为低(B=0)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.9026。在wxck为高(B=1)且odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.4469。在wxck为低(B=0)且odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.6482。在sjaa为高(C=1), wxck为低(B=0)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.7870。",
+        "data_info_math": "P(A=0)=0.6192; P(D=1|C=0,B=0,A=0)=0.7384; P(C=0|B=1,A=0)=0.4042; P(C=0|B=0,A=0)=0.5949; P(D=1|C=1,B=0,A=0)=0.5517; P(D=1|C=0,B=0,A=1)=0.9026; P(C=0|B=1,A=1)=0.4469; P(C=0|B=0,A=1)=0.6482; P(D=1|C=1,B=0,A=1)=0.7870; "
+      },
+      "Instruction": "考虑wxck作用于bswu的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如wxck保持不变，而所有中间变量被改变为当它们在wxck变化为高下的取值，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=1|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=1|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,C=0,A=0)=0.7384\tP(C=0|B=1,A=0)=0.4042\tP(C=0|B=0,A=0)=0.5949\tP(A=0)=0.6192\tP(D=1|B=0,C=1,A=0)=0.5517\tP(C=1|B=1,A=0)=0.5958\tP(C=1|B=0,A=0)=0.4051\tP(A=0)=0.6192\tP(D=1|B=0,C=0,A=1)=0.9026\tP(C=0|B=1,A=1)=0.4469\tP(C=0|B=0,A=1)=0.6482\tP(A=1)=0.3808\tP(D=1|B=0,C=1,A=1)=0.7870\tP(C=1|B=1,A=1)=0.5531\tP(C=1|B=0,A=1)=0.3518\tP(A=1)=0.3808",
+        "Step 6": "NIE=0.7384*[0.4042-0.5949]*0.6192+0.5517*[0.5958-0.4051]*0.6192+0.9026*[0.4469-0.6482]*0.3808+0.7870*[0.5531-0.3518]*0.3808=-0.0309",
+        "Step 7": "NIE=-0.0309<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.03091932430956191
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于bswu的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如sjaa保持不变，而所有中间变量被改变为当它们在sjaa变化为低下的取值，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于bswu的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如sjaa保持不变，而所有中间变量被改变为当它们在sjaa变化为低下的取值，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于bswu的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如sjaa保持不变，而所有中间变量被改变为当它们在sjaa变化为高下的取值，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于bswu的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如sjaa保持不变，而所有中间变量被改变为当它们在sjaa变化为高下的取值，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑odge作用于wxck的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些odge为低，假如odge为高，那么wxck更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑odge作用于wxck的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些odge为低，假如odge为高，那么wxck更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑odge作用于wxck的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些odge为高，假如odge为低，那么wxck更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑odge作用于wxck的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些odge为高，假如odge为低，那么wxck更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4652。在odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.5114。",
+        "data_info_math": "P(C=0|A=0)=0.4652; P(C=0|A=1)=0.5114; "
+      },
+      "Instruction": "考虑odge作用于sjaa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些odge为低，假如odge为高，那么sjaa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.4652\tP(C=0|A=1)=0.5114",
+        "Step 6": "ETT=0.4652-0.5114=-0.0462",
+        "Step 7": "ETT=-0.0462<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.04615158078735365
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)的条件下, sjaa为高(C=1)的概率为0.5348。在odge为高(A=1)的条件下, sjaa为高(C=1)的概率为0.4886。",
+        "data_info_math": "P(C=1|A=0)=0.5348; P(C=1|A=1)=0.4886; "
+      },
+      "Instruction": "考虑odge作用于sjaa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些odge为低，假如odge为高，那么sjaa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.5348\tP(C=1|A=1)=0.4886",
+        "Step 6": "ETT=0.5348-0.4886=0.0462",
+        "Step 7": "ETT=0.0462>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.04615158078735376
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.5114。在odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4652。",
+        "data_info_math": "P(C=0|A=1)=0.5114; P(C=0|A=0)=0.4652; "
+      },
+      "Instruction": "考虑odge作用于sjaa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些odge为高，假如odge为低，那么sjaa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.5114\tP(C=0|A=0)=0.4652",
+        "Step 6": "ETT=0.5114-0.4652=0.0462",
+        "Step 7": "ETT=0.0462>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.04615158078735365
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)的条件下, sjaa为高(C=1)的概率为0.4886。在odge为低(A=0)的条件下, sjaa为高(C=1)的概率为0.5348。",
+        "data_info_math": "P(C=1|A=1)=0.4886; P(C=1|A=0)=0.5348; "
+      },
+      "Instruction": "考虑odge作用于sjaa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些odge为高，假如odge为低，那么sjaa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.4886\tP(C=1|A=0)=0.5348",
+        "Step 6": "ETT=0.4886-0.5348=-0.0462",
+        "Step 7": "ETT=-0.0462<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.04615158078735376
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.3568。在odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.1490。",
+        "data_info_math": "P(D=0|A=0)=0.3568; P(D=0|A=1)=0.1490; "
+      },
+      "Instruction": "考虑odge作用于bswu的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些odge为低，假如odge为高，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.3568\tP(D=0|A=1)=0.1490",
+        "Step 6": "ETT=0.3568-0.1490=0.2077",
+        "Step 7": "ETT=0.2077>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.20774854515449595
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.6432。在odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.8510。",
+        "data_info_math": "P(D=1|A=0)=0.6432; P(D=1|A=1)=0.8510; "
+      },
+      "Instruction": "考虑odge作用于bswu的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些odge为低，假如odge为高，那么bswu更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.6432\tP(D=1|A=1)=0.8510",
+        "Step 6": "ETT=0.6432-0.8510=-0.2077",
+        "Step 7": "ETT=-0.2077<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.20774854515449592
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.1490。在odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.3568。",
+        "data_info_math": "P(D=0|A=1)=0.1490; P(D=0|A=0)=0.3568; "
+      },
+      "Instruction": "考虑odge作用于bswu的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些odge为高，假如odge为低，那么bswu更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.1490\tP(D=0|A=0)=0.3568",
+        "Step 6": "ETT=0.1490-0.3568=-0.2077",
+        "Step 7": "ETT=-0.2077<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.20774854515449595
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.8510。在odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.6432。",
+        "data_info_math": "P(D=1|A=1)=0.8510; P(D=1|A=0)=0.6432; "
+      },
+      "Instruction": "考虑odge作用于bswu的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些odge为高，假如odge为低，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.8510\tP(D=1|A=0)=0.6432",
+        "Step 6": "ETT=0.8510-0.6432=0.2077",
+        "Step 7": "ETT=0.2077>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.20774854515449592
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于odge的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些wxck为低，假如wxck为高，那么odge更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于odge的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些wxck为低，假如wxck为高，那么odge更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于odge的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些wxck为高，假如wxck为低，那么odge更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于odge的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些wxck为高，假如wxck为低，那么odge更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为低(B=0)的条件下, sjaa为低(C=0)的概率为0.6152。在wxck为高(B=1)的条件下, sjaa为低(C=0)的概率为0.4204。",
+        "data_info_math": "P(C=0|B=0)=0.6152; P(C=0|B=1)=0.4204; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些wxck为低，假如wxck为高，那么sjaa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.6152\tP(C=0|B=1)=0.4204",
+        "Step 6": "ETT=0.6152-0.4204=0.1948",
+        "Step 7": "ETT=0.1948>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.19476415768788652
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为低(B=0)的条件下, sjaa为高(C=1)的概率为0.3848。在wxck为高(B=1)的条件下, sjaa为高(C=1)的概率为0.5796。",
+        "data_info_math": "P(C=1|B=0)=0.3848; P(C=1|B=1)=0.5796; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些wxck为低，假如wxck为高，那么sjaa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.3848\tP(C=1|B=1)=0.5796",
+        "Step 6": "ETT=0.3848-0.5796=-0.1948",
+        "Step 7": "ETT=-0.1948<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.19476415768788652
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为高(B=1)的条件下, sjaa为低(C=0)的概率为0.4204。在wxck为低(B=0)的条件下, sjaa为低(C=0)的概率为0.6152。",
+        "data_info_math": "P(C=0|B=1)=0.4204; P(C=0|B=0)=0.6152; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些wxck为高，假如wxck为低，那么sjaa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.4204\tP(C=0|B=0)=0.6152",
+        "Step 6": "ETT=0.4204-0.6152=-0.1948",
+        "Step 7": "ETT=-0.1948<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.19476415768788652
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为高(B=1)的条件下, sjaa为高(C=1)的概率为0.5796。在wxck为低(B=0)的条件下, sjaa为高(C=1)的概率为0.3848。",
+        "data_info_math": "P(C=1|B=1)=0.5796; P(C=1|B=0)=0.3848; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些wxck为高，假如wxck为低，那么sjaa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.5796\tP(C=1|B=0)=0.3848",
+        "Step 6": "ETT=0.5796-0.3848=0.1948",
+        "Step 7": "ETT=0.1948>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.19476415768788652
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为低(B=0)的条件下, bswu为低(D=0)的概率为0.2614。在wxck为高(B=1)的条件下, bswu为低(D=0)的概率为0.2853。",
+        "data_info_math": "P(D=0|B=0)=0.2614; P(D=0|B=1)=0.2853; "
+      },
+      "Instruction": "考虑wxck作用于bswu的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些wxck为低，假如wxck为高，那么bswu更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.2614\tP(D=0|B=1)=0.2853",
+        "Step 6": "ETT=0.2614-0.2853=-0.0239",
+        "Step 7": "ETT=-0.0239<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.023947098099640518
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为低(B=0)的条件下, bswu为高(D=1)的概率为0.7386。在wxck为高(B=1)的条件下, bswu为高(D=1)的概率为0.7147。",
+        "data_info_math": "P(D=1|B=0)=0.7386; P(D=1|B=1)=0.7147; "
+      },
+      "Instruction": "考虑wxck作用于bswu的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些wxck为低，假如wxck为高，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.7386\tP(D=1|B=1)=0.7147",
+        "Step 6": "ETT=0.7386-0.7147=0.0239",
+        "Step 7": "ETT=0.0239>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.02394709809964035
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为高(B=1)的条件下, bswu为低(D=0)的概率为0.2853。在wxck为低(B=0)的条件下, bswu为低(D=0)的概率为0.2614。",
+        "data_info_math": "P(D=0|B=1)=0.2853; P(D=0|B=0)=0.2614; "
+      },
+      "Instruction": "考虑wxck作用于bswu的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些wxck为高，假如wxck为低，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.2853\tP(D=0|B=0)=0.2614",
+        "Step 6": "ETT=0.2853-0.2614=0.0239",
+        "Step 7": "ETT=0.0239>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.023947098099640518
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为高(B=1)的条件下, bswu为高(D=1)的概率为0.7147。在wxck为低(B=0)的条件下, bswu为高(D=1)的概率为0.7386。",
+        "data_info_math": "P(D=1|B=1)=0.7147; P(D=1|B=0)=0.7386; "
+      },
+      "Instruction": "考虑wxck作用于bswu的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些wxck为高，假如wxck为低，那么bswu更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.7147\tP(D=1|B=0)=0.7386",
+        "Step 6": "ETT=0.7147-0.7386=-0.0239",
+        "Step 7": "ETT=-0.0239<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.02394709809964035
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于odge的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些sjaa为低，假如sjaa为高，那么odge更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于odge的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些sjaa为低，假如sjaa为高，那么odge更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于odge的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些sjaa为高，假如sjaa为低，那么odge更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于odge的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些sjaa为高，假如sjaa为低，那么odge更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于wxck的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些sjaa为低，假如sjaa为高，那么wxck更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于wxck的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些sjaa为低，假如sjaa为高，那么wxck更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于wxck的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些sjaa为高，假如sjaa为低，那么wxck更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑sjaa作用于wxck的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些sjaa为高，假如sjaa为低，那么wxck更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)的条件下, bswu为低(D=0)的概率为0.1934。在odge为低(A=0)且sjaa为高(C=1)的条件下, bswu为低(D=0)的概率为0.4437。在sjaa为低(C=0)的条件下, odge为低(A=0)的概率为0.5967。在odge为高(A=1)且sjaa为高(C=1)的条件下, bswu为低(D=0)的概率为0.2007。在sjaa为低(C=0)的条件下, odge为高(A=1)的概率为0.4033。",
+        "data_info_math": "P(D=0|C=0)=0.1934; P(D=0|A=0,C=1)=0.4437; P(A=0|C=0)=0.5967; P(D=0|A=1,C=1)=0.2007; P(A=1|C=0)=0.4033; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些sjaa为低，假如sjaa为高，那么bswu更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=0|C=0)-sum_{A} P(D=0|C=1,A)*P(A|C=0)=P(D=0|C=0)-[P(D=0|C=1,A=0)*P(A=0|C=0)+P(D=0|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=0|C=0)=0.1934\tP(D=0|C=1,A=0)=0.4437\tP(A=0|C=0)=0.5967\tP(D=0|C=1,A=1)=0.2007\tP(A=1|C=0)=0.4033",
+        "Step 6": "ETT=0.1934-[0.4437*0.5967+0.2007*0.4033]=-0.1523",
+        "Step 7": "ETT=-0.1523<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.15228212617920686
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)的条件下, bswu为高(D=1)的概率为0.8066。在odge为低(A=0)且sjaa为高(C=1)的条件下, bswu为高(D=1)的概率为0.5563。在sjaa为低(C=0)的条件下, odge为低(A=0)的概率为0.5967。在odge为高(A=1)且sjaa为高(C=1)的条件下, bswu为高(D=1)的概率为0.7993。在sjaa为低(C=0)的条件下, odge为高(A=1)的概率为0.4033。",
+        "data_info_math": "P(D=1|C=0)=0.8066; P(D=1|A=0,C=1)=0.5563; P(A=0|C=0)=0.5967; P(D=1|A=1,C=1)=0.7993; P(A=1|C=0)=0.4033; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些sjaa为低，假如sjaa为高，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=1|C=0)-sum_{A} P(D=1|C=1,A)*P(A|C=0)=P(D=1|C=0)-[P(D=1|C=1,A=0)*P(A=0|C=0)+P(D=1|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=1|C=0)=0.8066\tP(D=1|C=1,A=0)=0.5563\tP(A=0|C=0)=0.5967\tP(D=1|C=1,A=1)=0.7993\tP(A=1|C=0)=0.4033",
+        "Step 6": "ETT=0.8066-[0.5563*0.5967+0.7993*0.4033]=0.1523",
+        "Step 7": "ETT=0.1523>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.1522821261792069
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)的条件下, bswu为低(D=0)的概率为0.3563。在odge为低(A=0)且sjaa为低(C=0)的条件下, bswu为低(D=0)的概率为0.2568。在sjaa为高(C=1)的条件下, odge为低(A=0)的概率为0.6402。在odge为高(A=1)且sjaa为低(C=0)的条件下, bswu为低(D=0)的概率为0.0996。在sjaa为高(C=1)的条件下, odge为高(A=1)的概率为0.3598。",
+        "data_info_math": "P(D=0|C=1)=0.3563; P(D=0|A=0,C=0)=0.2568; P(A=0|C=1)=0.6402; P(D=0|A=1,C=0)=0.0996; P(A=1|C=1)=0.3598; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些sjaa为高，假如sjaa为低，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=0|C=1)-sum_{A} P(D=0|C=0,A)*P(A|C=1)=P(D=0|C=1)-[P(D=0|C=0,A=0)*P(A=0|C=1)+P(D=0|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=0|C=1)=0.3563\tP(D=0|C=0,A=0)=0.2568\tP(A=0|C=1)=0.6402\tP(D=0|C=0,A=1)=0.0996\tP(A=1|C=1)=0.3598",
+        "Step 6": "ETT=0.3563-[0.2568*0.6402+0.0996*0.3598]=0.1560",
+        "Step 7": "ETT=0.1560>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.15602280034799923
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)的条件下, bswu为高(D=1)的概率为0.6437。在odge为低(A=0)且sjaa为低(C=0)的条件下, bswu为高(D=1)的概率为0.7432。在sjaa为高(C=1)的条件下, odge为低(A=0)的概率为0.6402。在odge为高(A=1)且sjaa为低(C=0)的条件下, bswu为高(D=1)的概率为0.9004。在sjaa为高(C=1)的条件下, odge为高(A=1)的概率为0.3598。",
+        "data_info_math": "P(D=1|C=1)=0.6437; P(D=1|A=0,C=0)=0.7432; P(A=0|C=1)=0.6402; P(D=1|A=1,C=0)=0.9004; P(A=1|C=1)=0.3598; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些sjaa为高，假如sjaa为低，那么bswu更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=1|C=1)-sum_{A} P(D=1|C=0,A)*P(A|C=1)=P(D=1|C=1)-[P(D=1|C=0,A=0)*P(A=0|C=1)+P(D=1|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=1|C=1)=0.6437\tP(D=1|C=0,A=0)=0.7432\tP(A=0|C=1)=0.6402\tP(D=1|C=0,A=1)=0.9004\tP(A=1|C=1)=0.3598",
+        "Step 6": "ETT=0.6437-[0.7432*0.6402+0.9004*0.3598]=-0.1560",
+        "Step 7": "ETT=-0.1560<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.1560228003479993
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于odge的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bswu为低，假如bswu为高，那么odge更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于odge的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bswu为低，假如bswu为高，那么odge更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于odge的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bswu为高，假如bswu为低，那么odge更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于odge的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bswu为高，假如bswu为低，那么odge更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于wxck的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bswu为低，假如bswu为高，那么wxck更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于wxck的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bswu为低，假如bswu为高，那么wxck更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于wxck的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bswu为高，假如bswu为低，那么wxck更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于wxck的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bswu为高，假如bswu为低，那么wxck更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于sjaa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bswu为低，假如bswu为高，那么sjaa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 133,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于sjaa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bswu为低，假如bswu为高，那么sjaa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 134,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于sjaa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bswu为高，假如bswu为低，那么sjaa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 135,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑bswu作用于sjaa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些bswu为高，假如bswu为低，那么sjaa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 136,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)且sjaa为低(C=0)的条件下, bswu为低(D=0)的概率为0.2568。在odge为高(A=1)且sjaa为低(C=0)的条件下, bswu为低(D=0)的概率为0.0996。",
+        "data_info_math": "P(D=0|A=0,C=0)=0.2568; P(D=0|A=1,C=0)=0.0996; "
+      },
+      "Instruction": "考虑odge作用于bswu的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在sjaa为低的条件下，假如odge为低，那么bswu更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=0,C=0))-P(D=0|do(A=1,C=0))=P(D=0|A=0,C=0)-P(D=0|A=1,C=0)",
+        "Step 5": "P(D=0|A=0,C=0)=0.2568\tP(D=0|A=1,C=0)=0.0996",
+        "Step 6": "CDE=0.2568-0.0996=0.1572",
+        "Step 7": "CDE=0.1572>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0.15718365948636875
+    },
+    {
+      "id": 137,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)且sjaa为高(C=1)的条件下, bswu为高(D=1)的概率为0.5563。在odge为高(A=1)且sjaa为高(C=1)的条件下, bswu为高(D=1)的概率为0.7993。",
+        "data_info_math": "P(D=1|A=0,C=1)=0.5563; P(D=1|A=1,C=1)=0.7993; "
+      },
+      "Instruction": "考虑odge作用于bswu的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在sjaa为高的条件下，假如odge为低，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=0,C=1))-P(D=1|do(A=1,C=1))=P(D=1|A=0,C=1)-P(D=1|A=1,C=1)",
+        "Step 5": "P(D=1|A=0,C=1)=0.5563\tP(D=1|A=1,C=1)=0.7993",
+        "Step 6": "CDE=0.5563-0.7993=-0.2430",
+        "Step 7": "CDE=-0.2430<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": -0.24301825910566643
+    },
+    {
+      "id": 138,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)且sjaa为低(C=0)的条件下, bswu为低(D=0)的概率为0.0996。在odge为低(A=0)且sjaa为低(C=0)的条件下, bswu为低(D=0)的概率为0.2568。",
+        "data_info_math": "P(D=0|A=1,C=0)=0.0996; P(D=0|A=0,C=0)=0.2568; "
+      },
+      "Instruction": "考虑odge作用于bswu的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在sjaa为低的条件下，假如odge为高，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=1,C=0))-P(D=0|do(A=0,C=0))=P(D=0|A=1,C=0)-P(D=0|A=0,C=0)",
+        "Step 5": "P(D=0|A=1,C=0)=0.0996\tP(D=0|A=0,C=0)=0.2568",
+        "Step 6": "CDE=0.0996-0.2568=-0.1572",
+        "Step 7": "CDE=-0.1572<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": -0.15718365948636875
+    },
+    {
+      "id": 139,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)且sjaa为高(C=1)的条件下, bswu为高(D=1)的概率为0.7993。在odge为低(A=0)且sjaa为高(C=1)的条件下, bswu为高(D=1)的概率为0.5563。",
+        "data_info_math": "P(D=1|A=1,C=1)=0.7993; P(D=1|A=0,C=1)=0.5563; "
+      },
+      "Instruction": "考虑odge作用于bswu的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在sjaa为高的条件下，假如odge为高，那么bswu更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=1,C=1))-P(D=1|do(A=0,C=1))=P(D=1|A=1,C=1)-P(D=1|A=0,C=1)",
+        "Step 5": "P(D=1|A=1,C=1)=0.7993\tP(D=1|A=0,C=1)=0.5563",
+        "Step 6": "CDE=0.7993-0.5563=0.2430",
+        "Step 7": "CDE=0.2430>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0.24301825910566643
+    },
+    {
+      "id": 140,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于bswu的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在sjaa为低的条件下，假如wxck为低，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 141,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于bswu的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在sjaa为高的条件下，假如wxck为低，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 142,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于bswu的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在sjaa为低的条件下，假如wxck为高，那么bswu更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 143,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑wxck作用于bswu的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在sjaa为高的条件下，假如wxck为高，那么bswu更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 144,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象odge(A)和观察节点sjaa(C)的后门调整集合。",
+      "Question": "方法1: 根据bswu的情况，我们逐个研究odge和sjaa的关联。\n方法2：我们直接研究一般情况下odge和sjaa的关联。\n为了理解odge如何影响sjaa，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 145,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象odge(A)和观察节点sjaa(C)的后门调整集合。",
+      "Question": "方法1: 根据wxck的情况，我们逐个研究odge和sjaa的关联。\n方法2：我们直接研究一般情况下odge和sjaa的关联。\n为了理解odge如何影响sjaa，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 146,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象odge(A)和观察节点bswu(D)的后门调整集合。",
+      "Question": "方法1: 根据wxck的情况，我们逐个研究odge和bswu的关联。\n方法2：我们直接研究一般情况下odge和bswu的关联。\n为了理解odge如何影响bswu，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 147,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象odge(A)和观察节点bswu(D)的后门调整集合。",
+      "Question": "方法1: 根据wxck的情况，我们逐个研究odge和bswu的关联。\n方法2：我们直接研究一般情况下odge和bswu的关联。\n为了理解odge如何影响bswu，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 148,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象wxck(B)和观察节点sjaa(C)的后门调整集合。",
+      "Question": "方法1: 根据bswu的情况，我们逐个研究wxck和sjaa的关联。\n方法2：我们直接研究一般情况下wxck和sjaa的关联。\n为了理解wxck如何影响sjaa，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 149,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象wxck(B)和观察节点sjaa(C)的后门调整集合。",
+      "Question": "方法1: 根据bswu的情况，我们逐个研究wxck和sjaa的关联。\n方法2：我们直接研究一般情况下wxck和sjaa的关联。\n为了理解wxck如何影响sjaa，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 150,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象wxck(B)和观察节点bswu(D)的后门调整集合。",
+      "Question": "方法1: 根据odge的情况，我们逐个研究wxck和bswu的关联。\n方法2：我们直接研究一般情况下wxck和bswu的关联。\n为了理解wxck如何影响bswu，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 151,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象wxck(B)和观察节点bswu(D)的后门调整集合。",
+      "Question": "方法1: 根据sjaa的情况，我们逐个研究wxck和bswu的关联。\n方法2：我们直接研究一般情况下wxck和bswu的关联。\n为了理解wxck如何影响bswu，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 152,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象sjaa(C)和观察节点bswu(D)的后门调整集合。",
+      "Question": "方法1: 根据odge的情况，我们逐个研究sjaa和bswu的关联。\n方法2：我们直接研究一般情况下sjaa和bswu的关联。\n为了理解sjaa如何影响bswu，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 153,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象sjaa(C)和观察节点bswu(D)的后门调整集合。",
+      "Question": "方法1: 根据odge的情况，我们逐个研究sjaa和bswu的关联。\n方法2：我们直接研究一般情况下sjaa和bswu的关联。\n为了理解sjaa如何影响bswu，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 154,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为低(D=0)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.2058。在bswu为低(D=0)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.2011。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.2058; P(A=1|D=0,B=0)=0.2011; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为低的条件下，wxck会影响odge吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=0)-P(A=1|do(B=0),D=0)=P(A=1|D=0)-P(A=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 155,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为低(D=0)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.2058。在bswu为低(D=0)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.2011。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.2058; P(A=1|D=0,B=0)=0.2011; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为低的条件下，wxck不会影响odge吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=0)-P(A=1|do(B=0),D=0)=P(A=1|D=0)-P(A=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 156,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为低(D=0)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.2058。在bswu为低(D=0)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.2011。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.2058; P(A=1|D=0,B=0)=0.2011; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为低的条件下，wxck是和odge相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=0)-P(A=1|B=0,D=0)=0.2058-0.2011=0.0046!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 157,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为低(D=0)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.2058。在bswu为低(D=0)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.2011。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.2058; P(A=1|D=0,B=0)=0.2011; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为低的条件下，wxck是和odge独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=0)-P(A=1|B=0,D=0)=0.2058-0.2011=0.0046!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 158,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为高(D=1)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.4506。在bswu为高(D=1)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.4445。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.4506; P(A=1|D=1,B=0)=0.4445; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为高的条件下，wxck会影响odge吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=1)-P(A=1|do(B=0),D=1)=P(A=1|D=1)-P(A=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 159,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为高(D=1)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.4506。在bswu为高(D=1)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.4445。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.4506; P(A=1|D=1,B=0)=0.4445; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为高的条件下，wxck不会影响odge吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=1)-P(A=1|do(B=0),D=1)=P(A=1|D=1)-P(A=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 160,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为高(D=1)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.4506。在bswu为高(D=1)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.4445。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.4506; P(A=1|D=1,B=0)=0.4445; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为高的条件下，wxck是和odge相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=1)-P(A=1|B=0,D=1)=0.4506-0.4445=0.0062!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 161,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为高(D=1)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.4506。在bswu为高(D=1)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.4445。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.4506; P(A=1|D=1,B=0)=0.4445; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为高的条件下，wxck是和odge独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=1)-P(A=1|B=0,D=1)=0.4506-0.4445=0.0062!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 162,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.4047。在sjaa为低(C=0)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.4013。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.4047; P(A=1|C=0,B=0)=0.4013; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为低的条件下，wxck会影响odge吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=0)-P(A=1|do(B=0),C=0)=P(A=1|C=0)-P(A=1|C=0)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 163,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.4047。在sjaa为低(C=0)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.4013。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.4047; P(A=1|C=0,B=0)=0.4013; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为低的条件下，wxck不会影响odge吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=0)-P(A=1|do(B=0),C=0)=P(A=1|C=0)-P(A=1|C=0)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 164,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.4047。在sjaa为低(C=0)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.4013。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.4047; P(A=1|C=0,B=0)=0.4013; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为低的条件下，wxck是和odge相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=0)-P(A=1|B=0,C=0)=0.4047-0.4013=0.0034!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 165,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.4047。在sjaa为低(C=0)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.4013。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.4047; P(A=1|C=0,B=0)=0.4013; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为低的条件下，wxck是和odge独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=0)-P(A=1|B=0,C=0)=0.4047-0.4013=0.0034!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 166,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.3634。在sjaa为高(C=1)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.3482。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.3634; P(A=1|C=1,B=0)=0.3482; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为高的条件下，wxck会影响odge吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=1)-P(A=1|do(B=0),C=1)=P(A=1|C=1)-P(A=1|C=1)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 167,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.3634。在sjaa为高(C=1)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.3482。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.3634; P(A=1|C=1,B=0)=0.3482; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为高的条件下，wxck不会影响odge吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=1)-P(A=1|do(B=0),C=1)=P(A=1|C=1)-P(A=1|C=1)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 168,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.3634。在sjaa为高(C=1)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.3482。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.3634; P(A=1|C=1,B=0)=0.3482; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为高的条件下，wxck是和odge相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=1)-P(A=1|B=0,C=1)=0.3634-0.3482=0.0152!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 169,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)且wxck为高(B=1)的条件下, odge为高(A=1)的概率为0.3634。在sjaa为高(C=1)且wxck为低(B=0)的条件下, odge为高(A=1)的概率为0.3482。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.3634; P(A=1|C=1,B=0)=0.3482; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为高的条件下，wxck是和odge独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=1)-P(A=1|B=0,C=1)=0.3634-0.3482=0.0152!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 170,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为低(D=0)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.7032。在bswu为低(D=0)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.6972。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.7032; P(B=1|D=0,A=0)=0.6972; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为低的条件下，odge会影响wxck吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=0)-P(B=1|do(A=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 171,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为低(D=0)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.7032。在bswu为低(D=0)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.6972。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.7032; P(B=1|D=0,A=0)=0.6972; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为低的条件下，odge不会影响wxck吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=0)-P(B=1|do(A=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 172,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为低(D=0)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.7032。在bswu为低(D=0)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.6972。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.7032; P(B=1|D=0,A=0)=0.6972; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为低的条件下，odge是和wxck相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=0)-P(B=1|A=0,D=0)=0.7032-0.6972=0.0060!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 173,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为低(D=0)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.7032。在bswu为低(D=0)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.6972。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.7032; P(B=1|D=0,A=0)=0.6972; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为低的条件下，odge是和wxck独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=0)-P(B=1|A=0,D=0)=0.7032-0.6972=0.0060!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 174,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为高(D=1)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.6755。在bswu为高(D=1)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.6700。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.6755; P(B=1|D=1,A=0)=0.6700; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为高的条件下，odge会影响wxck吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=1)-P(B=1|do(A=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 175,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为高(D=1)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.6755。在bswu为高(D=1)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.6700。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.6755; P(B=1|D=1,A=0)=0.6700; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为高的条件下，odge不会影响wxck吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=1)-P(B=1|do(A=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 176,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为高(D=1)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.6755。在bswu为高(D=1)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.6700。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.6755; P(B=1|D=1,A=0)=0.6700; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为高的条件下，odge是和wxck相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=1)-P(B=1|A=0,D=1)=0.6755-0.6700=0.0055!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 177,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在bswu为高(D=1)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.6755。在bswu为高(D=1)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.6700。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.6755; P(B=1|D=1,A=0)=0.6700; "
+      },
+      "Instruction": "",
+      "Question": "给定bswu为高的条件下，odge是和wxck独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=1)-P(B=1|A=0,D=1)=0.6755-0.6700=0.0055!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 178,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.5939。在sjaa为低(C=0)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.5905。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.5939; P(B=1|C=0,A=0)=0.5905; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为低的条件下，odge会影响wxck吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=0)-P(B=1|do(A=0),C=0)=P(B=1|C=0)-P(B=1|C=0)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 179,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.5939。在sjaa为低(C=0)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.5905。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.5939; P(B=1|C=0,A=0)=0.5905; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为低的条件下，odge不会影响wxck吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=0)-P(B=1|do(A=0),C=0)=P(B=1|C=0)-P(B=1|C=0)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 180,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.5939。在sjaa为低(C=0)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.5905。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.5939; P(B=1|C=0,A=0)=0.5905; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为低的条件下，odge是和wxck相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=0)-P(B=1|A=0,C=0)=0.5939-0.5905=0.0035!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 181,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.5939。在sjaa为低(C=0)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.5905。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.5939; P(B=1|C=0,A=0)=0.5905; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为低的条件下，odge是和wxck独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=0)-P(B=1|A=0,C=0)=0.5939-0.5905=0.0035!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 182,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.7693。在sjaa为高(C=1)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.7574。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.7693; P(B=1|C=1,A=0)=0.7574; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为高的条件下，odge会影响wxck吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=1)-P(B=1|do(A=0),C=1)=P(B=1|C=1)-P(B=1|C=1)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 183,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.7693。在sjaa为高(C=1)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.7574。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.7693; P(B=1|C=1,A=0)=0.7574; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为高的条件下，odge不会影响wxck吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=1)-P(B=1|do(A=0),C=1)=P(B=1|C=1)-P(B=1|C=1)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 184,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.7693。在sjaa为高(C=1)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.7574。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.7693; P(B=1|C=1,A=0)=0.7574; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为高的条件下，odge是和wxck相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=1)-P(B=1|A=0,C=1)=0.7693-0.7574=0.0120!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 185,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)且odge为高(A=1)的条件下, wxck为高(B=1)的概率为0.7693。在sjaa为高(C=1)且odge为低(A=0)的条件下, wxck为高(B=1)的概率为0.7574。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.7693; P(B=1|C=1,A=0)=0.7574; "
+      },
+      "Instruction": "",
+      "Question": "给定sjaa为高的条件下，odge是和wxck独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=1)-P(B=1|A=0,C=1)=0.7693-0.7574=0.0120!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 186,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)的条件下, sjaa为高(C=1)的概率为0.5348。sjaa为高(C=1)的概率为0.5172。odge为高(A=1)且sjaa为高(C=1)的概率为0.1861。",
+        "data_info_math": "P(C=1|A=0)=0.5348; P(C=1)=0.5172; P(A=1,C=1)=0.1861; "
+      },
+      "Instruction": "考虑odge作用于sjaa的必要性概率(probability of necessity, PN)。",
+      "Question": "给定odge为高且sjaa为高, 那么假如odge为低，此时sjaa为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.5348",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.5172-0.5348)/0.1861}\n=max{0, -0.0945}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 187,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)的条件下, sjaa为低(C=0)的概率为0.4652。odge为低(A=0)且sjaa为低(C=0)的概率为0.2881。odge为高(A=1)且sjaa为高(C=1)的概率为0.1861。",
+        "data_info_math": "P(C=0|A=0)=0.4652; P(A=0,C=0)=0.2881; P(A=1,C=1)=0.1861; "
+      },
+      "Instruction": "考虑odge作用于sjaa的必要性概率(probability of necessity, PN)。",
+      "Question": "给定odge为高且sjaa为高, 那么假如odge为低，此时sjaa为低的概率的上界是多少？",
+      "Answer": "0.9522",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.4652",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.4652-0.2881)/0.1861}\n=min{1, 0.9522}\n=0.9522"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.9521954102771993
+    },
+    {
+      "id": 188,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.6432。bswu为高(D=1)的概率为0.7224。odge为高(A=1)且bswu为高(D=1)的概率为0.3241。",
+        "data_info_math": "P(D=1|A=0)=0.6432; P(D=1)=0.7224; P(A=1,D=1)=0.3241; "
+      },
+      "Instruction": "考虑odge作用于bswu的必要性概率(probability of necessity, PN)。",
+      "Question": "给定odge为高且bswu为高, 那么假如odge为低，此时bswu为低的概率的下界是多少？",
+      "Answer": "0.2441",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.6432",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.7224-0.6432)/0.3241}\n=max{0, 0.2441}\n=0.2441"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.2441234524311303
+    },
+    {
+      "id": 189,
+      "question_id": 160,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.3568。odge为低(A=0)且bswu为低(D=0)的概率为0.2209。odge为高(A=1)且bswu为高(D=1)的概率为0.3241。",
+        "data_info_math": "P(D=0|A=0)=0.3568; P(A=0,D=0)=0.2209; P(A=1,D=1)=0.3241; "
+      },
+      "Instruction": "考虑odge作用于bswu的必要性概率(probability of necessity, PN)。",
+      "Question": "给定odge为高且bswu为高, 那么假如odge为低，此时bswu为低的概率的上界是多少？",
+      "Answer": "0.4192",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.3568",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.3568-0.2209)/0.3241}\n=min{1, 0.4192}\n=0.4192"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.4192144849559713
+    },
+    {
+      "id": 190,
+      "question_id": 161,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为低(B=0)的条件下, sjaa为高(C=1)的概率为0.3848。sjaa为高(C=1)的概率为0.5172。wxck为高(B=1)且sjaa为高(C=1)的概率为0.3939。",
+        "data_info_math": "P(C=1|B=0)=0.3848; P(C=1)=0.5172; P(B=1,C=1)=0.3939; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的必要性概率(probability of necessity, PN)。",
+      "Question": "给定wxck为高且sjaa为高, 那么假如wxck为低，此时sjaa为低的概率的下界是多少？",
+      "Answer": "0.3361",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=P(C=1|B=0)=0.3848",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.5172-0.3848)/0.3939}\n=max{0, 0.3361}\n=0.3361"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.33605123552320953
+    },
+    {
+      "id": 191,
+      "question_id": 162,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为低(B=0)的条件下, sjaa为低(C=0)的概率为0.6152。wxck为低(B=0)且sjaa为低(C=0)的概率为0.1971。wxck为高(B=1)且sjaa为高(C=1)的概率为0.3939。",
+        "data_info_math": "P(C=0|B=0)=0.6152; P(B=0,C=0)=0.1971; P(B=1,C=1)=0.3939; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的必要性概率(probability of necessity, PN)。",
+      "Question": "给定wxck为高且sjaa为高, 那么假如wxck为低，此时sjaa为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=P(C=0|B=0)=0.6152",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.6152-0.1971)/0.3939}\n=min{1, 1.0615}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 192,
+      "question_id": 163,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为低(B=0)的条件下, bswu为高(D=1)的概率为0.7386。bswu为高(D=1)的概率为0.7224。wxck为高(B=1)且bswu为高(D=1)的概率为0.4858。",
+        "data_info_math": "P(D=1|B=0)=0.7386; P(D=1)=0.7224; P(B=1,D=1)=0.4858; "
+      },
+      "Instruction": "考虑wxck作用于bswu的必要性概率(probability of necessity, PN)。",
+      "Question": "给定wxck为高且bswu为高, 那么假如wxck为低，此时bswu为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=P(D=1|B=0)=0.7386",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.7224-0.7386)/0.4858}\n=max{0, -0.0335}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 193,
+      "question_id": 164,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为低(B=0)的条件下, bswu为低(D=0)的概率为0.2614。wxck为低(B=0)且bswu为低(D=0)的概率为0.0837。wxck为高(B=1)且bswu为高(D=1)的概率为0.4858。",
+        "data_info_math": "P(D=0|B=0)=0.2614; P(B=0,D=0)=0.0837; P(B=1,D=1)=0.4858; "
+      },
+      "Instruction": "考虑wxck作用于bswu的必要性概率(probability of necessity, PN)。",
+      "Question": "给定wxck为高且bswu为高, 那么假如wxck为低，此时bswu为低的概率的上界是多少？",
+      "Answer": "0.3657",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=P(D=0|B=0)=0.2614",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.2614-0.0837)/0.4858}\n=min{1, 0.3657}\n=0.3657"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.3657024793388429
+    },
+    {
+      "id": 194,
+      "question_id": 165,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.7432。odge为低(A=0)的概率为0.6192。在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.9004。odge为高(A=1)的概率为0.3808。bswu为高(D=1)的概率为0.7224。sjaa为高(C=1)且bswu为高(D=1)的概率为0.3329。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.7432; P(A=0)=0.6192; P(D=1|C=0,A=1)=0.9004; P(A=1)=0.3808; P(D=1)=0.7224; P(C=1,D=1)=0.3329; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的必要性概率(probability of necessity, PN)。",
+      "Question": "给定sjaa为高且bswu为高, 那么假如sjaa为低，此时bswu为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=0))\nP(D=1|do(C=0))=sum_{A} P(D=1|C=0,A)*P(A)=P(D=1|C=0,A=0)*P(A=0)+P(D=1|C=0,A=1)*P(A=1)\nP(D=1|C=0,A=0)=0.7432\tP(A=0)=0.6192\tP(D=1|C=0,A=1)=0.9004\tP(A=1)=0.3808\nP(D=1|do(C=0))=0.7432*0.6192+0.9004*0.3808=0.8031",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(C=0))]/P(C=1,D=1)}\n=max{0, (0.7224-0.8031)/0.3329}\n=max{0, -0.2424}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 195,
+      "question_id": 166,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为低(C=0)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.2568。odge为低(A=0)的概率为0.6192。在sjaa为低(C=0)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.0996。odge为高(A=1)的概率为0.3808。sjaa为低(C=0)且bswu为低(D=0)的概率为0.0934。sjaa为高(C=1)且bswu为高(D=1)的概率为0.3329。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.2568; P(A=0)=0.6192; P(D=0|C=0,A=1)=0.0996; P(A=1)=0.3808; P(C=0,D=0)=0.0934; P(C=1,D=1)=0.3329; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的必要性概率(probability of necessity, PN)。",
+      "Question": "给定sjaa为高且bswu为高, 那么假如sjaa为低，此时bswu为低的概率的上界是多少？",
+      "Answer": "0.3111",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=0))\nP(D=0|do(C=0))=sum_{A} P(D=0|C=0,A)*P(A)=P(D=0|C=0,A=0)*P(A=0)+P(D=0|C=0,A=1)*P(A=1)\nP(D=0|C=0,A=0)=0.2568\tP(A=0)=0.6192\tP(D=0|C=0,A=1)=0.0996\tP(A=1)=0.3808\nP(D=0|do(C=0))=0.2568*0.6192+0.0996*0.3808=0.1969",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(C=0)-P(C=0,D=0)]/P(C=1,D=1)}\n=min{1, (0.1969-0.0934)/0.3329}\n=min{1, 0.3111}\n=0.3111"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.3110901361168501
+    },
+    {
+      "id": 196,
+      "question_id": 167,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)的条件下, sjaa为低(C=0)的概率为0.5114。sjaa为低(C=0)的概率为0.4828。odge为低(A=0)且sjaa为低(C=0)的概率为0.2881。",
+        "data_info_math": "P(C=0|A=1)=0.5114; P(C=0)=0.4828; P(A=0,C=0)=0.2881; "
+      },
+      "Instruction": "考虑odge作用于sjaa的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定odge为低且sjaa为低, 假如odge为高，此时sjaa为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.5114",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.4828-0.5114)/0.2881}\n=max{0, -0.0992}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 197,
+      "question_id": 168,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)的条件下, sjaa为高(C=1)的概率为0.4886。odge为低(A=0)且sjaa为低(C=0)的概率为0.2881。odge为高(A=1)且sjaa为高(C=1)的概率为0.1861。",
+        "data_info_math": "P(C=1|A=1)=0.4886; P(A=0,C=0)=0.2881; P(A=1,C=1)=0.1861; "
+      },
+      "Instruction": "考虑odge作用于sjaa的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定odge为低且sjaa为低, 假如odge为高，此时sjaa为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.4886",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.4886-0.1861)/0.2881}\n=min{1, 1.0502}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 198,
+      "question_id": 169,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.1490。bswu为低(D=0)的概率为0.2776。odge为低(A=0)且bswu为低(D=0)的概率为0.2209。",
+        "data_info_math": "P(D=0|A=1)=0.1490; P(D=0)=0.2776; P(A=0,D=0)=0.2209; "
+      },
+      "Instruction": "考虑odge作用于bswu的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定odge为低且bswu为低, 假如odge为高，此时bswu为高的概率的下界是多少？",
+      "Answer": "0.5823",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.1490",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.2776-0.1490)/0.2209}\n=max{0, 0.5823}\n=0.5823"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.5823354420989763
+    },
+    {
+      "id": 199,
+      "question_id": 170,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.8510。odge为低(A=0)且bswu为低(D=0)的概率为0.2209。odge为高(A=1)且bswu为高(D=1)的概率为0.3241。",
+        "data_info_math": "P(D=1|A=1)=0.8510; P(A=0,D=0)=0.2209; P(A=1,D=1)=0.3241; "
+      },
+      "Instruction": "考虑odge作用于bswu的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定odge为低且bswu为低, 假如odge为高，此时bswu为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.8510",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.8510-0.3241)/0.2209}\n=min{1, 2.3854}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 200,
+      "question_id": 171,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为高(B=1)的条件下, sjaa为低(C=0)的概率为0.4204。sjaa为低(C=0)的概率为0.4828。wxck为低(B=0)且sjaa为低(C=0)的概率为0.1971。",
+        "data_info_math": "P(C=0|B=1)=0.4204; P(C=0)=0.4828; P(B=0,C=0)=0.1971; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定wxck为低且sjaa为低, 假如wxck为高，此时sjaa为高的概率的下界是多少？",
+      "Answer": "0.3166",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=P(C=0|B=1)=0.4204",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.4828-0.4204)/0.1971}\n=max{0, 0.3166}\n=0.3166"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.31658812032164707
+    },
+    {
+      "id": 201,
+      "question_id": 172,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为高(B=1)的条件下, sjaa为高(C=1)的概率为0.5796。wxck为低(B=0)且sjaa为低(C=0)的概率为0.1971。wxck为高(B=1)且sjaa为高(C=1)的概率为0.3939。",
+        "data_info_math": "P(C=1|B=1)=0.5796; P(B=0,C=0)=0.1971; P(B=1,C=1)=0.3939; "
+      },
+      "Instruction": "考虑wxck作用于sjaa的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定wxck为低且sjaa为低, 假如wxck为高，此时sjaa为高的概率的上界是多少？",
+      "Answer": "0.9421",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=P(C=1|B=1)=0.5796",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.5796-0.3939)/0.1971}\n=min{1, 0.9421}\n=0.9421"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.9420828934871806
+    },
+    {
+      "id": 202,
+      "question_id": 173,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为高(B=1)的条件下, bswu为低(D=0)的概率为0.2853。bswu为低(D=0)的概率为0.2776。wxck为低(B=0)且bswu为低(D=0)的概率为0.0837。",
+        "data_info_math": "P(D=0|B=1)=0.2853; P(D=0)=0.2776; P(B=0,D=0)=0.0837; "
+      },
+      "Instruction": "考虑wxck作用于bswu的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定wxck为低且bswu为低, 假如wxck为高，此时bswu为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=P(D=0|B=1)=0.2853",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.2776-0.2853)/0.0837}\n=max{0, -0.0916}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 203,
+      "question_id": 174,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在wxck为高(B=1)的条件下, bswu为高(D=1)的概率为0.7147。wxck为低(B=0)且bswu为低(D=0)的概率为0.0837。wxck为高(B=1)且bswu为高(D=1)的概率为0.4858。",
+        "data_info_math": "P(D=1|B=1)=0.7147; P(B=0,D=0)=0.0837; P(B=1,D=1)=0.4858; "
+      },
+      "Instruction": "考虑wxck作用于bswu的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定wxck为低且bswu为低, 假如wxck为高，此时bswu为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=P(D=1|B=1)=0.7147",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.7147-0.4858)/0.0837}\n=min{1, 2.7345}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 204,
+      "question_id": 175,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为低(D=0)的概率为0.4437。odge为低(A=0)的概率为0.6192。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为低(D=0)的概率为0.2007。odge为高(A=1)的概率为0.3808。bswu为低(D=0)的概率为0.2776。sjaa为低(C=0)且bswu为低(D=0)的概率为0.0934。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.4437; P(A=0)=0.6192; P(D=0|C=1,A=1)=0.2007; P(A=1)=0.3808; P(D=0)=0.2776; P(C=0,D=0)=0.0934; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定sjaa为低且bswu为低, 假如sjaa为高，此时bswu为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=1))\nP(D=0|do(C=1))=sum_{A} P(D=0|C=1,A)*P(A)=P(D=0|C=1,A=0)*P(A=0)+P(D=0|C=1,A=1)*P(A=1)\nP(D=0|C=1,A=0)=0.4437\tP(A=0)=0.6192\tP(D=0|C=1,A=1)=0.2007\tP(A=1)=0.3808\nP(D=0|do(C=1))=0.4437*0.6192+0.2007*0.3808=0.3512",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(C=1))]/P(C=0,D=0)}\n=max{0, (0.2776-0.3512)/0.0934}\n=max{0, -0.7874}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 205,
+      "question_id": 176,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表odge, B代表wxck, C代表sjaa, D代表bswu。",
+        "data_info": "在sjaa为高(C=1)且odge为低(A=0)的条件下, bswu为高(D=1)的概率为0.5563。odge为低(A=0)的概率为0.6192。在sjaa为高(C=1)且odge为高(A=1)的条件下, bswu为高(D=1)的概率为0.7993。odge为高(A=1)的概率为0.3808。sjaa为低(C=0)且bswu为低(D=0)的概率为0.0934。sjaa为高(C=1)且bswu为高(D=1)的概率为0.3329。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.5563; P(A=0)=0.6192; P(D=1|C=1,A=1)=0.7993; P(A=1)=0.3808; P(C=0,D=0)=0.0934; P(C=1,D=1)=0.3329; "
+      },
+      "Instruction": "考虑sjaa作用于bswu的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定sjaa为低且bswu为低, 假如sjaa为高，此时bswu为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=1))\nP(D=1|do(C=1))=sum_{A} P(D=1|C=1,A)*P(A)=P(D=1|C=1,A=0)*P(A=0)+P(D=1|C=1,A=1)*P(A=1)\nP(D=1|C=1,A=0)=0.5563\tP(A=0)=0.6192\tP(D=1|C=1,A=1)=0.7993\tP(A=1)=0.3808\nP(D=1|do(C=1))=0.5563*0.6192+0.7993*0.3808=0.6488",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(C=1)-P(C=1,D=1)]/P(C=0,D=0)}\n=min{1, (0.6488-0.3329)/0.0934}\n=min{1, 3.3831}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 1
+    }
+  ]
+}

@@ -1,0 +1,4552 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->C",
+      "A->D",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "运动量",
+      "B": "饮食习惯",
+      "C": "体重",
+      "D": "整体健康状况"
+    },
+    "node_value": {
+      "A": [
+        "少",
+        "强烈"
+      ],
+      "B": [
+        "不健康",
+        "健康"
+      ],
+      "C": [
+        "轻",
+        "重"
+      ],
+      "D": [
+        "不好",
+        "好"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {
+      "A->C": 1,
+      "A->D": 1,
+      "B->C": -1,
+      "C->D": 1
+    },
+    "node_bias": {
+      "A": 1.6157882522167013,
+      "B": 1.837050993056771,
+      "C": 0.13332100959240656,
+      "D": -2.3601846558508375
+    },
+    "edge_weight": {
+      "A->C": 0.06782477672515941,
+      "A->D": 2.6617107173528827,
+      "B->C": -0.7179081637595984,
+      "C->D": 1.1383254169394854
+    },
+    "function_description": "P(A=1)=0.8342\nP(B=1)=0.8626\nP(C=1|A,B)=sigmoid(0.13332100959240656 + 0.0678 * A + -0.7179 * B)\nP(D=1|A,C)=sigmoid(-2.3601846558508375 + 2.6617 * A + 1.1383 * C)\n",
+    "text_description": "The probability of amount of exercise done being intense (A=1) is 0.8342. \nThe probability of dietary habits being healthy (B=1) is 0.8626. \nFor those with amount of exercise done being little (A=0) and dietary habits being unhealthy (B=0), the probability of body weight being heavy (C=1) is 0.5333. \nFor those with amount of exercise done being little (A=0) and dietary habits being healthy (B=1), the probability of body weight being heavy (C=1) is 0.3579. \nFor those with amount of exercise done being intense (A=1) and dietary habits being unhealthy (B=0), the probability of body weight being heavy (C=1) is 0.5501. \nFor those with amount of exercise done being intense (A=1) and dietary habits being healthy (B=1), the probability of body weight being heavy (C=1) is 0.3736. \nFor those with amount of exercise done being little (A=0) and body weight being light (C=0), the probability of overall health condition being good (D=1) is 0.0863. \nFor those with amount of exercise done being little (A=0) and body weight being heavy (C=1), the probability of overall health condition being good (D=1) is 0.2276. \nFor those with amount of exercise done being intense (A=1) and body weight being light (C=0), the probability of overall health condition being good (D=1) is 0.5748. \nFor those with amount of exercise done being intense (A=1) and body weight being heavy (C=1), the probability of overall health condition being good (D=1) is 0.8084. \n",
+    "Statistic_data": [
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 9645
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 13097
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 482
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 4218
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 10840
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 2550
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 2524
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 1062
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 1463
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 1927
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 405
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 456
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 133
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 576
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 579
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 43
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于饮食习惯的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为少，那么饮食习惯更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于饮食习惯的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为少，那么饮食习惯更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于饮食习惯的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为强烈，那么饮食习惯更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于饮食习惯的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为强烈，那么饮食习惯更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6245。在运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6051。",
+        "data_info_math": "P(C=0|A=0)=0.6245; P(C=0|A=1)=0.6051; "
+      },
+      "Instruction": "考虑运动量作用于体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为少，那么体重更有可能为轻吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.6245\tP(C=0|A=1)=0.6051",
+        "Step 6": "ATE=0.6245-0.6051=0.0194",
+        "Step 7": "ATE=0.0194>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.019433752617652456
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 体重为重(C=1)的概率为0.3755。在运动量为强烈(A=1)的条件下, 体重为重(C=1)的概率为0.3949。",
+        "data_info_math": "P(C=1|A=0)=0.3755; P(C=1|A=1)=0.3949; "
+      },
+      "Instruction": "考虑运动量作用于体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为少，那么体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.3755\tP(C=1|A=1)=0.3949",
+        "Step 6": "ATE=0.3755-0.3949=-0.0194",
+        "Step 7": "ATE=-0.0194<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.019433752617652622
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6051。在运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6245。",
+        "data_info_math": "P(C=0|A=1)=0.6051; P(C=0|A=0)=0.6245; "
+      },
+      "Instruction": "考虑运动量作用于体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为强烈，那么体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.6051\tP(C=0|A=0)=0.6245",
+        "Step 6": "ATE=0.6051-0.6245=-0.0194",
+        "Step 7": "ATE=-0.0194<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.019433752617652456
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 体重为重(C=1)的概率为0.3949。在运动量为少(A=0)的条件下, 体重为重(C=1)的概率为0.3755。",
+        "data_info_math": "P(C=1|A=1)=0.3949; P(C=1|A=0)=0.3755; "
+      },
+      "Instruction": "考虑运动量作用于体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为强烈，那么体重更有可能为重吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.3949\tP(C=1|A=0)=0.3755",
+        "Step 6": "ATE=0.3949-0.3755=0.0194",
+        "Step 7": "ATE=0.0194>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.019433752617652622
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.8593。在运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.3313。",
+        "data_info_math": "P(D=0|A=0)=0.8593; P(D=0|A=1)=0.3313; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为少，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.8593\tP(D=0|A=1)=0.3313",
+        "Step 6": "ATE=0.8593-0.3313=0.5280",
+        "Step 7": "ATE=0.5280>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.528000737564856
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.1407。在运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.6687。",
+        "data_info_math": "P(D=1|A=0)=0.1407; P(D=1|A=1)=0.6687; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为少，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.1407\tP(D=1|A=1)=0.6687",
+        "Step 6": "ATE=0.1407-0.6687=-0.5280",
+        "Step 7": "ATE=-0.5280<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.528000737564856
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.3313。在运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.8593。",
+        "data_info_math": "P(D=0|A=1)=0.3313; P(D=0|A=0)=0.8593; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为强烈，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.3313\tP(D=0|A=0)=0.8593",
+        "Step 6": "ATE=0.3313-0.8593=-0.5280",
+        "Step 7": "ATE=-0.5280<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.528000737564856
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.6687。在运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.1407。",
+        "data_info_math": "P(D=1|A=1)=0.6687; P(D=1|A=0)=0.1407; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为强烈，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.6687\tP(D=1|A=0)=0.1407",
+        "Step 6": "ATE=0.6687-0.1407=0.5280",
+        "Step 7": "ATE=0.5280>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.528000737564856
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食习惯被改变为不健康，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食习惯被改变为不健康，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食习惯被改变为健康，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食习惯被改变为健康，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为不健康(B=0)的条件下, 体重为轻(C=0)的概率为0.4526。在饮食习惯为健康(B=1)的条件下, 体重为轻(C=0)的概率为0.6326。",
+        "data_info_math": "P(C=0|B=0)=0.4526; P(C=0|B=1)=0.6326; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食习惯被改变为不健康，那么体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.4526\tP(C=0|B=1)=0.6326",
+        "Step 6": "ATE=0.4526-0.6326=-0.1800",
+        "Step 7": "ATE=-0.1800<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.17996647678483524
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为不健康(B=0)的条件下, 体重为重(C=1)的概率为0.5474。在饮食习惯为健康(B=1)的条件下, 体重为重(C=1)的概率为0.3674。",
+        "data_info_math": "P(C=1|B=0)=0.5474; P(C=1|B=1)=0.3674; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食习惯被改变为不健康，那么体重更有可能为重吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.5474\tP(C=1|B=1)=0.3674",
+        "Step 6": "ATE=0.5474-0.3674=0.1800",
+        "Step 7": "ATE=0.1800>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.17996647678483507
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为健康(B=1)的条件下, 体重为轻(C=0)的概率为0.6326。在饮食习惯为不健康(B=0)的条件下, 体重为轻(C=0)的概率为0.4526。",
+        "data_info_math": "P(C=0|B=1)=0.6326; P(C=0|B=0)=0.4526; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食习惯被改变为健康，那么体重更有可能为轻吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.6326\tP(C=0|B=0)=0.4526",
+        "Step 6": "ATE=0.6326-0.4526=0.1800",
+        "Step 7": "ATE=0.1800>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.17996647678483524
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为健康(B=1)的条件下, 体重为重(C=1)的概率为0.3674。在饮食习惯为不健康(B=0)的条件下, 体重为重(C=1)的概率为0.5474。",
+        "data_info_math": "P(C=1|B=1)=0.3674; P(C=1|B=0)=0.5474; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食习惯被改变为健康，那么体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.3674\tP(C=1|B=0)=0.5474",
+        "Step 6": "ATE=0.3674-0.5474=-0.1800",
+        "Step 7": "ATE=-0.1800<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.17996647678483507
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为不健康(B=0)的条件下, 整体健康状况为不好(D=0)的概率为0.3823。在饮食习惯为健康(B=1)的条件下, 整体健康状况为不好(D=0)的概率为0.4239。",
+        "data_info_math": "P(D=0|B=0)=0.3823; P(D=0|B=1)=0.4239; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食习惯被改变为不健康，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.3823\tP(D=0|B=1)=0.4239",
+        "Step 6": "ATE=0.3823-0.4239=-0.0417",
+        "Step 7": "ATE=-0.0417<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.04168586055920759
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为不健康(B=0)的条件下, 整体健康状况为好(D=1)的概率为0.6177。在饮食习惯为健康(B=1)的条件下, 整体健康状况为好(D=1)的概率为0.5761。",
+        "data_info_math": "P(D=1|B=0)=0.6177; P(D=1|B=1)=0.5761; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食习惯被改变为不健康，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.6177\tP(D=1|B=1)=0.5761",
+        "Step 6": "ATE=0.6177-0.5761=0.0417",
+        "Step 7": "ATE=0.0417>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.04168586055920753
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为健康(B=1)的条件下, 整体健康状况为不好(D=0)的概率为0.4239。在饮食习惯为不健康(B=0)的条件下, 整体健康状况为不好(D=0)的概率为0.3823。",
+        "data_info_math": "P(D=0|B=1)=0.4239; P(D=0|B=0)=0.3823; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食习惯被改变为健康，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.4239\tP(D=0|B=0)=0.3823",
+        "Step 6": "ATE=0.4239-0.3823=0.0417",
+        "Step 7": "ATE=0.0417>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.04168586055920759
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为健康(B=1)的条件下, 整体健康状况为好(D=1)的概率为0.5761。在饮食习惯为不健康(B=0)的条件下, 整体健康状况为好(D=1)的概率为0.6177。",
+        "data_info_math": "P(D=1|B=1)=0.5761; P(D=1|B=0)=0.6177; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食习惯被改变为健康，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.5761\tP(D=1|B=0)=0.6177",
+        "Step 6": "ATE=0.5761-0.6177=-0.0417",
+        "Step 7": "ATE=-0.0417<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.04168586055920753
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体重被改变为轻，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体重被改变为轻，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体重被改变为重，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体重被改变为重，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于饮食习惯的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体重被改变为轻，那么饮食习惯更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于饮食习惯的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体重被改变为轻，那么饮食习惯更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于饮食习惯的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体重被改变为重，那么饮食习惯更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于饮食习惯的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体重被改变为重，那么饮食习惯更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.9130。在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.7700。运动量为少(A=0)的概率为0.1649。在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.4238。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.1896。运动量为强烈(A=1)的概率为0.8351。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.9130; P(D=0|C=1,A=0)=0.7700; P(A=0)=0.1649; P(D=0|C=0,A=1)=0.4238; P(D=0|C=1,A=1)=0.1896; P(A=1)=0.8351; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体重被改变为轻，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=0))-P(D=0|do(C=1))=sum_{A} [P(D=0|C=0,A)*P(A)-P(D=0|C=1,A)*P(A)]=[P(D=0|C=0,A=0)*P(A=0)-P(D=0|C=1,A=0)*P(A=0)]+[P(D=0|C=0,A=1)*P(A=1)-P(D=0|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=0,A=0)=0.9130\tP(D=0|C=1,A=0)=0.7700\tP(A=0)=0.1649\tP(D=0|C=0,A=1)=0.4238\tP(D=0|C=1,A=1)=0.1896\tP(A=1)=0.8351",
+        "Step 6": "ATE=[0.9130*0.1649-0.7700*0.1649]+[0.4238*0.8351-0.1896*0.8351]=0.2192",
+        "Step 7": "ATE=0.2192>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.2191561496678414
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.0870。在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.2300。运动量为少(A=0)的概率为0.1649。在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.5762。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.8104。运动量为强烈(A=1)的概率为0.8351。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.0870; P(D=1|C=1,A=0)=0.2300; P(A=0)=0.1649; P(D=1|C=0,A=1)=0.5762; P(D=1|C=1,A=1)=0.8104; P(A=1)=0.8351; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体重被改变为轻，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=0))-P(D=1|do(C=1))=sum_{A} [P(D=1|C=0,A)*P(A)-P(D=1|C=1,A)*P(A)]=[P(D=1|C=0,A=0)*P(A=0)-P(D=1|C=1,A=0)*P(A=0)]+[P(D=1|C=0,A=1)*P(A=1)-P(D=1|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=0,A=0)=0.0870\tP(D=1|C=1,A=0)=0.2300\tP(A=0)=0.1649\tP(D=1|C=0,A=1)=0.5762\tP(D=1|C=1,A=1)=0.8104\tP(A=1)=0.8351",
+        "Step 6": "ATE=[0.0870*0.1649-0.2300*0.1649]+[0.5762*0.8351-0.8104*0.8351]=-0.2192",
+        "Step 7": "ATE=-0.2192<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.21915614966784155
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.7700。在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.9130。运动量为少(A=0)的概率为0.1649。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.1896。在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.4238。运动量为强烈(A=1)的概率为0.8351。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.7700; P(D=0|C=0,A=0)=0.9130; P(A=0)=0.1649; P(D=0|C=1,A=1)=0.1896; P(D=0|C=0,A=1)=0.4238; P(A=1)=0.8351; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体重被改变为重，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=1))-P(D=0|do(C=0))=sum_{A} [P(D=0|C=1,A)*P(A)-P(D=0|C=0,A)*P(A)]=[P(D=0|C=1,A=0)*P(A=0)-P(D=0|C=0,A=0)*P(A=0)]+[P(D=0|C=1,A=1)*P(A=1)-P(D=0|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=1,A=0)=0.7700\tP(D=0|C=0,A=0)=0.9130\tP(A=0)=0.1649\tP(D=0|C=1,A=1)=0.1896\tP(D=0|C=0,A=1)=0.4238\tP(A=1)=0.8351",
+        "Step 6": "ATE=[0.7700*0.1649-0.9130*0.1649]+[0.1896*0.8351-0.4238*0.8351]=-0.2192",
+        "Step 7": "ATE=-0.2192<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.2191561496678414
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.2300。在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.0870。运动量为少(A=0)的概率为0.1649。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.8104。在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.5762。运动量为强烈(A=1)的概率为0.8351。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.2300; P(D=1|C=0,A=0)=0.0870; P(A=0)=0.1649; P(D=1|C=1,A=1)=0.8104; P(D=1|C=0,A=1)=0.5762; P(A=1)=0.8351; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果体重被改变为重，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=1))-P(D=1|do(C=0))=sum_{A} [P(D=1|C=1,A)*P(A)-P(D=1|C=0,A)*P(A)]=[P(D=1|C=1,A=0)*P(A=0)-P(D=1|C=0,A=0)*P(A=0)]+[P(D=1|C=1,A=1)*P(A=1)-P(D=1|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=1,A=0)=0.2300\tP(D=1|C=0,A=0)=0.0870\tP(A=0)=0.1649\tP(D=1|C=1,A=1)=0.8104\tP(D=1|C=0,A=1)=0.5762\tP(A=1)=0.8351",
+        "Step 6": "ATE=[0.2300*0.1649-0.0870*0.1649]+[0.8104*0.8351-0.5762*0.8351]=0.2192",
+        "Step 7": "ATE=0.2192>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.21915614966784155
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为不好，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为不好，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食习惯的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为不好，那么饮食习惯更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食习惯的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为不好，那么饮食习惯更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食习惯的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么饮食习惯更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食习惯的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么饮食习惯更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为不好，那么体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为不好，那么体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于体重的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6245。在运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6051。",
+        "data_info_math": "P(C=0|A=0)=0.6245; P(C=0|A=1)=0.6051; "
+      },
+      "Instruction": "考虑运动量作用于体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为少，那么体重更有可能为轻吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.6245\tP(C=0|A=1)=0.6051",
+        "Step 6": "NDE=0.6245-0.6051=0.0194",
+        "Step 7": "NDE=0.0194>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.019433752617652456
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 体重为重(C=1)的概率为0.3755。在运动量为强烈(A=1)的条件下, 体重为重(C=1)的概率为0.3949。",
+        "data_info_math": "P(C=1|A=0)=0.3755; P(C=1|A=1)=0.3949; "
+      },
+      "Instruction": "考虑运动量作用于体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为少，那么体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.3755\tP(C=1|A=1)=0.3949",
+        "Step 6": "NDE=0.3755-0.3949=-0.0194",
+        "Step 7": "NDE=-0.0194<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.019433752617652622
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6051。在运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6245。",
+        "data_info_math": "P(C=0|A=1)=0.6051; P(C=0|A=0)=0.6245; "
+      },
+      "Instruction": "考虑运动量作用于体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为强烈，那么体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.6051\tP(C=0|A=0)=0.6245",
+        "Step 6": "NDE=0.6051-0.6245=-0.0194",
+        "Step 7": "NDE=-0.0194<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.019433752617652456
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 体重为重(C=1)的概率为0.3949。在运动量为少(A=0)的条件下, 体重为重(C=1)的概率为0.3755。",
+        "data_info_math": "P(C=1|A=1)=0.3949; P(C=1|A=0)=0.3755; "
+      },
+      "Instruction": "考虑运动量作用于体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为强烈，那么体重更有可能为重吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.3949\tP(C=1|A=0)=0.3755",
+        "Step 6": "NDE=0.3949-0.3755=0.0194",
+        "Step 7": "NDE=0.0194>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.019433752617652622
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.9130。在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.4238。在运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6051。在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.7700。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.1896。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.9130; P(D=0|C=0,A=1)=0.4238; P(C=0|A=1)=0.6051; P(D=0|C=1,A=0)=0.7700; P(D=0|C=1,A=1)=0.1896; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为少，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=0|A=0,C)-P(D=0|A=1,C)]*P(C|A=1)=[P(D=0|A=0,C=0)-P(D=0|A=1,C=0)]*P(C=0|A=1)+[P(D=0|A=0,C=1)-P(D=0|A=1,C=1)]*P(C=1|A=1)",
+        "Step 5": "P(D=0|A=0,C=0)=0.9130\tP(D=0|A=1,C=0)=0.4238\tP(C=0|A=1)=0.6051\tP(D=0|A=0,C=1)=0.7700\tP(D=0|A=1,C=1)=0.1896\tP(C=1|A=1)=0.3949",
+        "Step 6": "=(0.9130-0.4238)*0.6051+(0.7700-0.1896)*0.3949=0.5252",
+        "Step 7": "NDE=0.5252>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.5252212371797983
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.0870。在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.5762。在运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6051。在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.2300。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.8104。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.0870; P(D=1|C=0,A=1)=0.5762; P(C=0|A=1)=0.6051; P(D=1|C=1,A=0)=0.2300; P(D=1|C=1,A=1)=0.8104; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为少，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=1|A=0,C)-P(D=1|A=1,C)]*P(C|A=1)=[P(D=1|A=0,C=0)-P(D=1|A=1,C=0)]*P(C=0|A=1)+[P(D=1|A=0,C=1)-P(D=1|A=1,C=1)]*P(C=1|A=1)",
+        "Step 5": "P(D=1|A=0,C=0)=0.0870\tP(D=1|A=1,C=0)=0.5762\tP(C=0|A=1)=0.6051\tP(D=1|A=0,C=1)=0.2300\tP(D=1|A=1,C=1)=0.8104\tP(C=1|A=1)=0.3949",
+        "Step 6": "=(0.0870-0.5762)*0.6051+(0.2300-0.8104)*0.3949=-0.5252",
+        "Step 7": "NDE=-0.5252<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.5252212371797983
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.4238。在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.9130。在运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6245。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.1896。在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.7700。",
+        "data_info_math": "P(D=0|C=0,A=1)=0.4238; P(D=0|C=0,A=0)=0.9130; P(C=0|A=0)=0.6245; P(D=0|C=1,A=1)=0.1896; P(D=0|C=1,A=0)=0.7700; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为强烈，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=0|A=1,C)-P(D=0|A=0,C)]*P(C|A=0)=[P(D=0|A=1,C=0)-P(D=0|A=0,C=0)]*P(C=0|A=0)+[P(D=0|A=1,C=1)-P(D=0|A=0,C=1)]*P(C=1|A=0)",
+        "Step 5": "P(D=0|A=1,C=0)=0.4238\tP(D=0|A=0,C=0)=0.9130\tP(C=0|A=0)=0.6245\tP(D=0|A=1,C=1)=0.1896\tP(D=0|A=0,C=1)=0.7700\tP(C=1|A=0)=0.3755",
+        "Step 6": "=(0.4238-0.9130)*0.6245+(0.1896-0.7700)*0.3755=-0.5234",
+        "Step 7": "NDE=-0.5234<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.5234496467731308
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.5762。在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.0870。在运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6245。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.8104。在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.2300。",
+        "data_info_math": "P(D=1|C=0,A=1)=0.5762; P(D=1|C=0,A=0)=0.0870; P(C=0|A=0)=0.6245; P(D=1|C=1,A=1)=0.8104; P(D=1|C=1,A=0)=0.2300; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为强烈，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=1|A=1,C)-P(D=1|A=0,C)]*P(C|A=0)=[P(D=1|A=1,C=0)-P(D=1|A=0,C=0)]*P(C=0|A=0)+[P(D=1|A=1,C=1)-P(D=1|A=0,C=1)]*P(C=1|A=0)",
+        "Step 5": "P(D=1|A=1,C=0)=0.5762\tP(D=1|A=0,C=0)=0.0870\tP(C=0|A=0)=0.6245\tP(D=1|A=1,C=1)=0.8104\tP(D=1|A=0,C=1)=0.2300\tP(C=1|A=0)=0.3755",
+        "Step 6": "=(0.5762-0.0870)*0.6245+(0.8104-0.2300)*0.3755=0.5234",
+        "Step 7": "NDE=0.5234>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.5234496467731307
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为不健康(B=0)的条件下, 体重为轻(C=0)的概率为0.4526。在饮食习惯为健康(B=1)的条件下, 体重为轻(C=0)的概率为0.6326。",
+        "data_info_math": "P(C=0|B=0)=0.4526; P(C=0|B=1)=0.6326; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而饮食习惯变化为不健康，那么体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.4526\tP(C=0|B=1)=0.6326",
+        "Step 6": "NDE=0.4526-0.6326=-0.1800",
+        "Step 7": "NDE=-0.1800<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.17996647678483524
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为不健康(B=0)的条件下, 体重为重(C=1)的概率为0.5474。在饮食习惯为健康(B=1)的条件下, 体重为重(C=1)的概率为0.3674。",
+        "data_info_math": "P(C=1|B=0)=0.5474; P(C=1|B=1)=0.3674; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而饮食习惯变化为不健康，那么体重更有可能为重吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.5474\tP(C=1|B=1)=0.3674",
+        "Step 6": "NDE=0.5474-0.3674=0.1800",
+        "Step 7": "NDE=0.1800>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.17996647678483507
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为健康(B=1)的条件下, 体重为轻(C=0)的概率为0.6326。在饮食习惯为不健康(B=0)的条件下, 体重为轻(C=0)的概率为0.4526。",
+        "data_info_math": "P(C=0|B=1)=0.6326; P(C=0|B=0)=0.4526; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而饮食习惯变化为健康，那么体重更有可能为轻吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.6326\tP(C=0|B=0)=0.4526",
+        "Step 6": "NDE=0.6326-0.4526=0.1800",
+        "Step 7": "NDE=0.1800>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.17996647678483524
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为健康(B=1)的条件下, 体重为重(C=1)的概率为0.3674。在饮食习惯为不健康(B=0)的条件下, 体重为重(C=1)的概率为0.5474。",
+        "data_info_math": "P(C=1|B=1)=0.3674; P(C=1|B=0)=0.5474; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而饮食习惯变化为健康，那么体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.3674\tP(C=1|B=0)=0.5474",
+        "Step 6": "NDE=0.3674-0.5474=-0.1800",
+        "Step 7": "NDE=-0.1800<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.17996647678483507
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而饮食习惯变化为不健康，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而饮食习惯变化为不健康，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而饮食习惯变化为健康，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而饮食习惯变化为健康，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.9130。在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.7700。运动量为少(A=0)的概率为0.1649。在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.4238。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.1896。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.9130; P(D=0|C=1,A=0)=0.7700; P(A=0)=0.1649; P(D=0|C=0,A=1)=0.4238; P(D=0|C=1,A=1)=0.1896; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体重变化为轻，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=0,A)-P(D=0|C=1,A)]*P(A)=[P(D=0|C=0,A=0)-P(D=0|C=1,A=0)]*P(A=0)+[P(D=0|C=0,A=1)-P(D=0|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=0,A=0)=0.9130\tP(D=0|C=1,A=0)=0.7700\tP(A=0)=0.1649\tP(D=0|C=0,A=1)=0.4238\tP(D=0|C=1,A=1)=0.1896\tP(A=1)=0.8351",
+        "Step 6": "NDE=[0.9130-0.7700]*0.1649+[0.4238-0.1896]*0.8351=0.2192",
+        "Step 7": "NDE=0.2192>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.21915614966784133
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.0870。在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.2300。运动量为少(A=0)的概率为0.1649。在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.5762。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.8104。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.0870; P(D=1|C=1,A=0)=0.2300; P(A=0)=0.1649; P(D=1|C=0,A=1)=0.5762; P(D=1|C=1,A=1)=0.8104; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体重变化为轻，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=0,A)-P(D=1|C=1,A)]*P(A)=[P(D=1|C=0,A=0)-P(D=1|C=1,A=0)]*P(A=0)+[P(D=1|C=0,A=1)-P(D=1|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=0,A=0)=0.0870\tP(D=1|C=1,A=0)=0.2300\tP(A=0)=0.1649\tP(D=1|C=0,A=1)=0.5762\tP(D=1|C=1,A=1)=0.8104\tP(A=1)=0.8351",
+        "Step 6": "NDE=[0.0870-0.2300]*0.1649+[0.5762-0.8104]*0.8351=-0.2192",
+        "Step 7": "NDE=-0.2192<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.21915614966784153
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.7700。在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.9130。运动量为少(A=0)的概率为0.1649。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.1896。在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.4238。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.7700; P(D=0|C=0,A=0)=0.9130; P(A=0)=0.1649; P(D=0|C=1,A=1)=0.1896; P(D=0|C=0,A=1)=0.4238; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体重变化为重，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=1,A)-P(D=0|C=0,A)]*P(A)=[P(D=0|C=1,A=0)-P(D=0|C=0,A=0)]*P(A=0)+[P(D=0|C=1,A=1)-P(D=0|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=1,A=0)=0.7700\tP(D=0|C=0,A=0)=0.9130\tP(A=0)=0.1649\tP(D=0|C=1,A=1)=0.1896\tP(D=0|C=0,A=1)=0.4238\tP(A=1)=0.8351",
+        "Step 6": "NDE=[0.7700-0.9130]*0.1649+[0.1896-0.4238]*0.8351=-0.2192",
+        "Step 7": "NDE=-0.2192<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.21915614966784133
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.2300。在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.0870。运动量为少(A=0)的概率为0.1649。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.8104。在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.5762。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.2300; P(D=1|C=0,A=0)=0.0870; P(A=0)=0.1649; P(D=1|C=1,A=1)=0.8104; P(D=1|C=0,A=1)=0.5762; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而体重变化为重，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=1,A)-P(D=1|C=0,A)]*P(A)=[P(D=1|C=1,A=0)-P(D=1|C=0,A=0)]*P(A=0)+[P(D=1|C=1,A=1)-P(D=1|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=1,A=0)=0.2300\tP(D=1|C=0,A=0)=0.0870\tP(A=0)=0.1649\tP(D=1|C=1,A=1)=0.8104\tP(D=1|C=0,A=1)=0.5762\tP(A=1)=0.8351",
+        "Step 6": "NDE=[0.2300-0.0870]*0.1649+[0.8104-0.5762]*0.8351=0.2192",
+        "Step 7": "NDE=0.2192>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.21915614966784153
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为少下的取值，那么体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为少下的取值，那么体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为强烈下的取值，那么体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为强烈下的取值，那么体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.4238。在运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6245。在运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6051。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.1896。",
+        "data_info_math": "P(D=0|C=0,A=1)=0.4238; P(C=0|A=0)=0.6245; P(C=0|A=1)=0.6051; P(D=0|C=1,A=1)=0.1896; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为少下的取值，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=0|A=1,C)*[P(C|A=0)-P(C|A=1)]=P(D=0|A=1,C=0)*[P(C=0|A=0)-P(C=0|A=1)]+P(D=0|A=1,C=1)*[P(C=1|A=0)-P(C=1|A=1)]",
+        "Step 5": "P(D=0|A=1,C=0)=0.4238\tP(C=0|A=0)=0.6245\tP(C=0|A=1)=0.6051\tP(D=0|A=1,C=1)=0.1896\tP(C=1|A=0)=0.3755\tP(C=1|A=1)=0.3949",
+        "Step 6": "NIE=0.4238*(0.6245-0.6051)+0.1896*(0.3755-0.3949)=0.0046",
+        "Step 7": "NIE=0.0046>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.004551090791725217
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.5762。在运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6245。在运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6051。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.8104。",
+        "data_info_math": "P(D=1|C=0,A=1)=0.5762; P(C=0|A=0)=0.6245; P(C=0|A=1)=0.6051; P(D=1|C=1,A=1)=0.8104; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为少下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=1|A=1,C)*[P(C|A=0)-P(C|A=1)]=P(D=1|A=1,C=0)*[P(C=0|A=0)-P(C=0|A=1)]+P(D=1|A=1,C=1)*[P(C=1|A=0)-P(C=1|A=1)]",
+        "Step 5": "P(D=1|A=1,C=0)=0.5762\tP(C=0|A=0)=0.6245\tP(C=0|A=1)=0.6051\tP(D=1|A=1,C=1)=0.8104\tP(C=1|A=0)=0.3755\tP(C=1|A=1)=0.3949",
+        "Step 6": "NIE=0.5762*(0.6245-0.6051)+0.8104*(0.3755-0.3949)=-0.0046",
+        "Step 7": "NIE=-0.0046<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.004551090791725386
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.9130。在运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6051。在运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6245。在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.7700。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.9130; P(C=0|A=1)=0.6051; P(C=0|A=0)=0.6245; P(D=0|C=1,A=0)=0.7700; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为强烈下的取值，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=0|A=0,C)*[P(C|A=1)-P(C|A=0)]=P(D=0|A=0,C=0)*[P(C=0|A=1)-P(C=0|A=0)]+P(D=0|A=0,C=1)*[P(C=1|A=1)-P(C=1|A=0)]",
+        "Step 5": "P(D=0|A=0,C=0)=0.9130\tP(C=0|A=1)=0.6051\tP(C=0|A=0)=0.6245\tP(D=0|A=0,C=1)=0.7700\tP(C=1|A=1)=0.3949\tP(C=1|A=0)=0.3755",
+        "Step 6": "NIE=0.9130*(0.6051-0.6245)+0.7700*(0.3949-0.3755)=-0.0028",
+        "Step 7": "NIE=-0.0028<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.0027795003850576237
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.0870。在运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6051。在运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6245。在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.2300。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.0870; P(C=0|A=1)=0.6051; P(C=0|A=0)=0.6245; P(D=1|C=1,A=0)=0.2300; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为强烈下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=1|A=0,C)*[P(C|A=1)-P(C|A=0)]=P(D=1|A=0,C=0)*[P(C=0|A=1)-P(C=0|A=0)]+P(D=1|A=0,C=1)*[P(C=1|A=1)-P(C=1|A=0)]",
+        "Step 5": "P(D=1|A=0,C=0)=0.0870\tP(C=0|A=1)=0.6051\tP(C=0|A=0)=0.6245\tP(D=1|A=0,C=1)=0.2300\tP(C=1|A=1)=0.3949\tP(C=1|A=0)=0.3755",
+        "Step 6": "NIE=0.0870*(0.6051-0.6245)+0.2300*(0.3949-0.3755)=0.0028",
+        "Step 7": "NIE=0.0028>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.002779500385057792
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如饮食习惯保持不变，而所有中间变量被改变为当它们在饮食习惯变化为不健康下的取值，那么体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如饮食习惯保持不变，而所有中间变量被改变为当它们在饮食习惯变化为不健康下的取值，那么体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如饮食习惯保持不变，而所有中间变量被改变为当它们在饮食习惯变化为健康下的取值，那么体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如饮食习惯保持不变，而所有中间变量被改变为当它们在饮食习惯变化为健康下的取值，那么体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "运动量为少(A=0)的概率为0.1649。在体重为轻(C=0), 饮食习惯为健康(B=1)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.9124。在饮食习惯为不健康(B=0)且运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.4713。在饮食习惯为健康(B=1)且运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6485。在体重为重(C=1), 饮食习惯为健康(B=1)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.7690。在体重为轻(C=0), 饮食习惯为健康(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.4241。在饮食习惯为不健康(B=0)且运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.4489。在饮食习惯为健康(B=1)且运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6294。在体重为重(C=1), 饮食习惯为健康(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.1904。",
+        "data_info_math": "P(A=0)=0.1649; P(D=0|C=0,B=1,A=0)=0.9124; P(C=0|B=0,A=0)=0.4713; P(C=0|B=1,A=0)=0.6485; P(D=0|C=1,B=1,A=0)=0.7690; P(D=0|C=0,B=1,A=1)=0.4241; P(C=0|B=0,A=1)=0.4489; P(C=0|B=1,A=1)=0.6294; P(D=0|C=1,B=1,A=1)=0.1904; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如饮食习惯保持不变，而所有中间变量被改变为当它们在饮食习惯变化为不健康下的取值，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=0|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=0|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,C=0,A=0)=0.9124\tP(C=0|B=0,A=0)=0.4713\tP(C=0|B=1,A=0)=0.6485\tP(A=0)=0.1649\tP(D=0|B=1,C=1,A=0)=0.7690\tP(C=1|B=0,A=0)=0.5287\tP(C=1|B=1,A=0)=0.3515\tP(A=0)=0.1649\tP(D=0|B=1,C=0,A=1)=0.4241\tP(C=0|B=0,A=1)=0.4489\tP(C=0|B=1,A=1)=0.6294\tP(A=1)=0.8351\tP(D=0|B=1,C=1,A=1)=0.1904\tP(C=1|B=0,A=1)=0.5511\tP(C=1|B=1,A=1)=0.3706\tP(A=1)=0.8351",
+        "Step 6": "NIE=0.9124*[0.4713-0.6485]*0.1649+0.7690*[0.5287-0.3515]*0.1649+0.4241*[0.4489-0.6294]*0.8351+0.1904*[0.5511-0.3706]*0.8351=-0.0394",
+        "Step 7": "NIE=-0.0394<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.03941863517284387
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "运动量为少(A=0)的概率为0.1649。在体重为轻(C=0), 饮食习惯为健康(B=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.0876。在饮食习惯为不健康(B=0)且运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.4713。在饮食习惯为健康(B=1)且运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6485。在体重为重(C=1), 饮食习惯为健康(B=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.2310。在体重为轻(C=0), 饮食习惯为健康(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.5759。在饮食习惯为不健康(B=0)且运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.4489。在饮食习惯为健康(B=1)且运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6294。在体重为重(C=1), 饮食习惯为健康(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.8096。",
+        "data_info_math": "P(A=0)=0.1649; P(D=1|C=0,B=1,A=0)=0.0876; P(C=0|B=0,A=0)=0.4713; P(C=0|B=1,A=0)=0.6485; P(D=1|C=1,B=1,A=0)=0.2310; P(D=1|C=0,B=1,A=1)=0.5759; P(C=0|B=0,A=1)=0.4489; P(C=0|B=1,A=1)=0.6294; P(D=1|C=1,B=1,A=1)=0.8096; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如饮食习惯保持不变，而所有中间变量被改变为当它们在饮食习惯变化为不健康下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=1|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=1|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,C=0,A=0)=0.0876\tP(C=0|B=0,A=0)=0.4713\tP(C=0|B=1,A=0)=0.6485\tP(A=0)=0.1649\tP(D=1|B=1,C=1,A=0)=0.2310\tP(C=1|B=0,A=0)=0.5287\tP(C=1|B=1,A=0)=0.3515\tP(A=0)=0.1649\tP(D=1|B=1,C=0,A=1)=0.5759\tP(C=0|B=0,A=1)=0.4489\tP(C=0|B=1,A=1)=0.6294\tP(A=1)=0.8351\tP(D=1|B=1,C=1,A=1)=0.8096\tP(C=1|B=0,A=1)=0.5511\tP(C=1|B=1,A=1)=0.3706\tP(A=1)=0.8351",
+        "Step 6": "NIE=0.0876*[0.4713-0.6485]*0.1649+0.2310*[0.5287-0.3515]*0.1649+0.5759*[0.4489-0.6294]*0.8351+0.8096*[0.5511-0.3706]*0.8351=0.0394",
+        "Step 7": "NIE=0.0394>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.03941863517284379
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "运动量为少(A=0)的概率为0.1649。在体重为轻(C=0), 饮食习惯为不健康(B=0)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.9181。在饮食习惯为健康(B=1)且运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6485。在饮食习惯为不健康(B=0)且运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.4713。在体重为重(C=1), 饮食习惯为不健康(B=0)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.7742。在体重为轻(C=0), 饮食习惯为不健康(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.4206。在饮食习惯为健康(B=1)且运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6294。在饮食习惯为不健康(B=0)且运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.4489。在体重为重(C=1), 饮食习惯为不健康(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.1858。",
+        "data_info_math": "P(A=0)=0.1649; P(D=0|C=0,B=0,A=0)=0.9181; P(C=0|B=1,A=0)=0.6485; P(C=0|B=0,A=0)=0.4713; P(D=0|C=1,B=0,A=0)=0.7742; P(D=0|C=0,B=0,A=1)=0.4206; P(C=0|B=1,A=1)=0.6294; P(C=0|B=0,A=1)=0.4489; P(D=0|C=1,B=0,A=1)=0.1858; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如饮食习惯保持不变，而所有中间变量被改变为当它们在饮食习惯变化为健康下的取值，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=0|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=0|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,C=0,A=0)=0.9181\tP(C=0|B=1,A=0)=0.6485\tP(C=0|B=0,A=0)=0.4713\tP(A=0)=0.1649\tP(D=0|B=0,C=1,A=0)=0.7742\tP(C=1|B=1,A=0)=0.3515\tP(C=1|B=0,A=0)=0.5287\tP(A=0)=0.1649\tP(D=0|B=0,C=0,A=1)=0.4206\tP(C=0|B=1,A=1)=0.6294\tP(C=0|B=0,A=1)=0.4489\tP(A=1)=0.8351\tP(D=0|B=0,C=1,A=1)=0.1858\tP(C=1|B=1,A=1)=0.3706\tP(C=1|B=0,A=1)=0.5511\tP(A=1)=0.8351",
+        "Step 6": "NIE=0.9181*[0.6485-0.4713]*0.1649+0.7742*[0.3515-0.5287]*0.1649+0.4206*[0.6294-0.4489]*0.8351+0.1858*[0.3706-0.5511]*0.8351=0.0396",
+        "Step 7": "NIE=0.0396>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.039601438058411945
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "运动量为少(A=0)的概率为0.1649。在体重为轻(C=0), 饮食习惯为不健康(B=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.0819。在饮食习惯为健康(B=1)且运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6485。在饮食习惯为不健康(B=0)且运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.4713。在体重为重(C=1), 饮食习惯为不健康(B=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.2258。在体重为轻(C=0), 饮食习惯为不健康(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.5794。在饮食习惯为健康(B=1)且运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6294。在饮食习惯为不健康(B=0)且运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.4489。在体重为重(C=1), 饮食习惯为不健康(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.8142。",
+        "data_info_math": "P(A=0)=0.1649; P(D=1|C=0,B=0,A=0)=0.0819; P(C=0|B=1,A=0)=0.6485; P(C=0|B=0,A=0)=0.4713; P(D=1|C=1,B=0,A=0)=0.2258; P(D=1|C=0,B=0,A=1)=0.5794; P(C=0|B=1,A=1)=0.6294; P(C=0|B=0,A=1)=0.4489; P(D=1|C=1,B=0,A=1)=0.8142; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如饮食习惯保持不变，而所有中间变量被改变为当它们在饮食习惯变化为健康下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=1|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=1|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,C=0,A=0)=0.0819\tP(C=0|B=1,A=0)=0.6485\tP(C=0|B=0,A=0)=0.4713\tP(A=0)=0.1649\tP(D=1|B=0,C=1,A=0)=0.2258\tP(C=1|B=1,A=0)=0.3515\tP(C=1|B=0,A=0)=0.5287\tP(A=0)=0.1649\tP(D=1|B=0,C=0,A=1)=0.5794\tP(C=0|B=1,A=1)=0.6294\tP(C=0|B=0,A=1)=0.4489\tP(A=1)=0.8351\tP(D=1|B=0,C=1,A=1)=0.8142\tP(C=1|B=1,A=1)=0.3706\tP(C=1|B=0,A=1)=0.5511\tP(A=1)=0.8351",
+        "Step 6": "NIE=0.0819*[0.6485-0.4713]*0.1649+0.2258*[0.3515-0.5287]*0.1649+0.5794*[0.6294-0.4489]*0.8351+0.8142*[0.3706-0.5511]*0.8351=-0.0396",
+        "Step 7": "NIE=-0.0396<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.03960143805841189
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体重保持不变，而所有中间变量被改变为当它们在体重变化为轻下的取值，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体重保持不变，而所有中间变量被改变为当它们在体重变化为轻下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体重保持不变，而所有中间变量被改变为当它们在体重变化为重下的取值，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如体重保持不变，而所有中间变量被改变为当它们在体重变化为重下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于饮食习惯的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为少，假如运动量为强烈，那么饮食习惯更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于饮食习惯的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为少，假如运动量为强烈，那么饮食习惯更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于饮食习惯的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为强烈，假如运动量为少，那么饮食习惯更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于饮食习惯的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为强烈，假如运动量为少，那么饮食习惯更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6245。在运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6051。",
+        "data_info_math": "P(C=0|A=0)=0.6245; P(C=0|A=1)=0.6051; "
+      },
+      "Instruction": "考虑运动量作用于体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为少，假如运动量为强烈，那么体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.6245\tP(C=0|A=1)=0.6051",
+        "Step 6": "ETT=0.6245-0.6051=0.0194",
+        "Step 7": "ETT=0.0194>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.019433752617652456
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 体重为重(C=1)的概率为0.3755。在运动量为强烈(A=1)的条件下, 体重为重(C=1)的概率为0.3949。",
+        "data_info_math": "P(C=1|A=0)=0.3755; P(C=1|A=1)=0.3949; "
+      },
+      "Instruction": "考虑运动量作用于体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为少，假如运动量为强烈，那么体重更有可能为重吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.3755\tP(C=1|A=1)=0.3949",
+        "Step 6": "ETT=0.3755-0.3949=-0.0194",
+        "Step 7": "ETT=-0.0194<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.019433752617652622
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6051。在运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6245。",
+        "data_info_math": "P(C=0|A=1)=0.6051; P(C=0|A=0)=0.6245; "
+      },
+      "Instruction": "考虑运动量作用于体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为强烈，假如运动量为少，那么体重更有可能为轻吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.6051\tP(C=0|A=0)=0.6245",
+        "Step 6": "ETT=0.6051-0.6245=-0.0194",
+        "Step 7": "ETT=-0.0194<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.019433752617652456
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 体重为重(C=1)的概率为0.3949。在运动量为少(A=0)的条件下, 体重为重(C=1)的概率为0.3755。",
+        "data_info_math": "P(C=1|A=1)=0.3949; P(C=1|A=0)=0.3755; "
+      },
+      "Instruction": "考虑运动量作用于体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为强烈，假如运动量为少，那么体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.3949\tP(C=1|A=0)=0.3755",
+        "Step 6": "ETT=0.3949-0.3755=0.0194",
+        "Step 7": "ETT=0.0194>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.019433752617652622
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.8593。在运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.3313。",
+        "data_info_math": "P(D=0|A=0)=0.8593; P(D=0|A=1)=0.3313; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为少，假如运动量为强烈，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.8593\tP(D=0|A=1)=0.3313",
+        "Step 6": "ETT=0.8593-0.3313=0.5280",
+        "Step 7": "ETT=0.5280>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.528000737564856
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.1407。在运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.6687。",
+        "data_info_math": "P(D=1|A=0)=0.1407; P(D=1|A=1)=0.6687; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为少，假如运动量为强烈，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.1407\tP(D=1|A=1)=0.6687",
+        "Step 6": "ETT=0.1407-0.6687=-0.5280",
+        "Step 7": "ETT=-0.5280<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.528000737564856
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.3313。在运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.8593。",
+        "data_info_math": "P(D=0|A=1)=0.3313; P(D=0|A=0)=0.8593; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为强烈，假如运动量为少，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.3313\tP(D=0|A=0)=0.8593",
+        "Step 6": "ETT=0.3313-0.8593=-0.5280",
+        "Step 7": "ETT=-0.5280<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.528000737564856
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.6687。在运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.1407。",
+        "data_info_math": "P(D=1|A=1)=0.6687; P(D=1|A=0)=0.1407; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为强烈，假如运动量为少，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.6687\tP(D=1|A=0)=0.1407",
+        "Step 6": "ETT=0.6687-0.1407=0.5280",
+        "Step 7": "ETT=0.5280>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.528000737564856
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食习惯为不健康，假如饮食习惯为健康，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食习惯为不健康，假如饮食习惯为健康，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食习惯为健康，假如饮食习惯为不健康，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食习惯为健康，假如饮食习惯为不健康，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为不健康(B=0)的条件下, 体重为轻(C=0)的概率为0.4526。在饮食习惯为健康(B=1)的条件下, 体重为轻(C=0)的概率为0.6326。",
+        "data_info_math": "P(C=0|B=0)=0.4526; P(C=0|B=1)=0.6326; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食习惯为不健康，假如饮食习惯为健康，那么体重更有可能为轻吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.4526\tP(C=0|B=1)=0.6326",
+        "Step 6": "ETT=0.4526-0.6326=-0.1800",
+        "Step 7": "ETT=-0.1800<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.17996647678483524
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为不健康(B=0)的条件下, 体重为重(C=1)的概率为0.5474。在饮食习惯为健康(B=1)的条件下, 体重为重(C=1)的概率为0.3674。",
+        "data_info_math": "P(C=1|B=0)=0.5474; P(C=1|B=1)=0.3674; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食习惯为不健康，假如饮食习惯为健康，那么体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.5474\tP(C=1|B=1)=0.3674",
+        "Step 6": "ETT=0.5474-0.3674=0.1800",
+        "Step 7": "ETT=0.1800>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.17996647678483507
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为健康(B=1)的条件下, 体重为轻(C=0)的概率为0.6326。在饮食习惯为不健康(B=0)的条件下, 体重为轻(C=0)的概率为0.4526。",
+        "data_info_math": "P(C=0|B=1)=0.6326; P(C=0|B=0)=0.4526; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食习惯为健康，假如饮食习惯为不健康，那么体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.6326\tP(C=0|B=0)=0.4526",
+        "Step 6": "ETT=0.6326-0.4526=0.1800",
+        "Step 7": "ETT=0.1800>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.17996647678483524
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为健康(B=1)的条件下, 体重为重(C=1)的概率为0.3674。在饮食习惯为不健康(B=0)的条件下, 体重为重(C=1)的概率为0.5474。",
+        "data_info_math": "P(C=1|B=1)=0.3674; P(C=1|B=0)=0.5474; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食习惯为健康，假如饮食习惯为不健康，那么体重更有可能为重吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.3674\tP(C=1|B=0)=0.5474",
+        "Step 6": "ETT=0.3674-0.5474=-0.1800",
+        "Step 7": "ETT=-0.1800<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.17996647678483507
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为不健康(B=0)的条件下, 整体健康状况为不好(D=0)的概率为0.3823。在饮食习惯为健康(B=1)的条件下, 整体健康状况为不好(D=0)的概率为0.4239。",
+        "data_info_math": "P(D=0|B=0)=0.3823; P(D=0|B=1)=0.4239; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食习惯为不健康，假如饮食习惯为健康，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.3823\tP(D=0|B=1)=0.4239",
+        "Step 6": "ETT=0.3823-0.4239=-0.0417",
+        "Step 7": "ETT=-0.0417<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.04168586055920759
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为不健康(B=0)的条件下, 整体健康状况为好(D=1)的概率为0.6177。在饮食习惯为健康(B=1)的条件下, 整体健康状况为好(D=1)的概率为0.5761。",
+        "data_info_math": "P(D=1|B=0)=0.6177; P(D=1|B=1)=0.5761; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食习惯为不健康，假如饮食习惯为健康，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.6177\tP(D=1|B=1)=0.5761",
+        "Step 6": "ETT=0.6177-0.5761=0.0417",
+        "Step 7": "ETT=0.0417>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.04168586055920753
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为健康(B=1)的条件下, 整体健康状况为不好(D=0)的概率为0.4239。在饮食习惯为不健康(B=0)的条件下, 整体健康状况为不好(D=0)的概率为0.3823。",
+        "data_info_math": "P(D=0|B=1)=0.4239; P(D=0|B=0)=0.3823; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食习惯为健康，假如饮食习惯为不健康，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.4239\tP(D=0|B=0)=0.3823",
+        "Step 6": "ETT=0.4239-0.3823=0.0417",
+        "Step 7": "ETT=0.0417>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.04168586055920759
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为健康(B=1)的条件下, 整体健康状况为好(D=1)的概率为0.5761。在饮食习惯为不健康(B=0)的条件下, 整体健康状况为好(D=1)的概率为0.6177。",
+        "data_info_math": "P(D=1|B=1)=0.5761; P(D=1|B=0)=0.6177; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食习惯为健康，假如饮食习惯为不健康，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.5761\tP(D=1|B=0)=0.6177",
+        "Step 6": "ETT=0.5761-0.6177=-0.0417",
+        "Step 7": "ETT=-0.0417<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.04168586055920753
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体重为轻，假如体重为重，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体重为轻，假如体重为重，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体重为重，假如体重为轻，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体重为重，假如体重为轻，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于饮食习惯的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体重为轻，假如体重为重，那么饮食习惯更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于饮食习惯的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体重为轻，假如体重为重，那么饮食习惯更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于饮食习惯的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体重为重，假如体重为轻，那么饮食习惯更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑体重作用于饮食习惯的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体重为重，假如体重为轻，那么饮食习惯更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)的条件下, 整体健康状况为不好(D=0)的概率为0.5066。在运动量为少(A=0)且体重为重(C=1)的条件下, 整体健康状况为不好(D=0)的概率为0.7700。在体重为轻(C=0)的条件下, 运动量为少(A=0)的概率为0.1693。在运动量为强烈(A=1)且体重为重(C=1)的条件下, 整体健康状况为不好(D=0)的概率为0.1896。在体重为轻(C=0)的条件下, 运动量为强烈(A=1)的概率为0.8307。",
+        "data_info_math": "P(D=0|C=0)=0.5066; P(D=0|A=0,C=1)=0.7700; P(A=0|C=0)=0.1693; P(D=0|A=1,C=1)=0.1896; P(A=1|C=0)=0.8307; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体重为轻，假如体重为重，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=0|C=0)-sum_{A} P(D=0|C=1,A)*P(A|C=0)=P(D=0|C=0)-[P(D=0|C=1,A=0)*P(A=0|C=0)+P(D=0|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=0|C=0)=0.5066\tP(D=0|C=1,A=0)=0.7700\tP(A=0|C=0)=0.1693\tP(D=0|C=1,A=1)=0.1896\tP(A=1|C=0)=0.8307",
+        "Step 6": "ETT=0.5066-[0.7700*0.1693+0.1896*0.8307]=0.2188",
+        "Step 7": "ETT=0.2188>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.21875517209365875
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)的条件下, 整体健康状况为好(D=1)的概率为0.4934。在运动量为少(A=0)且体重为重(C=1)的条件下, 整体健康状况为好(D=1)的概率为0.2300。在体重为轻(C=0)的条件下, 运动量为少(A=0)的概率为0.1693。在运动量为强烈(A=1)且体重为重(C=1)的条件下, 整体健康状况为好(D=1)的概率为0.8104。在体重为轻(C=0)的条件下, 运动量为强烈(A=1)的概率为0.8307。",
+        "data_info_math": "P(D=1|C=0)=0.4934; P(D=1|A=0,C=1)=0.2300; P(A=0|C=0)=0.1693; P(D=1|A=1,C=1)=0.8104; P(A=1|C=0)=0.8307; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体重为轻，假如体重为重，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=1|C=0)-sum_{A} P(D=1|C=1,A)*P(A|C=0)=P(D=1|C=0)-[P(D=1|C=1,A=0)*P(A=0|C=0)+P(D=1|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=1|C=0)=0.4934\tP(D=1|C=1,A=0)=0.2300\tP(A=0|C=0)=0.1693\tP(D=1|C=1,A=1)=0.8104\tP(A=1|C=0)=0.8307",
+        "Step 6": "ETT=0.4934-[0.2300*0.1693+0.8104*0.8307]=-0.2188",
+        "Step 7": "ETT=-0.2188<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.2187551720936589
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)的条件下, 整体健康状况为不好(D=0)的概率为0.2813。在运动量为少(A=0)且体重为轻(C=0)的条件下, 整体健康状况为不好(D=0)的概率为0.9130。在体重为重(C=1)的条件下, 运动量为少(A=0)的概率为0.1580。在运动量为强烈(A=1)且体重为轻(C=0)的条件下, 整体健康状况为不好(D=0)的概率为0.4238。在体重为重(C=1)的条件下, 运动量为强烈(A=1)的概率为0.8420。",
+        "data_info_math": "P(D=0|C=1)=0.2813; P(D=0|A=0,C=0)=0.9130; P(A=0|C=1)=0.1580; P(D=0|A=1,C=0)=0.4238; P(A=1|C=1)=0.8420; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体重为重，假如体重为轻，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=0|C=1)-sum_{A} P(D=0|C=0,A)*P(A|C=1)=P(D=0|C=1)-[P(D=0|C=0,A=0)*P(A=0|C=1)+P(D=0|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=0|C=1)=0.2813\tP(D=0|C=0,A=0)=0.9130\tP(A=0|C=1)=0.1580\tP(D=0|C=0,A=1)=0.4238\tP(A=1|C=1)=0.8420",
+        "Step 6": "ETT=0.2813-[0.9130*0.1580+0.4238*0.8420]=-0.2198",
+        "Step 7": "ETT=-0.2198<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.21977885750132437
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)的条件下, 整体健康状况为好(D=1)的概率为0.7187。在运动量为少(A=0)且体重为轻(C=0)的条件下, 整体健康状况为好(D=1)的概率为0.0870。在体重为重(C=1)的条件下, 运动量为少(A=0)的概率为0.1580。在运动量为强烈(A=1)且体重为轻(C=0)的条件下, 整体健康状况为好(D=1)的概率为0.5762。在体重为重(C=1)的条件下, 运动量为强烈(A=1)的概率为0.8420。",
+        "data_info_math": "P(D=1|C=1)=0.7187; P(D=1|A=0,C=0)=0.0870; P(A=0|C=1)=0.1580; P(D=1|A=1,C=0)=0.5762; P(A=1|C=1)=0.8420; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些体重为重，假如体重为轻，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=1|C=1)-sum_{A} P(D=1|C=0,A)*P(A|C=1)=P(D=1|C=1)-[P(D=1|C=0,A=0)*P(A=0|C=1)+P(D=1|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=1|C=1)=0.7187\tP(D=1|C=0,A=0)=0.0870\tP(A=0|C=1)=0.1580\tP(D=1|C=0,A=1)=0.5762\tP(A=1|C=1)=0.8420",
+        "Step 6": "ETT=0.7187-[0.0870*0.1580+0.5762*0.8420]=0.2198",
+        "Step 7": "ETT=0.2198>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.21977885750132448
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为不好，假如整体健康状况为好，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为不好，假如整体健康状况为好，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为不好，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为不好，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食习惯的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为不好，假如整体健康状况为好，那么饮食习惯更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食习惯的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为不好，假如整体健康状况为好，那么饮食习惯更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食习惯的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为不好，那么饮食习惯更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食习惯的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为不好，那么饮食习惯更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为不好，假如整体健康状况为好，那么体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 133,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为不好，假如整体健康状况为好，那么体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 134,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为不好，那么体重更有可能为轻吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 135,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于体重的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为不好，那么体重更有可能为重吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 136,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)且体重为轻(C=0)的条件下, 整体健康状况为不好(D=0)的概率为0.9130。在运动量为强烈(A=1)且体重为轻(C=0)的条件下, 整体健康状况为不好(D=0)的概率为0.4238。",
+        "data_info_math": "P(D=0|A=0,C=0)=0.9130; P(D=0|A=1,C=0)=0.4238; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在体重为轻的条件下，假如运动量为少，那么整体健康状况更有可能为不好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=0,C=0))-P(D=0|do(A=1,C=0))=P(D=0|A=0,C=0)-P(D=0|A=1,C=0)",
+        "Step 5": "P(D=0|A=0,C=0)=0.9130\tP(D=0|A=1,C=0)=0.4238",
+        "Step 6": "CDE=0.9130-0.4238=0.4892",
+        "Step 7": "CDE=0.4892>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.48922160894298466
+    },
+    {
+      "id": 137,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)且体重为重(C=1)的条件下, 整体健康状况为好(D=1)的概率为0.2300。在运动量为强烈(A=1)且体重为重(C=1)的条件下, 整体健康状况为好(D=1)的概率为0.8104。",
+        "data_info_math": "P(D=1|A=0,C=1)=0.2300; P(D=1|A=1,C=1)=0.8104; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在体重为重的条件下，假如运动量为少，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=0,C=1))-P(D=1|do(A=1,C=1))=P(D=1|A=0,C=1)-P(D=1|A=1,C=1)",
+        "Step 5": "P(D=1|A=0,C=1)=0.2300\tP(D=1|A=1,C=1)=0.8104",
+        "Step 6": "CDE=0.2300-0.8104=-0.5804",
+        "Step 7": "CDE=-0.5804<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.5803820987116097
+    },
+    {
+      "id": 138,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)且体重为轻(C=0)的条件下, 整体健康状况为不好(D=0)的概率为0.4238。在运动量为少(A=0)且体重为轻(C=0)的条件下, 整体健康状况为不好(D=0)的概率为0.9130。",
+        "data_info_math": "P(D=0|A=1,C=0)=0.4238; P(D=0|A=0,C=0)=0.9130; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在体重为轻的条件下，假如运动量为强烈，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=1,C=0))-P(D=0|do(A=0,C=0))=P(D=0|A=1,C=0)-P(D=0|A=0,C=0)",
+        "Step 5": "P(D=0|A=1,C=0)=0.4238\tP(D=0|A=0,C=0)=0.9130",
+        "Step 6": "CDE=0.4238-0.9130=-0.4892",
+        "Step 7": "CDE=-0.4892<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.48922160894298466
+    },
+    {
+      "id": 139,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)且体重为轻(C=0)的条件下, 整体健康状况为好(D=1)的概率为0.5762。在运动量为少(A=0)且体重为轻(C=0)的条件下, 整体健康状况为好(D=1)的概率为0.0870。",
+        "data_info_math": "P(D=1|A=1,C=0)=0.5762; P(D=1|A=0,C=0)=0.0870; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在体重为轻的条件下，假如运动量为强烈，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=1,C=0))-P(D=1|do(A=0,C=0))=P(D=1|A=1,C=0)-P(D=1|A=0,C=0)",
+        "Step 5": "P(D=1|A=1,C=0)=0.5762\tP(D=1|A=0,C=0)=0.0870",
+        "Step 6": "CDE=0.5762-0.0870=0.4892",
+        "Step 7": "CDE=0.4892>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.4892216089429846
+    },
+    {
+      "id": 140,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在体重为重的条件下，假如饮食习惯为不健康，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 141,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在体重为轻的条件下，假如饮食习惯为不健康，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 142,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在体重为轻的条件下，假如饮食习惯为健康，那么整体健康状况更有可能为不好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 143,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在体重为重的条件下，假如饮食习惯为健康，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 144,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象运动量(A)和观察节点体重(C)的后门调整集合。",
+      "Question": "方法1: 根据饮食习惯的情况，我们逐个研究运动量和体重的关联。\n方法2：我们直接研究一般情况下运动量和体重的关联。\n为了理解运动量如何影响体重，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 145,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象运动量(A)和观察节点体重(C)的后门调整集合。",
+      "Question": "方法1: 根据饮食习惯的情况，我们逐个研究运动量和体重的关联。\n方法2：我们直接研究一般情况下运动量和体重的关联。\n为了理解运动量如何影响体重，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 146,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象运动量(A)和观察节点整体健康状况(D)的后门调整集合。",
+      "Question": "方法1: 根据体重的情况，我们逐个研究运动量和整体健康状况的关联。\n方法2：我们直接研究一般情况下运动量和整体健康状况的关联。\n为了理解运动量如何影响整体健康状况，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 147,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象运动量(A)和观察节点整体健康状况(D)的后门调整集合。",
+      "Question": "方法1: 根据饮食习惯的情况，我们逐个研究运动量和整体健康状况的关联。\n方法2：我们直接研究一般情况下运动量和整体健康状况的关联。\n为了理解运动量如何影响整体健康状况，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 148,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象饮食习惯(B)和观察节点体重(C)的后门调整集合。",
+      "Question": "方法1: 根据运动量的情况，我们逐个研究饮食习惯和体重的关联。\n方法2：我们直接研究一般情况下饮食习惯和体重的关联。\n为了理解饮食习惯如何影响体重，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 149,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象饮食习惯(B)和观察节点体重(C)的后门调整集合。",
+      "Question": "方法1: 根据整体健康状况的情况，我们逐个研究饮食习惯和体重的关联。\n方法2：我们直接研究一般情况下饮食习惯和体重的关联。\n为了理解饮食习惯如何影响体重，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 150,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象饮食习惯(B)和观察节点整体健康状况(D)的后门调整集合。",
+      "Question": "方法1: 根据体重的情况，我们逐个研究饮食习惯和整体健康状况的关联。\n方法2：我们直接研究一般情况下饮食习惯和整体健康状况的关联。\n为了理解饮食习惯如何影响整体健康状况，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 151,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象饮食习惯(B)和观察节点整体健康状况(D)的后门调整集合。",
+      "Question": "方法1: 根据体重的情况，我们逐个研究饮食习惯和整体健康状况的关联。\n方法2：我们直接研究一般情况下饮食习惯和整体健康状况的关联。\n为了理解饮食习惯如何影响整体健康状况，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 152,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象体重(C)和观察节点整体健康状况(D)的后门调整集合。",
+      "Question": "方法1: 根据运动量的情况，我们逐个研究体重和整体健康状况的关联。\n方法2：我们直接研究一般情况下体重和整体健康状况的关联。\n为了理解体重如何影响整体健康状况，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 153,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象体重(C)和观察节点整体健康状况(D)的后门调整集合。",
+      "Question": "方法1: 根据运动量的情况，我们逐个研究体重和整体健康状况的关联。\n方法2：我们直接研究一般情况下体重和整体健康状况的关联。\n为了理解体重如何影响整体健康状况，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 154,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为不好(D=0)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.8816。在整体健康状况为不好(D=0)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8676。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.8816; P(B=1|D=0,A=0)=0.8676; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为不好的条件下，运动量会影响饮食习惯吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=0)-P(B=1|do(A=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 155,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为不好(D=0)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.8816。在整体健康状况为不好(D=0)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8676。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.8816; P(B=1|D=0,A=0)=0.8676; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为不好的条件下，运动量不会影响饮食习惯吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=0)-P(B=1|do(A=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 156,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为不好(D=0)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.8816。在整体健康状况为不好(D=0)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8676。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.8816; P(B=1|D=0,A=0)=0.8676; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为不好的条件下，运动量是和饮食习惯相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=0)-P(B=1|A=0,D=0)=0.8816-0.8676=0.0140!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 157,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为不好(D=0)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.8816。在整体健康状况为不好(D=0)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8676。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.8816; P(B=1|D=0,A=0)=0.8676; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为不好的条件下，运动量是和饮食习惯独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=0)-P(B=1|A=0,D=0)=0.8816-0.8676=0.0140!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 158,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.8572。在整体健康状况为好(D=1)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8483。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.8572; P(B=1|D=1,A=0)=0.8483; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，运动量会影响饮食习惯吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=1)-P(B=1|do(A=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 159,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.8572。在整体健康状况为好(D=1)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8483。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.8572; P(B=1|D=1,A=0)=0.8483; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，运动量不会影响饮食习惯吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=1)-P(B=1|do(A=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 160,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.8572。在整体健康状况为好(D=1)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8483。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.8572; P(B=1|D=1,A=0)=0.8483; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，运动量是和饮食习惯相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=1)-P(B=1|A=0,D=1)=0.8572-0.8483=0.0089!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 161,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.8572。在整体健康状况为好(D=1)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8483。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.8572; P(B=1|D=1,A=0)=0.8483; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，运动量是和饮食习惯独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=1)-P(B=1|A=0,D=1)=0.8572-0.8483=0.0089!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 162,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.9001。在体重为轻(C=0)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8980。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.9001; P(B=1|C=0,A=0)=0.8980; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为轻的条件下，运动量会影响饮食习惯吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=0)-P(B=1|do(A=0),C=0)=P(B=1|C=0)-P(B=1|C=0)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 163,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.9001。在体重为轻(C=0)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8980。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.9001; P(B=1|C=0,A=0)=0.8980; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为轻的条件下，运动量不会影响饮食习惯吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=0)-P(B=1|do(A=0),C=0)=P(B=1|C=0)-P(B=1|C=0)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 164,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.9001。在体重为轻(C=0)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8980。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.9001; P(B=1|C=0,A=0)=0.8980; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为轻的条件下，运动量是和饮食习惯相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=0)-P(B=1|A=0,C=0)=0.9001-0.8980=0.0020!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 165,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.9001。在体重为轻(C=0)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8980。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.9001; P(B=1|C=0,A=0)=0.8980; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为轻的条件下，运动量是和饮食习惯独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=0)-P(B=1|A=0,C=0)=0.9001-0.8980=0.0020!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 166,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.8120。在体重为重(C=1)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8097。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.8120; P(B=1|C=1,A=0)=0.8097; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为重的条件下，运动量会影响饮食习惯吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=1)-P(B=1|do(A=0),C=1)=P(B=1|C=1)-P(B=1|C=1)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 167,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.8120。在体重为重(C=1)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8097。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.8120; P(B=1|C=1,A=0)=0.8097; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为重的条件下，运动量不会影响饮食习惯吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=1)-P(B=1|do(A=0),C=1)=P(B=1|C=1)-P(B=1|C=1)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 168,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.8120。在体重为重(C=1)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8097。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.8120; P(B=1|C=1,A=0)=0.8097; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为重的条件下，运动量是和饮食习惯相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=1)-P(B=1|A=0,C=1)=0.8120-0.8097=0.0023!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 169,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)且运动量为强烈(A=1)的条件下, 饮食习惯为健康(B=1)的概率为0.8120。在体重为重(C=1)且运动量为少(A=0)的条件下, 饮食习惯为健康(B=1)的概率为0.8097。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.8120; P(B=1|C=1,A=0)=0.8097; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为重的条件下，运动量是和饮食习惯独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=1)-P(B=1|A=0,C=1)=0.8120-0.8097=0.0023!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 170,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为不好(D=0)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.6649。在整体健康状况为不好(D=0)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.6359。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.6649; P(A=1|D=0,B=0)=0.6359; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为不好的条件下，饮食习惯会影响运动量吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=0)-P(A=1|do(B=0),D=0)=P(A=1|D=0)-P(A=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 171,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为不好(D=0)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.6649。在整体健康状况为不好(D=0)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.6359。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.6649; P(A=1|D=0,B=0)=0.6359; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为不好的条件下，饮食习惯不会影响运动量吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=0)-P(A=1|do(B=0),D=0)=P(A=1|D=0)-P(A=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 172,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为不好(D=0)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.6649。在整体健康状况为不好(D=0)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.6359。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.6649; P(A=1|D=0,B=0)=0.6359; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为不好的条件下，饮食习惯是和运动量相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=0)-P(A=1|B=0,D=0)=0.6649-0.6359=0.0291!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 173,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为不好(D=0)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.6649。在整体健康状况为不好(D=0)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.6359。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.6649; P(A=1|D=0,B=0)=0.6359; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为不好的条件下，饮食习惯是和运动量独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=0)-P(A=1|B=0,D=0)=0.6649-0.6359=0.0291!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 174,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.9605。在整体健康状况为好(D=1)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.9577。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.9605; P(A=1|D=1,B=0)=0.9577; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，饮食习惯会影响运动量吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=1)-P(A=1|do(B=0),D=1)=P(A=1|D=1)-P(A=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 175,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.9605。在整体健康状况为好(D=1)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.9577。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.9605; P(A=1|D=1,B=0)=0.9577; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，饮食习惯不会影响运动量吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=1)-P(A=1|do(B=0),D=1)=P(A=1|D=1)-P(A=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 176,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.9605。在整体健康状况为好(D=1)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.9577。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.9605; P(A=1|D=1,B=0)=0.9577; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，饮食习惯是和运动量相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=1)-P(A=1|B=0,D=1)=0.9605-0.9577=0.0028!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 177,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.9605。在整体健康状况为好(D=1)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.9577。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.9605; P(A=1|D=1,B=0)=0.9577; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，饮食习惯是和运动量独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=1)-P(A=1|B=0,D=1)=0.9605-0.9577=0.0028!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 178,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.8311。在体重为轻(C=0)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.8279。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.8311; P(A=1|C=0,B=0)=0.8279; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为轻的条件下，饮食习惯会影响运动量吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=0)-P(A=1|do(B=0),C=0)=P(A=1|C=0)-P(A=1|C=0)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 179,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.8311。在体重为轻(C=0)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.8279。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.8311; P(A=1|C=0,B=0)=0.8279; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为轻的条件下，饮食习惯不会影响运动量吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=0)-P(A=1|do(B=0),C=0)=P(A=1|C=0)-P(A=1|C=0)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 180,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.8311。在体重为轻(C=0)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.8279。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.8311; P(A=1|C=0,B=0)=0.8279; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为轻的条件下，饮食习惯是和运动量相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=0)-P(A=1|B=0,C=0)=0.8311-0.8279=0.0032!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 181,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.8311。在体重为轻(C=0)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.8279。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.8311; P(A=1|C=0,B=0)=0.8279; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为轻的条件下，饮食习惯是和运动量独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=0)-P(A=1|B=0,C=0)=0.8311-0.8279=0.0032!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 182,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.8424。在体重为重(C=1)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.8403。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.8424; P(A=1|C=1,B=0)=0.8403; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为重的条件下，饮食习惯会影响运动量吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=1)-P(A=1|do(B=0),C=1)=P(A=1|C=1)-P(A=1|C=1)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 183,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.8424。在体重为重(C=1)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.8403。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.8424; P(A=1|C=1,B=0)=0.8403; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为重的条件下，饮食习惯不会影响运动量吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=1)-P(A=1|do(B=0),C=1)=P(A=1|C=1)-P(A=1|C=1)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 184,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.8424。在体重为重(C=1)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.8403。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.8424; P(A=1|C=1,B=0)=0.8403; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为重的条件下，饮食习惯是和运动量相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=1)-P(A=1|B=0,C=1)=0.8424-0.8403=0.0020!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 185,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)且饮食习惯为健康(B=1)的条件下, 运动量为强烈(A=1)的概率为0.8424。在体重为重(C=1)且饮食习惯为不健康(B=0)的条件下, 运动量为强烈(A=1)的概率为0.8403。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.8424; P(A=1|C=1,B=0)=0.8403; "
+      },
+      "Instruction": "",
+      "Question": "给定体重为重的条件下，饮食习惯是和运动量独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=1)-P(A=1|B=0,C=1)=0.8424-0.8403=0.0020!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 186,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 体重为重(C=1)的概率为0.3755。体重为重(C=1)的概率为0.3917。运动量为强烈(A=1)且体重为重(C=1)的概率为0.3298。",
+        "data_info_math": "P(C=1|A=0)=0.3755; P(C=1)=0.3917; P(A=1,C=1)=0.3298; "
+      },
+      "Instruction": "考虑运动量作用于体重的必要性概率(probability of necessity, PN)。",
+      "Question": "给定运动量为强烈且体重为重, 那么假如运动量为少，此时体重为轻的概率的下界是多少？",
+      "Answer": "0.0492",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.3755",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.3917-0.3755)/0.3298}\n=max{0, 0.0492}\n=0.0492"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.04921135282324568
+    },
+    {
+      "id": 187,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 体重为轻(C=0)的概率为0.6245。运动量为少(A=0)且体重为轻(C=0)的概率为0.1030。运动量为强烈(A=1)且体重为重(C=1)的概率为0.3298。",
+        "data_info_math": "P(C=0|A=0)=0.6245; P(A=0,C=0)=0.1030; P(A=1,C=1)=0.3298; "
+      },
+      "Instruction": "考虑运动量作用于体重的必要性概率(probability of necessity, PN)。",
+      "Question": "给定运动量为强烈且体重为重, 那么假如运动量为少，此时体重为轻的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.6245",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.6245-0.1030)/0.3298}\n=min{1, 1.5815}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 188,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.1407。整体健康状况为好(D=1)的概率为0.5817。运动量为强烈(A=1)且整体健康状况为好(D=1)的概率为0.5585。",
+        "data_info_math": "P(D=1|A=0)=0.1407; P(D=1)=0.5817; P(A=1,D=1)=0.5585; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定运动量为强烈且整体健康状况为好, 那么假如运动量为少，此时整体健康状况为不好的概率的下界是多少？",
+      "Answer": "0.7896",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.1407",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.5817-0.1407)/0.5585}\n=max{0, 0.7896}\n=0.7896"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.7895619108471456
+    },
+    {
+      "id": 189,
+      "question_id": 160,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.8593。运动量为少(A=0)且整体健康状况为不好(D=0)的概率为0.1417。运动量为强烈(A=1)且整体健康状况为好(D=1)的概率为0.5585。",
+        "data_info_math": "P(D=0|A=0)=0.8593; P(A=0,D=0)=0.1417; P(A=1,D=1)=0.5585; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定运动量为强烈且整体健康状况为好, 那么假如运动量为少，此时整体健康状况为不好的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.8593",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.8593-0.1417)/0.5585}\n=min{1, 1.2849}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 190,
+      "question_id": 161,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为不健康(B=0)的条件下, 体重为重(C=1)的概率为0.5474。体重为重(C=1)的概率为0.3917。饮食习惯为健康(B=1)且体重为重(C=1)的概率为0.3179。",
+        "data_info_math": "P(C=1|B=0)=0.5474; P(C=1)=0.3917; P(B=1,C=1)=0.3179; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的必要性概率(probability of necessity, PN)。",
+      "Question": "给定饮食习惯为健康且体重为重, 那么假如饮食习惯为不健康，此时体重为轻的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=P(C=1|B=0)=0.5474",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.3917-0.5474)/0.3179}\n=max{0, -0.4898}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 191,
+      "question_id": 162,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为不健康(B=0)的条件下, 体重为轻(C=0)的概率为0.4526。饮食习惯为不健康(B=0)且体重为轻(C=0)的概率为0.0610。饮食习惯为健康(B=1)且体重为重(C=1)的概率为0.3179。",
+        "data_info_math": "P(C=0|B=0)=0.4526; P(B=0,C=0)=0.0610; P(B=1,C=1)=0.3179; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的必要性概率(probability of necessity, PN)。",
+      "Question": "给定饮食习惯为健康且体重为重, 那么假如饮食习惯为不健康，此时体重为轻的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=P(C=0|B=0)=0.4526",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.4526-0.0610)/0.3179}\n=min{1, 1.2317}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 192,
+      "question_id": 163,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为不健康(B=0)的条件下, 整体健康状况为好(D=1)的概率为0.6177。整体健康状况为好(D=1)的概率为0.5817。饮食习惯为健康(B=1)且整体健康状况为好(D=1)的概率为0.4984。",
+        "data_info_math": "P(D=1|B=0)=0.6177; P(D=1)=0.5817; P(B=1,D=1)=0.4984; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定饮食习惯为健康且整体健康状况为好, 那么假如饮食习惯为不健康，此时整体健康状况为不好的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=P(D=1|B=0)=0.6177",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.5817-0.6177)/0.4984}\n=max{0, -0.0724}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 193,
+      "question_id": 164,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为不健康(B=0)的条件下, 整体健康状况为不好(D=0)的概率为0.3823。饮食习惯为不健康(B=0)且整体健康状况为不好(D=0)的概率为0.0515。饮食习惯为健康(B=1)且整体健康状况为好(D=1)的概率为0.4984。",
+        "data_info_math": "P(D=0|B=0)=0.3823; P(B=0,D=0)=0.0515; P(B=1,D=1)=0.4984; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定饮食习惯为健康且整体健康状况为好, 那么假如饮食习惯为不健康，此时整体健康状况为不好的概率的上界是多少？",
+      "Answer": "0.6636",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=P(D=0|B=0)=0.3823",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.3823-0.0515)/0.4984}\n=min{1, 0.6636}\n=0.6636"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.6635619752958598
+    },
+    {
+      "id": 194,
+      "question_id": 165,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.0870。运动量为少(A=0)的概率为0.1649。在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.5762。运动量为强烈(A=1)的概率为0.8351。整体健康状况为好(D=1)的概率为0.5817。体重为重(C=1)且整体健康状况为好(D=1)的概率为0.2815。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.0870; P(A=0)=0.1649; P(D=1|C=0,A=1)=0.5762; P(A=1)=0.8351; P(D=1)=0.5817; P(C=1,D=1)=0.2815; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定体重为重且整体健康状况为好, 那么假如体重为轻，此时整体健康状况为不好的概率的下界是多少？",
+      "Answer": "0.3058",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=0))\nP(D=1|do(C=0))=sum_{A} P(D=1|C=0,A)*P(A)=P(D=1|C=0,A=0)*P(A=0)+P(D=1|C=0,A=1)*P(A=1)\nP(D=1|C=0,A=0)=0.0870\tP(A=0)=0.1649\tP(D=1|C=0,A=1)=0.5762\tP(A=1)=0.8351\nP(D=1|do(C=0))=0.0870*0.1649+0.5762*0.8351=0.4956",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(C=0))]/P(C=1,D=1)}\n=max{0, (0.5817-0.4956)/0.2815}\n=max{0, 0.3058}\n=0.3058"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.30579489373141805
+    },
+    {
+      "id": 195,
+      "question_id": 166,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为轻(C=0)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.9130。运动量为少(A=0)的概率为0.1649。在体重为轻(C=0)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.4238。运动量为强烈(A=1)的概率为0.8351。体重为轻(C=0)且整体健康状况为不好(D=0)的概率为0.3081。体重为重(C=1)且整体健康状况为好(D=1)的概率为0.2815。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.9130; P(A=0)=0.1649; P(D=0|C=0,A=1)=0.4238; P(A=1)=0.8351; P(C=0,D=0)=0.3081; P(C=1,D=1)=0.2815; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定体重为重且整体健康状况为好, 那么假如体重为轻，此时整体健康状况为不好的概率的上界是多少？",
+      "Answer": "0.6972",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=0))\nP(D=0|do(C=0))=sum_{A} P(D=0|C=0,A)*P(A)=P(D=0|C=0,A=0)*P(A=0)+P(D=0|C=0,A=1)*P(A=1)\nP(D=0|C=0,A=0)=0.9130\tP(A=0)=0.1649\tP(D=0|C=0,A=1)=0.4238\tP(A=1)=0.8351\nP(D=0|do(C=0))=0.9130*0.1649+0.4238*0.8351=0.5044",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(C=0)-P(C=0,D=0)]/P(C=1,D=1)}\n=min{1, (0.5044-0.3081)/0.2815}\n=min{1, 0.6972}\n=0.6972"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.6971702844674224
+    },
+    {
+      "id": 196,
+      "question_id": 167,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 体重为轻(C=0)的概率为0.6051。体重为轻(C=0)的概率为0.6083。运动量为少(A=0)且体重为轻(C=0)的概率为0.1030。",
+        "data_info_math": "P(C=0|A=1)=0.6051; P(C=0)=0.6083; P(A=0,C=0)=0.1030; "
+      },
+      "Instruction": "考虑运动量作用于体重的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定运动量为少且体重为轻, 假如运动量为强烈，此时体重为重的概率的下界是多少？",
+      "Answer": "0.0311",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.6051",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.6083-0.6051)/0.1030}\n=max{0, 0.0311}\n=0.0311"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.031117409251613132
+    },
+    {
+      "id": 197,
+      "question_id": 168,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 体重为重(C=1)的概率为0.3949。运动量为少(A=0)且体重为轻(C=0)的概率为0.1030。运动量为强烈(A=1)且体重为重(C=1)的概率为0.3298。",
+        "data_info_math": "P(C=1|A=1)=0.3949; P(A=0,C=0)=0.1030; P(A=1,C=1)=0.3298; "
+      },
+      "Instruction": "考虑运动量作用于体重的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定运动量为少且体重为轻, 假如运动量为强烈，此时体重为重的概率的上界是多少？",
+      "Answer": "0.6323",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.3949",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.3949-0.3298)/0.1030}\n=min{1, 0.6323}\n=0.6323"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.6323217604559656
+    },
+    {
+      "id": 198,
+      "question_id": 169,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.3313。整体健康状况为不好(D=0)的概率为0.4183。运动量为少(A=0)且整体健康状况为不好(D=0)的概率为0.1417。",
+        "data_info_math": "P(D=0|A=1)=0.3313; P(D=0)=0.4183; P(A=0,D=0)=0.1417; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定运动量为少且整体健康状况为不好, 假如运动量为强烈，此时整体健康状况为好的概率的下界是多少？",
+      "Answer": "0.6145",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.3313",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.4183-0.3313)/0.1417}\n=max{0, 0.6145}\n=0.6145"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.6144726923262892
+    },
+    {
+      "id": 199,
+      "question_id": 170,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.6687。运动量为少(A=0)且整体健康状况为不好(D=0)的概率为0.1417。运动量为强烈(A=1)且整体健康状况为好(D=1)的概率为0.5585。",
+        "data_info_math": "P(D=1|A=1)=0.6687; P(A=0,D=0)=0.1417; P(A=1,D=1)=0.5585; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定运动量为少且整体健康状况为不好, 假如运动量为强烈，此时整体健康状况为好的概率的上界是多少？",
+      "Answer": "0.7782",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.6687",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.6687-0.5585)/0.1417}\n=min{1, 0.7782}\n=0.7782"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.778245105145716
+    },
+    {
+      "id": 200,
+      "question_id": 171,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为健康(B=1)的条件下, 体重为轻(C=0)的概率为0.6326。体重为轻(C=0)的概率为0.6083。饮食习惯为不健康(B=0)且体重为轻(C=0)的概率为0.0610。",
+        "data_info_math": "P(C=0|B=1)=0.6326; P(C=0)=0.6083; P(B=0,C=0)=0.0610; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定饮食习惯为不健康且体重为轻, 假如饮食习惯为健康，此时体重为重的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=P(C=0|B=1)=0.6326",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.6083-0.6326)/0.0610}\n=max{0, -0.3976}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 201,
+      "question_id": 172,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为健康(B=1)的条件下, 体重为重(C=1)的概率为0.3674。饮食习惯为不健康(B=0)且体重为轻(C=0)的概率为0.0610。饮食习惯为健康(B=1)且体重为重(C=1)的概率为0.3179。",
+        "data_info_math": "P(C=1|B=1)=0.3674; P(B=0,C=0)=0.0610; P(B=1,C=1)=0.3179; "
+      },
+      "Instruction": "考虑饮食习惯作用于体重的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定饮食习惯为不健康且体重为轻, 假如饮食习惯为健康，此时体重为重的概率的上界是多少？",
+      "Answer": "0.8119",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=P(C=1|B=1)=0.3674",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.3674-0.3179)/0.0610}\n=min{1, 0.8119}\n=0.8119"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.8118707911301628
+    },
+    {
+      "id": 202,
+      "question_id": 173,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为健康(B=1)的条件下, 整体健康状况为不好(D=0)的概率为0.4239。整体健康状况为不好(D=0)的概率为0.4183。饮食习惯为不健康(B=0)且整体健康状况为不好(D=0)的概率为0.0515。",
+        "data_info_math": "P(D=0|B=1)=0.4239; P(D=0)=0.4183; P(B=0,D=0)=0.0515; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定饮食习惯为不健康且整体健康状况为不好, 假如饮食习惯为健康，此时整体健康状况为好的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=P(D=0|B=1)=0.4239",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.4183-0.4239)/0.0515}\n=max{0, -0.1091}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 203,
+      "question_id": 174,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在饮食习惯为健康(B=1)的条件下, 整体健康状况为好(D=1)的概率为0.5761。饮食习惯为不健康(B=0)且整体健康状况为不好(D=0)的概率为0.0515。饮食习惯为健康(B=1)且整体健康状况为好(D=1)的概率为0.4984。",
+        "data_info_math": "P(D=1|B=1)=0.5761; P(B=0,D=0)=0.0515; P(B=1,D=1)=0.4984; "
+      },
+      "Instruction": "考虑饮食习惯作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定饮食习惯为不健康且整体健康状况为不好, 假如饮食习惯为健康，此时整体健康状况为好的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=P(D=1|B=1)=0.5761",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.5761-0.4984)/0.0515}\n=min{1, 1.5070}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 204,
+      "question_id": 175,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为不好(D=0)的概率为0.7700。运动量为少(A=0)的概率为0.1649。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为不好(D=0)的概率为0.1896。运动量为强烈(A=1)的概率为0.8351。整体健康状况为不好(D=0)的概率为0.4183。体重为轻(C=0)且整体健康状况为不好(D=0)的概率为0.3081。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.7700; P(A=0)=0.1649; P(D=0|C=1,A=1)=0.1896; P(A=1)=0.8351; P(D=0)=0.4183; P(C=0,D=0)=0.3081; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定体重为轻且整体健康状况为不好, 假如体重为重，此时整体健康状况为好的概率的下界是多少？",
+      "Answer": "0.4318",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=1))\nP(D=0|do(C=1))=sum_{A} P(D=0|C=1,A)*P(A)=P(D=0|C=1,A=0)*P(A=0)+P(D=0|C=1,A=1)*P(A=1)\nP(D=0|C=1,A=0)=0.7700\tP(A=0)=0.1649\tP(D=0|C=1,A=1)=0.1896\tP(A=1)=0.8351\nP(D=0|do(C=1))=0.7700*0.1649+0.1896*0.8351=0.2853",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(C=1))]/P(C=0,D=0)}\n=max{0, (0.4183-0.2853)/0.3081}\n=max{0, 0.4318}\n=0.4318"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.43184517162514635
+    },
+    {
+      "id": 205,
+      "question_id": 176,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食习惯, C代表体重, D代表整体健康状况。",
+        "data_info": "在体重为重(C=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.2300。运动量为少(A=0)的概率为0.1649。在体重为重(C=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.8104。运动量为强烈(A=1)的概率为0.8351。体重为轻(C=0)且整体健康状况为不好(D=0)的概率为0.3081。体重为重(C=1)且整体健康状况为好(D=1)的概率为0.2815。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.2300; P(A=0)=0.1649; P(D=1|C=1,A=1)=0.8104; P(A=1)=0.8351; P(C=0,D=0)=0.3081; P(C=1,D=1)=0.2815; "
+      },
+      "Instruction": "考虑体重作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定体重为轻且整体健康状况为不好, 假如体重为重，此时整体健康状况为好的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=1))\nP(D=1|do(C=1))=sum_{A} P(D=1|C=1,A)*P(A)=P(D=1|C=1,A=0)*P(A=0)+P(D=1|C=1,A=1)*P(A=1)\nP(D=1|C=1,A=0)=0.2300\tP(A=0)=0.1649\tP(D=1|C=1,A=1)=0.8104\tP(A=1)=0.8351\nP(D=1|do(C=1))=0.2300*0.1649+0.8104*0.8351=0.7147",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(C=1)-P(C=1,D=1)]/P(C=0,D=0)}\n=min{1, (0.7147-0.2815)/0.3081}\n=min{1, 1.4059}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    }
+  ]
+}

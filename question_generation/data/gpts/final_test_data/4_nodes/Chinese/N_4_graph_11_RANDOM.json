@@ -1,0 +1,3759 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->D",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "气压",
+      "B": "身体健康水平",
+      "C": "温度",
+      "D": "教学质量水平"
+    },
+    "node_value": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": 0.1961250166318971,
+      "B": -0.7254421015207065,
+      "C": -1.8232615356507378,
+      "D": -0.7530887461672412
+    },
+    "edge_weight": {
+      "A->D": 0.40629956423218816,
+      "B->C": -1.9550279397843195,
+      "C->D": 0.5314597946242761
+    },
+    "function_description": "P(A=1)=0.5489\nP(B=1)=0.3262\nP(C=1|B)=sigmoid(-1.8232615356507378 + -1.9550 * B)\nP(D=1|A,C)=sigmoid(-0.7530887461672412 + 0.4063 * A + 0.5315 * C)\n",
+    "text_description": "The probability of air pressure being high (A=1) is 0.5489. \nThe probability of physical health being high (B=1) is 0.3262. \nFor those with physical health being low (B=0), the probability of temperature being high (C=1) is 0.1390. \nFor those with physical health being high (B=1), the probability of temperature being high (C=1) is 0.0224. \nFor those with air pressure being low (A=0) and temperature being low (C=0), the probability of quality of teaching being high (D=1) is 0.3201. \nFor those with air pressure being low (A=0) and temperature being high (C=1), the probability of quality of teaching being high (D=1) is 0.4448. \nFor those with air pressure being high (A=1) and temperature being low (C=0), the probability of quality of teaching being high (D=1) is 0.4142. \nFor those with air pressure being high (A=1) and temperature being high (C=1), the probability of quality of teaching being high (D=1) is 0.5460. \n",
+    "Statistic_data": [
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 4171
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 8816
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 3616
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 9241
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 6629
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 4861
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 5216
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 2397
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 1354
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 1202
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 101
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 946
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 1153
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 115
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 87
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 95
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于身体健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么身体健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于身体健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么身体健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于身体健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么身体健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于身体健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么身体健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为低(A=0)的条件下, 教学质量水平为低(D=0)的概率为0.6633。在气压为高(A=1)的条件下, 教学质量水平为低(D=0)的概率为0.5729。",
+        "data_info_math": "P(D=0|A=0)=0.6633; P(D=0|A=1)=0.5729; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么教学质量水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6633\tP(D=0|A=1)=0.5729",
+        "Step 6": "ATE=0.6633-0.5729=0.0904",
+        "Step 7": "ATE=0.0904>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.09042864310295573
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为低(A=0)的条件下, 教学质量水平为高(D=1)的概率为0.3367。在气压为高(A=1)的条件下, 教学质量水平为高(D=1)的概率为0.4271。",
+        "data_info_math": "P(D=1|A=0)=0.3367; P(D=1|A=1)=0.4271; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为低，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3367\tP(D=1|A=1)=0.4271",
+        "Step 6": "ATE=0.3367-0.4271=-0.0904",
+        "Step 7": "ATE=-0.0904<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.09042864310295573
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为高(A=1)的条件下, 教学质量水平为低(D=0)的概率为0.5729。在气压为低(A=0)的条件下, 教学质量水平为低(D=0)的概率为0.6633。",
+        "data_info_math": "P(D=0|A=1)=0.5729; P(D=0|A=0)=0.6633; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.5729\tP(D=0|A=0)=0.6633",
+        "Step 6": "ATE=0.5729-0.6633=-0.0904",
+        "Step 7": "ATE=-0.0904<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.09042864310295573
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为高(A=1)的条件下, 教学质量水平为高(D=1)的概率为0.4271。在气压为低(A=0)的条件下, 教学质量水平为高(D=1)的概率为0.3367。",
+        "data_info_math": "P(D=1|A=1)=0.4271; P(D=1|A=0)=0.3367; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果气压被改变为高，那么教学质量水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.4271\tP(D=1|A=0)=0.3367",
+        "Step 6": "ATE=0.4271-0.3367=0.0904",
+        "Step 7": "ATE=0.0904>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.09042864310295573
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体健康水平被改变为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体健康水平被改变为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体健康水平被改变为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体健康水平被改变为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为低(B=0)的条件下, 温度为低(C=0)的概率为0.8611。在身体健康水平为高(B=1)的条件下, 温度为低(C=0)的概率为0.9759。",
+        "data_info_math": "P(C=0|B=0)=0.8611; P(C=0|B=1)=0.9759; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体健康水平被改变为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.8611\tP(C=0|B=1)=0.9759",
+        "Step 6": "ATE=0.8611-0.9759=-0.1148",
+        "Step 7": "ATE=-0.1148<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.11476669910994675
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为低(B=0)的条件下, 温度为高(C=1)的概率为0.1389。在身体健康水平为高(B=1)的条件下, 温度为高(C=1)的概率为0.0241。",
+        "data_info_math": "P(C=1|B=0)=0.1389; P(C=1|B=1)=0.0241; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体健康水平被改变为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.1389\tP(C=1|B=1)=0.0241",
+        "Step 6": "ATE=0.1389-0.0241=0.1148",
+        "Step 7": "ATE=0.1148>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.11476669910994683
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为高(B=1)的条件下, 温度为低(C=0)的概率为0.9759。在身体健康水平为低(B=0)的条件下, 温度为低(C=0)的概率为0.8611。",
+        "data_info_math": "P(C=0|B=1)=0.9759; P(C=0|B=0)=0.8611; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体健康水平被改变为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.9759\tP(C=0|B=0)=0.8611",
+        "Step 6": "ATE=0.9759-0.8611=0.1148",
+        "Step 7": "ATE=0.1148>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.11476669910994675
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为高(B=1)的条件下, 温度为高(C=1)的概率为0.0241。在身体健康水平为低(B=0)的条件下, 温度为高(C=1)的概率为0.1389。",
+        "data_info_math": "P(C=1|B=1)=0.0241; P(C=1|B=0)=0.1389; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体健康水平被改变为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.0241\tP(C=1|B=0)=0.1389",
+        "Step 6": "ATE=0.0241-0.1389=-0.1148",
+        "Step 7": "ATE=-0.1148<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.11476669910994683
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为低(B=0)的条件下, 教学质量水平为低(D=0)的概率为0.6091。在身体健康水平为高(B=1)的条件下, 教学质量水平为低(D=0)的概率为0.6231。",
+        "data_info_math": "P(D=0|B=0)=0.6091; P(D=0|B=1)=0.6231; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体健康水平被改变为低，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.6091\tP(D=0|B=1)=0.6231",
+        "Step 6": "ATE=0.6091-0.6231=-0.0140",
+        "Step 7": "ATE=-0.0140<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.013963945102865805
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为低(B=0)的条件下, 教学质量水平为高(D=1)的概率为0.3909。在身体健康水平为高(B=1)的条件下, 教学质量水平为高(D=1)的概率为0.3769。",
+        "data_info_math": "P(D=1|B=0)=0.3909; P(D=1|B=1)=0.3769; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体健康水平被改变为低，那么教学质量水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.3909\tP(D=1|B=1)=0.3769",
+        "Step 6": "ATE=0.3909-0.3769=0.0140",
+        "Step 7": "ATE=0.0140>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.013963945102865916
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为高(B=1)的条件下, 教学质量水平为低(D=0)的概率为0.6231。在身体健康水平为低(B=0)的条件下, 教学质量水平为低(D=0)的概率为0.6091。",
+        "data_info_math": "P(D=0|B=1)=0.6231; P(D=0|B=0)=0.6091; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体健康水平被改变为高，那么教学质量水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.6231\tP(D=0|B=0)=0.6091",
+        "Step 6": "ATE=0.6231-0.6091=0.0140",
+        "Step 7": "ATE=0.0140>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.013963945102865805
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为高(B=1)的条件下, 教学质量水平为高(D=1)的概率为0.3769。在身体健康水平为低(B=0)的条件下, 教学质量水平为高(D=1)的概率为0.3909。",
+        "data_info_math": "P(D=1|B=1)=0.3769; P(D=1|B=0)=0.3909; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果身体健康水平被改变为高，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.3769\tP(D=1|B=0)=0.3909",
+        "Step 6": "ATE=0.3769-0.3909=-0.0140",
+        "Step 7": "ATE=-0.0140<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.013963945102865916
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于身体健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么身体健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于身体健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么身体健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于身体健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么身体健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于身体健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么身体健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为低(C=0)的条件下, 教学质量水平为低(D=0)的概率为0.6259。在温度为高(C=1)的条件下, 教学质量水平为低(D=0)的概率为0.5048。",
+        "data_info_math": "P(D=0|C=0)=0.6259; P(D=0|C=1)=0.5048; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么教学质量水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(C=0))-P(D=0|do(C=1))=P(D=0|C=0)-P(D=0|C=1)",
+        "Step 5": "P(D=0|C=0)=0.6259\tP(D=0|C=1)=0.5048",
+        "Step 6": "ATE=0.6259-0.5048=0.1211",
+        "Step 7": "ATE=0.1211>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.12108861015280858
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为低(C=0)的条件下, 教学质量水平为高(D=1)的概率为0.3741。在温度为高(C=1)的条件下, 教学质量水平为高(D=1)的概率为0.4952。",
+        "data_info_math": "P(D=1|C=0)=0.3741; P(D=1|C=1)=0.4952; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(C=0))-P(D=1|do(C=1))=P(D=1|C=0)-P(D=1|C=1)",
+        "Step 5": "P(D=1|C=0)=0.3741\tP(D=1|C=1)=0.4952",
+        "Step 6": "ATE=0.3741-0.4952=-0.1211",
+        "Step 7": "ATE=-0.1211<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.12108861015280875
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为高(C=1)的条件下, 教学质量水平为低(D=0)的概率为0.5048。在温度为低(C=0)的条件下, 教学质量水平为低(D=0)的概率为0.6259。",
+        "data_info_math": "P(D=0|C=1)=0.5048; P(D=0|C=0)=0.6259; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(C=1))-P(D=0|do(C=0))=P(D=0|C=1)-P(D=0|C=0)",
+        "Step 5": "P(D=0|C=1)=0.5048\tP(D=0|C=0)=0.6259",
+        "Step 6": "ATE=0.5048-0.6259=-0.1211",
+        "Step 7": "ATE=-0.1211<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.12108861015280858
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为高(C=1)的条件下, 教学质量水平为高(D=1)的概率为0.4952。在温度为低(C=0)的条件下, 教学质量水平为高(D=1)的概率为0.3741。",
+        "data_info_math": "P(D=1|C=1)=0.4952; P(D=1|C=0)=0.3741; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么教学质量水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(C=1))-P(D=1|do(C=0))=P(D=1|C=1)-P(D=1|C=0)",
+        "Step 5": "P(D=1|C=1)=0.4952\tP(D=1|C=0)=0.3741",
+        "Step 6": "ATE=0.4952-0.3741=0.1211",
+        "Step 7": "ATE=0.1211>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.12108861015280875
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果教学质量水平被改变为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果教学质量水平被改变为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果教学质量水平被改变为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于气压的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果教学质量水平被改变为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于身体健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果教学质量水平被改变为低，那么身体健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于身体健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果教学质量水平被改变为低，那么身体健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于身体健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果教学质量水平被改变为高，那么身体健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于身体健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果教学质量水平被改变为高，那么身体健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果教学质量水平被改变为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果教学质量水平被改变为低，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果教学质量水平被改变为高，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果教学质量水平被改变为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为低(A=0)的条件下, 教学质量水平为低(D=0)的概率为0.6633。在气压为高(A=1)的条件下, 教学质量水平为低(D=0)的概率为0.5729。",
+        "data_info_math": "P(D=0|A=0)=0.6633; P(D=0|A=1)=0.5729; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为低，那么教学质量水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6633\tP(D=0|A=1)=0.5729",
+        "Step 6": "NDE=0.6633-0.5729=0.0904",
+        "Step 7": "NDE=0.0904>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.09042864310295573
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为低(A=0)的条件下, 教学质量水平为高(D=1)的概率为0.3367。在气压为高(A=1)的条件下, 教学质量水平为高(D=1)的概率为0.4271。",
+        "data_info_math": "P(D=1|A=0)=0.3367; P(D=1|A=1)=0.4271; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为低，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3367\tP(D=1|A=1)=0.4271",
+        "Step 6": "NDE=0.3367-0.4271=-0.0904",
+        "Step 7": "NDE=-0.0904<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.09042864310295573
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为高(A=1)的条件下, 教学质量水平为低(D=0)的概率为0.5729。在气压为低(A=0)的条件下, 教学质量水平为低(D=0)的概率为0.6633。",
+        "data_info_math": "P(D=0|A=1)=0.5729; P(D=0|A=0)=0.6633; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为高，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.5729\tP(D=0|A=0)=0.6633",
+        "Step 6": "NDE=0.5729-0.6633=-0.0904",
+        "Step 7": "NDE=-0.0904<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.09042864310295573
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为高(A=1)的条件下, 教学质量水平为高(D=1)的概率为0.4271。在气压为低(A=0)的条件下, 教学质量水平为高(D=1)的概率为0.3367。",
+        "data_info_math": "P(D=1|A=1)=0.4271; P(D=1|A=0)=0.3367; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而气压变化为高，那么教学质量水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.4271\tP(D=1|A=0)=0.3367",
+        "Step 6": "NDE=0.4271-0.3367=0.0904",
+        "Step 7": "NDE=0.0904>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.09042864310295573
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为低(B=0)的条件下, 温度为低(C=0)的概率为0.8611。在身体健康水平为高(B=1)的条件下, 温度为低(C=0)的概率为0.9759。",
+        "data_info_math": "P(C=0|B=0)=0.8611; P(C=0|B=1)=0.9759; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体健康水平变化为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.8611\tP(C=0|B=1)=0.9759",
+        "Step 6": "NDE=0.8611-0.9759=-0.1148",
+        "Step 7": "NDE=-0.1148<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.11476669910994675
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为低(B=0)的条件下, 温度为高(C=1)的概率为0.1389。在身体健康水平为高(B=1)的条件下, 温度为高(C=1)的概率为0.0241。",
+        "data_info_math": "P(C=1|B=0)=0.1389; P(C=1|B=1)=0.0241; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体健康水平变化为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.1389\tP(C=1|B=1)=0.0241",
+        "Step 6": "NDE=0.1389-0.0241=0.1148",
+        "Step 7": "NDE=0.1148>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.11476669910994683
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为高(B=1)的条件下, 温度为低(C=0)的概率为0.9759。在身体健康水平为低(B=0)的条件下, 温度为低(C=0)的概率为0.8611。",
+        "data_info_math": "P(C=0|B=1)=0.9759; P(C=0|B=0)=0.8611; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体健康水平变化为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.9759\tP(C=0|B=0)=0.8611",
+        "Step 6": "NDE=0.9759-0.8611=0.1148",
+        "Step 7": "NDE=0.1148>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.11476669910994675
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为高(B=1)的条件下, 温度为高(C=1)的概率为0.0241。在身体健康水平为低(B=0)的条件下, 温度为高(C=1)的概率为0.1389。",
+        "data_info_math": "P(C=1|B=1)=0.0241; P(C=1|B=0)=0.1389; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体健康水平变化为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.0241\tP(C=1|B=0)=0.1389",
+        "Step 6": "NDE=0.0241-0.1389=-0.1148",
+        "Step 7": "NDE=-0.1148<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.11476669910994683
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体健康水平变化为低，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体健康水平变化为低，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体健康水平变化为高，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而身体健康水平变化为高，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为低(C=0)的条件下, 教学质量水平为低(D=0)的概率为0.6259。在温度为高(C=1)的条件下, 教学质量水平为低(D=0)的概率为0.5048。",
+        "data_info_math": "P(D=0|C=0)=0.6259; P(D=0|C=1)=0.5048; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而温度变化为低，那么教学质量水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|C=0)-P(D=0|C=1)",
+        "Step 5": "P(D=0|C=0)=0.6259\tP(D=0|C=1)=0.5048",
+        "Step 6": "NDE=0.6259-0.5048=0.1211",
+        "Step 7": "NDE=0.1211>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.12108861015280858
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为低(C=0)的条件下, 教学质量水平为高(D=1)的概率为0.3741。在温度为高(C=1)的条件下, 教学质量水平为高(D=1)的概率为0.4952。",
+        "data_info_math": "P(D=1|C=0)=0.3741; P(D=1|C=1)=0.4952; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而温度变化为低，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|C=0)-P(D=1|C=1)",
+        "Step 5": "P(D=1|C=0)=0.3741\tP(D=1|C=1)=0.4952",
+        "Step 6": "NDE=0.3741-0.4952=-0.1211",
+        "Step 7": "NDE=-0.1211<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.12108861015280875
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为高(C=1)的条件下, 教学质量水平为低(D=0)的概率为0.5048。在温度为低(C=0)的条件下, 教学质量水平为低(D=0)的概率为0.6259。",
+        "data_info_math": "P(D=0|C=1)=0.5048; P(D=0|C=0)=0.6259; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而温度变化为高，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|C=1)-P(D=0|C=0)",
+        "Step 5": "P(D=0|C=1)=0.5048\tP(D=0|C=0)=0.6259",
+        "Step 6": "NDE=0.5048-0.6259=-0.1211",
+        "Step 7": "NDE=-0.1211<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.12108861015280858
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为高(C=1)的条件下, 教学质量水平为高(D=1)的概率为0.4952。在温度为低(C=0)的条件下, 教学质量水平为高(D=1)的概率为0.3741。",
+        "data_info_math": "P(D=1|C=1)=0.4952; P(D=1|C=0)=0.3741; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而温度变化为高，那么教学质量水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|C=1)-P(D=1|C=0)",
+        "Step 5": "P(D=1|C=1)=0.4952\tP(D=1|C=0)=0.3741",
+        "Step 6": "NDE=0.4952-0.3741=0.1211",
+        "Step 7": "NDE=0.1211>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.12108861015280875
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为低下的取值，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为低下的取值，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为高下的取值，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如气压保持不变，而所有中间变量被改变为当它们在气压变化为高下的取值，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体健康水平保持不变，而所有中间变量被改变为当它们在身体健康水平变化为低下的取值，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体健康水平保持不变，而所有中间变量被改变为当它们在身体健康水平变化为低下的取值，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体健康水平保持不变，而所有中间变量被改变为当它们在身体健康水平变化为高下的取值，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体健康水平保持不变，而所有中间变量被改变为当它们在身体健康水平变化为高下的取值，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为低(C=0)且身体健康水平为高(B=1)的条件下, 教学质量水平为低(D=0)的概率为0.6263。在身体健康水平为低(B=0)的条件下, 温度为低(C=0)的概率为0.8611。在身体健康水平为高(B=1)的条件下, 温度为低(C=0)的概率为0.9759。在温度为高(C=1)且身体健康水平为高(B=1)的条件下, 教学质量水平为低(D=0)的概率为0.4925。",
+        "data_info_math": "P(D=0|C=0,B=1)=0.6263; P(C=0|B=0)=0.8611; P(C=0|B=1)=0.9759; P(D=0|C=1,B=1)=0.4925; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体健康水平保持不变，而所有中间变量被改变为当它们在身体健康水平变化为低下的取值，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=0|B=1,C)*[P(C|B=0)-P(C|B=1)]=P(D=0|B=1,C=0)*[P(C=0|B=0)-P(C=0|B=1)]+P(D=0|B=1,C=1)*[P(C=1|B=0)-P(C=1|B=1)]",
+        "Step 5": "P(D=0|B=1,C=0)=0.6263\tP(C=0|B=0)=0.8611\tP(C=0|B=1)=0.9759\tP(D=0|B=1,C=1)=0.4925\tP(C=1|B=0)=0.1389\tP(C=1|B=1)=0.0241",
+        "Step 6": "NIE=0.6263*(0.8611-0.9759)+0.4925*(0.1389-0.0241)=-0.0154",
+        "Step 7": "NIE=-0.0154<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.015358918541966964
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为低(C=0)且身体健康水平为高(B=1)的条件下, 教学质量水平为高(D=1)的概率为0.3737。在身体健康水平为低(B=0)的条件下, 温度为低(C=0)的概率为0.8611。在身体健康水平为高(B=1)的条件下, 温度为低(C=0)的概率为0.9759。在温度为高(C=1)且身体健康水平为高(B=1)的条件下, 教学质量水平为高(D=1)的概率为0.5075。",
+        "data_info_math": "P(D=1|C=0,B=1)=0.3737; P(C=0|B=0)=0.8611; P(C=0|B=1)=0.9759; P(D=1|C=1,B=1)=0.5075; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体健康水平保持不变，而所有中间变量被改变为当它们在身体健康水平变化为低下的取值，那么教学质量水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=1|B=1,C)*[P(C|B=0)-P(C|B=1)]=P(D=1|B=1,C=0)*[P(C=0|B=0)-P(C=0|B=1)]+P(D=1|B=1,C=1)*[P(C=1|B=0)-P(C=1|B=1)]",
+        "Step 5": "P(D=1|B=1,C=0)=0.3737\tP(C=0|B=0)=0.8611\tP(C=0|B=1)=0.9759\tP(D=1|B=1,C=1)=0.5075\tP(C=1|B=0)=0.1389\tP(C=1|B=1)=0.0241",
+        "Step 6": "NIE=0.3737*(0.8611-0.9759)+0.5075*(0.1389-0.0241)=0.0154",
+        "Step 7": "NIE=0.0154>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.015358918541967026
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为低(C=0)且身体健康水平为低(B=0)的条件下, 教学质量水平为低(D=0)的概率为0.6257。在身体健康水平为高(B=1)的条件下, 温度为低(C=0)的概率为0.9759。在身体健康水平为低(B=0)的条件下, 温度为低(C=0)的概率为0.8611。在温度为高(C=1)且身体健康水平为低(B=0)的条件下, 教学质量水平为低(D=0)的概率为0.5059。",
+        "data_info_math": "P(D=0|C=0,B=0)=0.6257; P(C=0|B=1)=0.9759; P(C=0|B=0)=0.8611; P(D=0|C=1,B=0)=0.5059; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体健康水平保持不变，而所有中间变量被改变为当它们在身体健康水平变化为高下的取值，那么教学质量水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=0|B=0,C)*[P(C|B=1)-P(C|B=0)]=P(D=0|B=0,C=0)*[P(C=0|B=1)-P(C=0|B=0)]+P(D=0|B=0,C=1)*[P(C=1|B=1)-P(C=1|B=0)]",
+        "Step 5": "P(D=0|B=0,C=0)=0.6257\tP(C=0|B=1)=0.9759\tP(C=0|B=0)=0.8611\tP(D=0|B=0,C=1)=0.5059\tP(C=1|B=1)=0.0241\tP(C=1|B=0)=0.1389",
+        "Step 6": "NIE=0.6257*(0.9759-0.8611)+0.5059*(0.0241-0.1389)=0.0138",
+        "Step 7": "NIE=0.0138>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.013752848789452564
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为低(C=0)且身体健康水平为低(B=0)的条件下, 教学质量水平为高(D=1)的概率为0.3743。在身体健康水平为高(B=1)的条件下, 温度为低(C=0)的概率为0.9759。在身体健康水平为低(B=0)的条件下, 温度为低(C=0)的概率为0.8611。在温度为高(C=1)且身体健康水平为低(B=0)的条件下, 教学质量水平为高(D=1)的概率为0.4941。",
+        "data_info_math": "P(D=1|C=0,B=0)=0.3743; P(C=0|B=1)=0.9759; P(C=0|B=0)=0.8611; P(D=1|C=1,B=0)=0.4941; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如身体健康水平保持不变，而所有中间变量被改变为当它们在身体健康水平变化为高下的取值，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=1|B=0,C)*[P(C|B=1)-P(C|B=0)]=P(D=1|B=0,C=0)*[P(C=0|B=1)-P(C=0|B=0)]+P(D=1|B=0,C=1)*[P(C=1|B=1)-P(C=1|B=0)]",
+        "Step 5": "P(D=1|B=0,C=0)=0.3743\tP(C=0|B=1)=0.9759\tP(C=0|B=0)=0.8611\tP(D=1|B=0,C=1)=0.4941\tP(C=1|B=1)=0.0241\tP(C=1|B=0)=0.1389",
+        "Step 6": "NIE=0.3743*(0.9759-0.8611)+0.4941*(0.0241-0.1389)=-0.0138",
+        "Step 7": "NIE=-0.0138<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.013752848789452647
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如温度保持不变，而所有中间变量被改变为当它们在温度变化为低下的取值，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如温度保持不变，而所有中间变量被改变为当它们在温度变化为低下的取值，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如温度保持不变，而所有中间变量被改变为当它们在温度变化为高下的取值，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如温度保持不变，而所有中间变量被改变为当它们在温度变化为高下的取值，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于身体健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么身体健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于身体健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么身体健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于身体健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么身体健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于身体健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么身体健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑气压作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为低(A=0)的条件下, 教学质量水平为低(D=0)的概率为0.6633。在气压为高(A=1)的条件下, 教学质量水平为低(D=0)的概率为0.5729。",
+        "data_info_math": "P(D=0|A=0)=0.6633; P(D=0|A=1)=0.5729; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6633\tP(D=0|A=1)=0.5729",
+        "Step 6": "ETT=0.6633-0.5729=0.0904",
+        "Step 7": "ETT=0.0904>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.09042864310295573
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为低(A=0)的条件下, 教学质量水平为高(D=1)的概率为0.3367。在气压为高(A=1)的条件下, 教学质量水平为高(D=1)的概率为0.4271。",
+        "data_info_math": "P(D=1|A=0)=0.3367; P(D=1|A=1)=0.4271; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为低，假如气压为高，那么教学质量水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3367\tP(D=1|A=1)=0.4271",
+        "Step 6": "ETT=0.3367-0.4271=-0.0904",
+        "Step 7": "ETT=-0.0904<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.09042864310295573
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为高(A=1)的条件下, 教学质量水平为低(D=0)的概率为0.5729。在气压为低(A=0)的条件下, 教学质量水平为低(D=0)的概率为0.6633。",
+        "data_info_math": "P(D=0|A=1)=0.5729; P(D=0|A=0)=0.6633; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么教学质量水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.5729\tP(D=0|A=0)=0.6633",
+        "Step 6": "ETT=0.5729-0.6633=-0.0904",
+        "Step 7": "ETT=-0.0904<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.09042864310295573
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为高(A=1)的条件下, 教学质量水平为高(D=1)的概率为0.4271。在气压为低(A=0)的条件下, 教学质量水平为高(D=1)的概率为0.3367。",
+        "data_info_math": "P(D=1|A=1)=0.4271; P(D=1|A=0)=0.3367; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些气压为高，假如气压为低，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.4271\tP(D=1|A=0)=0.3367",
+        "Step 6": "ETT=0.4271-0.3367=0.0904",
+        "Step 7": "ETT=0.0904>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.09042864310295573
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体健康水平为低，假如身体健康水平为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体健康水平为低，假如身体健康水平为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体健康水平为高，假如身体健康水平为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体健康水平为高，假如身体健康水平为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为低(B=0)的条件下, 温度为低(C=0)的概率为0.8611。在身体健康水平为高(B=1)的条件下, 温度为低(C=0)的概率为0.9759。",
+        "data_info_math": "P(C=0|B=0)=0.8611; P(C=0|B=1)=0.9759; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体健康水平为低，假如身体健康水平为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.8611\tP(C=0|B=1)=0.9759",
+        "Step 6": "ETT=0.8611-0.9759=-0.1148",
+        "Step 7": "ETT=-0.1148<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.11476669910994675
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为低(B=0)的条件下, 温度为高(C=1)的概率为0.1389。在身体健康水平为高(B=1)的条件下, 温度为高(C=1)的概率为0.0241。",
+        "data_info_math": "P(C=1|B=0)=0.1389; P(C=1|B=1)=0.0241; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体健康水平为低，假如身体健康水平为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.1389\tP(C=1|B=1)=0.0241",
+        "Step 6": "ETT=0.1389-0.0241=0.1148",
+        "Step 7": "ETT=0.1148>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.11476669910994683
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为高(B=1)的条件下, 温度为低(C=0)的概率为0.9759。在身体健康水平为低(B=0)的条件下, 温度为低(C=0)的概率为0.8611。",
+        "data_info_math": "P(C=0|B=1)=0.9759; P(C=0|B=0)=0.8611; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体健康水平为高，假如身体健康水平为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.9759\tP(C=0|B=0)=0.8611",
+        "Step 6": "ETT=0.9759-0.8611=0.1148",
+        "Step 7": "ETT=0.1148>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.11476669910994675
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为高(B=1)的条件下, 温度为高(C=1)的概率为0.0241。在身体健康水平为低(B=0)的条件下, 温度为高(C=1)的概率为0.1389。",
+        "data_info_math": "P(C=1|B=1)=0.0241; P(C=1|B=0)=0.1389; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体健康水平为高，假如身体健康水平为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.0241\tP(C=1|B=0)=0.1389",
+        "Step 6": "ETT=0.0241-0.1389=-0.1148",
+        "Step 7": "ETT=-0.1148<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.11476669910994683
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为低(B=0)的条件下, 教学质量水平为低(D=0)的概率为0.6091。在身体健康水平为高(B=1)的条件下, 教学质量水平为低(D=0)的概率为0.6231。",
+        "data_info_math": "P(D=0|B=0)=0.6091; P(D=0|B=1)=0.6231; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体健康水平为低，假如身体健康水平为高，那么教学质量水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.6091\tP(D=0|B=1)=0.6231",
+        "Step 6": "ETT=0.6091-0.6231=-0.0140",
+        "Step 7": "ETT=-0.0140<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.013963945102865805
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为低(B=0)的条件下, 教学质量水平为高(D=1)的概率为0.3909。在身体健康水平为高(B=1)的条件下, 教学质量水平为高(D=1)的概率为0.3769。",
+        "data_info_math": "P(D=1|B=0)=0.3909; P(D=1|B=1)=0.3769; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体健康水平为低，假如身体健康水平为高，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.3909\tP(D=1|B=1)=0.3769",
+        "Step 6": "ETT=0.3909-0.3769=0.0140",
+        "Step 7": "ETT=0.0140>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.013963945102865916
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为高(B=1)的条件下, 教学质量水平为低(D=0)的概率为0.6231。在身体健康水平为低(B=0)的条件下, 教学质量水平为低(D=0)的概率为0.6091。",
+        "data_info_math": "P(D=0|B=1)=0.6231; P(D=0|B=0)=0.6091; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体健康水平为高，假如身体健康水平为低，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.6231\tP(D=0|B=0)=0.6091",
+        "Step 6": "ETT=0.6231-0.6091=0.0140",
+        "Step 7": "ETT=0.0140>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.013963945102865805
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为高(B=1)的条件下, 教学质量水平为高(D=1)的概率为0.3769。在身体健康水平为低(B=0)的条件下, 教学质量水平为高(D=1)的概率为0.3909。",
+        "data_info_math": "P(D=1|B=1)=0.3769; P(D=1|B=0)=0.3909; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些身体健康水平为高，假如身体健康水平为低，那么教学质量水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.3769\tP(D=1|B=0)=0.3909",
+        "Step 6": "ETT=0.3769-0.3909=-0.0140",
+        "Step 7": "ETT=-0.0140<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.013963945102865916
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于身体健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么身体健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于身体健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么身体健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于身体健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么身体健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于身体健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么身体健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为低(C=0)的条件下, 教学质量水平为低(D=0)的概率为0.6259。在温度为高(C=1)的条件下, 教学质量水平为低(D=0)的概率为0.5048。",
+        "data_info_math": "P(D=0|C=0)=0.6259; P(D=0|C=1)=0.5048; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=0|C=0)-P(D=0|C=1)",
+        "Step 5": "P(D=0|C=0)=0.6259\tP(D=0|C=1)=0.5048",
+        "Step 6": "ETT=0.6259-0.5048=0.1211",
+        "Step 7": "ETT=0.1211>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.12108861015280858
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为低(C=0)的条件下, 教学质量水平为高(D=1)的概率为0.3741。在温度为高(C=1)的条件下, 教学质量水平为高(D=1)的概率为0.4952。",
+        "data_info_math": "P(D=1|C=0)=0.3741; P(D=1|C=1)=0.4952; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么教学质量水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=1|C=0)-P(D=1|C=1)",
+        "Step 5": "P(D=1|C=0)=0.3741\tP(D=1|C=1)=0.4952",
+        "Step 6": "ETT=0.3741-0.4952=-0.1211",
+        "Step 7": "ETT=-0.1211<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.12108861015280875
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为高(C=1)的条件下, 教学质量水平为低(D=0)的概率为0.5048。在温度为低(C=0)的条件下, 教学质量水平为低(D=0)的概率为0.6259。",
+        "data_info_math": "P(D=0|C=1)=0.5048; P(D=0|C=0)=0.6259; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么教学质量水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=0|C=1)-P(D=0|C=0)",
+        "Step 5": "P(D=0|C=1)=0.5048\tP(D=0|C=0)=0.6259",
+        "Step 6": "ETT=0.5048-0.6259=-0.1211",
+        "Step 7": "ETT=-0.1211<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.12108861015280858
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为高(C=1)的条件下, 教学质量水平为高(D=1)的概率为0.4952。在温度为低(C=0)的条件下, 教学质量水平为高(D=1)的概率为0.3741。",
+        "data_info_math": "P(D=1|C=1)=0.4952; P(D=1|C=0)=0.3741; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=1|C=1)-P(D=1|C=0)",
+        "Step 5": "P(D=1|C=1)=0.4952\tP(D=1|C=0)=0.3741",
+        "Step 6": "ETT=0.4952-0.3741=0.1211",
+        "Step 7": "ETT=0.1211>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.12108861015280875
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些教学质量水平为低，假如教学质量水平为高，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些教学质量水平为低，假如教学质量水平为高，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些教学质量水平为高，假如教学质量水平为低，那么气压更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于气压的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些教学质量水平为高，假如教学质量水平为低，那么气压更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于身体健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些教学质量水平为低，假如教学质量水平为高，那么身体健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于身体健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些教学质量水平为低，假如教学质量水平为高，那么身体健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于身体健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些教学质量水平为高，假如教学质量水平为低，那么身体健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于身体健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些教学质量水平为高，假如教学质量水平为低，那么身体健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些教学质量水平为低，假如教学质量水平为高，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些教学质量水平为低，假如教学质量水平为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些教学质量水平为高，假如教学质量水平为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑教学质量水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些教学质量水平为高，假如教学质量水平为低，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在温度为高的条件下，假如身体健康水平为低，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在温度为高的条件下，假如身体健康水平为低，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在温度为低的条件下，假如身体健康水平为高，那么教学质量水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在温度为高的条件下，假如身体健康水平为高，那么教学质量水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象气压(A)和观察节点教学质量水平(D)的后门调整集合。",
+      "Question": "方法1: 根据身体健康水平的情况，我们逐个研究气压和教学质量水平的关联。\n方法2：我们直接研究一般情况下气压和教学质量水平的关联。\n为了理解气压如何影响教学质量水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 133,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象气压(A)和观察节点教学质量水平(D)的后门调整集合。",
+      "Question": "方法1: 根据身体健康水平的情况，我们逐个研究气压和教学质量水平的关联。\n方法2：我们直接研究一般情况下气压和教学质量水平的关联。\n为了理解气压如何影响教学质量水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 134,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象身体健康水平(B)和观察节点温度(C)的后门调整集合。",
+      "Question": "方法1: 根据教学质量水平的情况，我们逐个研究身体健康水平和温度的关联。\n方法2：我们直接研究一般情况下身体健康水平和温度的关联。\n为了理解身体健康水平如何影响温度，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 135,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象身体健康水平(B)和观察节点温度(C)的后门调整集合。",
+      "Question": "方法1: 根据教学质量水平的情况，我们逐个研究身体健康水平和温度的关联。\n方法2：我们直接研究一般情况下身体健康水平和温度的关联。\n为了理解身体健康水平如何影响温度，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 136,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象身体健康水平(B)和观察节点教学质量水平(D)的后门调整集合。",
+      "Question": "方法1: 根据温度的情况，我们逐个研究身体健康水平和教学质量水平的关联。\n方法2：我们直接研究一般情况下身体健康水平和教学质量水平的关联。\n为了理解身体健康水平如何影响教学质量水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 137,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象身体健康水平(B)和观察节点教学质量水平(D)的后门调整集合。",
+      "Question": "方法1: 根据温度的情况，我们逐个研究身体健康水平和教学质量水平的关联。\n方法2：我们直接研究一般情况下身体健康水平和教学质量水平的关联。\n为了理解身体健康水平如何影响教学质量水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 138,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象温度(C)和观察节点教学质量水平(D)的后门调整集合。",
+      "Question": "方法1: 根据身体健康水平的情况，我们逐个研究温度和教学质量水平的关联。\n方法2：我们直接研究一般情况下温度和教学质量水平的关联。\n为了理解温度如何影响教学质量水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 139,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象温度(C)和观察节点教学质量水平(D)的后门调整集合。",
+      "Question": "方法1: 根据气压的情况，我们逐个研究温度和教学质量水平的关联。\n方法2：我们直接研究一般情况下温度和教学质量水平的关联。\n为了理解温度如何影响教学质量水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 140,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为低(D=0)且气压为高(A=1)的条件下, 温度为高(C=1)的概率为0.0798。在教学质量水平为低(D=0)且气压为低(A=0)的条件下, 温度为高(C=1)的概率为0.0866。",
+        "data_info_math": "P(C=1|D=0,A=1)=0.0798; P(C=1|D=0,A=0)=0.0866; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为低的条件下，气压会影响温度吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|do(A=1),D=0)-P(C=1|do(A=0),D=0)=P(C=1|D=0)-P(C=1|D=0)=0",
+        "Step 2": "在D已知的条件下，A不会影响C，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 141,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为低(D=0)且气压为高(A=1)的条件下, 温度为高(C=1)的概率为0.0798。在教学质量水平为低(D=0)且气压为低(A=0)的条件下, 温度为高(C=1)的概率为0.0866。",
+        "data_info_math": "P(C=1|D=0,A=1)=0.0798; P(C=1|D=0,A=0)=0.0866; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为低的条件下，气压不会影响温度吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|do(A=1),D=0)-P(C=1|do(A=0),D=0)=P(C=1|D=0)-P(C=1|D=0)=0",
+        "Step 2": "在D已知的条件下，A不会影响C，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 142,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为低(D=0)且气压为高(A=1)的条件下, 温度为高(C=1)的概率为0.0798。在教学质量水平为低(D=0)且气压为低(A=0)的条件下, 温度为高(C=1)的概率为0.0866。",
+        "data_info_math": "P(C=1|D=0,A=1)=0.0798; P(C=1|D=0,A=0)=0.0866; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为低的条件下，气压是和温度相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|A=1,D=0)-P(C=1|A=0,D=0)=0.0798-0.0866=-0.0068!=0",
+        "Step 2": "在D已知的条件下，A和C是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 143,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为低(D=0)且气压为高(A=1)的条件下, 温度为高(C=1)的概率为0.0798。在教学质量水平为低(D=0)且气压为低(A=0)的条件下, 温度为高(C=1)的概率为0.0866。",
+        "data_info_math": "P(C=1|D=0,A=1)=0.0798; P(C=1|D=0,A=0)=0.0866; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为低的条件下，气压是和温度独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|A=1,D=0)-P(C=1|A=0,D=0)=0.0798-0.0866=-0.0068!=0",
+        "Step 2": "在D已知的条件下，A和C是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 144,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为高(D=1)且气压为高(A=1)的条件下, 温度为高(C=1)的概率为0.1254。在教学质量水平为高(D=1)且气压为低(A=0)的条件下, 温度为高(C=1)的概率为0.1359。",
+        "data_info_math": "P(C=1|D=1,A=1)=0.1254; P(C=1|D=1,A=0)=0.1359; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为高的条件下，气压会影响温度吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|do(A=1),D=1)-P(C=1|do(A=0),D=1)=P(C=1|D=1)-P(C=1|D=1)=0",
+        "Step 2": "在D已知的条件下，A不会影响C，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 145,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为高(D=1)且气压为高(A=1)的条件下, 温度为高(C=1)的概率为0.1254。在教学质量水平为高(D=1)且气压为低(A=0)的条件下, 温度为高(C=1)的概率为0.1359。",
+        "data_info_math": "P(C=1|D=1,A=1)=0.1254; P(C=1|D=1,A=0)=0.1359; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为高的条件下，气压不会影响温度吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|do(A=1),D=1)-P(C=1|do(A=0),D=1)=P(C=1|D=1)-P(C=1|D=1)=0",
+        "Step 2": "在D已知的条件下，A不会影响C，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 146,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为高(D=1)且气压为高(A=1)的条件下, 温度为高(C=1)的概率为0.1254。在教学质量水平为高(D=1)且气压为低(A=0)的条件下, 温度为高(C=1)的概率为0.1359。",
+        "data_info_math": "P(C=1|D=1,A=1)=0.1254; P(C=1|D=1,A=0)=0.1359; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为高的条件下，气压是和温度相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|A=1,D=1)-P(C=1|A=0,D=1)=0.1254-0.1359=-0.0105!=0",
+        "Step 2": "在D已知的条件下，A和C是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 147,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为高(D=1)且气压为高(A=1)的条件下, 温度为高(C=1)的概率为0.1254。在教学质量水平为高(D=1)且气压为低(A=0)的条件下, 温度为高(C=1)的概率为0.1359。",
+        "data_info_math": "P(C=1|D=1,A=1)=0.1254; P(C=1|D=1,A=0)=0.1359; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为高的条件下，气压是和温度独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|A=1,D=1)-P(C=1|A=0,D=1)=0.1254-0.1359=-0.0105!=0",
+        "Step 2": "在D已知的条件下，A和C是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 148,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为低(D=0)且温度为高(C=1)的条件下, 气压为高(A=1)的概率为0.4916。在教学质量水平为低(D=0)且温度为低(C=0)的条件下, 气压为高(A=1)的概率为0.5139。",
+        "data_info_math": "P(A=1|D=0,C=1)=0.4916; P(A=1|D=0,C=0)=0.5139; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为低的条件下，温度会影响气压吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(C=1),D=0)-P(A=1|do(C=0),D=0)=P(A=1|D=0)-P(A=1|D=0)=0",
+        "Step 2": "在D已知的条件下，C不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 149,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为低(D=0)且温度为高(C=1)的条件下, 气压为高(A=1)的概率为0.4916。在教学质量水平为低(D=0)且温度为低(C=0)的条件下, 气压为高(A=1)的概率为0.5139。",
+        "data_info_math": "P(A=1|D=0,C=1)=0.4916; P(A=1|D=0,C=0)=0.5139; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为低的条件下，温度不会影响气压吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(C=1),D=0)-P(A=1|do(C=0),D=0)=P(A=1|D=0)-P(A=1|D=0)=0",
+        "Step 2": "在D已知的条件下，C不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 150,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为低(D=0)且温度为高(C=1)的条件下, 气压为高(A=1)的概率为0.4916。在教学质量水平为低(D=0)且温度为低(C=0)的条件下, 气压为高(A=1)的概率为0.5139。",
+        "data_info_math": "P(A=1|D=0,C=1)=0.4916; P(A=1|D=0,C=0)=0.5139; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为低的条件下，温度是和气压相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|C=1,D=0)-P(A=1|C=0,D=0)=0.4916-0.5139=-0.0223!=0",
+        "Step 2": "在D已知的条件下，C和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 151,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为低(D=0)且温度为高(C=1)的条件下, 气压为高(A=1)的概率为0.4916。在教学质量水平为低(D=0)且温度为低(C=0)的条件下, 气压为高(A=1)的概率为0.5139。",
+        "data_info_math": "P(A=1|D=0,C=1)=0.4916; P(A=1|D=0,C=0)=0.5139; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为低的条件下，温度是和气压独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|C=1,D=0)-P(A=1|C=0,D=0)=0.4916-0.5139=-0.0223!=0",
+        "Step 2": "在D已知的条件下，C和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 152,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为高(D=1)且温度为高(C=1)的条件下, 气压为高(A=1)的概率为0.5871。在教学质量水平为高(D=1)且温度为低(C=0)的条件下, 气压为高(A=1)的概率为0.6093。",
+        "data_info_math": "P(A=1|D=1,C=1)=0.5871; P(A=1|D=1,C=0)=0.6093; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为高的条件下，温度会影响气压吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(C=1),D=1)-P(A=1|do(C=0),D=1)=P(A=1|D=1)-P(A=1|D=1)=0",
+        "Step 2": "在D已知的条件下，C不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 153,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为高(D=1)且温度为高(C=1)的条件下, 气压为高(A=1)的概率为0.5871。在教学质量水平为高(D=1)且温度为低(C=0)的条件下, 气压为高(A=1)的概率为0.6093。",
+        "data_info_math": "P(A=1|D=1,C=1)=0.5871; P(A=1|D=1,C=0)=0.6093; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为高的条件下，温度不会影响气压吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(C=1),D=1)-P(A=1|do(C=0),D=1)=P(A=1|D=1)-P(A=1|D=1)=0",
+        "Step 2": "在D已知的条件下，C不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 154,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为高(D=1)且温度为高(C=1)的条件下, 气压为高(A=1)的概率为0.5871。在教学质量水平为高(D=1)且温度为低(C=0)的条件下, 气压为高(A=1)的概率为0.6093。",
+        "data_info_math": "P(A=1|D=1,C=1)=0.5871; P(A=1|D=1,C=0)=0.6093; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为高的条件下，温度是和气压相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|C=1,D=1)-P(A=1|C=0,D=1)=0.5871-0.6093=-0.0222!=0",
+        "Step 2": "在D已知的条件下，C和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 155,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在教学质量水平为高(D=1)且温度为高(C=1)的条件下, 气压为高(A=1)的概率为0.5871。在教学质量水平为高(D=1)且温度为低(C=0)的条件下, 气压为高(A=1)的概率为0.6093。",
+        "data_info_math": "P(A=1|D=1,C=1)=0.5871; P(A=1|D=1,C=0)=0.6093; "
+      },
+      "Instruction": "",
+      "Question": "给定教学质量水平为高的条件下，温度是和气压独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|C=1,D=1)-P(A=1|C=0,D=1)=0.5871-0.6093=-0.0222!=0",
+        "Step 2": "在D已知的条件下，C和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 156,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为低(A=0)的条件下, 教学质量水平为高(D=1)的概率为0.3367。教学质量水平为高(D=1)的概率为0.3863。气压为高(A=1)且教学质量水平为高(D=1)的概率为0.2343。",
+        "data_info_math": "P(D=1|A=0)=0.3367; P(D=1)=0.3863; P(A=1,D=1)=0.2343; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定气压为高且教学质量水平为高, 那么假如气压为低，此时教学质量水平为低的概率的下界是多少？",
+      "Answer": "0.2117",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.3367",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.3863-0.3367)/0.2343}\n=max{0, 0.2117}\n=0.2117"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.21171295348288902
+    },
+    {
+      "id": 157,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为低(A=0)的条件下, 教学质量水平为低(D=0)的概率为0.6633。气压为低(A=0)且教学质量水平为低(D=0)的概率为0.2995。气压为高(A=1)且教学质量水平为高(D=1)的概率为0.2343。",
+        "data_info_math": "P(D=0|A=0)=0.6633; P(A=0,D=0)=0.2995; P(A=1,D=1)=0.2343; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定气压为高且教学质量水平为高, 那么假如气压为低，此时教学质量水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.6633",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.6633-0.2995)/0.2343}\n=min{1, 1.5529}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 158,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为低(B=0)的条件下, 温度为高(C=1)的概率为0.1389。温度为高(C=1)的概率为0.1011。身体健康水平为高(B=1)且温度为高(C=1)的概率为0.0080。",
+        "data_info_math": "P(C=1|B=0)=0.1389; P(C=1)=0.1011; P(B=1,C=1)=0.0080; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定身体健康水平为高且温度为高, 那么假如身体健康水平为低，此时温度为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=P(C=1|B=0)=0.1389",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.1011-0.1389)/0.0080}\n=max{0, -4.7545}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 159,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为低(B=0)的条件下, 温度为低(C=0)的概率为0.8611。身体健康水平为低(B=0)且温度为低(C=0)的概率为0.5771。身体健康水平为高(B=1)且温度为高(C=1)的概率为0.0080。",
+        "data_info_math": "P(C=0|B=0)=0.8611; P(B=0,C=0)=0.5771; P(B=1,C=1)=0.0080; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定身体健康水平为高且温度为高, 那么假如身体健康水平为低，此时温度为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=P(C=0|B=0)=0.8611",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.8611-0.5771)/0.0080}\n=min{1, 35.6727}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 160,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为低(B=0)的条件下, 教学质量水平为高(D=1)的概率为0.3909。教学质量水平为高(D=1)的概率为0.3863。身体健康水平为高(B=1)且教学质量水平为高(D=1)的概率为0.1243。",
+        "data_info_math": "P(D=1|B=0)=0.3909; P(D=1)=0.3863; P(B=1,D=1)=0.1243; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定身体健康水平为高且教学质量水平为高, 那么假如身体健康水平为低，此时教学质量水平为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=P(D=1|B=0)=0.3909",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.3863-0.3909)/0.1243}\n=max{0, -0.0370}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 161,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为低(B=0)的条件下, 教学质量水平为低(D=0)的概率为0.6091。身体健康水平为低(B=0)且教学质量水平为低(D=0)的概率为0.4082。身体健康水平为高(B=1)且教学质量水平为高(D=1)的概率为0.1243。",
+        "data_info_math": "P(D=0|B=0)=0.6091; P(B=0,D=0)=0.4082; P(B=1,D=1)=0.1243; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定身体健康水平为高且教学质量水平为高, 那么假如身体健康水平为低，此时教学质量水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=P(D=0|B=0)=0.6091",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.6091-0.4082)/0.1243}\n=min{1, 1.6159}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 162,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为低(C=0)的条件下, 教学质量水平为高(D=1)的概率为0.3741。教学质量水平为高(D=1)的概率为0.3863。温度为高(C=1)且教学质量水平为高(D=1)的概率为0.0500。",
+        "data_info_math": "P(D=1|C=0)=0.3741; P(D=1)=0.3863; P(C=1,D=1)=0.0500; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定温度为高且教学质量水平为高, 那么假如温度为低，此时教学质量水平为低的概率的下界是多少？",
+      "Answer": "0.2445",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=0))\nP(D=1|do(C=0))=P(D=1|C=0)=0.3741",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(C=0))]/P(C=1,D=1)}\n=max{0, (0.3863-0.3741)/0.0500}\n=max{0, 0.2445}\n=0.2445"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.24454865991292624
+    },
+    {
+      "id": 163,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为低(C=0)的条件下, 教学质量水平为低(D=0)的概率为0.6259。温度为低(C=0)且教学质量水平为低(D=0)的概率为0.5627。温度为高(C=1)且教学质量水平为高(D=1)的概率为0.0500。",
+        "data_info_math": "P(D=0|C=0)=0.6259; P(C=0,D=0)=0.5627; P(C=1,D=1)=0.0500; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定温度为高且教学质量水平为高, 那么假如温度为低，此时教学质量水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=0))\nP(D=0|do(C=0))=P(D=0|C=0)=0.6259",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(C=0)-P(C=0,D=0)]/P(C=1,D=1)}\n=min{1, (0.6259-0.5627)/0.0500}\n=min{1, 1.2641}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 164,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为高(A=1)的条件下, 教学质量水平为低(D=0)的概率为0.5729。教学质量水平为低(D=0)的概率为0.6137。气压为低(A=0)且教学质量水平为低(D=0)的概率为0.2995。",
+        "data_info_math": "P(D=0|A=1)=0.5729; P(D=0)=0.6137; P(A=0,D=0)=0.2995; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定气压为低且教学质量水平为低, 假如气压为高，此时教学质量水平为高的概率的下界是多少？",
+      "Answer": "0.1363",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.5729",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.6137-0.5729)/0.2995}\n=max{0, 0.1363}\n=0.1363"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.13633141565708726
+    },
+    {
+      "id": 165,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在气压为高(A=1)的条件下, 教学质量水平为高(D=1)的概率为0.4271。气压为低(A=0)且教学质量水平为低(D=0)的概率为0.2995。气压为高(A=1)且教学质量水平为高(D=1)的概率为0.2343。",
+        "data_info_math": "P(D=1|A=1)=0.4271; P(A=0,D=0)=0.2995; P(A=1,D=1)=0.2343; "
+      },
+      "Instruction": "考虑气压作用于教学质量水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定气压为低且教学质量水平为低, 假如气压为高，此时教学质量水平为高的概率的上界是多少？",
+      "Answer": "0.6439",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.4271",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.4271-0.2343)/0.2995}\n=min{1, 0.6439}\n=0.6439"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.6439446118638456
+    },
+    {
+      "id": 166,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为高(B=1)的条件下, 温度为低(C=0)的概率为0.9759。温度为低(C=0)的概率为0.8989。身体健康水平为低(B=0)且温度为低(C=0)的概率为0.5771。",
+        "data_info_math": "P(C=0|B=1)=0.9759; P(C=0)=0.8989; P(B=0,C=0)=0.5771; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定身体健康水平为低且温度为低, 假如身体健康水平为高，此时温度为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=P(C=0|B=1)=0.9759",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.8989-0.9759)/0.5771}\n=max{0, -0.1333}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 167,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为高(B=1)的条件下, 温度为高(C=1)的概率为0.0241。身体健康水平为低(B=0)且温度为低(C=0)的概率为0.5771。身体健康水平为高(B=1)且温度为高(C=1)的概率为0.0080。",
+        "data_info_math": "P(C=1|B=1)=0.0241; P(B=0,C=0)=0.5771; P(B=1,C=1)=0.0080; "
+      },
+      "Instruction": "考虑身体健康水平作用于温度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定身体健康水平为低且温度为低, 假如身体健康水平为高，此时温度为高的概率的上界是多少？",
+      "Answer": "0.0280",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=P(C=1|B=1)=0.0241",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.0241-0.0080)/0.5771}\n=min{1, 0.0280}\n=0.0280"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.02803265687450055
+    },
+    {
+      "id": 168,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为高(B=1)的条件下, 教学质量水平为低(D=0)的概率为0.6231。教学质量水平为低(D=0)的概率为0.6137。身体健康水平为低(B=0)且教学质量水平为低(D=0)的概率为0.4082。",
+        "data_info_math": "P(D=0|B=1)=0.6231; P(D=0)=0.6137; P(B=0,D=0)=0.4082; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定身体健康水平为低且教学质量水平为低, 假如身体健康水平为高，此时教学质量水平为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=P(D=0|B=1)=0.6231",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.6137-0.6231)/0.4082}\n=max{0, -0.0229}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 169,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在身体健康水平为高(B=1)的条件下, 教学质量水平为高(D=1)的概率为0.3769。身体健康水平为低(B=0)且教学质量水平为低(D=0)的概率为0.4082。身体健康水平为高(B=1)且教学质量水平为高(D=1)的概率为0.1243。",
+        "data_info_math": "P(D=1|B=1)=0.3769; P(B=0,D=0)=0.4082; P(B=1,D=1)=0.1243; "
+      },
+      "Instruction": "考虑身体健康水平作用于教学质量水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定身体健康水平为低且教学质量水平为低, 假如身体健康水平为高，此时教学质量水平为高的概率的上界是多少？",
+      "Answer": "0.6189",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=P(D=1|B=1)=0.3769",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.3769-0.1243)/0.4082}\n=min{1, 0.6189}\n=0.6189"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.6188536288317048
+    },
+    {
+      "id": 170,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为高(C=1)的条件下, 教学质量水平为低(D=0)的概率为0.5048。教学质量水平为低(D=0)的概率为0.6137。温度为低(C=0)且教学质量水平为低(D=0)的概率为0.5627。",
+        "data_info_math": "P(D=0|C=1)=0.5048; P(D=0)=0.6137; P(C=0,D=0)=0.5627; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定温度为低且教学质量水平为低, 假如温度为高，此时教学质量水平为高的概率的下界是多少？",
+      "Answer": "0.1935",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=1))\nP(D=0|do(C=1))=P(D=0|C=1)=0.5048",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(C=1))]/P(C=0,D=0)}\n=max{0, (0.6137-0.5048)/0.5627}\n=max{0, 0.1935}\n=0.1935"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.1934516869459832
+    },
+    {
+      "id": 171,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表气压, B代表身体健康水平, C代表温度, D代表教学质量水平。",
+        "data_info": "在温度为高(C=1)的条件下, 教学质量水平为高(D=1)的概率为0.4952。温度为低(C=0)且教学质量水平为低(D=0)的概率为0.5627。温度为高(C=1)且教学质量水平为高(D=1)的概率为0.0500。",
+        "data_info_math": "P(D=1|C=1)=0.4952; P(C=0,D=0)=0.5627; P(C=1,D=1)=0.0500; "
+      },
+      "Instruction": "考虑温度作用于教学质量水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定温度为低且教学质量水平为低, 假如温度为高，此时教学质量水平为高的概率的上界是多少？",
+      "Answer": "0.7911",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=1))\nP(D=1|do(C=1))=P(D=1|C=1)=0.4952",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(C=1)-P(C=1,D=1)]/P(C=0,D=0)}\n=min{1, (0.4952-0.0500)/0.5627}\n=min{1, 0.7911}\n=0.7911"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.7910560091184438
+    }
+  ]
+}

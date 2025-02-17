@@ -1,0 +1,4403 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "reiz",
+      "B": "ckyn",
+      "C": "nili",
+      "D": "yhyv"
+    },
+    "node_value": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": 0.3042352566468466,
+      "B": -1.5645792971102859,
+      "C": 1.0928652354699828,
+      "D": -0.5519806794140633
+    },
+    "edge_weight": {
+      "A->B": -0.9889550780030426,
+      "A->C": -2.203286360974908,
+      "B->D": 1.1291323082703444,
+      "C->D": -0.16032575697011164
+    },
+    "function_description": "P(A=1)=0.5755\nP(B=1|A)=sigmoid(-1.5645792971102859 + -0.9890 * A)\nP(C=1|A)=sigmoid(1.0928652354699828 + -2.2033 * A)\nP(D=1|B,C)=sigmoid(-0.5519806794140633 + 1.1291 * B + -0.1603 * C)\n",
+    "text_description": "The probability of reiz being high (A=1) is 0.5755. \nFor those with reiz being low (A=0), the probability of ckyn being high (B=1) is 0.1730. \nFor those with reiz being high (A=1), the probability of ckyn being high (B=1) is 0.0722. \nFor those with reiz being low (A=0), the probability of nili being high (C=1) is 0.7489. \nFor those with reiz being high (A=1), the probability of nili being high (C=1) is 0.2478. \nFor those with ckyn being low (B=0) and nili being low (C=0), the probability of yhyv being high (D=1) is 0.3654. \nFor those with ckyn being low (B=0) and nili being high (C=1), the probability of yhyv being high (D=1) is 0.3291. \nFor those with ckyn being high (B=1) and nili being low (C=0), the probability of yhyv being high (D=1) is 0.6404. \nFor those with ckyn being high (B=1) and nili being high (C=1), the probability of yhyv being high (D=1) is 0.6027. \n",
+    "Statistic_data": [
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 1044
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 7386
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 12784
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 8808
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 2731
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 4313
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 577
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 4480
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 2249
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 1064
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 342
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 1534
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 295
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 580
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 1597
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 216
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, ckyn为低(B=0)的概率为0.8321。在reiz为高(A=1)的条件下, ckyn为低(B=0)的概率为0.9266。",
+        "data_info_math": "P(B=0|A=0)=0.8321; P(B=0|A=1)=0.9266; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果reiz被改变为低，那么ckyn更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.8321\tP(B=0|A=1)=0.9266",
+        "Step 6": "ATE=0.8321-0.9266=-0.0944",
+        "Step 7": "ATE=-0.0944<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.09442811316499444
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, ckyn为高(B=1)的概率为0.1679。在reiz为高(A=1)的条件下, ckyn为高(B=1)的概率为0.0734。",
+        "data_info_math": "P(B=1|A=0)=0.1679; P(B=1|A=1)=0.0734; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果reiz被改变为低，那么ckyn更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.1679\tP(B=1|A=1)=0.0734",
+        "Step 6": "ATE=0.1679-0.0734=0.0944",
+        "Step 7": "ATE=0.0944>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.09442811316499455
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, ckyn为低(B=0)的概率为0.9266。在reiz为低(A=0)的条件下, ckyn为低(B=0)的概率为0.8321。",
+        "data_info_math": "P(B=0|A=1)=0.9266; P(B=0|A=0)=0.8321; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果reiz被改变为高，那么ckyn更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.9266\tP(B=0|A=0)=0.8321",
+        "Step 6": "ATE=0.9266-0.8321=0.0944",
+        "Step 7": "ATE=0.0944>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.09442811316499444
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, ckyn为高(B=1)的概率为0.0734。在reiz为低(A=0)的条件下, ckyn为高(B=1)的概率为0.1679。",
+        "data_info_math": "P(B=1|A=1)=0.0734; P(B=1|A=0)=0.1679; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果reiz被改变为高，那么ckyn更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.0734\tP(B=1|A=0)=0.1679",
+        "Step 6": "ATE=0.0734-0.1679=-0.0944",
+        "Step 7": "ATE=-0.0944<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.09442811316499455
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, nili为低(C=0)的概率为0.2504。在reiz为高(A=1)的条件下, nili为低(C=0)的概率为0.7506。",
+        "data_info_math": "P(C=0|A=0)=0.2504; P(C=0|A=1)=0.7506; "
+      },
+      "Instruction": "考虑reiz作用于nili的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果reiz被改变为低，那么nili更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.2504\tP(C=0|A=1)=0.7506",
+        "Step 6": "ATE=0.2504-0.7506=-0.5002",
+        "Step 7": "ATE=-0.5002<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.5002418221745326
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, nili为高(C=1)的概率为0.7496。在reiz为高(A=1)的条件下, nili为高(C=1)的概率为0.2494。",
+        "data_info_math": "P(C=1|A=0)=0.7496; P(C=1|A=1)=0.2494; "
+      },
+      "Instruction": "考虑reiz作用于nili的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果reiz被改变为低，那么nili更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.7496\tP(C=1|A=1)=0.2494",
+        "Step 6": "ATE=0.7496-0.2494=0.5002",
+        "Step 7": "ATE=0.5002>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.5002418221745326
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, nili为低(C=0)的概率为0.7506。在reiz为低(A=0)的条件下, nili为低(C=0)的概率为0.2504。",
+        "data_info_math": "P(C=0|A=1)=0.7506; P(C=0|A=0)=0.2504; "
+      },
+      "Instruction": "考虑reiz作用于nili的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果reiz被改变为高，那么nili更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.7506\tP(C=0|A=0)=0.2504",
+        "Step 6": "ATE=0.7506-0.2504=0.5002",
+        "Step 7": "ATE=0.5002>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.5002418221745326
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, nili为高(C=1)的概率为0.2494。在reiz为低(A=0)的条件下, nili为高(C=1)的概率为0.7496。",
+        "data_info_math": "P(C=1|A=1)=0.2494; P(C=1|A=0)=0.7496; "
+      },
+      "Instruction": "考虑reiz作用于nili的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果reiz被改变为高，那么nili更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.2494\tP(C=1|A=0)=0.7496",
+        "Step 6": "ATE=0.2494-0.7496=-0.5002",
+        "Step 7": "ATE=-0.5002<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.5002418221745326
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.6173。在reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6220。",
+        "data_info_math": "P(D=0|A=0)=0.6173; P(D=0|A=1)=0.6220; "
+      },
+      "Instruction": "考虑reiz作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果reiz被改变为低，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6173\tP(D=0|A=1)=0.6220",
+        "Step 6": "ATE=0.6173-0.6220=-0.0047",
+        "Step 7": "ATE=-0.0047<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.004650403561775152
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.3827。在reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3780。",
+        "data_info_math": "P(D=1|A=0)=0.3827; P(D=1|A=1)=0.3780; "
+      },
+      "Instruction": "考虑reiz作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果reiz被改变为低，那么yhyv更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3827\tP(D=1|A=1)=0.3780",
+        "Step 6": "ATE=0.3827-0.3780=0.0047",
+        "Step 7": "ATE=0.0047>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.004650403561775318
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6220。在reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.6173。",
+        "data_info_math": "P(D=0|A=1)=0.6220; P(D=0|A=0)=0.6173; "
+      },
+      "Instruction": "考虑reiz作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果reiz被改变为高，那么yhyv更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.6220\tP(D=0|A=0)=0.6173",
+        "Step 6": "ATE=0.6220-0.6173=0.0047",
+        "Step 7": "ATE=0.0047>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.004650403561775152
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3780。在reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.3827。",
+        "data_info_math": "P(D=1|A=1)=0.3780; P(D=1|A=0)=0.3827; "
+      },
+      "Instruction": "考虑reiz作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果reiz被改变为高，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.3780\tP(D=1|A=0)=0.3827",
+        "Step 6": "ATE=0.3780-0.3827=-0.0047",
+        "Step 7": "ATE=-0.0047<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.004650403561775318
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于reiz的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为低，那么reiz更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于reiz的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为低，那么reiz更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于reiz的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为高，那么reiz更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于reiz的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为高，那么reiz更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于nili的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为低，那么nili更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于nili的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为低，那么nili更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于nili的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为高，那么nili更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于nili的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为高，那么nili更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为低(B=0)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.6613。在ckyn为高(B=1)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.3994。reiz为低(A=0)的概率为0.4194。在ckyn为低(B=0)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6418。在ckyn为高(B=1)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.3720。reiz为高(A=1)的概率为0.5806。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6613; P(D=0|B=1,A=0)=0.3994; P(A=0)=0.4194; P(D=0|B=0,A=1)=0.6418; P(D=0|B=1,A=1)=0.3720; P(A=1)=0.5806; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为低，那么yhyv更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=sum_{A} [P(D=0|B=0,A)*P(A)-P(D=0|B=1,A)*P(A)]=[P(D=0|B=0,A=0)*P(A=0)-P(D=0|B=1,A=0)*P(A=0)]+[P(D=0|B=0,A=1)*P(A=1)-P(D=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=0,A=0)=0.6613\tP(D=0|B=1,A=0)=0.3994\tP(A=0)=0.4194\tP(D=0|B=0,A=1)=0.6418\tP(D=0|B=1,A=1)=0.3720\tP(A=1)=0.5806",
+        "Step 6": "ATE=[0.6613*0.4194-0.3994*0.4194]+[0.6418*0.5806-0.3720*0.5806]=0.2665",
+        "Step 7": "ATE=0.2665>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.26650609499228806
+    },
+    {
+      "id": 21,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为低(B=0)且nili为低(C=0)的条件下, yhyv为低(D=0)的概率为0.6333。在ckyn为高(B=1)且nili为低(C=0)的条件下, yhyv为低(D=0)的概率为0.3614。nili为低(C=0)的概率为0.5408。在ckyn为低(B=0)且nili为高(C=1)的条件下, yhyv为低(D=0)的概率为0.6694。在ckyn为高(B=1)且nili为高(C=1)的条件下, yhyv为低(D=0)的概率为0.4117。nili为高(C=1)的概率为0.4592。",
+        "data_info_math": "P(D=0|B=0,C=0)=0.6333; P(D=0|B=1,C=0)=0.3614; P(C=0)=0.5408; P(D=0|B=0,C=1)=0.6694; P(D=0|B=1,C=1)=0.4117; P(C=1)=0.4592; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为低，那么yhyv更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{C}。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=sum_{C} [P(D=0|B=0,C)*P(C)-P(D=0|B=1,C)*P(C)]=[P(D=0|B=0,C=0)*P(C=0)-P(D=0|B=1,C=0)*P(C=0)]+[P(D=0|B=0,C=1)*P(C=1)-P(D=0|B=1,C=1)*P(C=1)]",
+        "Step 5": "P(D=0|B=0,C=0)=0.6333\tP(D=0|B=1,C=0)=0.3614\tP(C=0)=0.5408\tP(D=0|B=0,C=1)=0.6694\tP(D=0|B=1,C=1)=0.4117\tP(C=1)=0.4592",
+        "Step 6": "ATE=[0.6333*0.5408-0.3614*0.5408]+[0.6694*0.4592-0.4117*0.4592]=0.2654",
+        "Step 7": "ATE=0.2654>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.26540322652094966
+    },
+    {
+      "id": 22,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为低(B=0)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.3387。在ckyn为高(B=1)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.6006。reiz为低(A=0)的概率为0.4194。在ckyn为低(B=0)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3582。在ckyn为高(B=1)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.6280。reiz为高(A=1)的概率为0.5806。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3387; P(D=1|B=1,A=0)=0.6006; P(A=0)=0.4194; P(D=1|B=0,A=1)=0.3582; P(D=1|B=1,A=1)=0.6280; P(A=1)=0.5806; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为低，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=sum_{A} [P(D=1|B=0,A)*P(A)-P(D=1|B=1,A)*P(A)]=[P(D=1|B=0,A=0)*P(A=0)-P(D=1|B=1,A=0)*P(A=0)]+[P(D=1|B=0,A=1)*P(A=1)-P(D=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=0,A=0)=0.3387\tP(D=1|B=1,A=0)=0.6006\tP(A=0)=0.4194\tP(D=1|B=0,A=1)=0.3582\tP(D=1|B=1,A=1)=0.6280\tP(A=1)=0.5806",
+        "Step 6": "ATE=[0.3387*0.4194-0.6006*0.4194]+[0.3582*0.5806-0.6280*0.5806]=-0.2665",
+        "Step 7": "ATE=-0.2665<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.2665060949922883
+    },
+    {
+      "id": 23,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为低(B=0)且nili为低(C=0)的条件下, yhyv为高(D=1)的概率为0.3667。在ckyn为高(B=1)且nili为低(C=0)的条件下, yhyv为高(D=1)的概率为0.6386。nili为低(C=0)的概率为0.5408。在ckyn为低(B=0)且nili为高(C=1)的条件下, yhyv为高(D=1)的概率为0.3306。在ckyn为高(B=1)且nili为高(C=1)的条件下, yhyv为高(D=1)的概率为0.5883。nili为高(C=1)的概率为0.4592。",
+        "data_info_math": "P(D=1|B=0,C=0)=0.3667; P(D=1|B=1,C=0)=0.6386; P(C=0)=0.5408; P(D=1|B=0,C=1)=0.3306; P(D=1|B=1,C=1)=0.5883; P(C=1)=0.4592; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为低，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{C}。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=sum_{C} [P(D=1|B=0,C)*P(C)-P(D=1|B=1,C)*P(C)]=[P(D=1|B=0,C=0)*P(C=0)-P(D=1|B=1,C=0)*P(C=0)]+[P(D=1|B=0,C=1)*P(C=1)-P(D=1|B=1,C=1)*P(C=1)]",
+        "Step 5": "P(D=1|B=0,C=0)=0.3667\tP(D=1|B=1,C=0)=0.6386\tP(C=0)=0.5408\tP(D=1|B=0,C=1)=0.3306\tP(D=1|B=1,C=1)=0.5883\tP(C=1)=0.4592",
+        "Step 6": "ATE=[0.3667*0.5408-0.6386*0.5408]+[0.3306*0.4592-0.5883*0.4592]=-0.2654",
+        "Step 7": "ATE=-0.2654<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.26540322652094983
+    },
+    {
+      "id": 24,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为高(B=1)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.3994。在ckyn为低(B=0)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.6613。reiz为低(A=0)的概率为0.4194。在ckyn为高(B=1)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.3720。在ckyn为低(B=0)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6418。reiz为高(A=1)的概率为0.5806。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.3994; P(D=0|B=0,A=0)=0.6613; P(A=0)=0.4194; P(D=0|B=1,A=1)=0.3720; P(D=0|B=0,A=1)=0.6418; P(A=1)=0.5806; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为高，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=sum_{A} [P(D=0|B=1,A)*P(A)-P(D=0|B=0,A)*P(A)]=[P(D=0|B=1,A=0)*P(A=0)-P(D=0|B=0,A=0)*P(A=0)]+[P(D=0|B=1,A=1)*P(A=1)-P(D=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=1,A=0)=0.3994\tP(D=0|B=0,A=0)=0.6613\tP(A=0)=0.4194\tP(D=0|B=1,A=1)=0.3720\tP(D=0|B=0,A=1)=0.6418\tP(A=1)=0.5806",
+        "Step 6": "ATE=[0.3994*0.4194-0.6613*0.4194]+[0.3720*0.5806-0.6418*0.5806]=-0.2665",
+        "Step 7": "ATE=-0.2665<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.26650609499228806
+    },
+    {
+      "id": 25,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为高(B=1)且nili为低(C=0)的条件下, yhyv为低(D=0)的概率为0.3614。在ckyn为低(B=0)且nili为低(C=0)的条件下, yhyv为低(D=0)的概率为0.6333。nili为低(C=0)的概率为0.5408。在ckyn为高(B=1)且nili为高(C=1)的条件下, yhyv为低(D=0)的概率为0.4117。在ckyn为低(B=0)且nili为高(C=1)的条件下, yhyv为低(D=0)的概率为0.6694。nili为高(C=1)的概率为0.4592。",
+        "data_info_math": "P(D=0|B=1,C=0)=0.3614; P(D=0|B=0,C=0)=0.6333; P(C=0)=0.5408; P(D=0|B=1,C=1)=0.4117; P(D=0|B=0,C=1)=0.6694; P(C=1)=0.4592; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为高，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{C}。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=sum_{C} [P(D=0|B=1,C)*P(C)-P(D=0|B=0,C)*P(C)]=[P(D=0|B=1,C=0)*P(C=0)-P(D=0|B=0,C=0)*P(C=0)]+[P(D=0|B=1,C=1)*P(C=1)-P(D=0|B=0,C=1)*P(C=1)]",
+        "Step 5": "P(D=0|B=1,C=0)=0.3614\tP(D=0|B=0,C=0)=0.6333\tP(C=0)=0.5408\tP(D=0|B=1,C=1)=0.4117\tP(D=0|B=0,C=1)=0.6694\tP(C=1)=0.4592",
+        "Step 6": "ATE=[0.3614*0.5408-0.6333*0.5408]+[0.4117*0.4592-0.6694*0.4592]=-0.2654",
+        "Step 7": "ATE=-0.2654<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.26540322652094966
+    },
+    {
+      "id": 26,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为高(B=1)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.6006。在ckyn为低(B=0)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.3387。reiz为低(A=0)的概率为0.4194。在ckyn为高(B=1)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.6280。在ckyn为低(B=0)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3582。reiz为高(A=1)的概率为0.5806。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.6006; P(D=1|B=0,A=0)=0.3387; P(A=0)=0.4194; P(D=1|B=1,A=1)=0.6280; P(D=1|B=0,A=1)=0.3582; P(A=1)=0.5806; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为高，那么yhyv更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=sum_{A} [P(D=1|B=1,A)*P(A)-P(D=1|B=0,A)*P(A)]=[P(D=1|B=1,A=0)*P(A=0)-P(D=1|B=0,A=0)*P(A=0)]+[P(D=1|B=1,A=1)*P(A=1)-P(D=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=1,A=0)=0.6006\tP(D=1|B=0,A=0)=0.3387\tP(A=0)=0.4194\tP(D=1|B=1,A=1)=0.6280\tP(D=1|B=0,A=1)=0.3582\tP(A=1)=0.5806",
+        "Step 6": "ATE=[0.6006*0.4194-0.3387*0.4194]+[0.6280*0.5806-0.3582*0.5806]=0.2665",
+        "Step 7": "ATE=0.2665>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.2665060949922883
+    },
+    {
+      "id": 27,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为高(B=1)且nili为低(C=0)的条件下, yhyv为高(D=1)的概率为0.6386。在ckyn为低(B=0)且nili为低(C=0)的条件下, yhyv为高(D=1)的概率为0.3667。nili为低(C=0)的概率为0.5408。在ckyn为高(B=1)且nili为高(C=1)的条件下, yhyv为高(D=1)的概率为0.5883。在ckyn为低(B=0)且nili为高(C=1)的条件下, yhyv为高(D=1)的概率为0.3306。nili为高(C=1)的概率为0.4592。",
+        "data_info_math": "P(D=1|B=1,C=0)=0.6386; P(D=1|B=0,C=0)=0.3667; P(C=0)=0.5408; P(D=1|B=1,C=1)=0.5883; P(D=1|B=0,C=1)=0.3306; P(C=1)=0.4592; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ckyn被改变为高，那么yhyv更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{C}。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=sum_{C} [P(D=1|B=1,C)*P(C)-P(D=1|B=0,C)*P(C)]=[P(D=1|B=1,C=0)*P(C=0)-P(D=1|B=0,C=0)*P(C=0)]+[P(D=1|B=1,C=1)*P(C=1)-P(D=1|B=0,C=1)*P(C=1)]",
+        "Step 5": "P(D=1|B=1,C=0)=0.6386\tP(D=1|B=0,C=0)=0.3667\tP(C=0)=0.5408\tP(D=1|B=1,C=1)=0.5883\tP(D=1|B=0,C=1)=0.3306\tP(C=1)=0.4592",
+        "Step 6": "ATE=[0.6386*0.5408-0.3667*0.5408]+[0.5883*0.4592-0.3306*0.4592]=0.2654",
+        "Step 7": "ATE=0.2654>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.26540322652094983
+    },
+    {
+      "id": 28,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于reiz的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为低，那么reiz更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于reiz的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为低，那么reiz更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于reiz的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为高，那么reiz更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于reiz的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为高，那么reiz更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于ckyn的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为低，那么ckyn更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 33,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于ckyn的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为低，那么ckyn更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 34,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于ckyn的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为高，那么ckyn更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 35,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于ckyn的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为高，那么ckyn更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 36,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为低(C=0)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.5853。在nili为高(C=1)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.6280。reiz为低(A=0)的概率为0.4194。在nili为低(C=0)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6131。在nili为高(C=1)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6486。reiz为高(A=1)的概率为0.5806。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.5853; P(D=0|C=1,A=0)=0.6280; P(A=0)=0.4194; P(D=0|C=0,A=1)=0.6131; P(D=0|C=1,A=1)=0.6486; P(A=1)=0.5806; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为低，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=0))-P(D=0|do(C=1))=sum_{A} [P(D=0|C=0,A)*P(A)-P(D=0|C=1,A)*P(A)]=[P(D=0|C=0,A=0)*P(A=0)-P(D=0|C=1,A=0)*P(A=0)]+[P(D=0|C=0,A=1)*P(A=1)-P(D=0|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=0,A=0)=0.5853\tP(D=0|C=1,A=0)=0.6280\tP(A=0)=0.4194\tP(D=0|C=0,A=1)=0.6131\tP(D=0|C=1,A=1)=0.6486\tP(A=1)=0.5806",
+        "Step 6": "ATE=[0.5853*0.4194-0.6280*0.4194]+[0.6131*0.5806-0.6486*0.5806]=-0.0385",
+        "Step 7": "ATE=-0.0385<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.03850395919969657
+    },
+    {
+      "id": 37,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为低(C=0)且ckyn为低(B=0)的条件下, yhyv为低(D=0)的概率为0.6333。在nili为高(C=1)且ckyn为低(B=0)的条件下, yhyv为低(D=0)的概率为0.6694。ckyn为低(B=0)的概率为0.8870。在nili为低(C=0)且ckyn为高(B=1)的条件下, yhyv为低(D=0)的概率为0.3614。在nili为高(C=1)且ckyn为高(B=1)的条件下, yhyv为低(D=0)的概率为0.4117。ckyn为高(B=1)的概率为0.1130。",
+        "data_info_math": "P(D=0|C=0,B=0)=0.6333; P(D=0|C=1,B=0)=0.6694; P(B=0)=0.8870; P(D=0|C=0,B=1)=0.3614; P(D=0|C=1,B=1)=0.4117; P(B=1)=0.1130; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为低，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ATE=P(D=0|do(C=0))-P(D=0|do(C=1))=sum_{B} [P(D=0|C=0,B)*P(B)-P(D=0|C=1,B)*P(B)]=[P(D=0|C=0,B=0)*P(B=0)-P(D=0|C=1,B=0)*P(B=0)]+[P(D=0|C=0,B=1)*P(B=1)-P(D=0|C=1,B=1)*P(B=1)]",
+        "Step 5": "P(D=0|C=0,B=0)=0.6333\tP(D=0|C=1,B=0)=0.6694\tP(B=0)=0.8870\tP(D=0|C=0,B=1)=0.3614\tP(D=0|C=1,B=1)=0.4117\tP(B=1)=0.1130",
+        "Step 6": "ATE=[0.6333*0.8870-0.6694*0.8870]+[0.3614*0.1130-0.4117*0.1130]=-0.0377",
+        "Step 7": "ATE=-0.0377<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.037711089923039155
+    },
+    {
+      "id": 38,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为低(C=0)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.4147。在nili为高(C=1)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.3720。reiz为低(A=0)的概率为0.4194。在nili为低(C=0)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3869。在nili为高(C=1)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3514。reiz为高(A=1)的概率为0.5806。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.4147; P(D=1|C=1,A=0)=0.3720; P(A=0)=0.4194; P(D=1|C=0,A=1)=0.3869; P(D=1|C=1,A=1)=0.3514; P(A=1)=0.5806; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为低，那么yhyv更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=0))-P(D=1|do(C=1))=sum_{A} [P(D=1|C=0,A)*P(A)-P(D=1|C=1,A)*P(A)]=[P(D=1|C=0,A=0)*P(A=0)-P(D=1|C=1,A=0)*P(A=0)]+[P(D=1|C=0,A=1)*P(A=1)-P(D=1|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=0,A=0)=0.4147\tP(D=1|C=1,A=0)=0.3720\tP(A=0)=0.4194\tP(D=1|C=0,A=1)=0.3869\tP(D=1|C=1,A=1)=0.3514\tP(A=1)=0.5806",
+        "Step 6": "ATE=[0.4147*0.4194-0.3720*0.4194]+[0.3869*0.5806-0.3514*0.5806]=0.0385",
+        "Step 7": "ATE=0.0385>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.038503959199696625
+    },
+    {
+      "id": 39,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为低(C=0)且ckyn为低(B=0)的条件下, yhyv为高(D=1)的概率为0.3667。在nili为高(C=1)且ckyn为低(B=0)的条件下, yhyv为高(D=1)的概率为0.3306。ckyn为低(B=0)的概率为0.8870。在nili为低(C=0)且ckyn为高(B=1)的条件下, yhyv为高(D=1)的概率为0.6386。在nili为高(C=1)且ckyn为高(B=1)的条件下, yhyv为高(D=1)的概率为0.5883。ckyn为高(B=1)的概率为0.1130。",
+        "data_info_math": "P(D=1|C=0,B=0)=0.3667; P(D=1|C=1,B=0)=0.3306; P(B=0)=0.8870; P(D=1|C=0,B=1)=0.6386; P(D=1|C=1,B=1)=0.5883; P(B=1)=0.1130; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为低，那么yhyv更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ATE=P(D=1|do(C=0))-P(D=1|do(C=1))=sum_{B} [P(D=1|C=0,B)*P(B)-P(D=1|C=1,B)*P(B)]=[P(D=1|C=0,B=0)*P(B=0)-P(D=1|C=1,B=0)*P(B=0)]+[P(D=1|C=0,B=1)*P(B=1)-P(D=1|C=1,B=1)*P(B=1)]",
+        "Step 5": "P(D=1|C=0,B=0)=0.3667\tP(D=1|C=1,B=0)=0.3306\tP(B=0)=0.8870\tP(D=1|C=0,B=1)=0.6386\tP(D=1|C=1,B=1)=0.5883\tP(B=1)=0.1130",
+        "Step 6": "ATE=[0.3667*0.8870-0.3306*0.8870]+[0.6386*0.1130-0.5883*0.1130]=0.0377",
+        "Step 7": "ATE=0.0377>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.037711089923039134
+    },
+    {
+      "id": 40,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为高(C=1)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.6280。在nili为低(C=0)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.5853。reiz为低(A=0)的概率为0.4194。在nili为高(C=1)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6486。在nili为低(C=0)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6131。reiz为高(A=1)的概率为0.5806。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.6280; P(D=0|C=0,A=0)=0.5853; P(A=0)=0.4194; P(D=0|C=1,A=1)=0.6486; P(D=0|C=0,A=1)=0.6131; P(A=1)=0.5806; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为高，那么yhyv更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=1))-P(D=0|do(C=0))=sum_{A} [P(D=0|C=1,A)*P(A)-P(D=0|C=0,A)*P(A)]=[P(D=0|C=1,A=0)*P(A=0)-P(D=0|C=0,A=0)*P(A=0)]+[P(D=0|C=1,A=1)*P(A=1)-P(D=0|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=1,A=0)=0.6280\tP(D=0|C=0,A=0)=0.5853\tP(A=0)=0.4194\tP(D=0|C=1,A=1)=0.6486\tP(D=0|C=0,A=1)=0.6131\tP(A=1)=0.5806",
+        "Step 6": "ATE=[0.6280*0.4194-0.5853*0.4194]+[0.6486*0.5806-0.6131*0.5806]=0.0385",
+        "Step 7": "ATE=0.0385>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.03850395919969657
+    },
+    {
+      "id": 41,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为高(C=1)且ckyn为低(B=0)的条件下, yhyv为低(D=0)的概率为0.6694。在nili为低(C=0)且ckyn为低(B=0)的条件下, yhyv为低(D=0)的概率为0.6333。ckyn为低(B=0)的概率为0.8870。在nili为高(C=1)且ckyn为高(B=1)的条件下, yhyv为低(D=0)的概率为0.4117。在nili为低(C=0)且ckyn为高(B=1)的条件下, yhyv为低(D=0)的概率为0.3614。ckyn为高(B=1)的概率为0.1130。",
+        "data_info_math": "P(D=0|C=1,B=0)=0.6694; P(D=0|C=0,B=0)=0.6333; P(B=0)=0.8870; P(D=0|C=1,B=1)=0.4117; P(D=0|C=0,B=1)=0.3614; P(B=1)=0.1130; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为高，那么yhyv更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ATE=P(D=0|do(C=1))-P(D=0|do(C=0))=sum_{B} [P(D=0|C=1,B)*P(B)-P(D=0|C=0,B)*P(B)]=[P(D=0|C=1,B=0)*P(B=0)-P(D=0|C=0,B=0)*P(B=0)]+[P(D=0|C=1,B=1)*P(B=1)-P(D=0|C=0,B=1)*P(B=1)]",
+        "Step 5": "P(D=0|C=1,B=0)=0.6694\tP(D=0|C=0,B=0)=0.6333\tP(B=0)=0.8870\tP(D=0|C=1,B=1)=0.4117\tP(D=0|C=0,B=1)=0.3614\tP(B=1)=0.1130",
+        "Step 6": "ATE=[0.6694*0.8870-0.6333*0.8870]+[0.4117*0.1130-0.3614*0.1130]=0.0377",
+        "Step 7": "ATE=0.0377>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.037711089923039155
+    },
+    {
+      "id": 42,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为高(C=1)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.3720。在nili为低(C=0)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.4147。reiz为低(A=0)的概率为0.4194。在nili为高(C=1)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3514。在nili为低(C=0)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3869。reiz为高(A=1)的概率为0.5806。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.3720; P(D=1|C=0,A=0)=0.4147; P(A=0)=0.4194; P(D=1|C=1,A=1)=0.3514; P(D=1|C=0,A=1)=0.3869; P(A=1)=0.5806; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为高，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=1))-P(D=1|do(C=0))=sum_{A} [P(D=1|C=1,A)*P(A)-P(D=1|C=0,A)*P(A)]=[P(D=1|C=1,A=0)*P(A=0)-P(D=1|C=0,A=0)*P(A=0)]+[P(D=1|C=1,A=1)*P(A=1)-P(D=1|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=1,A=0)=0.3720\tP(D=1|C=0,A=0)=0.4147\tP(A=0)=0.4194\tP(D=1|C=1,A=1)=0.3514\tP(D=1|C=0,A=1)=0.3869\tP(A=1)=0.5806",
+        "Step 6": "ATE=[0.3720*0.4194-0.4147*0.4194]+[0.3514*0.5806-0.3869*0.5806]=-0.0385",
+        "Step 7": "ATE=-0.0385<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.038503959199696625
+    },
+    {
+      "id": 43,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为高(C=1)且ckyn为低(B=0)的条件下, yhyv为高(D=1)的概率为0.3306。在nili为低(C=0)且ckyn为低(B=0)的条件下, yhyv为高(D=1)的概率为0.3667。ckyn为低(B=0)的概率为0.8870。在nili为高(C=1)且ckyn为高(B=1)的条件下, yhyv为高(D=1)的概率为0.5883。在nili为低(C=0)且ckyn为高(B=1)的条件下, yhyv为高(D=1)的概率为0.6386。ckyn为高(B=1)的概率为0.1130。",
+        "data_info_math": "P(D=1|C=1,B=0)=0.3306; P(D=1|C=0,B=0)=0.3667; P(B=0)=0.8870; P(D=1|C=1,B=1)=0.5883; P(D=1|C=0,B=1)=0.6386; P(B=1)=0.1130; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nili被改变为高，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ATE=P(D=1|do(C=1))-P(D=1|do(C=0))=sum_{B} [P(D=1|C=1,B)*P(B)-P(D=1|C=0,B)*P(B)]=[P(D=1|C=1,B=0)*P(B=0)-P(D=1|C=0,B=0)*P(B=0)]+[P(D=1|C=1,B=1)*P(B=1)-P(D=1|C=0,B=1)*P(B=1)]",
+        "Step 5": "P(D=1|C=1,B=0)=0.3306\tP(D=1|C=0,B=0)=0.3667\tP(B=0)=0.8870\tP(D=1|C=1,B=1)=0.5883\tP(D=1|C=0,B=1)=0.6386\tP(B=1)=0.1130",
+        "Step 6": "ATE=[0.3306*0.8870-0.3667*0.8870]+[0.5883*0.1130-0.6386*0.1130]=-0.0377",
+        "Step 7": "ATE=-0.0377<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.037711089923039134
+    },
+    {
+      "id": 44,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于reiz的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果yhyv被改变为低，那么reiz更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于reiz的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果yhyv被改变为低，那么reiz更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于reiz的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果yhyv被改变为高，那么reiz更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于reiz的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果yhyv被改变为高，那么reiz更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于ckyn的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果yhyv被改变为低，那么ckyn更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 49,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于ckyn的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果yhyv被改变为低，那么ckyn更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 50,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于ckyn的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果yhyv被改变为高，那么ckyn更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 51,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于ckyn的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果yhyv被改变为高，那么ckyn更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 52,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于nili的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果yhyv被改变为低，那么nili更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 53,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于nili的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果yhyv被改变为低，那么nili更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 54,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于nili的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果yhyv被改变为高，那么nili更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 55,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于nili的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果yhyv被改变为高，那么nili更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 56,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, ckyn为低(B=0)的概率为0.8321。在reiz为高(A=1)的条件下, ckyn为低(B=0)的概率为0.9266。",
+        "data_info_math": "P(B=0|A=0)=0.8321; P(B=0|A=1)=0.9266; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而reiz变化为低，那么ckyn更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.8321\tP(B=0|A=1)=0.9266",
+        "Step 6": "NDE=0.8321-0.9266=-0.0944",
+        "Step 7": "NDE=-0.0944<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.09442811316499444
+    },
+    {
+      "id": 57,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, ckyn为高(B=1)的概率为0.1679。在reiz为高(A=1)的条件下, ckyn为高(B=1)的概率为0.0734。",
+        "data_info_math": "P(B=1|A=0)=0.1679; P(B=1|A=1)=0.0734; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而reiz变化为低，那么ckyn更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.1679\tP(B=1|A=1)=0.0734",
+        "Step 6": "NDE=0.1679-0.0734=0.0944",
+        "Step 7": "NDE=0.0944>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.09442811316499455
+    },
+    {
+      "id": 58,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, ckyn为低(B=0)的概率为0.9266。在reiz为低(A=0)的条件下, ckyn为低(B=0)的概率为0.8321。",
+        "data_info_math": "P(B=0|A=1)=0.9266; P(B=0|A=0)=0.8321; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而reiz变化为高，那么ckyn更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.9266\tP(B=0|A=0)=0.8321",
+        "Step 6": "NDE=0.9266-0.8321=0.0944",
+        "Step 7": "NDE=0.0944>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.09442811316499444
+    },
+    {
+      "id": 59,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, ckyn为高(B=1)的概率为0.0734。在reiz为低(A=0)的条件下, ckyn为高(B=1)的概率为0.1679。",
+        "data_info_math": "P(B=1|A=1)=0.0734; P(B=1|A=0)=0.1679; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而reiz变化为高，那么ckyn更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.0734\tP(B=1|A=0)=0.1679",
+        "Step 6": "NDE=0.0734-0.1679=-0.0944",
+        "Step 7": "NDE=-0.0944<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.09442811316499455
+    },
+    {
+      "id": 60,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, nili为低(C=0)的概率为0.2504。在reiz为高(A=1)的条件下, nili为低(C=0)的概率为0.7506。",
+        "data_info_math": "P(C=0|A=0)=0.2504; P(C=0|A=1)=0.7506; "
+      },
+      "Instruction": "考虑reiz作用于nili的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而reiz变化为低，那么nili更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.2504\tP(C=0|A=1)=0.7506",
+        "Step 6": "NDE=0.2504-0.7506=-0.5002",
+        "Step 7": "NDE=-0.5002<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.5002418221745326
+    },
+    {
+      "id": 61,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, nili为高(C=1)的概率为0.7496。在reiz为高(A=1)的条件下, nili为高(C=1)的概率为0.2494。",
+        "data_info_math": "P(C=1|A=0)=0.7496; P(C=1|A=1)=0.2494; "
+      },
+      "Instruction": "考虑reiz作用于nili的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而reiz变化为低，那么nili更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.7496\tP(C=1|A=1)=0.2494",
+        "Step 6": "NDE=0.7496-0.2494=0.5002",
+        "Step 7": "NDE=0.5002>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.5002418221745326
+    },
+    {
+      "id": 62,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, nili为低(C=0)的概率为0.7506。在reiz为低(A=0)的条件下, nili为低(C=0)的概率为0.2504。",
+        "data_info_math": "P(C=0|A=1)=0.7506; P(C=0|A=0)=0.2504; "
+      },
+      "Instruction": "考虑reiz作用于nili的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而reiz变化为高，那么nili更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.7506\tP(C=0|A=0)=0.2504",
+        "Step 6": "NDE=0.7506-0.2504=0.5002",
+        "Step 7": "NDE=0.5002>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.5002418221745326
+    },
+    {
+      "id": 63,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, nili为高(C=1)的概率为0.2494。在reiz为低(A=0)的条件下, nili为高(C=1)的概率为0.7496。",
+        "data_info_math": "P(C=1|A=1)=0.2494; P(C=1|A=0)=0.7496; "
+      },
+      "Instruction": "考虑reiz作用于nili的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而reiz变化为高，那么nili更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.2494\tP(C=1|A=0)=0.7496",
+        "Step 6": "NDE=0.2494-0.7496=-0.5002",
+        "Step 7": "NDE=-0.5002<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.5002418221745326
+    },
+    {
+      "id": 64,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于yhyv的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而reiz变化为低，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 65,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于yhyv的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而reiz变化为低，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 66,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于yhyv的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而reiz变化为高，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 67,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于yhyv的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而reiz变化为高，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 68,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为低(B=0)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.6613。在ckyn为高(B=1)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.3994。reiz为低(A=0)的概率为0.4194。在ckyn为低(B=0)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6418。在ckyn为高(B=1)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.3720。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6613; P(D=0|B=1,A=0)=0.3994; P(A=0)=0.4194; P(D=0|B=0,A=1)=0.6418; P(D=0|B=1,A=1)=0.3720; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而ckyn变化为低，那么yhyv更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|B=0,A)-P(D=0|B=1,A)]*P(A)=[P(D=0|B=0,A=0)-P(D=0|B=1,A=0)]*P(A=0)+[P(D=0|B=0,A=1)-P(D=0|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,A=0)=0.6613\tP(D=0|B=1,A=0)=0.3994\tP(A=0)=0.4194\tP(D=0|B=0,A=1)=0.6418\tP(D=0|B=1,A=1)=0.3720\tP(A=1)=0.5806",
+        "Step 6": "NDE=[0.6613-0.3994]*0.4194+[0.6418-0.3720]*0.5806=0.2665",
+        "Step 7": "NDE=0.2665>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.26650609499228806
+    },
+    {
+      "id": 69,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为低(B=0)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.3387。在ckyn为高(B=1)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.6006。reiz为低(A=0)的概率为0.4194。在ckyn为低(B=0)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3582。在ckyn为高(B=1)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.6280。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3387; P(D=1|B=1,A=0)=0.6006; P(A=0)=0.4194; P(D=1|B=0,A=1)=0.3582; P(D=1|B=1,A=1)=0.6280; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而ckyn变化为低，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|B=0,A)-P(D=1|B=1,A)]*P(A)=[P(D=1|B=0,A=0)-P(D=1|B=1,A=0)]*P(A=0)+[P(D=1|B=0,A=1)-P(D=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,A=0)=0.3387\tP(D=1|B=1,A=0)=0.6006\tP(A=0)=0.4194\tP(D=1|B=0,A=1)=0.3582\tP(D=1|B=1,A=1)=0.6280\tP(A=1)=0.5806",
+        "Step 6": "NDE=[0.3387-0.6006]*0.4194+[0.3582-0.6280]*0.5806=-0.2665",
+        "Step 7": "NDE=-0.2665<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.26650609499228817
+    },
+    {
+      "id": 70,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为高(B=1)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.3994。在ckyn为低(B=0)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.6613。reiz为低(A=0)的概率为0.4194。在ckyn为高(B=1)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.3720。在ckyn为低(B=0)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6418。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.3994; P(D=0|B=0,A=0)=0.6613; P(A=0)=0.4194; P(D=0|B=1,A=1)=0.3720; P(D=0|B=0,A=1)=0.6418; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而ckyn变化为高，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|B=1,A)-P(D=0|B=0,A)]*P(A)=[P(D=0|B=1,A=0)-P(D=0|B=0,A=0)]*P(A=0)+[P(D=0|B=1,A=1)-P(D=0|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,A=0)=0.3994\tP(D=0|B=0,A=0)=0.6613\tP(A=0)=0.4194\tP(D=0|B=1,A=1)=0.3720\tP(D=0|B=0,A=1)=0.6418\tP(A=1)=0.5806",
+        "Step 6": "NDE=[0.3994-0.6613]*0.4194+[0.3720-0.6418]*0.5806=-0.2665",
+        "Step 7": "NDE=-0.2665<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.26650609499228806
+    },
+    {
+      "id": 71,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为高(B=1)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.6006。在ckyn为低(B=0)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.3387。reiz为低(A=0)的概率为0.4194。在ckyn为高(B=1)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.6280。在ckyn为低(B=0)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3582。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.6006; P(D=1|B=0,A=0)=0.3387; P(A=0)=0.4194; P(D=1|B=1,A=1)=0.6280; P(D=1|B=0,A=1)=0.3582; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而ckyn变化为高，那么yhyv更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|B=1,A)-P(D=1|B=0,A)]*P(A)=[P(D=1|B=1,A=0)-P(D=1|B=0,A=0)]*P(A=0)+[P(D=1|B=1,A=1)-P(D=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,A=0)=0.6006\tP(D=1|B=0,A=0)=0.3387\tP(A=0)=0.4194\tP(D=1|B=1,A=1)=0.6280\tP(D=1|B=0,A=1)=0.3582\tP(A=1)=0.5806",
+        "Step 6": "NDE=[0.6006-0.3387]*0.4194+[0.6280-0.3582]*0.5806=0.2665",
+        "Step 7": "NDE=0.2665>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.26650609499228817
+    },
+    {
+      "id": 72,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为低(C=0)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.5853。在nili为高(C=1)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.6280。reiz为低(A=0)的概率为0.4194。在nili为低(C=0)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6131。在nili为高(C=1)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6486。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.5853; P(D=0|C=1,A=0)=0.6280; P(A=0)=0.4194; P(D=0|C=0,A=1)=0.6131; P(D=0|C=1,A=1)=0.6486; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而nili变化为低，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=0,A)-P(D=0|C=1,A)]*P(A)=[P(D=0|C=0,A=0)-P(D=0|C=1,A=0)]*P(A=0)+[P(D=0|C=0,A=1)-P(D=0|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=0,A=0)=0.5853\tP(D=0|C=1,A=0)=0.6280\tP(A=0)=0.4194\tP(D=0|C=0,A=1)=0.6131\tP(D=0|C=1,A=1)=0.6486\tP(A=1)=0.5806",
+        "Step 6": "NDE=[0.5853-0.6280]*0.4194+[0.6131-0.6486]*0.5806=-0.0385",
+        "Step 7": "NDE=-0.0385<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.03850395919969657
+    },
+    {
+      "id": 73,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为低(C=0)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.4147。在nili为高(C=1)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.3720。reiz为低(A=0)的概率为0.4194。在nili为低(C=0)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3869。在nili为高(C=1)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3514。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.4147; P(D=1|C=1,A=0)=0.3720; P(A=0)=0.4194; P(D=1|C=0,A=1)=0.3869; P(D=1|C=1,A=1)=0.3514; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而nili变化为低，那么yhyv更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=0,A)-P(D=1|C=1,A)]*P(A)=[P(D=1|C=0,A=0)-P(D=1|C=1,A=0)]*P(A=0)+[P(D=1|C=0,A=1)-P(D=1|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=0,A=0)=0.4147\tP(D=1|C=1,A=0)=0.3720\tP(A=0)=0.4194\tP(D=1|C=0,A=1)=0.3869\tP(D=1|C=1,A=1)=0.3514\tP(A=1)=0.5806",
+        "Step 6": "NDE=[0.4147-0.3720]*0.4194+[0.3869-0.3514]*0.5806=0.0385",
+        "Step 7": "NDE=0.0385>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.03850395919969664
+    },
+    {
+      "id": 74,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为高(C=1)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.6280。在nili为低(C=0)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.5853。reiz为低(A=0)的概率为0.4194。在nili为高(C=1)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6486。在nili为低(C=0)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6131。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.6280; P(D=0|C=0,A=0)=0.5853; P(A=0)=0.4194; P(D=0|C=1,A=1)=0.6486; P(D=0|C=0,A=1)=0.6131; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而nili变化为高，那么yhyv更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=1,A)-P(D=0|C=0,A)]*P(A)=[P(D=0|C=1,A=0)-P(D=0|C=0,A=0)]*P(A=0)+[P(D=0|C=1,A=1)-P(D=0|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=1,A=0)=0.6280\tP(D=0|C=0,A=0)=0.5853\tP(A=0)=0.4194\tP(D=0|C=1,A=1)=0.6486\tP(D=0|C=0,A=1)=0.6131\tP(A=1)=0.5806",
+        "Step 6": "NDE=[0.6280-0.5853]*0.4194+[0.6486-0.6131]*0.5806=0.0385",
+        "Step 7": "NDE=0.0385>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.03850395919969657
+    },
+    {
+      "id": 75,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为高(C=1)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.3720。在nili为低(C=0)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.4147。reiz为低(A=0)的概率为0.4194。在nili为高(C=1)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3514。在nili为低(C=0)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3869。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.3720; P(D=1|C=0,A=0)=0.4147; P(A=0)=0.4194; P(D=1|C=1,A=1)=0.3514; P(D=1|C=0,A=1)=0.3869; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而nili变化为高，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=1,A)-P(D=1|C=0,A)]*P(A)=[P(D=1|C=1,A=0)-P(D=1|C=0,A=0)]*P(A=0)+[P(D=1|C=1,A=1)-P(D=1|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=1,A=0)=0.3720\tP(D=1|C=0,A=0)=0.4147\tP(A=0)=0.4194\tP(D=1|C=1,A=1)=0.3514\tP(D=1|C=0,A=1)=0.3869\tP(A=1)=0.5806",
+        "Step 6": "NDE=[0.3720-0.4147]*0.4194+[0.3514-0.3869]*0.5806=-0.0385",
+        "Step 7": "NDE=-0.0385<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.03850395919969664
+    },
+    {
+      "id": 76,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于ckyn的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如reiz保持不变，而所有中间变量被改变为当它们在reiz变化为低下的取值，那么ckyn更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于ckyn的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如reiz保持不变，而所有中间变量被改变为当它们在reiz变化为低下的取值，那么ckyn更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于ckyn的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如reiz保持不变，而所有中间变量被改变为当它们在reiz变化为高下的取值，那么ckyn更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于ckyn的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如reiz保持不变，而所有中间变量被改变为当它们在reiz变化为高下的取值，那么ckyn更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于nili的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如reiz保持不变，而所有中间变量被改变为当它们在reiz变化为低下的取值，那么nili更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 81,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于nili的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如reiz保持不变，而所有中间变量被改变为当它们在reiz变化为低下的取值，那么nili更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 82,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于nili的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如reiz保持不变，而所有中间变量被改变为当它们在reiz变化为高下的取值，那么nili更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 83,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于nili的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如reiz保持不变，而所有中间变量被改变为当它们在reiz变化为高下的取值，那么nili更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 84,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如ckyn保持不变，而所有中间变量被改变为当它们在ckyn变化为低下的取值，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如ckyn保持不变，而所有中间变量被改变为当它们在ckyn变化为低下的取值，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如ckyn保持不变，而所有中间变量被改变为当它们在ckyn变化为高下的取值，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如ckyn保持不变，而所有中间变量被改变为当它们在ckyn变化为高下的取值，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于yhyv的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如nili保持不变，而所有中间变量被改变为当它们在nili变化为低下的取值，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 89,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于yhyv的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如nili保持不变，而所有中间变量被改变为当它们在nili变化为低下的取值，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 90,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于yhyv的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如nili保持不变，而所有中间变量被改变为当它们在nili变化为高下的取值，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 91,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于yhyv的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如nili保持不变，而所有中间变量被改变为当它们在nili变化为高下的取值，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 92,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, ckyn为低(B=0)的概率为0.8321。在reiz为高(A=1)的条件下, ckyn为低(B=0)的概率为0.9266。",
+        "data_info_math": "P(B=0|A=0)=0.8321; P(B=0|A=1)=0.9266; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些reiz为低，假如reiz为高，那么ckyn更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.8321\tP(B=0|A=1)=0.9266",
+        "Step 6": "ETT=0.8321-0.9266=-0.0944",
+        "Step 7": "ETT=-0.0944<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.09442811316499444
+    },
+    {
+      "id": 93,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, ckyn为高(B=1)的概率为0.1679。在reiz为高(A=1)的条件下, ckyn为高(B=1)的概率为0.0734。",
+        "data_info_math": "P(B=1|A=0)=0.1679; P(B=1|A=1)=0.0734; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些reiz为低，假如reiz为高，那么ckyn更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.1679\tP(B=1|A=1)=0.0734",
+        "Step 6": "ETT=0.1679-0.0734=0.0944",
+        "Step 7": "ETT=0.0944>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.09442811316499455
+    },
+    {
+      "id": 94,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, ckyn为低(B=0)的概率为0.9266。在reiz为低(A=0)的条件下, ckyn为低(B=0)的概率为0.8321。",
+        "data_info_math": "P(B=0|A=1)=0.9266; P(B=0|A=0)=0.8321; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些reiz为高，假如reiz为低，那么ckyn更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.9266\tP(B=0|A=0)=0.8321",
+        "Step 6": "ETT=0.9266-0.8321=0.0944",
+        "Step 7": "ETT=0.0944>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.09442811316499444
+    },
+    {
+      "id": 95,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, ckyn为高(B=1)的概率为0.0734。在reiz为低(A=0)的条件下, ckyn为高(B=1)的概率为0.1679。",
+        "data_info_math": "P(B=1|A=1)=0.0734; P(B=1|A=0)=0.1679; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些reiz为高，假如reiz为低，那么ckyn更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.0734\tP(B=1|A=0)=0.1679",
+        "Step 6": "ETT=0.0734-0.1679=-0.0944",
+        "Step 7": "ETT=-0.0944<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.09442811316499455
+    },
+    {
+      "id": 96,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, nili为低(C=0)的概率为0.2504。在reiz为高(A=1)的条件下, nili为低(C=0)的概率为0.7506。",
+        "data_info_math": "P(C=0|A=0)=0.2504; P(C=0|A=1)=0.7506; "
+      },
+      "Instruction": "考虑reiz作用于nili的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些reiz为低，假如reiz为高，那么nili更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.2504\tP(C=0|A=1)=0.7506",
+        "Step 6": "ETT=0.2504-0.7506=-0.5002",
+        "Step 7": "ETT=-0.5002<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.5002418221745326
+    },
+    {
+      "id": 97,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, nili为高(C=1)的概率为0.7496。在reiz为高(A=1)的条件下, nili为高(C=1)的概率为0.2494。",
+        "data_info_math": "P(C=1|A=0)=0.7496; P(C=1|A=1)=0.2494; "
+      },
+      "Instruction": "考虑reiz作用于nili的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些reiz为低，假如reiz为高，那么nili更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.7496\tP(C=1|A=1)=0.2494",
+        "Step 6": "ETT=0.7496-0.2494=0.5002",
+        "Step 7": "ETT=0.5002>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.5002418221745326
+    },
+    {
+      "id": 98,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, nili为低(C=0)的概率为0.7506。在reiz为低(A=0)的条件下, nili为低(C=0)的概率为0.2504。",
+        "data_info_math": "P(C=0|A=1)=0.7506; P(C=0|A=0)=0.2504; "
+      },
+      "Instruction": "考虑reiz作用于nili的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些reiz为高，假如reiz为低，那么nili更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.7506\tP(C=0|A=0)=0.2504",
+        "Step 6": "ETT=0.7506-0.2504=0.5002",
+        "Step 7": "ETT=0.5002>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.5002418221745326
+    },
+    {
+      "id": 99,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, nili为高(C=1)的概率为0.2494。在reiz为低(A=0)的条件下, nili为高(C=1)的概率为0.7496。",
+        "data_info_math": "P(C=1|A=1)=0.2494; P(C=1|A=0)=0.7496; "
+      },
+      "Instruction": "考虑reiz作用于nili的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些reiz为高，假如reiz为低，那么nili更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.2494\tP(C=1|A=0)=0.7496",
+        "Step 6": "ETT=0.2494-0.7496=-0.5002",
+        "Step 7": "ETT=-0.5002<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.5002418221745326
+    },
+    {
+      "id": 100,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.6173。在reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6220。",
+        "data_info_math": "P(D=0|A=0)=0.6173; P(D=0|A=1)=0.6220; "
+      },
+      "Instruction": "考虑reiz作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些reiz为低，假如reiz为高，那么yhyv更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6173\tP(D=0|A=1)=0.6220",
+        "Step 6": "ETT=0.6173-0.6220=-0.0047",
+        "Step 7": "ETT=-0.0047<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.004650403561775152
+    },
+    {
+      "id": 101,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.3827。在reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3780。",
+        "data_info_math": "P(D=1|A=0)=0.3827; P(D=1|A=1)=0.3780; "
+      },
+      "Instruction": "考虑reiz作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些reiz为低，假如reiz为高，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3827\tP(D=1|A=1)=0.3780",
+        "Step 6": "ETT=0.3827-0.3780=0.0047",
+        "Step 7": "ETT=0.0047>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.004650403561775318
+    },
+    {
+      "id": 102,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6220。在reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.6173。",
+        "data_info_math": "P(D=0|A=1)=0.6220; P(D=0|A=0)=0.6173; "
+      },
+      "Instruction": "考虑reiz作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些reiz为高，假如reiz为低，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.6220\tP(D=0|A=0)=0.6173",
+        "Step 6": "ETT=0.6220-0.6173=0.0047",
+        "Step 7": "ETT=0.0047>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.004650403561775152
+    },
+    {
+      "id": 103,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3780。在reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.3827。",
+        "data_info_math": "P(D=1|A=1)=0.3780; P(D=1|A=0)=0.3827; "
+      },
+      "Instruction": "考虑reiz作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些reiz为高，假如reiz为低，那么yhyv更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.3780\tP(D=1|A=0)=0.3827",
+        "Step 6": "ETT=0.3780-0.3827=-0.0047",
+        "Step 7": "ETT=-0.0047<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.004650403561775318
+    },
+    {
+      "id": 104,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于reiz的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为低，假如ckyn为高，那么reiz更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 105,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于reiz的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为低，假如ckyn为高，那么reiz更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 106,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于reiz的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为高，假如ckyn为低，那么reiz更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 107,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于reiz的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为高，假如ckyn为低，那么reiz更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 108,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于nili的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为低，假如ckyn为高，那么nili更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 109,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于nili的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为低，假如ckyn为高，那么nili更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 110,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于nili的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为高，假如ckyn为低，那么nili更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 111,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ckyn作用于nili的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为高，假如ckyn为低，那么nili更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 112,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为低(B=0)的条件下, yhyv为低(D=0)的概率为0.6495。在reiz为低(A=0)且ckyn为高(B=1)的条件下, yhyv为低(D=0)的概率为0.3994。在ckyn为低(B=0)的条件下, reiz为低(A=0)的概率为0.3935。在reiz为高(A=1)且ckyn为高(B=1)的条件下, yhyv为低(D=0)的概率为0.3720。在ckyn为低(B=0)的条件下, reiz为高(A=1)的概率为0.6065。",
+        "data_info_math": "P(D=0|B=0)=0.6495; P(D=0|A=0,B=1)=0.3994; P(A=0|B=0)=0.3935; P(D=0|A=1,B=1)=0.3720; P(A=1|B=0)=0.6065; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为低，假如ckyn为高，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-sum_{A} P(D=0|B=1,A)*P(A|B=0)=P(D=0|B=0)-[P(D=0|B=1,A=0)*P(A=0|B=0)+P(D=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=0|B=0)=0.6495\tP(D=0|B=1,A=0)=0.3994\tP(A=0|B=0)=0.3935\tP(D=0|B=1,A=1)=0.3720\tP(A=1|B=0)=0.6065",
+        "Step 6": "ETT=0.6495-[0.3994*0.3935+0.3720*0.6065]=0.2667",
+        "Step 7": "ETT=0.2667>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.2667132306053694
+    },
+    {
+      "id": 113,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为低(B=0)的条件下, yhyv为低(D=0)的概率为0.6495。在nili为低(C=0)且ckyn为高(B=1)的条件下, yhyv为低(D=0)的概率为0.3614。在ckyn为低(B=0)的条件下, nili为低(C=0)的概率为0.5524。在nili为高(C=1)且ckyn为高(B=1)的条件下, yhyv为低(D=0)的概率为0.4117。在ckyn为低(B=0)的条件下, nili为高(C=1)的概率为0.4476。",
+        "data_info_math": "P(D=0|B=0)=0.6495; P(D=0|C=0,B=1)=0.3614; P(C=0|B=0)=0.5524; P(D=0|C=1,B=1)=0.4117; P(C=1|B=0)=0.4476; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为低，假如ckyn为高，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{C}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-sum_{C} P(D=0|B=1,C)*P(C|B=0)=P(D=0|B=0)-[P(D=0|B=1,C=0)*P(C=0|B=0)+P(D=0|B=1,C=1)*P(C=1|B=0)]",
+        "Step 5": "P(D=0|B=0)=0.6495\tP(D=0|B=1,C=0)=0.3614\tP(C=0|B=0)=0.5524\tP(D=0|B=1,C=1)=0.4117\tP(C=1|B=0)=0.4476",
+        "Step 6": "ETT=0.6495-[0.3614*0.5524+0.4117*0.4476]=0.2656",
+        "Step 7": "ETT=0.2656>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.2655679481603858
+    },
+    {
+      "id": 114,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为低(B=0)的条件下, yhyv为高(D=1)的概率为0.3505。在reiz为低(A=0)且ckyn为高(B=1)的条件下, yhyv为高(D=1)的概率为0.6006。在ckyn为低(B=0)的条件下, reiz为低(A=0)的概率为0.3935。在reiz为高(A=1)且ckyn为高(B=1)的条件下, yhyv为高(D=1)的概率为0.6280。在ckyn为低(B=0)的条件下, reiz为高(A=1)的概率为0.6065。",
+        "data_info_math": "P(D=1|B=0)=0.3505; P(D=1|A=0,B=1)=0.6006; P(A=0|B=0)=0.3935; P(D=1|A=1,B=1)=0.6280; P(A=1|B=0)=0.6065; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为低，假如ckyn为高，那么yhyv更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-sum_{A} P(D=1|B=1,A)*P(A|B=0)=P(D=1|B=0)-[P(D=1|B=1,A=0)*P(A=0|B=0)+P(D=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=1|B=0)=0.3505\tP(D=1|B=1,A=0)=0.6006\tP(A=0|B=0)=0.3935\tP(D=1|B=1,A=1)=0.6280\tP(A=1|B=0)=0.6065",
+        "Step 6": "ETT=0.3505-[0.6006*0.3935+0.6280*0.6065]=-0.2667",
+        "Step 7": "ETT=-0.2667<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.26671323060536933
+    },
+    {
+      "id": 115,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为低(B=0)的条件下, yhyv为高(D=1)的概率为0.3505。在nili为低(C=0)且ckyn为高(B=1)的条件下, yhyv为高(D=1)的概率为0.6386。在ckyn为低(B=0)的条件下, nili为低(C=0)的概率为0.5524。在nili为高(C=1)且ckyn为高(B=1)的条件下, yhyv为高(D=1)的概率为0.5883。在ckyn为低(B=0)的条件下, nili为高(C=1)的概率为0.4476。",
+        "data_info_math": "P(D=1|B=0)=0.3505; P(D=1|C=0,B=1)=0.6386; P(C=0|B=0)=0.5524; P(D=1|C=1,B=1)=0.5883; P(C=1|B=0)=0.4476; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为低，假如ckyn为高，那么yhyv更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{C}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-sum_{C} P(D=1|B=1,C)*P(C|B=0)=P(D=1|B=0)-[P(D=1|B=1,C=0)*P(C=0|B=0)+P(D=1|B=1,C=1)*P(C=1|B=0)]",
+        "Step 5": "P(D=1|B=0)=0.3505\tP(D=1|B=1,C=0)=0.6386\tP(C=0|B=0)=0.5524\tP(D=1|B=1,C=1)=0.5883\tP(C=1|B=0)=0.4476",
+        "Step 6": "ETT=0.3505-[0.6386*0.5524+0.5883*0.4476]=-0.2656",
+        "Step 7": "ETT=-0.2656<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.2655679481603859
+    },
+    {
+      "id": 116,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为高(B=1)的条件下, yhyv为低(D=0)的概率为0.3891。在reiz为低(A=0)且ckyn为低(B=0)的条件下, yhyv为低(D=0)的概率为0.6613。在ckyn为高(B=1)的条件下, reiz为低(A=0)的概率为0.6228。在reiz为高(A=1)且ckyn为低(B=0)的条件下, yhyv为低(D=0)的概率为0.6418。在ckyn为高(B=1)的条件下, reiz为高(A=1)的概率为0.3772。",
+        "data_info_math": "P(D=0|B=1)=0.3891; P(D=0|A=0,B=0)=0.6613; P(A=0|B=1)=0.6228; P(D=0|A=1,B=0)=0.6418; P(A=1|B=1)=0.3772; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为高，假如ckyn为低，那么yhyv更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-sum_{A} P(D=0|B=0,A)*P(A|B=1)=P(D=0|B=1)-[P(D=0|B=0,A=0)*P(A=0|B=1)+P(D=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=0|B=1)=0.3891\tP(D=0|B=0,A=0)=0.6613\tP(A=0|B=1)=0.6228\tP(D=0|B=0,A=1)=0.6418\tP(A=1|B=1)=0.3772",
+        "Step 6": "ETT=0.3891-[0.6613*0.6228+0.6418*0.3772]=-0.2649",
+        "Step 7": "ETT=-0.2649<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.2648808207231934
+    },
+    {
+      "id": 117,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为高(B=1)的条件下, yhyv为低(D=0)的概率为0.3891。在nili为低(C=0)且ckyn为低(B=0)的条件下, yhyv为低(D=0)的概率为0.6333。在ckyn为高(B=1)的条件下, nili为低(C=0)的概率为0.4499。在nili为高(C=1)且ckyn为低(B=0)的条件下, yhyv为低(D=0)的概率为0.6694。在ckyn为高(B=1)的条件下, nili为高(C=1)的概率为0.5501。",
+        "data_info_math": "P(D=0|B=1)=0.3891; P(D=0|C=0,B=0)=0.6333; P(C=0|B=1)=0.4499; P(D=0|C=1,B=0)=0.6694; P(C=1|B=1)=0.5501; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为高，假如ckyn为低，那么yhyv更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{C}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-sum_{C} P(D=0|B=0,C)*P(C|B=1)=P(D=0|B=1)-[P(D=0|B=0,C=0)*P(C=0|B=1)+P(D=0|B=0,C=1)*P(C=1|B=1)]",
+        "Step 5": "P(D=0|B=1)=0.3891\tP(D=0|B=0,C=0)=0.6333\tP(C=0|B=1)=0.4499\tP(D=0|B=0,C=1)=0.6694\tP(C=1|B=1)=0.5501",
+        "Step 6": "ETT=0.3891-[0.6333*0.4499+0.6694*0.5501]=-0.2641",
+        "Step 7": "ETT=-0.2641<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.26411075035928794
+    },
+    {
+      "id": 118,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为高(B=1)的条件下, yhyv为高(D=1)的概率为0.6109。在reiz为低(A=0)且ckyn为低(B=0)的条件下, yhyv为高(D=1)的概率为0.3387。在ckyn为高(B=1)的条件下, reiz为低(A=0)的概率为0.6228。在reiz为高(A=1)且ckyn为低(B=0)的条件下, yhyv为高(D=1)的概率为0.3582。在ckyn为高(B=1)的条件下, reiz为高(A=1)的概率为0.3772。",
+        "data_info_math": "P(D=1|B=1)=0.6109; P(D=1|A=0,B=0)=0.3387; P(A=0|B=1)=0.6228; P(D=1|A=1,B=0)=0.3582; P(A=1|B=1)=0.3772; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为高，假如ckyn为低，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-sum_{A} P(D=1|B=0,A)*P(A|B=1)=P(D=1|B=1)-[P(D=1|B=0,A=0)*P(A=0|B=1)+P(D=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=1|B=1)=0.6109\tP(D=1|B=0,A=0)=0.3387\tP(A=0|B=1)=0.6228\tP(D=1|B=0,A=1)=0.3582\tP(A=1|B=1)=0.3772",
+        "Step 6": "ETT=0.6109-[0.3387*0.6228+0.3582*0.3772]=0.2649",
+        "Step 7": "ETT=0.2649>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.2648808207231934
+    },
+    {
+      "id": 119,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为高(B=1)的条件下, yhyv为高(D=1)的概率为0.6109。在nili为低(C=0)且ckyn为低(B=0)的条件下, yhyv为高(D=1)的概率为0.3667。在ckyn为高(B=1)的条件下, nili为低(C=0)的概率为0.4499。在nili为高(C=1)且ckyn为低(B=0)的条件下, yhyv为高(D=1)的概率为0.3306。在ckyn为高(B=1)的条件下, nili为高(C=1)的概率为0.5501。",
+        "data_info_math": "P(D=1|B=1)=0.6109; P(D=1|C=0,B=0)=0.3667; P(C=0|B=1)=0.4499; P(D=1|C=1,B=0)=0.3306; P(C=1|B=1)=0.5501; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ckyn为高，假如ckyn为低，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{C}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-sum_{C} P(D=1|B=0,C)*P(C|B=1)=P(D=1|B=1)-[P(D=1|B=0,C=0)*P(C=0|B=1)+P(D=1|B=0,C=1)*P(C=1|B=1)]",
+        "Step 5": "P(D=1|B=1)=0.6109\tP(D=1|B=0,C=0)=0.3667\tP(C=0|B=1)=0.4499\tP(D=1|B=0,C=1)=0.3306\tP(C=1|B=1)=0.5501",
+        "Step 6": "ETT=0.6109-[0.3667*0.4499+0.3306*0.5501]=0.2641",
+        "Step 7": "ETT=0.2641>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.2641107503592879
+    },
+    {
+      "id": 120,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于reiz的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为低，假如nili为高，那么reiz更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 121,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于reiz的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为低，假如nili为高，那么reiz更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 122,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于reiz的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为高，假如nili为低，那么reiz更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 123,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于reiz的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为高，假如nili为低，那么reiz更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 124,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于ckyn的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为低，假如nili为高，那么ckyn更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于ckyn的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为低，假如nili为高，那么ckyn更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于ckyn的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为高，假如nili为低，那么ckyn更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nili作用于ckyn的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为高，假如nili为低，那么ckyn更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为低(C=0)的条件下, yhyv为低(D=0)的概率为0.6077。在reiz为低(A=0)且nili为高(C=1)的条件下, yhyv为低(D=0)的概率为0.6280。在nili为低(C=0)的条件下, reiz为低(A=0)的概率为0.1941。在reiz为高(A=1)且nili为高(C=1)的条件下, yhyv为低(D=0)的概率为0.6486。在nili为低(C=0)的条件下, reiz为高(A=1)的概率为0.8059。",
+        "data_info_math": "P(D=0|C=0)=0.6077; P(D=0|A=0,C=1)=0.6280; P(A=0|C=0)=0.1941; P(D=0|A=1,C=1)=0.6486; P(A=1|C=0)=0.8059; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为低，假如nili为高，那么yhyv更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=0|C=0)-sum_{A} P(D=0|C=1,A)*P(A|C=0)=P(D=0|C=0)-[P(D=0|C=1,A=0)*P(A=0|C=0)+P(D=0|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=0|C=0)=0.6077\tP(D=0|C=1,A=0)=0.6280\tP(A=0|C=0)=0.1941\tP(D=0|C=1,A=1)=0.6486\tP(A=1|C=0)=0.8059",
+        "Step 6": "ETT=0.6077-[0.6280*0.1941+0.6486*0.8059]=-0.0369",
+        "Step 7": "ETT=-0.0369<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.0368776391906665
+    },
+    {
+      "id": 129,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为低(C=0)的条件下, yhyv为低(D=0)的概率为0.6077。在ckyn为低(B=0)且nili为高(C=1)的条件下, yhyv为低(D=0)的概率为0.6694。在nili为低(C=0)的条件下, ckyn为低(B=0)的概率为0.9060。在ckyn为高(B=1)且nili为高(C=1)的条件下, yhyv为低(D=0)的概率为0.4117。在nili为低(C=0)的条件下, ckyn为高(B=1)的概率为0.0940。",
+        "data_info_math": "P(D=0|C=0)=0.6077; P(D=0|B=0,C=1)=0.6694; P(B=0|C=0)=0.9060; P(D=0|B=1,C=1)=0.4117; P(B=1|C=0)=0.0940; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为低，假如nili为高，那么yhyv更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=0|C=0)-sum_{B} P(D=0|C=1,B)*P(B|C=0)=P(D=0|C=0)-[P(D=0|C=1,B=0)*P(B=0|C=0)+P(D=0|C=1,B=1)*P(B=1|C=0)]",
+        "Step 5": "P(D=0|C=0)=0.6077\tP(D=0|C=1,B=0)=0.6694\tP(B=0|C=0)=0.9060\tP(D=0|C=1,B=1)=0.4117\tP(B=1|C=0)=0.0940",
+        "Step 6": "ETT=0.6077-[0.6694*0.9060+0.4117*0.0940]=-0.0374",
+        "Step 7": "ETT=-0.0374<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.03744094180478494
+    },
+    {
+      "id": 130,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为低(C=0)的条件下, yhyv为高(D=1)的概率为0.3923。在reiz为低(A=0)且nili为高(C=1)的条件下, yhyv为高(D=1)的概率为0.3720。在nili为低(C=0)的条件下, reiz为低(A=0)的概率为0.1941。在reiz为高(A=1)且nili为高(C=1)的条件下, yhyv为高(D=1)的概率为0.3514。在nili为低(C=0)的条件下, reiz为高(A=1)的概率为0.8059。",
+        "data_info_math": "P(D=1|C=0)=0.3923; P(D=1|A=0,C=1)=0.3720; P(A=0|C=0)=0.1941; P(D=1|A=1,C=1)=0.3514; P(A=1|C=0)=0.8059; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为低，假如nili为高，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=1|C=0)-sum_{A} P(D=1|C=1,A)*P(A|C=0)=P(D=1|C=0)-[P(D=1|C=1,A=0)*P(A=0|C=0)+P(D=1|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=1|C=0)=0.3923\tP(D=1|C=1,A=0)=0.3720\tP(A=0|C=0)=0.1941\tP(D=1|C=1,A=1)=0.3514\tP(A=1|C=0)=0.8059",
+        "Step 6": "ETT=0.3923-[0.3720*0.1941+0.3514*0.8059]=0.0369",
+        "Step 7": "ETT=0.0369>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.03687763919066667
+    },
+    {
+      "id": 131,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为低(C=0)的条件下, yhyv为高(D=1)的概率为0.3923。在ckyn为低(B=0)且nili为高(C=1)的条件下, yhyv为高(D=1)的概率为0.3306。在nili为低(C=0)的条件下, ckyn为低(B=0)的概率为0.9060。在ckyn为高(B=1)且nili为高(C=1)的条件下, yhyv为高(D=1)的概率为0.5883。在nili为低(C=0)的条件下, ckyn为高(B=1)的概率为0.0940。",
+        "data_info_math": "P(D=1|C=0)=0.3923; P(D=1|B=0,C=1)=0.3306; P(B=0|C=0)=0.9060; P(D=1|B=1,C=1)=0.5883; P(B=1|C=0)=0.0940; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为低，假如nili为高，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=1|C=0)-sum_{B} P(D=1|C=1,B)*P(B|C=0)=P(D=1|C=0)-[P(D=1|C=1,B=0)*P(B=0|C=0)+P(D=1|C=1,B=1)*P(B=1|C=0)]",
+        "Step 5": "P(D=1|C=0)=0.3923\tP(D=1|C=1,B=0)=0.3306\tP(B=0|C=0)=0.9060\tP(D=1|C=1,B=1)=0.5883\tP(B=1|C=0)=0.0940",
+        "Step 6": "ETT=0.3923-[0.3306*0.9060+0.5883*0.0940]=0.0374",
+        "Step 7": "ETT=0.0374>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.03744094180478492
+    },
+    {
+      "id": 132,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为高(C=1)的条件下, yhyv为低(D=0)的概率为0.6345。在reiz为低(A=0)且nili为低(C=0)的条件下, yhyv为低(D=0)的概率为0.5853。在nili为高(C=1)的条件下, reiz为低(A=0)的概率为0.6847。在reiz为高(A=1)且nili为低(C=0)的条件下, yhyv为低(D=0)的概率为0.6131。在nili为高(C=1)的条件下, reiz为高(A=1)的概率为0.3153。",
+        "data_info_math": "P(D=0|C=1)=0.6345; P(D=0|A=0,C=0)=0.5853; P(A=0|C=1)=0.6847; P(D=0|A=1,C=0)=0.6131; P(A=1|C=1)=0.3153; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为高，假如nili为低，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=0|C=1)-sum_{A} P(D=0|C=0,A)*P(A|C=1)=P(D=0|C=1)-[P(D=0|C=0,A=0)*P(A=0|C=1)+P(D=0|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=0|C=1)=0.6345\tP(D=0|C=0,A=0)=0.5853\tP(A=0|C=1)=0.6847\tP(D=0|C=0,A=1)=0.6131\tP(A=1|C=1)=0.3153",
+        "Step 6": "ETT=0.6345-[0.5853*0.6847+0.6131*0.3153]=0.0404",
+        "Step 7": "ETT=0.0404>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.04041943110022281
+    },
+    {
+      "id": 133,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为高(C=1)的条件下, yhyv为低(D=0)的概率为0.6345。在ckyn为低(B=0)且nili为低(C=0)的条件下, yhyv为低(D=0)的概率为0.6333。在nili为高(C=1)的条件下, ckyn为低(B=0)的概率为0.8646。在ckyn为高(B=1)且nili为低(C=0)的条件下, yhyv为低(D=0)的概率为0.3614。在nili为高(C=1)的条件下, ckyn为高(B=1)的概率为0.1354。",
+        "data_info_math": "P(D=0|C=1)=0.6345; P(D=0|B=0,C=0)=0.6333; P(B=0|C=1)=0.8646; P(D=0|B=1,C=0)=0.3614; P(B=1|C=1)=0.1354; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为高，假如nili为低，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=0|C=1)-sum_{B} P(D=0|C=0,B)*P(B|C=1)=P(D=0|C=1)-[P(D=0|C=0,B=0)*P(B=0|C=1)+P(D=0|C=0,B=1)*P(B=1|C=1)]",
+        "Step 5": "P(D=0|C=1)=0.6345\tP(D=0|C=0,B=0)=0.6333\tP(B=0|C=1)=0.8646\tP(D=0|C=0,B=1)=0.3614\tP(B=1|C=1)=0.1354",
+        "Step 6": "ETT=0.6345-[0.6333*0.8646+0.3614*0.1354]=0.0380",
+        "Step 7": "ETT=0.0380>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.03802926908004572
+    },
+    {
+      "id": 134,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为高(C=1)的条件下, yhyv为高(D=1)的概率为0.3655。在reiz为低(A=0)且nili为低(C=0)的条件下, yhyv为高(D=1)的概率为0.4147。在nili为高(C=1)的条件下, reiz为低(A=0)的概率为0.6847。在reiz为高(A=1)且nili为低(C=0)的条件下, yhyv为高(D=1)的概率为0.3869。在nili为高(C=1)的条件下, reiz为高(A=1)的概率为0.3153。",
+        "data_info_math": "P(D=1|C=1)=0.3655; P(D=1|A=0,C=0)=0.4147; P(A=0|C=1)=0.6847; P(D=1|A=1,C=0)=0.3869; P(A=1|C=1)=0.3153; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为高，假如nili为低，那么yhyv更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=1|C=1)-sum_{A} P(D=1|C=0,A)*P(A|C=1)=P(D=1|C=1)-[P(D=1|C=0,A=0)*P(A=0|C=1)+P(D=1|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=1|C=1)=0.3655\tP(D=1|C=0,A=0)=0.4147\tP(A=0|C=1)=0.6847\tP(D=1|C=0,A=1)=0.3869\tP(A=1|C=1)=0.3153",
+        "Step 6": "ETT=0.3655-[0.4147*0.6847+0.3869*0.3153]=-0.0404",
+        "Step 7": "ETT=-0.0404<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.04041943110022285
+    },
+    {
+      "id": 135,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为高(C=1)的条件下, yhyv为高(D=1)的概率为0.3655。在ckyn为低(B=0)且nili为低(C=0)的条件下, yhyv为高(D=1)的概率为0.3667。在nili为高(C=1)的条件下, ckyn为低(B=0)的概率为0.8646。在ckyn为高(B=1)且nili为低(C=0)的条件下, yhyv为高(D=1)的概率为0.6386。在nili为高(C=1)的条件下, ckyn为高(B=1)的概率为0.1354。",
+        "data_info_math": "P(D=1|C=1)=0.3655; P(D=1|B=0,C=0)=0.3667; P(B=0|C=1)=0.8646; P(D=1|B=1,C=0)=0.6386; P(B=1|C=1)=0.1354; "
+      },
+      "Instruction": "考虑nili作用于yhyv的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nili为高，假如nili为低，那么yhyv更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{B}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=1|C=1)-sum_{B} P(D=1|C=0,B)*P(B|C=1)=P(D=1|C=1)-[P(D=1|C=0,B=0)*P(B=0|C=1)+P(D=1|C=0,B=1)*P(B=1|C=1)]",
+        "Step 5": "P(D=1|C=1)=0.3655\tP(D=1|C=0,B=0)=0.3667\tP(B=0|C=1)=0.8646\tP(D=1|C=0,B=1)=0.6386\tP(B=1|C=1)=0.1354",
+        "Step 6": "ETT=0.3655-[0.3667*0.8646+0.6386*0.1354]=-0.0380",
+        "Step 7": "ETT=-0.0380<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.03802926908004561
+    },
+    {
+      "id": 136,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于reiz的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些yhyv为低，假如yhyv为高，那么reiz更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 137,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于reiz的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些yhyv为低，假如yhyv为高，那么reiz更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 138,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于reiz的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些yhyv为高，假如yhyv为低，那么reiz更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 139,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于reiz的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些yhyv为高，假如yhyv为低，那么reiz更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 140,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于ckyn的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些yhyv为低，假如yhyv为高，那么ckyn更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 141,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于ckyn的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些yhyv为低，假如yhyv为高，那么ckyn更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 142,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于ckyn的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些yhyv为高，假如yhyv为低，那么ckyn更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 143,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于ckyn的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些yhyv为高，假如yhyv为低，那么ckyn更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 144,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于nili的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些yhyv为低，假如yhyv为高，那么nili更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 145,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于nili的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些yhyv为低，假如yhyv为高，那么nili更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 146,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于nili的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些yhyv为高，假如yhyv为低，那么nili更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 147,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑yhyv作用于nili的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些yhyv为高，假如yhyv为低，那么nili更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 148,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于yhyv的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在ckyn为高且nili为高的条件下，假如reiz为低，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 149,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于yhyv的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在ckyn为低且nili为高的条件下，假如reiz为低，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 150,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于yhyv的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在ckyn为低且nili为高的条件下，假如reiz为高，那么yhyv更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 151,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑reiz作用于yhyv的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在ckyn为低且nili为高的条件下，假如reiz为高，那么yhyv更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 152,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象reiz(A)和观察节点ckyn(B)的后门调整集合。",
+      "Question": "方法1: 根据yhyv的情况，我们逐个研究reiz和ckyn的关联。\n方法2：我们直接研究一般情况下reiz和ckyn的关联。\n为了理解reiz如何影响ckyn，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 153,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象reiz(A)和观察节点ckyn(B)的后门调整集合。",
+      "Question": "方法1: 根据yhyv的情况，我们逐个研究reiz和ckyn的关联。\n方法2：我们直接研究一般情况下reiz和ckyn的关联。\n为了理解reiz如何影响ckyn，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 154,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象reiz(A)和观察节点nili(C)的后门调整集合。",
+      "Question": "方法1: 根据ckyn的情况，我们逐个研究reiz和nili的关联。\n方法2：我们直接研究一般情况下reiz和nili的关联。\n为了理解reiz如何影响nili，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 155,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象reiz(A)和观察节点nili(C)的后门调整集合。",
+      "Question": "方法1: 根据ckyn的情况，我们逐个研究reiz和nili的关联。\n方法2：我们直接研究一般情况下reiz和nili的关联。\n为了理解reiz如何影响nili，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 156,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象reiz(A)和观察节点yhyv(D)的后门调整集合。",
+      "Question": "方法1: 根据nili的情况，我们逐个研究reiz和yhyv的关联。\n方法2：我们直接研究一般情况下reiz和yhyv的关联。\n为了理解reiz如何影响yhyv，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 157,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象reiz(A)和观察节点yhyv(D)的后门调整集合。",
+      "Question": "方法1: 根据nili的情况，我们逐个研究reiz和yhyv的关联。\n方法2：我们直接研究一般情况下reiz和yhyv的关联。\n为了理解reiz如何影响yhyv，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 158,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象ckyn(B)和观察节点yhyv(D)的后门调整集合。",
+      "Question": "方法1: 根据reiz的情况，我们逐个研究ckyn和yhyv的关联。\n方法2：我们直接研究一般情况下ckyn和yhyv的关联。\n为了理解ckyn如何影响yhyv，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 159,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象ckyn(B)和观察节点yhyv(D)的后门调整集合。",
+      "Question": "方法1: 根据reiz的情况，我们逐个研究ckyn和yhyv的关联。\n方法2：我们直接研究一般情况下ckyn和yhyv的关联。\n为了理解ckyn如何影响yhyv，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 160,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象nili(C)和观察节点yhyv(D)的后门调整集合。",
+      "Question": "方法1: 根据reiz的情况，我们逐个研究nili和yhyv的关联。\n方法2：我们直接研究一般情况下nili和yhyv的关联。\n为了理解nili如何影响yhyv，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 161,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象nili(C)和观察节点yhyv(D)的后门调整集合。",
+      "Question": "方法1: 根据reiz的情况，我们逐个研究nili和yhyv的关联。\n方法2：我们直接研究一般情况下nili和yhyv的关联。\n为了理解nili如何影响yhyv，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 162,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为低(D=0)且ckyn为高(B=1)的条件下, nili为高(C=1)的概率为0.5821。在yhyv为低(D=0)且ckyn为低(B=0)的条件下, nili为高(C=1)的概率为0.4613。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.5821; P(C=1|D=0,B=0)=0.4613; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为低的条件下，ckyn会影响nili吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=0)-P(C=1|do(B=0),D=0)=P(C=1|D=0)-P(C=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 163,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为低(D=0)且ckyn为高(B=1)的条件下, nili为高(C=1)的概率为0.5821。在yhyv为低(D=0)且ckyn为低(B=0)的条件下, nili为高(C=1)的概率为0.4613。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.5821; P(C=1|D=0,B=0)=0.4613; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为低的条件下，ckyn不会影响nili吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=0)-P(C=1|do(B=0),D=0)=P(C=1|D=0)-P(C=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 164,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为低(D=0)且ckyn为高(B=1)的条件下, nili为高(C=1)的概率为0.5821。在yhyv为低(D=0)且ckyn为低(B=0)的条件下, nili为高(C=1)的概率为0.4613。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.5821; P(C=1|D=0,B=0)=0.4613; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为低的条件下，ckyn是和nili相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=0)-P(C=1|B=0,D=0)=0.5821-0.4613=0.1207!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 165,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为低(D=0)且ckyn为高(B=1)的条件下, nili为高(C=1)的概率为0.5821。在yhyv为低(D=0)且ckyn为低(B=0)的条件下, nili为高(C=1)的概率为0.4613。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.5821; P(C=1|D=0,B=0)=0.4613; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为低的条件下，ckyn是和nili独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=0)-P(C=1|B=0,D=0)=0.5821-0.4613=0.1207!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 166,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为高(D=1)且ckyn为高(B=1)的条件下, nili为高(C=1)的概率为0.5297。在yhyv为高(D=1)且ckyn为低(B=0)的条件下, nili为高(C=1)的概率为0.4221。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.5297; P(C=1|D=1,B=0)=0.4221; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为高的条件下，ckyn会影响nili吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=1)-P(C=1|do(B=0),D=1)=P(C=1|D=1)-P(C=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 167,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为高(D=1)且ckyn为高(B=1)的条件下, nili为高(C=1)的概率为0.5297。在yhyv为高(D=1)且ckyn为低(B=0)的条件下, nili为高(C=1)的概率为0.4221。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.5297; P(C=1|D=1,B=0)=0.4221; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为高的条件下，ckyn不会影响nili吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=1)-P(C=1|do(B=0),D=1)=P(C=1|D=1)-P(C=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 168,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为高(D=1)且ckyn为高(B=1)的条件下, nili为高(C=1)的概率为0.5297。在yhyv为高(D=1)且ckyn为低(B=0)的条件下, nili为高(C=1)的概率为0.4221。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.5297; P(C=1|D=1,B=0)=0.4221; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为高的条件下，ckyn是和nili相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=1)-P(C=1|B=0,D=1)=0.5297-0.4221=0.1076!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 169,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为高(D=1)且ckyn为高(B=1)的条件下, nili为高(C=1)的概率为0.5297。在yhyv为高(D=1)且ckyn为低(B=0)的条件下, nili为高(C=1)的概率为0.4221。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.5297; P(C=1|D=1,B=0)=0.4221; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为高的条件下，ckyn是和nili独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=1)-P(C=1|B=0,D=1)=0.5297-0.4221=0.1076!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 170,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为低(D=0)且nili为高(C=1)的条件下, ckyn为高(B=1)的概率为0.0879。在yhyv为低(D=0)且nili为低(C=0)的条件下, ckyn为高(B=1)的概率为0.0559。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.0879; P(B=1|D=0,C=0)=0.0559; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为低的条件下，nili会影响ckyn吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=0)-P(B=1|do(C=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 171,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为低(D=0)且nili为高(C=1)的条件下, ckyn为高(B=1)的概率为0.0879。在yhyv为低(D=0)且nili为低(C=0)的条件下, ckyn为高(B=1)的概率为0.0559。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.0879; P(B=1|D=0,C=0)=0.0559; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为低的条件下，nili不会影响ckyn吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=0)-P(B=1|do(C=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 172,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为低(D=0)且nili为高(C=1)的条件下, ckyn为高(B=1)的概率为0.0879。在yhyv为低(D=0)且nili为低(C=0)的条件下, ckyn为高(B=1)的概率为0.0559。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.0879; P(B=1|D=0,C=0)=0.0559; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为低的条件下，nili是和ckyn相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=0)-P(B=1|C=0,D=0)=0.0879-0.0559=0.0319!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 173,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为低(D=0)且nili为高(C=1)的条件下, ckyn为高(B=1)的概率为0.0879。在yhyv为低(D=0)且nili为低(C=0)的条件下, ckyn为高(B=1)的概率为0.0559。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.0879; P(B=1|D=0,C=0)=0.0559; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为低的条件下，nili是和ckyn独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=0)-P(B=1|C=0,D=0)=0.0879-0.0559=0.0319!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 174,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为高(D=1)且nili为高(C=1)的条件下, ckyn为高(B=1)的概率为0.2180。在yhyv为高(D=1)且nili为低(C=0)的条件下, ckyn为高(B=1)的概率为0.1531。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.2180; P(B=1|D=1,C=0)=0.1531; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为高的条件下，nili会影响ckyn吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=1)-P(B=1|do(C=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 175,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为高(D=1)且nili为高(C=1)的条件下, ckyn为高(B=1)的概率为0.2180。在yhyv为高(D=1)且nili为低(C=0)的条件下, ckyn为高(B=1)的概率为0.1531。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.2180; P(B=1|D=1,C=0)=0.1531; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为高的条件下，nili不会影响ckyn吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=1)-P(B=1|do(C=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 176,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为高(D=1)且nili为高(C=1)的条件下, ckyn为高(B=1)的概率为0.2180。在yhyv为高(D=1)且nili为低(C=0)的条件下, ckyn为高(B=1)的概率为0.1531。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.2180; P(B=1|D=1,C=0)=0.1531; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为高的条件下，nili是和ckyn相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=1)-P(B=1|C=0,D=1)=0.2180-0.1531=0.0649!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 177,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在yhyv为高(D=1)且nili为高(C=1)的条件下, ckyn为高(B=1)的概率为0.2180。在yhyv为高(D=1)且nili为低(C=0)的条件下, ckyn为高(B=1)的概率为0.1531。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.2180; P(B=1|D=1,C=0)=0.1531; "
+      },
+      "Instruction": "",
+      "Question": "给定yhyv为高的条件下，nili是和ckyn独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=1)-P(B=1|C=0,D=1)=0.2180-0.1531=0.0649!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 178,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, ckyn为高(B=1)的概率为0.1679。ckyn为高(B=1)的概率为0.1130。reiz为高(A=1)且ckyn为高(B=1)的概率为0.0426。",
+        "data_info_math": "P(B=1|A=0)=0.1679; P(B=1)=0.1130; P(A=1,B=1)=0.0426; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的必要性概率(probability of necessity, PN)。",
+      "Question": "给定reiz为高且ckyn为高, 那么假如reiz为低，此时ckyn为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.1679",
+        "Step 2": "PN的下界: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.1130-0.1679)/0.0426}\n=max{0, -1.2858}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 179,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, ckyn为低(B=0)的概率为0.8321。reiz为低(A=0)且ckyn为低(B=0)的概率为0.3490。reiz为高(A=1)且ckyn为高(B=1)的概率为0.0426。",
+        "data_info_math": "P(B=0|A=0)=0.8321; P(A=0,B=0)=0.3490; P(A=1,B=1)=0.0426; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的必要性概率(probability of necessity, PN)。",
+      "Question": "给定reiz为高且ckyn为高, 那么假如reiz为低，此时ckyn为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.8321",
+        "Step 2": "PN的上界: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.8321-0.3490)/0.0426}\n=min{1, 11.3310}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 180,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, nili为高(C=1)的概率为0.7496。nili为高(C=1)的概率为0.4592。reiz为高(A=1)且nili为高(C=1)的概率为0.1448。",
+        "data_info_math": "P(C=1|A=0)=0.7496; P(C=1)=0.4592; P(A=1,C=1)=0.1448; "
+      },
+      "Instruction": "考虑reiz作用于nili的必要性概率(probability of necessity, PN)。",
+      "Question": "给定reiz为高且nili为高, 那么假如reiz为低，此时nili为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.7496",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.4592-0.7496)/0.1448}\n=max{0, -2.0059}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 181,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, nili为低(C=0)的概率为0.2504。reiz为低(A=0)且nili为低(C=0)的概率为0.1050。reiz为高(A=1)且nili为高(C=1)的概率为0.1448。",
+        "data_info_math": "P(C=0|A=0)=0.2504; P(A=0,C=0)=0.1050; P(A=1,C=1)=0.1448; "
+      },
+      "Instruction": "考虑reiz作用于nili的必要性概率(probability of necessity, PN)。",
+      "Question": "给定reiz为高且nili为高, 那么假如reiz为低，此时nili为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.2504",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.2504-0.1050)/0.1448}\n=min{1, 1.0039}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 182,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.3827。yhyv为高(D=1)的概率为0.3800。reiz为高(A=1)且yhyv为高(D=1)的概率为0.2195。",
+        "data_info_math": "P(D=1|A=0)=0.3827; P(D=1)=0.3800; P(A=1,D=1)=0.2195; "
+      },
+      "Instruction": "考虑reiz作用于yhyv的必要性概率(probability of necessity, PN)。",
+      "Question": "给定reiz为高且yhyv为高, 那么假如reiz为低，此时yhyv为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.3827",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.3800-0.3827)/0.2195}\n=max{0, -0.0123}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 183,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.6173。reiz为低(A=0)且yhyv为低(D=0)的概率为0.2589。reiz为高(A=1)且yhyv为高(D=1)的概率为0.2195。",
+        "data_info_math": "P(D=0|A=0)=0.6173; P(A=0,D=0)=0.2589; P(A=1,D=1)=0.2195; "
+      },
+      "Instruction": "考虑reiz作用于yhyv的必要性概率(probability of necessity, PN)。",
+      "Question": "给定reiz为高且yhyv为高, 那么假如reiz为低，此时yhyv为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.6173",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.6173-0.2589)/0.2195}\n=min{1, 1.6331}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 184,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为低(B=0)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.3387。reiz为低(A=0)的概率为0.4194。在ckyn为低(B=0)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3582。reiz为高(A=1)的概率为0.5806。yhyv为高(D=1)的概率为0.3800。ckyn为高(B=1)且yhyv为高(D=1)的概率为0.0691。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3387; P(A=0)=0.4194; P(D=1|B=0,A=1)=0.3582; P(A=1)=0.5806; P(D=1)=0.3800; P(B=1,D=1)=0.0691; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的必要性概率(probability of necessity, PN)。",
+      "Question": "给定ckyn为高且yhyv为高, 那么假如ckyn为低，此时yhyv为低的概率的下界是多少？",
+      "Answer": "0.4336",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=sum_{A} P(D=1|B=0,A)*P(A)=P(D=1|B=0,A=0)*P(A=0)+P(D=1|B=0,A=1)*P(A=1)\nP(D=1|B=0,A=0)=0.3387\tP(A=0)=0.4194\tP(D=1|B=0,A=1)=0.3582\tP(A=1)=0.5806\nP(D=1|do(B=0))=0.3387*0.4194+0.3582*0.5806=0.3500",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.3800-0.3500)/0.0691}\n=max{0, 0.4336}\n=0.4336"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.43356686902041436
+    },
+    {
+      "id": 185,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为低(B=0)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.6613。reiz为低(A=0)的概率为0.4194。在ckyn为低(B=0)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6418。reiz为高(A=1)的概率为0.5806。ckyn为低(B=0)且yhyv为低(D=0)的概率为0.5761。ckyn为高(B=1)且yhyv为高(D=1)的概率为0.0691。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6613; P(A=0)=0.4194; P(D=0|B=0,A=1)=0.6418; P(A=1)=0.5806; P(B=0,D=0)=0.5761; P(B=1,D=1)=0.0691; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的必要性概率(probability of necessity, PN)。",
+      "Question": "给定ckyn为高且yhyv为高, 那么假如ckyn为低，此时yhyv为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=sum_{A} P(D=0|B=0,A)*P(A)=P(D=0|B=0,A=0)*P(A=0)+P(D=0|B=0,A=1)*P(A=1)\nP(D=0|B=0,A=0)=0.6613\tP(A=0)=0.4194\tP(D=0|B=0,A=1)=0.6418\tP(A=1)=0.5806\nP(D=0|do(B=0))=0.6613*0.4194+0.6418*0.5806=0.6500",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.6500-0.5761)/0.0691}\n=min{1, 1.0704}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 186,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为低(C=0)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.4147。reiz为低(A=0)的概率为0.4194。在nili为低(C=0)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3869。reiz为高(A=1)的概率为0.5806。yhyv为高(D=1)的概率为0.3800。nili为高(C=1)且yhyv为高(D=1)的概率为0.1678。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.4147; P(A=0)=0.4194; P(D=1|C=0,A=1)=0.3869; P(A=1)=0.5806; P(D=1)=0.3800; P(C=1,D=1)=0.1678; "
+      },
+      "Instruction": "考虑nili作用于yhyv的必要性概率(probability of necessity, PN)。",
+      "Question": "给定nili为高且yhyv为高, 那么假如nili为低，此时yhyv为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=0))\nP(D=1|do(C=0))=sum_{A} P(D=1|C=0,A)*P(A)=P(D=1|C=0,A=0)*P(A=0)+P(D=1|C=0,A=1)*P(A=1)\nP(D=1|C=0,A=0)=0.4147\tP(A=0)=0.4194\tP(D=1|C=0,A=1)=0.3869\tP(A=1)=0.5806\nP(D=1|do(C=0))=0.4147*0.4194+0.3869*0.5806=0.3985",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(C=0))]/P(C=1,D=1)}\n=max{0, (0.3800-0.3985)/0.1678}\n=max{0, -0.1106}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 187,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为低(C=0)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.5853。reiz为低(A=0)的概率为0.4194。在nili为低(C=0)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6131。reiz为高(A=1)的概率为0.5806。nili为低(C=0)且yhyv为低(D=0)的概率为0.3287。nili为高(C=1)且yhyv为高(D=1)的概率为0.1678。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.5853; P(A=0)=0.4194; P(D=0|C=0,A=1)=0.6131; P(A=1)=0.5806; P(C=0,D=0)=0.3287; P(C=1,D=1)=0.1678; "
+      },
+      "Instruction": "考虑nili作用于yhyv的必要性概率(probability of necessity, PN)。",
+      "Question": "给定nili为高且yhyv为高, 那么假如nili为低，此时yhyv为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=0))\nP(D=0|do(C=0))=sum_{A} P(D=0|C=0,A)*P(A)=P(D=0|C=0,A=0)*P(A=0)+P(D=0|C=0,A=1)*P(A=1)\nP(D=0|C=0,A=0)=0.5853\tP(A=0)=0.4194\tP(D=0|C=0,A=1)=0.6131\tP(A=1)=0.5806\nP(D=0|do(C=0))=0.5853*0.4194+0.6131*0.5806=0.6015",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(C=0)-P(C=0,D=0)]/P(C=1,D=1)}\n=min{1, (0.6015-0.3287)/0.1678}\n=min{1, 1.6256}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 188,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, ckyn为低(B=0)的概率为0.9266。ckyn为低(B=0)的概率为0.8870。reiz为低(A=0)且ckyn为低(B=0)的概率为0.3490。",
+        "data_info_math": "P(B=0|A=1)=0.9266; P(B=0)=0.8870; P(A=0,B=0)=0.3490; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定reiz为低且ckyn为低, 假如reiz为高，此时ckyn为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.9266",
+        "Step 2": "PS的下界: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.8870-0.9266)/0.3490}\n=max{0, -0.1135}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 189,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, ckyn为高(B=1)的概率为0.0734。reiz为低(A=0)且ckyn为低(B=0)的概率为0.3490。reiz为高(A=1)且ckyn为高(B=1)的概率为0.0426。",
+        "data_info_math": "P(B=1|A=1)=0.0734; P(A=0,B=0)=0.3490; P(A=1,B=1)=0.0426; "
+      },
+      "Instruction": "考虑reiz作用于ckyn的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定reiz为低且ckyn为低, 假如reiz为高，此时ckyn为高的概率的上界是多少？",
+      "Answer": "0.0883",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.0734",
+        "Step 2": "PS的上界: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.0734-0.0426)/0.3490}\n=min{1, 0.0883}\n=0.0883"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.08825359017956497
+    },
+    {
+      "id": 190,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, nili为低(C=0)的概率为0.7506。nili为低(C=0)的概率为0.5408。reiz为低(A=0)且nili为低(C=0)的概率为0.1050。",
+        "data_info_math": "P(C=0|A=1)=0.7506; P(C=0)=0.5408; P(A=0,C=0)=0.1050; "
+      },
+      "Instruction": "考虑reiz作用于nili的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定reiz为低且nili为低, 假如reiz为高，此时nili为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.7506",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.5408-0.7506)/0.1050}\n=max{0, -1.9980}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 191,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, nili为高(C=1)的概率为0.2494。reiz为低(A=0)且nili为低(C=0)的概率为0.1050。reiz为高(A=1)且nili为高(C=1)的概率为0.1448。",
+        "data_info_math": "P(C=1|A=1)=0.2494; P(A=0,C=0)=0.1050; P(A=1,C=1)=0.1448; "
+      },
+      "Instruction": "考虑reiz作用于nili的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定reiz为低且nili为低, 假如reiz为高，此时nili为高的概率的上界是多少？",
+      "Answer": "0.9961",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.2494",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.2494-0.1448)/0.1050}\n=min{1, 0.9961}\n=0.9961"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.9960817582518523
+    },
+    {
+      "id": 192,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6220。yhyv为低(D=0)的概率为0.6200。reiz为低(A=0)且yhyv为低(D=0)的概率为0.2589。",
+        "data_info_math": "P(D=0|A=1)=0.6220; P(D=0)=0.6200; P(A=0,D=0)=0.2589; "
+      },
+      "Instruction": "考虑reiz作用于yhyv的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定reiz为低且yhyv为低, 假如reiz为高，此时yhyv为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.6220",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.6200-0.6220)/0.2589}\n=max{0, -0.0075}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 193,
+      "question_id": 160,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3780。reiz为低(A=0)且yhyv为低(D=0)的概率为0.2589。reiz为高(A=1)且yhyv为高(D=1)的概率为0.2195。",
+        "data_info_math": "P(D=1|A=1)=0.3780; P(A=0,D=0)=0.2589; P(A=1,D=1)=0.2195; "
+      },
+      "Instruction": "考虑reiz作用于yhyv的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定reiz为低且yhyv为低, 假如reiz为高，此时yhyv为高的概率的上界是多少？",
+      "Answer": "0.6123",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.3780",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.3780-0.2195)/0.2589}\n=min{1, 0.6123}\n=0.6123"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.612320253975522
+    },
+    {
+      "id": 194,
+      "question_id": 161,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为高(B=1)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.3994。reiz为低(A=0)的概率为0.4194。在ckyn为高(B=1)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.3720。reiz为高(A=1)的概率为0.5806。yhyv为低(D=0)的概率为0.6200。ckyn为低(B=0)且yhyv为低(D=0)的概率为0.5761。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.3994; P(A=0)=0.4194; P(D=0|B=1,A=1)=0.3720; P(A=1)=0.5806; P(D=0)=0.6200; P(B=0,D=0)=0.5761; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定ckyn为低且yhyv为低, 假如ckyn为高，此时yhyv为高的概率的下界是多少？",
+      "Answer": "0.4107",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=sum_{A} P(D=0|B=1,A)*P(A)=P(D=0|B=1,A=0)*P(A=0)+P(D=0|B=1,A=1)*P(A=1)\nP(D=0|B=1,A=0)=0.3994\tP(A=0)=0.4194\tP(D=0|B=1,A=1)=0.3720\tP(A=1)=0.5806\nP(D=0|do(B=1))=0.3994*0.4194+0.3720*0.5806=0.3835",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.6200-0.3835)/0.5761}\n=max{0, 0.4107}\n=0.4107"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.4106585546952373
+    },
+    {
+      "id": 195,
+      "question_id": 162,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在ckyn为高(B=1)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.6006。reiz为低(A=0)的概率为0.4194。在ckyn为高(B=1)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.6280。reiz为高(A=1)的概率为0.5806。ckyn为低(B=0)且yhyv为低(D=0)的概率为0.5761。ckyn为高(B=1)且yhyv为高(D=1)的概率为0.0691。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.6006; P(A=0)=0.4194; P(D=1|B=1,A=1)=0.6280; P(A=1)=0.5806; P(B=0,D=0)=0.5761; P(B=1,D=1)=0.0691; "
+      },
+      "Instruction": "考虑ckyn作用于yhyv的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定ckyn为低且yhyv为低, 假如ckyn为高，此时yhyv为高的概率的上界是多少？",
+      "Answer": "0.9504",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=sum_{A} P(D=1|B=1,A)*P(A)=P(D=1|B=1,A=0)*P(A=0)+P(D=1|B=1,A=1)*P(A=1)\nP(D=1|B=1,A=0)=0.6006\tP(A=0)=0.4194\tP(D=1|B=1,A=1)=0.6280\tP(A=1)=0.5806\nP(D=1|do(B=1))=0.6006*0.4194+0.6280*0.5806=0.6165",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.6165-0.0691)/0.5761}\n=min{1, 0.9504}\n=0.9504"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.9503592803140966
+    },
+    {
+      "id": 196,
+      "question_id": 163,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为高(C=1)且reiz为低(A=0)的条件下, yhyv为低(D=0)的概率为0.6280。reiz为低(A=0)的概率为0.4194。在nili为高(C=1)且reiz为高(A=1)的条件下, yhyv为低(D=0)的概率为0.6486。reiz为高(A=1)的概率为0.5806。yhyv为低(D=0)的概率为0.6200。nili为低(C=0)且yhyv为低(D=0)的概率为0.3287。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.6280; P(A=0)=0.4194; P(D=0|C=1,A=1)=0.6486; P(A=1)=0.5806; P(D=0)=0.6200; P(C=0,D=0)=0.3287; "
+      },
+      "Instruction": "考虑nili作用于yhyv的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定nili为低且yhyv为低, 假如nili为高，此时yhyv为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=1))\nP(D=0|do(C=1))=sum_{A} P(D=0|C=1,A)*P(A)=P(D=0|C=1,A=0)*P(A=0)+P(D=0|C=1,A=1)*P(A=1)\nP(D=0|C=1,A=0)=0.6280\tP(A=0)=0.4194\tP(D=0|C=1,A=1)=0.6486\tP(A=1)=0.5806\nP(D=0|do(C=1))=0.6280*0.4194+0.6486*0.5806=0.6400",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(C=1))]/P(C=0,D=0)}\n=max{0, (0.6200-0.6400)/0.3287}\n=max{0, -0.0607}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 197,
+      "question_id": 164,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表reiz, B代表ckyn, C代表nili, D代表yhyv。",
+        "data_info": "在nili为高(C=1)且reiz为低(A=0)的条件下, yhyv为高(D=1)的概率为0.3720。reiz为低(A=0)的概率为0.4194。在nili为高(C=1)且reiz为高(A=1)的条件下, yhyv为高(D=1)的概率为0.3514。reiz为高(A=1)的概率为0.5806。nili为低(C=0)且yhyv为低(D=0)的概率为0.3287。nili为高(C=1)且yhyv为高(D=1)的概率为0.1678。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.3720; P(A=0)=0.4194; P(D=1|C=1,A=1)=0.3514; P(A=1)=0.5806; P(C=0,D=0)=0.3287; P(C=1,D=1)=0.1678; "
+      },
+      "Instruction": "考虑nili作用于yhyv的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定nili为低且yhyv为低, 假如nili为高，此时yhyv为高的概率的上界是多少？",
+      "Answer": "0.5848",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=1))\nP(D=1|do(C=1))=sum_{A} P(D=1|C=1,A)*P(A)=P(D=1|C=1,A=0)*P(A=0)+P(D=1|C=1,A=1)*P(A=1)\nP(D=1|C=1,A=0)=0.3720\tP(A=0)=0.4194\tP(D=1|C=1,A=1)=0.3514\tP(A=1)=0.5806\nP(D=1|do(C=1))=0.3720*0.4194+0.3514*0.5806=0.3600",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(C=1)-P(C=1,D=1)]/P(C=0,D=0)}\n=min{1, (0.3600-0.1678)/0.3287}\n=min{1, 0.5848}\n=0.5848"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.5847506242330038
+    }
+  ]
+}

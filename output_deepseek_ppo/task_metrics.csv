@@ -1,0 +1,10 @@
+,counterfactual/natural_direct_effect/NDE-P_NDE-basic_EN
+max_average_value,22.0
+max_value,22.0
+median,17.0
+open_limited_gap,small
+solvability,challenging
+third_max_average_value,12.0
+third_quartile,19.5
+top_5_model,"['deepseek_qwen_ppo', 'deepseek_qwen_reft']"
+understandability,see-manual-definition

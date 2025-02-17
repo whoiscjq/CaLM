@@ -1,0 +1,1013 @@
+[
+  {
+    "name": "candle",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Blowing out the candle directly causes the dark room. The candle out of wax directly causes the dark room.",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects whether blowing out the candle?",
+        "answer": "Based on the causal graph, there's no direct cause of whether blowing out the candle.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the room is bright or dark?",
+        "answer": "Based on the causal graph, whether blowing out the candle and whether the candle is out of wax directly affect whether the room is bright or dark.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the candle is out of wax?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the candle is out of wax.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "alarm",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: The husband setting the alarm directly causes the alarm ringing the next morning. The wife setting the alarm directly causes the alarm ringing the next morning.",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects the husband setting the alarm or not?",
+        "answer": "Based on the causal graph, there's no direct cause of the husband setting the alarm or not.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects the alarm ringing the next morning or not?",
+        "answer": "Based on the causal graph, the husband setting the alarm or not and the wife setting the alarm or not directly affect the alarm ringing the next morning or not.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects the wife setting the alarm or not?",
+        "answer": "Based on the causal graph, there's no direct cause of the wife setting the alarm or not.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "celebrity",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: The person's appearance has a direct effect on the person's fame. The person's talent has a direct effect on the person's fame. ",
+    "data": "We define the symbols as follows:\nX=0 represents the person is considered unattractive.\nX=1 represents the person is considered attractive.\nY=0 represents the person is not famous.\nY=1 represents the person is famous.\nZ=0 represents the person is not talented.\nZ=1 represents the person is talented.\nThe statistics are as follows:\n[{'X': 0, 'Z': 0, 'Y': 0, 'count': 800}, {'X': 0, 'Z': 0, 'Y': 1, 'count': 1}, {'X': 0, 'Z': 1, 'Y': 0, 'count': 90}, {'X': 0, 'Z': 1, 'Y': 1, 'count': 10}, {'X': 1, 'Z': 0, 'Y': 0, 'count': 195}, {'X': 1, 'Z': 0, 'Y': 1, 'count': 5}, {'X': 1, 'Z': 1, 'Y': 0, 'count': 5}, {'X': 1, 'Z': 1, 'Y': 1, 'count': 5}]",
+    "questions": [
+      {
+        "question": "What factors directly affects the person's appearance?",
+        "answer": "Based on the causal graph, there's no direct cause of the person's appearance.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects the person's fame?",
+        "answer": "Based on the causal graph, the person's appearance and the person's talent directly affect the person's fame.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects the person's talent?",
+        "answer": "Based on the causal graph, there's no direct cause of the person's talent.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "drug_taken",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Unobserved confounders has a direct effect on drug taken. Treatment assignment has a direct effect on drug taken. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects treatment assignment?",
+        "answer": "Based on the causal graph, there's no direct cause of treatment assignment.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects drug taken?",
+        "answer": "Based on the causal graph, Unobserved effect and treatment assignment directly affect drug taken.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "cholesterol_level",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Drug taken has a direct effect on cholesterol level. Unobserved confounders has a directly effect on cholesterol level. Unobserved confounders has a directly effect on drug taken.",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects drug taken?",
+        "answer": "Based on the causal graph, Unobserved effect directly affects drug taken.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects cholesterol level?",
+        "answer": "Based on the causal graph, Unobserved effect and drug taken directly affect cholesterol level.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "drug_taken_and_cholesterol_level",
+    "type": "IV",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Unobserved confounders has a direct effect on drug taken. Treatment assignment has a direct effect on drug taken. Unobserved confounders has a direct effect on cholesterol level. Drug taken has a direct effect on cholesterol level. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects treatment assignment?",
+        "answer": "Based on the causal graph, there's no direct cause of treatment assignment.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects drug taken?",
+        "answer": "Based on the causal graph, Unobserved effect and treatment assignment directly affect drug taken.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects cholesterol level?",
+        "answer": "Based on the causal graph, Unobserved effect and drug taken directly affect cholesterol level.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "blood_pressure",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Medication taken has a direct effect on blood pressure. Blood pressure has a direct effect on heart condition. Medication taken has a direct effect on heart condition. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects medication taken?",
+        "answer": "Based on the causal graph, there's no direct cause of medication taken.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects blood pressure?",
+        "answer": "Based on the causal graph, medication taken directly affects blood pressure.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects heart condition?",
+        "answer": "Based on the causal graph, blood pressure and medication taken directly affect heart condition.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "education_skill_salary",
+    "type": "chain",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Education level has a direct effect on skill level. Skill level has a direct effect on salary. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects education level?",
+        "answer": "Based on the causal graph, there's no direct cause of education level.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects skill level?",
+        "answer": "Based on the causal graph, education level directly affects skill level.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects salary?",
+        "answer": "Based on the causal graph, skill level directly affects salary.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "elite_students",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: The student's talent has a direct effect on elite institution admission status. The student's effort has a direct effect on elite institution admission status. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects the student's talent?",
+        "answer": "Based on the causal graph, there's no direct cause of the student's talent.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects the student's effort?",
+        "answer": "Based on the causal graph, there's no direct cause of the student's effort.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects elite institution admission status?",
+        "answer": "Based on the causal graph, the student's talent and the student's effort directly affect elite institution admission status.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "distance_education",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Unobserved confounders has a direct effect on education level. Whether living closed to a college or not has a direct effect on education level. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects whether living closed to a college or not?",
+        "answer": "Based on the causal graph, there's no direct cause of whether living closed to a college or not.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects education level?",
+        "answer": "Based on the causal graph, Unobserved effect and whether living closed to a college or not directly affect education level.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "education_salary",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Unobserved confounders has a direct effect on education level. Unobserved confounders has a direct effect on salary. Education level has a direct effect on salary. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects education level?",
+        "answer": "Based on the causal graph, Unobserved effect directly affects education level.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects salary?",
+        "answer": "Based on the causal graph, Unobserved effect and education level directly affect salary.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "distance_education_salary",
+    "type": "IV",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Unobserved confounders has a direct effect on education level. Whether living closed to a college or not has a direct effect on education level. Unobserved confounders has a direct effect on salary. Education level has a direct effect on salary. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects whether living closed to a college or not?",
+        "answer": "Based on the causal graph, there's no direct cause of whether living closed to a college or not.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects education level?",
+        "answer": "Based on the causal graph, Unobserved effect and whether living closed to a college or not directly affect education level.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects salary?",
+        "answer": "Based on the causal graph, Unobserved effect and education level directly affect salary.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "encouragement_program",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Encouragement level has a direct effect on whether the student studies hard. Encouragement level has a direct effect on exam score. Whether the student studies hard has a direct effect on exam score. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects encouragement level?",
+        "answer": "Based on the causal graph, there's no direct cause of encouragement level.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the student studies hard?",
+        "answer": "Based on the causal graph, encouragement level directly affects whether the student studies hard.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects exam score?",
+        "answer": "Based on the causal graph, encouragement level and whether the student studies hard directly affect exam score.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "firing_emplyee",
+    "type": "diamondcut",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: The CEO's decision to retain or fire the employee has a direct effect on whether the manager signs the termination letter. The CEO's decision to retain or fire the employee has a direct effect on whether the director signs the termination letter. Whether the manager signs the termination letter has a direct effect on whether the employee is fired. Whether the director signs the termination letter has a direct effect on whether the employee is fired. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects the CEO's decision to retain or fire the employee?",
+        "answer": "Based on the causal graph, there's no direct cause of the CEO's decision to retain or fire the employee.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the manager signs the termination letter?",
+        "answer": "Based on the causal graph, the CEO's decision to retain or fire the employee directly affects whether the manager signs the termination letter.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the director signs the termination letter?",
+        "answer": "Based on the causal graph, the CEO's decision to retain or fire the employee directly affects whether the director signs the termination letter.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the employee is fired?",
+        "answer": "Based on the causal graph, whether the manager signs the termination letter and whether the director signs the termination letter directly affect whether the employee is fired.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "firing_squad",
+    "type": "diamondcut",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the captain orders to execute the prisoner or not has a direct effect on whether the private shoots or not. Whether the captain orders to execute the prisoner or not has a direct effect on whether the corporal shoots or not. Whether the private shoots or not has a direct effect on whether the prisoner is alive or dead. Whether the corporal shoots or not has a direct effect on whether the prisoner is alive or dead. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects whether the captain orders to execute the prisoner or not?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the captain orders to execute the prisoner or not.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the private shoots or not?",
+        "answer": "Based on the causal graph, whether the captain orders to execute the prisoner or not directly affects whether the private shoots or not.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the corporal shoots or not?",
+        "answer": "Based on the causal graph, whether the captain orders to execute the prisoner or not directly affects whether the corporal shoots or not.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the prisoner is alive or dead?",
+        "answer": "Based on the causal graph, whether the private shoots or not and whether the corporal shoots or not directly affect whether the prisoner is alive or dead.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "floor_wet",
+    "type": "diamondcut",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Season has a direct effect on whether the sprinkler is on or off. Season has a direct effect on weather there is rain. Whether the sprinkler is on or off has a direct effect on whether the ground is wet or dry. Weather there is rain has a direct effect on whether the ground is wet or dry. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects season?",
+        "answer": "Based on the causal graph, there's no direct cause of season.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the sprinkler is on or off?",
+        "answer": "Based on the causal graph, season directly affects whether the sprinkler is on or off.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects weather there is rain?",
+        "answer": "Based on the causal graph, season directly affects weather there is rain.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the ground is wet or dry?",
+        "answer": "Based on the causal graph, whether the sprinkler is on or off and weather there is rain directly affect whether the ground is wet or dry.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "forest_fire",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the camper lights a match has a direct effect on the forest fire. Whether the chain-smoker lights a match has a direct effect on the forest fire. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects whether the camper lights a match?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the camper lights a match.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the chain-smoker lights a match?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the chain-smoker lights a match.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects the forest fire?",
+        "answer": "Based on the causal graph, whether the camper lights a match and whether the chain-smoker lights a match directly affect the forest fire.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "gender_admission_state",
+    "type": "arrowhead",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender of the applicant (male/female) has a direct effect on competitiveness of the applied department. Residency status (out-of-state/in-stage) has a direct effect on competitiveness of the applied department. Competitiveness of the applied department has a direct effect on admission status (rejected/admitted). Gender of the applicant (male/female) has a direct effect on admission status (rejected/admitted). Residency status (out-of-state/in-stage) has a direct effect on admission status (rejected/admitted). ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects residency status (out-of-state/in-stage)?",
+        "answer": "Based on the causal graph, there's no direct cause of residency status (out-of-state/in-stage).",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects gender of the applicant (male/female)?",
+        "answer": "Based on the causal graph, there's no direct cause of gender of the applicant (male/female).",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects competitiveness of the applied department?",
+        "answer": "Based on the causal graph, gender of the applicant (male/female) and residency status (out-of-state/in-stage) directly affect competitiveness of the applied department.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects admission status (rejected/admitted)?",
+        "answer": "Based on the causal graph, competitiveness of the applied department, gender of the applicant (male/female) and residency status (out-of-state/in-stage) directly affect admission status (rejected/admitted).",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "gender_admission",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender of the applicant (male/female) has a direct effect on competitiveness of the applied department. Competitiveness of the applied department has a direct effect on admission status (rejected/admitted). Gender of the applicant (male/female) has a direct effect on admission status (rejected/admitted). ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects gender of the applicant (male/female)?",
+        "answer": "Based on the causal graph, there's no direct cause of gender of the applicant (male/female).",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects competitiveness of the applied department?",
+        "answer": "Based on the causal graph, gender of the applicant (male/female) directly affects competitiveness of the applied department.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects admission status (rejected/admitted)?",
+        "answer": "Based on the causal graph, competitiveness of the applied department and gender of the applicant (male/female) directly affect admission status (rejected/admitted).",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "gender_state_competitive",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender of the applicant (male/female) has a direct effect on competitiveness of the applied department. Residency status (out-of-state/in-stage) has a direct effect on competitiveness of the applied department. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects residency status (out-of-state/in-stage)?",
+        "answer": "Based on the causal graph, there's no direct cause of residency status (out-of-state/in-stage).",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects gender of the applicant (male/female)?",
+        "answer": "Based on the causal graph, there's no direct cause of gender of the applicant (male/female).",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects competitiveness of the applied department?",
+        "answer": "Based on the causal graph, gender of the applicant (male/female) and residency status (out-of-state/in-stage) directly affect competitiveness of the applied department.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "admission",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Competitiveness of the applied department has a direct effect on admission status (rejected/admitted). Gender of the applicant (male/female) has a direct effect on admission status (rejected/admitted). Residency status (out-of-state/in-stage) has a direct effect on admission status (rejected/admitted). ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects residency status (out-of-state/in-stage)?",
+        "answer": "Based on the causal graph, there's no direct cause of residency status (out-of-state/in-stage).",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects gender of the applicant (male/female)?",
+        "answer": "Based on the causal graph, there's no direct cause of gender of the applicant (male/female).",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects competitiveness of the applied department?",
+        "answer": "Based on the causal graph, there's no direct cause of competitiveness of the applied department.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects admission status (rejected/admitted)?",
+        "answer": "Based on the causal graph, competitiveness of the applied department, gender of the applicant (male/female) and residency status (out-of-state/in-stage) directly affect admission status (rejected/admitted).",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "gender_pay",
+    "type": "arrowhead",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender of the employee has a direct effect on occupation type (blue-collar/white-collar). Occupation type (blue-collar/white-collar) has a direct effect on salary level. Gender of the employee has a direct effect on salary level. Skill level of the employee has a direct effect on occupation type (blue-collar/white-collar). Skill level of the employee has a direct effect on salary level.",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects skill level of the employee?",
+        "answer": "Based on the causal graph, there's no direct cause of skill level of the employee.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects gender of the employee?",
+        "answer": "Based on the causal graph, there's no direct cause of gender of the employee.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects occupation type (blue-collar/white-collar)?",
+        "answer": "Based on the causal graph, gender of the employee and skill level of the employee directly affect occupation type (blue-collar/white-collar).",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects salary level?",
+        "answer": "Based on the causal graph, occupation type (blue-collar/white-collar), gender of the employee and skill level of the employee directly affect salary level.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "getting_late",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether Alice gets up on time or late has a direct effect on whether Alice arrives at school on time or late. Traffic condition has a direct effect on whether Alice arrives at school on time or late. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects whether Alice gets up on time or late?",
+        "answer": "Based on the causal graph, there's no direct cause of whether Alice gets up on time or late.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects traffic condition?",
+        "answer": "Based on the causal graph, there's no direct cause of traffic condition.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether Alice arrives at school on time or late?",
+        "answer": "Based on the causal graph, whether Alice gets up on time or late and traffic condition directly affect whether Alice arrives at school on time or late.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "getting_tanned",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Tanning salon treatment has a direct effect on whether the person has pale skin or tanned skin. Whether the person goes to the beach has a direct effect on whether the person has pale skin or tanned skin. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects tanning salon treatment?",
+        "answer": "Based on the causal graph, there's no direct cause of tanning salon treatment.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person goes to the beach?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the person goes to the beach.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person has pale skin or tanned skin?",
+        "answer": "Based on the causal graph, tanning salon treatment and whether the person goes to the beach directly affect whether the person has pale skin or tanned skin.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "hospitalization",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the person has respiratory issues has a direct effect on whether the person is hospitalized. Whether the person has broken bones has a direct effect on whether the person is hospitalized. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects whether the person has respiratory issues?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the person has respiratory issues.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person has broken bones?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the person has broken bones.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person is hospitalized?",
+        "answer": "Based on the causal graph, whether the person has respiratory issues and whether the person has broken bones directly affect whether the person is hospitalized.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "man_in_relationship",
+    "type": "collision",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the person is mean or kind has a direct effect on the person's relationship status. Whether the person is considered attractive has a direct effect on the person's relationship status. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects whether the person is mean or kind?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the person is mean or kind.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person is considered attractive?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the person is considered attractive.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects the person's relationship status?",
+        "answer": "Based on the causal graph, whether the person is mean or kind and whether the person is considered attractive directly affect the person's relationship status.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "nature_vs_nurture",
+    "type": "arrowhead",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Parents' intelligence has a direct effect on parents' social status. Unobserved confounders has a direct effect on parents' social status. Parents' social status has a direct effect on child's intelligence. Parents' intelligence has a direct effect on child's intelligence. Unobserved confounders has a direct effect on child's intelligence. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects parents' intelligence?",
+        "answer": "Based on the causal graph, there's no direct cause of parents' intelligence.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects parents' social status?",
+        "answer": "Based on the causal graph, parents' intelligence and Unobserved effect directly affect parents' social status.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects child's intelligence?",
+        "answer": "Based on the causal graph, parents' social status, parents' intelligence and Unobserved effect directly affect child's intelligence.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "neg_mediation",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the student is a smoker has a direct effect on whether the strudent is lazy or hard working. Whether the strudent is lazy or hard working has a direct effect on whether the student gets admitted to college. Whether the student is a smoker has a direct effect on whether the student gets admitted to college.",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects whether the student is a smoker?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the student is a smoker.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the strudent is lazy or hard working?",
+        "answer": "Based on the causal graph, whether the student is a smoker directly affects whether the strudent is lazy or hard working.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the student gets admitted to college?",
+        "answer": "Based on the causal graph, whether the strudent is lazy or hard working and whether the student is a smoker directly affect whether the student gets admitted to college.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "obesity_mortality",
+    "type": "arrowhead",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Obesity has a direct effect on whether the person has diabetes. Whether the person has diabetes has a direct effect on the person's lifespan. Obesity has a direct effect on the person's lifespan. Whether the person is a smoker has a direct effect on whether the person has diabetes. Whether the person is a smoker has a direct effect on the person's lifespan.",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects whether the person is a smoker?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the person is a smoker.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects obesity?",
+        "answer": "Based on the causal graph, there's no direct cause of obesity.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person has diabetes?",
+        "answer": "Based on the causal graph, obesity and whether the person is a smoker directly affect whether the person has diabetes.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects the person's lifespan?",
+        "answer": "Based on the causal graph, whether the person has diabetes, obesity and whether the person is a smoker directly affect the person's lifespan.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "orange_scurvy",
+    "type": "chain",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the patient eats citrus has a direct effect on whether the patient has sufficient vitamin C. Whether the patient has sufficient vitamin C has direct effect on whether the patient recovers from scurvy.",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects whether the patient eats citrus?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the patient eats citrus.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the patient has sufficient vitamin C?",
+        "answer": "Based on the causal graph, whether the patient eats citrus directly affects whether the patient has sufficient vitamin C.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the patient recovers from scurvy?",
+        "answer": "Based on the causal graph, whether the patient has sufficient vitamin C directly affects whether the patient recovers from scurvy.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "price",
+    "type": "IV",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Demand has a direct effect on supply. Yield per acre has a direct effect on supply. Demand has a direct effect on price. Supply has a direct effect on price. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects demand?",
+        "answer": "Based on the causal graph, there's no direct cause of demand.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects yield per acre?",
+        "answer": "Based on the causal graph, there's no direct cause of yield per acre.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects supply?",
+        "answer": "Based on the causal graph, demand and yield per acre directly affect supply.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects price?",
+        "answer": "Based on the causal graph, demand and supply directly affect price.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "simpson_drup",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on whether the patient receives treatment. Whether the patient receives treatment has a direct effect on whether the patient recovers. Gender has a direct effect on whether the patient recovers. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects gender?",
+        "answer": "Based on the causal graph, there's no direct cause of gender.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the patient receives treatment?",
+        "answer": "Based on the causal graph, gender directly affects whether the patient receives treatment.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the patient recovers?",
+        "answer": "Based on the causal graph, whether the patient receives treatment and gender directly affect whether the patient recovers.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "simpson_hospital",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Age of the patient has a direct effect on hospital costs. Hospital costs has a direct effect on whether the patient recovers. Age of the patient has a direct effect on whether the patient recovers. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects age of the patient?",
+        "answer": "Based on the causal graph, there's no direct cause of age of the patient.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects hospital costs?",
+        "answer": "Based on the causal graph, age of the patient directly affects hospital costs.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the patient recovers?",
+        "answer": "Based on the causal graph, hospital costs and age of the patient directly affect whether the patient recovers.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "simpson_kisneyston",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Kidney stone size has a direct effect on whether the patient receives treatment. Whether the patient receives treatment has a direct effect on whether the patient recovers. Kidney stone size has a direct effect on whether the patient recovers. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects kidney stone size?",
+        "answer": "Based on the causal graph, there's no direct cause of kidney stone size.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the patient receives treatment?",
+        "answer": "Based on the causal graph, kidney stone size directly affects whether the patient receives treatment.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the patient recovers?",
+        "answer": "Based on the causal graph, whether the patient receives treatment and kidney stone size directly affect whether the patient recovers.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "simpson_vaccine",
+    "type": "mediation",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the person has pre-conditions has a direct effect on whether the person gets the vaccine or refuses the vaccine. Whether the person gets the vaccine or refuses the vaccine has a direct effect on whether the preson dies or recovers from the disease. Whether the person has pre-conditions has a direct effect on whether the preson dies or recovers from the disease. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects whether the person has pre-conditions?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the person has pre-conditions.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person gets the vaccine or refuses the vaccine?",
+        "answer": "Based on the causal graph, whether the person has pre-conditions directly affects whether the person gets the vaccine or refuses the vaccine.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the preson dies or recovers from the disease?",
+        "answer": "Based on the causal graph, whether the person gets the vaccine or refuses the vaccine and whether the person has pre-conditions directly affect whether the preson dies or recovers from the disease.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "smoke_birthWeight",
+    "type": "arrowhead",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Maternal smoking status has a direct effect on infant's birth weight. Health condition has a direct effect on infant's birth weight. Infant's birth weight has a direct effect on infant mortality. Maternal smoking status has a direct effect on infant mortality. Health condition has a direct effect on infant mortality. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects health condition?",
+        "answer": "Based on the causal graph, there's no direct cause of health condition.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects maternal smoking status?",
+        "answer": "Based on the causal graph, there's no direct cause of maternal smoking status.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects infant's birth weight?",
+        "answer": "Based on the causal graph, maternal smoking status and health condition directly affect infant's birth weight.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects infant mortality?",
+        "answer": "Based on the causal graph, infant's birth weight, maternal smoking status and health condition directly affect infant mortality.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "smoking_frontdoor",
+    "type": "frontdoor",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on smoking or not. Smoking or not has a direct effect on whether the person has a high tar deposit in lungs. Whether the person has a high tar deposit in lungs has a direct effect on whether the person has lung cancer. Gender has a direct effect on whether the person has lung cancer. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects gender?",
+        "answer": "Based on the causal graph, there's no direct cause of gender.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects smoking or not?",
+        "answer": "Based on the causal graph, gender directly affects smoking or not.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person has a high tar deposit in lungs?",
+        "answer": "Based on the causal graph, smoking or not directly affects whether the person has a high tar deposit in lungs.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person has lung cancer?",
+        "answer": "Based on the causal graph, whether the person has a high tar deposit in lungs and gender directly affect whether the person has lung cancer.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "smoking_gene_cancer",
+    "type": "arrowhead",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the person has a smoking gene has a direct effect on smoking or not. Pollution status of the living place has a direct effect on smoking or not. Smoking or not has a direct effect on whether the person has lung cancer. Whether the person has a smoking gene has a direct effect on whether the person has lung cancer. Pollution status of the living place has a direct effect on whether the person has lung cancer. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects pollution status of the living place?",
+        "answer": "Based on the causal graph, there's no direct cause of pollution status of the living place.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person has a smoking gene?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the person has a smoking gene.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects smoking or not?",
+        "answer": "Based on the causal graph, whether the person has a smoking gene and pollution status of the living place directly affect smoking or not.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person has lung cancer?",
+        "answer": "Based on the causal graph, smoking or not, whether the person has a smoking gene and pollution status of the living place directly affect whether the person has lung cancer.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "smoking_tar_cancer",
+    "type": "chain",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Smoking or not has a direct effect on whether the person has a high tar deposit in lungs. Whether the person has a high tar deposit in lungs has a direct effect on whether the person has lung cancer. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects smoking or not?",
+        "answer": "Based on the causal graph, there's no direct cause of smoking or not.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person has a high tar deposit in lungs?",
+        "answer": "Based on the causal graph, smoking or not directly affects whether the person has a high tar deposit in lungs.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person has lung cancer?",
+        "answer": "Based on the causal graph, whether the person has a high tar deposit in lungs directly affects whether the person has lung cancer.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "tax_smoke_birthWeight",
+    "type": "IV",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Unobserved confounders has a direct effect on maternal smoking status. Cigarette tax has a direct effect on maternal smoking status. Unobserved confounders has a direct effect on infant's birth weight. Maternal smoking status has a direct effect on infant's birth weight. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects cigarette tax?",
+        "answer": "Based on the causal graph, there's no direct cause of cigarette tax.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects maternal smoking status?",
+        "answer": "Based on the causal graph, Unobserved effect and cigarette tax directly affect maternal smoking status.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects infant's birth weight?",
+        "answer": "Based on the causal graph, Unobserved effect and maternal smoking status directly affect infant's birth weight.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "vaccine_kills",
+    "type": "diamondcut",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Whether the person is vaccinated has a direct effect on whether the person has a severe reaction to the vaccine. Whether the person is vaccinated has a direct effect on whether the person has smallpox or not. Whether the person has a severe reaction to the vaccine has a direct effect on whether the person dies from smallpox. Whether the person has smallpox or not has a direct effect on whether the person dies from smallpox. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects whether the person is vaccinated?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the person is vaccinated.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person has a severe reaction to the vaccine?",
+        "answer": "Based on the causal graph, whether the person is vaccinated directly affects whether the person has a severe reaction to the vaccine.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person has smallpox or not?",
+        "answer": "Based on the causal graph, whether the person is vaccinated directly affects whether the person has smallpox or not.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person dies from smallpox?",
+        "answer": "Based on the causal graph, whether the person has a severe reaction to the vaccine and whether the person has smallpox or not directly affect whether the person dies from smallpox.",
+        "type": "general"
+      }
+    ]
+  },
+  {
+    "name": "water_cholera",
+    "type": "IV",
+    "background": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Poverty of the region has a direct effect on water quality which the person drinks. Whether the person is served by a local water company or a global water company has a direct effect on water quality which the person drinks. Poverty of the region has a direct effect on whether the person gets cholera. Water quality which the person drinks has a direct effect on whether the person gets cholera. ",
+    "data": "",
+    "questions": [
+      {
+        "question": "What factors directly affects poverty of the region?",
+        "answer": "Based on the causal graph, there's no direct cause of poverty of the region.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person is served by a local water company or a global water company?",
+        "answer": "Based on the causal graph, there's no direct cause of whether the person is served by a local water company or a global water company.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects water quality which the person drinks?",
+        "answer": "Based on the causal graph, poverty of the region and whether the person is served by a local water company or a global water company directly affect water quality which the person drinks.",
+        "type": "general"
+      },
+      {
+        "question": "What factors directly affects whether the person gets cholera?",
+        "answer": "Based on the causal graph, poverty of the region and water quality which the person drinks directly affect whether the person gets cholera.",
+        "type": "general"
+      }
+    ]
+  }
+]

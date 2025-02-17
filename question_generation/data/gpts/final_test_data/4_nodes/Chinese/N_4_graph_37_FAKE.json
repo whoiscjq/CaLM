@@ -1,0 +1,4547 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->C",
+      "A->D",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "ytxw",
+      "B": "tjrd",
+      "C": "qzfp",
+      "D": "ynlw"
+    },
+    "node_value": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": -0.5747557420064767,
+      "B": -0.8579217695788116,
+      "C": 1.1211810588172542,
+      "D": 0.2108152283857425
+    },
+    "edge_weight": {
+      "A->C": 0.7755616801670749,
+      "A->D": -2.305081570447144,
+      "B->C": -1.0010184933488673,
+      "C->D": 0.2202706414518788
+    },
+    "function_description": "P(A=1)=0.3601\nP(B=1)=0.2978\nP(C=1|A,B)=sigmoid(1.1211810588172542 + 0.7756 * A + -1.0010 * B)\nP(D=1|A,C)=sigmoid(0.2108152283857425 + -2.3051 * A + 0.2203 * C)\n",
+    "text_description": "The probability of ytxw being high (A=1) is 0.3601. \nThe probability of tjrd being high (B=1) is 0.2978. \nFor those with ytxw being low (A=0) and tjrd being low (B=0), the probability of qzfp being high (C=1) is 0.7542. \nFor those with ytxw being low (A=0) and tjrd being high (B=1), the probability of qzfp being high (C=1) is 0.5300. \nFor those with ytxw being high (A=1) and tjrd being low (B=0), the probability of qzfp being high (C=1) is 0.8695. \nFor those with ytxw being high (A=1) and tjrd being high (B=1), the probability of qzfp being high (C=1) is 0.7101. \nFor those with ytxw being low (A=0) and qzfp being low (C=0), the probability of ynlw being high (D=1) is 0.5525. \nFor those with ytxw being low (A=0) and qzfp being high (C=1), the probability of ynlw being high (D=1) is 0.6061. \nFor those with ytxw being high (A=1) and qzfp being low (C=0), the probability of ynlw being high (D=1) is 0.1097. \nFor those with ytxw being high (A=1) and qzfp being high (C=1), the probability of ynlw being high (D=1) is 0.1331. \n",
+    "Statistic_data": [
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 1970
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 9661
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 3058
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 10080
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 3052
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 6804
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 3340
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 2472
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 1939
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 1454
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 1355
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 1484
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 485
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 2453
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 191
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 202
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ytxw作用于tjrd的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ytxw被改变为低，那么tjrd更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ytxw作用于tjrd的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ytxw被改变为低，那么tjrd更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ytxw作用于tjrd的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ytxw被改变为高，那么tjrd更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ytxw作用于tjrd的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ytxw被改变为高，那么tjrd更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.3117。在ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1762。",
+        "data_info_math": "P(C=0|A=0)=0.3117; P(C=0|A=1)=0.1762; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ytxw被改变为低，那么qzfp更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.3117\tP(C=0|A=1)=0.1762",
+        "Step 6": "ATE=0.3117-0.1762=0.1355",
+        "Step 7": "ATE=0.1355>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.1355329414643993
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)的条件下, qzfp为高(C=1)的概率为0.6883。在ytxw为高(A=1)的条件下, qzfp为高(C=1)的概率为0.8238。",
+        "data_info_math": "P(C=1|A=0)=0.6883; P(C=1|A=1)=0.8238; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ytxw被改变为低，那么qzfp更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.6883\tP(C=1|A=1)=0.8238",
+        "Step 6": "ATE=0.6883-0.8238=-0.1355",
+        "Step 7": "ATE=-0.1355<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.13553294146439931
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1762。在ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.3117。",
+        "data_info_math": "P(C=0|A=1)=0.1762; P(C=0|A=0)=0.3117; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ytxw被改变为高，那么qzfp更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.1762\tP(C=0|A=0)=0.3117",
+        "Step 6": "ATE=0.1762-0.3117=-0.1355",
+        "Step 7": "ATE=-0.1355<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.1355329414643993
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)的条件下, qzfp为高(C=1)的概率为0.8238。在ytxw为低(A=0)的条件下, qzfp为高(C=1)的概率为0.6883。",
+        "data_info_math": "P(C=1|A=1)=0.8238; P(C=1|A=0)=0.6883; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ytxw被改变为高，那么qzfp更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.8238\tP(C=1|A=0)=0.6883",
+        "Step 6": "ATE=0.8238-0.6883=0.1355",
+        "Step 7": "ATE=0.1355>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.13553294146439931
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4143。在ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8700。",
+        "data_info_math": "P(D=0|A=0)=0.4143; P(D=0|A=1)=0.8700; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ytxw被改变为低，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.4143\tP(D=0|A=1)=0.8700",
+        "Step 6": "ATE=0.4143-0.8700=-0.4558",
+        "Step 7": "ATE=-0.4558<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.4557619245597851
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5857。在ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1300。",
+        "data_info_math": "P(D=1|A=0)=0.5857; P(D=1|A=1)=0.1300; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ytxw被改变为低，那么ynlw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.5857\tP(D=1|A=1)=0.1300",
+        "Step 6": "ATE=0.5857-0.1300=0.4558",
+        "Step 7": "ATE=0.4558>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.45576192455978515
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8700。在ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4143。",
+        "data_info_math": "P(D=0|A=1)=0.8700; P(D=0|A=0)=0.4143; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ytxw被改变为高，那么ynlw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.8700\tP(D=0|A=0)=0.4143",
+        "Step 6": "ATE=0.8700-0.4143=0.4558",
+        "Step 7": "ATE=0.4558>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.4557619245597851
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1300。在ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5857。",
+        "data_info_math": "P(D=1|A=1)=0.1300; P(D=1|A=0)=0.5857; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ytxw被改变为高，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.1300\tP(D=1|A=0)=0.5857",
+        "Step 6": "ATE=0.1300-0.5857=-0.4558",
+        "Step 7": "ATE=-0.4558<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.45576192455978515
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ytxw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tjrd被改变为低，那么ytxw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ytxw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tjrd被改变为低，那么ytxw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ytxw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tjrd被改变为高，那么ytxw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ytxw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tjrd被改变为高，那么ytxw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为低(B=0)的条件下, qzfp为低(C=0)的概率为0.2041。在tjrd为高(B=1)的条件下, qzfp为低(C=0)的概率为0.4016。",
+        "data_info_math": "P(C=0|B=0)=0.2041; P(C=0|B=1)=0.4016; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tjrd被改变为低，那么qzfp更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.2041\tP(C=0|B=1)=0.4016",
+        "Step 6": "ATE=0.2041-0.4016=-0.1976",
+        "Step 7": "ATE=-0.1976<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.19756249726605746
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为低(B=0)的条件下, qzfp为高(C=1)的概率为0.7959。在tjrd为高(B=1)的条件下, qzfp为高(C=1)的概率为0.5984。",
+        "data_info_math": "P(C=1|B=0)=0.7959; P(C=1|B=1)=0.5984; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tjrd被改变为低，那么qzfp更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.7959\tP(C=1|B=1)=0.5984",
+        "Step 6": "ATE=0.7959-0.5984=0.1976",
+        "Step 7": "ATE=0.1976>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.19756249726605746
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为高(B=1)的条件下, qzfp为低(C=0)的概率为0.4016。在tjrd为低(B=0)的条件下, qzfp为低(C=0)的概率为0.2041。",
+        "data_info_math": "P(C=0|B=1)=0.4016; P(C=0|B=0)=0.2041; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tjrd被改变为高，那么qzfp更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.4016\tP(C=0|B=0)=0.2041",
+        "Step 6": "ATE=0.4016-0.2041=0.1976",
+        "Step 7": "ATE=0.1976>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.19756249726605746
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为高(B=1)的条件下, qzfp为高(C=1)的概率为0.5984。在tjrd为低(B=0)的条件下, qzfp为高(C=1)的概率为0.7959。",
+        "data_info_math": "P(C=1|B=1)=0.5984; P(C=1|B=0)=0.7959; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tjrd被改变为高，那么qzfp更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.5984\tP(C=1|B=0)=0.7959",
+        "Step 6": "ATE=0.5984-0.7959=-0.1976",
+        "Step 7": "ATE=-0.1976<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.19756249726605746
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为低(B=0)的条件下, ynlw为低(D=0)的概率为0.5790。在tjrd为高(B=1)的条件下, ynlw为低(D=0)的概率为0.5819。",
+        "data_info_math": "P(D=0|B=0)=0.5790; P(D=0|B=1)=0.5819; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tjrd被改变为低，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.5790\tP(D=0|B=1)=0.5819",
+        "Step 6": "ATE=0.5790-0.5819=-0.0029",
+        "Step 7": "ATE=-0.0029<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.0028981351378850606
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为低(B=0)的条件下, ynlw为高(D=1)的概率为0.4210。在tjrd为高(B=1)的条件下, ynlw为高(D=1)的概率为0.4181。",
+        "data_info_math": "P(D=1|B=0)=0.4210; P(D=1|B=1)=0.4181; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tjrd被改变为低，那么ynlw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.4210\tP(D=1|B=1)=0.4181",
+        "Step 6": "ATE=0.4210-0.4181=0.0029",
+        "Step 7": "ATE=0.0029>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.002898135137885116
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为高(B=1)的条件下, ynlw为低(D=0)的概率为0.5819。在tjrd为低(B=0)的条件下, ynlw为低(D=0)的概率为0.5790。",
+        "data_info_math": "P(D=0|B=1)=0.5819; P(D=0|B=0)=0.5790; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tjrd被改变为高，那么ynlw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.5819\tP(D=0|B=0)=0.5790",
+        "Step 6": "ATE=0.5819-0.5790=0.0029",
+        "Step 7": "ATE=0.0029>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.0028981351378850606
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为高(B=1)的条件下, ynlw为高(D=1)的概率为0.4181。在tjrd为低(B=0)的条件下, ynlw为高(D=1)的概率为0.4210。",
+        "data_info_math": "P(D=1|B=1)=0.4181; P(D=1|B=0)=0.4210; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tjrd被改变为高，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.4181\tP(D=1|B=0)=0.4210",
+        "Step 6": "ATE=0.4181-0.4210=-0.0029",
+        "Step 7": "ATE=-0.0029<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.002898135137885116
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于ytxw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qzfp被改变为低，那么ytxw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于ytxw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qzfp被改变为低，那么ytxw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于ytxw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qzfp被改变为高，那么ytxw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于ytxw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qzfp被改变为高，那么ytxw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于tjrd的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qzfp被改变为低，那么tjrd更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于tjrd的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qzfp被改变为低，那么tjrd更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于tjrd的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qzfp被改变为高，那么tjrd更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于tjrd的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qzfp被改变为高，那么tjrd更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4446。在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4005。ytxw为低(A=0)的概率为0.6366。在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8773。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8685。ytxw为高(A=1)的概率为0.3634。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.4446; P(D=0|C=1,A=0)=0.4005; P(A=0)=0.6366; P(D=0|C=0,A=1)=0.8773; P(D=0|C=1,A=1)=0.8685; P(A=1)=0.3634; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qzfp被改变为低，那么ynlw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=0))-P(D=0|do(C=1))=sum_{A} [P(D=0|C=0,A)*P(A)-P(D=0|C=1,A)*P(A)]=[P(D=0|C=0,A=0)*P(A=0)-P(D=0|C=1,A=0)*P(A=0)]+[P(D=0|C=0,A=1)*P(A=1)-P(D=0|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=0,A=0)=0.4446\tP(D=0|C=1,A=0)=0.4005\tP(A=0)=0.6366\tP(D=0|C=0,A=1)=0.8773\tP(D=0|C=1,A=1)=0.8685\tP(A=1)=0.3634",
+        "Step 6": "ATE=[0.4446*0.6366-0.4005*0.6366]+[0.8773*0.3634-0.8685*0.3634]=0.0312",
+        "Step 7": "ATE=0.0312>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.03122895607087517
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5554。在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5995。ytxw为低(A=0)的概率为0.6366。在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1227。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1315。ytxw为高(A=1)的概率为0.3634。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.5554; P(D=1|C=1,A=0)=0.5995; P(A=0)=0.6366; P(D=1|C=0,A=1)=0.1227; P(D=1|C=1,A=1)=0.1315; P(A=1)=0.3634; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qzfp被改变为低，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=0))-P(D=1|do(C=1))=sum_{A} [P(D=1|C=0,A)*P(A)-P(D=1|C=1,A)*P(A)]=[P(D=1|C=0,A=0)*P(A=0)-P(D=1|C=1,A=0)*P(A=0)]+[P(D=1|C=0,A=1)*P(A=1)-P(D=1|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=0,A=0)=0.5554\tP(D=1|C=1,A=0)=0.5995\tP(A=0)=0.6366\tP(D=1|C=0,A=1)=0.1227\tP(D=1|C=1,A=1)=0.1315\tP(A=1)=0.3634",
+        "Step 6": "ATE=[0.5554*0.6366-0.5995*0.6366]+[0.1227*0.3634-0.1315*0.3634]=-0.0312",
+        "Step 7": "ATE=-0.0312<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.031228956070875072
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4005。在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4446。ytxw为低(A=0)的概率为0.6366。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8685。在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8773。ytxw为高(A=1)的概率为0.3634。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.4005; P(D=0|C=0,A=0)=0.4446; P(A=0)=0.6366; P(D=0|C=1,A=1)=0.8685; P(D=0|C=0,A=1)=0.8773; P(A=1)=0.3634; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qzfp被改变为高，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=1))-P(D=0|do(C=0))=sum_{A} [P(D=0|C=1,A)*P(A)-P(D=0|C=0,A)*P(A)]=[P(D=0|C=1,A=0)*P(A=0)-P(D=0|C=0,A=0)*P(A=0)]+[P(D=0|C=1,A=1)*P(A=1)-P(D=0|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=1,A=0)=0.4005\tP(D=0|C=0,A=0)=0.4446\tP(A=0)=0.6366\tP(D=0|C=1,A=1)=0.8685\tP(D=0|C=0,A=1)=0.8773\tP(A=1)=0.3634",
+        "Step 6": "ATE=[0.4005*0.6366-0.4446*0.6366]+[0.8685*0.3634-0.8773*0.3634]=-0.0312",
+        "Step 7": "ATE=-0.0312<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.03122895607087517
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5995。在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5554。ytxw为低(A=0)的概率为0.6366。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1315。在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1227。ytxw为高(A=1)的概率为0.3634。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.5995; P(D=1|C=0,A=0)=0.5554; P(A=0)=0.6366; P(D=1|C=1,A=1)=0.1315; P(D=1|C=0,A=1)=0.1227; P(A=1)=0.3634; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qzfp被改变为高，那么ynlw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=1))-P(D=1|do(C=0))=sum_{A} [P(D=1|C=1,A)*P(A)-P(D=1|C=0,A)*P(A)]=[P(D=1|C=1,A=0)*P(A=0)-P(D=1|C=0,A=0)*P(A=0)]+[P(D=1|C=1,A=1)*P(A=1)-P(D=1|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=1,A=0)=0.5995\tP(D=1|C=0,A=0)=0.5554\tP(A=0)=0.6366\tP(D=1|C=1,A=1)=0.1315\tP(D=1|C=0,A=1)=0.1227\tP(A=1)=0.3634",
+        "Step 6": "ATE=[0.5995*0.6366-0.5554*0.6366]+[0.1315*0.3634-0.1227*0.3634]=0.0312",
+        "Step 7": "ATE=0.0312>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.031228956070875072
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于ytxw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ynlw被改变为低，那么ytxw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于ytxw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ynlw被改变为低，那么ytxw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于ytxw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ynlw被改变为高，那么ytxw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于ytxw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ynlw被改变为高，那么ytxw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于tjrd的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ynlw被改变为低，那么tjrd更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于tjrd的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ynlw被改变为低，那么tjrd更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于tjrd的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ynlw被改变为高，那么tjrd更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于tjrd的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ynlw被改变为高，那么tjrd更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于qzfp的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ynlw被改变为低，那么qzfp更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于qzfp的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ynlw被改变为低，那么qzfp更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于qzfp的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ynlw被改变为高，那么qzfp更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于qzfp的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果ynlw被改变为高，那么qzfp更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.3117。在ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1762。",
+        "data_info_math": "P(C=0|A=0)=0.3117; P(C=0|A=1)=0.1762; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而ytxw变化为低，那么qzfp更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.3117\tP(C=0|A=1)=0.1762",
+        "Step 6": "NDE=0.3117-0.1762=0.1355",
+        "Step 7": "NDE=0.1355>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.1355329414643993
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)的条件下, qzfp为高(C=1)的概率为0.6883。在ytxw为高(A=1)的条件下, qzfp为高(C=1)的概率为0.8238。",
+        "data_info_math": "P(C=1|A=0)=0.6883; P(C=1|A=1)=0.8238; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而ytxw变化为低，那么qzfp更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.6883\tP(C=1|A=1)=0.8238",
+        "Step 6": "NDE=0.6883-0.8238=-0.1355",
+        "Step 7": "NDE=-0.1355<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.13553294146439931
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1762。在ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.3117。",
+        "data_info_math": "P(C=0|A=1)=0.1762; P(C=0|A=0)=0.3117; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而ytxw变化为高，那么qzfp更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.1762\tP(C=0|A=0)=0.3117",
+        "Step 6": "NDE=0.1762-0.3117=-0.1355",
+        "Step 7": "NDE=-0.1355<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.1355329414643993
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)的条件下, qzfp为高(C=1)的概率为0.8238。在ytxw为低(A=0)的条件下, qzfp为高(C=1)的概率为0.6883。",
+        "data_info_math": "P(C=1|A=1)=0.8238; P(C=1|A=0)=0.6883; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而ytxw变化为高，那么qzfp更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.8238\tP(C=1|A=0)=0.6883",
+        "Step 6": "NDE=0.8238-0.6883=0.1355",
+        "Step 7": "NDE=0.1355>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.13553294146439931
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4446。在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8773。在ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1762。在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4005。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8685。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.4446; P(D=0|C=0,A=1)=0.8773; P(C=0|A=1)=0.1762; P(D=0|C=1,A=0)=0.4005; P(D=0|C=1,A=1)=0.8685; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而ytxw变化为低，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=0|A=0,C)-P(D=0|A=1,C)]*P(C|A=1)=[P(D=0|A=0,C=0)-P(D=0|A=1,C=0)]*P(C=0|A=1)+[P(D=0|A=0,C=1)-P(D=0|A=1,C=1)]*P(C=1|A=1)",
+        "Step 5": "P(D=0|A=0,C=0)=0.4446\tP(D=0|A=1,C=0)=0.8773\tP(C=0|A=1)=0.1762\tP(D=0|A=0,C=1)=0.4005\tP(D=0|A=1,C=1)=0.8685\tP(C=1|A=1)=0.8238",
+        "Step 6": "=(0.4446-0.8773)*0.1762+(0.4005-0.8685)*0.8238=-0.4617",
+        "Step 7": "NDE=-0.4617<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.4617305367331237
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5554。在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1227。在ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1762。在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5995。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1315。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.5554; P(D=1|C=0,A=1)=0.1227; P(C=0|A=1)=0.1762; P(D=1|C=1,A=0)=0.5995; P(D=1|C=1,A=1)=0.1315; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而ytxw变化为低，那么ynlw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=1|A=0,C)-P(D=1|A=1,C)]*P(C|A=1)=[P(D=1|A=0,C=0)-P(D=1|A=1,C=0)]*P(C=0|A=1)+[P(D=1|A=0,C=1)-P(D=1|A=1,C=1)]*P(C=1|A=1)",
+        "Step 5": "P(D=1|A=0,C=0)=0.5554\tP(D=1|A=1,C=0)=0.1227\tP(C=0|A=1)=0.1762\tP(D=1|A=0,C=1)=0.5995\tP(D=1|A=1,C=1)=0.1315\tP(C=1|A=1)=0.8238",
+        "Step 6": "=(0.5554-0.1227)*0.1762+(0.5995-0.1315)*0.8238=0.4617",
+        "Step 7": "NDE=0.4617>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.4617305367331237
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8773。在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4446。在ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.3117。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8685。在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4005。",
+        "data_info_math": "P(D=0|C=0,A=1)=0.8773; P(D=0|C=0,A=0)=0.4446; P(C=0|A=0)=0.3117; P(D=0|C=1,A=1)=0.8685; P(D=0|C=1,A=0)=0.4005; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而ytxw变化为高，那么ynlw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=0|A=1,C)-P(D=0|A=0,C)]*P(C|A=0)=[P(D=0|A=1,C=0)-P(D=0|A=0,C=0)]*P(C=0|A=0)+[P(D=0|A=1,C=1)-P(D=0|A=0,C=1)]*P(C=1|A=0)",
+        "Step 5": "P(D=0|A=1,C=0)=0.8773\tP(D=0|A=0,C=0)=0.4446\tP(C=0|A=0)=0.3117\tP(D=0|A=1,C=1)=0.8685\tP(D=0|A=0,C=1)=0.4005\tP(C=1|A=0)=0.6883",
+        "Step 6": "=(0.8773-0.4446)*0.3117+(0.8685-0.4005)*0.6883=0.4570",
+        "Step 7": "NDE=0.4570>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.45695379257125257
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1227。在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5554。在ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.3117。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1315。在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5995。",
+        "data_info_math": "P(D=1|C=0,A=1)=0.1227; P(D=1|C=0,A=0)=0.5554; P(C=0|A=0)=0.3117; P(D=1|C=1,A=1)=0.1315; P(D=1|C=1,A=0)=0.5995; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而ytxw变化为高，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{C} [P(D=1|A=1,C)-P(D=1|A=0,C)]*P(C|A=0)=[P(D=1|A=1,C=0)-P(D=1|A=0,C=0)]*P(C=0|A=0)+[P(D=1|A=1,C=1)-P(D=1|A=0,C=1)]*P(C=1|A=0)",
+        "Step 5": "P(D=1|A=1,C=0)=0.1227\tP(D=1|A=0,C=0)=0.5554\tP(C=0|A=0)=0.3117\tP(D=1|A=1,C=1)=0.1315\tP(D=1|A=0,C=1)=0.5995\tP(C=1|A=0)=0.6883",
+        "Step 6": "=(0.1227-0.5554)*0.3117+(0.1315-0.5995)*0.6883=-0.4570",
+        "Step 7": "NDE=-0.4570<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.4569537925712527
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为低(B=0)的条件下, qzfp为低(C=0)的概率为0.2041。在tjrd为高(B=1)的条件下, qzfp为低(C=0)的概率为0.4016。",
+        "data_info_math": "P(C=0|B=0)=0.2041; P(C=0|B=1)=0.4016; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tjrd变化为低，那么qzfp更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.2041\tP(C=0|B=1)=0.4016",
+        "Step 6": "NDE=0.2041-0.4016=-0.1976",
+        "Step 7": "NDE=-0.1976<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.19756249726605746
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为低(B=0)的条件下, qzfp为高(C=1)的概率为0.7959。在tjrd为高(B=1)的条件下, qzfp为高(C=1)的概率为0.5984。",
+        "data_info_math": "P(C=1|B=0)=0.7959; P(C=1|B=1)=0.5984; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tjrd变化为低，那么qzfp更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.7959\tP(C=1|B=1)=0.5984",
+        "Step 6": "NDE=0.7959-0.5984=0.1976",
+        "Step 7": "NDE=0.1976>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.19756249726605746
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为高(B=1)的条件下, qzfp为低(C=0)的概率为0.4016。在tjrd为低(B=0)的条件下, qzfp为低(C=0)的概率为0.2041。",
+        "data_info_math": "P(C=0|B=1)=0.4016; P(C=0|B=0)=0.2041; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tjrd变化为高，那么qzfp更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.4016\tP(C=0|B=0)=0.2041",
+        "Step 6": "NDE=0.4016-0.2041=0.1976",
+        "Step 7": "NDE=0.1976>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.19756249726605746
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为高(B=1)的条件下, qzfp为高(C=1)的概率为0.5984。在tjrd为低(B=0)的条件下, qzfp为高(C=1)的概率为0.7959。",
+        "data_info_math": "P(C=1|B=1)=0.5984; P(C=1|B=0)=0.7959; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tjrd变化为高，那么qzfp更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.5984\tP(C=1|B=0)=0.7959",
+        "Step 6": "NDE=0.5984-0.7959=-0.1976",
+        "Step 7": "NDE=-0.1976<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.19756249726605746
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tjrd变化为低，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tjrd变化为低，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tjrd变化为高，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tjrd变化为高，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4446。在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4005。ytxw为低(A=0)的概率为0.6366。在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8773。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8685。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.4446; P(D=0|C=1,A=0)=0.4005; P(A=0)=0.6366; P(D=0|C=0,A=1)=0.8773; P(D=0|C=1,A=1)=0.8685; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而qzfp变化为低，那么ynlw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=0,A)-P(D=0|C=1,A)]*P(A)=[P(D=0|C=0,A=0)-P(D=0|C=1,A=0)]*P(A=0)+[P(D=0|C=0,A=1)-P(D=0|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=0,A=0)=0.4446\tP(D=0|C=1,A=0)=0.4005\tP(A=0)=0.6366\tP(D=0|C=0,A=1)=0.8773\tP(D=0|C=1,A=1)=0.8685\tP(A=1)=0.3634",
+        "Step 6": "NDE=[0.4446-0.4005]*0.6366+[0.8773-0.8685]*0.3634=0.0312",
+        "Step 7": "NDE=0.0312>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.03122895607087515
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5554。在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5995。ytxw为低(A=0)的概率为0.6366。在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1227。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1315。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.5554; P(D=1|C=1,A=0)=0.5995; P(A=0)=0.6366; P(D=1|C=0,A=1)=0.1227; P(D=1|C=1,A=1)=0.1315; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而qzfp变化为低，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=0,A)-P(D=1|C=1,A)]*P(A)=[P(D=1|C=0,A=0)-P(D=1|C=1,A=0)]*P(A=0)+[P(D=1|C=0,A=1)-P(D=1|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=0,A=0)=0.5554\tP(D=1|C=1,A=0)=0.5995\tP(A=0)=0.6366\tP(D=1|C=0,A=1)=0.1227\tP(D=1|C=1,A=1)=0.1315\tP(A=1)=0.3634",
+        "Step 6": "NDE=[0.5554-0.5995]*0.6366+[0.1227-0.1315]*0.3634=-0.0312",
+        "Step 7": "NDE=-0.0312<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.031228956070875065
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4005。在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4446。ytxw为低(A=0)的概率为0.6366。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8685。在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8773。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.4005; P(D=0|C=0,A=0)=0.4446; P(A=0)=0.6366; P(D=0|C=1,A=1)=0.8685; P(D=0|C=0,A=1)=0.8773; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而qzfp变化为高，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=1,A)-P(D=0|C=0,A)]*P(A)=[P(D=0|C=1,A=0)-P(D=0|C=0,A=0)]*P(A=0)+[P(D=0|C=1,A=1)-P(D=0|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=1,A=0)=0.4005\tP(D=0|C=0,A=0)=0.4446\tP(A=0)=0.6366\tP(D=0|C=1,A=1)=0.8685\tP(D=0|C=0,A=1)=0.8773\tP(A=1)=0.3634",
+        "Step 6": "NDE=[0.4005-0.4446]*0.6366+[0.8685-0.8773]*0.3634=-0.0312",
+        "Step 7": "NDE=-0.0312<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.03122895607087515
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5995。在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5554。ytxw为低(A=0)的概率为0.6366。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1315。在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1227。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.5995; P(D=1|C=0,A=0)=0.5554; P(A=0)=0.6366; P(D=1|C=1,A=1)=0.1315; P(D=1|C=0,A=1)=0.1227; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而qzfp变化为高，那么ynlw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=1,A)-P(D=1|C=0,A)]*P(A)=[P(D=1|C=1,A=0)-P(D=1|C=0,A=0)]*P(A=0)+[P(D=1|C=1,A=1)-P(D=1|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=1,A=0)=0.5995\tP(D=1|C=0,A=0)=0.5554\tP(A=0)=0.6366\tP(D=1|C=1,A=1)=0.1315\tP(D=1|C=0,A=1)=0.1227\tP(A=1)=0.3634",
+        "Step 6": "NDE=[0.5995-0.5554]*0.6366+[0.1315-0.1227]*0.3634=0.0312",
+        "Step 7": "NDE=0.0312>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.031228956070875065
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如ytxw保持不变，而所有中间变量被改变为当它们在ytxw变化为低下的取值，那么qzfp更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如ytxw保持不变，而所有中间变量被改变为当它们在ytxw变化为低下的取值，那么qzfp更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如ytxw保持不变，而所有中间变量被改变为当它们在ytxw变化为高下的取值，那么qzfp更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如ytxw保持不变，而所有中间变量被改变为当它们在ytxw变化为高下的取值，那么qzfp更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8773。在ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.3117。在ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1762。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8685。",
+        "data_info_math": "P(D=0|C=0,A=1)=0.8773; P(C=0|A=0)=0.3117; P(C=0|A=1)=0.1762; P(D=0|C=1,A=1)=0.8685; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如ytxw保持不变，而所有中间变量被改变为当它们在ytxw变化为低下的取值，那么ynlw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=0|A=1,C)*[P(C|A=0)-P(C|A=1)]=P(D=0|A=1,C=0)*[P(C=0|A=0)-P(C=0|A=1)]+P(D=0|A=1,C=1)*[P(C=1|A=0)-P(C=1|A=1)]",
+        "Step 5": "P(D=0|A=1,C=0)=0.8773\tP(C=0|A=0)=0.3117\tP(C=0|A=1)=0.1762\tP(D=0|A=1,C=1)=0.8685\tP(C=1|A=0)=0.6883\tP(C=1|A=1)=0.8238",
+        "Step 6": "NIE=0.8773*(0.3117-0.1762)+0.8685*(0.6883-0.8238)=0.0012",
+        "Step 7": "NIE=0.0012>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.0011918680114675478
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1227。在ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.3117。在ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1762。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1315。",
+        "data_info_math": "P(D=1|C=0,A=1)=0.1227; P(C=0|A=0)=0.3117; P(C=0|A=1)=0.1762; P(D=1|C=1,A=1)=0.1315; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如ytxw保持不变，而所有中间变量被改变为当它们在ytxw变化为低下的取值，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=1|A=1,C)*[P(C|A=0)-P(C|A=1)]=P(D=1|A=1,C=0)*[P(C=0|A=0)-P(C=0|A=1)]+P(D=1|A=1,C=1)*[P(C=1|A=0)-P(C=1|A=1)]",
+        "Step 5": "P(D=1|A=1,C=0)=0.1227\tP(C=0|A=0)=0.3117\tP(C=0|A=1)=0.1762\tP(D=1|A=1,C=1)=0.1315\tP(C=1|A=0)=0.6883\tP(C=1|A=1)=0.8238",
+        "Step 6": "NIE=0.1227*(0.3117-0.1762)+0.1315*(0.6883-0.8238)=-0.0012",
+        "Step 7": "NIE=-0.0012<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.0011918680114675617
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4446。在ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1762。在ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.3117。在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4005。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.4446; P(C=0|A=1)=0.1762; P(C=0|A=0)=0.3117; P(D=0|C=1,A=0)=0.4005; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如ytxw保持不变，而所有中间变量被改变为当它们在ytxw变化为高下的取值，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=0|A=0,C)*[P(C|A=1)-P(C|A=0)]=P(D=0|A=0,C=0)*[P(C=0|A=1)-P(C=0|A=0)]+P(D=0|A=0,C=1)*[P(C=1|A=1)-P(C=1|A=0)]",
+        "Step 5": "P(D=0|A=0,C=0)=0.4446\tP(C=0|A=1)=0.1762\tP(C=0|A=0)=0.3117\tP(D=0|A=0,C=1)=0.4005\tP(C=1|A=1)=0.8238\tP(C=1|A=0)=0.6883",
+        "Step 6": "NIE=0.4446*(0.1762-0.3117)+0.4005*(0.8238-0.6883)=-0.0060",
+        "Step 7": "NIE=-0.0060<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.005968612173338626
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5554。在ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1762。在ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.3117。在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5995。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.5554; P(C=0|A=1)=0.1762; P(C=0|A=0)=0.3117; P(D=1|C=1,A=0)=0.5995; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如ytxw保持不变，而所有中间变量被改变为当它们在ytxw变化为高下的取值，那么ynlw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{C} P(D=1|A=0,C)*[P(C|A=1)-P(C|A=0)]=P(D=1|A=0,C=0)*[P(C=0|A=1)-P(C=0|A=0)]+P(D=1|A=0,C=1)*[P(C=1|A=1)-P(C=1|A=0)]",
+        "Step 5": "P(D=1|A=0,C=0)=0.5554\tP(C=0|A=1)=0.1762\tP(C=0|A=0)=0.3117\tP(D=1|A=0,C=1)=0.5995\tP(C=1|A=1)=0.8238\tP(C=1|A=0)=0.6883",
+        "Step 6": "NIE=0.5554*(0.1762-0.3117)+0.5995*(0.8238-0.6883)=0.0060",
+        "Step 7": "NIE=0.0060>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.005968612173338647
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tjrd保持不变，而所有中间变量被改变为当它们在tjrd变化为低下的取值，那么qzfp更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tjrd保持不变，而所有中间变量被改变为当它们在tjrd变化为低下的取值，那么qzfp更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tjrd保持不变，而所有中间变量被改变为当它们在tjrd变化为高下的取值，那么qzfp更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tjrd保持不变，而所有中间变量被改变为当它们在tjrd变化为高下的取值，那么qzfp更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "ytxw为低(A=0)的概率为0.6366。在qzfp为低(C=0), tjrd为高(B=1)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4415。在tjrd为低(B=0)且ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.2467。在tjrd为高(B=1)且ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.4665。在qzfp为高(C=1), tjrd为高(B=1)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.3923。在qzfp为低(C=0), tjrd为高(B=1)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8765。在tjrd为低(B=0)且ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1294。在tjrd为高(B=1)且ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.2878。在qzfp为高(C=1), tjrd为高(B=1)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8732。",
+        "data_info_math": "P(A=0)=0.6366; P(D=0|C=0,B=1,A=0)=0.4415; P(C=0|B=0,A=0)=0.2467; P(C=0|B=1,A=0)=0.4665; P(D=0|C=1,B=1,A=0)=0.3923; P(D=0|C=0,B=1,A=1)=0.8765; P(C=0|B=0,A=1)=0.1294; P(C=0|B=1,A=1)=0.2878; P(D=0|C=1,B=1,A=1)=0.8732; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tjrd保持不变，而所有中间变量被改变为当它们在tjrd变化为低下的取值，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=0|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=0|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,C=0,A=0)=0.4415\tP(C=0|B=0,A=0)=0.2467\tP(C=0|B=1,A=0)=0.4665\tP(A=0)=0.6366\tP(D=0|B=1,C=1,A=0)=0.3923\tP(C=1|B=0,A=0)=0.7533\tP(C=1|B=1,A=0)=0.5335\tP(A=0)=0.6366\tP(D=0|B=1,C=0,A=1)=0.8765\tP(C=0|B=0,A=1)=0.1294\tP(C=0|B=1,A=1)=0.2878\tP(A=1)=0.3634\tP(D=0|B=1,C=1,A=1)=0.8732\tP(C=1|B=0,A=1)=0.8706\tP(C=1|B=1,A=1)=0.7122\tP(A=1)=0.3634",
+        "Step 6": "NIE=0.4415*[0.2467-0.4665]*0.6366+0.3923*[0.7533-0.5335]*0.6366+0.8765*[0.1294-0.2878]*0.3634+0.8732*[0.8706-0.7122]*0.3634=-0.0071",
+        "Step 7": "NIE=-0.0071<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.007073259080616505
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "ytxw为低(A=0)的概率为0.6366。在qzfp为低(C=0), tjrd为高(B=1)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5585。在tjrd为低(B=0)且ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.2467。在tjrd为高(B=1)且ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.4665。在qzfp为高(C=1), tjrd为高(B=1)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.6077。在qzfp为低(C=0), tjrd为高(B=1)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1235。在tjrd为低(B=0)且ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1294。在tjrd为高(B=1)且ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.2878。在qzfp为高(C=1), tjrd为高(B=1)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1268。",
+        "data_info_math": "P(A=0)=0.6366; P(D=1|C=0,B=1,A=0)=0.5585; P(C=0|B=0,A=0)=0.2467; P(C=0|B=1,A=0)=0.4665; P(D=1|C=1,B=1,A=0)=0.6077; P(D=1|C=0,B=1,A=1)=0.1235; P(C=0|B=0,A=1)=0.1294; P(C=0|B=1,A=1)=0.2878; P(D=1|C=1,B=1,A=1)=0.1268; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tjrd保持不变，而所有中间变量被改变为当它们在tjrd变化为低下的取值，那么ynlw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=1|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=1|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,C=0,A=0)=0.5585\tP(C=0|B=0,A=0)=0.2467\tP(C=0|B=1,A=0)=0.4665\tP(A=0)=0.6366\tP(D=1|B=1,C=1,A=0)=0.6077\tP(C=1|B=0,A=0)=0.7533\tP(C=1|B=1,A=0)=0.5335\tP(A=0)=0.6366\tP(D=1|B=1,C=0,A=1)=0.1235\tP(C=0|B=0,A=1)=0.1294\tP(C=0|B=1,A=1)=0.2878\tP(A=1)=0.3634\tP(D=1|B=1,C=1,A=1)=0.1268\tP(C=1|B=0,A=1)=0.8706\tP(C=1|B=1,A=1)=0.7122\tP(A=1)=0.3634",
+        "Step 6": "NIE=0.5585*[0.2467-0.4665]*0.6366+0.6077*[0.7533-0.5335]*0.6366+0.1235*[0.1294-0.2878]*0.3634+0.1268*[0.8706-0.7122]*0.3634=0.0071",
+        "Step 7": "NIE=0.0071>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.007073259080616405
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "ytxw为低(A=0)的概率为0.6366。在qzfp为低(C=0), tjrd为低(B=0)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4470。在tjrd为高(B=1)且ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.4665。在tjrd为低(B=0)且ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.2467。在qzfp为高(C=1), tjrd为低(B=0)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4030。在qzfp为低(C=0), tjrd为低(B=0)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8780。在tjrd为高(B=1)且ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.2878。在tjrd为低(B=0)且ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1294。在qzfp为高(C=1), tjrd为低(B=0)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8668。",
+        "data_info_math": "P(A=0)=0.6366; P(D=0|C=0,B=0,A=0)=0.4470; P(C=0|B=1,A=0)=0.4665; P(C=0|B=0,A=0)=0.2467; P(D=0|C=1,B=0,A=0)=0.4030; P(D=0|C=0,B=0,A=1)=0.8780; P(C=0|B=1,A=1)=0.2878; P(C=0|B=0,A=1)=0.1294; P(D=0|C=1,B=0,A=1)=0.8668; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tjrd保持不变，而所有中间变量被改变为当它们在tjrd变化为高下的取值，那么ynlw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=0|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=0|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,C=0,A=0)=0.4470\tP(C=0|B=1,A=0)=0.4665\tP(C=0|B=0,A=0)=0.2467\tP(A=0)=0.6366\tP(D=0|B=0,C=1,A=0)=0.4030\tP(C=1|B=1,A=0)=0.5335\tP(C=1|B=0,A=0)=0.7533\tP(A=0)=0.6366\tP(D=0|B=0,C=0,A=1)=0.8780\tP(C=0|B=1,A=1)=0.2878\tP(C=0|B=0,A=1)=0.1294\tP(A=1)=0.3634\tP(D=0|B=0,C=1,A=1)=0.8668\tP(C=1|B=1,A=1)=0.7122\tP(C=1|B=0,A=1)=0.8706\tP(A=1)=0.3634",
+        "Step 6": "NIE=0.4470*[0.4665-0.2467]*0.6366+0.4030*[0.5335-0.7533]*0.6366+0.8780*[0.2878-0.1294]*0.3634+0.8668*[0.7122-0.8706]*0.3634=0.0068",
+        "Step 7": "NIE=0.0068>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.006804722753024378
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "ytxw为低(A=0)的概率为0.6366。在qzfp为低(C=0), tjrd为低(B=0)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5530。在tjrd为高(B=1)且ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.4665。在tjrd为低(B=0)且ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.2467。在qzfp为高(C=1), tjrd为低(B=0)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5970。在qzfp为低(C=0), tjrd为低(B=0)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1220。在tjrd为高(B=1)且ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.2878。在tjrd为低(B=0)且ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1294。在qzfp为高(C=1), tjrd为低(B=0)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1332。",
+        "data_info_math": "P(A=0)=0.6366; P(D=1|C=0,B=0,A=0)=0.5530; P(C=0|B=1,A=0)=0.4665; P(C=0|B=0,A=0)=0.2467; P(D=1|C=1,B=0,A=0)=0.5970; P(D=1|C=0,B=0,A=1)=0.1220; P(C=0|B=1,A=1)=0.2878; P(C=0|B=0,A=1)=0.1294; P(D=1|C=1,B=0,A=1)=0.1332; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tjrd保持不变，而所有中间变量被改变为当它们在tjrd变化为高下的取值，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=1|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=1|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,C=0,A=0)=0.5530\tP(C=0|B=1,A=0)=0.4665\tP(C=0|B=0,A=0)=0.2467\tP(A=0)=0.6366\tP(D=1|B=0,C=1,A=0)=0.5970\tP(C=1|B=1,A=0)=0.5335\tP(C=1|B=0,A=0)=0.7533\tP(A=0)=0.6366\tP(D=1|B=0,C=0,A=1)=0.1220\tP(C=0|B=1,A=1)=0.2878\tP(C=0|B=0,A=1)=0.1294\tP(A=1)=0.3634\tP(D=1|B=0,C=1,A=1)=0.1332\tP(C=1|B=1,A=1)=0.7122\tP(C=1|B=0,A=1)=0.8706\tP(A=1)=0.3634",
+        "Step 6": "NIE=0.5530*[0.4665-0.2467]*0.6366+0.5970*[0.5335-0.7533]*0.6366+0.1220*[0.2878-0.1294]*0.3634+0.1332*[0.7122-0.8706]*0.3634=-0.0068",
+        "Step 7": "NIE=-0.0068<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.00680472275302431
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如qzfp保持不变，而所有中间变量被改变为当它们在qzfp变化为低下的取值，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如qzfp保持不变，而所有中间变量被改变为当它们在qzfp变化为低下的取值，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如qzfp保持不变，而所有中间变量被改变为当它们在qzfp变化为高下的取值，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如qzfp保持不变，而所有中间变量被改变为当它们在qzfp变化为高下的取值，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ytxw作用于tjrd的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ytxw为低，假如ytxw为高，那么tjrd更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ytxw作用于tjrd的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ytxw为低，假如ytxw为高，那么tjrd更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ytxw作用于tjrd的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ytxw为高，假如ytxw为低，那么tjrd更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ytxw作用于tjrd的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ytxw为高，假如ytxw为低，那么tjrd更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.3117。在ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1762。",
+        "data_info_math": "P(C=0|A=0)=0.3117; P(C=0|A=1)=0.1762; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ytxw为低，假如ytxw为高，那么qzfp更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.3117\tP(C=0|A=1)=0.1762",
+        "Step 6": "ETT=0.3117-0.1762=0.1355",
+        "Step 7": "ETT=0.1355>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.1355329414643993
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)的条件下, qzfp为高(C=1)的概率为0.6883。在ytxw为高(A=1)的条件下, qzfp为高(C=1)的概率为0.8238。",
+        "data_info_math": "P(C=1|A=0)=0.6883; P(C=1|A=1)=0.8238; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ytxw为低，假如ytxw为高，那么qzfp更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.6883\tP(C=1|A=1)=0.8238",
+        "Step 6": "ETT=0.6883-0.8238=-0.1355",
+        "Step 7": "ETT=-0.1355<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.13553294146439931
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1762。在ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.3117。",
+        "data_info_math": "P(C=0|A=1)=0.1762; P(C=0|A=0)=0.3117; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ytxw为高，假如ytxw为低，那么qzfp更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.1762\tP(C=0|A=0)=0.3117",
+        "Step 6": "ETT=0.1762-0.3117=-0.1355",
+        "Step 7": "ETT=-0.1355<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.1355329414643993
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)的条件下, qzfp为高(C=1)的概率为0.8238。在ytxw为低(A=0)的条件下, qzfp为高(C=1)的概率为0.6883。",
+        "data_info_math": "P(C=1|A=1)=0.8238; P(C=1|A=0)=0.6883; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ytxw为高，假如ytxw为低，那么qzfp更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.8238\tP(C=1|A=0)=0.6883",
+        "Step 6": "ETT=0.8238-0.6883=0.1355",
+        "Step 7": "ETT=0.1355>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.13553294146439931
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4143。在ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8700。",
+        "data_info_math": "P(D=0|A=0)=0.4143; P(D=0|A=1)=0.8700; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ytxw为低，假如ytxw为高，那么ynlw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.4143\tP(D=0|A=1)=0.8700",
+        "Step 6": "ETT=0.4143-0.8700=-0.4558",
+        "Step 7": "ETT=-0.4558<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.4557619245597851
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5857。在ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1300。",
+        "data_info_math": "P(D=1|A=0)=0.5857; P(D=1|A=1)=0.1300; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ytxw为低，假如ytxw为高，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.5857\tP(D=1|A=1)=0.1300",
+        "Step 6": "ETT=0.5857-0.1300=0.4558",
+        "Step 7": "ETT=0.4558>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.45576192455978515
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8700。在ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4143。",
+        "data_info_math": "P(D=0|A=1)=0.8700; P(D=0|A=0)=0.4143; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ytxw为高，假如ytxw为低，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.8700\tP(D=0|A=0)=0.4143",
+        "Step 6": "ETT=0.8700-0.4143=0.4558",
+        "Step 7": "ETT=0.4558>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.4557619245597851
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1300。在ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5857。",
+        "data_info_math": "P(D=1|A=1)=0.1300; P(D=1|A=0)=0.5857; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ytxw为高，假如ytxw为低，那么ynlw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.1300\tP(D=1|A=0)=0.5857",
+        "Step 6": "ETT=0.1300-0.5857=-0.4558",
+        "Step 7": "ETT=-0.4558<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.45576192455978515
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ytxw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tjrd为低，假如tjrd为高，那么ytxw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ytxw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tjrd为低，假如tjrd为高，那么ytxw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ytxw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tjrd为高，假如tjrd为低，那么ytxw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ytxw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tjrd为高，假如tjrd为低，那么ytxw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为低(B=0)的条件下, qzfp为低(C=0)的概率为0.2041。在tjrd为高(B=1)的条件下, qzfp为低(C=0)的概率为0.4016。",
+        "data_info_math": "P(C=0|B=0)=0.2041; P(C=0|B=1)=0.4016; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tjrd为低，假如tjrd为高，那么qzfp更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.2041\tP(C=0|B=1)=0.4016",
+        "Step 6": "ETT=0.2041-0.4016=-0.1976",
+        "Step 7": "ETT=-0.1976<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.19756249726605746
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为低(B=0)的条件下, qzfp为高(C=1)的概率为0.7959。在tjrd为高(B=1)的条件下, qzfp为高(C=1)的概率为0.5984。",
+        "data_info_math": "P(C=1|B=0)=0.7959; P(C=1|B=1)=0.5984; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tjrd为低，假如tjrd为高，那么qzfp更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.7959\tP(C=1|B=1)=0.5984",
+        "Step 6": "ETT=0.7959-0.5984=0.1976",
+        "Step 7": "ETT=0.1976>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.19756249726605746
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为高(B=1)的条件下, qzfp为低(C=0)的概率为0.4016。在tjrd为低(B=0)的条件下, qzfp为低(C=0)的概率为0.2041。",
+        "data_info_math": "P(C=0|B=1)=0.4016; P(C=0|B=0)=0.2041; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tjrd为高，假如tjrd为低，那么qzfp更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.4016\tP(C=0|B=0)=0.2041",
+        "Step 6": "ETT=0.4016-0.2041=0.1976",
+        "Step 7": "ETT=0.1976>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.19756249726605746
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为高(B=1)的条件下, qzfp为高(C=1)的概率为0.5984。在tjrd为低(B=0)的条件下, qzfp为高(C=1)的概率为0.7959。",
+        "data_info_math": "P(C=1|B=1)=0.5984; P(C=1|B=0)=0.7959; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tjrd为高，假如tjrd为低，那么qzfp更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.5984\tP(C=1|B=0)=0.7959",
+        "Step 6": "ETT=0.5984-0.7959=-0.1976",
+        "Step 7": "ETT=-0.1976<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.19756249726605746
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为低(B=0)的条件下, ynlw为低(D=0)的概率为0.5790。在tjrd为高(B=1)的条件下, ynlw为低(D=0)的概率为0.5819。",
+        "data_info_math": "P(D=0|B=0)=0.5790; P(D=0|B=1)=0.5819; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tjrd为低，假如tjrd为高，那么ynlw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-P(D=0|B=1)",
+        "Step 5": "P(D=0|B=0)=0.5790\tP(D=0|B=1)=0.5819",
+        "Step 6": "ETT=0.5790-0.5819=-0.0029",
+        "Step 7": "ETT=-0.0029<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.0028981351378850606
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为低(B=0)的条件下, ynlw为高(D=1)的概率为0.4210。在tjrd为高(B=1)的条件下, ynlw为高(D=1)的概率为0.4181。",
+        "data_info_math": "P(D=1|B=0)=0.4210; P(D=1|B=1)=0.4181; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tjrd为低，假如tjrd为高，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-P(D=1|B=1)",
+        "Step 5": "P(D=1|B=0)=0.4210\tP(D=1|B=1)=0.4181",
+        "Step 6": "ETT=0.4210-0.4181=0.0029",
+        "Step 7": "ETT=0.0029>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.002898135137885116
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为高(B=1)的条件下, ynlw为低(D=0)的概率为0.5819。在tjrd为低(B=0)的条件下, ynlw为低(D=0)的概率为0.5790。",
+        "data_info_math": "P(D=0|B=1)=0.5819; P(D=0|B=0)=0.5790; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tjrd为高，假如tjrd为低，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-P(D=0|B=0)",
+        "Step 5": "P(D=0|B=1)=0.5819\tP(D=0|B=0)=0.5790",
+        "Step 6": "ETT=0.5819-0.5790=0.0029",
+        "Step 7": "ETT=0.0029>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.0028981351378850606
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为高(B=1)的条件下, ynlw为高(D=1)的概率为0.4181。在tjrd为低(B=0)的条件下, ynlw为高(D=1)的概率为0.4210。",
+        "data_info_math": "P(D=1|B=1)=0.4181; P(D=1|B=0)=0.4210; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tjrd为高，假如tjrd为低，那么ynlw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-P(D=1|B=0)",
+        "Step 5": "P(D=1|B=1)=0.4181\tP(D=1|B=0)=0.4210",
+        "Step 6": "ETT=0.4181-0.4210=-0.0029",
+        "Step 7": "ETT=-0.0029<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.002898135137885116
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于ytxw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qzfp为低，假如qzfp为高，那么ytxw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于ytxw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qzfp为低，假如qzfp为高，那么ytxw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于ytxw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qzfp为高，假如qzfp为低，那么ytxw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于ytxw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qzfp为高，假如qzfp为低，那么ytxw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于tjrd的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qzfp为低，假如qzfp为高，那么tjrd更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于tjrd的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qzfp为低，假如qzfp为高，那么tjrd更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于tjrd的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qzfp为高，假如qzfp为低，那么tjrd更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qzfp作用于tjrd的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qzfp为高，假如qzfp为低，那么tjrd更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)的条件下, ynlw为低(D=0)的概率为0.5501。在ytxw为低(A=0)且qzfp为高(C=1)的条件下, ynlw为低(D=0)的概率为0.4005。在qzfp为低(C=0)的条件下, ytxw为低(A=0)的概率为0.7560。在ytxw为高(A=1)且qzfp为高(C=1)的条件下, ynlw为低(D=0)的概率为0.8685。在qzfp为低(C=0)的条件下, ytxw为高(A=1)的概率为0.2440。",
+        "data_info_math": "P(D=0|C=0)=0.5501; P(D=0|A=0,C=1)=0.4005; P(A=0|C=0)=0.7560; P(D=0|A=1,C=1)=0.8685; P(A=1|C=0)=0.2440; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qzfp为低，假如qzfp为高，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=0|C=0)-sum_{A} P(D=0|C=1,A)*P(A|C=0)=P(D=0|C=0)-[P(D=0|C=1,A=0)*P(A=0|C=0)+P(D=0|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=0|C=0)=0.5501\tP(D=0|C=1,A=0)=0.4005\tP(A=0|C=0)=0.7560\tP(D=0|C=1,A=1)=0.8685\tP(A=1|C=0)=0.2440",
+        "Step 6": "ETT=0.5501-[0.4005*0.7560+0.8685*0.2440]=0.0354",
+        "Step 7": "ETT=0.0354>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.03543920557099736
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)的条件下, ynlw为高(D=1)的概率为0.4499。在ytxw为低(A=0)且qzfp为高(C=1)的条件下, ynlw为高(D=1)的概率为0.5995。在qzfp为低(C=0)的条件下, ytxw为低(A=0)的概率为0.7560。在ytxw为高(A=1)且qzfp为高(C=1)的条件下, ynlw为高(D=1)的概率为0.1315。在qzfp为低(C=0)的条件下, ytxw为高(A=1)的概率为0.2440。",
+        "data_info_math": "P(D=1|C=0)=0.4499; P(D=1|A=0,C=1)=0.5995; P(A=0|C=0)=0.7560; P(D=1|A=1,C=1)=0.1315; P(A=1|C=0)=0.2440; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qzfp为低，假如qzfp为高，那么ynlw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=1|C=0)-sum_{A} P(D=1|C=1,A)*P(A|C=0)=P(D=1|C=0)-[P(D=1|C=1,A=0)*P(A=0|C=0)+P(D=1|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=1|C=0)=0.4499\tP(D=1|C=1,A=0)=0.5995\tP(A=0|C=0)=0.7560\tP(D=1|C=1,A=1)=0.1315\tP(A=1|C=0)=0.2440",
+        "Step 6": "ETT=0.4499-[0.5995*0.7560+0.1315*0.2440]=-0.0354",
+        "Step 7": "ETT=-0.0354<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.03543920557099733
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)的条件下, ynlw为低(D=0)的概率为0.5905。在ytxw为低(A=0)且qzfp为低(C=0)的条件下, ynlw为低(D=0)的概率为0.4446。在qzfp为高(C=1)的条件下, ytxw为低(A=0)的概率为0.5940。在ytxw为高(A=1)且qzfp为低(C=0)的条件下, ynlw为低(D=0)的概率为0.8773。在qzfp为高(C=1)的条件下, ytxw为高(A=1)的概率为0.4060。",
+        "data_info_math": "P(D=0|C=1)=0.5905; P(D=0|A=0,C=0)=0.4446; P(A=0|C=1)=0.5940; P(D=0|A=1,C=0)=0.8773; P(A=1|C=1)=0.4060; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qzfp为高，假如qzfp为低，那么ynlw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=0|C=1)-sum_{A} P(D=0|C=0,A)*P(A|C=1)=P(D=0|C=1)-[P(D=0|C=0,A=0)*P(A=0|C=1)+P(D=0|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=0|C=1)=0.5905\tP(D=0|C=0,A=0)=0.4446\tP(A=0|C=1)=0.5940\tP(D=0|C=0,A=1)=0.8773\tP(A=1|C=1)=0.4060",
+        "Step 6": "ETT=0.5905-[0.4446*0.5940+0.8773*0.4060]=-0.0297",
+        "Step 7": "ETT=-0.0297<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.029730547500541937
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)的条件下, ynlw为高(D=1)的概率为0.4095。在ytxw为低(A=0)且qzfp为低(C=0)的条件下, ynlw为高(D=1)的概率为0.5554。在qzfp为高(C=1)的条件下, ytxw为低(A=0)的概率为0.5940。在ytxw为高(A=1)且qzfp为低(C=0)的条件下, ynlw为高(D=1)的概率为0.1227。在qzfp为高(C=1)的条件下, ytxw为高(A=1)的概率为0.4060。",
+        "data_info_math": "P(D=1|C=1)=0.4095; P(D=1|A=0,C=0)=0.5554; P(A=0|C=1)=0.5940; P(D=1|A=1,C=0)=0.1227; P(A=1|C=1)=0.4060; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qzfp为高，假如qzfp为低，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=1|C=1)-sum_{A} P(D=1|C=0,A)*P(A|C=1)=P(D=1|C=1)-[P(D=1|C=0,A=0)*P(A=0|C=1)+P(D=1|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=1|C=1)=0.4095\tP(D=1|C=0,A=0)=0.5554\tP(A=0|C=1)=0.5940\tP(D=1|C=0,A=1)=0.1227\tP(A=1|C=1)=0.4060",
+        "Step 6": "ETT=0.4095-[0.5554*0.5940+0.1227*0.4060]=0.0297",
+        "Step 7": "ETT=0.0297>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.029730547500542
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于ytxw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ynlw为低，假如ynlw为高，那么ytxw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于ytxw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ynlw为低，假如ynlw为高，那么ytxw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于ytxw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ynlw为高，假如ynlw为低，那么ytxw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于ytxw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ynlw为高，假如ynlw为低，那么ytxw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于tjrd的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ynlw为低，假如ynlw为高，那么tjrd更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于tjrd的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ynlw为低，假如ynlw为高，那么tjrd更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于tjrd的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ynlw为高，假如ynlw为低，那么tjrd更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于tjrd的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ynlw为高，假如ynlw为低，那么tjrd更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于qzfp的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ynlw为低，假如ynlw为高，那么qzfp更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 133,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于qzfp的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ynlw为低，假如ynlw为高，那么qzfp更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 134,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于qzfp的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ynlw为高，假如ynlw为低，那么qzfp更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 135,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑ynlw作用于qzfp的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些ynlw为高，假如ynlw为低，那么qzfp更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 136,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)且qzfp为低(C=0)的条件下, ynlw为低(D=0)的概率为0.4446。在ytxw为高(A=1)且qzfp为低(C=0)的条件下, ynlw为低(D=0)的概率为0.8773。",
+        "data_info_math": "P(D=0|A=0,C=0)=0.4446; P(D=0|A=1,C=0)=0.8773; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在qzfp为低的条件下，假如ytxw为低，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=0,C=0))-P(D=0|do(A=1,C=0))=P(D=0|A=0,C=0)-P(D=0|A=1,C=0)",
+        "Step 5": "P(D=0|A=0,C=0)=0.4446\tP(D=0|A=1,C=0)=0.8773",
+        "Step 6": "CDE=0.4446-0.8773=-0.4327",
+        "Step 7": "CDE=-0.4327<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": -0.43269658237437525
+    },
+    {
+      "id": 137,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)且qzfp为低(C=0)的条件下, ynlw为高(D=1)的概率为0.5554。在ytxw为高(A=1)且qzfp为低(C=0)的条件下, ynlw为高(D=1)的概率为0.1227。",
+        "data_info_math": "P(D=1|A=0,C=0)=0.5554; P(D=1|A=1,C=0)=0.1227; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在qzfp为低的条件下，假如ytxw为低，那么ynlw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=0,C=0))-P(D=1|do(A=1,C=0))=P(D=1|A=0,C=0)-P(D=1|A=1,C=0)",
+        "Step 5": "P(D=1|A=0,C=0)=0.5554\tP(D=1|A=1,C=0)=0.1227",
+        "Step 6": "CDE=0.5554-0.1227=0.4327",
+        "Step 7": "CDE=0.4327>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0.4326965823743752
+    },
+    {
+      "id": 138,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)且qzfp为高(C=1)的条件下, ynlw为低(D=0)的概率为0.8685。在ytxw为低(A=0)且qzfp为高(C=1)的条件下, ynlw为低(D=0)的概率为0.4005。",
+        "data_info_math": "P(D=0|A=1,C=1)=0.8685; P(D=0|A=0,C=1)=0.4005; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在qzfp为高的条件下，假如ytxw为高，那么ynlw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=1,C=1))-P(D=0|do(A=0,C=1))=P(D=0|A=1,C=1)-P(D=0|A=0,C=1)",
+        "Step 5": "P(D=0|A=1,C=1)=0.8685\tP(D=0|A=0,C=1)=0.4005",
+        "Step 6": "CDE=0.8685-0.4005=0.4679",
+        "Step 7": "CDE=0.4679>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0.4679407385939595
+    },
+    {
+      "id": 139,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)且qzfp为高(C=1)的条件下, ynlw为高(D=1)的概率为0.1315。在ytxw为低(A=0)且qzfp为高(C=1)的条件下, ynlw为高(D=1)的概率为0.5995。",
+        "data_info_math": "P(D=1|A=1,C=1)=0.1315; P(D=1|A=0,C=1)=0.5995; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在qzfp为高的条件下，假如ytxw为高，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=1,C=1))-P(D=1|do(A=0,C=1))=P(D=1|A=1,C=1)-P(D=1|A=0,C=1)",
+        "Step 5": "P(D=1|A=1,C=1)=0.1315\tP(D=1|A=0,C=1)=0.5995",
+        "Step 6": "CDE=0.1315-0.5995=-0.4679",
+        "Step 7": "CDE=-0.4679<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": -0.46794073859395957
+    },
+    {
+      "id": 140,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在qzfp为低的条件下，假如tjrd为低，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 141,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在qzfp为高的条件下，假如tjrd为低，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 142,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在qzfp为高的条件下，假如tjrd为高，那么ynlw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 143,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tjrd作用于ynlw的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在qzfp为低的条件下，假如tjrd为高，那么ynlw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 144,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象ytxw(A)和观察节点qzfp(C)的后门调整集合。",
+      "Question": "方法1: 根据tjrd的情况，我们逐个研究ytxw和qzfp的关联。\n方法2：我们直接研究一般情况下ytxw和qzfp的关联。\n为了理解ytxw如何影响qzfp，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 145,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象ytxw(A)和观察节点qzfp(C)的后门调整集合。",
+      "Question": "方法1: 根据ynlw的情况，我们逐个研究ytxw和qzfp的关联。\n方法2：我们直接研究一般情况下ytxw和qzfp的关联。\n为了理解ytxw如何影响qzfp，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 146,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象ytxw(A)和观察节点ynlw(D)的后门调整集合。",
+      "Question": "方法1: 根据tjrd的情况，我们逐个研究ytxw和ynlw的关联。\n方法2：我们直接研究一般情况下ytxw和ynlw的关联。\n为了理解ytxw如何影响ynlw，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 147,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象ytxw(A)和观察节点ynlw(D)的后门调整集合。",
+      "Question": "方法1: 根据qzfp的情况，我们逐个研究ytxw和ynlw的关联。\n方法2：我们直接研究一般情况下ytxw和ynlw的关联。\n为了理解ytxw如何影响ynlw，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 148,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象tjrd(B)和观察节点qzfp(C)的后门调整集合。",
+      "Question": "方法1: 根据ynlw的情况，我们逐个研究tjrd和qzfp的关联。\n方法2：我们直接研究一般情况下tjrd和qzfp的关联。\n为了理解tjrd如何影响qzfp，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 149,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象tjrd(B)和观察节点qzfp(C)的后门调整集合。",
+      "Question": "方法1: 根据ynlw的情况，我们逐个研究tjrd和qzfp的关联。\n方法2：我们直接研究一般情况下tjrd和qzfp的关联。\n为了理解tjrd如何影响qzfp，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 150,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象tjrd(B)和观察节点ynlw(D)的后门调整集合。",
+      "Question": "方法1: 根据ytxw的情况，我们逐个研究tjrd和ynlw的关联。\n方法2：我们直接研究一般情况下tjrd和ynlw的关联。\n为了理解tjrd如何影响ynlw，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 151,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象tjrd(B)和观察节点ynlw(D)的后门调整集合。",
+      "Question": "方法1: 根据ytxw的情况，我们逐个研究tjrd和ynlw的关联。\n方法2：我们直接研究一般情况下tjrd和ynlw的关联。\n为了理解tjrd如何影响ynlw，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 152,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象qzfp(C)和观察节点ynlw(D)的后门调整集合。",
+      "Question": "方法1: 根据ytxw的情况，我们逐个研究qzfp和ynlw的关联。\n方法2：我们直接研究一般情况下qzfp和ynlw的关联。\n为了理解qzfp如何影响ynlw，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 153,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象qzfp(C)和观察节点ynlw(D)的后门调整集合。",
+      "Question": "方法1: 根据ytxw的情况，我们逐个研究qzfp和ynlw的关联。\n方法2：我们直接研究一般情况下qzfp和ynlw的关联。\n为了理解qzfp如何影响ynlw，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 154,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为低(D=0)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.2970。在ynlw为低(D=0)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.2965。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.2970; P(B=1|D=0,A=0)=0.2965; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为低的条件下，ytxw会影响tjrd吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=0)-P(B=1|do(A=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 155,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为低(D=0)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.2970。在ynlw为低(D=0)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.2965。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.2970; P(B=1|D=0,A=0)=0.2965; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为低的条件下，ytxw不会影响tjrd吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=0)-P(B=1|do(A=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 156,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为低(D=0)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.2970。在ynlw为低(D=0)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.2965。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.2970; P(B=1|D=0,A=0)=0.2965; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为低的条件下，ytxw是和tjrd相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=0)-P(B=1|A=0,D=0)=0.2970-0.2965=0.0005!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 157,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为低(D=0)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.2970。在ynlw为低(D=0)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.2965。",
+        "data_info_math": "P(B=1|D=0,A=1)=0.2970; P(B=1|D=0,A=0)=0.2965; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为低的条件下，ytxw是和tjrd独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=0)-P(B=1|A=0,D=0)=0.2970-0.2965=0.0005!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 158,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为高(D=1)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.2862。在ynlw为高(D=1)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.2953。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.2862; P(B=1|D=1,A=0)=0.2953; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为高的条件下，ytxw会影响tjrd吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=1)-P(B=1|do(A=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 159,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为高(D=1)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.2862。在ynlw为高(D=1)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.2953。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.2862; P(B=1|D=1,A=0)=0.2953; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为高的条件下，ytxw不会影响tjrd吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),D=1)-P(B=1|do(A=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 160,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为高(D=1)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.2862。在ynlw为高(D=1)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.2953。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.2862; P(B=1|D=1,A=0)=0.2953; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为高的条件下，ytxw是和tjrd相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=1)-P(B=1|A=0,D=1)=0.2862-0.2953=-0.0091!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 161,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为高(D=1)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.2862。在ynlw为高(D=1)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.2953。",
+        "data_info_math": "P(B=1|D=1,A=1)=0.2862; P(B=1|D=1,A=0)=0.2953; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为高的条件下，ytxw是和tjrd独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,D=1)-P(B=1|A=0,D=1)=0.2862-0.2953=-0.0091!=0",
+        "Step 2": "在D已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 162,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.4828。在qzfp为低(C=0)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.4427。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.4828; P(B=1|C=0,A=0)=0.4427; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为低的条件下，ytxw会影响tjrd吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=0)-P(B=1|do(A=0),C=0)=P(B=1|C=0)-P(B=1|C=0)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 163,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.4828。在qzfp为低(C=0)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.4427。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.4828; P(B=1|C=0,A=0)=0.4427; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为低的条件下，ytxw不会影响tjrd吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=0)-P(B=1|do(A=0),C=0)=P(B=1|C=0)-P(B=1|C=0)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 164,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.4828。在qzfp为低(C=0)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.4427。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.4828; P(B=1|C=0,A=0)=0.4427; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为低的条件下，ytxw是和tjrd相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=0)-P(B=1|A=0,C=0)=0.4828-0.4427=0.0402!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 165,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.4828。在qzfp为低(C=0)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.4427。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.4828; P(B=1|C=0,A=0)=0.4427; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为低的条件下，ytxw是和tjrd独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=0)-P(B=1|A=0,C=0)=0.4828-0.4427=0.0402!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 166,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.2555。在qzfp为高(C=1)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.2293。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.2555; P(B=1|C=1,A=0)=0.2293; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为高的条件下，ytxw会影响tjrd吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=1)-P(B=1|do(A=0),C=1)=P(B=1|C=1)-P(B=1|C=1)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 167,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.2555。在qzfp为高(C=1)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.2293。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.2555; P(B=1|C=1,A=0)=0.2293; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为高的条件下，ytxw不会影响tjrd吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=1)-P(B=1|do(A=0),C=1)=P(B=1|C=1)-P(B=1|C=1)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 168,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.2555。在qzfp为高(C=1)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.2293。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.2555; P(B=1|C=1,A=0)=0.2293; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为高的条件下，ytxw是和tjrd相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=1)-P(B=1|A=0,C=1)=0.2555-0.2293=0.0263!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 169,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)且ytxw为高(A=1)的条件下, tjrd为高(B=1)的概率为0.2555。在qzfp为高(C=1)且ytxw为低(A=0)的条件下, tjrd为高(B=1)的概率为0.2293。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.2555; P(B=1|C=1,A=0)=0.2293; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为高的条件下，ytxw是和tjrd独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=1)-P(B=1|A=0,C=1)=0.2555-0.2293=0.0263!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 170,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为低(D=0)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.5457。在ynlw为低(D=0)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.5451。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.5457; P(A=1|D=0,B=0)=0.5451; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为低的条件下，tjrd会影响ytxw吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=0)-P(A=1|do(B=0),D=0)=P(A=1|D=0)-P(A=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 171,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为低(D=0)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.5457。在ynlw为低(D=0)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.5451。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.5457; P(A=1|D=0,B=0)=0.5451; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为低的条件下，tjrd不会影响ytxw吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=0)-P(A=1|do(B=0),D=0)=P(A=1|D=0)-P(A=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 172,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为低(D=0)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.5457。在ynlw为低(D=0)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.5451。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.5457; P(A=1|D=0,B=0)=0.5451; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为低的条件下，tjrd是和ytxw相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=0)-P(A=1|B=0,D=0)=0.5457-0.5451=0.0006!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 173,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为低(D=0)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.5457。在ynlw为低(D=0)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.5451。",
+        "data_info_math": "P(A=1|D=0,B=1)=0.5457; P(A=1|D=0,B=0)=0.5451; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为低的条件下，tjrd是和ytxw独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=0)-P(A=1|B=0,D=0)=0.5457-0.5451=0.0006!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 174,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为高(D=1)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.1094。在ynlw为高(D=1)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.1137。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.1094; P(A=1|D=1,B=0)=0.1137; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为高的条件下，tjrd会影响ytxw吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=1)-P(A=1|do(B=0),D=1)=P(A=1|D=1)-P(A=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 175,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为高(D=1)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.1094。在ynlw为高(D=1)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.1137。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.1094; P(A=1|D=1,B=0)=0.1137; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为高的条件下，tjrd不会影响ytxw吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),D=1)-P(A=1|do(B=0),D=1)=P(A=1|D=1)-P(A=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 176,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为高(D=1)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.1094。在ynlw为高(D=1)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.1137。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.1094; P(A=1|D=1,B=0)=0.1137; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为高的条件下，tjrd是和ytxw相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=1)-P(A=1|B=0,D=1)=0.1094-0.1137=-0.0044!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 177,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ynlw为高(D=1)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.1094。在ynlw为高(D=1)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.1137。",
+        "data_info_math": "P(A=1|D=1,B=1)=0.1094; P(A=1|D=1,B=0)=0.1137; "
+      },
+      "Instruction": "",
+      "Question": "给定ynlw为高的条件下，tjrd是和ytxw独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,D=1)-P(A=1|B=0,D=1)=0.1094-0.1137=-0.0044!=0",
+        "Step 2": "在D已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 178,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.2604。在qzfp为低(C=0)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.2304。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.2604; P(A=1|C=0,B=0)=0.2304; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为低的条件下，tjrd会影响ytxw吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=0)-P(A=1|do(B=0),C=0)=P(A=1|C=0)-P(A=1|C=0)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 179,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.2604。在qzfp为低(C=0)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.2304。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.2604; P(A=1|C=0,B=0)=0.2304; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为低的条件下，tjrd不会影响ytxw吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=0)-P(A=1|do(B=0),C=0)=P(A=1|C=0)-P(A=1|C=0)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 180,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.2604。在qzfp为低(C=0)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.2304。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.2604; P(A=1|C=0,B=0)=0.2304; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为低的条件下，tjrd是和ytxw相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=0)-P(A=1|B=0,C=0)=0.2604-0.2304=0.0299!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 181,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.2604。在qzfp为低(C=0)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.2304。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.2604; P(A=1|C=0,B=0)=0.2304; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为低的条件下，tjrd是和ytxw独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=0)-P(A=1|B=0,C=0)=0.2604-0.2304=0.0299!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 182,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.4323。在qzfp为高(C=1)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.3976。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.4323; P(A=1|C=1,B=0)=0.3976; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为高的条件下，tjrd会影响ytxw吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=1)-P(A=1|do(B=0),C=1)=P(A=1|C=1)-P(A=1|C=1)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 183,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.4323。在qzfp为高(C=1)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.3976。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.4323; P(A=1|C=1,B=0)=0.3976; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为高的条件下，tjrd不会影响ytxw吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=1)-P(A=1|do(B=0),C=1)=P(A=1|C=1)-P(A=1|C=1)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 184,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.4323。在qzfp为高(C=1)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.3976。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.4323; P(A=1|C=1,B=0)=0.3976; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为高的条件下，tjrd是和ytxw相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=1)-P(A=1|B=0,C=1)=0.4323-0.3976=0.0347!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 185,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)且tjrd为高(B=1)的条件下, ytxw为高(A=1)的概率为0.4323。在qzfp为高(C=1)且tjrd为低(B=0)的条件下, ytxw为高(A=1)的概率为0.3976。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.4323; P(A=1|C=1,B=0)=0.3976; "
+      },
+      "Instruction": "",
+      "Question": "给定qzfp为高的条件下，tjrd是和ytxw独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=1)-P(A=1|B=0,C=1)=0.4323-0.3976=0.0347!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 186,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)的条件下, qzfp为高(C=1)的概率为0.6883。qzfp为高(C=1)的概率为0.7375。ytxw为高(A=1)且qzfp为高(C=1)的概率为0.2994。",
+        "data_info_math": "P(C=1|A=0)=0.6883; P(C=1)=0.7375; P(A=1,C=1)=0.2994; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的必要性概率(probability of necessity, PN)。",
+      "Question": "给定ytxw为高且qzfp为高, 那么假如ytxw为低，此时qzfp为低的概率的下界是多少？",
+      "Answer": "0.1645",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.6883",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.7375-0.6883)/0.2994}\n=max{0, 0.1645}\n=0.1645"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.16452268619178767
+    },
+    {
+      "id": 187,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)的条件下, qzfp为低(C=0)的概率为0.3117。ytxw为低(A=0)且qzfp为低(C=0)的概率为0.1984。ytxw为高(A=1)且qzfp为高(C=1)的概率为0.2994。",
+        "data_info_math": "P(C=0|A=0)=0.3117; P(A=0,C=0)=0.1984; P(A=1,C=1)=0.2994; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的必要性概率(probability of necessity, PN)。",
+      "Question": "给定ytxw为高且qzfp为高, 那么假如ytxw为低，此时qzfp为低的概率的上界是多少？",
+      "Answer": "0.3784",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.3117",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.3117-0.1984)/0.2994}\n=min{1, 0.3784}\n=0.3784"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.3784171417696101
+    },
+    {
+      "id": 188,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5857。ynlw为高(D=1)的概率为0.4201。ytxw为高(A=1)且ynlw为高(D=1)的概率为0.0472。",
+        "data_info_math": "P(D=1|A=0)=0.5857; P(D=1)=0.4201; P(A=1,D=1)=0.0472; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的必要性概率(probability of necessity, PN)。",
+      "Question": "给定ytxw为高且ynlw为高, 那么假如ytxw为低，此时ynlw为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.5857",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.4201-0.5857)/0.0472}\n=max{0, -3.5064}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 189,
+      "question_id": 160,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4143。ytxw为低(A=0)且ynlw为低(D=0)的概率为0.2637。ytxw为高(A=1)且ynlw为高(D=1)的概率为0.0472。",
+        "data_info_math": "P(D=0|A=0)=0.4143; P(A=0,D=0)=0.2637; P(A=1,D=1)=0.0472; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的必要性概率(probability of necessity, PN)。",
+      "Question": "给定ytxw为高且ynlw为高, 那么假如ytxw为低，此时ynlw为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.4143",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.4143-0.2637)/0.0472}\n=min{1, 3.1871}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 190,
+      "question_id": 161,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为低(B=0)的条件下, qzfp为高(C=1)的概率为0.7959。qzfp为高(C=1)的概率为0.7375。tjrd为高(B=1)且qzfp为高(C=1)的概率为0.1769。",
+        "data_info_math": "P(C=1|B=0)=0.7959; P(C=1)=0.7375; P(B=1,C=1)=0.1769; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的必要性概率(probability of necessity, PN)。",
+      "Question": "给定tjrd为高且qzfp为高, 那么假如tjrd为低，此时qzfp为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=P(C=1|B=0)=0.7959",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.7375-0.7959)/0.1769}\n=max{0, -0.3302}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 191,
+      "question_id": 162,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为低(B=0)的条件下, qzfp为低(C=0)的概率为0.2041。tjrd为低(B=0)且qzfp为低(C=0)的概率为0.1437。tjrd为高(B=1)且qzfp为高(C=1)的概率为0.1769。",
+        "data_info_math": "P(C=0|B=0)=0.2041; P(B=0,C=0)=0.1437; P(B=1,C=1)=0.1769; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的必要性概率(probability of necessity, PN)。",
+      "Question": "给定tjrd为高且qzfp为高, 那么假如tjrd为低，此时qzfp为低的概率的上界是多少？",
+      "Answer": "0.3410",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=P(C=0|B=0)=0.2041",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.2041-0.1437)/0.1769}\n=min{1, 0.3410}\n=0.3410"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.34102390391334236
+    },
+    {
+      "id": 192,
+      "question_id": 163,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为低(B=0)的条件下, ynlw为高(D=1)的概率为0.4210。ynlw为高(D=1)的概率为0.4201。tjrd为高(B=1)且ynlw为高(D=1)的概率为0.1236。",
+        "data_info_math": "P(D=1|B=0)=0.4210; P(D=1)=0.4201; P(B=1,D=1)=0.1236; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的必要性概率(probability of necessity, PN)。",
+      "Question": "给定tjrd为高且ynlw为高, 那么假如tjrd为低，此时ynlw为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=P(D=1|B=0)=0.4210",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.4201-0.4210)/0.1236}\n=max{0, -0.0069}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 193,
+      "question_id": 164,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为低(B=0)的条件下, ynlw为低(D=0)的概率为0.5790。tjrd为低(B=0)且ynlw为低(D=0)的概率为0.4078。tjrd为高(B=1)且ynlw为高(D=1)的概率为0.1236。",
+        "data_info_math": "P(D=0|B=0)=0.5790; P(B=0,D=0)=0.4078; P(B=1,D=1)=0.1236; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的必要性概率(probability of necessity, PN)。",
+      "Question": "给定tjrd为高且ynlw为高, 那么假如tjrd为低，此时ynlw为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=P(D=0|B=0)=0.5790",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.5790-0.4078)/0.1236}\n=min{1, 1.3851}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 194,
+      "question_id": 165,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5554。ytxw为低(A=0)的概率为0.6366。在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1227。ytxw为高(A=1)的概率为0.3634。ynlw为高(D=1)的概率为0.4201。qzfp为高(C=1)且ynlw为高(D=1)的概率为0.3020。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.5554; P(A=0)=0.6366; P(D=1|C=0,A=1)=0.1227; P(A=1)=0.3634; P(D=1)=0.4201; P(C=1,D=1)=0.3020; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的必要性概率(probability of necessity, PN)。",
+      "Question": "给定qzfp为高且ynlw为高, 那么假如qzfp为低，此时ynlw为低的概率的下界是多少？",
+      "Answer": "0.0726",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=0))\nP(D=1|do(C=0))=sum_{A} P(D=1|C=0,A)*P(A)=P(D=1|C=0,A=0)*P(A=0)+P(D=1|C=0,A=1)*P(A=1)\nP(D=1|C=0,A=0)=0.5554\tP(A=0)=0.6366\tP(D=1|C=0,A=1)=0.1227\tP(A=1)=0.3634\nP(D=1|do(C=0))=0.5554*0.6366+0.1227*0.3634=0.3982",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(C=0))]/P(C=1,D=1)}\n=max{0, (0.4201-0.3982)/0.3020}\n=max{0, 0.0726}\n=0.0726"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.07260073303953277
+    },
+    {
+      "id": 195,
+      "question_id": 166,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为低(C=0)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4446。ytxw为低(A=0)的概率为0.6366。在qzfp为低(C=0)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8773。ytxw为高(A=1)的概率为0.3634。qzfp为低(C=0)且ynlw为低(D=0)的概率为0.1444。qzfp为高(C=1)且ynlw为高(D=1)的概率为0.3020。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.4446; P(A=0)=0.6366; P(D=0|C=0,A=1)=0.8773; P(A=1)=0.3634; P(C=0,D=0)=0.1444; P(C=1,D=1)=0.3020; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的必要性概率(probability of necessity, PN)。",
+      "Question": "给定qzfp为高且ynlw为高, 那么假如qzfp为低，此时ynlw为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=0))\nP(D=0|do(C=0))=sum_{A} P(D=0|C=0,A)*P(A)=P(D=0|C=0,A=0)*P(A=0)+P(D=0|C=0,A=1)*P(A=1)\nP(D=0|C=0,A=0)=0.4446\tP(A=0)=0.6366\tP(D=0|C=0,A=1)=0.8773\tP(A=1)=0.3634\nP(D=0|do(C=0))=0.4446*0.6366+0.8773*0.3634=0.6018",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(C=0)-P(C=0,D=0)]/P(C=1,D=1)}\n=min{1, (0.6018-0.1444)/0.3020}\n=min{1, 1.5146}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 196,
+      "question_id": 167,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)的条件下, qzfp为低(C=0)的概率为0.1762。qzfp为低(C=0)的概率为0.2625。ytxw为低(A=0)且qzfp为低(C=0)的概率为0.1984。",
+        "data_info_math": "P(C=0|A=1)=0.1762; P(C=0)=0.2625; P(A=0,C=0)=0.1984; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定ytxw为低且qzfp为低, 假如ytxw为高，此时qzfp为高的概率的下界是多少？",
+      "Answer": "0.4348",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.1762",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.2625-0.1762)/0.1984}\n=max{0, 0.4348}\n=0.4348"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.4347654163403447
+    },
+    {
+      "id": 197,
+      "question_id": 168,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)的条件下, qzfp为高(C=1)的概率为0.8238。ytxw为低(A=0)且qzfp为低(C=0)的概率为0.1984。ytxw为高(A=1)且qzfp为高(C=1)的概率为0.2994。",
+        "data_info_math": "P(C=1|A=1)=0.8238; P(A=0,C=0)=0.1984; P(A=1,C=1)=0.2994; "
+      },
+      "Instruction": "考虑ytxw作用于qzfp的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定ytxw为低且qzfp为低, 假如ytxw为高，此时qzfp为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.8238",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.8238-0.2994)/0.1984}\n=min{1, 2.6426}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 198,
+      "question_id": 169,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8700。ynlw为低(D=0)的概率为0.5799。ytxw为低(A=0)且ynlw为低(D=0)的概率为0.2637。",
+        "data_info_math": "P(D=0|A=1)=0.8700; P(D=0)=0.5799; P(A=0,D=0)=0.2637; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定ytxw为低且ynlw为低, 假如ytxw为高，此时ynlw为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.8700",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.5799-0.8700)/0.2637}\n=max{0, -1.1002}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 199,
+      "question_id": 170,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1300。ytxw为低(A=0)且ynlw为低(D=0)的概率为0.2637。ytxw为高(A=1)且ynlw为高(D=1)的概率为0.0472。",
+        "data_info_math": "P(D=1|A=1)=0.1300; P(A=0,D=0)=0.2637; P(A=1,D=1)=0.0472; "
+      },
+      "Instruction": "考虑ytxw作用于ynlw的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定ytxw为低且ynlw为低, 假如ytxw为高，此时ynlw为高的概率的上界是多少？",
+      "Answer": "0.3138",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.1300",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.1300-0.0472)/0.2637}\n=min{1, 0.3138}\n=0.3138"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.3137663606455183
+    },
+    {
+      "id": 200,
+      "question_id": 171,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为高(B=1)的条件下, qzfp为低(C=0)的概率为0.4016。qzfp为低(C=0)的概率为0.2625。tjrd为低(B=0)且qzfp为低(C=0)的概率为0.1437。",
+        "data_info_math": "P(C=0|B=1)=0.4016; P(C=0)=0.2625; P(B=0,C=0)=0.1437; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定tjrd为低且qzfp为低, 假如tjrd为高，此时qzfp为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=P(C=0|B=1)=0.4016",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.2625-0.4016)/0.1437}\n=max{0, -0.9682}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 201,
+      "question_id": 172,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为高(B=1)的条件下, qzfp为高(C=1)的概率为0.5984。tjrd为低(B=0)且qzfp为低(C=0)的概率为0.1437。tjrd为高(B=1)且qzfp为高(C=1)的概率为0.1769。",
+        "data_info_math": "P(C=1|B=1)=0.5984; P(B=0,C=0)=0.1437; P(B=1,C=1)=0.1769; "
+      },
+      "Instruction": "考虑tjrd作用于qzfp的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定tjrd为低且qzfp为低, 假如tjrd为高，此时qzfp为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=P(C=1|B=1)=0.5984",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.5984-0.1769)/0.1437}\n=min{1, 2.9323}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 202,
+      "question_id": 173,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为高(B=1)的条件下, ynlw为低(D=0)的概率为0.5819。ynlw为低(D=0)的概率为0.5799。tjrd为低(B=0)且ynlw为低(D=0)的概率为0.4078。",
+        "data_info_math": "P(D=0|B=1)=0.5819; P(D=0)=0.5799; P(B=0,D=0)=0.4078; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定tjrd为低且ynlw为低, 假如tjrd为高，此时ynlw为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=P(D=0|B=1)=0.5819",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.5799-0.5819)/0.4078}\n=max{0, -0.0050}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 203,
+      "question_id": 174,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在tjrd为高(B=1)的条件下, ynlw为高(D=1)的概率为0.4181。tjrd为低(B=0)且ynlw为低(D=0)的概率为0.4078。tjrd为高(B=1)且ynlw为高(D=1)的概率为0.1236。",
+        "data_info_math": "P(D=1|B=1)=0.4181; P(B=0,D=0)=0.4078; P(B=1,D=1)=0.1236; "
+      },
+      "Instruction": "考虑tjrd作用于ynlw的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定tjrd为低且ynlw为低, 假如tjrd为高，此时ynlw为高的概率的上界是多少？",
+      "Answer": "0.7220",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=P(D=1|B=1)=0.4181",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.4181-0.1236)/0.4078}\n=min{1, 0.7220}\n=0.7220"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.72198235354418
+    },
+    {
+      "id": 204,
+      "question_id": 175,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为低(D=0)的概率为0.4005。ytxw为低(A=0)的概率为0.6366。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为低(D=0)的概率为0.8685。ytxw为高(A=1)的概率为0.3634。ynlw为低(D=0)的概率为0.5799。qzfp为低(C=0)且ynlw为低(D=0)的概率为0.1444。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.4005; P(A=0)=0.6366; P(D=0|C=1,A=1)=0.8685; P(A=1)=0.3634; P(D=0)=0.5799; P(C=0,D=0)=0.1444; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定qzfp为低且ynlw为低, 假如qzfp为高，此时ynlw为高的概率的下界是多少？",
+      "Answer": "0.0644",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=1))\nP(D=0|do(C=1))=sum_{A} P(D=0|C=1,A)*P(A)=P(D=0|C=1,A=0)*P(A=0)+P(D=0|C=1,A=1)*P(A=1)\nP(D=0|C=1,A=0)=0.4005\tP(A=0)=0.6366\tP(D=0|C=1,A=1)=0.8685\tP(A=1)=0.3634\nP(D=0|do(C=1))=0.4005*0.6366+0.8685*0.3634=0.5706",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(C=1))]/P(C=0,D=0)}\n=max{0, (0.5799-0.5706)/0.1444}\n=max{0, 0.0644}\n=0.0644"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.06441885511271031
+    },
+    {
+      "id": 205,
+      "question_id": 176,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表ytxw, B代表tjrd, C代表qzfp, D代表ynlw。",
+        "data_info": "在qzfp为高(C=1)且ytxw为低(A=0)的条件下, ynlw为高(D=1)的概率为0.5995。ytxw为低(A=0)的概率为0.6366。在qzfp为高(C=1)且ytxw为高(A=1)的条件下, ynlw为高(D=1)的概率为0.1315。ytxw为高(A=1)的概率为0.3634。qzfp为低(C=0)且ynlw为低(D=0)的概率为0.1444。qzfp为高(C=1)且ynlw为高(D=1)的概率为0.3020。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.5995; P(A=0)=0.6366; P(D=1|C=1,A=1)=0.1315; P(A=1)=0.3634; P(C=0,D=0)=0.1444; P(C=1,D=1)=0.3020; "
+      },
+      "Instruction": "考虑qzfp作用于ynlw的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定qzfp为低且ynlw为低, 假如qzfp为高，此时ynlw为高的概率的上界是多少？",
+      "Answer": "0.8821",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=1))\nP(D=1|do(C=1))=sum_{A} P(D=1|C=1,A)*P(A)=P(D=1|C=1,A=0)*P(A=0)+P(D=1|C=1,A=1)*P(A=1)\nP(D=1|C=1,A=0)=0.5995\tP(A=0)=0.6366\tP(D=1|C=1,A=1)=0.1315\tP(A=1)=0.3634\nP(D=1|do(C=1))=0.5995*0.6366+0.1315*0.3634=0.4294",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(C=1)-P(C=1,D=1)]/P(C=0,D=0)}\n=min{1, (0.4294-0.3020)/0.1444}\n=min{1, 0.8821}\n=0.8821"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.8821473869686657
+    }
+  ]
+}

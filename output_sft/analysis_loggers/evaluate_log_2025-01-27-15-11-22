@@ -1,0 +1,4 @@
+[2025-01-27 15:11:23,198 - ./output_sft/analysis_loggers/evaluate_log_2025-01-27-15-11-22 - INFO] error analysis saved to ./output_sft/counterfactual/natural_direct_effect/NDE-P_NDE-basic_EN/gpt_o1_errors.csv
+[2025-01-27 15:11:23,199 - ./output_sft/analysis_loggers/evaluate_log_2025-01-27-15-11-22 - INFO] accuracy saved to ./output_sft/counterfactual/natural_direct_effect/NDE-P_NDE-basic_EN_models_acc.csv
+[2025-01-27 15:11:23,201 - ./output_sft/analysis_loggers/evaluate_log_2025-01-27-15-11-22 - INFO] robustness saved to ./output_sft/models_robustness.csv
+[2025-01-27 15:11:23,214 - ./output_sft/analysis_loggers/evaluate_log_2025-01-27-15-11-22 - INFO] aggregate metrics save to models_volatility.csv, prompts_volatility.csv, task_metrics.csv in ./output_sft

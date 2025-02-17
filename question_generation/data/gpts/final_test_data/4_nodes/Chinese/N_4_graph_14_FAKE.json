@@ -1,0 +1,4175 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->C",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "qbee",
+      "B": "goxa",
+      "C": "zesa",
+      "D": "nusy"
+    },
+    "node_value": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": -0.7695485475137824,
+      "B": -0.3515454677408295,
+      "C": 0.5528740917519956,
+      "D": 0.7621719258904104
+    },
+    "edge_weight": {
+      "A->B": -0.4118861270022043,
+      "A->C": 1.5028212349318832,
+      "A->D": 1.0707283498826257,
+      "B->C": 0.7543287306045297,
+      "C->D": -2.220428363795592
+    },
+    "function_description": "P(A=1)=0.3166\nP(B=1|A)=sigmoid(-0.3515454677408295 + -0.4119 * A)\nP(C=1|A,B)=sigmoid(0.5528740917519956 + 1.5028 * A + 0.7543 * B)\nP(D=1|A,C)=sigmoid(0.7621719258904104 + 1.0707 * A + -2.2204 * C)\n",
+    "text_description": "The probability of qbee being high (A=1) is 0.3166. \nFor those with qbee being low (A=0), the probability of goxa being high (B=1) is 0.4130. \nFor those with qbee being high (A=1), the probability of goxa being high (B=1) is 0.3179. \nFor those with qbee being low (A=0) and goxa being low (B=0), the probability of zesa being high (C=1) is 0.6348. \nFor those with qbee being low (A=0) and goxa being high (B=1), the probability of zesa being high (C=1) is 0.7870. \nFor those with qbee being high (A=1) and goxa being low (B=0), the probability of zesa being high (C=1) is 0.8865. \nFor those with qbee being high (A=1) and goxa being high (B=1), the probability of zesa being high (C=1) is 0.9432. \nFor those with qbee being low (A=0) and zesa being low (C=0), the probability of nusy being high (D=1) is 0.6818. \nFor those with qbee being low (A=0) and zesa being high (C=1), the probability of nusy being high (D=1) is 0.1887. \nFor those with qbee being high (A=1) and zesa being low (C=0), the probability of nusy being high (D=1) is 0.8621. \nFor those with qbee being high (A=1) and zesa being high (C=1), the probability of nusy being high (D=1) is 0.4043. \n",
+    "Statistic_data": [
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 3782
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 2073
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 9067
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 5565
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 933
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 10429
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 2913
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 5037
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 223
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 1026
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 2365
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 1933
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 2423
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 2004
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 184
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 43
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, goxa为低(B=0)的概率为0.5900。在qbee为高(A=1)的条件下, goxa为低(B=0)的概率为0.6738。",
+        "data_info_math": "P(B=0|A=0)=0.5900; P(B=0|A=1)=0.6738; "
+      },
+      "Instruction": "考虑qbee作用于goxa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qbee被改变为低，那么goxa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.5900\tP(B=0|A=1)=0.6738",
+        "Step 6": "ATE=0.5900-0.6738=-0.0838",
+        "Step 7": "ATE=-0.0838<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.08378829334737325
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, goxa为高(B=1)的概率为0.4100。在qbee为高(A=1)的条件下, goxa为高(B=1)的概率为0.3262。",
+        "data_info_math": "P(B=1|A=0)=0.4100; P(B=1|A=1)=0.3262; "
+      },
+      "Instruction": "考虑qbee作用于goxa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qbee被改变为低，那么goxa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.4100\tP(B=1|A=1)=0.3262",
+        "Step 6": "ATE=0.4100-0.3262=0.0838",
+        "Step 7": "ATE=0.0838>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.08378829334737337
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, goxa为低(B=0)的概率为0.6738。在qbee为低(A=0)的条件下, goxa为低(B=0)的概率为0.5900。",
+        "data_info_math": "P(B=0|A=1)=0.6738; P(B=0|A=0)=0.5900; "
+      },
+      "Instruction": "考虑qbee作用于goxa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qbee被改变为高，那么goxa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.6738\tP(B=0|A=0)=0.5900",
+        "Step 6": "ATE=0.6738-0.5900=0.0838",
+        "Step 7": "ATE=0.0838>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.08378829334737325
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, goxa为高(B=1)的概率为0.3262。在qbee为低(A=0)的条件下, goxa为高(B=1)的概率为0.4100。",
+        "data_info_math": "P(B=1|A=1)=0.3262; P(B=1|A=0)=0.4100; "
+      },
+      "Instruction": "考虑qbee作用于goxa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qbee被改变为高，那么goxa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.3262\tP(B=1|A=0)=0.4100",
+        "Step 6": "ATE=0.3262-0.4100=-0.0838",
+        "Step 7": "ATE=-0.0838<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.08378829334737337
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3012。在qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0942。",
+        "data_info_math": "P(C=0|A=0)=0.3012; P(C=0|A=1)=0.0942; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qbee被改变为低，那么zesa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.3012\tP(C=0|A=1)=0.0942",
+        "Step 6": "ATE=0.3012-0.0942=0.2070",
+        "Step 7": "ATE=0.2070>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.2069576529107589
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.6988。在qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.9058。",
+        "data_info_math": "P(C=1|A=0)=0.6988; P(C=1|A=1)=0.9058; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qbee被改变为低，那么zesa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.6988\tP(C=1|A=1)=0.9058",
+        "Step 6": "ATE=0.6988-0.9058=-0.2070",
+        "Step 7": "ATE=-0.2070<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.20695765291075896
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0942。在qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3012。",
+        "data_info_math": "P(C=0|A=1)=0.0942; P(C=0|A=0)=0.3012; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qbee被改变为高，那么zesa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.0942\tP(C=0|A=0)=0.3012",
+        "Step 6": "ATE=0.0942-0.3012=-0.2070",
+        "Step 7": "ATE=-0.2070<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.2069576529107589
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.9058。在qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.6988。",
+        "data_info_math": "P(C=1|A=1)=0.9058; P(C=1|A=0)=0.6988; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qbee被改变为高，那么zesa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.9058\tP(C=1|A=0)=0.6988",
+        "Step 6": "ATE=0.9058-0.6988=0.2070",
+        "Step 7": "ATE=0.2070>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.20695765291075896
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.6639。在qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5556。",
+        "data_info_math": "P(D=0|A=0)=0.6639; P(D=0|A=1)=0.5556; "
+      },
+      "Instruction": "考虑qbee作用于nusy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qbee被改变为低，那么nusy更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6639\tP(D=0|A=1)=0.5556",
+        "Step 6": "ATE=0.6639-0.5556=0.1084",
+        "Step 7": "ATE=0.1084>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.10839247974781452
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.3361。在qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4444。",
+        "data_info_math": "P(D=1|A=0)=0.3361; P(D=1|A=1)=0.4444; "
+      },
+      "Instruction": "考虑qbee作用于nusy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qbee被改变为低，那么nusy更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3361\tP(D=1|A=1)=0.4444",
+        "Step 6": "ATE=0.3361-0.4444=-0.1084",
+        "Step 7": "ATE=-0.1084<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.10839247974781457
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5556。在qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.6639。",
+        "data_info_math": "P(D=0|A=1)=0.5556; P(D=0|A=0)=0.6639; "
+      },
+      "Instruction": "考虑qbee作用于nusy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qbee被改变为高，那么nusy更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.5556\tP(D=0|A=0)=0.6639",
+        "Step 6": "ATE=0.5556-0.6639=-0.1084",
+        "Step 7": "ATE=-0.1084<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.10839247974781452
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4444。在qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.3361。",
+        "data_info_math": "P(D=1|A=1)=0.4444; P(D=1|A=0)=0.3361; "
+      },
+      "Instruction": "考虑qbee作用于nusy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果qbee被改变为高，那么nusy更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.4444\tP(D=1|A=0)=0.3361",
+        "Step 6": "ATE=0.4444-0.3361=0.1084",
+        "Step 7": "ATE=0.1084>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.10839247974781457
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于qbee的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果goxa被改变为低，那么qbee更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于qbee的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果goxa被改变为低，那么qbee更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于qbee的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果goxa被改变为高，那么qbee更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于qbee的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果goxa被改变为高，那么qbee更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3655。在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.2086。qbee为低(A=0)的概率为0.6866。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.1146。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0520。qbee为高(A=1)的概率为0.3134。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.3655; P(C=0|B=1,A=0)=0.2086; P(A=0)=0.6866; P(C=0|B=0,A=1)=0.1146; P(C=0|B=1,A=1)=0.0520; P(A=1)=0.3134; "
+      },
+      "Instruction": "考虑goxa作用于zesa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果goxa被改变为低，那么zesa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=sum_{A} [P(C=0|B=0,A)*P(A)-P(C=0|B=1,A)*P(A)]=[P(C=0|B=0,A=0)*P(A=0)-P(C=0|B=1,A=0)*P(A=0)]+[P(C=0|B=0,A=1)*P(A=1)-P(C=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=0,A=0)=0.3655\tP(C=0|B=1,A=0)=0.2086\tP(A=0)=0.6866\tP(C=0|B=0,A=1)=0.1146\tP(C=0|B=1,A=1)=0.0520\tP(A=1)=0.3134",
+        "Step 6": "ATE=[0.3655*0.6866-0.2086*0.6866]+[0.1146*0.3134-0.0520*0.3134]=0.1273",
+        "Step 7": "ATE=0.1273>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.12728785134425286
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.6345。在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.7914。qbee为低(A=0)的概率为0.6866。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.8854。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.9480。qbee为高(A=1)的概率为0.3134。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.6345; P(C=1|B=1,A=0)=0.7914; P(A=0)=0.6866; P(C=1|B=0,A=1)=0.8854; P(C=1|B=1,A=1)=0.9480; P(A=1)=0.3134; "
+      },
+      "Instruction": "考虑goxa作用于zesa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果goxa被改变为低，那么zesa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=sum_{A} [P(C=1|B=0,A)*P(A)-P(C=1|B=1,A)*P(A)]=[P(C=1|B=0,A=0)*P(A=0)-P(C=1|B=1,A=0)*P(A=0)]+[P(C=1|B=0,A=1)*P(A=1)-P(C=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=0,A=0)=0.6345\tP(C=1|B=1,A=0)=0.7914\tP(A=0)=0.6866\tP(C=1|B=0,A=1)=0.8854\tP(C=1|B=1,A=1)=0.9480\tP(A=1)=0.3134",
+        "Step 6": "ATE=[0.6345*0.6866-0.7914*0.6866]+[0.8854*0.3134-0.9480*0.3134]=-0.1273",
+        "Step 7": "ATE=-0.1273<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.1272878513442529
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.2086。在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3655。qbee为低(A=0)的概率为0.6866。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0520。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.1146。qbee为高(A=1)的概率为0.3134。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.2086; P(C=0|B=0,A=0)=0.3655; P(A=0)=0.6866; P(C=0|B=1,A=1)=0.0520; P(C=0|B=0,A=1)=0.1146; P(A=1)=0.3134; "
+      },
+      "Instruction": "考虑goxa作用于zesa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果goxa被改变为高，那么zesa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=sum_{A} [P(C=0|B=1,A)*P(A)-P(C=0|B=0,A)*P(A)]=[P(C=0|B=1,A=0)*P(A=0)-P(C=0|B=0,A=0)*P(A=0)]+[P(C=0|B=1,A=1)*P(A=1)-P(C=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=1,A=0)=0.2086\tP(C=0|B=0,A=0)=0.3655\tP(A=0)=0.6866\tP(C=0|B=1,A=1)=0.0520\tP(C=0|B=0,A=1)=0.1146\tP(A=1)=0.3134",
+        "Step 6": "ATE=[0.2086*0.6866-0.3655*0.6866]+[0.0520*0.3134-0.1146*0.3134]=-0.1273",
+        "Step 7": "ATE=-0.1273<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.12728785134425286
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.7914。在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.6345。qbee为低(A=0)的概率为0.6866。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.9480。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.8854。qbee为高(A=1)的概率为0.3134。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.7914; P(C=1|B=0,A=0)=0.6345; P(A=0)=0.6866; P(C=1|B=1,A=1)=0.9480; P(C=1|B=0,A=1)=0.8854; P(A=1)=0.3134; "
+      },
+      "Instruction": "考虑goxa作用于zesa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果goxa被改变为高，那么zesa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=sum_{A} [P(C=1|B=1,A)*P(A)-P(C=1|B=0,A)*P(A)]=[P(C=1|B=1,A=0)*P(A=0)-P(C=1|B=0,A=0)*P(A=0)]+[P(C=1|B=1,A=1)*P(A=1)-P(C=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=1,A=0)=0.7914\tP(C=1|B=0,A=0)=0.6345\tP(A=0)=0.6866\tP(C=1|B=1,A=1)=0.9480\tP(C=1|B=0,A=1)=0.8854\tP(A=1)=0.3134",
+        "Step 6": "ATE=[0.7914*0.6866-0.6345*0.6866]+[0.9480*0.3134-0.8854*0.3134]=0.1273",
+        "Step 7": "ATE=0.1273>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.1272878513442529
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.6317。在goxa为高(B=1)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.7104。qbee为低(A=0)的概率为0.6866。在goxa为低(B=0)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5446。在goxa为高(B=1)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5782。qbee为高(A=1)的概率为0.3134。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6317; P(D=0|B=1,A=0)=0.7104; P(A=0)=0.6866; P(D=0|B=0,A=1)=0.5446; P(D=0|B=1,A=1)=0.5782; P(A=1)=0.3134; "
+      },
+      "Instruction": "考虑goxa作用于nusy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果goxa被改变为低，那么nusy更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=sum_{A} [P(D=0|B=0,A)*P(A)-P(D=0|B=1,A)*P(A)]=[P(D=0|B=0,A=0)*P(A=0)-P(D=0|B=1,A=0)*P(A=0)]+[P(D=0|B=0,A=1)*P(A=1)-P(D=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=0,A=0)=0.6317\tP(D=0|B=1,A=0)=0.7104\tP(A=0)=0.6866\tP(D=0|B=0,A=1)=0.5446\tP(D=0|B=1,A=1)=0.5782\tP(A=1)=0.3134",
+        "Step 6": "ATE=[0.6317*0.6866-0.7104*0.6866]+[0.5446*0.3134-0.5782*0.3134]=-0.0646",
+        "Step 7": "ATE=-0.0646<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.06459217522382316
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.3683。在goxa为高(B=1)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.2896。qbee为低(A=0)的概率为0.6866。在goxa为低(B=0)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4554。在goxa为高(B=1)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4218。qbee为高(A=1)的概率为0.3134。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3683; P(D=1|B=1,A=0)=0.2896; P(A=0)=0.6866; P(D=1|B=0,A=1)=0.4554; P(D=1|B=1,A=1)=0.4218; P(A=1)=0.3134; "
+      },
+      "Instruction": "考虑goxa作用于nusy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果goxa被改变为低，那么nusy更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=sum_{A} [P(D=1|B=0,A)*P(A)-P(D=1|B=1,A)*P(A)]=[P(D=1|B=0,A=0)*P(A=0)-P(D=1|B=1,A=0)*P(A=0)]+[P(D=1|B=0,A=1)*P(A=1)-P(D=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=0,A=0)=0.3683\tP(D=1|B=1,A=0)=0.2896\tP(A=0)=0.6866\tP(D=1|B=0,A=1)=0.4554\tP(D=1|B=1,A=1)=0.4218\tP(A=1)=0.3134",
+        "Step 6": "ATE=[0.3683*0.6866-0.2896*0.6866]+[0.4554*0.3134-0.4218*0.3134]=0.0646",
+        "Step 7": "ATE=0.0646>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.06459217522382321
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为高(B=1)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.7104。在goxa为低(B=0)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.6317。qbee为低(A=0)的概率为0.6866。在goxa为高(B=1)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5782。在goxa为低(B=0)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5446。qbee为高(A=1)的概率为0.3134。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.7104; P(D=0|B=0,A=0)=0.6317; P(A=0)=0.6866; P(D=0|B=1,A=1)=0.5782; P(D=0|B=0,A=1)=0.5446; P(A=1)=0.3134; "
+      },
+      "Instruction": "考虑goxa作用于nusy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果goxa被改变为高，那么nusy更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=sum_{A} [P(D=0|B=1,A)*P(A)-P(D=0|B=0,A)*P(A)]=[P(D=0|B=1,A=0)*P(A=0)-P(D=0|B=0,A=0)*P(A=0)]+[P(D=0|B=1,A=1)*P(A=1)-P(D=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=1,A=0)=0.7104\tP(D=0|B=0,A=0)=0.6317\tP(A=0)=0.6866\tP(D=0|B=1,A=1)=0.5782\tP(D=0|B=0,A=1)=0.5446\tP(A=1)=0.3134",
+        "Step 6": "ATE=[0.7104*0.6866-0.6317*0.6866]+[0.5782*0.3134-0.5446*0.3134]=0.0646",
+        "Step 7": "ATE=0.0646>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.06459217522382316
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为高(B=1)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.2896。在goxa为低(B=0)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.3683。qbee为低(A=0)的概率为0.6866。在goxa为高(B=1)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4218。在goxa为低(B=0)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4554。qbee为高(A=1)的概率为0.3134。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.2896; P(D=1|B=0,A=0)=0.3683; P(A=0)=0.6866; P(D=1|B=1,A=1)=0.4218; P(D=1|B=0,A=1)=0.4554; P(A=1)=0.3134; "
+      },
+      "Instruction": "考虑goxa作用于nusy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果goxa被改变为高，那么nusy更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=sum_{A} [P(D=1|B=1,A)*P(A)-P(D=1|B=0,A)*P(A)]=[P(D=1|B=1,A=0)*P(A=0)-P(D=1|B=0,A=0)*P(A=0)]+[P(D=1|B=1,A=1)*P(A=1)-P(D=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=1,A=0)=0.2896\tP(D=1|B=0,A=0)=0.3683\tP(A=0)=0.6866\tP(D=1|B=1,A=1)=0.4218\tP(D=1|B=0,A=1)=0.4554\tP(A=1)=0.3134",
+        "Step 6": "ATE=[0.2896*0.6866-0.3683*0.6866]+[0.4218*0.3134-0.4554*0.3134]=-0.0646",
+        "Step 7": "ATE=-0.0646<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.06459217522382321
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于qbee的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果zesa被改变为低，那么qbee更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于qbee的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果zesa被改变为低，那么qbee更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于qbee的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果zesa被改变为高，那么qbee更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于qbee的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果zesa被改变为高，那么qbee更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于goxa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果zesa被改变为低，那么goxa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于goxa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果zesa被改变为低，那么goxa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于goxa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果zesa被改变为高，那么goxa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于goxa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果zesa被改变为高，那么goxa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为低(C=0)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.3190。在zesa为高(C=1)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.8126。qbee为低(A=0)的概率为0.6866。在zesa为低(C=0)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.1538。在zesa为高(C=1)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5973。qbee为高(A=1)的概率为0.3134。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.3190; P(D=0|C=1,A=0)=0.8126; P(A=0)=0.6866; P(D=0|C=0,A=1)=0.1538; P(D=0|C=1,A=1)=0.5973; P(A=1)=0.3134; "
+      },
+      "Instruction": "考虑zesa作用于nusy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果zesa被改变为低，那么nusy更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=0))-P(D=0|do(C=1))=sum_{A} [P(D=0|C=0,A)*P(A)-P(D=0|C=1,A)*P(A)]=[P(D=0|C=0,A=0)*P(A=0)-P(D=0|C=1,A=0)*P(A=0)]+[P(D=0|C=0,A=1)*P(A=1)-P(D=0|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=0,A=0)=0.3190\tP(D=0|C=1,A=0)=0.8126\tP(A=0)=0.6866\tP(D=0|C=0,A=1)=0.1538\tP(D=0|C=1,A=1)=0.5973\tP(A=1)=0.3134",
+        "Step 6": "ATE=[0.3190*0.6866-0.8126*0.6866]+[0.1538*0.3134-0.5973*0.3134]=-0.4779",
+        "Step 7": "ATE=-0.4779<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.4779252848965626
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为低(C=0)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.6810。在zesa为高(C=1)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.1874。qbee为低(A=0)的概率为0.6866。在zesa为低(C=0)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.8462。在zesa为高(C=1)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4027。qbee为高(A=1)的概率为0.3134。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.6810; P(D=1|C=1,A=0)=0.1874; P(A=0)=0.6866; P(D=1|C=0,A=1)=0.8462; P(D=1|C=1,A=1)=0.4027; P(A=1)=0.3134; "
+      },
+      "Instruction": "考虑zesa作用于nusy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果zesa被改变为低，那么nusy更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=0))-P(D=1|do(C=1))=sum_{A} [P(D=1|C=0,A)*P(A)-P(D=1|C=1,A)*P(A)]=[P(D=1|C=0,A=0)*P(A=0)-P(D=1|C=1,A=0)*P(A=0)]+[P(D=1|C=0,A=1)*P(A=1)-P(D=1|C=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=0,A=0)=0.6810\tP(D=1|C=1,A=0)=0.1874\tP(A=0)=0.6866\tP(D=1|C=0,A=1)=0.8462\tP(D=1|C=1,A=1)=0.4027\tP(A=1)=0.3134",
+        "Step 6": "ATE=[0.6810*0.6866-0.1874*0.6866]+[0.8462*0.3134-0.4027*0.3134]=0.4779",
+        "Step 7": "ATE=0.4779>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.4779252848965626
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为高(C=1)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.8126。在zesa为低(C=0)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.3190。qbee为低(A=0)的概率为0.6866。在zesa为高(C=1)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5973。在zesa为低(C=0)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.1538。qbee为高(A=1)的概率为0.3134。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.8126; P(D=0|C=0,A=0)=0.3190; P(A=0)=0.6866; P(D=0|C=1,A=1)=0.5973; P(D=0|C=0,A=1)=0.1538; P(A=1)=0.3134; "
+      },
+      "Instruction": "考虑zesa作用于nusy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果zesa被改变为高，那么nusy更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(C=1))-P(D=0|do(C=0))=sum_{A} [P(D=0|C=1,A)*P(A)-P(D=0|C=0,A)*P(A)]=[P(D=0|C=1,A=0)*P(A=0)-P(D=0|C=0,A=0)*P(A=0)]+[P(D=0|C=1,A=1)*P(A=1)-P(D=0|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|C=1,A=0)=0.8126\tP(D=0|C=0,A=0)=0.3190\tP(A=0)=0.6866\tP(D=0|C=1,A=1)=0.5973\tP(D=0|C=0,A=1)=0.1538\tP(A=1)=0.3134",
+        "Step 6": "ATE=[0.8126*0.6866-0.3190*0.6866]+[0.5973*0.3134-0.1538*0.3134]=0.4779",
+        "Step 7": "ATE=0.4779>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.4779252848965626
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为高(C=1)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.1874。在zesa为低(C=0)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.6810。qbee为低(A=0)的概率为0.6866。在zesa为高(C=1)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4027。在zesa为低(C=0)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.8462。qbee为高(A=1)的概率为0.3134。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.1874; P(D=1|C=0,A=0)=0.6810; P(A=0)=0.6866; P(D=1|C=1,A=1)=0.4027; P(D=1|C=0,A=1)=0.8462; P(A=1)=0.3134; "
+      },
+      "Instruction": "考虑zesa作用于nusy的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果zesa被改变为高，那么nusy更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(C=1))-P(D=1|do(C=0))=sum_{A} [P(D=1|C=1,A)*P(A)-P(D=1|C=0,A)*P(A)]=[P(D=1|C=1,A=0)*P(A=0)-P(D=1|C=0,A=0)*P(A=0)]+[P(D=1|C=1,A=1)*P(A=1)-P(D=1|C=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|C=1,A=0)=0.1874\tP(D=1|C=0,A=0)=0.6810\tP(A=0)=0.6866\tP(D=1|C=1,A=1)=0.4027\tP(D=1|C=0,A=1)=0.8462\tP(A=1)=0.3134",
+        "Step 6": "ATE=[0.1874*0.6866-0.6810*0.6866]+[0.4027*0.3134-0.8462*0.3134]=-0.4779",
+        "Step 7": "ATE=-0.4779<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.4779252848965626
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于qbee的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nusy被改变为低，那么qbee更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于qbee的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nusy被改变为低，那么qbee更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于qbee的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nusy被改变为高，那么qbee更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于qbee的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nusy被改变为高，那么qbee更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于goxa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nusy被改变为低，那么goxa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于goxa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nusy被改变为低，那么goxa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于goxa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nusy被改变为高，那么goxa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于goxa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nusy被改变为高，那么goxa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于zesa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nusy被改变为低，那么zesa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于zesa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nusy被改变为低，那么zesa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于zesa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nusy被改变为高，那么zesa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于zesa的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果nusy被改变为高，那么zesa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, goxa为低(B=0)的概率为0.5900。在qbee为高(A=1)的条件下, goxa为低(B=0)的概率为0.6738。",
+        "data_info_math": "P(B=0|A=0)=0.5900; P(B=0|A=1)=0.6738; "
+      },
+      "Instruction": "考虑qbee作用于goxa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而qbee变化为低，那么goxa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.5900\tP(B=0|A=1)=0.6738",
+        "Step 6": "NDE=0.5900-0.6738=-0.0838",
+        "Step 7": "NDE=-0.0838<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.08378829334737325
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, goxa为高(B=1)的概率为0.4100。在qbee为高(A=1)的条件下, goxa为高(B=1)的概率为0.3262。",
+        "data_info_math": "P(B=1|A=0)=0.4100; P(B=1|A=1)=0.3262; "
+      },
+      "Instruction": "考虑qbee作用于goxa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而qbee变化为低，那么goxa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.4100\tP(B=1|A=1)=0.3262",
+        "Step 6": "NDE=0.4100-0.3262=0.0838",
+        "Step 7": "NDE=0.0838>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.08378829334737337
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, goxa为低(B=0)的概率为0.6738。在qbee为低(A=0)的条件下, goxa为低(B=0)的概率为0.5900。",
+        "data_info_math": "P(B=0|A=1)=0.6738; P(B=0|A=0)=0.5900; "
+      },
+      "Instruction": "考虑qbee作用于goxa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而qbee变化为高，那么goxa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.6738\tP(B=0|A=0)=0.5900",
+        "Step 6": "NDE=0.6738-0.5900=0.0838",
+        "Step 7": "NDE=0.0838>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.08378829334737325
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, goxa为高(B=1)的概率为0.3262。在qbee为低(A=0)的条件下, goxa为高(B=1)的概率为0.4100。",
+        "data_info_math": "P(B=1|A=1)=0.3262; P(B=1|A=0)=0.4100; "
+      },
+      "Instruction": "考虑qbee作用于goxa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而qbee变化为高，那么goxa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.3262\tP(B=1|A=0)=0.4100",
+        "Step 6": "NDE=0.3262-0.4100=-0.0838",
+        "Step 7": "NDE=-0.0838<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.08378829334737337
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3655。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.1146。在qbee为高(A=1)的条件下, goxa为低(B=0)的概率为0.6738。在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.2086。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0520。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.3655; P(C=0|B=0,A=1)=0.1146; P(B=0|A=1)=0.6738; P(C=0|B=1,A=0)=0.2086; P(C=0|B=1,A=1)=0.0520; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而qbee变化为低，那么zesa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=0,B)-P(C=0|A=1,B)]*P(B|A=1)=[P(C=0|A=0,B=0)-P(C=0|A=1,B=0)]*P(B=0|A=1)+[P(C=0|A=0,B=1)-P(C=0|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=0|A=0,B=0)=0.3655\tP(C=0|A=1,B=0)=0.1146\tP(B=0|A=1)=0.6738\tP(C=0|A=0,B=1)=0.2086\tP(C=0|A=1,B=1)=0.0520\tP(B=1|A=1)=0.3262",
+        "Step 6": "=(0.3655-0.1146)*0.6738+(0.2086-0.0520)*0.3262=0.2201",
+        "Step 7": "NDE=0.2201>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.22009737250986564
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.6345。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.8854。在qbee为高(A=1)的条件下, goxa为低(B=0)的概率为0.6738。在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.7914。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.9480。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.6345; P(C=1|B=0,A=1)=0.8854; P(B=0|A=1)=0.6738; P(C=1|B=1,A=0)=0.7914; P(C=1|B=1,A=1)=0.9480; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而qbee变化为低，那么zesa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=0,B)-P(C=1|A=1,B)]*P(B|A=1)=[P(C=1|A=0,B=0)-P(C=1|A=1,B=0)]*P(B=0|A=1)+[P(C=1|A=0,B=1)-P(C=1|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=1|A=0,B=0)=0.6345\tP(C=1|A=1,B=0)=0.8854\tP(B=0|A=1)=0.6738\tP(C=1|A=0,B=1)=0.7914\tP(C=1|A=1,B=1)=0.9480\tP(B=1|A=1)=0.3262",
+        "Step 6": "=(0.6345-0.8854)*0.6738+(0.7914-0.9480)*0.3262=-0.2201",
+        "Step 7": "NDE=-0.2201<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.22009737250986572
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.1146。在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3655。在qbee为低(A=0)的条件下, goxa为低(B=0)的概率为0.5900。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0520。在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.2086。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.1146; P(C=0|B=0,A=0)=0.3655; P(B=0|A=0)=0.5900; P(C=0|B=1,A=1)=0.0520; P(C=0|B=1,A=0)=0.2086; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而qbee变化为高，那么zesa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=1,B)-P(C=0|A=0,B)]*P(B|A=0)=[P(C=0|A=1,B=0)-P(C=0|A=0,B=0)]*P(B=0|A=0)+[P(C=0|A=1,B=1)-P(C=0|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=0|A=1,B=0)=0.1146\tP(C=0|A=0,B=0)=0.3655\tP(B=0|A=0)=0.5900\tP(C=0|A=1,B=1)=0.0520\tP(C=0|A=0,B=1)=0.2086\tP(B=1|A=0)=0.4100",
+        "Step 6": "=(0.1146-0.3655)*0.5900+(0.0520-0.2086)*0.4100=-0.2122",
+        "Step 7": "NDE=-0.2122<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.2122012471313552
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.8854。在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.6345。在qbee为低(A=0)的条件下, goxa为低(B=0)的概率为0.5900。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.9480。在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.7914。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.8854; P(C=1|B=0,A=0)=0.6345; P(B=0|A=0)=0.5900; P(C=1|B=1,A=1)=0.9480; P(C=1|B=1,A=0)=0.7914; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而qbee变化为高，那么zesa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=1,B)-P(C=1|A=0,B)]*P(B|A=0)=[P(C=1|A=1,B=0)-P(C=1|A=0,B=0)]*P(B=0|A=0)+[P(C=1|A=1,B=1)-P(C=1|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=1|A=1,B=0)=0.8854\tP(C=1|A=0,B=0)=0.6345\tP(B=0|A=0)=0.5900\tP(C=1|A=1,B=1)=0.9480\tP(C=1|A=0,B=1)=0.7914\tP(B=1|A=0)=0.4100",
+        "Step 6": "=(0.8854-0.6345)*0.5900+(0.9480-0.7914)*0.4100=0.2122",
+        "Step 7": "NDE=0.2122>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.21220124713135527
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3655。在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.2086。qbee为低(A=0)的概率为0.6866。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.1146。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0520。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.3655; P(C=0|B=1,A=0)=0.2086; P(A=0)=0.6866; P(C=0|B=0,A=1)=0.1146; P(C=0|B=1,A=1)=0.0520; "
+      },
+      "Instruction": "考虑goxa作用于zesa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而goxa变化为低，那么zesa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=0,A)-P(C=0|B=1,A)]*P(A)=[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=0,A=0)=0.3655\tP(C=0|B=1,A=0)=0.2086\tP(A=0)=0.6866\tP(C=0|B=0,A=1)=0.1146\tP(C=0|B=1,A=1)=0.0520\tP(A=1)=0.3134",
+        "Step 6": "NDE=[0.3655-0.2086]*0.6866+[0.1146-0.0520]*0.3134=0.1273",
+        "Step 7": "NDE=0.1273>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.12728785134425286
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.6345。在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.7914。qbee为低(A=0)的概率为0.6866。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.8854。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.9480。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.6345; P(C=1|B=1,A=0)=0.7914; P(A=0)=0.6866; P(C=1|B=0,A=1)=0.8854; P(C=1|B=1,A=1)=0.9480; "
+      },
+      "Instruction": "考虑goxa作用于zesa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而goxa变化为低，那么zesa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=0,A)-P(C=1|B=1,A)]*P(A)=[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=0,A=0)=0.6345\tP(C=1|B=1,A=0)=0.7914\tP(A=0)=0.6866\tP(C=1|B=0,A=1)=0.8854\tP(C=1|B=1,A=1)=0.9480\tP(A=1)=0.3134",
+        "Step 6": "NDE=[0.6345-0.7914]*0.6866+[0.8854-0.9480]*0.3134=-0.1273",
+        "Step 7": "NDE=-0.1273<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.12728785134425286
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.2086。在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3655。qbee为低(A=0)的概率为0.6866。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0520。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.1146。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.2086; P(C=0|B=0,A=0)=0.3655; P(A=0)=0.6866; P(C=0|B=1,A=1)=0.0520; P(C=0|B=0,A=1)=0.1146; "
+      },
+      "Instruction": "考虑goxa作用于zesa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而goxa变化为高，那么zesa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=1,A)-P(C=0|B=0,A)]*P(A)=[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=1,A=0)=0.2086\tP(C=0|B=0,A=0)=0.3655\tP(A=0)=0.6866\tP(C=0|B=1,A=1)=0.0520\tP(C=0|B=0,A=1)=0.1146\tP(A=1)=0.3134",
+        "Step 6": "NDE=[0.2086-0.3655]*0.6866+[0.0520-0.1146]*0.3134=-0.1273",
+        "Step 7": "NDE=-0.1273<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.12728785134425286
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.7914。在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.6345。qbee为低(A=0)的概率为0.6866。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.9480。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.8854。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.7914; P(C=1|B=0,A=0)=0.6345; P(A=0)=0.6866; P(C=1|B=1,A=1)=0.9480; P(C=1|B=0,A=1)=0.8854; "
+      },
+      "Instruction": "考虑goxa作用于zesa的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而goxa变化为高，那么zesa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=1,A)-P(C=1|B=0,A)]*P(A)=[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=1,A=0)=0.7914\tP(C=1|B=0,A=0)=0.6345\tP(A=0)=0.6866\tP(C=1|B=1,A=1)=0.9480\tP(C=1|B=0,A=1)=0.8854\tP(A=1)=0.3134",
+        "Step 6": "NDE=[0.7914-0.6345]*0.6866+[0.9480-0.8854]*0.3134=0.1273",
+        "Step 7": "NDE=0.1273>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.12728785134425286
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于nusy的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而goxa变化为低，那么nusy更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于nusy的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而goxa变化为低，那么nusy更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于nusy的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而goxa变化为高，那么nusy更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于nusy的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而goxa变化为高，那么nusy更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为低(C=0)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.3190。在zesa为高(C=1)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.8126。qbee为低(A=0)的概率为0.6866。在zesa为低(C=0)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.1538。在zesa为高(C=1)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5973。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.3190; P(D=0|C=1,A=0)=0.8126; P(A=0)=0.6866; P(D=0|C=0,A=1)=0.1538; P(D=0|C=1,A=1)=0.5973; "
+      },
+      "Instruction": "考虑zesa作用于nusy的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而zesa变化为低，那么nusy更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=0,A)-P(D=0|C=1,A)]*P(A)=[P(D=0|C=0,A=0)-P(D=0|C=1,A=0)]*P(A=0)+[P(D=0|C=0,A=1)-P(D=0|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=0,A=0)=0.3190\tP(D=0|C=1,A=0)=0.8126\tP(A=0)=0.6866\tP(D=0|C=0,A=1)=0.1538\tP(D=0|C=1,A=1)=0.5973\tP(A=1)=0.3134",
+        "Step 6": "NDE=[0.3190-0.8126]*0.6866+[0.1538-0.5973]*0.3134=-0.4779",
+        "Step 7": "NDE=-0.4779<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.4779252848965626
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为低(C=0)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.6810。在zesa为高(C=1)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.1874。qbee为低(A=0)的概率为0.6866。在zesa为低(C=0)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.8462。在zesa为高(C=1)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4027。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.6810; P(D=1|C=1,A=0)=0.1874; P(A=0)=0.6866; P(D=1|C=0,A=1)=0.8462; P(D=1|C=1,A=1)=0.4027; "
+      },
+      "Instruction": "考虑zesa作用于nusy的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而zesa变化为低，那么nusy更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=0,A)-P(D=1|C=1,A)]*P(A)=[P(D=1|C=0,A=0)-P(D=1|C=1,A=0)]*P(A=0)+[P(D=1|C=0,A=1)-P(D=1|C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=0,A=0)=0.6810\tP(D=1|C=1,A=0)=0.1874\tP(A=0)=0.6866\tP(D=1|C=0,A=1)=0.8462\tP(D=1|C=1,A=1)=0.4027\tP(A=1)=0.3134",
+        "Step 6": "NDE=[0.6810-0.1874]*0.6866+[0.8462-0.4027]*0.3134=0.4779",
+        "Step 7": "NDE=0.4779>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.4779252848965626
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为高(C=1)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.8126。在zesa为低(C=0)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.3190。qbee为低(A=0)的概率为0.6866。在zesa为高(C=1)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5973。在zesa为低(C=0)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.1538。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.8126; P(D=0|C=0,A=0)=0.3190; P(A=0)=0.6866; P(D=0|C=1,A=1)=0.5973; P(D=0|C=0,A=1)=0.1538; "
+      },
+      "Instruction": "考虑zesa作用于nusy的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而zesa变化为高，那么nusy更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|C=1,A)-P(D=0|C=0,A)]*P(A)=[P(D=0|C=1,A=0)-P(D=0|C=0,A=0)]*P(A=0)+[P(D=0|C=1,A=1)-P(D=0|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|C=1,A=0)=0.8126\tP(D=0|C=0,A=0)=0.3190\tP(A=0)=0.6866\tP(D=0|C=1,A=1)=0.5973\tP(D=0|C=0,A=1)=0.1538\tP(A=1)=0.3134",
+        "Step 6": "NDE=[0.8126-0.3190]*0.6866+[0.5973-0.1538]*0.3134=0.4779",
+        "Step 7": "NDE=0.4779>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.4779252848965626
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为高(C=1)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.1874。在zesa为低(C=0)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.6810。qbee为低(A=0)的概率为0.6866。在zesa为高(C=1)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4027。在zesa为低(C=0)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.8462。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.1874; P(D=1|C=0,A=0)=0.6810; P(A=0)=0.6866; P(D=1|C=1,A=1)=0.4027; P(D=1|C=0,A=1)=0.8462; "
+      },
+      "Instruction": "考虑zesa作用于nusy的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而zesa变化为高，那么nusy更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|C=1,A)-P(D=1|C=0,A)]*P(A)=[P(D=1|C=1,A=0)-P(D=1|C=0,A=0)]*P(A=0)+[P(D=1|C=1,A=1)-P(D=1|C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|C=1,A=0)=0.1874\tP(D=1|C=0,A=0)=0.6810\tP(A=0)=0.6866\tP(D=1|C=1,A=1)=0.4027\tP(D=1|C=0,A=1)=0.8462\tP(A=1)=0.3134",
+        "Step 6": "NDE=[0.1874-0.6810]*0.6866+[0.4027-0.8462]*0.3134=-0.4779",
+        "Step 7": "NDE=-0.4779<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.4779252848965626
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qbee作用于goxa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如qbee保持不变，而所有中间变量被改变为当它们在qbee变化为低下的取值，那么goxa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qbee作用于goxa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如qbee保持不变，而所有中间变量被改变为当它们在qbee变化为低下的取值，那么goxa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qbee作用于goxa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如qbee保持不变，而所有中间变量被改变为当它们在qbee变化为高下的取值，那么goxa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑qbee作用于goxa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如qbee保持不变，而所有中间变量被改变为当它们在qbee变化为高下的取值，那么goxa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.1146。在qbee为低(A=0)的条件下, goxa为低(B=0)的概率为0.5900。在qbee为高(A=1)的条件下, goxa为低(B=0)的概率为0.6738。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0520。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.1146; P(B=0|A=0)=0.5900; P(B=0|A=1)=0.6738; P(C=0|B=1,A=1)=0.0520; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如qbee保持不变，而所有中间变量被改变为当它们在qbee变化为低下的取值，那么zesa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=0|A=1,B=0)=0.1146\tP(B=0|A=0)=0.5900\tP(B=0|A=1)=0.6738\tP(C=0|A=1,B=1)=0.0520\tP(B=1|A=0)=0.4100\tP(B=1|A=1)=0.3262",
+        "Step 6": "NIE=0.1146*(0.5900-0.6738)+0.0520*(0.4100-0.3262)=-0.0052",
+        "Step 7": "NIE=-0.0052<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.005243594220596232
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.8854。在qbee为低(A=0)的条件下, goxa为低(B=0)的概率为0.5900。在qbee为高(A=1)的条件下, goxa为低(B=0)的概率为0.6738。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.9480。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.8854; P(B=0|A=0)=0.5900; P(B=0|A=1)=0.6738; P(C=1|B=1,A=1)=0.9480; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如qbee保持不变，而所有中间变量被改变为当它们在qbee变化为低下的取值，那么zesa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=1|A=1,B=0)=0.8854\tP(B=0|A=0)=0.5900\tP(B=0|A=1)=0.6738\tP(C=1|A=1,B=1)=0.9480\tP(B=1|A=0)=0.4100\tP(B=1|A=1)=0.3262",
+        "Step 6": "NIE=0.8854*(0.5900-0.6738)+0.9480*(0.4100-0.3262)=0.0052",
+        "Step 7": "NIE=0.0052>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.005243594220596351
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3655。在qbee为高(A=1)的条件下, goxa为低(B=0)的概率为0.6738。在qbee为低(A=0)的条件下, goxa为低(B=0)的概率为0.5900。在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.2086。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.3655; P(B=0|A=1)=0.6738; P(B=0|A=0)=0.5900; P(C=0|B=1,A=0)=0.2086; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如qbee保持不变，而所有中间变量被改变为当它们在qbee变化为高下的取值，那么zesa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=0|A=0,B=0)=0.3655\tP(B=0|A=1)=0.6738\tP(B=0|A=0)=0.5900\tP(C=0|A=0,B=1)=0.2086\tP(B=1|A=1)=0.3262\tP(B=1|A=0)=0.4100",
+        "Step 6": "NIE=0.3655*(0.6738-0.5900)+0.2086*(0.3262-0.4100)=0.0131",
+        "Step 7": "NIE=0.0131>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.013139719599106685
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.6345。在qbee为高(A=1)的条件下, goxa为低(B=0)的概率为0.6738。在qbee为低(A=0)的条件下, goxa为低(B=0)的概率为0.5900。在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.7914。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.6345; P(B=0|A=1)=0.6738; P(B=0|A=0)=0.5900; P(C=1|B=1,A=0)=0.7914; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如qbee保持不变，而所有中间变量被改变为当它们在qbee变化为高下的取值，那么zesa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=1|A=0,B=0)=0.6345\tP(B=0|A=1)=0.6738\tP(B=0|A=0)=0.5900\tP(C=1|A=0,B=1)=0.7914\tP(B=1|A=1)=0.3262\tP(B=1|A=0)=0.4100",
+        "Step 6": "NIE=0.6345*(0.6738-0.5900)+0.7914*(0.3262-0.4100)=-0.0131",
+        "Step 7": "NIE=-0.0131<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.013139719599106793
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于zesa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如goxa保持不变，而所有中间变量被改变为当它们在goxa变化为低下的取值，那么zesa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于zesa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如goxa保持不变，而所有中间变量被改变为当它们在goxa变化为低下的取值，那么zesa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于zesa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如goxa保持不变，而所有中间变量被改变为当它们在goxa变化为高下的取值，那么zesa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于zesa的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如goxa保持不变，而所有中间变量被改变为当它们在goxa变化为高下的取值，那么zesa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "qbee为低(A=0)的概率为0.6866。在zesa为低(C=0), goxa为高(B=1)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.3177。在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3655。在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.2086。在zesa为高(C=1), goxa为高(B=1)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.8139。在zesa为低(C=0), goxa为高(B=1)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.1617。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.1146。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0520。在zesa为高(C=1), goxa为高(B=1)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.6011。",
+        "data_info_math": "P(A=0)=0.6866; P(D=0|C=0,B=1,A=0)=0.3177; P(C=0|B=0,A=0)=0.3655; P(C=0|B=1,A=0)=0.2086; P(D=0|C=1,B=1,A=0)=0.8139; P(D=0|C=0,B=1,A=1)=0.1617; P(C=0|B=0,A=1)=0.1146; P(C=0|B=1,A=1)=0.0520; P(D=0|C=1,B=1,A=1)=0.6011; "
+      },
+      "Instruction": "考虑goxa作用于nusy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如goxa保持不变，而所有中间变量被改变为当它们在goxa变化为低下的取值，那么nusy更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=0|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=0|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,C=0,A=0)=0.3177\tP(C=0|B=0,A=0)=0.3655\tP(C=0|B=1,A=0)=0.2086\tP(A=0)=0.6866\tP(D=0|B=1,C=1,A=0)=0.8139\tP(C=1|B=0,A=0)=0.6345\tP(C=1|B=1,A=0)=0.7914\tP(A=0)=0.6866\tP(D=0|B=1,C=0,A=1)=0.1617\tP(C=0|B=0,A=1)=0.1146\tP(C=0|B=1,A=1)=0.0520\tP(A=1)=0.3134\tP(D=0|B=1,C=1,A=1)=0.6011\tP(C=1|B=0,A=1)=0.8854\tP(C=1|B=1,A=1)=0.9480\tP(A=1)=0.3134",
+        "Step 6": "NIE=0.3177*[0.3655-0.2086]*0.6866+0.8139*[0.6345-0.7914]*0.6866+0.1617*[0.1146-0.0520]*0.3134+0.6011*[0.8854-0.9480]*0.3134=-0.0621",
+        "Step 7": "NIE=-0.0621<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.06205206421306717
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "qbee为低(A=0)的概率为0.6866。在zesa为低(C=0), goxa为高(B=1)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.6823。在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3655。在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.2086。在zesa为高(C=1), goxa为高(B=1)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.1861。在zesa为低(C=0), goxa为高(B=1)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.8383。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.1146。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0520。在zesa为高(C=1), goxa为高(B=1)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.3989。",
+        "data_info_math": "P(A=0)=0.6866; P(D=1|C=0,B=1,A=0)=0.6823; P(C=0|B=0,A=0)=0.3655; P(C=0|B=1,A=0)=0.2086; P(D=1|C=1,B=1,A=0)=0.1861; P(D=1|C=0,B=1,A=1)=0.8383; P(C=0|B=0,A=1)=0.1146; P(C=0|B=1,A=1)=0.0520; P(D=1|C=1,B=1,A=1)=0.3989; "
+      },
+      "Instruction": "考虑goxa作用于nusy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如goxa保持不变，而所有中间变量被改变为当它们在goxa变化为低下的取值，那么nusy更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=1|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=1|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,C=0,A=0)=0.6823\tP(C=0|B=0,A=0)=0.3655\tP(C=0|B=1,A=0)=0.2086\tP(A=0)=0.6866\tP(D=1|B=1,C=1,A=0)=0.1861\tP(C=1|B=0,A=0)=0.6345\tP(C=1|B=1,A=0)=0.7914\tP(A=0)=0.6866\tP(D=1|B=1,C=0,A=1)=0.8383\tP(C=0|B=0,A=1)=0.1146\tP(C=0|B=1,A=1)=0.0520\tP(A=1)=0.3134\tP(D=1|B=1,C=1,A=1)=0.3989\tP(C=1|B=0,A=1)=0.8854\tP(C=1|B=1,A=1)=0.9480\tP(A=1)=0.3134",
+        "Step 6": "NIE=0.6823*[0.3655-0.2086]*0.6866+0.1861*[0.6345-0.7914]*0.6866+0.8383*[0.1146-0.0520]*0.3134+0.3989*[0.8854-0.9480]*0.3134=0.0621",
+        "Step 7": "NIE=0.0621>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.06205206421306714
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "qbee为低(A=0)的概率为0.6866。在zesa为低(C=0), goxa为低(B=0)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.3195。在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.2086。在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3655。在zesa为高(C=1), goxa为低(B=0)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.8115。在zesa为低(C=0), goxa为低(B=0)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.1521。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0520。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.1146。在zesa为高(C=1), goxa为低(B=0)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5954。",
+        "data_info_math": "P(A=0)=0.6866; P(D=0|C=0,B=0,A=0)=0.3195; P(C=0|B=1,A=0)=0.2086; P(C=0|B=0,A=0)=0.3655; P(D=0|C=1,B=0,A=0)=0.8115; P(D=0|C=0,B=0,A=1)=0.1521; P(C=0|B=1,A=1)=0.0520; P(C=0|B=0,A=1)=0.1146; P(D=0|C=1,B=0,A=1)=0.5954; "
+      },
+      "Instruction": "考虑goxa作用于nusy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如goxa保持不变，而所有中间变量被改变为当它们在goxa变化为高下的取值，那么nusy更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=0|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=0|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,C=0,A=0)=0.3195\tP(C=0|B=1,A=0)=0.2086\tP(C=0|B=0,A=0)=0.3655\tP(A=0)=0.6866\tP(D=0|B=0,C=1,A=0)=0.8115\tP(C=1|B=1,A=0)=0.7914\tP(C=1|B=0,A=0)=0.6345\tP(A=0)=0.6866\tP(D=0|B=0,C=0,A=1)=0.1521\tP(C=0|B=1,A=1)=0.0520\tP(C=0|B=0,A=1)=0.1146\tP(A=1)=0.3134\tP(D=0|B=0,C=1,A=1)=0.5954\tP(C=1|B=1,A=1)=0.9480\tP(C=1|B=0,A=1)=0.8854\tP(A=1)=0.3134",
+        "Step 6": "NIE=0.3195*[0.2086-0.3655]*0.6866+0.8115*[0.7914-0.6345]*0.6866+0.1521*[0.0520-0.1146]*0.3134+0.5954*[0.9480-0.8854]*0.3134=0.0617",
+        "Step 7": "NIE=0.0617>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.061666544239996096
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "qbee为低(A=0)的概率为0.6866。在zesa为低(C=0), goxa为低(B=0)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.6805。在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.2086。在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3655。在zesa为高(C=1), goxa为低(B=0)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.1885。在zesa为低(C=0), goxa为低(B=0)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.8479。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0520。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.1146。在zesa为高(C=1), goxa为低(B=0)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4046。",
+        "data_info_math": "P(A=0)=0.6866; P(D=1|C=0,B=0,A=0)=0.6805; P(C=0|B=1,A=0)=0.2086; P(C=0|B=0,A=0)=0.3655; P(D=1|C=1,B=0,A=0)=0.1885; P(D=1|C=0,B=0,A=1)=0.8479; P(C=0|B=1,A=1)=0.0520; P(C=0|B=0,A=1)=0.1146; P(D=1|C=1,B=0,A=1)=0.4046; "
+      },
+      "Instruction": "考虑goxa作用于nusy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如goxa保持不变，而所有中间变量被改变为当它们在goxa变化为高下的取值，那么nusy更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=1|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=1|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,C=0,A=0)=0.6805\tP(C=0|B=1,A=0)=0.2086\tP(C=0|B=0,A=0)=0.3655\tP(A=0)=0.6866\tP(D=1|B=0,C=1,A=0)=0.1885\tP(C=1|B=1,A=0)=0.7914\tP(C=1|B=0,A=0)=0.6345\tP(A=0)=0.6866\tP(D=1|B=0,C=0,A=1)=0.8479\tP(C=0|B=1,A=1)=0.0520\tP(C=0|B=0,A=1)=0.1146\tP(A=1)=0.3134\tP(D=1|B=0,C=1,A=1)=0.4046\tP(C=1|B=1,A=1)=0.9480\tP(C=1|B=0,A=1)=0.8854\tP(A=1)=0.3134",
+        "Step 6": "NIE=0.6805*[0.2086-0.3655]*0.6866+0.1885*[0.7914-0.6345]*0.6866+0.8479*[0.0520-0.1146]*0.3134+0.4046*[0.9480-0.8854]*0.3134=-0.0617",
+        "Step 7": "NIE=-0.0617<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.06166654423999609
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于nusy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如zesa保持不变，而所有中间变量被改变为当它们在zesa变化为低下的取值，那么nusy更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于nusy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如zesa保持不变，而所有中间变量被改变为当它们在zesa变化为低下的取值，那么nusy更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于nusy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如zesa保持不变，而所有中间变量被改变为当它们在zesa变化为高下的取值，那么nusy更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于nusy的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如zesa保持不变，而所有中间变量被改变为当它们在zesa变化为高下的取值，那么nusy更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, goxa为低(B=0)的概率为0.5900。在qbee为高(A=1)的条件下, goxa为低(B=0)的概率为0.6738。",
+        "data_info_math": "P(B=0|A=0)=0.5900; P(B=0|A=1)=0.6738; "
+      },
+      "Instruction": "考虑qbee作用于goxa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qbee为低，假如qbee为高，那么goxa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.5900\tP(B=0|A=1)=0.6738",
+        "Step 6": "ETT=0.5900-0.6738=-0.0838",
+        "Step 7": "ETT=-0.0838<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.08378829334737325
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, goxa为高(B=1)的概率为0.4100。在qbee为高(A=1)的条件下, goxa为高(B=1)的概率为0.3262。",
+        "data_info_math": "P(B=1|A=0)=0.4100; P(B=1|A=1)=0.3262; "
+      },
+      "Instruction": "考虑qbee作用于goxa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qbee为低，假如qbee为高，那么goxa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.4100\tP(B=1|A=1)=0.3262",
+        "Step 6": "ETT=0.4100-0.3262=0.0838",
+        "Step 7": "ETT=0.0838>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.08378829334737337
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, goxa为低(B=0)的概率为0.6738。在qbee为低(A=0)的条件下, goxa为低(B=0)的概率为0.5900。",
+        "data_info_math": "P(B=0|A=1)=0.6738; P(B=0|A=0)=0.5900; "
+      },
+      "Instruction": "考虑qbee作用于goxa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qbee为高，假如qbee为低，那么goxa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.6738\tP(B=0|A=0)=0.5900",
+        "Step 6": "ETT=0.6738-0.5900=0.0838",
+        "Step 7": "ETT=0.0838>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.08378829334737325
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, goxa为高(B=1)的概率为0.3262。在qbee为低(A=0)的条件下, goxa为高(B=1)的概率为0.4100。",
+        "data_info_math": "P(B=1|A=1)=0.3262; P(B=1|A=0)=0.4100; "
+      },
+      "Instruction": "考虑qbee作用于goxa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qbee为高，假如qbee为低，那么goxa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.3262\tP(B=1|A=0)=0.4100",
+        "Step 6": "ETT=0.3262-0.4100=-0.0838",
+        "Step 7": "ETT=-0.0838<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.08378829334737337
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3012。在qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0942。",
+        "data_info_math": "P(C=0|A=0)=0.3012; P(C=0|A=1)=0.0942; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qbee为低，假如qbee为高，那么zesa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.3012\tP(C=0|A=1)=0.0942",
+        "Step 6": "ETT=0.3012-0.0942=0.2070",
+        "Step 7": "ETT=0.2070>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.2069576529107589
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.6988。在qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.9058。",
+        "data_info_math": "P(C=1|A=0)=0.6988; P(C=1|A=1)=0.9058; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qbee为低，假如qbee为高，那么zesa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.6988\tP(C=1|A=1)=0.9058",
+        "Step 6": "ETT=0.6988-0.9058=-0.2070",
+        "Step 7": "ETT=-0.2070<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.20695765291075896
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0942。在qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3012。",
+        "data_info_math": "P(C=0|A=1)=0.0942; P(C=0|A=0)=0.3012; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qbee为高，假如qbee为低，那么zesa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.0942\tP(C=0|A=0)=0.3012",
+        "Step 6": "ETT=0.0942-0.3012=-0.2070",
+        "Step 7": "ETT=-0.2070<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.2069576529107589
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.9058。在qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.6988。",
+        "data_info_math": "P(C=1|A=1)=0.9058; P(C=1|A=0)=0.6988; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qbee为高，假如qbee为低，那么zesa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.9058\tP(C=1|A=0)=0.6988",
+        "Step 6": "ETT=0.9058-0.6988=0.2070",
+        "Step 7": "ETT=0.2070>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.20695765291075896
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.6639。在qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5556。",
+        "data_info_math": "P(D=0|A=0)=0.6639; P(D=0|A=1)=0.5556; "
+      },
+      "Instruction": "考虑qbee作用于nusy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qbee为低，假如qbee为高，那么nusy更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6639\tP(D=0|A=1)=0.5556",
+        "Step 6": "ETT=0.6639-0.5556=0.1084",
+        "Step 7": "ETT=0.1084>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.10839247974781452
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.3361。在qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4444。",
+        "data_info_math": "P(D=1|A=0)=0.3361; P(D=1|A=1)=0.4444; "
+      },
+      "Instruction": "考虑qbee作用于nusy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qbee为低，假如qbee为高，那么nusy更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3361\tP(D=1|A=1)=0.4444",
+        "Step 6": "ETT=0.3361-0.4444=-0.1084",
+        "Step 7": "ETT=-0.1084<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.10839247974781457
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5556。在qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.6639。",
+        "data_info_math": "P(D=0|A=1)=0.5556; P(D=0|A=0)=0.6639; "
+      },
+      "Instruction": "考虑qbee作用于nusy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qbee为高，假如qbee为低，那么nusy更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.5556\tP(D=0|A=0)=0.6639",
+        "Step 6": "ETT=0.5556-0.6639=-0.1084",
+        "Step 7": "ETT=-0.1084<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.10839247974781452
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4444。在qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.3361。",
+        "data_info_math": "P(D=1|A=1)=0.4444; P(D=1|A=0)=0.3361; "
+      },
+      "Instruction": "考虑qbee作用于nusy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些qbee为高，假如qbee为低，那么nusy更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.4444\tP(D=1|A=0)=0.3361",
+        "Step 6": "ETT=0.4444-0.3361=0.1084",
+        "Step 7": "ETT=0.1084>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.10839247974781457
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于qbee的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些goxa为低，假如goxa为高，那么qbee更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于qbee的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些goxa为低，假如goxa为高，那么qbee更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于qbee的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些goxa为高，假如goxa为低，那么qbee更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于qbee的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些goxa为高，假如goxa为低，那么qbee更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)的条件下, zesa为低(C=0)的概率为0.2795。在qbee为低(A=0)且goxa为高(B=1)的条件下, zesa为低(C=0)的概率为0.2086。在goxa为低(B=0)的条件下, qbee为低(A=0)的概率为0.6574。在qbee为高(A=1)且goxa为高(B=1)的条件下, zesa为低(C=0)的概率为0.0520。在goxa为低(B=0)的条件下, qbee为高(A=1)的概率为0.3426。",
+        "data_info_math": "P(C=0|B=0)=0.2795; P(C=0|A=0,B=1)=0.2086; P(A=0|B=0)=0.6574; P(C=0|A=1,B=1)=0.0520; P(A=1|B=0)=0.3426; "
+      },
+      "Instruction": "考虑goxa作用于zesa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些goxa为低，假如goxa为高，那么zesa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-sum_{A} P(C=0|B=1,A)*P(A|B=0)=P(C=0|B=0)-[P(C=0|B=1,A=0)*P(A=0|B=0)+P(C=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=0|B=0)=0.2795\tP(C=0|B=1,A=0)=0.2086\tP(A=0|B=0)=0.6574\tP(C=0|B=1,A=1)=0.0520\tP(A=1|B=0)=0.3426",
+        "Step 6": "ETT=0.2795-[0.2086*0.6574+0.0520*0.3426]=0.1245",
+        "Step 7": "ETT=0.1245>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.12453066593416431
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)的条件下, zesa为高(C=1)的概率为0.7205。在qbee为低(A=0)且goxa为高(B=1)的条件下, zesa为高(C=1)的概率为0.7914。在goxa为低(B=0)的条件下, qbee为低(A=0)的概率为0.6574。在qbee为高(A=1)且goxa为高(B=1)的条件下, zesa为高(C=1)的概率为0.9480。在goxa为低(B=0)的条件下, qbee为高(A=1)的概率为0.3426。",
+        "data_info_math": "P(C=1|B=0)=0.7205; P(C=1|A=0,B=1)=0.7914; P(A=0|B=0)=0.6574; P(C=1|A=1,B=1)=0.9480; P(A=1|B=0)=0.3426; "
+      },
+      "Instruction": "考虑goxa作用于zesa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些goxa为低，假如goxa为高，那么zesa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-sum_{A} P(C=1|B=1,A)*P(A|B=0)=P(C=1|B=0)-[P(C=1|B=1,A=0)*P(A=0|B=0)+P(C=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=1|B=0)=0.7205\tP(C=1|B=1,A=0)=0.7914\tP(A=0|B=0)=0.6574\tP(C=1|B=1,A=1)=0.9480\tP(A=1|B=0)=0.3426",
+        "Step 6": "ETT=0.7205-[0.7914*0.6574+0.9480*0.3426]=-0.1245",
+        "Step 7": "ETT=-0.1245<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.12453066593416429
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为高(B=1)的条件下, zesa为低(C=0)的概率为0.1669。在qbee为低(A=0)且goxa为低(B=0)的条件下, zesa为低(C=0)的概率为0.3655。在goxa为高(B=1)的条件下, qbee为低(A=0)的概率为0.7336。在qbee为高(A=1)且goxa为低(B=0)的条件下, zesa为低(C=0)的概率为0.1146。在goxa为高(B=1)的条件下, qbee为高(A=1)的概率为0.2664。",
+        "data_info_math": "P(C=0|B=1)=0.1669; P(C=0|A=0,B=0)=0.3655; P(A=0|B=1)=0.7336; P(C=0|A=1,B=0)=0.1146; P(A=1|B=1)=0.2664; "
+      },
+      "Instruction": "考虑goxa作用于zesa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些goxa为高，假如goxa为低，那么zesa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-sum_{A} P(C=0|B=0,A)*P(A|B=1)=P(C=0|B=1)-[P(C=0|B=0,A=0)*P(A=0|B=1)+P(C=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=0|B=1)=0.1669\tP(C=0|B=0,A=0)=0.3655\tP(A=0|B=1)=0.7336\tP(C=0|B=0,A=1)=0.1146\tP(A=1|B=1)=0.2664",
+        "Step 6": "ETT=0.1669-[0.3655*0.7336+0.1146*0.2664]=-0.1317",
+        "Step 7": "ETT=-0.1317<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.13171495227031665
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为高(B=1)的条件下, zesa为高(C=1)的概率为0.8331。在qbee为低(A=0)且goxa为低(B=0)的条件下, zesa为高(C=1)的概率为0.6345。在goxa为高(B=1)的条件下, qbee为低(A=0)的概率为0.7336。在qbee为高(A=1)且goxa为低(B=0)的条件下, zesa为高(C=1)的概率为0.8854。在goxa为高(B=1)的条件下, qbee为高(A=1)的概率为0.2664。",
+        "data_info_math": "P(C=1|B=1)=0.8331; P(C=1|A=0,B=0)=0.6345; P(A=0|B=1)=0.7336; P(C=1|A=1,B=0)=0.8854; P(A=1|B=1)=0.2664; "
+      },
+      "Instruction": "考虑goxa作用于zesa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些goxa为高，假如goxa为低，那么zesa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-sum_{A} P(C=1|B=0,A)*P(A|B=1)=P(C=1|B=1)-[P(C=1|B=0,A=0)*P(A=0|B=1)+P(C=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=1|B=1)=0.8331\tP(C=1|B=0,A=0)=0.6345\tP(A=0|B=1)=0.7336\tP(C=1|B=0,A=1)=0.8854\tP(A=1|B=1)=0.2664",
+        "Step 6": "ETT=0.8331-[0.6345*0.7336+0.8854*0.2664]=0.1317",
+        "Step 7": "ETT=0.1317>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.13171495227031668
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)的条件下, nusy为低(D=0)的概率为0.6018。在qbee为低(A=0)且goxa为高(B=1)的条件下, nusy为低(D=0)的概率为0.7104。在goxa为低(B=0)的条件下, qbee为低(A=0)的概率为0.6574。在qbee为高(A=1)且goxa为高(B=1)的条件下, nusy为低(D=0)的概率为0.5782。在goxa为低(B=0)的条件下, qbee为高(A=1)的概率为0.3426。",
+        "data_info_math": "P(D=0|B=0)=0.6018; P(D=0|A=0,B=1)=0.7104; P(A=0|B=0)=0.6574; P(D=0|A=1,B=1)=0.5782; P(A=1|B=0)=0.3426; "
+      },
+      "Instruction": "考虑goxa作用于nusy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些goxa为低，假如goxa为高，那么nusy更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-sum_{A} P(D=0|B=1,A)*P(A|B=0)=P(D=0|B=0)-[P(D=0|B=1,A=0)*P(A=0|B=0)+P(D=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=0|B=0)=0.6018\tP(D=0|B=1,A=0)=0.7104\tP(A=0|B=0)=0.6574\tP(D=0|B=1,A=1)=0.5782\tP(A=1|B=0)=0.3426",
+        "Step 6": "ETT=0.6018-[0.7104*0.6574+0.5782*0.3426]=-0.0633",
+        "Step 7": "ETT=-0.0633<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.06327497149470002
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)的条件下, nusy为高(D=1)的概率为0.3982。在qbee为低(A=0)且goxa为高(B=1)的条件下, nusy为高(D=1)的概率为0.2896。在goxa为低(B=0)的条件下, qbee为低(A=0)的概率为0.6574。在qbee为高(A=1)且goxa为高(B=1)的条件下, nusy为高(D=1)的概率为0.4218。在goxa为低(B=0)的条件下, qbee为高(A=1)的概率为0.3426。",
+        "data_info_math": "P(D=1|B=0)=0.3982; P(D=1|A=0,B=1)=0.2896; P(A=0|B=0)=0.6574; P(D=1|A=1,B=1)=0.4218; P(A=1|B=0)=0.3426; "
+      },
+      "Instruction": "考虑goxa作用于nusy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些goxa为低，假如goxa为高，那么nusy更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-sum_{A} P(D=1|B=1,A)*P(A|B=0)=P(D=1|B=0)-[P(D=1|B=1,A=0)*P(A=0|B=0)+P(D=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=1|B=0)=0.3982\tP(D=1|B=1,A=0)=0.2896\tP(A=0|B=0)=0.6574\tP(D=1|B=1,A=1)=0.4218\tP(A=1|B=0)=0.3426",
+        "Step 6": "ETT=0.3982-[0.2896*0.6574+0.4218*0.3426]=0.0633",
+        "Step 7": "ETT=0.0633>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.0632749714947001
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为高(B=1)的条件下, nusy为低(D=0)的概率为0.6752。在qbee为低(A=0)且goxa为低(B=0)的条件下, nusy为低(D=0)的概率为0.6317。在goxa为高(B=1)的条件下, qbee为低(A=0)的概率为0.7336。在qbee为高(A=1)且goxa为低(B=0)的条件下, nusy为低(D=0)的概率为0.5446。在goxa为高(B=1)的条件下, qbee为高(A=1)的概率为0.2664。",
+        "data_info_math": "P(D=0|B=1)=0.6752; P(D=0|A=0,B=0)=0.6317; P(A=0|B=1)=0.7336; P(D=0|A=1,B=0)=0.5446; P(A=1|B=1)=0.2664; "
+      },
+      "Instruction": "考虑goxa作用于nusy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些goxa为高，假如goxa为低，那么nusy更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-sum_{A} P(D=0|B=0,A)*P(A|B=1)=P(D=0|B=1)-[P(D=0|B=0,A=0)*P(A=0|B=1)+P(D=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=0|B=1)=0.6752\tP(D=0|B=0,A=0)=0.6317\tP(A=0|B=1)=0.7336\tP(D=0|B=0,A=1)=0.5446\tP(A=1|B=1)=0.2664",
+        "Step 6": "ETT=0.6752-[0.6317*0.7336+0.5446*0.2664]=0.0667",
+        "Step 7": "ETT=0.0667>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.06670715589493734
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为高(B=1)的条件下, nusy为高(D=1)的概率为0.3248。在qbee为低(A=0)且goxa为低(B=0)的条件下, nusy为高(D=1)的概率为0.3683。在goxa为高(B=1)的条件下, qbee为低(A=0)的概率为0.7336。在qbee为高(A=1)且goxa为低(B=0)的条件下, nusy为高(D=1)的概率为0.4554。在goxa为高(B=1)的条件下, qbee为高(A=1)的概率为0.2664。",
+        "data_info_math": "P(D=1|B=1)=0.3248; P(D=1|A=0,B=0)=0.3683; P(A=0|B=1)=0.7336; P(D=1|A=1,B=0)=0.4554; P(A=1|B=1)=0.2664; "
+      },
+      "Instruction": "考虑goxa作用于nusy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些goxa为高，假如goxa为低，那么nusy更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-sum_{A} P(D=1|B=0,A)*P(A|B=1)=P(D=1|B=1)-[P(D=1|B=0,A=0)*P(A=0|B=1)+P(D=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=1|B=1)=0.3248\tP(D=1|B=0,A=0)=0.3683\tP(A=0|B=1)=0.7336\tP(D=1|B=0,A=1)=0.4554\tP(A=1|B=1)=0.2664",
+        "Step 6": "ETT=0.3248-[0.3683*0.7336+0.4554*0.2664]=-0.0667",
+        "Step 7": "ETT=-0.0667<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.06670715589493742
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于qbee的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些zesa为低，假如zesa为高，那么qbee更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于qbee的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些zesa为低，假如zesa为高，那么qbee更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于qbee的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些zesa为高，假如zesa为低，那么qbee更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于qbee的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些zesa为高，假如zesa为低，那么qbee更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于goxa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些zesa为低，假如zesa为高，那么goxa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于goxa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些zesa为低，假如zesa为高，那么goxa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于goxa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些zesa为高，假如zesa为低，那么goxa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑zesa作用于goxa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些zesa为高，假如zesa为低，那么goxa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为低(C=0)的条件下, nusy为低(D=0)的概率为0.2983。在qbee为低(A=0)且zesa为高(C=1)的条件下, nusy为低(D=0)的概率为0.8126。在zesa为低(C=0)的条件下, qbee为低(A=0)的概率为0.8751。在qbee为高(A=1)且zesa为高(C=1)的条件下, nusy为低(D=0)的概率为0.5973。在zesa为低(C=0)的条件下, qbee为高(A=1)的概率为0.1249。",
+        "data_info_math": "P(D=0|C=0)=0.2983; P(D=0|A=0,C=1)=0.8126; P(A=0|C=0)=0.8751; P(D=0|A=1,C=1)=0.5973; P(A=1|C=0)=0.1249; "
+      },
+      "Instruction": "考虑zesa作用于nusy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些zesa为低，假如zesa为高，那么nusy更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=0|C=0)-sum_{A} P(D=0|C=1,A)*P(A|C=0)=P(D=0|C=0)-[P(D=0|C=1,A=0)*P(A=0|C=0)+P(D=0|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=0|C=0)=0.2983\tP(D=0|C=1,A=0)=0.8126\tP(A=0|C=0)=0.8751\tP(D=0|C=1,A=1)=0.5973\tP(A=1|C=0)=0.1249",
+        "Step 6": "ETT=0.2983-[0.8126*0.8751+0.5973*0.1249]=-0.4874",
+        "Step 7": "ETT=-0.4874<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.48736215235174996
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为低(C=0)的条件下, nusy为高(D=1)的概率为0.7017。在qbee为低(A=0)且zesa为高(C=1)的条件下, nusy为高(D=1)的概率为0.1874。在zesa为低(C=0)的条件下, qbee为低(A=0)的概率为0.8751。在qbee为高(A=1)且zesa为高(C=1)的条件下, nusy为高(D=1)的概率为0.4027。在zesa为低(C=0)的条件下, qbee为高(A=1)的概率为0.1249。",
+        "data_info_math": "P(D=1|C=0)=0.7017; P(D=1|A=0,C=1)=0.1874; P(A=0|C=0)=0.8751; P(D=1|A=1,C=1)=0.4027; P(A=1|C=0)=0.1249; "
+      },
+      "Instruction": "考虑zesa作用于nusy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些zesa为低，假如zesa为高，那么nusy更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=1|C=0)-sum_{A} P(D=1|C=1,A)*P(A|C=0)=P(D=1|C=0)-[P(D=1|C=1,A=0)*P(A=0|C=0)+P(D=1|C=1,A=1)*P(A=1|C=0)]",
+        "Step 5": "P(D=1|C=0)=0.7017\tP(D=1|C=1,A=0)=0.1874\tP(A=0|C=0)=0.8751\tP(D=1|C=1,A=1)=0.4027\tP(A=1|C=0)=0.1249",
+        "Step 6": "ETT=0.7017-[0.1874*0.8751+0.4027*0.1249]=0.4874",
+        "Step 7": "ETT=0.4874>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.48736215235175
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为高(C=1)的条件下, nusy为低(D=0)的概率为0.7326。在qbee为低(A=0)且zesa为低(C=0)的条件下, nusy为低(D=0)的概率为0.3190。在zesa为高(C=1)的条件下, qbee为低(A=0)的概率为0.6283。在qbee为高(A=1)且zesa为低(C=0)的条件下, nusy为低(D=0)的概率为0.1538。在zesa为高(C=1)的条件下, qbee为高(A=1)的概率为0.3717。",
+        "data_info_math": "P(D=0|C=1)=0.7326; P(D=0|A=0,C=0)=0.3190; P(A=0|C=1)=0.6283; P(D=0|A=1,C=0)=0.1538; P(A=1|C=1)=0.3717; "
+      },
+      "Instruction": "考虑zesa作用于nusy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些zesa为高，假如zesa为低，那么nusy更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=0|C=1)-sum_{A} P(D=0|C=0,A)*P(A|C=1)=P(D=0|C=1)-[P(D=0|C=0,A=0)*P(A=0|C=1)+P(D=0|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=0|C=1)=0.7326\tP(D=0|C=0,A=0)=0.3190\tP(A=0|C=1)=0.6283\tP(D=0|C=0,A=1)=0.1538\tP(A=1|C=1)=0.3717",
+        "Step 6": "ETT=0.7326-[0.3190*0.6283+0.1538*0.3717]=0.4750",
+        "Step 7": "ETT=0.4750>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.47500537946293575
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为高(C=1)的条件下, nusy为高(D=1)的概率为0.2674。在qbee为低(A=0)且zesa为低(C=0)的条件下, nusy为高(D=1)的概率为0.6810。在zesa为高(C=1)的条件下, qbee为低(A=0)的概率为0.6283。在qbee为高(A=1)且zesa为低(C=0)的条件下, nusy为高(D=1)的概率为0.8462。在zesa为高(C=1)的条件下, qbee为高(A=1)的概率为0.3717。",
+        "data_info_math": "P(D=1|C=1)=0.2674; P(D=1|A=0,C=0)=0.6810; P(A=0|C=1)=0.6283; P(D=1|A=1,C=0)=0.8462; P(A=1|C=1)=0.3717; "
+      },
+      "Instruction": "考虑zesa作用于nusy的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些zesa为高，假如zesa为低，那么nusy更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=1|C=1)-sum_{A} P(D=1|C=0,A)*P(A|C=1)=P(D=1|C=1)-[P(D=1|C=0,A=0)*P(A=0|C=1)+P(D=1|C=0,A=1)*P(A=1|C=1)]",
+        "Step 5": "P(D=1|C=1)=0.2674\tP(D=1|C=0,A=0)=0.6810\tP(A=0|C=1)=0.6283\tP(D=1|C=0,A=1)=0.8462\tP(A=1|C=1)=0.3717",
+        "Step 6": "ETT=0.2674-[0.6810*0.6283+0.8462*0.3717]=-0.4750",
+        "Step 7": "ETT=-0.4750<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.4750053794629357
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于qbee的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nusy为低，假如nusy为高，那么qbee更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于qbee的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nusy为低，假如nusy为高，那么qbee更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于qbee的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nusy为高，假如nusy为低，那么qbee更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于qbee的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nusy为高，假如nusy为低，那么qbee更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于goxa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nusy为低，假如nusy为高，那么goxa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于goxa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nusy为低，假如nusy为高，那么goxa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于goxa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nusy为高，假如nusy为低，那么goxa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于goxa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nusy为高，假如nusy为低，那么goxa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于zesa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nusy为低，假如nusy为高，那么zesa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 133,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于zesa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nusy为低，假如nusy为高，那么zesa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 134,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于zesa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nusy为高，假如nusy为低，那么zesa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 135,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑nusy作用于zesa的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些nusy为高，假如nusy为低，那么zesa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 136,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)且goxa为高(B=1)的条件下, zesa为低(C=0)的概率为0.2086。在qbee为高(A=1)且goxa为高(B=1)的条件下, zesa为低(C=0)的概率为0.0520。",
+        "data_info_math": "P(C=0|A=0,B=1)=0.2086; P(C=0|A=1,B=1)=0.0520; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在goxa为高的条件下，假如qbee为低，那么zesa更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=0,B=1))-P(C=0|do(A=1,B=1))=P(C=0|A=0,B=1)-P(C=0|A=1,B=1)",
+        "Step 5": "P(C=0|A=0,B=1)=0.2086\tP(C=0|A=1,B=1)=0.0520",
+        "Step 6": "CDE=0.2086-0.0520=0.1566",
+        "Step 7": "CDE=0.1566>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0.1566037753678266
+    },
+    {
+      "id": 137,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)且goxa为低(B=0)的条件下, zesa为高(C=1)的概率为0.6345。在qbee为高(A=1)且goxa为低(B=0)的条件下, zesa为高(C=1)的概率为0.8854。",
+        "data_info_math": "P(C=1|A=0,B=0)=0.6345; P(C=1|A=1,B=0)=0.8854; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在goxa为低的条件下，假如qbee为低，那么zesa更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=0,B=0))-P(C=1|do(A=1,B=0))=P(C=1|A=0,B=0)-P(C=1|A=1,B=0)",
+        "Step 5": "P(C=1|A=0,B=0)=0.6345\tP(C=1|A=1,B=0)=0.8854",
+        "Step 6": "CDE=0.6345-0.8854=-0.2508",
+        "Step 7": "CDE=-0.2508<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": -0.25084278016261774
+    },
+    {
+      "id": 138,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)且goxa为高(B=1)的条件下, zesa为低(C=0)的概率为0.0520。在qbee为低(A=0)且goxa为高(B=1)的条件下, zesa为低(C=0)的概率为0.2086。",
+        "data_info_math": "P(C=0|A=1,B=1)=0.0520; P(C=0|A=0,B=1)=0.2086; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在goxa为高的条件下，假如qbee为高，那么zesa更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=1,B=1))-P(C=0|do(A=0,B=1))=P(C=0|A=1,B=1)-P(C=0|A=0,B=1)",
+        "Step 5": "P(C=0|A=1,B=1)=0.0520\tP(C=0|A=0,B=1)=0.2086",
+        "Step 6": "CDE=0.0520-0.2086=-0.1566",
+        "Step 7": "CDE=-0.1566<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": -0.1566037753678266
+    },
+    {
+      "id": 139,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)且goxa为高(B=1)的条件下, zesa为高(C=1)的概率为0.9480。在qbee为低(A=0)且goxa为高(B=1)的条件下, zesa为高(C=1)的概率为0.7914。",
+        "data_info_math": "P(C=1|A=1,B=1)=0.9480; P(C=1|A=0,B=1)=0.7914; "
+      },
+      "Instruction": "考虑qbee作用于zesa的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在goxa为高的条件下，假如qbee为高，那么zesa更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=1,B=1))-P(C=1|do(A=0,B=1))=P(C=1|A=1,B=1)-P(C=1|A=0,B=1)",
+        "Step 5": "P(C=1|A=1,B=1)=0.9480\tP(C=1|A=0,B=1)=0.7914",
+        "Step 6": "CDE=0.9480-0.7914=0.1566",
+        "Step 7": "CDE=0.1566>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0.15660377536782677
+    },
+    {
+      "id": 140,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0), goxa为低(B=0)且zesa为低(C=0)的条件下, nusy为低(D=0)的概率为0.3195。在qbee为高(A=1), goxa为低(B=0)且zesa为低(C=0)的条件下, nusy为低(D=0)的概率为0.1521。",
+        "data_info_math": "P(D=0|A=0,B=0,C=0)=0.3195; P(D=0|A=1,B=0,C=0)=0.1521; "
+      },
+      "Instruction": "考虑qbee作用于nusy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在goxa为低且zesa为低的条件下，假如qbee为低，那么nusy更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=0,B=0,C=0))-P(D=0|do(A=1,B=0,C=0))=P(D=0|A=0,B=0,C=0)-P(D=0|A=1,B=0,C=0)",
+        "Step 5": "P(D=0|A=0,B=0,C=0)=0.3195\tP(D=0|A=1,B=0,C=0)=0.1521",
+        "Step 6": "CDE=0.3195-0.1521=0.1674",
+        "Step 7": "CDE=0.1674>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0.1674421253134623
+    },
+    {
+      "id": 141,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0), goxa为高(B=1)且zesa为低(C=0)的条件下, nusy为高(D=1)的概率为0.6823。在qbee为高(A=1), goxa为高(B=1)且zesa为低(C=0)的条件下, nusy为高(D=1)的概率为0.8383。",
+        "data_info_math": "P(D=1|A=0,B=1,C=0)=0.6823; P(D=1|A=1,B=1,C=0)=0.8383; "
+      },
+      "Instruction": "考虑qbee作用于nusy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在goxa为高且zesa为低的条件下，假如qbee为低，那么nusy更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=0,B=1,C=0))-P(D=1|do(A=1,B=1,C=0))=P(D=1|A=0,B=1,C=0)-P(D=1|A=1,B=1,C=0)",
+        "Step 5": "P(D=1|A=0,B=1,C=0)=0.6823\tP(D=1|A=1,B=1,C=0)=0.8383",
+        "Step 6": "CDE=0.6823-0.8383=-0.1560",
+        "Step 7": "CDE=-0.1560<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": -0.1560169576136461
+    },
+    {
+      "id": 142,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1), goxa为低(B=0)且zesa为高(C=1)的条件下, nusy为低(D=0)的概率为0.5954。在qbee为低(A=0), goxa为低(B=0)且zesa为高(C=1)的条件下, nusy为低(D=0)的概率为0.8115。",
+        "data_info_math": "P(D=0|A=1,B=0,C=1)=0.5954; P(D=0|A=0,B=0,C=1)=0.8115; "
+      },
+      "Instruction": "考虑qbee作用于nusy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在goxa为低且zesa为高的条件下，假如qbee为高，那么nusy更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=1,B=0,C=1))-P(D=0|do(A=0,B=0,C=1))=P(D=0|A=1,B=0,C=1)-P(D=0|A=0,B=0,C=1)",
+        "Step 5": "P(D=0|A=1,B=0,C=1)=0.5954\tP(D=0|A=0,B=0,C=1)=0.8115",
+        "Step 6": "CDE=0.5954-0.8115=-0.2161",
+        "Step 7": "CDE=-0.2161<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": -0.21609083584457878
+    },
+    {
+      "id": 143,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1), goxa为高(B=1)且zesa为高(C=1)的条件下, nusy为高(D=1)的概率为0.3989。在qbee为低(A=0), goxa为高(B=1)且zesa为高(C=1)的条件下, nusy为高(D=1)的概率为0.1861。",
+        "data_info_math": "P(D=1|A=1,B=1,C=1)=0.3989; P(D=1|A=0,B=1,C=1)=0.1861; "
+      },
+      "Instruction": "考虑qbee作用于nusy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在goxa为高且zesa为高的条件下，假如qbee为高，那么nusy更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=1,B=1,C=1))-P(D=1|do(A=0,B=1,C=1))=P(D=1|A=1,B=1,C=1)-P(D=1|A=0,B=1,C=1)",
+        "Step 5": "P(D=1|A=1,B=1,C=1)=0.3989\tP(D=1|A=0,B=1,C=1)=0.1861",
+        "Step 6": "CDE=0.3989-0.1861=0.2128",
+        "Step 7": "CDE=0.2128>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0.2127995029678922
+    },
+    {
+      "id": 144,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于nusy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在zesa为高的条件下，假如goxa为低，那么nusy更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 145,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于nusy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在zesa为高的条件下，假如goxa为低，那么nusy更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 146,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于nusy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在zesa为高的条件下，假如goxa为高，那么nusy更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 147,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑goxa作用于nusy的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在zesa为低的条件下，假如goxa为高，那么nusy更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D不存在，因此答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 148,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象qbee(A)和观察节点goxa(B)的后门调整集合。",
+      "Question": "方法1: 根据zesa的情况，我们逐个研究qbee和goxa的关联。\n方法2：我们直接研究一般情况下qbee和goxa的关联。\n为了理解qbee如何影响goxa，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 149,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象qbee(A)和观察节点goxa(B)的后门调整集合。",
+      "Question": "方法1: 根据nusy的情况，我们逐个研究qbee和goxa的关联。\n方法2：我们直接研究一般情况下qbee和goxa的关联。\n为了理解qbee如何影响goxa，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 150,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象qbee(A)和观察节点zesa(C)的后门调整集合。",
+      "Question": "方法1: 根据goxa的情况，我们逐个研究qbee和zesa的关联。\n方法2：我们直接研究一般情况下qbee和zesa的关联。\n为了理解qbee如何影响zesa，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 151,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象qbee(A)和观察节点zesa(C)的后门调整集合。",
+      "Question": "方法1: 根据nusy的情况，我们逐个研究qbee和zesa的关联。\n方法2：我们直接研究一般情况下qbee和zesa的关联。\n为了理解qbee如何影响zesa，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 152,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象qbee(A)和观察节点nusy(D)的后门调整集合。",
+      "Question": "方法1: 根据goxa的情况，我们逐个研究qbee和nusy的关联。\n方法2：我们直接研究一般情况下qbee和nusy的关联。\n为了理解qbee如何影响nusy，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 153,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象qbee(A)和观察节点nusy(D)的后门调整集合。",
+      "Question": "方法1: 根据goxa的情况，我们逐个研究qbee和nusy的关联。\n方法2：我们直接研究一般情况下qbee和nusy的关联。\n为了理解qbee如何影响nusy，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 154,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象goxa(B)和观察节点zesa(C)的后门调整集合。",
+      "Question": "方法1: 根据qbee的情况，我们逐个研究goxa和zesa的关联。\n方法2：我们直接研究一般情况下goxa和zesa的关联。\n为了理解goxa如何影响zesa，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 155,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象goxa(B)和观察节点zesa(C)的后门调整集合。",
+      "Question": "方法1: 根据qbee的情况，我们逐个研究goxa和zesa的关联。\n方法2：我们直接研究一般情况下goxa和zesa的关联。\n为了理解goxa如何影响zesa，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 156,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象goxa(B)和观察节点nusy(D)的后门调整集合。",
+      "Question": "方法1: 根据qbee的情况，我们逐个研究goxa和nusy的关联。\n方法2：我们直接研究一般情况下goxa和nusy的关联。\n为了理解goxa如何影响nusy，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 157,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象goxa(B)和观察节点nusy(D)的后门调整集合。",
+      "Question": "方法1: 根据qbee的情况，我们逐个研究goxa和nusy的关联。\n方法2：我们直接研究一般情况下goxa和nusy的关联。\n为了理解goxa如何影响nusy，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 158,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象zesa(C)和观察节点nusy(D)的后门调整集合。",
+      "Question": "方法1: 根据qbee的情况，我们逐个研究zesa和nusy的关联。\n方法2：我们直接研究一般情况下zesa和nusy的关联。\n为了理解zesa如何影响nusy，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 159,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象zesa(C)和观察节点nusy(D)的后门调整集合。",
+      "Question": "方法1: 根据qbee的情况，我们逐个研究zesa和nusy的关联。\n方法2：我们直接研究一般情况下zesa和nusy的关联。\n为了理解zesa如何影响nusy，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 160,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, goxa为高(B=1)的概率为0.4100。goxa为高(B=1)的概率为0.3838。qbee为高(A=1)且goxa为高(B=1)的概率为0.1022。",
+        "data_info_math": "P(B=1|A=0)=0.4100; P(B=1)=0.3838; P(A=1,B=1)=0.1022; "
+      },
+      "Instruction": "考虑qbee作用于goxa的必要性概率(probability of necessity, PN)。",
+      "Question": "给定qbee为高且goxa为高, 那么假如qbee为低，此时goxa为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.4100",
+        "Step 2": "PN的下界: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.3838-0.4100)/0.1022}\n=max{0, -0.2568}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 161,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, goxa为低(B=0)的概率为0.5900。qbee为低(A=0)且goxa为低(B=0)的概率为0.4051。qbee为高(A=1)且goxa为高(B=1)的概率为0.1022。",
+        "data_info_math": "P(B=0|A=0)=0.5900; P(A=0,B=0)=0.4051; P(A=1,B=1)=0.1022; "
+      },
+      "Instruction": "考虑qbee作用于goxa的必要性概率(probability of necessity, PN)。",
+      "Question": "给定qbee为高且goxa为高, 那么假如qbee为低，此时goxa为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.5900",
+        "Step 2": "PN的上界: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.5900-0.4051)/0.1022}\n=min{1, 1.8083}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 162,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.6988。zesa为高(C=1)的概率为0.7637。qbee为高(A=1)且zesa为高(C=1)的概率为0.2839。",
+        "data_info_math": "P(C=1|A=0)=0.6988; P(C=1)=0.7637; P(A=1,C=1)=0.2839; "
+      },
+      "Instruction": "考虑qbee作用于zesa的必要性概率(probability of necessity, PN)。",
+      "Question": "给定qbee为高且zesa为高, 那么假如qbee为低，此时zesa为低的概率的下界是多少？",
+      "Answer": "0.2285",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.6988",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.7637-0.6988)/0.2839}\n=max{0, 0.2285}\n=0.2285"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.2284801989331843
+    },
+    {
+      "id": 163,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3012。qbee为低(A=0)且zesa为低(C=0)的概率为0.2068。qbee为高(A=1)且zesa为高(C=1)的概率为0.2839。",
+        "data_info_math": "P(C=0|A=0)=0.3012; P(A=0,C=0)=0.2068; P(A=1,C=1)=0.2839; "
+      },
+      "Instruction": "考虑qbee作用于zesa的必要性概率(probability of necessity, PN)。",
+      "Question": "给定qbee为高且zesa为高, 那么假如qbee为低，此时zesa为低的概率的上界是多少？",
+      "Answer": "0.3325",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.3012",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.3012-0.2068)/0.2839}\n=min{1, 0.3325}\n=0.3325"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.33247512600991197
+    },
+    {
+      "id": 164,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.3361。nusy为高(D=1)的概率为0.3700。qbee为高(A=1)且nusy为高(D=1)的概率为0.1393。",
+        "data_info_math": "P(D=1|A=0)=0.3361; P(D=1)=0.3700; P(A=1,D=1)=0.1393; "
+      },
+      "Instruction": "考虑qbee作用于nusy的必要性概率(probability of necessity, PN)。",
+      "Question": "给定qbee为高且nusy为高, 那么假如qbee为低，此时nusy为低的概率的下界是多少？",
+      "Answer": "0.2439",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.3361",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.3700-0.3361)/0.1393}\n=max{0, 0.2439}\n=0.2439"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.24388307943258308
+    },
+    {
+      "id": 165,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.6639。qbee为低(A=0)且nusy为低(D=0)的概率为0.4559。qbee为高(A=1)且nusy为高(D=1)的概率为0.1393。",
+        "data_info_math": "P(D=0|A=0)=0.6639; P(A=0,D=0)=0.4559; P(A=1,D=1)=0.1393; "
+      },
+      "Instruction": "考虑qbee作用于nusy的必要性概率(probability of necessity, PN)。",
+      "Question": "给定qbee为高且nusy为高, 那么假如qbee为低，此时nusy为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.6639",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.6639-0.4559)/0.1393}\n=min{1, 1.4939}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 166,
+      "question_id": 160,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.6345。qbee为低(A=0)的概率为0.6866。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.8854。qbee为高(A=1)的概率为0.3134。zesa为高(C=1)的概率为0.7637。goxa为高(B=1)且zesa为高(C=1)的概率为0.3197。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.6345; P(A=0)=0.6866; P(C=1|B=0,A=1)=0.8854; P(A=1)=0.3134; P(C=1)=0.7637; P(B=1,C=1)=0.3197; "
+      },
+      "Instruction": "考虑goxa作用于zesa的必要性概率(probability of necessity, PN)。",
+      "Question": "给定goxa为高且zesa为高, 那么假如goxa为低，此时zesa为低的概率的下界是多少？",
+      "Answer": "0.1581",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=sum_{A} P(C=1|B=0,A)*P(A)=P(C=1|B=0,A=0)*P(A=0)+P(C=1|B=0,A=1)*P(A=1)\nP(C=1|B=0,A=0)=0.6345\tP(A=0)=0.6866\tP(C=1|B=0,A=1)=0.8854\tP(A=1)=0.3134\nP(C=1|do(B=0))=0.6345*0.6866+0.8854*0.3134=0.7132",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.7637-0.7132)/0.3197}\n=max{0, 0.1581}\n=0.1581"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.15810573120950264
+    },
+    {
+      "id": 167,
+      "question_id": 161,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.3655。qbee为低(A=0)的概率为0.6866。在goxa为低(B=0)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.1146。qbee为高(A=1)的概率为0.3134。goxa为低(B=0)且zesa为低(C=0)的概率为0.1722。goxa为高(B=1)且zesa为高(C=1)的概率为0.3197。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.3655; P(A=0)=0.6866; P(C=0|B=0,A=1)=0.1146; P(A=1)=0.3134; P(B=0,C=0)=0.1722; P(B=1,C=1)=0.3197; "
+      },
+      "Instruction": "考虑goxa作用于zesa的必要性概率(probability of necessity, PN)。",
+      "Question": "给定goxa为高且zesa为高, 那么假如goxa为低，此时zesa为低的概率的上界是多少？",
+      "Answer": "0.3585",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=sum_{A} P(C=0|B=0,A)*P(A)=P(C=0|B=0,A=0)*P(A=0)+P(C=0|B=0,A=1)*P(A=1)\nP(C=0|B=0,A=0)=0.3655\tP(A=0)=0.6866\tP(C=0|B=0,A=1)=0.1146\tP(A=1)=0.3134\nP(C=0|do(B=0))=0.3655*0.6866+0.1146*0.3134=0.2868",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.2868-0.1722)/0.3197}\n=min{1, 0.3585}\n=0.3585"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.3584685486747846
+    },
+    {
+      "id": 168,
+      "question_id": 162,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.3683。qbee为低(A=0)的概率为0.6866。在goxa为低(B=0)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4554。qbee为高(A=1)的概率为0.3134。nusy为高(D=1)的概率为0.3700。goxa为高(B=1)且nusy为高(D=1)的概率为0.1247。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3683; P(A=0)=0.6866; P(D=1|B=0,A=1)=0.4554; P(A=1)=0.3134; P(D=1)=0.3700; P(B=1,D=1)=0.1247; "
+      },
+      "Instruction": "考虑goxa作用于nusy的必要性概率(probability of necessity, PN)。",
+      "Question": "给定goxa为高且nusy为高, 那么假如goxa为低，此时nusy为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=sum_{A} P(D=1|B=0,A)*P(A)=P(D=1|B=0,A=0)*P(A=0)+P(D=1|B=0,A=1)*P(A=1)\nP(D=1|B=0,A=0)=0.3683\tP(A=0)=0.6866\tP(D=1|B=0,A=1)=0.4554\tP(A=1)=0.3134\nP(D=1|do(B=0))=0.3683*0.6866+0.4554*0.3134=0.3956",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.3700-0.3956)/0.1247}\n=max{0, -0.2054}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 169,
+      "question_id": 163,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为低(B=0)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.6317。qbee为低(A=0)的概率为0.6866。在goxa为低(B=0)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5446。qbee为高(A=1)的概率为0.3134。goxa为低(B=0)且nusy为低(D=0)的概率为0.3709。goxa为高(B=1)且nusy为高(D=1)的概率为0.1247。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6317; P(A=0)=0.6866; P(D=0|B=0,A=1)=0.5446; P(A=1)=0.3134; P(B=0,D=0)=0.3709; P(B=1,D=1)=0.1247; "
+      },
+      "Instruction": "考虑goxa作用于nusy的必要性概率(probability of necessity, PN)。",
+      "Question": "给定goxa为高且nusy为高, 那么假如goxa为低，此时nusy为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=sum_{A} P(D=0|B=0,A)*P(A)=P(D=0|B=0,A=0)*P(A=0)+P(D=0|B=0,A=1)*P(A=1)\nP(D=0|B=0,A=0)=0.6317\tP(A=0)=0.6866\tP(D=0|B=0,A=1)=0.5446\tP(A=1)=0.3134\nP(D=0|do(B=0))=0.6317*0.6866+0.5446*0.3134=0.6044",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.6044-0.3709)/0.1247}\n=min{1, 1.8732}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 170,
+      "question_id": 164,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为低(C=0)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.6810。qbee为低(A=0)的概率为0.6866。在zesa为低(C=0)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.8462。qbee为高(A=1)的概率为0.3134。nusy为高(D=1)的概率为0.3700。zesa为高(C=1)且nusy为高(D=1)的概率为0.2042。",
+        "data_info_math": "P(D=1|C=0,A=0)=0.6810; P(A=0)=0.6866; P(D=1|C=0,A=1)=0.8462; P(A=1)=0.3134; P(D=1)=0.3700; P(C=1,D=1)=0.2042; "
+      },
+      "Instruction": "考虑zesa作用于nusy的必要性概率(probability of necessity, PN)。",
+      "Question": "给定zesa为高且nusy为高, 那么假如zesa为低，此时nusy为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=0))\nP(D=1|do(C=0))=sum_{A} P(D=1|C=0,A)*P(A)=P(D=1|C=0,A=0)*P(A=0)+P(D=1|C=0,A=1)*P(A=1)\nP(D=1|C=0,A=0)=0.6810\tP(A=0)=0.6866\tP(D=1|C=0,A=1)=0.8462\tP(A=1)=0.3134\nP(D=1|do(C=0))=0.6810*0.6866+0.8462*0.3134=0.7328",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(C=0))]/P(C=1,D=1)}\n=max{0, (0.3700-0.7328)/0.2042}\n=max{0, -1.7763}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 171,
+      "question_id": 165,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为低(C=0)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.3190。qbee为低(A=0)的概率为0.6866。在zesa为低(C=0)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.1538。qbee为高(A=1)的概率为0.3134。zesa为低(C=0)且nusy为低(D=0)的概率为0.0705。zesa为高(C=1)且nusy为高(D=1)的概率为0.2042。",
+        "data_info_math": "P(D=0|C=0,A=0)=0.3190; P(A=0)=0.6866; P(D=0|C=0,A=1)=0.1538; P(A=1)=0.3134; P(C=0,D=0)=0.0705; P(C=1,D=1)=0.2042; "
+      },
+      "Instruction": "考虑zesa作用于nusy的必要性概率(probability of necessity, PN)。",
+      "Question": "给定zesa为高且nusy为高, 那么假如zesa为低，此时nusy为低的概率的上界是多少？",
+      "Answer": "0.9633",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=0))\nP(D=0|do(C=0))=sum_{A} P(D=0|C=0,A)*P(A)=P(D=0|C=0,A=0)*P(A=0)+P(D=0|C=0,A=1)*P(A=1)\nP(D=0|C=0,A=0)=0.3190\tP(A=0)=0.6866\tP(D=0|C=0,A=1)=0.1538\tP(A=1)=0.3134\nP(D=0|do(C=0))=0.3190*0.6866+0.1538*0.3134=0.2672",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(C=0)-P(C=0,D=0)]/P(C=1,D=1)}\n=min{1, (0.2672-0.0705)/0.2042}\n=min{1, 0.9633}\n=0.9633"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.9632670243078834
+    },
+    {
+      "id": 172,
+      "question_id": 166,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, goxa为低(B=0)的概率为0.6738。goxa为低(B=0)的概率为0.6162。qbee为低(A=0)且goxa为低(B=0)的概率为0.4051。",
+        "data_info_math": "P(B=0|A=1)=0.6738; P(B=0)=0.6162; P(A=0,B=0)=0.4051; "
+      },
+      "Instruction": "考虑qbee作用于goxa的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定qbee为低且goxa为低, 假如qbee为高，此时goxa为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.6738",
+        "Step 2": "PS的下界: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.6162-0.6738)/0.4051}\n=max{0, -0.1420}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 173,
+      "question_id": 167,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, goxa为高(B=1)的概率为0.3262。qbee为低(A=0)且goxa为低(B=0)的概率为0.4051。qbee为高(A=1)且goxa为高(B=1)的概率为0.1022。",
+        "data_info_math": "P(B=1|A=1)=0.3262; P(A=0,B=0)=0.4051; P(A=1,B=1)=0.1022; "
+      },
+      "Instruction": "考虑qbee作用于goxa的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定qbee为低且goxa为低, 假如qbee为高，此时goxa为高的概率的上界是多少？",
+      "Answer": "0.5530",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.3262",
+        "Step 2": "PS的上界: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.3262-0.1022)/0.4051}\n=min{1, 0.5530}\n=0.5530"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.5530001037371051
+    },
+    {
+      "id": 174,
+      "question_id": 168,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0942。zesa为低(C=0)的概率为0.2363。qbee为低(A=0)且zesa为低(C=0)的概率为0.2068。",
+        "data_info_math": "P(C=0|A=1)=0.0942; P(C=0)=0.2363; P(A=0,C=0)=0.2068; "
+      },
+      "Instruction": "考虑qbee作用于zesa的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定qbee为低且zesa为低, 假如qbee为高，此时zesa为高的概率的下界是多少？",
+      "Answer": "0.6872",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.0942",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.2363-0.0942)/0.2068}\n=max{0, 0.6872}\n=0.6872"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.6872099025127446
+    },
+    {
+      "id": 175,
+      "question_id": 169,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.9058。qbee为低(A=0)且zesa为低(C=0)的概率为0.2068。qbee为高(A=1)且zesa为高(C=1)的概率为0.2839。",
+        "data_info_math": "P(C=1|A=1)=0.9058; P(A=0,C=0)=0.2068; P(A=1,C=1)=0.2839; "
+      },
+      "Instruction": "考虑qbee作用于zesa的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定qbee为低且zesa为低, 假如qbee为高，此时zesa为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.9058",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.9058-0.2839)/0.2068}\n=min{1, 3.0077}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 176,
+      "question_id": 170,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5556。nusy为低(D=0)的概率为0.6300。qbee为低(A=0)且nusy为低(D=0)的概率为0.4559。",
+        "data_info_math": "P(D=0|A=1)=0.5556; P(D=0)=0.6300; P(A=0,D=0)=0.4559; "
+      },
+      "Instruction": "考虑qbee作用于nusy的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定qbee为低且nusy为低, 假如qbee为高，此时nusy为高的概率的下界是多少？",
+      "Answer": "0.1633",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.5556",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.6300-0.5556)/0.4559}\n=max{0, 0.1633}\n=0.1633"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.1632544626753628
+    },
+    {
+      "id": 177,
+      "question_id": 171,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4444。qbee为低(A=0)且nusy为低(D=0)的概率为0.4559。qbee为高(A=1)且nusy为高(D=1)的概率为0.1393。",
+        "data_info_math": "P(D=1|A=1)=0.4444; P(A=0,D=0)=0.4559; P(A=1,D=1)=0.1393; "
+      },
+      "Instruction": "考虑qbee作用于nusy的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定qbee为低且nusy为低, 假如qbee为高，此时nusy为高的概率的上界是多少？",
+      "Answer": "0.6694",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.4444",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.4444-0.1393)/0.4559}\n=min{1, 0.6694}\n=0.6694"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.6693964298597097
+    },
+    {
+      "id": 178,
+      "question_id": 172,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为低(C=0)的概率为0.2086。qbee为低(A=0)的概率为0.6866。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为低(C=0)的概率为0.0520。qbee为高(A=1)的概率为0.3134。zesa为低(C=0)的概率为0.2363。goxa为低(B=0)且zesa为低(C=0)的概率为0.1722。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.2086; P(A=0)=0.6866; P(C=0|B=1,A=1)=0.0520; P(A=1)=0.3134; P(C=0)=0.2363; P(B=0,C=0)=0.1722; "
+      },
+      "Instruction": "考虑goxa作用于zesa的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定goxa为低且zesa为低, 假如goxa为高，此时zesa为高的概率的下界是多少？",
+      "Answer": "0.4455",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=sum_{A} P(C=0|B=1,A)*P(A)=P(C=0|B=1,A=0)*P(A=0)+P(C=0|B=1,A=1)*P(A=1)\nP(C=0|B=1,A=0)=0.2086\tP(A=0)=0.6866\tP(C=0|B=1,A=1)=0.0520\tP(A=1)=0.3134\nP(C=0|do(B=1))=0.2086*0.6866+0.0520*0.3134=0.1596",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.2363-0.1596)/0.1722}\n=max{0, 0.4455}\n=0.4455"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.4455311597883809
+    },
+    {
+      "id": 179,
+      "question_id": 173,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为高(B=1)且qbee为低(A=0)的条件下, zesa为高(C=1)的概率为0.7914。qbee为低(A=0)的概率为0.6866。在goxa为高(B=1)且qbee为高(A=1)的条件下, zesa为高(C=1)的概率为0.9480。qbee为高(A=1)的概率为0.3134。goxa为低(B=0)且zesa为低(C=0)的概率为0.1722。goxa为高(B=1)且zesa为高(C=1)的概率为0.3197。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.7914; P(A=0)=0.6866; P(C=1|B=1,A=1)=0.9480; P(A=1)=0.3134; P(B=0,C=0)=0.1722; P(B=1,C=1)=0.3197; "
+      },
+      "Instruction": "考虑goxa作用于zesa的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定goxa为低且zesa为低, 假如goxa为高，此时zesa为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=sum_{A} P(C=1|B=1,A)*P(A)=P(C=1|B=1,A=0)*P(A=0)+P(C=1|B=1,A=1)*P(A=1)\nP(C=1|B=1,A=0)=0.7914\tP(A=0)=0.6866\tP(C=1|B=1,A=1)=0.9480\tP(A=1)=0.3134\nP(C=1|do(B=1))=0.7914*0.6866+0.9480*0.3134=0.8404",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.8404-0.3197)/0.1722}\n=min{1, 3.0232}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 180,
+      "question_id": 174,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为高(B=1)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.7104。qbee为低(A=0)的概率为0.6866。在goxa为高(B=1)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5782。qbee为高(A=1)的概率为0.3134。nusy为低(D=0)的概率为0.6300。goxa为低(B=0)且nusy为低(D=0)的概率为0.3709。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.7104; P(A=0)=0.6866; P(D=0|B=1,A=1)=0.5782; P(A=1)=0.3134; P(D=0)=0.6300; P(B=0,D=0)=0.3709; "
+      },
+      "Instruction": "考虑goxa作用于nusy的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定goxa为低且nusy为低, 假如goxa为高，此时nusy为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=sum_{A} P(D=0|B=1,A)*P(A)=P(D=0|B=1,A=0)*P(A=0)+P(D=0|B=1,A=1)*P(A=1)\nP(D=0|B=1,A=0)=0.7104\tP(A=0)=0.6866\tP(D=0|B=1,A=1)=0.5782\tP(A=1)=0.3134\nP(D=0|do(B=1))=0.7104*0.6866+0.5782*0.3134=0.6690",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.6300-0.6690)/0.3709}\n=max{0, -0.1051}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 181,
+      "question_id": 175,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在goxa为高(B=1)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.2896。qbee为低(A=0)的概率为0.6866。在goxa为高(B=1)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4218。qbee为高(A=1)的概率为0.3134。goxa为低(B=0)且nusy为低(D=0)的概率为0.3709。goxa为高(B=1)且nusy为高(D=1)的概率为0.1247。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.2896; P(A=0)=0.6866; P(D=1|B=1,A=1)=0.4218; P(A=1)=0.3134; P(B=0,D=0)=0.3709; P(B=1,D=1)=0.1247; "
+      },
+      "Instruction": "考虑goxa作用于nusy的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定goxa为低且nusy为低, 假如goxa为高，此时nusy为高的概率的上界是多少？",
+      "Answer": "0.5565",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=sum_{A} P(D=1|B=1,A)*P(A)=P(D=1|B=1,A=0)*P(A=0)+P(D=1|B=1,A=1)*P(A=1)\nP(D=1|B=1,A=0)=0.2896\tP(A=0)=0.6866\tP(D=1|B=1,A=1)=0.4218\tP(A=1)=0.3134\nP(D=1|do(B=1))=0.2896*0.6866+0.4218*0.3134=0.3310",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.3310-0.1247)/0.3709}\n=min{1, 0.5565}\n=0.5565"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.556459842165604
+    },
+    {
+      "id": 182,
+      "question_id": 176,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为高(C=1)且qbee为低(A=0)的条件下, nusy为低(D=0)的概率为0.8126。qbee为低(A=0)的概率为0.6866。在zesa为高(C=1)且qbee为高(A=1)的条件下, nusy为低(D=0)的概率为0.5973。qbee为高(A=1)的概率为0.3134。nusy为低(D=0)的概率为0.6300。zesa为低(C=0)且nusy为低(D=0)的概率为0.0705。",
+        "data_info_math": "P(D=0|C=1,A=0)=0.8126; P(A=0)=0.6866; P(D=0|C=1,A=1)=0.5973; P(A=1)=0.3134; P(D=0)=0.6300; P(C=0,D=0)=0.0705; "
+      },
+      "Instruction": "考虑zesa作用于nusy的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定zesa为低且nusy为低, 假如zesa为高，此时nusy为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=1))\nP(D=0|do(C=1))=sum_{A} P(D=0|C=1,A)*P(A)=P(D=0|C=1,A=0)*P(A=0)+P(D=0|C=1,A=1)*P(A=1)\nP(D=0|C=1,A=0)=0.8126\tP(A=0)=0.6866\tP(D=0|C=1,A=1)=0.5973\tP(A=1)=0.3134\nP(D=0|do(C=1))=0.8126*0.6866+0.5973*0.3134=0.7451",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(C=1))]/P(C=0,D=0)}\n=max{0, (0.6300-0.7451)/0.0705}\n=max{0, -1.6335}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 183,
+      "question_id": 177,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表qbee, B代表goxa, C代表zesa, D代表nusy。",
+        "data_info": "在zesa为高(C=1)且qbee为低(A=0)的条件下, nusy为高(D=1)的概率为0.1874。qbee为低(A=0)的概率为0.6866。在zesa为高(C=1)且qbee为高(A=1)的条件下, nusy为高(D=1)的概率为0.4027。qbee为高(A=1)的概率为0.3134。zesa为低(C=0)且nusy为低(D=0)的概率为0.0705。zesa为高(C=1)且nusy为高(D=1)的概率为0.2042。",
+        "data_info_math": "P(D=1|C=1,A=0)=0.1874; P(A=0)=0.6866; P(D=1|C=1,A=1)=0.4027; P(A=1)=0.3134; P(C=0,D=0)=0.0705; P(C=1,D=1)=0.2042; "
+      },
+      "Instruction": "考虑zesa作用于nusy的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定zesa为低且nusy为低, 假如zesa为高，此时nusy为高的概率的上界是多少？",
+      "Answer": "0.7182",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=1))\nP(D=1|do(C=1))=sum_{A} P(D=1|C=1,A)*P(A)=P(D=1|C=1,A=0)*P(A=0)+P(D=1|C=1,A=1)*P(A=1)\nP(D=1|C=1,A=0)=0.1874\tP(A=0)=0.6866\tP(D=1|C=1,A=1)=0.4027\tP(A=1)=0.3134\nP(D=1|do(C=1))=0.1874*0.6866+0.4027*0.3134=0.2549",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(C=1)-P(C=1,D=1)]/P(C=0,D=0)}\n=min{1, (0.2549-0.2042)/0.0705}\n=min{1, 0.7182}\n=0.7182"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.7182457219756231
+    }
+  ]
+}

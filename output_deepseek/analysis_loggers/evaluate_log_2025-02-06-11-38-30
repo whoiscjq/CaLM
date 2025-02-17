@@ -1,0 +1,5 @@
+[2025-02-06 11:38:30,924 - ./output_deepseek/analysis_loggers/evaluate_log_2025-02-06-11-38-30 - INFO] error analysis saved to ./output_deepseek/counterfactual/natural_direct_effect/NDE-P_NDE-basic_EN/deepseek_qwen_errors.csv
+[2025-02-06 11:38:31,101 - ./output_deepseek/analysis_loggers/evaluate_log_2025-02-06-11-38-30 - INFO] error analysis saved to ./output_deepseek/counterfactual/natural_direct_effect/NDE-P_NDE-basic_EN/gpt_o1_errors.csv
+[2025-02-06 11:38:31,104 - ./output_deepseek/analysis_loggers/evaluate_log_2025-02-06-11-38-30 - INFO] accuracy saved to ./output_deepseek/counterfactual/natural_direct_effect/NDE-P_NDE-basic_EN_models_acc.csv
+[2025-02-06 11:38:31,105 - ./output_deepseek/analysis_loggers/evaluate_log_2025-02-06-11-38-30 - INFO] robustness saved to ./output_deepseek/models_robustness.csv
+[2025-02-06 11:38:31,118 - ./output_deepseek/analysis_loggers/evaluate_log_2025-02-06-11-38-30 - INFO] aggregate metrics save to models_volatility.csv, prompts_volatility.csv, task_metrics.csv in ./output_deepseek

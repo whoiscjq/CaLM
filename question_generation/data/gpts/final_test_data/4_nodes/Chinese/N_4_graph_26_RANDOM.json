@@ -1,0 +1,3341 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->C",
+      "A->D",
+      "B->C"
+    ],
+    "node_name": {
+      "A": "温度",
+      "B": "政府政策",
+      "C": "天赋水平",
+      "D": "工作满意度"
+    },
+    "node_value": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": 0.08277515901418983,
+      "B": -0.8974658893516821,
+      "C": -1.9839939150758121,
+      "D": -1.6095917115924743
+    },
+    "edge_weight": {
+      "A->C": 2.457288629579512,
+      "A->D": 1.865862365212328,
+      "B->C": -1.6601780708992528
+    },
+    "function_description": "P(A=1)=0.5207\nP(B=1)=0.2896\nP(C=1|B,A)=sigmoid(-1.9839939150758121 + -1.6602 * B + 2.4573 * A)\nP(D=1|A)=sigmoid(-1.6095917115924743 + 1.8659 * A)\n",
+    "text_description": "The probability of temperature being high (A=1) is 0.5207. \nThe probability of government policies being high (B=1) is 0.2896. \nFor those with government policies being low (B=0) and temperature being low (A=0), the probability of talent being high (C=1) is 0.1209. \nFor those with government policies being low (B=0) and temperature being high (A=1), the probability of talent being high (C=1) is 0.6162. \nFor those with government policies being high (B=1) and temperature being low (A=0), the probability of talent being high (C=1) is 0.0255. \nFor those with government policies being high (B=1) and temperature being high (A=1), the probability of talent being high (C=1) is 0.2338. \nFor those with temperature being low (A=0), the probability of job satisfaction being high (D=1) is 0.1666. \nFor those with temperature being high (A=1), the probability of job satisfaction being high (D=1) is 0.5637. \n",
+    "Statistic_data": [
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 4967
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 3314
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 12658
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 3984
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 719
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 2479
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 5494
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 6327
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 1133
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 2519
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 3192
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 29
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 1696
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 1005
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 156
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 328
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于政府政策的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么政府政策更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于政府政策的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么政府政策更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于政府政策的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么政府政策更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于政府政策的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么政府政策更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 天赋水平为低(C=0)的概率为0.9079。在温度为高(A=1)的条件下, 天赋水平为低(C=0)的概率为0.4998。",
+        "data_info_math": "P(C=0|A=0)=0.9079; P(C=0|A=1)=0.4998; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么天赋水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.9079\tP(C=0|A=1)=0.4998",
+        "Step 6": "ATE=0.9079-0.4998=0.4080",
+        "Step 7": "ATE=0.4080>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.4080275672127019
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 天赋水平为高(C=1)的概率为0.0921。在温度为高(A=1)的条件下, 天赋水平为高(C=1)的概率为0.5002。",
+        "data_info_math": "P(C=1|A=0)=0.0921; P(C=1|A=1)=0.5002; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么天赋水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.0921\tP(C=1|A=1)=0.5002",
+        "Step 6": "ATE=0.0921-0.5002=-0.4080",
+        "Step 7": "ATE=-0.4080<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.40802756721270195
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 天赋水平为低(C=0)的概率为0.4998。在温度为低(A=0)的条件下, 天赋水平为低(C=0)的概率为0.9079。",
+        "data_info_math": "P(C=0|A=1)=0.4998; P(C=0|A=0)=0.9079; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么天赋水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.4998\tP(C=0|A=0)=0.9079",
+        "Step 6": "ATE=0.4998-0.9079=-0.4080",
+        "Step 7": "ATE=-0.4080<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.4080275672127019
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 天赋水平为高(C=1)的概率为0.5002。在温度为低(A=0)的条件下, 天赋水平为高(C=1)的概率为0.0921。",
+        "data_info_math": "P(C=1|A=1)=0.5002; P(C=1|A=0)=0.0921; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么天赋水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.5002\tP(C=1|A=0)=0.0921",
+        "Step 6": "ATE=0.5002-0.0921=0.4080",
+        "Step 7": "ATE=0.4080>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.40802756721270195
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 工作满意度为低(D=0)的概率为0.8344。在温度为高(A=1)的条件下, 工作满意度为低(D=0)的概率为0.4379。",
+        "data_info_math": "P(D=0|A=0)=0.8344; P(D=0|A=1)=0.4379; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么工作满意度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.8344\tP(D=0|A=1)=0.4379",
+        "Step 6": "ATE=0.8344-0.4379=0.3965",
+        "Step 7": "ATE=0.3965>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.39654732313853847
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 工作满意度为高(D=1)的概率为0.1656。在温度为高(A=1)的条件下, 工作满意度为高(D=1)的概率为0.5621。",
+        "data_info_math": "P(D=1|A=0)=0.1656; P(D=1|A=1)=0.5621; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么工作满意度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.1656\tP(D=1|A=1)=0.5621",
+        "Step 6": "ATE=0.1656-0.5621=-0.3965",
+        "Step 7": "ATE=-0.3965<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.3965473231385386
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 工作满意度为低(D=0)的概率为0.4379。在温度为低(A=0)的条件下, 工作满意度为低(D=0)的概率为0.8344。",
+        "data_info_math": "P(D=0|A=1)=0.4379; P(D=0|A=0)=0.8344; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么工作满意度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.4379\tP(D=0|A=0)=0.8344",
+        "Step 6": "ATE=0.4379-0.8344=-0.3965",
+        "Step 7": "ATE=-0.3965<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.39654732313853847
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 工作满意度为高(D=1)的概率为0.5621。在温度为低(A=0)的条件下, 工作满意度为高(D=1)的概率为0.1656。",
+        "data_info_math": "P(D=1|A=1)=0.5621; P(D=1|A=0)=0.1656; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么工作满意度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.5621\tP(D=1|A=0)=0.1656",
+        "Step 6": "ATE=0.5621-0.1656=0.3965",
+        "Step 7": "ATE=0.3965>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.3965473231385386
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果政府政策被改变为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果政府政策被改变为低，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果政府政策被改变为高，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果政府政策被改变为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为低(B=0)的条件下, 天赋水平为低(C=0)的概率为0.6262。在政府政策为高(B=1)的条件下, 天赋水平为低(C=0)的概率为0.8671。",
+        "data_info_math": "P(C=0|B=0)=0.6262; P(C=0|B=1)=0.8671; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果政府政策被改变为低，那么天赋水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.6262\tP(C=0|B=1)=0.8671",
+        "Step 6": "ATE=0.6262-0.8671=-0.2409",
+        "Step 7": "ATE=-0.2409<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.24092019209298554
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为低(B=0)的条件下, 天赋水平为高(C=1)的概率为0.3738。在政府政策为高(B=1)的条件下, 天赋水平为高(C=1)的概率为0.1329。",
+        "data_info_math": "P(C=1|B=0)=0.3738; P(C=1|B=1)=0.1329; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果政府政策被改变为低，那么天赋水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.3738\tP(C=1|B=1)=0.1329",
+        "Step 6": "ATE=0.3738-0.1329=0.2409",
+        "Step 7": "ATE=0.2409>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.2409201920929855
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为高(B=1)的条件下, 天赋水平为低(C=0)的概率为0.8671。在政府政策为低(B=0)的条件下, 天赋水平为低(C=0)的概率为0.6262。",
+        "data_info_math": "P(C=0|B=1)=0.8671; P(C=0|B=0)=0.6262; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果政府政策被改变为高，那么天赋水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.8671\tP(C=0|B=0)=0.6262",
+        "Step 6": "ATE=0.8671-0.6262=0.2409",
+        "Step 7": "ATE=0.2409>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.24092019209298554
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为高(B=1)的条件下, 天赋水平为高(C=1)的概率为0.1329。在政府政策为低(B=0)的条件下, 天赋水平为高(C=1)的概率为0.3738。",
+        "data_info_math": "P(C=1|B=1)=0.1329; P(C=1|B=0)=0.3738; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果政府政策被改变为高，那么天赋水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.1329\tP(C=1|B=0)=0.3738",
+        "Step 6": "ATE=0.1329-0.3738=-0.2409",
+        "Step 7": "ATE=-0.2409<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.2409201920929855
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于工作满意度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果政府政策被改变为低，那么工作满意度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于工作满意度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果政府政策被改变为低，那么工作满意度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于工作满意度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果政府政策被改变为高，那么工作满意度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于工作满意度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果政府政策被改变为高，那么工作满意度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果天赋水平被改变为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果天赋水平被改变为低，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果天赋水平被改变为高，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果天赋水平被改变为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于政府政策的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果天赋水平被改变为低，那么政府政策更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于政府政策的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果天赋水平被改变为低，那么政府政策更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于政府政策的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果天赋水平被改变为高，那么政府政策更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于政府政策的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果天赋水平被改变为高，那么政府政策更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于工作满意度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果天赋水平被改变为低，那么工作满意度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于工作满意度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果天赋水平被改变为低，那么工作满意度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于工作满意度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果天赋水平被改变为高，那么工作满意度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于工作满意度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果天赋水平被改变为高，那么工作满意度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作满意度被改变为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作满意度被改变为低，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作满意度被改变为高，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作满意度被改变为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于政府政策的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作满意度被改变为低，那么政府政策更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于政府政策的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作满意度被改变为低，那么政府政策更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于政府政策的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作满意度被改变为高，那么政府政策更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于政府政策的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作满意度被改变为高，那么政府政策更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于天赋水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作满意度被改变为低，那么天赋水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于天赋水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作满意度被改变为低，那么天赋水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于天赋水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作满意度被改变为高，那么天赋水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于天赋水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作满意度被改变为高，那么天赋水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 天赋水平为低(C=0)的概率为0.9079。在温度为高(A=1)的条件下, 天赋水平为低(C=0)的概率为0.4998。",
+        "data_info_math": "P(C=0|A=0)=0.9079; P(C=0|A=1)=0.4998; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而温度变化为低，那么天赋水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.9079\tP(C=0|A=1)=0.4998",
+        "Step 6": "NDE=0.9079-0.4998=0.4080",
+        "Step 7": "NDE=0.4080>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.4080275672127019
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 天赋水平为高(C=1)的概率为0.0921。在温度为高(A=1)的条件下, 天赋水平为高(C=1)的概率为0.5002。",
+        "data_info_math": "P(C=1|A=0)=0.0921; P(C=1|A=1)=0.5002; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而温度变化为低，那么天赋水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.0921\tP(C=1|A=1)=0.5002",
+        "Step 6": "NDE=0.0921-0.5002=-0.4080",
+        "Step 7": "NDE=-0.4080<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.40802756721270195
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 天赋水平为低(C=0)的概率为0.4998。在温度为低(A=0)的条件下, 天赋水平为低(C=0)的概率为0.9079。",
+        "data_info_math": "P(C=0|A=1)=0.4998; P(C=0|A=0)=0.9079; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而温度变化为高，那么天赋水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.4998\tP(C=0|A=0)=0.9079",
+        "Step 6": "NDE=0.4998-0.9079=-0.4080",
+        "Step 7": "NDE=-0.4080<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.4080275672127019
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 天赋水平为高(C=1)的概率为0.5002。在温度为低(A=0)的条件下, 天赋水平为高(C=1)的概率为0.0921。",
+        "data_info_math": "P(C=1|A=1)=0.5002; P(C=1|A=0)=0.0921; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而温度变化为高，那么天赋水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.5002\tP(C=1|A=0)=0.0921",
+        "Step 6": "NDE=0.5002-0.0921=0.4080",
+        "Step 7": "NDE=0.4080>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.40802756721270195
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 工作满意度为低(D=0)的概率为0.8344。在温度为高(A=1)的条件下, 工作满意度为低(D=0)的概率为0.4379。",
+        "data_info_math": "P(D=0|A=0)=0.8344; P(D=0|A=1)=0.4379; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而温度变化为低，那么工作满意度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.8344\tP(D=0|A=1)=0.4379",
+        "Step 6": "NDE=0.8344-0.4379=0.3965",
+        "Step 7": "NDE=0.3965>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.39654732313853847
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 工作满意度为高(D=1)的概率为0.1656。在温度为高(A=1)的条件下, 工作满意度为高(D=1)的概率为0.5621。",
+        "data_info_math": "P(D=1|A=0)=0.1656; P(D=1|A=1)=0.5621; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而温度变化为低，那么工作满意度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.1656\tP(D=1|A=1)=0.5621",
+        "Step 6": "NDE=0.1656-0.5621=-0.3965",
+        "Step 7": "NDE=-0.3965<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.3965473231385386
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 工作满意度为低(D=0)的概率为0.4379。在温度为低(A=0)的条件下, 工作满意度为低(D=0)的概率为0.8344。",
+        "data_info_math": "P(D=0|A=1)=0.4379; P(D=0|A=0)=0.8344; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而温度变化为高，那么工作满意度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.4379\tP(D=0|A=0)=0.8344",
+        "Step 6": "NDE=0.4379-0.8344=-0.3965",
+        "Step 7": "NDE=-0.3965<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.39654732313853847
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 工作满意度为高(D=1)的概率为0.5621。在温度为低(A=0)的条件下, 工作满意度为高(D=1)的概率为0.1656。",
+        "data_info_math": "P(D=1|A=1)=0.5621; P(D=1|A=0)=0.1656; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而温度变化为高，那么工作满意度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.5621\tP(D=1|A=0)=0.1656",
+        "Step 6": "NDE=0.5621-0.1656=0.3965",
+        "Step 7": "NDE=0.3965>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.3965473231385386
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为低(B=0)的条件下, 天赋水平为低(C=0)的概率为0.6262。在政府政策为高(B=1)的条件下, 天赋水平为低(C=0)的概率为0.8671。",
+        "data_info_math": "P(C=0|B=0)=0.6262; P(C=0|B=1)=0.8671; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而政府政策变化为低，那么天赋水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.6262\tP(C=0|B=1)=0.8671",
+        "Step 6": "NDE=0.6262-0.8671=-0.2409",
+        "Step 7": "NDE=-0.2409<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.24092019209298554
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为低(B=0)的条件下, 天赋水平为高(C=1)的概率为0.3738。在政府政策为高(B=1)的条件下, 天赋水平为高(C=1)的概率为0.1329。",
+        "data_info_math": "P(C=1|B=0)=0.3738; P(C=1|B=1)=0.1329; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而政府政策变化为低，那么天赋水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.3738\tP(C=1|B=1)=0.1329",
+        "Step 6": "NDE=0.3738-0.1329=0.2409",
+        "Step 7": "NDE=0.2409>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.2409201920929855
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为高(B=1)的条件下, 天赋水平为低(C=0)的概率为0.8671。在政府政策为低(B=0)的条件下, 天赋水平为低(C=0)的概率为0.6262。",
+        "data_info_math": "P(C=0|B=1)=0.8671; P(C=0|B=0)=0.6262; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而政府政策变化为高，那么天赋水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.8671\tP(C=0|B=0)=0.6262",
+        "Step 6": "NDE=0.8671-0.6262=0.2409",
+        "Step 7": "NDE=0.2409>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.24092019209298554
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为高(B=1)的条件下, 天赋水平为高(C=1)的概率为0.1329。在政府政策为低(B=0)的条件下, 天赋水平为高(C=1)的概率为0.3738。",
+        "data_info_math": "P(C=1|B=1)=0.1329; P(C=1|B=0)=0.3738; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而政府政策变化为高，那么天赋水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.1329\tP(C=1|B=0)=0.3738",
+        "Step 6": "NDE=0.1329-0.3738=-0.2409",
+        "Step 7": "NDE=-0.2409<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.2409201920929855
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于天赋水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如温度保持不变，而所有中间变量被改变为当它们在温度变化为低下的取值，那么天赋水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于天赋水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如温度保持不变，而所有中间变量被改变为当它们在温度变化为低下的取值，那么天赋水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于天赋水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如温度保持不变，而所有中间变量被改变为当它们在温度变化为高下的取值，那么天赋水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于天赋水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如温度保持不变，而所有中间变量被改变为当它们在温度变化为高下的取值，那么天赋水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于工作满意度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如温度保持不变，而所有中间变量被改变为当它们在温度变化为低下的取值，那么工作满意度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于工作满意度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如温度保持不变，而所有中间变量被改变为当它们在温度变化为低下的取值，那么工作满意度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于工作满意度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如温度保持不变，而所有中间变量被改变为当它们在温度变化为高下的取值，那么工作满意度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于工作满意度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如温度保持不变，而所有中间变量被改变为当它们在温度变化为高下的取值，那么工作满意度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如政府政策保持不变，而所有中间变量被改变为当它们在政府政策变化为低下的取值，那么天赋水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如政府政策保持不变，而所有中间变量被改变为当它们在政府政策变化为低下的取值，那么天赋水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如政府政策保持不变，而所有中间变量被改变为当它们在政府政策变化为高下的取值，那么天赋水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如政府政策保持不变，而所有中间变量被改变为当它们在政府政策变化为高下的取值，那么天赋水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于政府政策的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么政府政策更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于政府政策的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么政府政策更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于政府政策的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么政府政策更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于政府政策的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么政府政策更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B没有有向路径，所以节点A不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 天赋水平为低(C=0)的概率为0.9079。在温度为高(A=1)的条件下, 天赋水平为低(C=0)的概率为0.4998。",
+        "data_info_math": "P(C=0|A=0)=0.9079; P(C=0|A=1)=0.4998; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么天赋水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.9079\tP(C=0|A=1)=0.4998",
+        "Step 6": "ETT=0.9079-0.4998=0.4080",
+        "Step 7": "ETT=0.4080>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.4080275672127019
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 天赋水平为高(C=1)的概率为0.0921。在温度为高(A=1)的条件下, 天赋水平为高(C=1)的概率为0.5002。",
+        "data_info_math": "P(C=1|A=0)=0.0921; P(C=1|A=1)=0.5002; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么天赋水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.0921\tP(C=1|A=1)=0.5002",
+        "Step 6": "ETT=0.0921-0.5002=-0.4080",
+        "Step 7": "ETT=-0.4080<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.40802756721270195
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 天赋水平为低(C=0)的概率为0.4998。在温度为低(A=0)的条件下, 天赋水平为低(C=0)的概率为0.9079。",
+        "data_info_math": "P(C=0|A=1)=0.4998; P(C=0|A=0)=0.9079; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么天赋水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.4998\tP(C=0|A=0)=0.9079",
+        "Step 6": "ETT=0.4998-0.9079=-0.4080",
+        "Step 7": "ETT=-0.4080<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.4080275672127019
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 天赋水平为高(C=1)的概率为0.5002。在温度为低(A=0)的条件下, 天赋水平为高(C=1)的概率为0.0921。",
+        "data_info_math": "P(C=1|A=1)=0.5002; P(C=1|A=0)=0.0921; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么天赋水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.5002\tP(C=1|A=0)=0.0921",
+        "Step 6": "ETT=0.5002-0.0921=0.4080",
+        "Step 7": "ETT=0.4080>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.40802756721270195
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 工作满意度为低(D=0)的概率为0.8344。在温度为高(A=1)的条件下, 工作满意度为低(D=0)的概率为0.4379。",
+        "data_info_math": "P(D=0|A=0)=0.8344; P(D=0|A=1)=0.4379; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么工作满意度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.8344\tP(D=0|A=1)=0.4379",
+        "Step 6": "ETT=0.8344-0.4379=0.3965",
+        "Step 7": "ETT=0.3965>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.39654732313853847
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 工作满意度为高(D=1)的概率为0.1656。在温度为高(A=1)的条件下, 工作满意度为高(D=1)的概率为0.5621。",
+        "data_info_math": "P(D=1|A=0)=0.1656; P(D=1|A=1)=0.5621; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么工作满意度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.1656\tP(D=1|A=1)=0.5621",
+        "Step 6": "ETT=0.1656-0.5621=-0.3965",
+        "Step 7": "ETT=-0.3965<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.3965473231385386
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 工作满意度为低(D=0)的概率为0.4379。在温度为低(A=0)的条件下, 工作满意度为低(D=0)的概率为0.8344。",
+        "data_info_math": "P(D=0|A=1)=0.4379; P(D=0|A=0)=0.8344; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么工作满意度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.4379\tP(D=0|A=0)=0.8344",
+        "Step 6": "ETT=0.4379-0.8344=-0.3965",
+        "Step 7": "ETT=-0.3965<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.39654732313853847
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 工作满意度为高(D=1)的概率为0.5621。在温度为低(A=0)的条件下, 工作满意度为高(D=1)的概率为0.1656。",
+        "data_info_math": "P(D=1|A=1)=0.5621; P(D=1|A=0)=0.1656; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么工作满意度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.5621\tP(D=1|A=0)=0.1656",
+        "Step 6": "ETT=0.5621-0.1656=0.3965",
+        "Step 7": "ETT=0.3965>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.3965473231385386
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些政府政策为低，假如政府政策为高，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些政府政策为低，假如政府政策为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些政府政策为高，假如政府政策为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些政府政策为高，假如政府政策为低，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为低(B=0)的条件下, 天赋水平为低(C=0)的概率为0.6262。在政府政策为高(B=1)的条件下, 天赋水平为低(C=0)的概率为0.8671。",
+        "data_info_math": "P(C=0|B=0)=0.6262; P(C=0|B=1)=0.8671; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些政府政策为低，假如政府政策为高，那么天赋水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-P(C=0|B=1)",
+        "Step 5": "P(C=0|B=0)=0.6262\tP(C=0|B=1)=0.8671",
+        "Step 6": "ETT=0.6262-0.8671=-0.2409",
+        "Step 7": "ETT=-0.2409<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.24092019209298554
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为低(B=0)的条件下, 天赋水平为高(C=1)的概率为0.3738。在政府政策为高(B=1)的条件下, 天赋水平为高(C=1)的概率为0.1329。",
+        "data_info_math": "P(C=1|B=0)=0.3738; P(C=1|B=1)=0.1329; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些政府政策为低，假如政府政策为高，那么天赋水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-P(C=1|B=1)",
+        "Step 5": "P(C=1|B=0)=0.3738\tP(C=1|B=1)=0.1329",
+        "Step 6": "ETT=0.3738-0.1329=0.2409",
+        "Step 7": "ETT=0.2409>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.2409201920929855
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为高(B=1)的条件下, 天赋水平为低(C=0)的概率为0.8671。在政府政策为低(B=0)的条件下, 天赋水平为低(C=0)的概率为0.6262。",
+        "data_info_math": "P(C=0|B=1)=0.8671; P(C=0|B=0)=0.6262; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些政府政策为高，假如政府政策为低，那么天赋水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-P(C=0|B=0)",
+        "Step 5": "P(C=0|B=1)=0.8671\tP(C=0|B=0)=0.6262",
+        "Step 6": "ETT=0.8671-0.6262=0.2409",
+        "Step 7": "ETT=0.2409>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.24092019209298554
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为高(B=1)的条件下, 天赋水平为高(C=1)的概率为0.1329。在政府政策为低(B=0)的条件下, 天赋水平为高(C=1)的概率为0.3738。",
+        "data_info_math": "P(C=1|B=1)=0.1329; P(C=1|B=0)=0.3738; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些政府政策为高，假如政府政策为低，那么天赋水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-P(C=1|B=0)",
+        "Step 5": "P(C=1|B=1)=0.1329\tP(C=1|B=0)=0.3738",
+        "Step 6": "ETT=0.1329-0.3738=-0.2409",
+        "Step 7": "ETT=-0.2409<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.2409201920929855
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于工作满意度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些政府政策为低，假如政府政策为高，那么工作满意度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于工作满意度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些政府政策为低，假如政府政策为高，那么工作满意度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于工作满意度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些政府政策为高，假如政府政策为低，那么工作满意度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑政府政策作用于工作满意度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些政府政策为高，假如政府政策为低，那么工作满意度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些天赋水平为低，假如天赋水平为高，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些天赋水平为低，假如天赋水平为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些天赋水平为高，假如天赋水平为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些天赋水平为高，假如天赋水平为低，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于政府政策的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些天赋水平为低，假如天赋水平为高，那么政府政策更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于政府政策的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些天赋水平为低，假如天赋水平为高，那么政府政策更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于政府政策的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些天赋水平为高，假如天赋水平为低，那么政府政策更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于政府政策的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些天赋水平为高，假如天赋水平为低，那么政府政策更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于工作满意度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些天赋水平为低，假如天赋水平为高，那么工作满意度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于工作满意度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些天赋水平为低，假如天赋水平为高，那么工作满意度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于工作满意度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些天赋水平为高，假如天赋水平为低，那么工作满意度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑天赋水平作用于工作满意度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些天赋水平为高，假如天赋水平为低，那么工作满意度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作满意度为低，假如工作满意度为高，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作满意度为低，假如工作满意度为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作满意度为高，假如工作满意度为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作满意度为高，假如工作满意度为低，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于政府政策的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作满意度为低，假如工作满意度为高，那么政府政策更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于政府政策的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作满意度为低，假如工作满意度为高，那么政府政策更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于政府政策的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作满意度为高，假如工作满意度为低，那么政府政策更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于政府政策的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作满意度为高，假如工作满意度为低，那么政府政策更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于天赋水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作满意度为低，假如工作满意度为高，那么天赋水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于天赋水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作满意度为低，假如工作满意度为高，那么天赋水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于天赋水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作满意度为高，假如工作满意度为低，那么天赋水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作满意度作用于天赋水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作满意度为高，假如工作满意度为低，那么天赋水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象温度(A)和观察节点天赋水平(C)的后门调整集合。",
+      "Question": "方法1: 根据政府政策的情况，我们逐个研究温度和天赋水平的关联。\n方法2：我们直接研究一般情况下温度和天赋水平的关联。\n为了理解温度如何影响天赋水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 121,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象温度(A)和观察节点天赋水平(C)的后门调整集合。",
+      "Question": "方法1: 根据工作满意度的情况，我们逐个研究温度和天赋水平的关联。\n方法2：我们直接研究一般情况下温度和天赋水平的关联。\n为了理解温度如何影响天赋水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 122,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象温度(A)和观察节点工作满意度(D)的后门调整集合。",
+      "Question": "方法1: 根据天赋水平的情况，我们逐个研究温度和工作满意度的关联。\n方法2：我们直接研究一般情况下温度和工作满意度的关联。\n为了理解温度如何影响工作满意度，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 123,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象温度(A)和观察节点工作满意度(D)的后门调整集合。",
+      "Question": "方法1: 根据天赋水平的情况，我们逐个研究温度和工作满意度的关联。\n方法2：我们直接研究一般情况下温度和工作满意度的关联。\n为了理解温度如何影响工作满意度，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 124,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象政府政策(B)和观察节点天赋水平(C)的后门调整集合。",
+      "Question": "方法1: 根据温度的情况，我们逐个研究政府政策和天赋水平的关联。\n方法2：我们直接研究一般情况下政府政策和天赋水平的关联。\n为了理解政府政策如何影响天赋水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 125,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象政府政策(B)和观察节点天赋水平(C)的后门调整集合。",
+      "Question": "方法1: 根据温度的情况，我们逐个研究政府政策和天赋水平的关联。\n方法2：我们直接研究一般情况下政府政策和天赋水平的关联。\n为了理解政府政策如何影响天赋水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 126,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为低(C=0)且政府政策为高(B=1)的条件下, 温度为高(A=1)的概率为0.4681。在天赋水平为低(C=0)且政府政策为低(B=0)的条件下, 温度为高(A=1)的概率为0.3216。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.4681; P(A=1|C=0,B=0)=0.3216; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为低的条件下，政府政策会影响温度吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=0)-P(A=1|do(B=0),C=0)=P(A=1|C=0)-P(A=1|C=0)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 127,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为低(C=0)且政府政策为高(B=1)的条件下, 温度为高(A=1)的概率为0.4681。在天赋水平为低(C=0)且政府政策为低(B=0)的条件下, 温度为高(A=1)的概率为0.3216。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.4681; P(A=1|C=0,B=0)=0.3216; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为低的条件下，政府政策不会影响温度吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=0)-P(A=1|do(B=0),C=0)=P(A=1|C=0)-P(A=1|C=0)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 128,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为低(C=0)且政府政策为高(B=1)的条件下, 温度为高(A=1)的概率为0.4681。在天赋水平为低(C=0)且政府政策为低(B=0)的条件下, 温度为高(A=1)的概率为0.3216。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.4681; P(A=1|C=0,B=0)=0.3216; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为低的条件下，政府政策是和温度相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=0)-P(A=1|B=0,C=0)=0.4681-0.3216=0.1465!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 129,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为低(C=0)且政府政策为高(B=1)的条件下, 温度为高(A=1)的概率为0.4681。在天赋水平为低(C=0)且政府政策为低(B=0)的条件下, 温度为高(A=1)的概率为0.3216。",
+        "data_info_math": "P(A=1|C=0,B=1)=0.4681; P(A=1|C=0,B=0)=0.3216; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为低的条件下，政府政策是和温度独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=0)-P(A=1|B=0,C=0)=0.4681-0.3216=0.1465!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 130,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为高(C=1)且政府政策为高(B=1)的条件下, 温度为高(A=1)的概率为0.9031。在天赋水平为高(C=1)且政府政策为低(B=0)的条件下, 温度为高(A=1)的概率为0.8480。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.9031; P(A=1|C=1,B=0)=0.8480; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为高的条件下，政府政策会影响温度吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=1)-P(A=1|do(B=0),C=1)=P(A=1|C=1)-P(A=1|C=1)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 131,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为高(C=1)且政府政策为高(B=1)的条件下, 温度为高(A=1)的概率为0.9031。在天赋水平为高(C=1)且政府政策为低(B=0)的条件下, 温度为高(A=1)的概率为0.8480。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.9031; P(A=1|C=1,B=0)=0.8480; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为高的条件下，政府政策不会影响温度吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(B=1),C=1)-P(A=1|do(B=0),C=1)=P(A=1|C=1)-P(A=1|C=1)=0",
+        "Step 2": "在C已知的条件下，B不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 132,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为高(C=1)且政府政策为高(B=1)的条件下, 温度为高(A=1)的概率为0.9031。在天赋水平为高(C=1)且政府政策为低(B=0)的条件下, 温度为高(A=1)的概率为0.8480。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.9031; P(A=1|C=1,B=0)=0.8480; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为高的条件下，政府政策是和温度相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=1)-P(A=1|B=0,C=1)=0.9031-0.8480=0.0551!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 133,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为高(C=1)且政府政策为高(B=1)的条件下, 温度为高(A=1)的概率为0.9031。在天赋水平为高(C=1)且政府政策为低(B=0)的条件下, 温度为高(A=1)的概率为0.8480。",
+        "data_info_math": "P(A=1|C=1,B=1)=0.9031; P(A=1|C=1,B=0)=0.8480; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为高的条件下，政府政策是和温度独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|B=1,C=1)-P(A=1|B=0,C=1)=0.9031-0.8480=0.0551!=0",
+        "Step 2": "在C已知的条件下，B和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 134,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为低(C=0)且温度为高(A=1)的条件下, 政府政策为高(B=1)的概率为0.4484。在天赋水平为低(C=0)且温度为低(A=0)的条件下, 政府政策为高(B=1)的概率为0.3045。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.4484; P(B=1|C=0,A=0)=0.3045; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为低的条件下，温度会影响政府政策吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=0)-P(B=1|do(A=0),C=0)=P(B=1|C=0)-P(B=1|C=0)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 135,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为低(C=0)且温度为高(A=1)的条件下, 政府政策为高(B=1)的概率为0.4484。在天赋水平为低(C=0)且温度为低(A=0)的条件下, 政府政策为高(B=1)的概率为0.3045。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.4484; P(B=1|C=0,A=0)=0.3045; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为低的条件下，温度不会影响政府政策吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=0)-P(B=1|do(A=0),C=0)=P(B=1|C=0)-P(B=1|C=0)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 136,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为低(C=0)且温度为高(A=1)的条件下, 政府政策为高(B=1)的概率为0.4484。在天赋水平为低(C=0)且温度为低(A=0)的条件下, 政府政策为高(B=1)的概率为0.3045。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.4484; P(B=1|C=0,A=0)=0.3045; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为低的条件下，温度是和政府政策相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=0)-P(B=1|A=0,C=0)=0.4484-0.3045=0.1439!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 137,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为低(C=0)且温度为高(A=1)的条件下, 政府政策为高(B=1)的概率为0.4484。在天赋水平为低(C=0)且温度为低(A=0)的条件下, 政府政策为高(B=1)的概率为0.3045。",
+        "data_info_math": "P(B=1|C=0,A=1)=0.4484; P(B=1|C=0,A=0)=0.3045; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为低的条件下，温度是和政府政策独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=0)-P(B=1|A=0,C=0)=0.4484-0.3045=0.1439!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 138,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为高(C=1)且温度为高(A=1)的条件下, 政府政策为高(B=1)的概率为0.1324。在天赋水平为高(C=1)且温度为低(A=0)的条件下, 政府政策为高(B=1)的概率为0.0837。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.1324; P(B=1|C=1,A=0)=0.0837; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为高的条件下，温度会影响政府政策吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=1)-P(B=1|do(A=0),C=1)=P(B=1|C=1)-P(B=1|C=1)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 139,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为高(C=1)且温度为高(A=1)的条件下, 政府政策为高(B=1)的概率为0.1324。在天赋水平为高(C=1)且温度为低(A=0)的条件下, 政府政策为高(B=1)的概率为0.0837。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.1324; P(B=1|C=1,A=0)=0.0837; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为高的条件下，温度不会影响政府政策吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(A=1),C=1)-P(B=1|do(A=0),C=1)=P(B=1|C=1)-P(B=1|C=1)=0",
+        "Step 2": "在C已知的条件下，A不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 140,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为高(C=1)且温度为高(A=1)的条件下, 政府政策为高(B=1)的概率为0.1324。在天赋水平为高(C=1)且温度为低(A=0)的条件下, 政府政策为高(B=1)的概率为0.0837。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.1324; P(B=1|C=1,A=0)=0.0837; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为高的条件下，温度是和政府政策相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=1)-P(B=1|A=0,C=1)=0.1324-0.0837=0.0487!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 141,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在天赋水平为高(C=1)且温度为高(A=1)的条件下, 政府政策为高(B=1)的概率为0.1324。在天赋水平为高(C=1)且温度为低(A=0)的条件下, 政府政策为高(B=1)的概率为0.0837。",
+        "data_info_math": "P(B=1|C=1,A=1)=0.1324; P(B=1|C=1,A=0)=0.0837; "
+      },
+      "Instruction": "",
+      "Question": "给定天赋水平为高的条件下，温度是和政府政策独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|A=1,C=1)-P(B=1|A=0,C=1)=0.1324-0.0837=0.0487!=0",
+        "Step 2": "在C已知的条件下，A和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 142,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 天赋水平为高(C=1)的概率为0.0921。天赋水平为高(C=1)的概率为0.3045。温度为高(A=1)且天赋水平为高(C=1)的概率为0.2604。",
+        "data_info_math": "P(C=1|A=0)=0.0921; P(C=1)=0.3045; P(A=1,C=1)=0.2604; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定温度为高且天赋水平为高, 那么假如温度为低，此时天赋水平为低的概率的下界是多少？",
+      "Answer": "0.8158",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.0921",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.3045-0.0921)/0.2604}\n=max{0, 0.8158}\n=0.8158"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.8157730443881543
+    },
+    {
+      "id": 143,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 天赋水平为低(C=0)的概率为0.9079。温度为低(A=0)且天赋水平为低(C=0)的概率为0.4353。温度为高(A=1)且天赋水平为高(C=1)的概率为0.2604。",
+        "data_info_math": "P(C=0|A=0)=0.9079; P(A=0,C=0)=0.4353; P(A=1,C=1)=0.2604; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定温度为高且天赋水平为高, 那么假如温度为低，此时天赋水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.9079",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.9079-0.4353)/0.2604}\n=min{1, 1.8151}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 144,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 工作满意度为高(D=1)的概率为0.1656。工作满意度为高(D=1)的概率为0.3720。温度为高(A=1)且工作满意度为高(D=1)的概率为0.2926。",
+        "data_info_math": "P(D=1|A=0)=0.1656; P(D=1)=0.3720; P(A=1,D=1)=0.2926; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定温度为高且工作满意度为高, 那么假如温度为低，此时工作满意度为低的概率的下界是多少？",
+      "Answer": "0.7055",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.1656",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.3720-0.1656)/0.2926}\n=max{0, 0.7055}\n=0.7055"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.7054639220319029
+    },
+    {
+      "id": 145,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为低(A=0)的条件下, 工作满意度为低(D=0)的概率为0.8344。温度为低(A=0)且工作满意度为低(D=0)的概率为0.4001。温度为高(A=1)且工作满意度为高(D=1)的概率为0.2926。",
+        "data_info_math": "P(D=0|A=0)=0.8344; P(A=0,D=0)=0.4001; P(A=1,D=1)=0.2926; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定温度为高且工作满意度为高, 那么假如温度为低，此时工作满意度为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.8344",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.8344-0.4001)/0.2926}\n=min{1, 1.4845}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 146,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为低(B=0)的条件下, 天赋水平为高(C=1)的概率为0.3738。天赋水平为高(C=1)的概率为0.3045。政府政策为高(B=1)且天赋水平为高(C=1)的概率为0.0382。",
+        "data_info_math": "P(C=1|B=0)=0.3738; P(C=1)=0.3045; P(B=1,C=1)=0.0382; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定政府政策为高且天赋水平为高, 那么假如政府政策为低，此时天赋水平为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=P(C=1|B=0)=0.3738",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.3045-0.3738)/0.0382}\n=max{0, -1.8134}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 147,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为低(B=0)的条件下, 天赋水平为低(C=0)的概率为0.6262。政府政策为低(B=0)且天赋水平为低(C=0)的概率为0.4463。政府政策为高(B=1)且天赋水平为高(C=1)的概率为0.0382。",
+        "data_info_math": "P(C=0|B=0)=0.6262; P(B=0,C=0)=0.4463; P(B=1,C=1)=0.0382; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定政府政策为高且天赋水平为高, 那么假如政府政策为低，此时天赋水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=P(C=0|B=0)=0.6262",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.6262-0.4463)/0.0382}\n=min{1, 4.7136}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 148,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 天赋水平为低(C=0)的概率为0.4998。天赋水平为低(C=0)的概率为0.6955。温度为低(A=0)且天赋水平为低(C=0)的概率为0.4353。",
+        "data_info_math": "P(C=0|A=1)=0.4998; P(C=0)=0.6955; P(A=0,C=0)=0.4353; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定温度为低且天赋水平为低, 假如温度为高，此时天赋水平为高的概率的下界是多少？",
+      "Answer": "0.4494",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.4998",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.6955-0.4998)/0.4353}\n=max{0, 0.4494}\n=0.4494"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.44944150288504403
+    },
+    {
+      "id": 149,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 天赋水平为高(C=1)的概率为0.5002。温度为低(A=0)且天赋水平为低(C=0)的概率为0.4353。温度为高(A=1)且天赋水平为高(C=1)的概率为0.2604。",
+        "data_info_math": "P(C=1|A=1)=0.5002; P(A=0,C=0)=0.4353; P(A=1,C=1)=0.2604; "
+      },
+      "Instruction": "考虑温度作用于天赋水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定温度为低且天赋水平为低, 假如温度为高，此时天赋水平为高的概率的上界是多少？",
+      "Answer": "0.5509",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.5002",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.5002-0.2604)/0.4353}\n=min{1, 0.5509}\n=0.5509"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.5509393893029821
+    },
+    {
+      "id": 150,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 工作满意度为低(D=0)的概率为0.4379。工作满意度为低(D=0)的概率为0.6280。温度为低(A=0)且工作满意度为低(D=0)的概率为0.4001。",
+        "data_info_math": "P(D=0|A=1)=0.4379; P(D=0)=0.6280; P(A=0,D=0)=0.4001; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定温度为低且工作满意度为低, 假如温度为高，此时工作满意度为高的概率的下界是多少？",
+      "Answer": "0.4752",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.4379",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.6280-0.4379)/0.4001}\n=max{0, 0.4752}\n=0.4752"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.47522640359928936
+    },
+    {
+      "id": 151,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在温度为高(A=1)的条件下, 工作满意度为高(D=1)的概率为0.5621。温度为低(A=0)且工作满意度为低(D=0)的概率为0.4001。温度为高(A=1)且工作满意度为高(D=1)的概率为0.2926。",
+        "data_info_math": "P(D=1|A=1)=0.5621; P(A=0,D=0)=0.4001; P(A=1,D=1)=0.2926; "
+      },
+      "Instruction": "考虑温度作用于工作满意度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定温度为低且工作满意度为低, 假如温度为高，此时工作满意度为高的概率的上界是多少？",
+      "Answer": "0.6736",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.5621",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.5621-0.2926)/0.4001}\n=min{1, 0.6736}\n=0.6736"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.6736367215357022
+    },
+    {
+      "id": 152,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为高(B=1)的条件下, 天赋水平为低(C=0)的概率为0.8671。天赋水平为低(C=0)的概率为0.6955。政府政策为低(B=0)且天赋水平为低(C=0)的概率为0.4463。",
+        "data_info_math": "P(C=0|B=1)=0.8671; P(C=0)=0.6955; P(B=0,C=0)=0.4463; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定政府政策为低且天赋水平为低, 假如政府政策为高，此时天赋水平为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=P(C=0|B=1)=0.8671",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.6955-0.8671)/0.4463}\n=max{0, -0.3847}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 153,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和3条边A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表温度, B代表政府政策, C代表天赋水平, D代表工作满意度。",
+        "data_info": "在政府政策为高(B=1)的条件下, 天赋水平为高(C=1)的概率为0.1329。政府政策为低(B=0)且天赋水平为低(C=0)的概率为0.4463。政府政策为高(B=1)且天赋水平为高(C=1)的概率为0.0382。",
+        "data_info_math": "P(C=1|B=1)=0.1329; P(B=0,C=0)=0.4463; P(B=1,C=1)=0.0382; "
+      },
+      "Instruction": "考虑政府政策作用于天赋水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定政府政策为低且天赋水平为低, 假如政府政策为高，此时天赋水平为高的概率的上界是多少？",
+      "Answer": "0.2122",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=P(C=1|B=1)=0.1329",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.1329-0.0382)/0.4463}\n=min{1, 0.2122}\n=0.2122"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.2121531230912397
+    }
+  ]
+}

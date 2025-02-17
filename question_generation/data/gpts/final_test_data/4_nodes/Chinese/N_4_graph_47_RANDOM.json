@@ -1,0 +1,3807 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->C",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "收入水平",
+      "B": "工作生活平衡水平",
+      "C": "精神健康水平",
+      "D": "温度"
+    },
+    "node_value": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": 0.2338550212134233,
+      "B": -0.08779793339942732,
+      "C": -0.02995216700468925,
+      "D": -0.5144326018044677
+    },
+    "edge_weight": {
+      "A->B": -2.620913534967487,
+      "A->C": 0.8759466922698578,
+      "A->D": -2.033464431904858,
+      "B->C": -1.1474401423701148,
+      "B->D": -0.8768634249608305,
+      "C->D": -0.09407046497722904
+    },
+    "function_description": "P(A=1)=0.5582\nP(B=1|A)=sigmoid(-0.08779793339942732 + -2.6209 * A)\nP(C=1|A,B)=sigmoid(-0.02995216700468925 + 0.8759 * A + -1.1474 * B)\nP(D=1|A,B,C)=sigmoid(-0.5144326018044677 + -2.0335 * A + -0.8769 * B + -0.0941 * C)\n",
+    "text_description": "The probability of income level being high (A=1) is 0.5582. \nFor those with income level being low (A=0), the probability of work-life balance being high (B=1) is 0.4781. \nFor those with income level being high (A=1), the probability of work-life balance being high (B=1) is 0.0625. \nFor those with income level being low (A=0) and work-life balance being low (B=0), the probability of mental health being high (C=1) is 0.4925. \nFor those with income level being low (A=0) and work-life balance being high (B=1), the probability of mental health being high (C=1) is 0.2355. \nFor those with income level being high (A=1) and work-life balance being low (B=0), the probability of mental health being high (C=1) is 0.6997. \nFor those with income level being high (A=1) and work-life balance being high (B=1), the probability of mental health being high (C=1) is 0.4252. \nFor those with income level being low (A=0), work-life balance being low (B=0) and mental health being low (C=0), the probability of temperature being high (D=1) is 0.3742. \nFor those with income level being low (A=0), work-life balance being low (B=0) and mental health being high (C=1), the probability of temperature being high (D=1) is 0.3524. \nFor those with income level being low (A=0), work-life balance being high (B=1) and mental health being low (C=0), the probability of temperature being high (D=1) is 0.1992. \nFor those with income level being low (A=0), work-life balance being high (B=1) and mental health being high (C=1), the probability of temperature being high (D=1) is 0.1846. \nFor those with income level being high (A=1), work-life balance being low (B=0) and mental health being low (C=0), the probability of temperature being high (D=1) is 0.0726. \nFor those with income level being high (A=1), work-life balance being low (B=0) and mental health being high (C=1), the probability of temperature being high (D=1) is 0.0665. \nFor those with income level being high (A=1), work-life balance being high (B=1) and mental health being low (C=0), the probability of temperature being high (D=1) is 0.0315. \nFor those with income level being high (A=1), work-life balance being high (B=1) and mental health being high (C=1), the probability of temperature being high (D=1) is 0.0288. \n",
+    "Statistic_data": [
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 3724
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 17005
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 2273
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 1975
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 7333
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 6506
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 2023
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 961
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 1207
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 3620
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 1615
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 434
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 724
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 554
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 30
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 16
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 工作生活平衡水平为低(B=0)的概率为0.5250。在收入水平为高(A=1)的条件下, 工作生活平衡水平为低(B=0)的概率为0.9378。",
+        "data_info_math": "P(B=0|A=0)=0.5250; P(B=0|A=1)=0.9378; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果收入水平被改变为低，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.5250\tP(B=0|A=1)=0.9378",
+        "Step 6": "ATE=0.5250-0.9378=-0.4128",
+        "Step 7": "ATE=-0.4128<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.41276710474429856
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 工作生活平衡水平为高(B=1)的概率为0.4750。在收入水平为高(A=1)的条件下, 工作生活平衡水平为高(B=1)的概率为0.0622。",
+        "data_info_math": "P(B=1|A=0)=0.4750; P(B=1|A=1)=0.0622; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果收入水平被改变为低，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.4750\tP(B=1|A=1)=0.0622",
+        "Step 6": "ATE=0.4750-0.0622=0.4128",
+        "Step 7": "ATE=0.4128>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.41276710474429856
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 工作生活平衡水平为低(B=0)的概率为0.9378。在收入水平为低(A=0)的条件下, 工作生活平衡水平为低(B=0)的概率为0.5250。",
+        "data_info_math": "P(B=0|A=1)=0.9378; P(B=0|A=0)=0.5250; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果收入水平被改变为高，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.9378\tP(B=0|A=0)=0.5250",
+        "Step 6": "ATE=0.9378-0.5250=0.4128",
+        "Step 7": "ATE=0.4128>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.41276710474429856
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 工作生活平衡水平为高(B=1)的概率为0.0622。在收入水平为低(A=0)的条件下, 工作生活平衡水平为高(B=1)的概率为0.4750。",
+        "data_info_math": "P(B=1|A=1)=0.0622; P(B=1|A=0)=0.4750; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果收入水平被改变为高，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.0622\tP(B=1|A=0)=0.4750",
+        "Step 6": "ATE=0.0622-0.4750=-0.4128",
+        "Step 7": "ATE=-0.4128<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.41276710474429856
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.6368。在收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3190。",
+        "data_info_math": "P(C=0|A=0)=0.6368; P(C=0|A=1)=0.3190; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果收入水平被改变为低，那么精神健康水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.6368\tP(C=0|A=1)=0.3190",
+        "Step 6": "ATE=0.6368-0.3190=0.3178",
+        "Step 7": "ATE=0.3178>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.3177982308010602
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.3632。在收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.6810。",
+        "data_info_math": "P(C=1|A=0)=0.3632; P(C=1|A=1)=0.6810; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果收入水平被改变为低，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.3632\tP(C=1|A=1)=0.6810",
+        "Step 6": "ATE=0.3632-0.6810=-0.3178",
+        "Step 7": "ATE=-0.3178<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.3177982308010602
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3190。在收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.6368。",
+        "data_info_math": "P(C=0|A=1)=0.3190; P(C=0|A=0)=0.6368; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果收入水平被改变为高，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.3190\tP(C=0|A=0)=0.6368",
+        "Step 6": "ATE=0.3190-0.6368=-0.3178",
+        "Step 7": "ATE=-0.3178<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.3177982308010602
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.6810。在收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.3632。",
+        "data_info_math": "P(C=1|A=1)=0.6810; P(C=1|A=0)=0.3632; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果收入水平被改变为高，那么精神健康水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.6810\tP(C=1|A=0)=0.3632",
+        "Step 6": "ATE=0.6810-0.3632=0.3178",
+        "Step 7": "ATE=0.3178>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.3177982308010602
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.7138。在收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9351。",
+        "data_info_math": "P(D=0|A=0)=0.7138; P(D=0|A=1)=0.9351; "
+      },
+      "Instruction": "考虑收入水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果收入水平被改变为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.7138\tP(D=0|A=1)=0.9351",
+        "Step 6": "ATE=0.7138-0.9351=-0.2213",
+        "Step 7": "ATE=-0.2213<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.2212676325476981
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.2862。在收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0649。",
+        "data_info_math": "P(D=1|A=0)=0.2862; P(D=1|A=1)=0.0649; "
+      },
+      "Instruction": "考虑收入水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果收入水平被改变为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.2862\tP(D=1|A=1)=0.0649",
+        "Step 6": "ATE=0.2862-0.0649=0.2213",
+        "Step 7": "ATE=0.2213>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.22126763254769805
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9351。在收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.7138。",
+        "data_info_math": "P(D=0|A=1)=0.9351; P(D=0|A=0)=0.7138; "
+      },
+      "Instruction": "考虑收入水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果收入水平被改变为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.9351\tP(D=0|A=0)=0.7138",
+        "Step 6": "ATE=0.9351-0.7138=0.2213",
+        "Step 7": "ATE=0.2213>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.2212676325476981
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0649。在收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.2862。",
+        "data_info_math": "P(D=1|A=1)=0.0649; P(D=1|A=0)=0.2862; "
+      },
+      "Instruction": "考虑收入水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果收入水平被改变为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.0649\tP(D=1|A=0)=0.2862",
+        "Step 6": "ATE=0.0649-0.2862=-0.2213",
+        "Step 7": "ATE=-0.2213<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.22126763254769805
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作生活平衡水平作用于收入水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作生活平衡水平被改变为低，那么收入水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作生活平衡水平作用于收入水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作生活平衡水平被改变为低，那么收入水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作生活平衡水平作用于收入水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作生活平衡水平被改变为高，那么收入水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作生活平衡水平作用于收入水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作生活平衡水平被改变为高，那么收入水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.7712。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3022。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。收入水平为高(A=1)的概率为0.5566。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5152; P(C=0|B=1,A=0)=0.7712; P(A=0)=0.4434; P(C=0|B=0,A=1)=0.3022; P(C=0|B=1,A=1)=0.5725; P(A=1)=0.5566; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作生活平衡水平被改变为低，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=sum_{A} [P(C=0|B=0,A)*P(A)-P(C=0|B=1,A)*P(A)]=[P(C=0|B=0,A=0)*P(A=0)-P(C=0|B=1,A=0)*P(A=0)]+[P(C=0|B=0,A=1)*P(A=1)-P(C=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=0,A=0)=0.5152\tP(C=0|B=1,A=0)=0.7712\tP(A=0)=0.4434\tP(C=0|B=0,A=1)=0.3022\tP(C=0|B=1,A=1)=0.5725\tP(A=1)=0.5566",
+        "Step 6": "ATE=[0.5152*0.4434-0.7712*0.4434]+[0.3022*0.5566-0.5725*0.5566]=-0.2640",
+        "Step 7": "ATE=-0.2640<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.2639710700316191
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.4848。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.2288。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.6978。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.4275。收入水平为高(A=1)的概率为0.5566。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4848; P(C=1|B=1,A=0)=0.2288; P(A=0)=0.4434; P(C=1|B=0,A=1)=0.6978; P(C=1|B=1,A=1)=0.4275; P(A=1)=0.5566; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作生活平衡水平被改变为低，那么精神健康水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=sum_{A} [P(C=1|B=0,A)*P(A)-P(C=1|B=1,A)*P(A)]=[P(C=1|B=0,A=0)*P(A=0)-P(C=1|B=1,A=0)*P(A=0)]+[P(C=1|B=0,A=1)*P(A=1)-P(C=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=0,A=0)=0.4848\tP(C=1|B=1,A=0)=0.2288\tP(A=0)=0.4434\tP(C=1|B=0,A=1)=0.6978\tP(C=1|B=1,A=1)=0.4275\tP(A=1)=0.5566",
+        "Step 6": "ATE=[0.4848*0.4434-0.2288*0.4434]+[0.6978*0.5566-0.4275*0.5566]=0.2640",
+        "Step 7": "ATE=0.2640>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.26397107003161907
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.7712。在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3022。收入水平为高(A=1)的概率为0.5566。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.7712; P(C=0|B=0,A=0)=0.5152; P(A=0)=0.4434; P(C=0|B=1,A=1)=0.5725; P(C=0|B=0,A=1)=0.3022; P(A=1)=0.5566; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作生活平衡水平被改变为高，那么精神健康水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=sum_{A} [P(C=0|B=1,A)*P(A)-P(C=0|B=0,A)*P(A)]=[P(C=0|B=1,A=0)*P(A=0)-P(C=0|B=0,A=0)*P(A=0)]+[P(C=0|B=1,A=1)*P(A=1)-P(C=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=1,A=0)=0.7712\tP(C=0|B=0,A=0)=0.5152\tP(A=0)=0.4434\tP(C=0|B=1,A=1)=0.5725\tP(C=0|B=0,A=1)=0.3022\tP(A=1)=0.5566",
+        "Step 6": "ATE=[0.7712*0.4434-0.5152*0.4434]+[0.5725*0.5566-0.3022*0.5566]=0.2640",
+        "Step 7": "ATE=0.2640>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.2639710700316191
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.2288。在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.4848。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.4275。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.6978。收入水平为高(A=1)的概率为0.5566。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.2288; P(C=1|B=0,A=0)=0.4848; P(A=0)=0.4434; P(C=1|B=1,A=1)=0.4275; P(C=1|B=0,A=1)=0.6978; P(A=1)=0.5566; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作生活平衡水平被改变为高，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=sum_{A} [P(C=1|B=1,A)*P(A)-P(C=1|B=0,A)*P(A)]=[P(C=1|B=1,A=0)*P(A=0)-P(C=1|B=0,A=0)*P(A=0)]+[P(C=1|B=1,A=1)*P(A=1)-P(C=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=1,A=0)=0.2288\tP(C=1|B=0,A=0)=0.4848\tP(A=0)=0.4434\tP(C=1|B=1,A=1)=0.4275\tP(C=1|B=0,A=1)=0.6978\tP(A=1)=0.5566",
+        "Step 6": "ATE=[0.2288*0.4434-0.4848*0.4434]+[0.4275*0.5566-0.6978*0.5566]=-0.2640",
+        "Step 7": "ATE=-0.2640<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.26397107003161907
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.6309。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.8054。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9325。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9734。收入水平为高(A=1)的概率为0.5566。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6309; P(D=0|B=1,A=0)=0.8054; P(A=0)=0.4434; P(D=0|B=0,A=1)=0.9325; P(D=0|B=1,A=1)=0.9734; P(A=1)=0.5566; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作生活平衡水平被改变为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=sum_{A} [P(D=0|B=0,A)*P(A)-P(D=0|B=1,A)*P(A)]=[P(D=0|B=0,A=0)*P(A=0)-P(D=0|B=1,A=0)*P(A=0)]+[P(D=0|B=0,A=1)*P(A=1)-P(D=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=0,A=0)=0.6309\tP(D=0|B=1,A=0)=0.8054\tP(A=0)=0.4434\tP(D=0|B=0,A=1)=0.9325\tP(D=0|B=1,A=1)=0.9734\tP(A=1)=0.5566",
+        "Step 6": "ATE=[0.6309*0.4434-0.8054*0.4434]+[0.9325*0.5566-0.9734*0.5566]=-0.1001",
+        "Step 7": "ATE=-0.1001<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.10013149460194021
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.3691。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.1946。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0675。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0266。收入水平为高(A=1)的概率为0.5566。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3691; P(D=1|B=1,A=0)=0.1946; P(A=0)=0.4434; P(D=1|B=0,A=1)=0.0675; P(D=1|B=1,A=1)=0.0266; P(A=1)=0.5566; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作生活平衡水平被改变为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=sum_{A} [P(D=1|B=0,A)*P(A)-P(D=1|B=1,A)*P(A)]=[P(D=1|B=0,A=0)*P(A=0)-P(D=1|B=1,A=0)*P(A=0)]+[P(D=1|B=0,A=1)*P(A=1)-P(D=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=0,A=0)=0.3691\tP(D=1|B=1,A=0)=0.1946\tP(A=0)=0.4434\tP(D=1|B=0,A=1)=0.0675\tP(D=1|B=1,A=1)=0.0266\tP(A=1)=0.5566",
+        "Step 6": "ATE=[0.3691*0.4434-0.1946*0.4434]+[0.0675*0.5566-0.0266*0.5566]=0.1001",
+        "Step 7": "ATE=0.1001>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.10013149460194026
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.8054。在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.6309。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9734。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9325。收入水平为高(A=1)的概率为0.5566。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.8054; P(D=0|B=0,A=0)=0.6309; P(A=0)=0.4434; P(D=0|B=1,A=1)=0.9734; P(D=0|B=0,A=1)=0.9325; P(A=1)=0.5566; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作生活平衡水平被改变为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=sum_{A} [P(D=0|B=1,A)*P(A)-P(D=0|B=0,A)*P(A)]=[P(D=0|B=1,A=0)*P(A=0)-P(D=0|B=0,A=0)*P(A=0)]+[P(D=0|B=1,A=1)*P(A=1)-P(D=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=1,A=0)=0.8054\tP(D=0|B=0,A=0)=0.6309\tP(A=0)=0.4434\tP(D=0|B=1,A=1)=0.9734\tP(D=0|B=0,A=1)=0.9325\tP(A=1)=0.5566",
+        "Step 6": "ATE=[0.8054*0.4434-0.6309*0.4434]+[0.9734*0.5566-0.9325*0.5566]=0.1001",
+        "Step 7": "ATE=0.1001>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0.10013149460194021
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.1946。在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.3691。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0266。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0675。收入水平为高(A=1)的概率为0.5566。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.1946; P(D=1|B=0,A=0)=0.3691; P(A=0)=0.4434; P(D=1|B=1,A=1)=0.0266; P(D=1|B=0,A=1)=0.0675; P(A=1)=0.5566; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果工作生活平衡水平被改变为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=sum_{A} [P(D=1|B=1,A)*P(A)-P(D=1|B=0,A)*P(A)]=[P(D=1|B=1,A=0)*P(A=0)-P(D=1|B=0,A=0)*P(A=0)]+[P(D=1|B=1,A=1)*P(A=1)-P(D=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=1,A=0)=0.1946\tP(D=1|B=0,A=0)=0.3691\tP(A=0)=0.4434\tP(D=1|B=1,A=1)=0.0266\tP(D=1|B=0,A=1)=0.0675\tP(A=1)=0.5566",
+        "Step 6": "ATE=[0.1946*0.4434-0.3691*0.4434]+[0.0266*0.5566-0.0675*0.5566]=-0.1001",
+        "Step 7": "ATE=-0.1001<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": -0.10013149460194026
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于收入水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为低，那么收入水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于收入水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为低，那么收入水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于收入水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为高，那么收入水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于收入水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为高，那么收入水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于工作生活平衡水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为低，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于工作生活平衡水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为低，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于工作生活平衡水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为高，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于工作生活平衡水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果精神健康水平被改变为高，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于收入水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么收入水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于收入水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么收入水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于收入水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么收入水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于收入水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么收入水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于工作生活平衡水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于工作生活平衡水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于工作生活平衡水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于工作生活平衡水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为低，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于精神健康水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果温度被改变为高，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 工作生活平衡水平为低(B=0)的概率为0.5250。在收入水平为高(A=1)的条件下, 工作生活平衡水平为低(B=0)的概率为0.9378。",
+        "data_info_math": "P(B=0|A=0)=0.5250; P(B=0|A=1)=0.9378; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而收入水平变化为低，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.5250\tP(B=0|A=1)=0.9378",
+        "Step 6": "NDE=0.5250-0.9378=-0.4128",
+        "Step 7": "NDE=-0.4128<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.41276710474429856
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 工作生活平衡水平为高(B=1)的概率为0.4750。在收入水平为高(A=1)的条件下, 工作生活平衡水平为高(B=1)的概率为0.0622。",
+        "data_info_math": "P(B=1|A=0)=0.4750; P(B=1|A=1)=0.0622; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而收入水平变化为低，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.4750\tP(B=1|A=1)=0.0622",
+        "Step 6": "NDE=0.4750-0.0622=0.4128",
+        "Step 7": "NDE=0.4128>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.41276710474429856
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 工作生活平衡水平为低(B=0)的概率为0.9378。在收入水平为低(A=0)的条件下, 工作生活平衡水平为低(B=0)的概率为0.5250。",
+        "data_info_math": "P(B=0|A=1)=0.9378; P(B=0|A=0)=0.5250; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而收入水平变化为高，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.9378\tP(B=0|A=0)=0.5250",
+        "Step 6": "NDE=0.9378-0.5250=0.4128",
+        "Step 7": "NDE=0.4128>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.41276710474429856
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 工作生活平衡水平为高(B=1)的概率为0.0622。在收入水平为低(A=0)的条件下, 工作生活平衡水平为高(B=1)的概率为0.4750。",
+        "data_info_math": "P(B=1|A=1)=0.0622; P(B=1|A=0)=0.4750; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而收入水平变化为高，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.0622\tP(B=1|A=0)=0.4750",
+        "Step 6": "NDE=0.0622-0.4750=-0.4128",
+        "Step 7": "NDE=-0.4128<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.41276710474429856
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3022。在收入水平为高(A=1)的条件下, 工作生活平衡水平为低(B=0)的概率为0.9378。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.7712。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5152; P(C=0|B=0,A=1)=0.3022; P(B=0|A=1)=0.9378; P(C=0|B=1,A=0)=0.7712; P(C=0|B=1,A=1)=0.5725; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而收入水平变化为低，那么精神健康水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=0,B)-P(C=0|A=1,B)]*P(B|A=1)=[P(C=0|A=0,B=0)-P(C=0|A=1,B=0)]*P(B=0|A=1)+[P(C=0|A=0,B=1)-P(C=0|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=0|A=0,B=0)=0.5152\tP(C=0|A=1,B=0)=0.3022\tP(B=0|A=1)=0.9378\tP(C=0|A=0,B=1)=0.7712\tP(C=0|A=1,B=1)=0.5725\tP(B=1|A=1)=0.0622",
+        "Step 6": "=(0.5152-0.3022)*0.9378+(0.7712-0.5725)*0.0622=0.2121",
+        "Step 7": "NDE=0.2121>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.21212205660812083
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.4848。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.6978。在收入水平为高(A=1)的条件下, 工作生活平衡水平为低(B=0)的概率为0.9378。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.2288。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.4275。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4848; P(C=1|B=0,A=1)=0.6978; P(B=0|A=1)=0.9378; P(C=1|B=1,A=0)=0.2288; P(C=1|B=1,A=1)=0.4275; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而收入水平变化为低，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=0,B)-P(C=1|A=1,B)]*P(B|A=1)=[P(C=1|A=0,B=0)-P(C=1|A=1,B=0)]*P(B=0|A=1)+[P(C=1|A=0,B=1)-P(C=1|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=1|A=0,B=0)=0.4848\tP(C=1|A=1,B=0)=0.6978\tP(B=0|A=1)=0.9378\tP(C=1|A=0,B=1)=0.2288\tP(C=1|A=1,B=1)=0.4275\tP(B=1|A=1)=0.0622",
+        "Step 6": "=(0.4848-0.6978)*0.9378+(0.2288-0.4275)*0.0622=-0.2121",
+        "Step 7": "NDE=-0.2121<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.21212205660812072
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3022。在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。在收入水平为低(A=0)的条件下, 工作生活平衡水平为低(B=0)的概率为0.5250。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.7712。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.3022; P(C=0|B=0,A=0)=0.5152; P(B=0|A=0)=0.5250; P(C=0|B=1,A=1)=0.5725; P(C=0|B=1,A=0)=0.7712; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而收入水平变化为高，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=1,B)-P(C=0|A=0,B)]*P(B|A=0)=[P(C=0|A=1,B=0)-P(C=0|A=0,B=0)]*P(B=0|A=0)+[P(C=0|A=1,B=1)-P(C=0|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=0|A=1,B=0)=0.3022\tP(C=0|A=0,B=0)=0.5152\tP(B=0|A=0)=0.5250\tP(C=0|A=1,B=1)=0.5725\tP(C=0|A=0,B=1)=0.7712\tP(B=1|A=0)=0.4750",
+        "Step 6": "=(0.3022-0.5152)*0.5250+(0.5725-0.7712)*0.4750=-0.2062",
+        "Step 7": "NDE=-0.2062<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.2062248231904663
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.6978。在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.4848。在收入水平为低(A=0)的条件下, 工作生活平衡水平为低(B=0)的概率为0.5250。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.4275。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.2288。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.6978; P(C=1|B=0,A=0)=0.4848; P(B=0|A=0)=0.5250; P(C=1|B=1,A=1)=0.4275; P(C=1|B=1,A=0)=0.2288; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而收入水平变化为高，那么精神健康水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=1,B)-P(C=1|A=0,B)]*P(B|A=0)=[P(C=1|A=1,B=0)-P(C=1|A=0,B=0)]*P(B=0|A=0)+[P(C=1|A=1,B=1)-P(C=1|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=1|A=1,B=0)=0.6978\tP(C=1|A=0,B=0)=0.4848\tP(B=0|A=0)=0.5250\tP(C=1|A=1,B=1)=0.4275\tP(C=1|A=0,B=1)=0.2288\tP(B=1|A=0)=0.4750",
+        "Step 6": "=(0.6978-0.4848)*0.5250+(0.4275-0.2288)*0.4750=0.2062",
+        "Step 7": "NDE=0.2062>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.2062248231904663
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.7712。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3022。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5152; P(C=0|B=1,A=0)=0.7712; P(A=0)=0.4434; P(C=0|B=0,A=1)=0.3022; P(C=0|B=1,A=1)=0.5725; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而工作生活平衡水平变化为低，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=0,A)-P(C=0|B=1,A)]*P(A)=[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=0,A=0)=0.5152\tP(C=0|B=1,A=0)=0.7712\tP(A=0)=0.4434\tP(C=0|B=0,A=1)=0.3022\tP(C=0|B=1,A=1)=0.5725\tP(A=1)=0.5566",
+        "Step 6": "NDE=[0.5152-0.7712]*0.4434+[0.3022-0.5725]*0.5566=-0.2640",
+        "Step 7": "NDE=-0.2640<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.2639710700316191
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.4848。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.2288。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.6978。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.4275。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4848; P(C=1|B=1,A=0)=0.2288; P(A=0)=0.4434; P(C=1|B=0,A=1)=0.6978; P(C=1|B=1,A=1)=0.4275; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而工作生活平衡水平变化为低，那么精神健康水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=0,A)-P(C=1|B=1,A)]*P(A)=[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=0,A=0)=0.4848\tP(C=1|B=1,A=0)=0.2288\tP(A=0)=0.4434\tP(C=1|B=0,A=1)=0.6978\tP(C=1|B=1,A=1)=0.4275\tP(A=1)=0.5566",
+        "Step 6": "NDE=[0.4848-0.2288]*0.4434+[0.6978-0.4275]*0.5566=0.2640",
+        "Step 7": "NDE=0.2640>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.263971070031619
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.7712。在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3022。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.7712; P(C=0|B=0,A=0)=0.5152; P(A=0)=0.4434; P(C=0|B=1,A=1)=0.5725; P(C=0|B=0,A=1)=0.3022; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而工作生活平衡水平变化为高，那么精神健康水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=1,A)-P(C=0|B=0,A)]*P(A)=[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=1,A=0)=0.7712\tP(C=0|B=0,A=0)=0.5152\tP(A=0)=0.4434\tP(C=0|B=1,A=1)=0.5725\tP(C=0|B=0,A=1)=0.3022\tP(A=1)=0.5566",
+        "Step 6": "NDE=[0.7712-0.5152]*0.4434+[0.5725-0.3022]*0.5566=0.2640",
+        "Step 7": "NDE=0.2640>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.2639710700316191
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.2288。在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.4848。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.4275。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.6978。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.2288; P(C=1|B=0,A=0)=0.4848; P(A=0)=0.4434; P(C=1|B=1,A=1)=0.4275; P(C=1|B=0,A=1)=0.6978; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而工作生活平衡水平变化为高，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=1,A)-P(C=1|B=0,A)]*P(A)=[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=1,A=0)=0.2288\tP(C=1|B=0,A=0)=0.4848\tP(A=0)=0.4434\tP(C=1|B=1,A=1)=0.4275\tP(C=1|B=0,A=1)=0.6978\tP(A=1)=0.5566",
+        "Step 6": "NDE=[0.2288-0.4848]*0.4434+[0.4275-0.6978]*0.5566=-0.2640",
+        "Step 7": "NDE=-0.2640<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.263971070031619
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "收入水平为低(A=0)的概率为0.4434。在精神健康水平为低(C=0), 工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.6210。在精神健康水平为低(C=0), 工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.8011。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.7712。在精神健康水平为高(C=1), 工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.6415。在精神健康水平为高(C=1), 工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.8198。在精神健康水平为低(C=0), 工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9298。在精神健康水平为低(C=0), 工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9697。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。在精神健康水平为高(C=1), 工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9337。在精神健康水平为高(C=1), 工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9784。",
+        "data_info_math": "P(A=0)=0.4434; P(D=0|C=0,B=0,A=0)=0.6210; P(D=0|C=0,B=1,A=0)=0.8011; P(C=0|B=1,A=0)=0.7712; P(D=0|C=1,B=0,A=0)=0.6415; P(D=0|C=1,B=1,A=0)=0.8198; P(D=0|C=0,B=0,A=1)=0.9298; P(D=0|C=0,B=1,A=1)=0.9697; P(C=0|B=1,A=1)=0.5725; P(D=0|C=1,B=0,A=1)=0.9337; P(D=0|C=1,B=1,A=1)=0.9784; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而工作生活平衡水平变化为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{C}sum_{A} [P(D=0|B=0,C,A)-P(D=0|B=1,C,A)]*P(C|B=1,A)*P(A)=[P(D=0|B=0,C=0,A=0) - P(D=0|B=1,C=0,A=0)]*P(C=0|B=1,A=0)*P(A=0)+[P(D=0|B=0,C=1,A=0) - P(D=0|B=1,C=1,A=0)]*P(C=1|B=1,A=0)*P(A=0)+[P(D=0|B=0,C=0,A=1) - P(D=0|B=1,C=0,A=1)]*P(C=0|B=1,A=1)*P(A=1)+[P(D=0|B=0,C=1,A=1) - P(D=0|B=1,C=1,A=1)]*P(C=1|B=1,A=1)*P(A=1)",
+        "Step 5": "P(D=0|B=0,C=0,A=0)=0.6210\tP(D=0|B=1,C=0,A=0)=0.8011\tP(C=0|B=1,A=0)=0.7712\tP(A=0)=0.4434\tP(D=0|B=0,C=1,A=0)=0.6415\tP(D=0|B=1,C=1,A=0)=0.8198\tP(C=1|B=1,A=0)=0.2288\tP(A=0)=0.4434\tP(D=0|B=0,C=0,A=1)=0.9298\tP(D=0|B=1,C=0,A=1)=0.9697\tP(C=0|B=1,A=1)=0.5725\tP(A=1)=0.5566\tP(D=0|B=0,C=1,A=1)=0.9337\tP(D=0|B=1,C=1,A=1)=0.9784\tP(C=1|B=1,A=1)=0.4275\tP(A=1)=0.5566",
+        "Step 6": "NDE=(0.6210-0.8011)*0.7712*0.4434+(0.6415-0.8198)*0.2288*0.4434+(0.9298-0.9697)*0.5725*0.5566+(0.9337-0.9784)*0.4275*0.5566=-0.1031",
+        "Step 7": "NDE=-0.1031<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.10305840699843852
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "收入水平为低(A=0)的概率为0.4434。在精神健康水平为低(C=0), 工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.3790。在精神健康水平为低(C=0), 工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.1989。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.7712。在精神健康水平为高(C=1), 工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.3585。在精神健康水平为高(C=1), 工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.1802。在精神健康水平为低(C=0), 工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0702。在精神健康水平为低(C=0), 工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0303。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。在精神健康水平为高(C=1), 工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0663。在精神健康水平为高(C=1), 工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0216。",
+        "data_info_math": "P(A=0)=0.4434; P(D=1|C=0,B=0,A=0)=0.3790; P(D=1|C=0,B=1,A=0)=0.1989; P(C=0|B=1,A=0)=0.7712; P(D=1|C=1,B=0,A=0)=0.3585; P(D=1|C=1,B=1,A=0)=0.1802; P(D=1|C=0,B=0,A=1)=0.0702; P(D=1|C=0,B=1,A=1)=0.0303; P(C=0|B=1,A=1)=0.5725; P(D=1|C=1,B=0,A=1)=0.0663; P(D=1|C=1,B=1,A=1)=0.0216; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而工作生活平衡水平变化为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{C}sum_{A} [P(D=1|B=0,C,A)-P(D=1|B=1,C,A)]*P(C|B=1,A)*P(A)=[P(D=1|B=0,C=0,A=0) - P(D=1|B=1,C=0,A=0)]*P(C=0|B=1,A=0)*P(A=0)+[P(D=1|B=0,C=1,A=0) - P(D=1|B=1,C=1,A=0)]*P(C=1|B=1,A=0)*P(A=0)+[P(D=1|B=0,C=0,A=1) - P(D=1|B=1,C=0,A=1)]*P(C=0|B=1,A=1)*P(A=1)+[P(D=1|B=0,C=1,A=1) - P(D=1|B=1,C=1,A=1)]*P(C=1|B=1,A=1)*P(A=1)",
+        "Step 5": "P(D=1|B=0,C=0,A=0)=0.3790\tP(D=1|B=1,C=0,A=0)=0.1989\tP(C=0|B=1,A=0)=0.7712\tP(A=0)=0.4434\tP(D=1|B=0,C=1,A=0)=0.3585\tP(D=1|B=1,C=1,A=0)=0.1802\tP(C=1|B=1,A=0)=0.2288\tP(A=0)=0.4434\tP(D=1|B=0,C=0,A=1)=0.0702\tP(D=1|B=1,C=0,A=1)=0.0303\tP(C=0|B=1,A=1)=0.5725\tP(A=1)=0.5566\tP(D=1|B=0,C=1,A=1)=0.0663\tP(D=1|B=1,C=1,A=1)=0.0216\tP(C=1|B=1,A=1)=0.4275\tP(A=1)=0.5566",
+        "Step 6": "NDE=(0.3790-0.1989)*0.7712*0.4434+(0.3585-0.1802)*0.2288*0.4434+(0.0702-0.0303)*0.5725*0.5566+(0.0663-0.0216)*0.4275*0.5566=0.1031",
+        "Step 7": "NDE=0.1031>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.10305840699843853
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "收入水平为低(A=0)的概率为0.4434。在精神健康水平为低(C=0), 工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.8011。在精神健康水平为低(C=0), 工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.6210。在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。在精神健康水平为高(C=1), 工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.8198。在精神健康水平为高(C=1), 工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.6415。在精神健康水平为低(C=0), 工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9697。在精神健康水平为低(C=0), 工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9298。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3022。在精神健康水平为高(C=1), 工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9784。在精神健康水平为高(C=1), 工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9337。",
+        "data_info_math": "P(A=0)=0.4434; P(D=0|C=0,B=1,A=0)=0.8011; P(D=0|C=0,B=0,A=0)=0.6210; P(C=0|B=0,A=0)=0.5152; P(D=0|C=1,B=1,A=0)=0.8198; P(D=0|C=1,B=0,A=0)=0.6415; P(D=0|C=0,B=1,A=1)=0.9697; P(D=0|C=0,B=0,A=1)=0.9298; P(C=0|B=0,A=1)=0.3022; P(D=0|C=1,B=1,A=1)=0.9784; P(D=0|C=1,B=0,A=1)=0.9337; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而工作生活平衡水平变化为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{C}sum_{A} [P(D=0|B=1,C,A)-P(D=0|B=0,C,A)]*P(C|B=0,A)*P(A)=[P(D=0|B=1,C=0,A=0) - P(D=0|B=0,C=0,A=0)]*P(C=0|B=0,A=0)*P(A=0)+[P(D=0|B=1,C=1,A=0) - P(D=0|B=0,C=1,A=0)]*P(C=1|B=0,A=0)*P(A=0)+[P(D=0|B=1,C=0,A=1) - P(D=0|B=0,C=0,A=1)]*P(C=0|B=0,A=1)*P(A=1)+[P(D=0|B=1,C=1,A=1) - P(D=0|B=0,C=1,A=1)]*P(C=1|B=0,A=1)*P(A=1)",
+        "Step 5": "P(D=0|B=1,C=0,A=0)=0.8011\tP(D=0|B=0,C=0,A=0)=0.6210\tP(C=0|B=0,A=0)=0.5152\tP(A=0)=0.4434\tP(D=0|B=1,C=1,A=0)=0.8198\tP(D=0|B=0,C=1,A=0)=0.6415\tP(C=1|B=0,A=0)=0.4848\tP(A=0)=0.4434\tP(D=0|B=1,C=0,A=1)=0.9697\tP(D=0|B=0,C=0,A=1)=0.9298\tP(C=0|B=0,A=1)=0.3022\tP(A=1)=0.5566\tP(D=0|B=1,C=1,A=1)=0.9784\tP(D=0|B=0,C=1,A=1)=0.9337\tP(C=1|B=0,A=1)=0.6978\tP(A=1)=0.5566",
+        "Step 6": "NDE=(0.8011-0.6210)*0.5152*0.4434+(0.8198-0.6415)*0.4848*0.4434+(0.9697-0.9298)*0.3022*0.5566+(0.9784-0.9337)*0.6978*0.5566=0.1036",
+        "Step 7": "NDE=0.1036>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": 0.10355689923582392
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "收入水平为低(A=0)的概率为0.4434。在精神健康水平为低(C=0), 工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.1989。在精神健康水平为低(C=0), 工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.3790。在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。在精神健康水平为高(C=1), 工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.1802。在精神健康水平为高(C=1), 工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.3585。在精神健康水平为低(C=0), 工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0303。在精神健康水平为低(C=0), 工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0702。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3022。在精神健康水平为高(C=1), 工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0216。在精神健康水平为高(C=1), 工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0663。",
+        "data_info_math": "P(A=0)=0.4434; P(D=1|C=0,B=1,A=0)=0.1989; P(D=1|C=0,B=0,A=0)=0.3790; P(C=0|B=0,A=0)=0.5152; P(D=1|C=1,B=1,A=0)=0.1802; P(D=1|C=1,B=0,A=0)=0.3585; P(D=1|C=0,B=1,A=1)=0.0303; P(D=1|C=0,B=0,A=1)=0.0702; P(C=0|B=0,A=1)=0.3022; P(D=1|C=1,B=1,A=1)=0.0216; P(D=1|C=1,B=0,A=1)=0.0663; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而工作生活平衡水平变化为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{C}sum_{A} [P(D=1|B=1,C,A)-P(D=1|B=0,C,A)]*P(C|B=0,A)*P(A)=[P(D=1|B=1,C=0,A=0) - P(D=1|B=0,C=0,A=0)]*P(C=0|B=0,A=0)*P(A=0)+[P(D=1|B=1,C=1,A=0) - P(D=1|B=0,C=1,A=0)]*P(C=1|B=0,A=0)*P(A=0)+[P(D=1|B=1,C=0,A=1) - P(D=1|B=0,C=0,A=1)]*P(C=0|B=0,A=1)*P(A=1)+[P(D=1|B=1,C=1,A=1) - P(D=1|B=0,C=1,A=1)]*P(C=1|B=0,A=1)*P(A=1)",
+        "Step 5": "P(D=1|B=1,C=0,A=0)=0.1989\tP(D=1|B=0,C=0,A=0)=0.3790\tP(C=0|B=0,A=0)=0.5152\tP(A=0)=0.4434\tP(D=1|B=1,C=1,A=0)=0.1802\tP(D=1|B=0,C=1,A=0)=0.3585\tP(C=1|B=0,A=0)=0.4848\tP(A=0)=0.4434\tP(D=1|B=1,C=0,A=1)=0.0303\tP(D=1|B=0,C=0,A=1)=0.0702\tP(C=0|B=0,A=1)=0.3022\tP(A=1)=0.5566\tP(D=1|B=1,C=1,A=1)=0.0216\tP(D=1|B=0,C=1,A=1)=0.0663\tP(C=1|B=0,A=1)=0.6978\tP(A=1)=0.5566",
+        "Step 6": "NDE=(0.1989-0.3790)*0.5152*0.4434+(0.1802-0.3585)*0.4848*0.4434+(0.0303-0.0702)*0.3022*0.5566+(0.0216-0.0663)*0.6978*0.5566=-0.1036",
+        "Step 7": "NDE=-0.1036<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "RANDOM",
+      "prob": -0.10355689923582394
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如收入水平保持不变，而所有中间变量被改变为当它们在收入水平变化为低下的取值，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如收入水平保持不变，而所有中间变量被改变为当它们在收入水平变化为低下的取值，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如收入水平保持不变，而所有中间变量被改变为当它们在收入水平变化为高下的取值，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如收入水平保持不变，而所有中间变量被改变为当它们在收入水平变化为高下的取值，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3022。在收入水平为低(A=0)的条件下, 工作生活平衡水平为低(B=0)的概率为0.5250。在收入水平为高(A=1)的条件下, 工作生活平衡水平为低(B=0)的概率为0.9378。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.3022; P(B=0|A=0)=0.5250; P(B=0|A=1)=0.9378; P(C=0|B=1,A=1)=0.5725; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如收入水平保持不变，而所有中间变量被改变为当它们在收入水平变化为低下的取值，那么精神健康水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=0|A=1,B=0)=0.3022\tP(B=0|A=0)=0.5250\tP(B=0|A=1)=0.9378\tP(C=0|A=1,B=1)=0.5725\tP(B=1|A=0)=0.4750\tP(B=1|A=1)=0.0622",
+        "Step 6": "NIE=0.3022*(0.5250-0.9378)+0.5725*(0.4750-0.0622)=0.1116",
+        "Step 7": "NIE=0.1116>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.11157340761059388
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.6978。在收入水平为低(A=0)的条件下, 工作生活平衡水平为低(B=0)的概率为0.5250。在收入水平为高(A=1)的条件下, 工作生活平衡水平为低(B=0)的概率为0.9378。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.4275。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.6978; P(B=0|A=0)=0.5250; P(B=0|A=1)=0.9378; P(C=1|B=1,A=1)=0.4275; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如收入水平保持不变，而所有中间变量被改变为当它们在收入水平变化为低下的取值，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=1|A=1,B=0)=0.6978\tP(B=0|A=0)=0.5250\tP(B=0|A=1)=0.9378\tP(C=1|A=1,B=1)=0.4275\tP(B=1|A=0)=0.4750\tP(B=1|A=1)=0.0622",
+        "Step 6": "NIE=0.6978*(0.5250-0.9378)+0.4275*(0.4750-0.0622)=-0.1116",
+        "Step 7": "NIE=-0.1116<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.11157340761059384
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。在收入水平为高(A=1)的条件下, 工作生活平衡水平为低(B=0)的概率为0.9378。在收入水平为低(A=0)的条件下, 工作生活平衡水平为低(B=0)的概率为0.5250。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.7712。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5152; P(B=0|A=1)=0.9378; P(B=0|A=0)=0.5250; P(C=0|B=1,A=0)=0.7712; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如收入水平保持不变，而所有中间变量被改变为当它们在收入水平变化为高下的取值，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=0|A=0,B=0)=0.5152\tP(B=0|A=1)=0.9378\tP(B=0|A=0)=0.5250\tP(C=0|A=0,B=1)=0.7712\tP(B=1|A=1)=0.0622\tP(B=1|A=0)=0.4750",
+        "Step 6": "NIE=0.5152*(0.9378-0.5250)+0.7712*(0.0622-0.4750)=-0.1057",
+        "Step 7": "NIE=-0.1057<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.10567617419293937
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.4848。在收入水平为高(A=1)的条件下, 工作生活平衡水平为低(B=0)的概率为0.9378。在收入水平为低(A=0)的条件下, 工作生活平衡水平为低(B=0)的概率为0.5250。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.2288。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4848; P(B=0|A=1)=0.9378; P(B=0|A=0)=0.5250; P(C=1|B=1,A=0)=0.2288; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如收入水平保持不变，而所有中间变量被改变为当它们在收入水平变化为高下的取值，那么精神健康水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=1|A=0,B=0)=0.4848\tP(B=0|A=1)=0.9378\tP(B=0|A=0)=0.5250\tP(C=1|A=0,B=1)=0.2288\tP(B=1|A=1)=0.0622\tP(B=1|A=0)=0.4750",
+        "Step 6": "NIE=0.4848*(0.9378-0.5250)+0.2288*(0.0622-0.4750)=0.1057",
+        "Step 7": "NIE=0.1057>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.10567617419293943
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如工作生活平衡水平保持不变，而所有中间变量被改变为当它们在工作生活平衡水平变化为低下的取值，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如工作生活平衡水平保持不变，而所有中间变量被改变为当它们在工作生活平衡水平变化为低下的取值，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如工作生活平衡水平保持不变，而所有中间变量被改变为当它们在工作生活平衡水平变化为高下的取值，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如工作生活平衡水平保持不变，而所有中间变量被改变为当它们在工作生活平衡水平变化为高下的取值，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "收入水平为低(A=0)的概率为0.4434。在精神健康水平为低(C=0), 工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.8011。在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.7712。在精神健康水平为高(C=1), 工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.8198。在精神健康水平为低(C=0), 工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9697。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3022。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。在精神健康水平为高(C=1), 工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9784。",
+        "data_info_math": "P(A=0)=0.4434; P(D=0|C=0,B=1,A=0)=0.8011; P(C=0|B=0,A=0)=0.5152; P(C=0|B=1,A=0)=0.7712; P(D=0|C=1,B=1,A=0)=0.8198; P(D=0|C=0,B=1,A=1)=0.9697; P(C=0|B=0,A=1)=0.3022; P(C=0|B=1,A=1)=0.5725; P(D=0|C=1,B=1,A=1)=0.9784; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如工作生活平衡水平保持不变，而所有中间变量被改变为当它们在工作生活平衡水平变化为低下的取值，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=0|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=0|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=0|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,C=0,A=0)=0.8011\tP(C=0|B=0,A=0)=0.5152\tP(C=0|B=1,A=0)=0.7712\tP(A=0)=0.4434\tP(D=0|B=1,C=1,A=0)=0.8198\tP(C=1|B=0,A=0)=0.4848\tP(C=1|B=1,A=0)=0.2288\tP(A=0)=0.4434\tP(D=0|B=1,C=0,A=1)=0.9697\tP(C=0|B=0,A=1)=0.3022\tP(C=0|B=1,A=1)=0.5725\tP(A=1)=0.5566\tP(D=0|B=1,C=1,A=1)=0.9784\tP(C=1|B=0,A=1)=0.6978\tP(C=1|B=1,A=1)=0.4275\tP(A=1)=0.5566",
+        "Step 6": "NIE=0.8011*[0.5152-0.7712]*0.4434+0.8198*[0.4848-0.2288]*0.4434+0.9697*[0.3022-0.5725]*0.5566+0.9784*[0.6978-0.4275]*0.5566=0.0034",
+        "Step 7": "NIE=0.0034>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.0034254046338836053
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "收入水平为低(A=0)的概率为0.4434。在精神健康水平为低(C=0), 工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.1989。在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.7712。在精神健康水平为高(C=1), 工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.1802。在精神健康水平为低(C=0), 工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0303。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3022。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。在精神健康水平为高(C=1), 工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0216。",
+        "data_info_math": "P(A=0)=0.4434; P(D=1|C=0,B=1,A=0)=0.1989; P(C=0|B=0,A=0)=0.5152; P(C=0|B=1,A=0)=0.7712; P(D=1|C=1,B=1,A=0)=0.1802; P(D=1|C=0,B=1,A=1)=0.0303; P(C=0|B=0,A=1)=0.3022; P(C=0|B=1,A=1)=0.5725; P(D=1|C=1,B=1,A=1)=0.0216; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如工作生活平衡水平保持不变，而所有中间变量被改变为当它们在工作生活平衡水平变化为低下的取值，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=1,C,A)*[P(C|B=0,A)-P(C|B=1,A)]*P(A)=P(D=1|B=1,C=0,A=0)*[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=1,A=0)*[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+P(D=1|B=1,C=0,A=1)*[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)+P(D=1|B=1,C=1,A=1)*[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,C=0,A=0)=0.1989\tP(C=0|B=0,A=0)=0.5152\tP(C=0|B=1,A=0)=0.7712\tP(A=0)=0.4434\tP(D=1|B=1,C=1,A=0)=0.1802\tP(C=1|B=0,A=0)=0.4848\tP(C=1|B=1,A=0)=0.2288\tP(A=0)=0.4434\tP(D=1|B=1,C=0,A=1)=0.0303\tP(C=0|B=0,A=1)=0.3022\tP(C=0|B=1,A=1)=0.5725\tP(A=1)=0.5566\tP(D=1|B=1,C=1,A=1)=0.0216\tP(C=1|B=0,A=1)=0.6978\tP(C=1|B=1,A=1)=0.4275\tP(A=1)=0.5566",
+        "Step 6": "NIE=0.1989*[0.5152-0.7712]*0.4434+0.1802*[0.4848-0.2288]*0.4434+0.0303*[0.3022-0.5725]*0.5566+0.0216*[0.6978-0.4275]*0.5566=-0.0034",
+        "Step 7": "NIE=-0.0034<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.003425404633883634
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "收入水平为低(A=0)的概率为0.4434。在精神健康水平为低(C=0), 工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.6210。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.7712。在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。在精神健康水平为高(C=1), 工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.6415。在精神健康水平为低(C=0), 工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9298。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3022。在精神健康水平为高(C=1), 工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9337。",
+        "data_info_math": "P(A=0)=0.4434; P(D=0|C=0,B=0,A=0)=0.6210; P(C=0|B=1,A=0)=0.7712; P(C=0|B=0,A=0)=0.5152; P(D=0|C=1,B=0,A=0)=0.6415; P(D=0|C=0,B=0,A=1)=0.9298; P(C=0|B=1,A=1)=0.5725; P(C=0|B=0,A=1)=0.3022; P(D=0|C=1,B=0,A=1)=0.9337; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如工作生活平衡水平保持不变，而所有中间变量被改变为当它们在工作生活平衡水平变化为高下的取值，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=0|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=0|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=0|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=0|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,C=0,A=0)=0.6210\tP(C=0|B=1,A=0)=0.7712\tP(C=0|B=0,A=0)=0.5152\tP(A=0)=0.4434\tP(D=0|B=0,C=1,A=0)=0.6415\tP(C=1|B=1,A=0)=0.2288\tP(C=1|B=0,A=0)=0.4848\tP(A=0)=0.4434\tP(D=0|B=0,C=0,A=1)=0.9298\tP(C=0|B=1,A=1)=0.5725\tP(C=0|B=0,A=1)=0.3022\tP(A=1)=0.5566\tP(D=0|B=0,C=1,A=1)=0.9337\tP(C=1|B=1,A=1)=0.4275\tP(C=1|B=0,A=1)=0.6978\tP(A=1)=0.5566",
+        "Step 6": "NIE=0.6210*[0.7712-0.5152]*0.4434+0.6415*[0.2288-0.4848]*0.4434+0.9298*[0.5725-0.3022]*0.5566+0.9337*[0.4275-0.6978]*0.5566=-0.0029",
+        "Step 7": "NIE=-0.0029<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": -0.0029269123964981436
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "收入水平为低(A=0)的概率为0.4434。在精神健康水平为低(C=0), 工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.3790。在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.7712。在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。在精神健康水平为高(C=1), 工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.3585。在精神健康水平为低(C=0), 工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0702。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3022。在精神健康水平为高(C=1), 工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0663。",
+        "data_info_math": "P(A=0)=0.4434; P(D=1|C=0,B=0,A=0)=0.3790; P(C=0|B=1,A=0)=0.7712; P(C=0|B=0,A=0)=0.5152; P(D=1|C=1,B=0,A=0)=0.3585; P(D=1|C=0,B=0,A=1)=0.0702; P(C=0|B=1,A=1)=0.5725; P(C=0|B=0,A=1)=0.3022; P(D=1|C=1,B=0,A=1)=0.0663; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如工作生活平衡水平保持不变，而所有中间变量被改变为当它们在工作生活平衡水平变化为高下的取值，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D存在节点数大于等于3的有向路径(例如 B->C->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {C}。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NIE=sum_{C}sum_{A} P(D=1|B=0,C,A)*[P(C|B=1,A)-P(C|B=0,A)]*P(A)=P(D=1|B=0,C=0,A=0)*[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=1,A=0)*[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+P(D=1|B=0,C=0,A=1)*[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)+P(D=1|B=0,C=1,A=1)*[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,C=0,A=0)=0.3790\tP(C=0|B=1,A=0)=0.7712\tP(C=0|B=0,A=0)=0.5152\tP(A=0)=0.4434\tP(D=1|B=0,C=1,A=0)=0.3585\tP(C=1|B=1,A=0)=0.2288\tP(C=1|B=0,A=0)=0.4848\tP(A=0)=0.4434\tP(D=1|B=0,C=0,A=1)=0.0702\tP(C=0|B=1,A=1)=0.5725\tP(C=0|B=0,A=1)=0.3022\tP(A=1)=0.5566\tP(D=1|B=0,C=1,A=1)=0.0663\tP(C=1|B=1,A=1)=0.4275\tP(C=1|B=0,A=1)=0.6978\tP(A=1)=0.5566",
+        "Step 6": "NIE=0.3790*[0.7712-0.5152]*0.4434+0.3585*[0.2288-0.4848]*0.4434+0.0702*[0.5725-0.3022]*0.5566+0.0663*[0.4275-0.6978]*0.5566=0.0029",
+        "Step 7": "NIE=0.0029>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0.002926912396498225
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为低下的取值，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为低下的取值，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为高下的取值，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于温度的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如精神健康水平保持不变，而所有中间变量被改变为当它们在精神健康水平变化为高下的取值，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 工作生活平衡水平为低(B=0)的概率为0.5250。在收入水平为高(A=1)的条件下, 工作生活平衡水平为低(B=0)的概率为0.9378。",
+        "data_info_math": "P(B=0|A=0)=0.5250; P(B=0|A=1)=0.9378; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些收入水平为低，假如收入水平为高，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.5250\tP(B=0|A=1)=0.9378",
+        "Step 6": "ETT=0.5250-0.9378=-0.4128",
+        "Step 7": "ETT=-0.4128<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.41276710474429856
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 工作生活平衡水平为高(B=1)的概率为0.4750。在收入水平为高(A=1)的条件下, 工作生活平衡水平为高(B=1)的概率为0.0622。",
+        "data_info_math": "P(B=1|A=0)=0.4750; P(B=1|A=1)=0.0622; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些收入水平为低，假如收入水平为高，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.4750\tP(B=1|A=1)=0.0622",
+        "Step 6": "ETT=0.4750-0.0622=0.4128",
+        "Step 7": "ETT=0.4128>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.41276710474429856
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 工作生活平衡水平为低(B=0)的概率为0.9378。在收入水平为低(A=0)的条件下, 工作生活平衡水平为低(B=0)的概率为0.5250。",
+        "data_info_math": "P(B=0|A=1)=0.9378; P(B=0|A=0)=0.5250; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些收入水平为高，假如收入水平为低，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.9378\tP(B=0|A=0)=0.5250",
+        "Step 6": "ETT=0.9378-0.5250=0.4128",
+        "Step 7": "ETT=0.4128>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.41276710474429856
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 工作生活平衡水平为高(B=1)的概率为0.0622。在收入水平为低(A=0)的条件下, 工作生活平衡水平为高(B=1)的概率为0.4750。",
+        "data_info_math": "P(B=1|A=1)=0.0622; P(B=1|A=0)=0.4750; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些收入水平为高，假如收入水平为低，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.0622\tP(B=1|A=0)=0.4750",
+        "Step 6": "ETT=0.0622-0.4750=-0.4128",
+        "Step 7": "ETT=-0.4128<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.41276710474429856
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.6368。在收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3190。",
+        "data_info_math": "P(C=0|A=0)=0.6368; P(C=0|A=1)=0.3190; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些收入水平为低，假如收入水平为高，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.6368\tP(C=0|A=1)=0.3190",
+        "Step 6": "ETT=0.6368-0.3190=0.3178",
+        "Step 7": "ETT=0.3178>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.3177982308010602
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.3632。在收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.6810。",
+        "data_info_math": "P(C=1|A=0)=0.3632; P(C=1|A=1)=0.6810; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些收入水平为低，假如收入水平为高，那么精神健康水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.3632\tP(C=1|A=1)=0.6810",
+        "Step 6": "ETT=0.3632-0.6810=-0.3178",
+        "Step 7": "ETT=-0.3178<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.3177982308010602
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3190。在收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.6368。",
+        "data_info_math": "P(C=0|A=1)=0.3190; P(C=0|A=0)=0.6368; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些收入水平为高，假如收入水平为低，那么精神健康水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.3190\tP(C=0|A=0)=0.6368",
+        "Step 6": "ETT=0.3190-0.6368=-0.3178",
+        "Step 7": "ETT=-0.3178<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.3177982308010602
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.6810。在收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.3632。",
+        "data_info_math": "P(C=1|A=1)=0.6810; P(C=1|A=0)=0.3632; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些收入水平为高，假如收入水平为低，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.6810\tP(C=1|A=0)=0.3632",
+        "Step 6": "ETT=0.6810-0.3632=0.3178",
+        "Step 7": "ETT=0.3178>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.3177982308010602
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.7138。在收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9351。",
+        "data_info_math": "P(D=0|A=0)=0.7138; P(D=0|A=1)=0.9351; "
+      },
+      "Instruction": "考虑收入水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些收入水平为低，假如收入水平为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.7138\tP(D=0|A=1)=0.9351",
+        "Step 6": "ETT=0.7138-0.9351=-0.2213",
+        "Step 7": "ETT=-0.2213<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.2212676325476981
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.2862。在收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0649。",
+        "data_info_math": "P(D=1|A=0)=0.2862; P(D=1|A=1)=0.0649; "
+      },
+      "Instruction": "考虑收入水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些收入水平为低，假如收入水平为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.2862\tP(D=1|A=1)=0.0649",
+        "Step 6": "ETT=0.2862-0.0649=0.2213",
+        "Step 7": "ETT=0.2213>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.22126763254769805
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9351。在收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.7138。",
+        "data_info_math": "P(D=0|A=1)=0.9351; P(D=0|A=0)=0.7138; "
+      },
+      "Instruction": "考虑收入水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些收入水平为高，假如收入水平为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.9351\tP(D=0|A=0)=0.7138",
+        "Step 6": "ETT=0.9351-0.7138=0.2213",
+        "Step 7": "ETT=0.2213>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.2212676325476981
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0649。在收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.2862。",
+        "data_info_math": "P(D=1|A=1)=0.0649; P(D=1|A=0)=0.2862; "
+      },
+      "Instruction": "考虑收入水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些收入水平为高，假如收入水平为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->C->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.0649\tP(D=1|A=0)=0.2862",
+        "Step 6": "ETT=0.0649-0.2862=-0.2213",
+        "Step 7": "ETT=-0.2213<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.22126763254769805
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作生活平衡水平作用于收入水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作生活平衡水平为低，假如工作生活平衡水平为高，那么收入水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作生活平衡水平作用于收入水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作生活平衡水平为低，假如工作生活平衡水平为高，那么收入水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作生活平衡水平作用于收入水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作生活平衡水平为高，假如工作生活平衡水平为低，那么收入水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑工作生活平衡水平作用于收入水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作生活平衡水平为高，假如工作生活平衡水平为低，那么收入水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)的条件下, 精神健康水平为低(C=0)的概率为0.3679。在收入水平为低(A=0)且工作生活平衡水平为高(B=1)的条件下, 精神健康水平为低(C=0)的概率为0.7712。在工作生活平衡水平为低(B=0)的条件下, 收入水平为低(A=0)的概率为0.3084。在收入水平为高(A=1)且工作生活平衡水平为高(B=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。在工作生活平衡水平为低(B=0)的条件下, 收入水平为高(A=1)的概率为0.6916。",
+        "data_info_math": "P(C=0|B=0)=0.3679; P(C=0|A=0,B=1)=0.7712; P(A=0|B=0)=0.3084; P(C=0|A=1,B=1)=0.5725; P(A=1|B=0)=0.6916; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作生活平衡水平为低，假如工作生活平衡水平为高，那么精神健康水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-sum_{A} P(C=0|B=1,A)*P(A|B=0)=P(C=0|B=0)-[P(C=0|B=1,A=0)*P(A=0|B=0)+P(C=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=0|B=0)=0.3679\tP(C=0|B=1,A=0)=0.7712\tP(A=0|B=0)=0.3084\tP(C=0|B=1,A=1)=0.5725\tP(A=1|B=0)=0.6916",
+        "Step 6": "ETT=0.3679-[0.7712*0.3084+0.5725*0.6916]=-0.2659",
+        "Step 7": "ETT=-0.2659<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.26589933550410927
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)的条件下, 精神健康水平为高(C=1)的概率为0.6321。在收入水平为低(A=0)且工作生活平衡水平为高(B=1)的条件下, 精神健康水平为高(C=1)的概率为0.2288。在工作生活平衡水平为低(B=0)的条件下, 收入水平为低(A=0)的概率为0.3084。在收入水平为高(A=1)且工作生活平衡水平为高(B=1)的条件下, 精神健康水平为高(C=1)的概率为0.4275。在工作生活平衡水平为低(B=0)的条件下, 收入水平为高(A=1)的概率为0.6916。",
+        "data_info_math": "P(C=1|B=0)=0.6321; P(C=1|A=0,B=1)=0.2288; P(A=0|B=0)=0.3084; P(C=1|A=1,B=1)=0.4275; P(A=1|B=0)=0.6916; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作生活平衡水平为低，假如工作生活平衡水平为高，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-sum_{A} P(C=1|B=1,A)*P(A|B=0)=P(C=1|B=0)-[P(C=1|B=1,A=0)*P(A=0|B=0)+P(C=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=1|B=0)=0.6321\tP(C=1|B=1,A=0)=0.2288\tP(A=0|B=0)=0.3084\tP(C=1|B=1,A=1)=0.4275\tP(A=1|B=0)=0.6916",
+        "Step 6": "ETT=0.6321-[0.2288*0.3084+0.4275*0.6916]=0.2659",
+        "Step 7": "ETT=0.2659>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.2658993355041094
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1)的条件下, 精神健康水平为低(C=0)的概率为0.7432。在收入水平为低(A=0)且工作生活平衡水平为低(B=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。在工作生活平衡水平为高(B=1)的条件下, 收入水平为低(A=0)的概率为0.8588。在收入水平为高(A=1)且工作生活平衡水平为低(B=0)的条件下, 精神健康水平为低(C=0)的概率为0.3022。在工作生活平衡水平为高(B=1)的条件下, 收入水平为高(A=1)的概率为0.1412。",
+        "data_info_math": "P(C=0|B=1)=0.7432; P(C=0|A=0,B=0)=0.5152; P(A=0|B=1)=0.8588; P(C=0|A=1,B=0)=0.3022; P(A=1|B=1)=0.1412; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作生活平衡水平为高，假如工作生活平衡水平为低，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-sum_{A} P(C=0|B=0,A)*P(A|B=1)=P(C=0|B=1)-[P(C=0|B=0,A=0)*P(A=0|B=1)+P(C=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=0|B=1)=0.7432\tP(C=0|B=0,A=0)=0.5152\tP(A=0|B=1)=0.8588\tP(C=0|B=0,A=1)=0.3022\tP(A=1|B=1)=0.1412",
+        "Step 6": "ETT=0.7432-[0.5152*0.8588+0.3022*0.1412]=0.2580",
+        "Step 7": "ETT=0.2580>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.25803592520931196
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1)的条件下, 精神健康水平为高(C=1)的概率为0.2568。在收入水平为低(A=0)且工作生活平衡水平为低(B=0)的条件下, 精神健康水平为高(C=1)的概率为0.4848。在工作生活平衡水平为高(B=1)的条件下, 收入水平为低(A=0)的概率为0.8588。在收入水平为高(A=1)且工作生活平衡水平为低(B=0)的条件下, 精神健康水平为高(C=1)的概率为0.6978。在工作生活平衡水平为高(B=1)的条件下, 收入水平为高(A=1)的概率为0.1412。",
+        "data_info_math": "P(C=1|B=1)=0.2568; P(C=1|A=0,B=0)=0.4848; P(A=0|B=1)=0.8588; P(C=1|A=1,B=0)=0.6978; P(A=1|B=1)=0.1412; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作生活平衡水平为高，假如工作生活平衡水平为低，那么精神健康水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-sum_{A} P(C=1|B=0,A)*P(A|B=1)=P(C=1|B=1)-[P(C=1|B=0,A=0)*P(A=0|B=1)+P(C=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=1|B=1)=0.2568\tP(C=1|B=0,A=0)=0.4848\tP(A=0|B=1)=0.8588\tP(C=1|B=0,A=1)=0.6978\tP(A=1|B=1)=0.1412",
+        "Step 6": "ETT=0.2568-[0.4848*0.8588+0.6978*0.1412]=-0.2580",
+        "Step 7": "ETT=-0.2580<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.258035925209312
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)的条件下, 温度为低(D=0)的概率为0.8395。在收入水平为低(A=0)且工作生活平衡水平为高(B=1)的条件下, 温度为低(D=0)的概率为0.8054。在工作生活平衡水平为低(B=0)的条件下, 收入水平为低(A=0)的概率为0.3084。在收入水平为高(A=1)且工作生活平衡水平为高(B=1)的条件下, 温度为低(D=0)的概率为0.9734。在工作生活平衡水平为低(B=0)的条件下, 收入水平为高(A=1)的概率为0.6916。",
+        "data_info_math": "P(D=0|B=0)=0.8395; P(D=0|A=0,B=1)=0.8054; P(A=0|B=0)=0.3084; P(D=0|A=1,B=1)=0.9734; P(A=1|B=0)=0.6916; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作生活平衡水平为低，假如工作生活平衡水平为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-sum_{A} P(D=0|B=1,A)*P(A|B=0)=P(D=0|B=0)-[P(D=0|B=1,A=0)*P(A=0|B=0)+P(D=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=0|B=0)=0.8395\tP(D=0|B=1,A=0)=0.8054\tP(A=0|B=0)=0.3084\tP(D=0|B=1,A=1)=0.9734\tP(A=1|B=0)=0.6916",
+        "Step 6": "ETT=0.8395-[0.8054*0.3084+0.9734*0.6916]=-0.0821",
+        "Step 7": "ETT=-0.0821<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.08210200587136152
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)的条件下, 温度为高(D=1)的概率为0.1605。在收入水平为低(A=0)且工作生活平衡水平为高(B=1)的条件下, 温度为高(D=1)的概率为0.1946。在工作生活平衡水平为低(B=0)的条件下, 收入水平为低(A=0)的概率为0.3084。在收入水平为高(A=1)且工作生活平衡水平为高(B=1)的条件下, 温度为高(D=1)的概率为0.0266。在工作生活平衡水平为低(B=0)的条件下, 收入水平为高(A=1)的概率为0.6916。",
+        "data_info_math": "P(D=1|B=0)=0.1605; P(D=1|A=0,B=1)=0.1946; P(A=0|B=0)=0.3084; P(D=1|A=1,B=1)=0.0266; P(A=1|B=0)=0.6916; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作生活平衡水平为低，假如工作生活平衡水平为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-sum_{A} P(D=1|B=1,A)*P(A|B=0)=P(D=1|B=0)-[P(D=1|B=1,A=0)*P(A=0|B=0)+P(D=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=1|B=0)=0.1605\tP(D=1|B=1,A=0)=0.1946\tP(A=0|B=0)=0.3084\tP(D=1|B=1,A=1)=0.0266\tP(A=1|B=0)=0.6916",
+        "Step 6": "ETT=0.1605-[0.1946*0.3084+0.0266*0.6916]=0.0821",
+        "Step 7": "ETT=0.0821>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.08210200587136159
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1)的条件下, 温度为低(D=0)的概率为0.8291。在收入水平为低(A=0)且工作生活平衡水平为低(B=0)的条件下, 温度为低(D=0)的概率为0.6309。在工作生活平衡水平为高(B=1)的条件下, 收入水平为低(A=0)的概率为0.8588。在收入水平为高(A=1)且工作生活平衡水平为低(B=0)的条件下, 温度为低(D=0)的概率为0.9325。在工作生活平衡水平为高(B=1)的条件下, 收入水平为高(A=1)的概率为0.1412。",
+        "data_info_math": "P(D=0|B=1)=0.8291; P(D=0|A=0,B=0)=0.6309; P(A=0|B=1)=0.8588; P(D=0|A=1,B=0)=0.9325; P(A=1|B=1)=0.1412; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作生活平衡水平为高，假如工作生活平衡水平为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-sum_{A} P(D=0|B=0,A)*P(A|B=1)=P(D=0|B=1)-[P(D=0|B=0,A=0)*P(A=0|B=1)+P(D=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=0|B=1)=0.8291\tP(D=0|B=0,A=0)=0.6309\tP(A=0|B=1)=0.8588\tP(D=0|B=0,A=1)=0.9325\tP(A=1|B=1)=0.1412",
+        "Step 6": "ETT=0.8291-[0.6309*0.8588+0.9325*0.1412]=0.1556",
+        "Step 7": "ETT=0.1556>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0.15562573448476474
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1)的条件下, 温度为高(D=1)的概率为0.1709。在收入水平为低(A=0)且工作生活平衡水平为低(B=0)的条件下, 温度为高(D=1)的概率为0.3691。在工作生活平衡水平为高(B=1)的条件下, 收入水平为低(A=0)的概率为0.8588。在收入水平为高(A=1)且工作生活平衡水平为低(B=0)的条件下, 温度为高(D=1)的概率为0.0675。在工作生活平衡水平为高(B=1)的条件下, 收入水平为高(A=1)的概率为0.1412。",
+        "data_info_math": "P(D=1|B=1)=0.1709; P(D=1|A=0,B=0)=0.3691; P(A=0|B=1)=0.8588; P(D=1|A=1,B=0)=0.0675; P(A=1|B=1)=0.1412; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些工作生活平衡水平为高，假如工作生活平衡水平为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->C->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-sum_{A} P(D=1|B=0,A)*P(A|B=1)=P(D=1|B=1)-[P(D=1|B=0,A=0)*P(A=0|B=1)+P(D=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=1|B=1)=0.1709\tP(D=1|B=0,A=0)=0.3691\tP(A=0|B=1)=0.8588\tP(D=1|B=0,A=1)=0.0675\tP(A=1|B=1)=0.1412",
+        "Step 6": "ETT=0.1709-[0.3691*0.8588+0.0675*0.1412]=-0.1556",
+        "Step 7": "ETT=-0.1556<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": -0.1556257344847647
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于收入水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为低，假如精神健康水平为高，那么收入水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于收入水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为低，假如精神健康水平为高，那么收入水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于收入水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为高，假如精神健康水平为低，那么收入水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于收入水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为高，假如精神健康水平为低，那么收入水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于工作生活平衡水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为低，假如精神健康水平为高，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于工作生活平衡水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为低，假如精神健康水平为高，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于工作生活平衡水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为高，假如精神健康水平为低，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑精神健康水平作用于工作生活平衡水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些精神健康水平为高，假如精神健康水平为低，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于收入水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么收入水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于收入水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么收入水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于收入水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么收入水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于收入水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么收入水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于工作生活平衡水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于工作生活平衡水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于工作生活平衡水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么工作生活平衡水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于工作生活平衡水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么工作生活平衡水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为低，假如温度为高，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑温度作用于精神健康水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些温度为高，假如温度为低，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)且工作生活平衡水平为低(B=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。在收入水平为高(A=1)且工作生活平衡水平为低(B=0)的条件下, 精神健康水平为低(C=0)的概率为0.3022。",
+        "data_info_math": "P(C=0|A=0,B=0)=0.5152; P(C=0|A=1,B=0)=0.3022; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在工作生活平衡水平为低的条件下，假如收入水平为低，那么精神健康水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=0,B=0))-P(C=0|do(A=1,B=0))=P(C=0|A=0,B=0)-P(C=0|A=1,B=0)",
+        "Step 5": "P(C=0|A=0,B=0)=0.5152\tP(C=0|A=1,B=0)=0.3022",
+        "Step 6": "CDE=0.5152-0.3022=0.2130",
+        "Step 7": "CDE=0.2130>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.21301069914990628
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)且工作生活平衡水平为高(B=1)的条件下, 精神健康水平为高(C=1)的概率为0.2288。在收入水平为高(A=1)且工作生活平衡水平为高(B=1)的条件下, 精神健康水平为高(C=1)的概率为0.4275。",
+        "data_info_math": "P(C=1|A=0,B=1)=0.2288; P(C=1|A=1,B=1)=0.4275; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在工作生活平衡水平为高的条件下，假如收入水平为低，那么精神健康水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=0,B=1))-P(C=1|do(A=1,B=1))=P(C=1|A=0,B=1)-P(C=1|A=1,B=1)",
+        "Step 5": "P(C=1|A=0,B=1)=0.2288\tP(C=1|A=1,B=1)=0.4275",
+        "Step 6": "CDE=0.2288-0.4275=-0.1987",
+        "Step 7": "CDE=-0.1987<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.19872362697319373
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)且工作生活平衡水平为高(B=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。在收入水平为低(A=0)且工作生活平衡水平为高(B=1)的条件下, 精神健康水平为低(C=0)的概率为0.7712。",
+        "data_info_math": "P(C=0|A=1,B=1)=0.5725; P(C=0|A=0,B=1)=0.7712; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在工作生活平衡水平为高的条件下，假如收入水平为高，那么精神健康水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=1,B=1))-P(C=0|do(A=0,B=1))=P(C=0|A=1,B=1)-P(C=0|A=0,B=1)",
+        "Step 5": "P(C=0|A=1,B=1)=0.5725\tP(C=0|A=0,B=1)=0.7712",
+        "Step 6": "CDE=0.5725-0.7712=-0.1987",
+        "Step 7": "CDE=-0.1987<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.19872362697319368
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)且工作生活平衡水平为高(B=1)的条件下, 精神健康水平为高(C=1)的概率为0.4275。在收入水平为低(A=0)且工作生活平衡水平为高(B=1)的条件下, 精神健康水平为高(C=1)的概率为0.2288。",
+        "data_info_math": "P(C=1|A=1,B=1)=0.4275; P(C=1|A=0,B=1)=0.2288; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在工作生活平衡水平为高的条件下，假如收入水平为高，那么精神健康水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=1,B=1))-P(C=1|do(A=0,B=1))=P(C=1|A=1,B=1)-P(C=1|A=0,B=1)",
+        "Step 5": "P(C=1|A=1,B=1)=0.4275\tP(C=1|A=0,B=1)=0.2288",
+        "Step 6": "CDE=0.4275-0.2288=0.1987",
+        "Step 7": "CDE=0.1987>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.19872362697319373
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0), 工作生活平衡水平为低(B=0)且精神健康水平为低(C=0)的条件下, 温度为低(D=0)的概率为0.6210。在收入水平为高(A=1), 工作生活平衡水平为低(B=0)且精神健康水平为低(C=0)的条件下, 温度为低(D=0)的概率为0.9298。",
+        "data_info_math": "P(D=0|A=0,B=0,C=0)=0.6210; P(D=0|A=1,B=0,C=0)=0.9298; "
+      },
+      "Instruction": "考虑收入水平作用于温度的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在工作生活平衡水平为低且精神健康水平为低的条件下，假如收入水平为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=0,B=0,C=0))-P(D=0|do(A=1,B=0,C=0))=P(D=0|A=0,B=0,C=0)-P(D=0|A=1,B=0,C=0)",
+        "Step 5": "P(D=0|A=0,B=0,C=0)=0.6210\tP(D=0|A=1,B=0,C=0)=0.9298",
+        "Step 6": "CDE=0.6210-0.9298=-0.3088",
+        "Step 7": "CDE=-0.3088<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.30878067409513055
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0), 工作生活平衡水平为高(B=1)且精神健康水平为低(C=0)的条件下, 温度为高(D=1)的概率为0.1989。在收入水平为高(A=1), 工作生活平衡水平为高(B=1)且精神健康水平为低(C=0)的条件下, 温度为高(D=1)的概率为0.0303。",
+        "data_info_math": "P(D=1|A=0,B=1,C=0)=0.1989; P(D=1|A=1,B=1,C=0)=0.0303; "
+      },
+      "Instruction": "考虑收入水平作用于温度的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在工作生活平衡水平为高且精神健康水平为低的条件下，假如收入水平为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=0,B=1,C=0))-P(D=1|do(A=1,B=1,C=0))=P(D=1|A=0,B=1,C=0)-P(D=1|A=1,B=1,C=0)",
+        "Step 5": "P(D=1|A=0,B=1,C=0)=0.1989\tP(D=1|A=1,B=1,C=0)=0.0303",
+        "Step 6": "CDE=0.1989-0.0303=0.1686",
+        "Step 7": "CDE=0.1686>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.16859468252071874
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1), 工作生活平衡水平为高(B=1)且精神健康水平为低(C=0)的条件下, 温度为低(D=0)的概率为0.9697。在收入水平为低(A=0), 工作生活平衡水平为高(B=1)且精神健康水平为低(C=0)的条件下, 温度为低(D=0)的概率为0.8011。",
+        "data_info_math": "P(D=0|A=1,B=1,C=0)=0.9697; P(D=0|A=0,B=1,C=0)=0.8011; "
+      },
+      "Instruction": "考虑收入水平作用于温度的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在工作生活平衡水平为高且精神健康水平为低的条件下，假如收入水平为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=1,B=1,C=0))-P(D=0|do(A=0,B=1,C=0))=P(D=0|A=1,B=1,C=0)-P(D=0|A=0,B=1,C=0)",
+        "Step 5": "P(D=0|A=1,B=1,C=0)=0.9697\tP(D=0|A=0,B=1,C=0)=0.8011",
+        "Step 6": "CDE=0.9697-0.8011=0.1686",
+        "Step 7": "CDE=0.1686>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.16859468252071874
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1), 工作生活平衡水平为高(B=1)且精神健康水平为高(C=1)的条件下, 温度为高(D=1)的概率为0.0216。在收入水平为低(A=0), 工作生活平衡水平为高(B=1)且精神健康水平为高(C=1)的条件下, 温度为高(D=1)的概率为0.1802。",
+        "data_info_math": "P(D=1|A=1,B=1,C=1)=0.0216; P(D=1|A=0,B=1,C=1)=0.1802; "
+      },
+      "Instruction": "考虑收入水平作用于温度的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在工作生活平衡水平为高且精神健康水平为高的条件下，假如收入水平为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=1,B=1,C=1))-P(D=1|do(A=0,B=1,C=1))=P(D=1|A=1,B=1,C=1)-P(D=1|A=0,B=1,C=1)",
+        "Step 5": "P(D=1|A=1,B=1,C=1)=0.0216\tP(D=1|A=0,B=1,C=1)=0.1802",
+        "Step 6": "CDE=0.0216-0.1802=-0.1585",
+        "Step 7": "CDE=-0.1585<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.1585361201799558
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0), 精神健康水平为高(C=1)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.6415。在工作生活平衡水平为高(B=1), 精神健康水平为高(C=1)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.8198。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为低(B=0), 精神健康水平为高(C=1)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9337。在工作生活平衡水平为高(B=1), 精神健康水平为高(C=1)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9784。收入水平为高(A=1)的概率为0.5566。",
+        "data_info_math": "P(D=0|B=0,C=1,A=0)=0.6415; P(D=0|B=1,C=1,A=0)=0.8198; P(A=0)=0.4434; P(D=0|B=0,C=1,A=1)=0.9337; P(D=0|B=1,C=1,A=1)=0.9784; P(A=1)=0.5566; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在精神健康水平为高的条件下，假如工作生活平衡水平为低，那么温度更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "CDE=P(D=0|do(B=0,C=1))-P(D=0|do(B=1,C=1))=sum_{A} [P(D=0|B=0,C=1,A)-P(D=0|B=1,C=1,A)]*P(A)=[P(D=0|B=0,C=1,A=0)-P(D=0|B=1,C=1,A=0)]*P(A=0)+[P(D=0|B=0,C=1,A=1)-P(D=0|B=1,C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,C=1,A=0)=0.6415\tP(A=0)=0.4434\tP(D=0|B=1,C=1,A=0)=0.8198\tP(D=0|B=0,C=1,A=1)=0.9337\tP(A=1)=0.5566\tP(D=0|B=1,C=1,A=1)=0.9784",
+        "Step 6": "CDE=[0.6415-0.8198]*0.4434+[0.9337-0.9784]*0.5566=-0.1039",
+        "Step 7": "CDE=-0.1039<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.10392980060590387
+    },
+    {
+      "id": 133,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0), 精神健康水平为低(C=0)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.3790。在工作生活平衡水平为高(B=1), 精神健康水平为低(C=0)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.1989。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为低(B=0), 精神健康水平为低(C=0)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0702。在工作生活平衡水平为高(B=1), 精神健康水平为低(C=0)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0303。收入水平为高(A=1)的概率为0.5566。",
+        "data_info_math": "P(D=1|B=0,C=0,A=0)=0.3790; P(D=1|B=1,C=0,A=0)=0.1989; P(A=0)=0.4434; P(D=1|B=0,C=0,A=1)=0.0702; P(D=1|B=1,C=0,A=1)=0.0303; P(A=1)=0.5566; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在精神健康水平为低的条件下，假如工作生活平衡水平为低，那么温度更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "CDE=P(D=1|do(B=0,C=0))-P(D=1|do(B=1,C=0))=sum_{A} [P(D=1|B=0,C=0,A)-P(D=1|B=1,C=0,A)]*P(A)=[P(D=1|B=0,C=0,A=0)-P(D=1|B=1,C=0,A=0)]*P(A=0)+[P(D=1|B=0,C=0,A=1)-P(D=1|B=1,C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,C=0,A=0)=0.3790\tP(A=0)=0.4434\tP(D=1|B=1,C=0,A=0)=0.1989\tP(D=1|B=0,C=0,A=1)=0.0702\tP(A=1)=0.5566\tP(D=1|B=1,C=0,A=1)=0.0303",
+        "Step 6": "CDE=[0.3790-0.1989]*0.4434+[0.0702-0.0303]*0.5566=0.1021",
+        "Step 7": "CDE=0.1021>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.10212818725605731
+    },
+    {
+      "id": 134,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1), 精神健康水平为低(C=0)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.8011。在工作生活平衡水平为低(B=0), 精神健康水平为低(C=0)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.6210。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为高(B=1), 精神健康水平为低(C=0)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9697。在工作生活平衡水平为低(B=0), 精神健康水平为低(C=0)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9298。收入水平为高(A=1)的概率为0.5566。",
+        "data_info_math": "P(D=0|B=1,C=0,A=0)=0.8011; P(D=0|B=0,C=0,A=0)=0.6210; P(A=0)=0.4434; P(D=0|B=1,C=0,A=1)=0.9697; P(D=0|B=0,C=0,A=1)=0.9298; P(A=1)=0.5566; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在精神健康水平为低的条件下，假如工作生活平衡水平为高，那么温度更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "CDE=P(D=0|do(B=1,C=0))-P(D=0|do(B=0,C=0))=sum_{A} [P(D=0|B=1,C=0,A)-P(D=0|B=0,C=0,A)]*P(A)=[P(D=0|B=1,C=0,A=0)-P(D=0|B=0,C=0,A=0)]*P(A=0)+[P(D=0|B=1,C=0,A=1)-P(D=0|B=0,C=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,C=0,A=0)=0.8011\tP(A=0)=0.4434\tP(D=0|B=0,C=0,A=0)=0.6210\tP(D=0|B=1,C=0,A=1)=0.9697\tP(A=1)=0.5566\tP(D=0|B=0,C=0,A=1)=0.9298",
+        "Step 6": "CDE=[0.8011-0.6210]*0.4434+[0.9697-0.9298]*0.5566=0.1021",
+        "Step 7": "CDE=0.1021>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": 0.10212818725605727
+    },
+    {
+      "id": 135,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1), 精神健康水平为高(C=1)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.1802。在工作生活平衡水平为低(B=0), 精神健康水平为高(C=1)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.3585。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为高(B=1), 精神健康水平为高(C=1)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0216。在工作生活平衡水平为低(B=0), 精神健康水平为高(C=1)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0663。收入水平为高(A=1)的概率为0.5566。",
+        "data_info_math": "P(D=1|B=1,C=1,A=0)=0.1802; P(D=1|B=0,C=1,A=0)=0.3585; P(A=0)=0.4434; P(D=1|B=1,C=1,A=1)=0.0216; P(D=1|B=0,C=1,A=1)=0.0663; P(A=1)=0.5566; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在精神健康水平为高的条件下，假如工作生活平衡水平为高，那么温度更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(B,C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "CDE=P(D=1|do(B=1,C=1))-P(D=1|do(B=0,C=1))=sum_{A} [P(D=1|B=1,C=1,A)-P(D=1|B=0,C=1,A)]*P(A)=[P(D=1|B=1,C=1,A=0)-P(D=1|B=0,C=1,A=0)]*P(A=0)+[P(D=1|B=1,C=1,A=1)-P(D=1|B=0,C=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,C=1,A=0)=0.1802\tP(A=0)=0.4434\tP(D=1|B=0,C=1,A=0)=0.3585\tP(D=1|B=1,C=1,A=1)=0.0216\tP(A=1)=0.5566\tP(D=1|B=0,C=1,A=1)=0.0663",
+        "Step 6": "CDE=[0.1802-0.3585]*0.4434+[0.0216-0.0663]*0.5566=-0.1039",
+        "Step 7": "CDE=-0.1039<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "RANDOM",
+      "prob": -0.10392980060590387
+    },
+    {
+      "id": 136,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象收入水平(A)和观察节点工作生活平衡水平(B)的后门调整集合。",
+      "Question": "方法1: 根据温度的情况，我们逐个研究收入水平和工作生活平衡水平的关联。\n方法2：我们直接研究一般情况下收入水平和工作生活平衡水平的关联。\n为了理解收入水平如何影响工作生活平衡水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 137,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象收入水平(A)和观察节点工作生活平衡水平(B)的后门调整集合。",
+      "Question": "方法1: 根据温度的情况，我们逐个研究收入水平和工作生活平衡水平的关联。\n方法2：我们直接研究一般情况下收入水平和工作生活平衡水平的关联。\n为了理解收入水平如何影响工作生活平衡水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 138,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象收入水平(A)和观察节点精神健康水平(C)的后门调整集合。",
+      "Question": "方法1: 根据温度的情况，我们逐个研究收入水平和精神健康水平的关联。\n方法2：我们直接研究一般情况下收入水平和精神健康水平的关联。\n为了理解收入水平如何影响精神健康水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 139,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象收入水平(A)和观察节点精神健康水平(C)的后门调整集合。",
+      "Question": "方法1: 根据工作生活平衡水平的情况，我们逐个研究收入水平和精神健康水平的关联。\n方法2：我们直接研究一般情况下收入水平和精神健康水平的关联。\n为了理解收入水平如何影响精神健康水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 140,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象收入水平(A)和观察节点温度(D)的后门调整集合。",
+      "Question": "方法1: 根据精神健康水平的情况，我们逐个研究收入水平和温度的关联。\n方法2：我们直接研究一般情况下收入水平和温度的关联。\n为了理解收入水平如何影响温度，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 141,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象收入水平(A)和观察节点温度(D)的后门调整集合。",
+      "Question": "方法1: 根据工作生活平衡水平的情况，我们逐个研究收入水平和温度的关联。\n方法2：我们直接研究一般情况下收入水平和温度的关联。\n为了理解收入水平如何影响温度，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 142,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象工作生活平衡水平(B)和观察节点精神健康水平(C)的后门调整集合。",
+      "Question": "方法1: 根据收入水平的情况，我们逐个研究工作生活平衡水平和精神健康水平的关联。\n方法2：我们直接研究一般情况下工作生活平衡水平和精神健康水平的关联。\n为了理解工作生活平衡水平如何影响精神健康水平，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 143,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象工作生活平衡水平(B)和观察节点精神健康水平(C)的后门调整集合。",
+      "Question": "方法1: 根据收入水平的情况，我们逐个研究工作生活平衡水平和精神健康水平的关联。\n方法2：我们直接研究一般情况下工作生活平衡水平和精神健康水平的关联。\n为了理解工作生活平衡水平如何影响精神健康水平，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 144,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象工作生活平衡水平(B)和观察节点温度(D)的后门调整集合。",
+      "Question": "方法1: 根据收入水平的情况，我们逐个研究工作生活平衡水平和温度的关联。\n方法2：我们直接研究一般情况下工作生活平衡水平和温度的关联。\n为了理解工作生活平衡水平如何影响温度，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 145,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象工作生活平衡水平(B)和观察节点温度(D)的后门调整集合。",
+      "Question": "方法1: 根据收入水平的情况，我们逐个研究工作生活平衡水平和温度的关联。\n方法2：我们直接研究一般情况下工作生活平衡水平和温度的关联。\n为了理解工作生活平衡水平如何影响温度，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "RANDOM",
+      "prob": null
+    },
+    {
+      "id": 146,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 工作生活平衡水平为高(B=1)的概率为0.4750。工作生活平衡水平为高(B=1)的概率为0.2452。收入水平为高(A=1)且工作生活平衡水平为高(B=1)的概率为0.0346。",
+        "data_info_math": "P(B=1|A=0)=0.4750; P(B=1)=0.2452; P(A=1,B=1)=0.0346; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定收入水平为高且工作生活平衡水平为高, 那么假如收入水平为低，此时工作生活平衡水平为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.4750",
+        "Step 2": "PN的下界: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.2452-0.4750)/0.0346}\n=max{0, -6.6362}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 147,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 工作生活平衡水平为低(B=0)的概率为0.5250。收入水平为低(A=0)且工作生活平衡水平为低(B=0)的概率为0.2328。收入水平为高(A=1)且工作生活平衡水平为高(B=1)的概率为0.0346。",
+        "data_info_math": "P(B=0|A=0)=0.5250; P(A=0,B=0)=0.2328; P(A=1,B=1)=0.0346; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定收入水平为高且工作生活平衡水平为高, 那么假如收入水平为低，此时工作生活平衡水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.5250",
+        "Step 2": "PN的上界: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.5250-0.2328)/0.0346}\n=min{1, 8.4412}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 148,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.3632。精神健康水平为高(C=1)的概率为0.5401。收入水平为高(A=1)且精神健康水平为高(C=1)的概率为0.3790。",
+        "data_info_math": "P(C=1|A=0)=0.3632; P(C=1)=0.5401; P(A=1,C=1)=0.3790; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定收入水平为高且精神健康水平为高, 那么假如收入水平为低，此时精神健康水平为低的概率的下界是多少？",
+      "Answer": "0.4667",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.3632",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.5401-0.3632)/0.3790}\n=max{0, 0.4667}\n=0.4667"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.4666697321229161
+    },
+    {
+      "id": 149,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.6368。收入水平为低(A=0)且精神健康水平为低(C=0)的概率为0.2824。收入水平为高(A=1)且精神健康水平为高(C=1)的概率为0.3790。",
+        "data_info_math": "P(C=0|A=0)=0.6368; P(A=0,C=0)=0.2824; P(A=1,C=1)=0.3790; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定收入水平为高且精神健康水平为高, 那么假如收入水平为低，此时精神健康水平为低的概率的上界是多少？",
+      "Answer": "0.9351",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.6368",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.6368-0.2824)/0.3790}\n=min{1, 0.9351}\n=0.9351"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0.9351163340646637
+    },
+    {
+      "id": 150,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.2862。温度为高(D=1)的概率为0.1630。收入水平为高(A=1)且温度为高(D=1)的概率为0.0361。",
+        "data_info_math": "P(D=1|A=0)=0.2862; P(D=1)=0.1630; P(A=1,D=1)=0.0361; "
+      },
+      "Instruction": "考虑收入水平作用于温度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定收入水平为高且温度为高, 那么假如收入水平为低，此时温度为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.2862",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.1630-0.2862)/0.0361}\n=max{0, -3.4078}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 151,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.7138。收入水平为低(A=0)且温度为低(D=0)的概率为0.3165。收入水平为高(A=1)且温度为高(D=1)的概率为0.0361。",
+        "data_info_math": "P(D=0|A=0)=0.7138; P(A=0,D=0)=0.3165; P(A=1,D=1)=0.0361; "
+      },
+      "Instruction": "考虑收入水平作用于温度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定收入水平为高且温度为高, 那么假如收入水平为低，此时温度为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.7138",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.7138-0.3165)/0.0361}\n=min{1, 10.9934}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 152,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.4848。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.6978。收入水平为高(A=1)的概率为0.5566。精神健康水平为高(C=1)的概率为0.5401。工作生活平衡水平为高(B=1)且精神健康水平为高(C=1)的概率为0.0630。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4848; P(A=0)=0.4434; P(C=1|B=0,A=1)=0.6978; P(A=1)=0.5566; P(C=1)=0.5401; P(B=1,C=1)=0.0630; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定工作生活平衡水平为高且精神健康水平为高, 那么假如工作生活平衡水平为低，此时精神健康水平为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=sum_{A} P(C=1|B=0,A)*P(A)=P(C=1|B=0,A=0)*P(A=0)+P(C=1|B=0,A=1)*P(A=1)\nP(C=1|B=0,A=0)=0.4848\tP(A=0)=0.4434\tP(C=1|B=0,A=1)=0.6978\tP(A=1)=0.5566\nP(C=1|do(B=0))=0.4848*0.4434+0.6978*0.5566=0.6034",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.5401-0.6034)/0.0630}\n=max{0, -1.0047}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 153,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.5152。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3022。收入水平为高(A=1)的概率为0.5566。工作生活平衡水平为低(B=0)且精神健康水平为低(C=0)的概率为0.2777。工作生活平衡水平为高(B=1)且精神健康水平为高(C=1)的概率为0.0630。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5152; P(A=0)=0.4434; P(C=0|B=0,A=1)=0.3022; P(A=1)=0.5566; P(B=0,C=0)=0.2777; P(B=1,C=1)=0.0630; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定工作生活平衡水平为高且精神健康水平为高, 那么假如工作生活平衡水平为低，此时精神健康水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=sum_{A} P(C=0|B=0,A)*P(A)=P(C=0|B=0,A=0)*P(A=0)+P(C=0|B=0,A=1)*P(A=1)\nP(C=0|B=0,A=0)=0.5152\tP(A=0)=0.4434\tP(C=0|B=0,A=1)=0.3022\tP(A=1)=0.5566\nP(C=0|do(B=0))=0.5152*0.4434+0.3022*0.5566=0.3966",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.3966-0.2777)/0.0630}\n=min{1, 1.8889}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 154,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.3691。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0675。收入水平为高(A=1)的概率为0.5566。温度为高(D=1)的概率为0.1630。工作生活平衡水平为高(B=1)且温度为高(D=1)的概率为0.0419。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3691; P(A=0)=0.4434; P(D=1|B=0,A=1)=0.0675; P(A=1)=0.5566; P(D=1)=0.1630; P(B=1,D=1)=0.0419; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定工作生活平衡水平为高且温度为高, 那么假如工作生活平衡水平为低，此时温度为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=sum_{A} P(D=1|B=0,A)*P(A)=P(D=1|B=0,A=0)*P(A=0)+P(D=1|B=0,A=1)*P(A=1)\nP(D=1|B=0,A=0)=0.3691\tP(A=0)=0.4434\tP(D=1|B=0,A=1)=0.0675\tP(A=1)=0.5566\nP(D=1|do(B=0))=0.3691*0.4434+0.0675*0.5566=0.2012",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.1630-0.2012)/0.0419}\n=max{0, -0.9108}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 155,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为低(B=0)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.6309。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为低(B=0)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9325。收入水平为高(A=1)的概率为0.5566。工作生活平衡水平为低(B=0)且温度为低(D=0)的概率为0.6336。工作生活平衡水平为高(B=1)且温度为高(D=1)的概率为0.0419。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6309; P(A=0)=0.4434; P(D=0|B=0,A=1)=0.9325; P(A=1)=0.5566; P(B=0,D=0)=0.6336; P(B=1,D=1)=0.0419; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的必要性概率(probability of necessity, PN)。",
+      "Question": "给定工作生活平衡水平为高且温度为高, 那么假如工作生活平衡水平为低，此时温度为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=sum_{A} P(D=0|B=0,A)*P(A)=P(D=0|B=0,A=0)*P(A=0)+P(D=0|B=0,A=1)*P(A=1)\nP(D=0|B=0,A=0)=0.6309\tP(A=0)=0.4434\tP(D=0|B=0,A=1)=0.9325\tP(A=1)=0.5566\nP(D=0|do(B=0))=0.6309*0.4434+0.9325*0.5566=0.7988",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.7988-0.6336)/0.0419}\n=min{1, 3.9417}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 156,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 工作生活平衡水平为低(B=0)的概率为0.9378。工作生活平衡水平为低(B=0)的概率为0.7548。收入水平为低(A=0)且工作生活平衡水平为低(B=0)的概率为0.2328。",
+        "data_info_math": "P(B=0|A=1)=0.9378; P(B=0)=0.7548; P(A=0,B=0)=0.2328; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定收入水平为低且工作生活平衡水平为低, 假如收入水平为高，此时工作生活平衡水平为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.9378",
+        "Step 2": "PS的下界: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.7548-0.9378)/0.2328}\n=max{0, -0.7862}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 157,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 工作生活平衡水平为高(B=1)的概率为0.0622。收入水平为低(A=0)且工作生活平衡水平为低(B=0)的概率为0.2328。收入水平为高(A=1)且工作生活平衡水平为高(B=1)的概率为0.0346。",
+        "data_info_math": "P(B=1|A=1)=0.0622; P(A=0,B=0)=0.2328; P(A=1,B=1)=0.0346; "
+      },
+      "Instruction": "考虑收入水平作用于工作生活平衡水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定收入水平为低且工作生活平衡水平为低, 假如收入水平为高，此时工作生活平衡水平为高的概率的上界是多少？",
+      "Answer": "0.1185",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.0622",
+        "Step 2": "PS的上界: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.0622-0.0346)/0.2328}\n=min{1, 0.1185}\n=0.1185"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.11846677730402924
+    },
+    {
+      "id": 158,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.3190。精神健康水平为低(C=0)的概率为0.4599。收入水平为低(A=0)且精神健康水平为低(C=0)的概率为0.2824。",
+        "data_info_math": "P(C=0|A=1)=0.3190; P(C=0)=0.4599; P(A=0,C=0)=0.2824; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定收入水平为低且精神健康水平为低, 假如收入水平为高，此时精神健康水平为高的概率的下界是多少？",
+      "Answer": "0.4990",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.3190",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.4599-0.3190)/0.2824}\n=max{0, 0.4990}\n=0.4990"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.4990499204462036
+    },
+    {
+      "id": 159,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.6810。收入水平为低(A=0)且精神健康水平为低(C=0)的概率为0.2824。收入水平为高(A=1)且精神健康水平为高(C=1)的概率为0.3790。",
+        "data_info_math": "P(C=1|A=1)=0.6810; P(A=0,C=0)=0.2824; P(A=1,C=1)=0.3790; "
+      },
+      "Instruction": "考虑收入水平作用于精神健康水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定收入水平为低且精神健康水平为低, 假如收入水平为高，此时精神健康水平为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.6810",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.6810-0.3790)/0.2824}\n=min{1, 1.0694}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 1
+    },
+    {
+      "id": 160,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9351。温度为低(D=0)的概率为0.8370。收入水平为低(A=0)且温度为低(D=0)的概率为0.3165。",
+        "data_info_math": "P(D=0|A=1)=0.9351; P(D=0)=0.8370; P(A=0,D=0)=0.3165; "
+      },
+      "Instruction": "考虑收入水平作用于温度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定收入水平为低且温度为低, 假如收入水平为高，此时温度为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.9351",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.8370-0.9351)/0.3165}\n=max{0, -0.3100}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 161,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0649。收入水平为低(A=0)且温度为低(D=0)的概率为0.3165。收入水平为高(A=1)且温度为高(D=1)的概率为0.0361。",
+        "data_info_math": "P(D=1|A=1)=0.0649; P(A=0,D=0)=0.3165; P(A=1,D=1)=0.0361; "
+      },
+      "Instruction": "考虑收入水平作用于温度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定收入水平为低且温度为低, 假如收入水平为高，此时温度为高的概率的上界是多少？",
+      "Answer": "0.0910",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.0649",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.0649-0.0361)/0.3165}\n=min{1, 0.0910}\n=0.0910"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.09096344937867519
+    },
+    {
+      "id": 162,
+      "question_id": 160,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为低(C=0)的概率为0.7712。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为低(C=0)的概率为0.5725。收入水平为高(A=1)的概率为0.5566。精神健康水平为低(C=0)的概率为0.4599。工作生活平衡水平为低(B=0)且精神健康水平为低(C=0)的概率为0.2777。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.7712; P(A=0)=0.4434; P(C=0|B=1,A=1)=0.5725; P(A=1)=0.5566; P(C=0)=0.4599; P(B=0,C=0)=0.2777; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定工作生活平衡水平为低且精神健康水平为低, 假如工作生活平衡水平为高，此时精神健康水平为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=sum_{A} P(C=0|B=1,A)*P(A)=P(C=0|B=1,A=0)*P(A=0)+P(C=0|B=1,A=1)*P(A=1)\nP(C=0|B=1,A=0)=0.7712\tP(A=0)=0.4434\tP(C=0|B=1,A=1)=0.5725\tP(A=1)=0.5566\nP(C=0|do(B=1))=0.7712*0.4434+0.5725*0.5566=0.6606",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.4599-0.6606)/0.2777}\n=max{0, -0.7228}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 163,
+      "question_id": 161,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 精神健康水平为高(C=1)的概率为0.2288。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 精神健康水平为高(C=1)的概率为0.4275。收入水平为高(A=1)的概率为0.5566。工作生活平衡水平为低(B=0)且精神健康水平为低(C=0)的概率为0.2777。工作生活平衡水平为高(B=1)且精神健康水平为高(C=1)的概率为0.0630。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.2288; P(A=0)=0.4434; P(C=1|B=1,A=1)=0.4275; P(A=1)=0.5566; P(B=0,C=0)=0.2777; P(B=1,C=1)=0.0630; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于精神健康水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定工作生活平衡水平为低且精神健康水平为低, 假如工作生活平衡水平为高，此时精神健康水平为高的概率的上界是多少？",
+      "Answer": "0.9954",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=sum_{A} P(C=1|B=1,A)*P(A)=P(C=1|B=1,A=0)*P(A=0)+P(C=1|B=1,A=1)*P(A=1)\nP(C=1|B=1,A=0)=0.2288\tP(A=0)=0.4434\tP(C=1|B=1,A=1)=0.4275\tP(A=1)=0.5566\nP(C=1|do(B=1))=0.2288*0.4434+0.4275*0.5566=0.3394",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.3394-0.0630)/0.2777}\n=min{1, 0.9954}\n=0.9954"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.9954065814902349
+    },
+    {
+      "id": 164,
+      "question_id": 162,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为低(D=0)的概率为0.8054。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为低(D=0)的概率为0.9734。收入水平为高(A=1)的概率为0.5566。温度为低(D=0)的概率为0.8370。工作生活平衡水平为低(B=0)且温度为低(D=0)的概率为0.6336。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.8054; P(A=0)=0.4434; P(D=0|B=1,A=1)=0.9734; P(A=1)=0.5566; P(D=0)=0.8370; P(B=0,D=0)=0.6336; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定工作生活平衡水平为低且温度为低, 假如工作生活平衡水平为高，此时温度为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=sum_{A} P(D=0|B=1,A)*P(A)=P(D=0|B=1,A=0)*P(A=0)+P(D=0|B=1,A=1)*P(A=1)\nP(D=0|B=1,A=0)=0.8054\tP(A=0)=0.4434\tP(D=0|B=1,A=1)=0.9734\tP(A=1)=0.5566\nP(D=0|do(B=1))=0.8054*0.4434+0.9734*0.5566=0.8989",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.8370-0.8989)/0.6336}\n=max{0, -0.0978}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0
+    },
+    {
+      "id": 165,
+      "question_id": 163,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和6条边A->B, A->C, A->D, B->C, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表收入水平, B代表工作生活平衡水平, C代表精神健康水平, D代表温度。",
+        "data_info": "在工作生活平衡水平为高(B=1)且收入水平为低(A=0)的条件下, 温度为高(D=1)的概率为0.1946。收入水平为低(A=0)的概率为0.4434。在工作生活平衡水平为高(B=1)且收入水平为高(A=1)的条件下, 温度为高(D=1)的概率为0.0266。收入水平为高(A=1)的概率为0.5566。工作生活平衡水平为低(B=0)且温度为低(D=0)的概率为0.6336。工作生活平衡水平为高(B=1)且温度为高(D=1)的概率为0.0419。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.1946; P(A=0)=0.4434; P(D=1|B=1,A=1)=0.0266; P(A=1)=0.5566; P(B=0,D=0)=0.6336; P(B=1,D=1)=0.0419; "
+      },
+      "Instruction": "考虑工作生活平衡水平作用于温度的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定工作生活平衡水平为低且温度为低, 假如工作生活平衡水平为高，此时温度为高的概率的上界是多少？",
+      "Answer": "0.0934",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=sum_{A} P(D=1|B=1,A)*P(A)=P(D=1|B=1,A=0)*P(A=0)+P(D=1|B=1,A=1)*P(A=1)\nP(D=1|B=1,A=0)=0.1946\tP(A=0)=0.4434\tP(D=1|B=1,A=1)=0.0266\tP(A=1)=0.5566\nP(D=1|do(B=1))=0.1946*0.4434+0.0266*0.5566=0.1011",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.1011-0.0419)/0.6336}\n=min{1, 0.0934}\n=0.0934"
+      },
+      "Type": "PS",
+      "Mode": "RANDOM",
+      "prob": 0.0933827536273179
+    }
+  ]
+}

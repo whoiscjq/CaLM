@@ -1,0 +1,4 @@
+[2025-02-03 00:20:31,416 - ./output_sft/analysis_loggers/evaluate_log_2025-02-03-00-20-31 - INFO] error analysis saved to ./output_sft/counterfactual/natural_direct_effect/NDE-P_NDE-basic_EN/qwen_7b_sft_errors.csv
+[2025-02-03 00:20:31,554 - ./output_sft/analysis_loggers/evaluate_log_2025-02-03-00-20-31 - INFO] accuracy saved to ./output_sft/counterfactual/natural_direct_effect/NDE-P_NDE-basic_EN_models_acc.csv
+[2025-02-03 00:20:31,556 - ./output_sft/analysis_loggers/evaluate_log_2025-02-03-00-20-31 - INFO] robustness saved to ./output_sft/models_robustness.csv
+[2025-02-03 00:20:31,569 - ./output_sft/analysis_loggers/evaluate_log_2025-02-03-00-20-31 - INFO] aggregate metrics save to models_volatility.csv, prompts_volatility.csv, task_metrics.csv in ./output_sft

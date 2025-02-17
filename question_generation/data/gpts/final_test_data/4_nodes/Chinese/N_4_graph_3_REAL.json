@@ -1,0 +1,3494 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->C"
+    ],
+    "node_name": {
+      "A": "备考时间",
+      "B": "考试得分",
+      "C": "总平均成绩",
+      "D": "研究生项目录取可能性"
+    },
+    "node_value": {
+      "A": [
+        "短",
+        "长"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {
+      "A->B": 1,
+      "A->C": 1,
+      "A->D": 1,
+      "B->C": 1
+    },
+    "node_bias": {
+      "A": 0.5277801772489209,
+      "B": -0.3606215192948987,
+      "C": -0.15833298412885666,
+      "D": 0.6205719619177663
+    },
+    "edge_weight": {
+      "A->B": 0.5294701249788357,
+      "A->C": 1.057817807003155,
+      "A->D": 0.8004472247756554,
+      "B->C": 0.09457200501161711
+    },
+    "function_description": "P(A=1)=0.6290\nP(B=1|A)=sigmoid(-0.3606215192948987 + 0.5295 * A)\nP(C=1|A,B)=sigmoid(-0.15833298412885666 + 1.0578 * A + 0.0946 * B)\nP(D=1|A)=sigmoid(0.6205719619177663 + 0.8004 * A)\n",
+    "text_description": "The probability of amount of time spent studying for an exam being long (A=1) is 0.6290. \nFor those with amount of time spent studying for an exam being short (A=0), the probability of grade received on the exam being high (B=1) is 0.4108. \nFor those with amount of time spent studying for an exam being long (A=1), the probability of grade received on the exam being high (B=1) is 0.5421. \nFor those with amount of time spent studying for an exam being short (A=0) and grade received on the exam being low (B=0), the probability of overall gpa being high (C=1) is 0.4605. \nFor those with amount of time spent studying for an exam being short (A=0) and grade received on the exam being high (B=1), the probability of overall gpa being high (C=1) is 0.4841. \nFor those with amount of time spent studying for an exam being long (A=1) and grade received on the exam being low (B=0), the probability of overall gpa being high (C=1) is 0.7108. \nFor those with amount of time spent studying for an exam being long (A=1) and grade received on the exam being high (B=1), the probability of overall gpa being high (C=1) is 0.7299. \nFor those with amount of time spent studying for an exam being short (A=0), the probability of likelihood of getting accepted into a graduate program being high (D=1) is 0.6503. \nFor those with amount of time spent studying for an exam being long (A=1), the probability of likelihood of getting accepted into a graduate program being high (D=1) is 0.8055. \n",
+    "Statistic_data": [
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 3315
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 8376
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 3396
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 3818
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 9950
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 2371
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 1971
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 3849
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 1386
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 1731
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 2530
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 1235
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 2007
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 2367
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 875
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 823
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 考试得分为低(B=0)的概率为0.5910。在备考时间为长(A=1)的条件下, 考试得分为低(B=0)的概率为0.4608。",
+        "data_info_math": "P(B=0|A=0)=0.5910; P(B=0|A=1)=0.4608; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果备考时间被改变为短，那么考试得分更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.5910\tP(B=0|A=1)=0.4608",
+        "Step 6": "ATE=0.5910-0.4608=0.1302",
+        "Step 7": "ATE=0.1302>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.1301927889260171
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 考试得分为高(B=1)的概率为0.4090。在备考时间为长(A=1)的条件下, 考试得分为高(B=1)的概率为0.5392。",
+        "data_info_math": "P(B=1|A=0)=0.4090; P(B=1|A=1)=0.5392; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果备考时间被改变为短，那么考试得分更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.4090\tP(B=1|A=1)=0.5392",
+        "Step 6": "ATE=0.4090-0.5392=-0.1302",
+        "Step 7": "ATE=-0.1302<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.13019278892601716
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 考试得分为低(B=0)的概率为0.4608。在备考时间为短(A=0)的条件下, 考试得分为低(B=0)的概率为0.5910。",
+        "data_info_math": "P(B=0|A=1)=0.4608; P(B=0|A=0)=0.5910; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果备考时间被改变为长，那么考试得分更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.4608\tP(B=0|A=0)=0.5910",
+        "Step 6": "ATE=0.4608-0.5910=-0.1302",
+        "Step 7": "ATE=-0.1302<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.1301927889260171
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 考试得分为高(B=1)的概率为0.5392。在备考时间为短(A=0)的条件下, 考试得分为高(B=1)的概率为0.4090。",
+        "data_info_math": "P(B=1|A=1)=0.5392; P(B=1|A=0)=0.4090; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果备考时间被改变为长，那么考试得分更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.5392\tP(B=1|A=0)=0.4090",
+        "Step 6": "ATE=0.5392-0.4090=0.1302",
+        "Step 7": "ATE=0.1302>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.13019278892601716
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5296。在备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2829。",
+        "data_info_math": "P(C=0|A=0)=0.5296; P(C=0|A=1)=0.2829; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果备考时间被改变为短，那么总平均成绩更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.5296\tP(C=0|A=1)=0.2829",
+        "Step 6": "ATE=0.5296-0.2829=0.2467",
+        "Step 7": "ATE=0.2467>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.24666000184113612
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4704。在备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7171。",
+        "data_info_math": "P(C=1|A=0)=0.4704; P(C=1|A=1)=0.7171; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果备考时间被改变为短，那么总平均成绩更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.4704\tP(C=1|A=1)=0.7171",
+        "Step 6": "ATE=0.4704-0.7171=-0.2467",
+        "Step 7": "ATE=-0.2467<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.24666000184113623
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2829。在备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5296。",
+        "data_info_math": "P(C=0|A=1)=0.2829; P(C=0|A=0)=0.5296; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果备考时间被改变为长，那么总平均成绩更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.2829\tP(C=0|A=0)=0.5296",
+        "Step 6": "ATE=0.2829-0.5296=-0.2467",
+        "Step 7": "ATE=-0.2467<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.24666000184113612
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7171。在备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4704。",
+        "data_info_math": "P(C=1|A=1)=0.7171; P(C=1|A=0)=0.4704; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果备考时间被改变为长，那么总平均成绩更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.7171\tP(C=1|A=0)=0.4704",
+        "Step 6": "ATE=0.7171-0.4704=0.2467",
+        "Step 7": "ATE=0.2467>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.24666000184113623
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 研究生项目录取可能性为低(D=0)的概率为0.3457。在备考时间为长(A=1)的条件下, 研究生项目录取可能性为低(D=0)的概率为0.1910。",
+        "data_info_math": "P(D=0|A=0)=0.3457; P(D=0|A=1)=0.1910; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果备考时间被改变为短，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.3457\tP(D=0|A=1)=0.1910",
+        "Step 6": "ATE=0.3457-0.1910=0.1548",
+        "Step 7": "ATE=0.1548>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.1547589988901492
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 研究生项目录取可能性为高(D=1)的概率为0.6543。在备考时间为长(A=1)的条件下, 研究生项目录取可能性为高(D=1)的概率为0.8090。",
+        "data_info_math": "P(D=1|A=0)=0.6543; P(D=1|A=1)=0.8090; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果备考时间被改变为短，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.6543\tP(D=1|A=1)=0.8090",
+        "Step 6": "ATE=0.6543-0.8090=-0.1548",
+        "Step 7": "ATE=-0.1548<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.1547589988901492
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 研究生项目录取可能性为低(D=0)的概率为0.1910。在备考时间为短(A=0)的条件下, 研究生项目录取可能性为低(D=0)的概率为0.3457。",
+        "data_info_math": "P(D=0|A=1)=0.1910; P(D=0|A=0)=0.3457; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果备考时间被改变为长，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.1910\tP(D=0|A=0)=0.3457",
+        "Step 6": "ATE=0.1910-0.3457=-0.1548",
+        "Step 7": "ATE=-0.1548<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.1547589988901492
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 研究生项目录取可能性为高(D=1)的概率为0.8090。在备考时间为短(A=0)的条件下, 研究生项目录取可能性为高(D=1)的概率为0.6543。",
+        "data_info_math": "P(D=1|A=1)=0.8090; P(D=1|A=0)=0.6543; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果备考时间被改变为长，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.8090\tP(D=1|A=0)=0.6543",
+        "Step 6": "ATE=0.8090-0.6543=0.1548",
+        "Step 7": "ATE=0.1548>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.1547589988901492
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于备考时间的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果考试得分被改变为低，那么备考时间更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于备考时间的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果考试得分被改变为低，那么备考时间更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于备考时间的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果考试得分被改变为高，那么备考时间更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于备考时间的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果考试得分被改变为高，那么备考时间更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5358。在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5206。备考时间为短(A=0)的概率为0.3679。在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2896。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2772。备考时间为长(A=1)的概率为0.6321。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5358; P(C=0|B=1,A=0)=0.5206; P(A=0)=0.3679; P(C=0|B=0,A=1)=0.2896; P(C=0|B=1,A=1)=0.2772; P(A=1)=0.6321; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果考试得分被改变为低，那么总平均成绩更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=sum_{A} [P(C=0|B=0,A)*P(A)-P(C=0|B=1,A)*P(A)]=[P(C=0|B=0,A=0)*P(A=0)-P(C=0|B=1,A=0)*P(A=0)]+[P(C=0|B=0,A=1)*P(A=1)-P(C=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=0,A=0)=0.5358\tP(C=0|B=1,A=0)=0.5206\tP(A=0)=0.3679\tP(C=0|B=0,A=1)=0.2896\tP(C=0|B=1,A=1)=0.2772\tP(A=1)=0.6321",
+        "Step 6": "ATE=[0.5358*0.3679-0.5206*0.3679]+[0.2896*0.6321-0.2772*0.6321]=0.0135",
+        "Step 7": "ATE=0.0135>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.013459565374322774
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4642。在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4794。备考时间为短(A=0)的概率为0.3679。在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7104。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7228。备考时间为长(A=1)的概率为0.6321。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4642; P(C=1|B=1,A=0)=0.4794; P(A=0)=0.3679; P(C=1|B=0,A=1)=0.7104; P(C=1|B=1,A=1)=0.7228; P(A=1)=0.6321; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果考试得分被改变为低，那么总平均成绩更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=sum_{A} [P(C=1|B=0,A)*P(A)-P(C=1|B=1,A)*P(A)]=[P(C=1|B=0,A=0)*P(A=0)-P(C=1|B=1,A=0)*P(A=0)]+[P(C=1|B=0,A=1)*P(A=1)-P(C=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=0,A=0)=0.4642\tP(C=1|B=1,A=0)=0.4794\tP(A=0)=0.3679\tP(C=1|B=0,A=1)=0.7104\tP(C=1|B=1,A=1)=0.7228\tP(A=1)=0.6321",
+        "Step 6": "ATE=[0.4642*0.3679-0.4794*0.3679]+[0.7104*0.6321-0.7228*0.6321]=-0.0135",
+        "Step 7": "ATE=-0.0135<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.013459565374322746
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5206。在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5358。备考时间为短(A=0)的概率为0.3679。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2772。在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2896。备考时间为长(A=1)的概率为0.6321。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.5206; P(C=0|B=0,A=0)=0.5358; P(A=0)=0.3679; P(C=0|B=1,A=1)=0.2772; P(C=0|B=0,A=1)=0.2896; P(A=1)=0.6321; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果考试得分被改变为高，那么总平均成绩更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=sum_{A} [P(C=0|B=1,A)*P(A)-P(C=0|B=0,A)*P(A)]=[P(C=0|B=1,A=0)*P(A=0)-P(C=0|B=0,A=0)*P(A=0)]+[P(C=0|B=1,A=1)*P(A=1)-P(C=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=1,A=0)=0.5206\tP(C=0|B=0,A=0)=0.5358\tP(A=0)=0.3679\tP(C=0|B=1,A=1)=0.2772\tP(C=0|B=0,A=1)=0.2896\tP(A=1)=0.6321",
+        "Step 6": "ATE=[0.5206*0.3679-0.5358*0.3679]+[0.2772*0.6321-0.2896*0.6321]=-0.0135",
+        "Step 7": "ATE=-0.0135<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.013459565374322774
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4794。在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4642。备考时间为短(A=0)的概率为0.3679。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7228。在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7104。备考时间为长(A=1)的概率为0.6321。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.4794; P(C=1|B=0,A=0)=0.4642; P(A=0)=0.3679; P(C=1|B=1,A=1)=0.7228; P(C=1|B=0,A=1)=0.7104; P(A=1)=0.6321; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果考试得分被改变为高，那么总平均成绩更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=sum_{A} [P(C=1|B=1,A)*P(A)-P(C=1|B=0,A)*P(A)]=[P(C=1|B=1,A=0)*P(A=0)-P(C=1|B=0,A=0)*P(A=0)]+[P(C=1|B=1,A=1)*P(A=1)-P(C=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=1,A=0)=0.4794\tP(C=1|B=0,A=0)=0.4642\tP(A=0)=0.3679\tP(C=1|B=1,A=1)=0.7228\tP(C=1|B=0,A=1)=0.7104\tP(A=1)=0.6321",
+        "Step 6": "ATE=[0.4794*0.3679-0.4642*0.3679]+[0.7228*0.6321-0.7104*0.6321]=0.0135",
+        "Step 7": "ATE=0.0135>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.013459565374322746
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于研究生项目录取可能性的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果考试得分被改变为低，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于研究生项目录取可能性的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果考试得分被改变为低，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于研究生项目录取可能性的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果考试得分被改变为高，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于研究生项目录取可能性的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果考试得分被改变为高，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于备考时间的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果总平均成绩被改变为低，那么备考时间更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于备考时间的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果总平均成绩被改变为低，那么备考时间更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于备考时间的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果总平均成绩被改变为高，那么备考时间更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于备考时间的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果总平均成绩被改变为高，那么备考时间更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于考试得分的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果总平均成绩被改变为低，那么考试得分更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于考试得分的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果总平均成绩被改变为低，那么考试得分更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于考试得分的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果总平均成绩被改变为高，那么考试得分更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于考试得分的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果总平均成绩被改变为高，那么考试得分更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于研究生项目录取可能性的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果总平均成绩被改变为低，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于研究生项目录取可能性的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果总平均成绩被改变为低，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于研究生项目录取可能性的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果总平均成绩被改变为高，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于研究生项目录取可能性的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果总平均成绩被改变为高，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于备考时间的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果研究生项目录取可能性被改变为低，那么备考时间更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于备考时间的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果研究生项目录取可能性被改变为低，那么备考时间更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于备考时间的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果研究生项目录取可能性被改变为高，那么备考时间更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于备考时间的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果研究生项目录取可能性被改变为高，那么备考时间更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于考试得分的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果研究生项目录取可能性被改变为低，那么考试得分更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于考试得分的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果研究生项目录取可能性被改变为低，那么考试得分更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于考试得分的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果研究生项目录取可能性被改变为高，那么考试得分更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于考试得分的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果研究生项目录取可能性被改变为高，那么考试得分更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于总平均成绩的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果研究生项目录取可能性被改变为低，那么总平均成绩更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于总平均成绩的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果研究生项目录取可能性被改变为低，那么总平均成绩更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于总平均成绩的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果研究生项目录取可能性被改变为高，那么总平均成绩更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于总平均成绩的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果研究生项目录取可能性被改变为高，那么总平均成绩更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 考试得分为低(B=0)的概率为0.5910。在备考时间为长(A=1)的条件下, 考试得分为低(B=0)的概率为0.4608。",
+        "data_info_math": "P(B=0|A=0)=0.5910; P(B=0|A=1)=0.4608; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而备考时间变化为短，那么考试得分更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.5910\tP(B=0|A=1)=0.4608",
+        "Step 6": "NDE=0.5910-0.4608=0.1302",
+        "Step 7": "NDE=0.1302>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.1301927889260171
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 考试得分为高(B=1)的概率为0.4090。在备考时间为长(A=1)的条件下, 考试得分为高(B=1)的概率为0.5392。",
+        "data_info_math": "P(B=1|A=0)=0.4090; P(B=1|A=1)=0.5392; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而备考时间变化为短，那么考试得分更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.4090\tP(B=1|A=1)=0.5392",
+        "Step 6": "NDE=0.4090-0.5392=-0.1302",
+        "Step 7": "NDE=-0.1302<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.13019278892601716
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 考试得分为低(B=0)的概率为0.4608。在备考时间为短(A=0)的条件下, 考试得分为低(B=0)的概率为0.5910。",
+        "data_info_math": "P(B=0|A=1)=0.4608; P(B=0|A=0)=0.5910; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而备考时间变化为长，那么考试得分更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.4608\tP(B=0|A=0)=0.5910",
+        "Step 6": "NDE=0.4608-0.5910=-0.1302",
+        "Step 7": "NDE=-0.1302<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.1301927889260171
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 考试得分为高(B=1)的概率为0.5392。在备考时间为短(A=0)的条件下, 考试得分为高(B=1)的概率为0.4090。",
+        "data_info_math": "P(B=1|A=1)=0.5392; P(B=1|A=0)=0.4090; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而备考时间变化为长，那么考试得分更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.5392\tP(B=1|A=0)=0.4090",
+        "Step 6": "NDE=0.5392-0.4090=0.1302",
+        "Step 7": "NDE=0.1302>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.13019278892601716
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5358。在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2896。在备考时间为长(A=1)的条件下, 考试得分为低(B=0)的概率为0.4608。在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5206。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2772。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5358; P(C=0|B=0,A=1)=0.2896; P(B=0|A=1)=0.4608; P(C=0|B=1,A=0)=0.5206; P(C=0|B=1,A=1)=0.2772; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而备考时间变化为短，那么总平均成绩更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=0,B)-P(C=0|A=1,B)]*P(B|A=1)=[P(C=0|A=0,B=0)-P(C=0|A=1,B=0)]*P(B=0|A=1)+[P(C=0|A=0,B=1)-P(C=0|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=0|A=0,B=0)=0.5358\tP(C=0|A=1,B=0)=0.2896\tP(B=0|A=1)=0.4608\tP(C=0|A=0,B=1)=0.5206\tP(C=0|A=1,B=1)=0.2772\tP(B=1|A=1)=0.5392",
+        "Step 6": "=(0.5358-0.2896)*0.4608+(0.5206-0.2772)*0.5392=0.2447",
+        "Step 7": "NDE=0.2447>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.24467807066363184
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4642。在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7104。在备考时间为长(A=1)的条件下, 考试得分为低(B=0)的概率为0.4608。在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4794。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7228。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4642; P(C=1|B=0,A=1)=0.7104; P(B=0|A=1)=0.4608; P(C=1|B=1,A=0)=0.4794; P(C=1|B=1,A=1)=0.7228; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而备考时间变化为短，那么总平均成绩更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=0,B)-P(C=1|A=1,B)]*P(B|A=1)=[P(C=1|A=0,B=0)-P(C=1|A=1,B=0)]*P(B=0|A=1)+[P(C=1|A=0,B=1)-P(C=1|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=1|A=0,B=0)=0.4642\tP(C=1|A=1,B=0)=0.7104\tP(B=0|A=1)=0.4608\tP(C=1|A=0,B=1)=0.4794\tP(C=1|A=1,B=1)=0.7228\tP(B=1|A=1)=0.5392",
+        "Step 6": "=(0.4642-0.7104)*0.4608+(0.4794-0.7228)*0.5392=-0.2447",
+        "Step 7": "NDE=-0.2447<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.24467807066363179
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2896。在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5358。在备考时间为短(A=0)的条件下, 考试得分为低(B=0)的概率为0.5910。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2772。在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5206。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.2896; P(C=0|B=0,A=0)=0.5358; P(B=0|A=0)=0.5910; P(C=0|B=1,A=1)=0.2772; P(C=0|B=1,A=0)=0.5206; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而备考时间变化为长，那么总平均成绩更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=1,B)-P(C=0|A=0,B)]*P(B|A=0)=[P(C=0|A=1,B=0)-P(C=0|A=0,B=0)]*P(B=0|A=0)+[P(C=0|A=1,B=1)-P(C=0|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=0|A=1,B=0)=0.2896\tP(C=0|A=0,B=0)=0.5358\tP(B=0|A=0)=0.5910\tP(C=0|A=1,B=1)=0.2772\tP(C=0|A=0,B=1)=0.5206\tP(B=1|A=0)=0.4090",
+        "Step 6": "=(0.2896-0.5358)*0.5910+(0.2772-0.5206)*0.4090=-0.2450",
+        "Step 7": "NDE=-0.2450<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.24504126999240278
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7104。在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4642。在备考时间为短(A=0)的条件下, 考试得分为低(B=0)的概率为0.5910。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7228。在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4794。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.7104; P(C=1|B=0,A=0)=0.4642; P(B=0|A=0)=0.5910; P(C=1|B=1,A=1)=0.7228; P(C=1|B=1,A=0)=0.4794; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而备考时间变化为长，那么总平均成绩更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=1,B)-P(C=1|A=0,B)]*P(B|A=0)=[P(C=1|A=1,B=0)-P(C=1|A=0,B=0)]*P(B=0|A=0)+[P(C=1|A=1,B=1)-P(C=1|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=1|A=1,B=0)=0.7104\tP(C=1|A=0,B=0)=0.4642\tP(B=0|A=0)=0.5910\tP(C=1|A=1,B=1)=0.7228\tP(C=1|A=0,B=1)=0.4794\tP(B=1|A=0)=0.4090",
+        "Step 6": "=(0.7104-0.4642)*0.5910+(0.7228-0.4794)*0.4090=0.2450",
+        "Step 7": "NDE=0.2450>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.24504126999240272
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 研究生项目录取可能性为低(D=0)的概率为0.3457。在备考时间为长(A=1)的条件下, 研究生项目录取可能性为低(D=0)的概率为0.1910。",
+        "data_info_math": "P(D=0|A=0)=0.3457; P(D=0|A=1)=0.1910; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而备考时间变化为短，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.3457\tP(D=0|A=1)=0.1910",
+        "Step 6": "NDE=0.3457-0.1910=0.1548",
+        "Step 7": "NDE=0.1548>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.1547589988901492
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 研究生项目录取可能性为高(D=1)的概率为0.6543。在备考时间为长(A=1)的条件下, 研究生项目录取可能性为高(D=1)的概率为0.8090。",
+        "data_info_math": "P(D=1|A=0)=0.6543; P(D=1|A=1)=0.8090; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而备考时间变化为短，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.6543\tP(D=1|A=1)=0.8090",
+        "Step 6": "NDE=0.6543-0.8090=-0.1548",
+        "Step 7": "NDE=-0.1548<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.1547589988901492
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 研究生项目录取可能性为低(D=0)的概率为0.1910。在备考时间为短(A=0)的条件下, 研究生项目录取可能性为低(D=0)的概率为0.3457。",
+        "data_info_math": "P(D=0|A=1)=0.1910; P(D=0|A=0)=0.3457; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而备考时间变化为长，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.1910\tP(D=0|A=0)=0.3457",
+        "Step 6": "NDE=0.1910-0.3457=-0.1548",
+        "Step 7": "NDE=-0.1548<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.1547589988901492
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 研究生项目录取可能性为高(D=1)的概率为0.8090。在备考时间为短(A=0)的条件下, 研究生项目录取可能性为高(D=1)的概率为0.6543。",
+        "data_info_math": "P(D=1|A=1)=0.8090; P(D=1|A=0)=0.6543; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而备考时间变化为长，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.8090\tP(D=1|A=0)=0.6543",
+        "Step 6": "NDE=0.8090-0.6543=0.1548",
+        "Step 7": "NDE=0.1548>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.1547589988901492
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5358。在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5206。备考时间为短(A=0)的概率为0.3679。在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2896。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2772。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5358; P(C=0|B=1,A=0)=0.5206; P(A=0)=0.3679; P(C=0|B=0,A=1)=0.2896; P(C=0|B=1,A=1)=0.2772; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而考试得分变化为低，那么总平均成绩更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=0,A)-P(C=0|B=1,A)]*P(A)=[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=0,A=0)=0.5358\tP(C=0|B=1,A=0)=0.5206\tP(A=0)=0.3679\tP(C=0|B=0,A=1)=0.2896\tP(C=0|B=1,A=1)=0.2772\tP(A=1)=0.6321",
+        "Step 6": "NDE=[0.5358-0.5206]*0.3679+[0.2896-0.2772]*0.6321=0.0135",
+        "Step 7": "NDE=0.0135>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.013459565374322743
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4642。在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4794。备考时间为短(A=0)的概率为0.3679。在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7104。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7228。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4642; P(C=1|B=1,A=0)=0.4794; P(A=0)=0.3679; P(C=1|B=0,A=1)=0.7104; P(C=1|B=1,A=1)=0.7228; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而考试得分变化为低，那么总平均成绩更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=0,A)-P(C=1|B=1,A)]*P(A)=[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=0,A=0)=0.4642\tP(C=1|B=1,A=0)=0.4794\tP(A=0)=0.3679\tP(C=1|B=0,A=1)=0.7104\tP(C=1|B=1,A=1)=0.7228\tP(A=1)=0.6321",
+        "Step 6": "NDE=[0.4642-0.4794]*0.3679+[0.7104-0.7228]*0.6321=-0.0135",
+        "Step 7": "NDE=-0.0135<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.013459565374322783
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5206。在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5358。备考时间为短(A=0)的概率为0.3679。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2772。在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2896。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.5206; P(C=0|B=0,A=0)=0.5358; P(A=0)=0.3679; P(C=0|B=1,A=1)=0.2772; P(C=0|B=0,A=1)=0.2896; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而考试得分变化为高，那么总平均成绩更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=1,A)-P(C=0|B=0,A)]*P(A)=[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=1,A=0)=0.5206\tP(C=0|B=0,A=0)=0.5358\tP(A=0)=0.3679\tP(C=0|B=1,A=1)=0.2772\tP(C=0|B=0,A=1)=0.2896\tP(A=1)=0.6321",
+        "Step 6": "NDE=[0.5206-0.5358]*0.3679+[0.2772-0.2896]*0.6321=-0.0135",
+        "Step 7": "NDE=-0.0135<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.013459565374322743
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4794。在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4642。备考时间为短(A=0)的概率为0.3679。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7228。在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7104。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.4794; P(C=1|B=0,A=0)=0.4642; P(A=0)=0.3679; P(C=1|B=1,A=1)=0.7228; P(C=1|B=0,A=1)=0.7104; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而考试得分变化为高，那么总平均成绩更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=1,A)-P(C=1|B=0,A)]*P(A)=[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=1,A=0)=0.4794\tP(C=1|B=0,A=0)=0.4642\tP(A=0)=0.3679\tP(C=1|B=1,A=1)=0.7228\tP(C=1|B=0,A=1)=0.7104\tP(A=1)=0.6321",
+        "Step 6": "NDE=[0.4794-0.4642]*0.3679+[0.7228-0.7104]*0.6321=0.0135",
+        "Step 7": "NDE=0.0135>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.013459565374322783
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如备考时间保持不变，而所有中间变量被改变为当它们在备考时间变化为短下的取值，那么考试得分更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如备考时间保持不变，而所有中间变量被改变为当它们在备考时间变化为短下的取值，那么考试得分更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如备考时间保持不变，而所有中间变量被改变为当它们在备考时间变化为长下的取值，那么考试得分更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如备考时间保持不变，而所有中间变量被改变为当它们在备考时间变化为长下的取值，那么考试得分更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2896。在备考时间为短(A=0)的条件下, 考试得分为低(B=0)的概率为0.5910。在备考时间为长(A=1)的条件下, 考试得分为低(B=0)的概率为0.4608。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2772。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.2896; P(B=0|A=0)=0.5910; P(B=0|A=1)=0.4608; P(C=0|B=1,A=1)=0.2772; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如备考时间保持不变，而所有中间变量被改变为当它们在备考时间变化为短下的取值，那么总平均成绩更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=0|A=1,B=0)=0.2896\tP(B=0|A=0)=0.5910\tP(B=0|A=1)=0.4608\tP(C=0|A=1,B=1)=0.2772\tP(B=1|A=0)=0.4090\tP(B=1|A=1)=0.5392",
+        "Step 6": "NIE=0.2896*(0.5910-0.4608)+0.2772*(0.4090-0.5392)=0.0016",
+        "Step 7": "NIE=0.0016>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.001618731848733436
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7104。在备考时间为短(A=0)的条件下, 考试得分为低(B=0)的概率为0.5910。在备考时间为长(A=1)的条件下, 考试得分为低(B=0)的概率为0.4608。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7228。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.7104; P(B=0|A=0)=0.5910; P(B=0|A=1)=0.4608; P(C=1|B=1,A=1)=0.7228; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如备考时间保持不变，而所有中间变量被改变为当它们在备考时间变化为短下的取值，那么总平均成绩更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=1|A=1,B=0)=0.7104\tP(B=0|A=0)=0.5910\tP(B=0|A=1)=0.4608\tP(C=1|A=1,B=1)=0.7228\tP(B=1|A=0)=0.4090\tP(B=1|A=1)=0.5392",
+        "Step 6": "NIE=0.7104*(0.5910-0.4608)+0.7228*(0.4090-0.5392)=-0.0016",
+        "Step 7": "NIE=-0.0016<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.0016187318487334845
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5358。在备考时间为长(A=1)的条件下, 考试得分为低(B=0)的概率为0.4608。在备考时间为短(A=0)的条件下, 考试得分为低(B=0)的概率为0.5910。在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5206。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5358; P(B=0|A=1)=0.4608; P(B=0|A=0)=0.5910; P(C=0|B=1,A=0)=0.5206; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如备考时间保持不变，而所有中间变量被改变为当它们在备考时间变化为长下的取值，那么总平均成绩更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=0|A=0,B=0)=0.5358\tP(B=0|A=1)=0.4608\tP(B=0|A=0)=0.5910\tP(C=0|A=0,B=1)=0.5206\tP(B=1|A=1)=0.5392\tP(B=1|A=0)=0.4090",
+        "Step 6": "NIE=0.5358*(0.4608-0.5910)+0.5206*(0.5392-0.4090)=-0.0020",
+        "Step 7": "NIE=-0.0020<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.0019819311775043646
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4642。在备考时间为长(A=1)的条件下, 考试得分为低(B=0)的概率为0.4608。在备考时间为短(A=0)的条件下, 考试得分为低(B=0)的概率为0.5910。在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4794。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4642; P(B=0|A=1)=0.4608; P(B=0|A=0)=0.5910; P(C=1|B=1,A=0)=0.4794; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如备考时间保持不变，而所有中间变量被改变为当它们在备考时间变化为长下的取值，那么总平均成绩更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=1|A=0,B=0)=0.4642\tP(B=0|A=1)=0.4608\tP(B=0|A=0)=0.5910\tP(C=1|A=0,B=1)=0.4794\tP(B=1|A=1)=0.5392\tP(B=1|A=0)=0.4090",
+        "Step 6": "NIE=0.4642*(0.4608-0.5910)+0.4794*(0.5392-0.4090)=0.0020",
+        "Step 7": "NIE=0.0020>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.001981931177504427
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如备考时间保持不变，而所有中间变量被改变为当它们在备考时间变化为短下的取值，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如备考时间保持不变，而所有中间变量被改变为当它们在备考时间变化为短下的取值，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如备考时间保持不变，而所有中间变量被改变为当它们在备考时间变化为长下的取值，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如备考时间保持不变，而所有中间变量被改变为当它们在备考时间变化为长下的取值，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如考试得分保持不变，而所有中间变量被改变为当它们在考试得分变化为低下的取值，那么总平均成绩更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如考试得分保持不变，而所有中间变量被改变为当它们在考试得分变化为低下的取值，那么总平均成绩更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如考试得分保持不变，而所有中间变量被改变为当它们在考试得分变化为高下的取值，那么总平均成绩更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如考试得分保持不变，而所有中间变量被改变为当它们在考试得分变化为高下的取值，那么总平均成绩更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 考试得分为低(B=0)的概率为0.5910。在备考时间为长(A=1)的条件下, 考试得分为低(B=0)的概率为0.4608。",
+        "data_info_math": "P(B=0|A=0)=0.5910; P(B=0|A=1)=0.4608; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些备考时间为短，假如备考时间为长，那么考试得分更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.5910\tP(B=0|A=1)=0.4608",
+        "Step 6": "ETT=0.5910-0.4608=0.1302",
+        "Step 7": "ETT=0.1302>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.1301927889260171
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 考试得分为高(B=1)的概率为0.4090。在备考时间为长(A=1)的条件下, 考试得分为高(B=1)的概率为0.5392。",
+        "data_info_math": "P(B=1|A=0)=0.4090; P(B=1|A=1)=0.5392; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些备考时间为短，假如备考时间为长，那么考试得分更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.4090\tP(B=1|A=1)=0.5392",
+        "Step 6": "ETT=0.4090-0.5392=-0.1302",
+        "Step 7": "ETT=-0.1302<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.13019278892601716
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 考试得分为低(B=0)的概率为0.4608。在备考时间为短(A=0)的条件下, 考试得分为低(B=0)的概率为0.5910。",
+        "data_info_math": "P(B=0|A=1)=0.4608; P(B=0|A=0)=0.5910; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些备考时间为长，假如备考时间为短，那么考试得分更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.4608\tP(B=0|A=0)=0.5910",
+        "Step 6": "ETT=0.4608-0.5910=-0.1302",
+        "Step 7": "ETT=-0.1302<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.1301927889260171
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 考试得分为高(B=1)的概率为0.5392。在备考时间为短(A=0)的条件下, 考试得分为高(B=1)的概率为0.4090。",
+        "data_info_math": "P(B=1|A=1)=0.5392; P(B=1|A=0)=0.4090; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些备考时间为长，假如备考时间为短，那么考试得分更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.5392\tP(B=1|A=0)=0.4090",
+        "Step 6": "ETT=0.5392-0.4090=0.1302",
+        "Step 7": "ETT=0.1302>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.13019278892601716
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5296。在备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2829。",
+        "data_info_math": "P(C=0|A=0)=0.5296; P(C=0|A=1)=0.2829; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些备考时间为短，假如备考时间为长，那么总平均成绩更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.5296\tP(C=0|A=1)=0.2829",
+        "Step 6": "ETT=0.5296-0.2829=0.2467",
+        "Step 7": "ETT=0.2467>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.24666000184113612
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4704。在备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7171。",
+        "data_info_math": "P(C=1|A=0)=0.4704; P(C=1|A=1)=0.7171; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些备考时间为短，假如备考时间为长，那么总平均成绩更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.4704\tP(C=1|A=1)=0.7171",
+        "Step 6": "ETT=0.4704-0.7171=-0.2467",
+        "Step 7": "ETT=-0.2467<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.24666000184113623
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2829。在备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5296。",
+        "data_info_math": "P(C=0|A=1)=0.2829; P(C=0|A=0)=0.5296; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些备考时间为长，假如备考时间为短，那么总平均成绩更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.2829\tP(C=0|A=0)=0.5296",
+        "Step 6": "ETT=0.2829-0.5296=-0.2467",
+        "Step 7": "ETT=-0.2467<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.24666000184113612
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7171。在备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4704。",
+        "data_info_math": "P(C=1|A=1)=0.7171; P(C=1|A=0)=0.4704; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些备考时间为长，假如备考时间为短，那么总平均成绩更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.7171\tP(C=1|A=0)=0.4704",
+        "Step 6": "ETT=0.7171-0.4704=0.2467",
+        "Step 7": "ETT=0.2467>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.24666000184113623
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 研究生项目录取可能性为低(D=0)的概率为0.3457。在备考时间为长(A=1)的条件下, 研究生项目录取可能性为低(D=0)的概率为0.1910。",
+        "data_info_math": "P(D=0|A=0)=0.3457; P(D=0|A=1)=0.1910; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些备考时间为短，假如备考时间为长，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.3457\tP(D=0|A=1)=0.1910",
+        "Step 6": "ETT=0.3457-0.1910=0.1548",
+        "Step 7": "ETT=0.1548>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.1547589988901492
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 研究生项目录取可能性为高(D=1)的概率为0.6543。在备考时间为长(A=1)的条件下, 研究生项目录取可能性为高(D=1)的概率为0.8090。",
+        "data_info_math": "P(D=1|A=0)=0.6543; P(D=1|A=1)=0.8090; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些备考时间为短，假如备考时间为长，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.6543\tP(D=1|A=1)=0.8090",
+        "Step 6": "ETT=0.6543-0.8090=-0.1548",
+        "Step 7": "ETT=-0.1548<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.1547589988901492
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 研究生项目录取可能性为低(D=0)的概率为0.1910。在备考时间为短(A=0)的条件下, 研究生项目录取可能性为低(D=0)的概率为0.3457。",
+        "data_info_math": "P(D=0|A=1)=0.1910; P(D=0|A=0)=0.3457; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些备考时间为长，假如备考时间为短，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.1910\tP(D=0|A=0)=0.3457",
+        "Step 6": "ETT=0.1910-0.3457=-0.1548",
+        "Step 7": "ETT=-0.1548<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.1547589988901492
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 研究生项目录取可能性为高(D=1)的概率为0.8090。在备考时间为短(A=0)的条件下, 研究生项目录取可能性为高(D=1)的概率为0.6543。",
+        "data_info_math": "P(D=1|A=1)=0.8090; P(D=1|A=0)=0.6543; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些备考时间为长，假如备考时间为短，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.8090\tP(D=1|A=0)=0.6543",
+        "Step 6": "ETT=0.8090-0.6543=0.1548",
+        "Step 7": "ETT=0.1548>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.1547589988901492
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于备考时间的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些考试得分为低，假如考试得分为高，那么备考时间更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于备考时间的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些考试得分为低，假如考试得分为高，那么备考时间更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于备考时间的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些考试得分为高，假如考试得分为低，那么备考时间更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于备考时间的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些考试得分为高，假如考试得分为低，那么备考时间更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)的条件下, 总平均成绩为低(C=0)的概率为0.3949。在备考时间为短(A=0)且考试得分为高(B=1)的条件下, 总平均成绩为低(C=0)的概率为0.5206。在考试得分为低(B=0)的条件下, 备考时间为短(A=0)的概率为0.4274。在备考时间为长(A=1)且考试得分为高(B=1)的条件下, 总平均成绩为低(C=0)的概率为0.2772。在考试得分为低(B=0)的条件下, 备考时间为长(A=1)的概率为0.5726。",
+        "data_info_math": "P(C=0|B=0)=0.3949; P(C=0|A=0,B=1)=0.5206; P(A=0|B=0)=0.4274; P(C=0|A=1,B=1)=0.2772; P(A=1|B=0)=0.5726; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些考试得分为低，假如考试得分为高，那么总平均成绩更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-sum_{A} P(C=0|B=1,A)*P(A|B=0)=P(C=0|B=0)-[P(C=0|B=1,A=0)*P(A=0|B=0)+P(C=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=0|B=0)=0.3949\tP(C=0|B=1,A=0)=0.5206\tP(A=0|B=0)=0.4274\tP(C=0|B=1,A=1)=0.2772\tP(A=1|B=0)=0.5726",
+        "Step 6": "ETT=0.3949-[0.5206*0.4274+0.2772*0.5726]=0.0136",
+        "Step 7": "ETT=0.0136>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.013625579480000122
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)的条件下, 总平均成绩为高(C=1)的概率为0.6051。在备考时间为短(A=0)且考试得分为高(B=1)的条件下, 总平均成绩为高(C=1)的概率为0.4794。在考试得分为低(B=0)的条件下, 备考时间为短(A=0)的概率为0.4274。在备考时间为长(A=1)且考试得分为高(B=1)的条件下, 总平均成绩为高(C=1)的概率为0.7228。在考试得分为低(B=0)的条件下, 备考时间为长(A=1)的概率为0.5726。",
+        "data_info_math": "P(C=1|B=0)=0.6051; P(C=1|A=0,B=1)=0.4794; P(A=0|B=0)=0.4274; P(C=1|A=1,B=1)=0.7228; P(A=1|B=0)=0.5726; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些考试得分为低，假如考试得分为高，那么总平均成绩更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-sum_{A} P(C=1|B=1,A)*P(A|B=0)=P(C=1|B=0)-[P(C=1|B=1,A=0)*P(A=0|B=0)+P(C=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=1|B=0)=0.6051\tP(C=1|B=1,A=0)=0.4794\tP(A=0|B=0)=0.4274\tP(C=1|B=1,A=1)=0.7228\tP(A=1|B=0)=0.5726",
+        "Step 6": "ETT=0.6051-[0.4794*0.4274+0.7228*0.5726]=-0.0136",
+        "Step 7": "ETT=-0.0136<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.01362557948000026
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为高(B=1)的条件下, 总平均成绩为低(C=0)的概率为0.3517。在备考时间为短(A=0)且考试得分为低(B=0)的条件下, 总平均成绩为低(C=0)的概率为0.5358。在考试得分为高(B=1)的条件下, 备考时间为短(A=0)的概率为0.3062。在备考时间为长(A=1)且考试得分为低(B=0)的条件下, 总平均成绩为低(C=0)的概率为0.2896。在考试得分为高(B=1)的条件下, 备考时间为长(A=1)的概率为0.6938。",
+        "data_info_math": "P(C=0|B=1)=0.3517; P(C=0|A=0,B=0)=0.5358; P(A=0|B=1)=0.3062; P(C=0|A=1,B=0)=0.2896; P(A=1|B=1)=0.6938; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些考试得分为高，假如考试得分为低，那么总平均成绩更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-sum_{A} P(C=0|B=0,A)*P(A|B=1)=P(C=0|B=1)-[P(C=0|B=0,A=0)*P(A=0|B=1)+P(C=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=0|B=1)=0.3517\tP(C=0|B=0,A=0)=0.5358\tP(A=0|B=1)=0.3062\tP(C=0|B=0,A=1)=0.2896\tP(A=1|B=1)=0.6938",
+        "Step 6": "ETT=0.3517-[0.5358*0.3062+0.2896*0.6938]=-0.0133",
+        "Step 7": "ETT=-0.0133<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.013287644159238388
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为高(B=1)的条件下, 总平均成绩为高(C=1)的概率为0.6483。在备考时间为短(A=0)且考试得分为低(B=0)的条件下, 总平均成绩为高(C=1)的概率为0.4642。在考试得分为高(B=1)的条件下, 备考时间为短(A=0)的概率为0.3062。在备考时间为长(A=1)且考试得分为低(B=0)的条件下, 总平均成绩为高(C=1)的概率为0.7104。在考试得分为高(B=1)的条件下, 备考时间为长(A=1)的概率为0.6938。",
+        "data_info_math": "P(C=1|B=1)=0.6483; P(C=1|A=0,B=0)=0.4642; P(A=0|B=1)=0.3062; P(C=1|A=1,B=0)=0.7104; P(A=1|B=1)=0.6938; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些考试得分为高，假如考试得分为低，那么总平均成绩更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-sum_{A} P(C=1|B=0,A)*P(A|B=1)=P(C=1|B=1)-[P(C=1|B=0,A=0)*P(A=0|B=1)+P(C=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=1|B=1)=0.6483\tP(C=1|B=0,A=0)=0.4642\tP(A=0|B=1)=0.3062\tP(C=1|B=0,A=1)=0.7104\tP(A=1|B=1)=0.6938",
+        "Step 6": "ETT=0.6483-[0.4642*0.3062+0.7104*0.6938]=0.0133",
+        "Step 7": "ETT=0.0133>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.013287644159238388
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于研究生项目录取可能性的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些考试得分为低，假如考试得分为高，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于研究生项目录取可能性的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些考试得分为低，假如考试得分为高，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于研究生项目录取可能性的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些考试得分为高，假如考试得分为低，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑考试得分作用于研究生项目录取可能性的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些考试得分为高，假如考试得分为低，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D没有有向路径，所以节点B不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于备考时间的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些总平均成绩为低，假如总平均成绩为高，那么备考时间更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于备考时间的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些总平均成绩为低，假如总平均成绩为高，那么备考时间更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于备考时间的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些总平均成绩为高，假如总平均成绩为低，那么备考时间更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于备考时间的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些总平均成绩为高，假如总平均成绩为低，那么备考时间更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于考试得分的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些总平均成绩为低，假如总平均成绩为高，那么考试得分更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于考试得分的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些总平均成绩为低，假如总平均成绩为高，那么考试得分更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于考试得分的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些总平均成绩为高，假如总平均成绩为低，那么考试得分更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于考试得分的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些总平均成绩为高，假如总平均成绩为低，那么考试得分更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于研究生项目录取可能性的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些总平均成绩为低，假如总平均成绩为高，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于研究生项目录取可能性的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些总平均成绩为低，假如总平均成绩为高，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于研究生项目录取可能性的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些总平均成绩为高，假如总平均成绩为低，那么研究生项目录取可能性更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑总平均成绩作用于研究生项目录取可能性的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些总平均成绩为高，假如总平均成绩为低，那么研究生项目录取可能性更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于备考时间的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些研究生项目录取可能性为低，假如研究生项目录取可能性为高，那么备考时间更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于备考时间的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些研究生项目录取可能性为低，假如研究生项目录取可能性为高，那么备考时间更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于备考时间的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些研究生项目录取可能性为高，假如研究生项目录取可能性为低，那么备考时间更有可能为短吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于备考时间的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些研究生项目录取可能性为高，假如研究生项目录取可能性为低，那么备考时间更有可能为长吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于考试得分的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些研究生项目录取可能性为低，假如研究生项目录取可能性为高，那么考试得分更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于考试得分的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些研究生项目录取可能性为低，假如研究生项目录取可能性为高，那么考试得分更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于考试得分的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些研究生项目录取可能性为高，假如研究生项目录取可能性为低，那么考试得分更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于考试得分的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些研究生项目录取可能性为高，假如研究生项目录取可能性为低，那么考试得分更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于总平均成绩的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些研究生项目录取可能性为低，假如研究生项目录取可能性为高，那么总平均成绩更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于总平均成绩的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些研究生项目录取可能性为低，假如研究生项目录取可能性为高，那么总平均成绩更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于总平均成绩的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些研究生项目录取可能性为高，假如研究生项目录取可能性为低，那么总平均成绩更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑研究生项目录取可能性作用于总平均成绩的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些研究生项目录取可能性为高，假如研究生项目录取可能性为低，那么总平均成绩更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)且考试得分为高(B=1)的条件下, 总平均成绩为低(C=0)的概率为0.5206。在备考时间为长(A=1)且考试得分为高(B=1)的条件下, 总平均成绩为低(C=0)的概率为0.2772。",
+        "data_info_math": "P(C=0|A=0,B=1)=0.5206; P(C=0|A=1,B=1)=0.2772; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在考试得分为高的条件下，假如备考时间为短，那么总平均成绩更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=0,B=1))-P(C=0|do(A=1,B=1))=P(C=0|A=0,B=1)-P(C=0|A=1,B=1)",
+        "Step 5": "P(C=0|A=0,B=1)=0.5206\tP(C=0|A=1,B=1)=0.2772",
+        "Step 6": "CDE=0.5206-0.2772=0.2434",
+        "Step 7": "CDE=0.2434>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.2433924432154112
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)且考试得分为高(B=1)的条件下, 总平均成绩为高(C=1)的概率为0.4794。在备考时间为长(A=1)且考试得分为高(B=1)的条件下, 总平均成绩为高(C=1)的概率为0.7228。",
+        "data_info_math": "P(C=1|A=0,B=1)=0.4794; P(C=1|A=1,B=1)=0.7228; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在考试得分为高的条件下，假如备考时间为短，那么总平均成绩更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=0,B=1))-P(C=1|do(A=1,B=1))=P(C=1|A=0,B=1)-P(C=1|A=1,B=1)",
+        "Step 5": "P(C=1|A=0,B=1)=0.4794\tP(C=1|A=1,B=1)=0.7228",
+        "Step 6": "CDE=0.4794-0.7228=-0.2434",
+        "Step 7": "CDE=-0.2434<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.2433924432154111
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)且考试得分为高(B=1)的条件下, 总平均成绩为低(C=0)的概率为0.2772。在备考时间为短(A=0)且考试得分为高(B=1)的条件下, 总平均成绩为低(C=0)的概率为0.5206。",
+        "data_info_math": "P(C=0|A=1,B=1)=0.2772; P(C=0|A=0,B=1)=0.5206; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在考试得分为高的条件下，假如备考时间为长，那么总平均成绩更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=1,B=1))-P(C=0|do(A=0,B=1))=P(C=0|A=1,B=1)-P(C=0|A=0,B=1)",
+        "Step 5": "P(C=0|A=1,B=1)=0.2772\tP(C=0|A=0,B=1)=0.5206",
+        "Step 6": "CDE=0.2772-0.5206=-0.2434",
+        "Step 7": "CDE=-0.2434<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.2433924432154112
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)且考试得分为低(B=0)的条件下, 总平均成绩为高(C=1)的概率为0.7104。在备考时间为短(A=0)且考试得分为低(B=0)的条件下, 总平均成绩为高(C=1)的概率为0.4642。",
+        "data_info_math": "P(C=1|A=1,B=0)=0.7104; P(C=1|A=0,B=0)=0.4642; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在考试得分为低的条件下，假如备考时间为长，那么总平均成绩更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=1,B=0))-P(C=1|do(A=0,B=0))=P(C=1|A=1,B=0)-P(C=1|A=0,B=0)",
+        "Step 5": "P(C=1|A=1,B=0)=0.7104\tP(C=1|A=0,B=0)=0.4642",
+        "Step 6": "CDE=0.7104-0.4642=0.2462",
+        "Step 7": "CDE=0.2462>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.24618214709814568
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象备考时间(A)和观察节点考试得分(B)的后门调整集合。",
+      "Question": "方法1: 根据总平均成绩的情况，我们逐个研究备考时间和考试得分的关联。\n方法2：我们直接研究一般情况下备考时间和考试得分的关联。\n为了理解备考时间如何影响考试得分，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 133,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象备考时间(A)和观察节点考试得分(B)的后门调整集合。",
+      "Question": "方法1: 根据研究生项目录取可能性的情况，我们逐个研究备考时间和考试得分的关联。\n方法2：我们直接研究一般情况下备考时间和考试得分的关联。\n为了理解备考时间如何影响考试得分，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 134,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象备考时间(A)和观察节点总平均成绩(C)的后门调整集合。",
+      "Question": "方法1: 根据考试得分的情况，我们逐个研究备考时间和总平均成绩的关联。\n方法2：我们直接研究一般情况下备考时间和总平均成绩的关联。\n为了理解备考时间如何影响总平均成绩，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 135,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象备考时间(A)和观察节点总平均成绩(C)的后门调整集合。",
+      "Question": "方法1: 根据研究生项目录取可能性的情况，我们逐个研究备考时间和总平均成绩的关联。\n方法2：我们直接研究一般情况下备考时间和总平均成绩的关联。\n为了理解备考时间如何影响总平均成绩，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 136,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象备考时间(A)和观察节点研究生项目录取可能性(D)的后门调整集合。",
+      "Question": "方法1: 根据总平均成绩的情况，我们逐个研究备考时间和研究生项目录取可能性的关联。\n方法2：我们直接研究一般情况下备考时间和研究生项目录取可能性的关联。\n为了理解备考时间如何影响研究生项目录取可能性，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 137,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象备考时间(A)和观察节点研究生项目录取可能性(D)的后门调整集合。",
+      "Question": "方法1: 根据总平均成绩的情况，我们逐个研究备考时间和研究生项目录取可能性的关联。\n方法2：我们直接研究一般情况下备考时间和研究生项目录取可能性的关联。\n为了理解备考时间如何影响研究生项目录取可能性，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 138,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象考试得分(B)和观察节点总平均成绩(C)的后门调整集合。",
+      "Question": "方法1: 根据备考时间的情况，我们逐个研究考试得分和总平均成绩的关联。\n方法2：我们直接研究一般情况下考试得分和总平均成绩的关联。\n为了理解考试得分如何影响总平均成绩，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 139,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象考试得分(B)和观察节点总平均成绩(C)的后门调整集合。",
+      "Question": "方法1: 根据备考时间的情况，我们逐个研究考试得分和总平均成绩的关联。\n方法2：我们直接研究一般情况下考试得分和总平均成绩的关联。\n为了理解考试得分如何影响总平均成绩，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 140,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 考试得分为高(B=1)的概率为0.4090。考试得分为高(B=1)的概率为0.4913。备考时间为长(A=1)且考试得分为高(B=1)的概率为0.3408。",
+        "data_info_math": "P(B=1|A=0)=0.4090; P(B=1)=0.4913; P(A=1,B=1)=0.3408; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的必要性概率(probability of necessity, PN)。",
+      "Question": "给定备考时间为长且考试得分为高, 那么假如备考时间为短，此时考试得分为低的概率的下界是多少？",
+      "Answer": "0.2415",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.4090",
+        "Step 2": "PN的下界: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.4913-0.4090)/0.3408}\n=max{0, 0.2415}\n=0.2415"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.24147664336509742
+    },
+    {
+      "id": 141,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 考试得分为低(B=0)的概率为0.5910。备考时间为短(A=0)且考试得分为低(B=0)的概率为0.2174。备考时间为长(A=1)且考试得分为高(B=1)的概率为0.3408。",
+        "data_info_math": "P(B=0|A=0)=0.5910; P(A=0,B=0)=0.2174; P(A=1,B=1)=0.3408; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的必要性概率(probability of necessity, PN)。",
+      "Question": "给定备考时间为长且考试得分为高, 那么假如备考时间为短，此时考试得分为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.5910",
+        "Step 2": "PN的上界: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.5910-0.2174)/0.3408}\n=min{1, 1.0962}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 142,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4704。总平均成绩为高(C=1)的概率为0.6263。备考时间为长(A=1)且总平均成绩为高(C=1)的概率为0.4533。",
+        "data_info_math": "P(C=1|A=0)=0.4704; P(C=1)=0.6263; P(A=1,C=1)=0.4533; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的必要性概率(probability of necessity, PN)。",
+      "Question": "给定备考时间为长且总平均成绩为高, 那么假如备考时间为短，此时总平均成绩为低的概率的下界是多少？",
+      "Answer": "0.3440",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.4704",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.6263-0.4704)/0.4533}\n=max{0, 0.3440}\n=0.3440"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.3439897051797031
+    },
+    {
+      "id": 143,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5296。备考时间为短(A=0)且总平均成绩为低(C=0)的概率为0.1948。备考时间为长(A=1)且总平均成绩为高(C=1)的概率为0.4533。",
+        "data_info_math": "P(C=0|A=0)=0.5296; P(A=0,C=0)=0.1948; P(A=1,C=1)=0.4533; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的必要性概率(probability of necessity, PN)。",
+      "Question": "给定备考时间为长且总平均成绩为高, 那么假如备考时间为短，此时总平均成绩为低的概率的上界是多少？",
+      "Answer": "0.7386",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.5296",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.5296-0.1948)/0.4533}\n=min{1, 0.7386}\n=0.7386"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.7385802452432398
+    },
+    {
+      "id": 144,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 研究生项目录取可能性为高(D=1)的概率为0.6543。研究生项目录取可能性为高(D=1)的概率为0.7521。备考时间为长(A=1)且研究生项目录取可能性为高(D=1)的概率为0.5114。",
+        "data_info_math": "P(D=1|A=0)=0.6543; P(D=1)=0.7521; P(A=1,D=1)=0.5114; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的必要性概率(probability of necessity, PN)。",
+      "Question": "给定备考时间为长且研究生项目录取可能性为高, 那么假如备考时间为短，此时研究生项目录取可能性为低的概率的下界是多少？",
+      "Answer": "0.1913",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.6543",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.7521-0.6543)/0.5114}\n=max{0, 0.1913}\n=0.1913"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.1912896514771009
+    },
+    {
+      "id": 145,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为短(A=0)的条件下, 研究生项目录取可能性为低(D=0)的概率为0.3457。备考时间为短(A=0)且研究生项目录取可能性为低(D=0)的概率为0.1272。备考时间为长(A=1)且研究生项目录取可能性为高(D=1)的概率为0.5114。",
+        "data_info_math": "P(D=0|A=0)=0.3457; P(A=0,D=0)=0.1272; P(A=1,D=1)=0.5114; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的必要性概率(probability of necessity, PN)。",
+      "Question": "给定备考时间为长且研究生项目录取可能性为高, 那么假如备考时间为短，此时研究生项目录取可能性为低的概率的上界是多少？",
+      "Answer": "0.4273",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.3457",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.3457-0.1272)/0.5114}\n=min{1, 0.4273}\n=0.4273"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.4273383003371376
+    },
+    {
+      "id": 146,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4642。备考时间为短(A=0)的概率为0.3679。在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7104。备考时间为长(A=1)的概率为0.6321。总平均成绩为高(C=1)的概率为0.6263。考试得分为高(B=1)且总平均成绩为高(C=1)的概率为0.3185。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4642; P(A=0)=0.3679; P(C=1|B=0,A=1)=0.7104; P(A=1)=0.6321; P(C=1)=0.6263; P(B=1,C=1)=0.3185; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的必要性概率(probability of necessity, PN)。",
+      "Question": "给定考试得分为高且总平均成绩为高, 那么假如考试得分为低，此时总平均成绩为低的概率的下界是多少？",
+      "Answer": "0.0205",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=sum_{A} P(C=1|B=0,A)*P(A)=P(C=1|B=0,A=0)*P(A=0)+P(C=1|B=0,A=1)*P(A=1)\nP(C=1|B=0,A=0)=0.4642\tP(A=0)=0.3679\tP(C=1|B=0,A=1)=0.7104\tP(A=1)=0.6321\nP(C=1|do(B=0))=0.4642*0.3679+0.7104*0.6321=0.6198",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.6263-0.6198)/0.3185}\n=max{0, 0.0205}\n=0.0205"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.020497670255816787
+    },
+    {
+      "id": 147,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为低(B=0)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5358。备考时间为短(A=0)的概率为0.3679。在考试得分为低(B=0)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2896。备考时间为长(A=1)的概率为0.6321。考试得分为低(B=0)且总平均成绩为低(C=0)的概率为0.2009。考试得分为高(B=1)且总平均成绩为高(C=1)的概率为0.3185。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5358; P(A=0)=0.3679; P(C=0|B=0,A=1)=0.2896; P(A=1)=0.6321; P(B=0,C=0)=0.2009; P(B=1,C=1)=0.3185; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的必要性概率(probability of necessity, PN)。",
+      "Question": "给定考试得分为高且总平均成绩为高, 那么假如考试得分为低，此时总平均成绩为低的概率的上界是多少？",
+      "Answer": "0.5631",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=sum_{A} P(C=0|B=0,A)*P(A)=P(C=0|B=0,A=0)*P(A=0)+P(C=0|B=0,A=1)*P(A=1)\nP(C=0|B=0,A=0)=0.5358\tP(A=0)=0.3679\tP(C=0|B=0,A=1)=0.2896\tP(A=1)=0.6321\nP(C=0|do(B=0))=0.5358*0.3679+0.2896*0.6321=0.3802",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.3802-0.2009)/0.3185}\n=min{1, 0.5631}\n=0.5631"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.5631089872187008
+    },
+    {
+      "id": 148,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 考试得分为低(B=0)的概率为0.4608。考试得分为低(B=0)的概率为0.5087。备考时间为短(A=0)且考试得分为低(B=0)的概率为0.2174。",
+        "data_info_math": "P(B=0|A=1)=0.4608; P(B=0)=0.5087; P(A=0,B=0)=0.2174; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定备考时间为短且考试得分为低, 假如备考时间为长，此时考试得分为高的概率的下界是多少？",
+      "Answer": "0.2203",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.4608",
+        "Step 2": "PS的下界: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.5087-0.4608)/0.2174}\n=max{0, 0.2203}\n=0.2203"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.2202774323168276
+    },
+    {
+      "id": 149,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 考试得分为高(B=1)的概率为0.5392。备考时间为短(A=0)且考试得分为低(B=0)的概率为0.2174。备考时间为长(A=1)且考试得分为高(B=1)的概率为0.3408。",
+        "data_info_math": "P(B=1|A=1)=0.5392; P(A=0,B=0)=0.2174; P(A=1,B=1)=0.3408; "
+      },
+      "Instruction": "考虑备考时间作用于考试得分的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定备考时间为短且考试得分为低, 假如备考时间为长，此时考试得分为高的概率的上界是多少？",
+      "Answer": "0.9122",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.5392",
+        "Step 2": "PS的上界: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.5392-0.3408)/0.2174}\n=min{1, 0.9122}\n=0.9122"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.9122100972050622
+    },
+    {
+      "id": 150,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2829。总平均成绩为低(C=0)的概率为0.3737。备考时间为短(A=0)且总平均成绩为低(C=0)的概率为0.1948。",
+        "data_info_math": "P(C=0|A=1)=0.2829; P(C=0)=0.3737; P(A=0,C=0)=0.1948; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定备考时间为短且总平均成绩为低, 假如备考时间为长，此时总平均成绩为高的概率的下界是多少？",
+      "Answer": "0.4657",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.2829",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.3737-0.2829)/0.1948}\n=max{0, 0.4657}\n=0.4657"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.4657445245728385
+    },
+    {
+      "id": 151,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7171。备考时间为短(A=0)且总平均成绩为低(C=0)的概率为0.1948。备考时间为长(A=1)且总平均成绩为高(C=1)的概率为0.4533。",
+        "data_info_math": "P(C=1|A=1)=0.7171; P(A=0,C=0)=0.1948; P(A=1,C=1)=0.4533; "
+      },
+      "Instruction": "考虑备考时间作用于总平均成绩的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定备考时间为短且总平均成绩为低, 假如备考时间为长，此时总平均成绩为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.7171",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.7171-0.4533)/0.1948}\n=min{1, 1.3539}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 152,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 研究生项目录取可能性为低(D=0)的概率为0.1910。研究生项目录取可能性为低(D=0)的概率为0.2479。备考时间为短(A=0)且研究生项目录取可能性为低(D=0)的概率为0.1272。",
+        "data_info_math": "P(D=0|A=1)=0.1910; P(D=0)=0.2479; P(A=0,D=0)=0.1272; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定备考时间为短且研究生项目录取可能性为低, 假如备考时间为长，此时研究生项目录取可能性为高的概率的下界是多少？",
+      "Answer": "0.4476",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.1910",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.2479-0.1910)/0.1272}\n=max{0, 0.4476}\n=0.4476"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.44763048696123875
+    },
+    {
+      "id": 153,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在备考时间为长(A=1)的条件下, 研究生项目录取可能性为高(D=1)的概率为0.8090。备考时间为短(A=0)且研究生项目录取可能性为低(D=0)的概率为0.1272。备考时间为长(A=1)且研究生项目录取可能性为高(D=1)的概率为0.5114。",
+        "data_info_math": "P(D=1|A=1)=0.8090; P(A=0,D=0)=0.1272; P(A=1,D=1)=0.5114; "
+      },
+      "Instruction": "考虑备考时间作用于研究生项目录取可能性的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定备考时间为短且研究生项目录取可能性为低, 假如备考时间为长，此时研究生项目录取可能性为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.8090",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.8090-0.5114)/0.1272}\n=min{1, 2.3401}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 154,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为低(C=0)的概率为0.5206。备考时间为短(A=0)的概率为0.3679。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为低(C=0)的概率为0.2772。备考时间为长(A=1)的概率为0.6321。总平均成绩为低(C=0)的概率为0.3737。考试得分为低(B=0)且总平均成绩为低(C=0)的概率为0.2009。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.5206; P(A=0)=0.3679; P(C=0|B=1,A=1)=0.2772; P(A=1)=0.6321; P(C=0)=0.3737; P(B=0,C=0)=0.2009; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定考试得分为低且总平均成绩为低, 假如考试得分为高，此时总平均成绩为高的概率的下界是多少？",
+      "Answer": "0.0345",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=sum_{A} P(C=0|B=1,A)*P(A)=P(C=0|B=1,A=0)*P(A=0)+P(C=0|B=1,A=1)*P(A=1)\nP(C=0|B=1,A=0)=0.5206\tP(A=0)=0.3679\tP(C=0|B=1,A=1)=0.2772\tP(A=1)=0.6321\nP(C=0|do(B=1))=0.5206*0.3679+0.2772*0.6321=0.3667",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.3737-0.3667)/0.2009}\n=max{0, 0.0345}\n=0.0345"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.034507553288805635
+    },
+    {
+      "id": 155,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->C, A->D, B->C。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表备考时间, B代表考试得分, C代表总平均成绩, D代表研究生项目录取可能性。",
+        "data_info": "在考试得分为高(B=1)且备考时间为短(A=0)的条件下, 总平均成绩为高(C=1)的概率为0.4794。备考时间为短(A=0)的概率为0.3679。在考试得分为高(B=1)且备考时间为长(A=1)的条件下, 总平均成绩为高(C=1)的概率为0.7228。备考时间为长(A=1)的概率为0.6321。考试得分为低(B=0)且总平均成绩为低(C=0)的概率为0.2009。考试得分为高(B=1)且总平均成绩为高(C=1)的概率为0.3185。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.4794; P(A=0)=0.3679; P(C=1|B=1,A=1)=0.7228; P(A=1)=0.6321; P(B=0,C=0)=0.2009; P(B=1,C=1)=0.3185; "
+      },
+      "Instruction": "考虑考试得分作用于总平均成绩的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定考试得分为低且总平均成绩为低, 假如考试得分为高，此时总平均成绩为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=sum_{A} P(C=1|B=1,A)*P(A)=P(C=1|B=1,A=0)*P(A=0)+P(C=1|B=1,A=1)*P(A=1)\nP(C=1|B=1,A=0)=0.4794\tP(A=0)=0.3679\tP(C=1|B=1,A=1)=0.7228\tP(A=1)=0.6321\nP(C=1|do(B=1))=0.4794*0.3679+0.7228*0.6321=0.6333",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.6333-0.3185)/0.2009}\n=min{1, 1.5671}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    }
+  ]
+}

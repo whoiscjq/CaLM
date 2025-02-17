@@ -1,0 +1,3957 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->C",
+      "B->D"
+    ],
+    "node_name": {
+      "A": "tuqq",
+      "B": "hjqr",
+      "C": "adkw",
+      "D": "eavb"
+    },
+    "node_value": {
+      "A": [
+        "低",
+        "高"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "低",
+        "高"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {},
+    "node_bias": {
+      "A": -0.03177906128986781,
+      "B": 1.3435286708342222,
+      "C": -1.3696935138084712,
+      "D": 2.0364366783357135
+    },
+    "edge_weight": {
+      "A->B": 0.060622301972439674,
+      "A->C": -0.43851066354977786,
+      "A->D": 1.4894884046549952,
+      "B->C": -2.298276702422096,
+      "B->D": 0.09722416305042869
+    },
+    "function_description": "P(A=1)=0.4921\nP(B=1|A)=sigmoid(1.3435286708342222 + 0.0606 * A)\nP(C=1|A,B)=sigmoid(-1.3696935138084712 + -0.4385 * A + -2.2983 * B)\nP(D=1|A,B)=sigmoid(2.0364366783357135 + 1.4895 * A + 0.0972 * B)\n",
+    "text_description": "The probability of tuqq being high (A=1) is 0.4921. \nFor those with tuqq being low (A=0), the probability of hjqr being high (B=1) is 0.7931. \nFor those with tuqq being high (A=1), the probability of hjqr being high (B=1) is 0.8028. \nFor those with tuqq being low (A=0) and hjqr being low (B=0), the probability of adkw being high (C=1) is 0.2027. \nFor those with tuqq being low (A=0) and hjqr being high (B=1), the probability of adkw being high (C=1) is 0.0249. \nFor those with tuqq being high (A=1) and hjqr being low (B=0), the probability of adkw being high (C=1) is 0.1409. \nFor those with tuqq being high (A=1) and hjqr being high (B=1), the probability of adkw being high (C=1) is 0.0162. \nFor those with tuqq being low (A=0) and hjqr being low (B=0), the probability of eavb being high (D=1) is 0.8846. \nFor those with tuqq being low (A=0) and hjqr being high (B=1), the probability of eavb being high (D=1) is 0.8941. \nFor those with tuqq being high (A=1) and hjqr being low (B=0), the probability of eavb being high (D=1) is 0.9714. \nFor those with tuqq being high (A=1) and hjqr being high (B=1), the probability of eavb being high (D=1) is 0.9740. \n",
+    "Statistic_data": [
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 19230
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 17353
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 297
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 3961
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 2039
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 966
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 662
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 3674
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 453
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 500
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 59
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 561
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 116
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 104
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 19
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 6
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。",
+        "data_info_math": "P(B=0|A=0)=0.2085; P(B=0|A=1)=0.1915; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tuqq被改变为低，那么hjqr更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.2085\tP(B=0|A=1)=0.1915",
+        "Step 6": "ATE=0.2085-0.1915=0.0171",
+        "Step 7": "ATE=0.0171>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.017072124716511677
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, hjqr为高(B=1)的概率为0.7915。在tuqq为高(A=1)的条件下, hjqr为高(B=1)的概率为0.8085。",
+        "data_info_math": "P(B=1|A=0)=0.7915; P(B=1|A=1)=0.8085; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tuqq被改变为低，那么hjqr更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.7915\tP(B=1|A=1)=0.8085",
+        "Step 6": "ATE=0.7915-0.8085=-0.0171",
+        "Step 7": "ATE=-0.0171<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.01707212471651165
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。",
+        "data_info_math": "P(B=0|A=1)=0.1915; P(B=0|A=0)=0.2085; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tuqq被改变为高，那么hjqr更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.1915\tP(B=0|A=0)=0.2085",
+        "Step 6": "ATE=0.1915-0.2085=-0.0171",
+        "Step 7": "ATE=-0.0171<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.017072124716511677
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, hjqr为高(B=1)的概率为0.8085。在tuqq为低(A=0)的条件下, hjqr为高(B=1)的概率为0.7915。",
+        "data_info_math": "P(B=1|A=1)=0.8085; P(B=1|A=0)=0.7915; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tuqq被改变为高，那么hjqr更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.8085\tP(B=1|A=0)=0.7915",
+        "Step 6": "ATE=0.8085-0.7915=0.0171",
+        "Step 7": "ATE=0.0171>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.01707212471651165
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.9371。在tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.9604。",
+        "data_info_math": "P(C=0|A=0)=0.9371; P(C=0|A=1)=0.9604; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tuqq被改变为低，那么adkw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.9371\tP(C=0|A=1)=0.9604",
+        "Step 6": "ATE=0.9371-0.9604=-0.0233",
+        "Step 7": "ATE=-0.0233<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.023313188243320404
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.0629。在tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.0396。",
+        "data_info_math": "P(C=1|A=0)=0.0629; P(C=1|A=1)=0.0396; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tuqq被改变为低，那么adkw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.0629\tP(C=1|A=1)=0.0396",
+        "Step 6": "ATE=0.0629-0.0396=0.0233",
+        "Step 7": "ATE=0.0233>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.02331318824332046
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.9604。在tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.9371。",
+        "data_info_math": "P(C=0|A=1)=0.9604; P(C=0|A=0)=0.9371; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tuqq被改变为高，那么adkw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.9604\tP(C=0|A=0)=0.9371",
+        "Step 6": "ATE=0.9604-0.9371=0.0233",
+        "Step 7": "ATE=0.0233>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.023313188243320404
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.0396。在tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.0629。",
+        "data_info_math": "P(C=1|A=1)=0.0396; P(C=1|A=0)=0.0629; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tuqq被改变为高，那么adkw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.0396\tP(C=1|A=0)=0.0629",
+        "Step 6": "ATE=0.0396-0.0629=-0.0233",
+        "Step 7": "ATE=-0.0233<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.02331318824332046
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1074。在tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0282。",
+        "data_info_math": "P(D=0|A=0)=0.1074; P(D=0|A=1)=0.0282; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tuqq被改变为低，那么eavb更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.1074\tP(D=0|A=1)=0.0282",
+        "Step 6": "ATE=0.1074-0.0282=0.0792",
+        "Step 7": "ATE=0.0792>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.07919670835951986
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8926。在tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9718。",
+        "data_info_math": "P(D=1|A=0)=0.8926; P(D=1|A=1)=0.9718; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tuqq被改变为低，那么eavb更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.8926\tP(D=1|A=1)=0.9718",
+        "Step 6": "ATE=0.8926-0.9718=-0.0792",
+        "Step 7": "ATE=-0.0792<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.07919670835951986
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0282。在tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1074。",
+        "data_info_math": "P(D=0|A=1)=0.0282; P(D=0|A=0)=0.1074; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tuqq被改变为高，那么eavb更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.0282\tP(D=0|A=0)=0.1074",
+        "Step 6": "ATE=0.0282-0.1074=-0.0792",
+        "Step 7": "ATE=-0.0792<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.07919670835951986
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9718。在tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8926。",
+        "data_info_math": "P(D=1|A=1)=0.9718; P(D=1|A=0)=0.8926; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果tuqq被改变为高，那么eavb更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.9718\tP(D=1|A=0)=0.8926",
+        "Step 6": "ATE=0.9718-0.8926=0.0792",
+        "Step 7": "ATE=0.0792>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.07919670835951986
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于tuqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果hjqr被改变为低，那么tuqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于tuqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果hjqr被改变为低，那么tuqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于tuqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果hjqr被改变为高，那么tuqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于tuqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果hjqr被改变为高，那么tuqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.7960。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.9743。tuqq为低(A=0)的概率为0.5030。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.8569。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.9849。tuqq为高(A=1)的概率为0.4970。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.7960; P(C=0|B=1,A=0)=0.9743; P(A=0)=0.5030; P(C=0|B=0,A=1)=0.8569; P(C=0|B=1,A=1)=0.9849; P(A=1)=0.4970; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果hjqr被改变为低，那么adkw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=sum_{A} [P(C=0|B=0,A)*P(A)-P(C=0|B=1,A)*P(A)]=[P(C=0|B=0,A=0)*P(A=0)-P(C=0|B=1,A=0)*P(A=0)]+[P(C=0|B=0,A=1)*P(A=1)-P(C=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=0,A=0)=0.7960\tP(C=0|B=1,A=0)=0.9743\tP(A=0)=0.5030\tP(C=0|B=0,A=1)=0.8569\tP(C=0|B=1,A=1)=0.9849\tP(A=1)=0.4970",
+        "Step 6": "ATE=[0.7960*0.5030-0.9743*0.5030]+[0.8569*0.4970-0.9849*0.4970]=-0.1533",
+        "Step 7": "ATE=-0.1533<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.15333254175739147
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.2040。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.0257。tuqq为低(A=0)的概率为0.5030。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.1431。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.0151。tuqq为高(A=1)的概率为0.4970。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.2040; P(C=1|B=1,A=0)=0.0257; P(A=0)=0.5030; P(C=1|B=0,A=1)=0.1431; P(C=1|B=1,A=1)=0.0151; P(A=1)=0.4970; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果hjqr被改变为低，那么adkw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=sum_{A} [P(C=1|B=0,A)*P(A)-P(C=1|B=1,A)*P(A)]=[P(C=1|B=0,A=0)*P(A=0)-P(C=1|B=1,A=0)*P(A=0)]+[P(C=1|B=0,A=1)*P(A=1)-P(C=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=0,A=0)=0.2040\tP(C=1|B=1,A=0)=0.0257\tP(A=0)=0.5030\tP(C=1|B=0,A=1)=0.1431\tP(C=1|B=1,A=1)=0.0151\tP(A=1)=0.4970",
+        "Step 6": "ATE=[0.2040*0.5030-0.0257*0.5030]+[0.1431*0.4970-0.0151*0.4970]=0.1533",
+        "Step 7": "ATE=0.1533>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.15333254175739144
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.9743。在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.7960。tuqq为低(A=0)的概率为0.5030。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.9849。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.8569。tuqq为高(A=1)的概率为0.4970。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.9743; P(C=0|B=0,A=0)=0.7960; P(A=0)=0.5030; P(C=0|B=1,A=1)=0.9849; P(C=0|B=0,A=1)=0.8569; P(A=1)=0.4970; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果hjqr被改变为高，那么adkw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=sum_{A} [P(C=0|B=1,A)*P(A)-P(C=0|B=0,A)*P(A)]=[P(C=0|B=1,A=0)*P(A=0)-P(C=0|B=0,A=0)*P(A=0)]+[P(C=0|B=1,A=1)*P(A=1)-P(C=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=1,A=0)=0.9743\tP(C=0|B=0,A=0)=0.7960\tP(A=0)=0.5030\tP(C=0|B=1,A=1)=0.9849\tP(C=0|B=0,A=1)=0.8569\tP(A=1)=0.4970",
+        "Step 6": "ATE=[0.9743*0.5030-0.7960*0.5030]+[0.9849*0.4970-0.8569*0.4970]=0.1533",
+        "Step 7": "ATE=0.1533>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.15333254175739147
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.0257。在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.2040。tuqq为低(A=0)的概率为0.5030。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.0151。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.1431。tuqq为高(A=1)的概率为0.4970。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.0257; P(C=1|B=0,A=0)=0.2040; P(A=0)=0.5030; P(C=1|B=1,A=1)=0.0151; P(C=1|B=0,A=1)=0.1431; P(A=1)=0.4970; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果hjqr被改变为高，那么adkw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=sum_{A} [P(C=1|B=1,A)*P(A)-P(C=1|B=0,A)*P(A)]=[P(C=1|B=1,A=0)*P(A=0)-P(C=1|B=0,A=0)*P(A=0)]+[P(C=1|B=1,A=1)*P(A=1)-P(C=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=1,A=0)=0.0257\tP(C=1|B=0,A=0)=0.2040\tP(A=0)=0.5030\tP(C=1|B=1,A=1)=0.0151\tP(C=1|B=0,A=1)=0.1431\tP(A=1)=0.4970",
+        "Step 6": "ATE=[0.0257*0.5030-0.2040*0.5030]+[0.0151*0.4970-0.1431*0.4970]=-0.1533",
+        "Step 7": "ATE=-0.1533<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.15333254175739144
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1152。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1054。tuqq为低(A=0)的概率为0.5030。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0284。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0282。tuqq为高(A=1)的概率为0.4970。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.1152; P(D=0|B=1,A=0)=0.1054; P(A=0)=0.5030; P(D=0|B=0,A=1)=0.0284; P(D=0|B=1,A=1)=0.0282; P(A=1)=0.4970; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果hjqr被改变为低，那么eavb更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=sum_{A} [P(D=0|B=0,A)*P(A)-P(D=0|B=1,A)*P(A)]=[P(D=0|B=0,A=0)*P(A=0)-P(D=0|B=1,A=0)*P(A=0)]+[P(D=0|B=0,A=1)*P(A=1)-P(D=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=0,A=0)=0.1152\tP(D=0|B=1,A=0)=0.1054\tP(A=0)=0.5030\tP(D=0|B=0,A=1)=0.0284\tP(D=0|B=1,A=1)=0.0282\tP(A=1)=0.4970",
+        "Step 6": "ATE=[0.1152*0.5030-0.1054*0.5030]+[0.0284*0.4970-0.0282*0.4970]=0.0050",
+        "Step 7": "ATE=0.0050>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.004993063392995217
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8848。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8946。tuqq为低(A=0)的概率为0.5030。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9716。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9718。tuqq为高(A=1)的概率为0.4970。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.8848; P(D=1|B=1,A=0)=0.8946; P(A=0)=0.5030; P(D=1|B=0,A=1)=0.9716; P(D=1|B=1,A=1)=0.9718; P(A=1)=0.4970; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果hjqr被改变为低，那么eavb更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=sum_{A} [P(D=1|B=0,A)*P(A)-P(D=1|B=1,A)*P(A)]=[P(D=1|B=0,A=0)*P(A=0)-P(D=1|B=1,A=0)*P(A=0)]+[P(D=1|B=0,A=1)*P(A=1)-P(D=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=0,A=0)=0.8848\tP(D=1|B=1,A=0)=0.8946\tP(A=0)=0.5030\tP(D=1|B=0,A=1)=0.9716\tP(D=1|B=1,A=1)=0.9718\tP(A=1)=0.4970",
+        "Step 6": "ATE=[0.8848*0.5030-0.8946*0.5030]+[0.9716*0.4970-0.9718*0.4970]=-0.0050",
+        "Step 7": "ATE=-0.0050<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.004993063392995212
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1054。在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1152。tuqq为低(A=0)的概率为0.5030。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0282。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0284。tuqq为高(A=1)的概率为0.4970。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.1054; P(D=0|B=0,A=0)=0.1152; P(A=0)=0.5030; P(D=0|B=1,A=1)=0.0282; P(D=0|B=0,A=1)=0.0284; P(A=1)=0.4970; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果hjqr被改变为高，那么eavb更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=sum_{A} [P(D=0|B=1,A)*P(A)-P(D=0|B=0,A)*P(A)]=[P(D=0|B=1,A=0)*P(A=0)-P(D=0|B=0,A=0)*P(A=0)]+[P(D=0|B=1,A=1)*P(A=1)-P(D=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=1,A=0)=0.1054\tP(D=0|B=0,A=0)=0.1152\tP(A=0)=0.5030\tP(D=0|B=1,A=1)=0.0282\tP(D=0|B=0,A=1)=0.0284\tP(A=1)=0.4970",
+        "Step 6": "ATE=[0.1054*0.5030-0.1152*0.5030]+[0.0282*0.4970-0.0284*0.4970]=-0.0050",
+        "Step 7": "ATE=-0.0050<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": -0.004993063392995217
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8946。在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8848。tuqq为低(A=0)的概率为0.5030。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9718。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9716。tuqq为高(A=1)的概率为0.4970。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.8946; P(D=1|B=0,A=0)=0.8848; P(A=0)=0.5030; P(D=1|B=1,A=1)=0.9718; P(D=1|B=0,A=1)=0.9716; P(A=1)=0.4970; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果hjqr被改变为高，那么eavb更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=sum_{A} [P(D=1|B=1,A)*P(A)-P(D=1|B=0,A)*P(A)]=[P(D=1|B=1,A=0)*P(A=0)-P(D=1|B=0,A=0)*P(A=0)]+[P(D=1|B=1,A=1)*P(A=1)-P(D=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=1,A=0)=0.8946\tP(D=1|B=0,A=0)=0.8848\tP(A=0)=0.5030\tP(D=1|B=1,A=1)=0.9718\tP(D=1|B=0,A=1)=0.9716\tP(A=1)=0.4970",
+        "Step 6": "ATE=[0.8946*0.5030-0.8848*0.5030]+[0.9718*0.4970-0.9716*0.4970]=0.0050",
+        "Step 7": "ATE=0.0050>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0.004993063392995212
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于tuqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果adkw被改变为低，那么tuqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于tuqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果adkw被改变为低，那么tuqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于tuqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果adkw被改变为高，那么tuqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于tuqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果adkw被改变为高，那么tuqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于hjqr的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果adkw被改变为低，那么hjqr更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于hjqr的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果adkw被改变为低，那么hjqr更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于hjqr的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果adkw被改变为高，那么hjqr更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于hjqr的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果adkw被改变为高，那么hjqr更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于eavb的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果adkw被改变为低，那么eavb更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于eavb的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果adkw被改变为低，那么eavb更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于eavb的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果adkw被改变为高，那么eavb更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于eavb的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果adkw被改变为高，那么eavb更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于tuqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果eavb被改变为低，那么tuqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于tuqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果eavb被改变为低，那么tuqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于tuqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果eavb被改变为高，那么tuqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于tuqq的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果eavb被改变为高，那么tuqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于hjqr的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果eavb被改变为低，那么hjqr更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于hjqr的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果eavb被改变为低，那么hjqr更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于hjqr的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果eavb被改变为高，那么hjqr更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于hjqr的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果eavb被改变为高，那么hjqr更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于adkw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果eavb被改变为低，那么adkw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于adkw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果eavb被改变为低，那么adkw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于adkw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果eavb被改变为高，那么adkw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于adkw的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果eavb被改变为高，那么adkw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。",
+        "data_info_math": "P(B=0|A=0)=0.2085; P(B=0|A=1)=0.1915; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tuqq变化为低，那么hjqr更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.2085\tP(B=0|A=1)=0.1915",
+        "Step 6": "NDE=0.2085-0.1915=0.0171",
+        "Step 7": "NDE=0.0171>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.017072124716511677
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, hjqr为高(B=1)的概率为0.7915。在tuqq为高(A=1)的条件下, hjqr为高(B=1)的概率为0.8085。",
+        "data_info_math": "P(B=1|A=0)=0.7915; P(B=1|A=1)=0.8085; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tuqq变化为低，那么hjqr更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.7915\tP(B=1|A=1)=0.8085",
+        "Step 6": "NDE=0.7915-0.8085=-0.0171",
+        "Step 7": "NDE=-0.0171<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.01707212471651165
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。",
+        "data_info_math": "P(B=0|A=1)=0.1915; P(B=0|A=0)=0.2085; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tuqq变化为高，那么hjqr更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.1915\tP(B=0|A=0)=0.2085",
+        "Step 6": "NDE=0.1915-0.2085=-0.0171",
+        "Step 7": "NDE=-0.0171<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.017072124716511677
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, hjqr为高(B=1)的概率为0.8085。在tuqq为低(A=0)的条件下, hjqr为高(B=1)的概率为0.7915。",
+        "data_info_math": "P(B=1|A=1)=0.8085; P(B=1|A=0)=0.7915; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tuqq变化为高，那么hjqr更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.8085\tP(B=1|A=0)=0.7915",
+        "Step 6": "NDE=0.8085-0.7915=0.0171",
+        "Step 7": "NDE=0.0171>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.01707212471651165
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.7960。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.8569。在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.9743。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.9849。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.7960; P(C=0|B=0,A=1)=0.8569; P(B=0|A=1)=0.1915; P(C=0|B=1,A=0)=0.9743; P(C=0|B=1,A=1)=0.9849; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tuqq变化为低，那么adkw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=0,B)-P(C=0|A=1,B)]*P(B|A=1)=[P(C=0|A=0,B=0)-P(C=0|A=1,B=0)]*P(B=0|A=1)+[P(C=0|A=0,B=1)-P(C=0|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=0|A=0,B=0)=0.7960\tP(C=0|A=1,B=0)=0.8569\tP(B=0|A=1)=0.1915\tP(C=0|A=0,B=1)=0.9743\tP(C=0|A=1,B=1)=0.9849\tP(B=1|A=1)=0.8085",
+        "Step 6": "=(0.7960-0.8569)*0.1915+(0.9743-0.9849)*0.8085=-0.0203",
+        "Step 7": "NDE=-0.0203<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.020268899890619432
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.2040。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.1431。在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.0257。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.0151。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.2040; P(C=1|B=0,A=1)=0.1431; P(B=0|A=1)=0.1915; P(C=1|B=1,A=0)=0.0257; P(C=1|B=1,A=1)=0.0151; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tuqq变化为低，那么adkw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=0,B)-P(C=1|A=1,B)]*P(B|A=1)=[P(C=1|A=0,B=0)-P(C=1|A=1,B=0)]*P(B=0|A=1)+[P(C=1|A=0,B=1)-P(C=1|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=1|A=0,B=0)=0.2040\tP(C=1|A=1,B=0)=0.1431\tP(B=0|A=1)=0.1915\tP(C=1|A=0,B=1)=0.0257\tP(C=1|A=1,B=1)=0.0151\tP(B=1|A=1)=0.8085",
+        "Step 6": "=(0.2040-0.1431)*0.1915+(0.0257-0.0151)*0.8085=0.0203",
+        "Step 7": "NDE=0.0203>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.020268899890619405
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.8569。在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.7960。在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.9849。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.9743。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.8569; P(C=0|B=0,A=0)=0.7960; P(B=0|A=0)=0.2085; P(C=0|B=1,A=1)=0.9849; P(C=0|B=1,A=0)=0.9743; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tuqq变化为高，那么adkw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=1,B)-P(C=0|A=0,B)]*P(B|A=0)=[P(C=0|A=1,B=0)-P(C=0|A=0,B=0)]*P(B=0|A=0)+[P(C=0|A=1,B=1)-P(C=0|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=0|A=1,B=0)=0.8569\tP(C=0|A=0,B=0)=0.7960\tP(B=0|A=0)=0.2085\tP(C=0|A=1,B=1)=0.9849\tP(C=0|A=0,B=1)=0.9743\tP(B=1|A=0)=0.7915",
+        "Step 6": "=(0.8569-0.7960)*0.2085+(0.9849-0.9743)*0.7915=0.0211",
+        "Step 7": "NDE=0.0211>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.02112713278277927
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.1431。在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.2040。在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.0151。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.0257。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.1431; P(C=1|B=0,A=0)=0.2040; P(B=0|A=0)=0.2085; P(C=1|B=1,A=1)=0.0151; P(C=1|B=1,A=0)=0.0257; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tuqq变化为高，那么adkw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=1,B)-P(C=1|A=0,B)]*P(B|A=0)=[P(C=1|A=1,B=0)-P(C=1|A=0,B=0)]*P(B=0|A=0)+[P(C=1|A=1,B=1)-P(C=1|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=1|A=1,B=0)=0.1431\tP(C=1|A=0,B=0)=0.2040\tP(B=0|A=0)=0.2085\tP(C=1|A=1,B=1)=0.0151\tP(C=1|A=0,B=1)=0.0257\tP(B=1|A=0)=0.7915",
+        "Step 6": "=(0.1431-0.2040)*0.2085+(0.0151-0.0257)*0.7915=-0.0211",
+        "Step 7": "NDE=-0.0211<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.02112713278277924
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1152。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0284。在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1054。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0282。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.1152; P(D=0|B=0,A=1)=0.0284; P(B=0|A=1)=0.1915; P(D=0|B=1,A=0)=0.1054; P(D=0|B=1,A=1)=0.0282; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tuqq变化为低，那么eavb更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(D=0|A=0,B)-P(D=0|A=1,B)]*P(B|A=1)=[P(D=0|A=0,B=0)-P(D=0|A=1,B=0)]*P(B=0|A=1)+[P(D=0|A=0,B=1)-P(D=0|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(D=0|A=0,B=0)=0.1152\tP(D=0|A=1,B=0)=0.0284\tP(B=0|A=1)=0.1915\tP(D=0|A=0,B=1)=0.1054\tP(D=0|A=1,B=1)=0.0282\tP(B=1|A=1)=0.8085",
+        "Step 6": "=(0.1152-0.0284)*0.1915+(0.1054-0.0282)*0.8085=0.0790",
+        "Step 7": "NDE=0.0790>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.07902985729600334
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8848。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9716。在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8946。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9718。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.8848; P(D=1|B=0,A=1)=0.9716; P(B=0|A=1)=0.1915; P(D=1|B=1,A=0)=0.8946; P(D=1|B=1,A=1)=0.9718; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tuqq变化为低，那么eavb更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(D=1|A=0,B)-P(D=1|A=1,B)]*P(B|A=1)=[P(D=1|A=0,B=0)-P(D=1|A=1,B=0)]*P(B=0|A=1)+[P(D=1|A=0,B=1)-P(D=1|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(D=1|A=0,B=0)=0.8848\tP(D=1|A=1,B=0)=0.9716\tP(B=0|A=1)=0.1915\tP(D=1|A=0,B=1)=0.8946\tP(D=1|A=1,B=1)=0.9718\tP(B=1|A=1)=0.8085",
+        "Step 6": "=(0.8848-0.9716)*0.1915+(0.8946-0.9718)*0.8085=-0.0790",
+        "Step 7": "NDE=-0.0790<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.07902985729600329
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0284。在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1152。在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0282。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1054。",
+        "data_info_math": "P(D=0|B=0,A=1)=0.0284; P(D=0|B=0,A=0)=0.1152; P(B=0|A=0)=0.2085; P(D=0|B=1,A=1)=0.0282; P(D=0|B=1,A=0)=0.1054; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tuqq变化为高，那么eavb更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(D=0|A=1,B)-P(D=0|A=0,B)]*P(B|A=0)=[P(D=0|A=1,B=0)-P(D=0|A=0,B=0)]*P(B=0|A=0)+[P(D=0|A=1,B=1)-P(D=0|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(D=0|A=1,B=0)=0.0284\tP(D=0|A=0,B=0)=0.1152\tP(B=0|A=0)=0.2085\tP(D=0|A=1,B=1)=0.0282\tP(D=0|A=0,B=1)=0.1054\tP(B=1|A=0)=0.7915",
+        "Step 6": "=(0.0284-0.1152)*0.2085+(0.0282-0.1054)*0.7915=-0.0792",
+        "Step 7": "NDE=-0.0792<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.07919404702430258
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9716。在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8848。在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9718。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8946。",
+        "data_info_math": "P(D=1|B=0,A=1)=0.9716; P(D=1|B=0,A=0)=0.8848; P(B=0|A=0)=0.2085; P(D=1|B=1,A=1)=0.9718; P(D=1|B=1,A=0)=0.8946; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而tuqq变化为高，那么eavb更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(D=1|A=1,B)-P(D=1|A=0,B)]*P(B|A=0)=[P(D=1|A=1,B=0)-P(D=1|A=0,B=0)]*P(B=0|A=0)+[P(D=1|A=1,B=1)-P(D=1|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(D=1|A=1,B=0)=0.9716\tP(D=1|A=0,B=0)=0.8848\tP(B=0|A=0)=0.2085\tP(D=1|A=1,B=1)=0.9718\tP(D=1|A=0,B=1)=0.8946\tP(B=1|A=0)=0.7915",
+        "Step 6": "=(0.9716-0.8848)*0.2085+(0.9718-0.8946)*0.7915=0.0792",
+        "Step 7": "NDE=0.0792>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.07919404702430252
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.7960。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.9743。tuqq为低(A=0)的概率为0.5030。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.8569。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.9849。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.7960; P(C=0|B=1,A=0)=0.9743; P(A=0)=0.5030; P(C=0|B=0,A=1)=0.8569; P(C=0|B=1,A=1)=0.9849; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而hjqr变化为低，那么adkw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=0,A)-P(C=0|B=1,A)]*P(A)=[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=0,A=0)=0.7960\tP(C=0|B=1,A=0)=0.9743\tP(A=0)=0.5030\tP(C=0|B=0,A=1)=0.8569\tP(C=0|B=1,A=1)=0.9849\tP(A=1)=0.4970",
+        "Step 6": "NDE=[0.7960-0.9743]*0.5030+[0.8569-0.9849]*0.4970=-0.1533",
+        "Step 7": "NDE=-0.1533<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.15333254175739147
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.2040。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.0257。tuqq为低(A=0)的概率为0.5030。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.1431。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.0151。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.2040; P(C=1|B=1,A=0)=0.0257; P(A=0)=0.5030; P(C=1|B=0,A=1)=0.1431; P(C=1|B=1,A=1)=0.0151; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而hjqr变化为低，那么adkw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=0,A)-P(C=1|B=1,A)]*P(A)=[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=0,A=0)=0.2040\tP(C=1|B=1,A=0)=0.0257\tP(A=0)=0.5030\tP(C=1|B=0,A=1)=0.1431\tP(C=1|B=1,A=1)=0.0151\tP(A=1)=0.4970",
+        "Step 6": "NDE=[0.2040-0.0257]*0.5030+[0.1431-0.0151]*0.4970=0.1533",
+        "Step 7": "NDE=0.1533>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.15333254175739144
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.9743。在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.7960。tuqq为低(A=0)的概率为0.5030。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.9849。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.8569。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.9743; P(C=0|B=0,A=0)=0.7960; P(A=0)=0.5030; P(C=0|B=1,A=1)=0.9849; P(C=0|B=0,A=1)=0.8569; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而hjqr变化为高，那么adkw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=1,A)-P(C=0|B=0,A)]*P(A)=[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=1,A=0)=0.9743\tP(C=0|B=0,A=0)=0.7960\tP(A=0)=0.5030\tP(C=0|B=1,A=1)=0.9849\tP(C=0|B=0,A=1)=0.8569\tP(A=1)=0.4970",
+        "Step 6": "NDE=[0.9743-0.7960]*0.5030+[0.9849-0.8569]*0.4970=0.1533",
+        "Step 7": "NDE=0.1533>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.15333254175739147
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.0257。在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.2040。tuqq为低(A=0)的概率为0.5030。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.0151。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.1431。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.0257; P(C=1|B=0,A=0)=0.2040; P(A=0)=0.5030; P(C=1|B=1,A=1)=0.0151; P(C=1|B=0,A=1)=0.1431; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而hjqr变化为高，那么adkw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=1,A)-P(C=1|B=0,A)]*P(A)=[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=1,A=0)=0.0257\tP(C=1|B=0,A=0)=0.2040\tP(A=0)=0.5030\tP(C=1|B=1,A=1)=0.0151\tP(C=1|B=0,A=1)=0.1431\tP(A=1)=0.4970",
+        "Step 6": "NDE=[0.0257-0.2040]*0.5030+[0.0151-0.1431]*0.4970=-0.1533",
+        "Step 7": "NDE=-0.1533<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.15333254175739144
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1152。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1054。tuqq为低(A=0)的概率为0.5030。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0284。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0282。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.1152; P(D=0|B=1,A=0)=0.1054; P(A=0)=0.5030; P(D=0|B=0,A=1)=0.0284; P(D=0|B=1,A=1)=0.0282; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而hjqr变化为低，那么eavb更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|B=0,A)-P(D=0|B=1,A)]*P(A)=[P(D=0|B=0,A=0)-P(D=0|B=1,A=0)]*P(A=0)+[P(D=0|B=0,A=1)-P(D=0|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,A=0)=0.1152\tP(D=0|B=1,A=0)=0.1054\tP(A=0)=0.5030\tP(D=0|B=0,A=1)=0.0284\tP(D=0|B=1,A=1)=0.0282\tP(A=1)=0.4970",
+        "Step 6": "NDE=[0.1152-0.1054]*0.5030+[0.0284-0.0282]*0.4970=0.0050",
+        "Step 7": "NDE=0.0050>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.004993063392995217
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8848。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8946。tuqq为低(A=0)的概率为0.5030。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9716。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9718。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.8848; P(D=1|B=1,A=0)=0.8946; P(A=0)=0.5030; P(D=1|B=0,A=1)=0.9716; P(D=1|B=1,A=1)=0.9718; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而hjqr变化为低，那么eavb更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|B=0,A)-P(D=1|B=1,A)]*P(A)=[P(D=1|B=0,A=0)-P(D=1|B=1,A=0)]*P(A=0)+[P(D=1|B=0,A=1)-P(D=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,A=0)=0.8848\tP(D=1|B=1,A=0)=0.8946\tP(A=0)=0.5030\tP(D=1|B=0,A=1)=0.9716\tP(D=1|B=1,A=1)=0.9718\tP(A=1)=0.4970",
+        "Step 6": "NDE=[0.8848-0.8946]*0.5030+[0.9716-0.9718]*0.4970=-0.0050",
+        "Step 7": "NDE=-0.0050<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.004993063392995187
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1054。在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1152。tuqq为低(A=0)的概率为0.5030。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0282。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0284。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.1054; P(D=0|B=0,A=0)=0.1152; P(A=0)=0.5030; P(D=0|B=1,A=1)=0.0282; P(D=0|B=0,A=1)=0.0284; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而hjqr变化为高，那么eavb更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|B=1,A)-P(D=0|B=0,A)]*P(A)=[P(D=0|B=1,A=0)-P(D=0|B=0,A=0)]*P(A=0)+[P(D=0|B=1,A=1)-P(D=0|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,A=0)=0.1054\tP(D=0|B=0,A=0)=0.1152\tP(A=0)=0.5030\tP(D=0|B=1,A=1)=0.0282\tP(D=0|B=0,A=1)=0.0284\tP(A=1)=0.4970",
+        "Step 6": "NDE=[0.1054-0.1152]*0.5030+[0.0282-0.0284]*0.4970=-0.0050",
+        "Step 7": "NDE=-0.0050<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": -0.004993063392995217
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8946。在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8848。tuqq为低(A=0)的概率为0.5030。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9718。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9716。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.8946; P(D=1|B=0,A=0)=0.8848; P(A=0)=0.5030; P(D=1|B=1,A=1)=0.9718; P(D=1|B=0,A=1)=0.9716; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而hjqr变化为高，那么eavb更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|B=1,A)-P(D=1|B=0,A)]*P(A)=[P(D=1|B=1,A=0)-P(D=1|B=0,A=0)]*P(A=0)+[P(D=1|B=1,A=1)-P(D=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,A=0)=0.8946\tP(D=1|B=0,A=0)=0.8848\tP(A=0)=0.5030\tP(D=1|B=1,A=1)=0.9718\tP(D=1|B=0,A=1)=0.9716\tP(A=1)=0.4970",
+        "Step 6": "NDE=[0.8946-0.8848]*0.5030+[0.9718-0.9716]*0.4970=0.0050",
+        "Step 7": "NDE=0.0050>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "FAKE",
+      "prob": 0.004993063392995187
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tuqq保持不变，而所有中间变量被改变为当它们在tuqq变化为低下的取值，那么hjqr更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tuqq保持不变，而所有中间变量被改变为当它们在tuqq变化为低下的取值，那么hjqr更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tuqq保持不变，而所有中间变量被改变为当它们在tuqq变化为高下的取值，那么hjqr更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tuqq保持不变，而所有中间变量被改变为当它们在tuqq变化为高下的取值，那么hjqr更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.8569。在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.9849。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.8569; P(B=0|A=0)=0.2085; P(B=0|A=1)=0.1915; P(C=0|B=1,A=1)=0.9849; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tuqq保持不变，而所有中间变量被改变为当它们在tuqq变化为低下的取值，那么adkw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=0|A=1,B=0)=0.8569\tP(B=0|A=0)=0.2085\tP(B=0|A=1)=0.1915\tP(C=0|A=1,B=1)=0.9849\tP(B=1|A=0)=0.7915\tP(B=1|A=1)=0.8085",
+        "Step 6": "NIE=0.8569*(0.2085-0.1915)+0.9849*(0.7915-0.8085)=-0.0022",
+        "Step 7": "NIE=-0.0022<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.002186055460541181
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.1431。在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.0151。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.1431; P(B=0|A=0)=0.2085; P(B=0|A=1)=0.1915; P(C=1|B=1,A=1)=0.0151; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tuqq保持不变，而所有中间变量被改变为当它们在tuqq变化为低下的取值，那么adkw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=1|A=1,B=0)=0.1431\tP(B=0|A=0)=0.2085\tP(B=0|A=1)=0.1915\tP(C=1|A=1,B=1)=0.0151\tP(B=1|A=0)=0.7915\tP(B=1|A=1)=0.8085",
+        "Step 6": "NIE=0.1431*(0.2085-0.1915)+0.0151*(0.7915-0.8085)=0.0022",
+        "Step 7": "NIE=0.0022>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.002186055460541211
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.7960。在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.9743。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.7960; P(B=0|A=1)=0.1915; P(B=0|A=0)=0.2085; P(C=0|B=1,A=0)=0.9743; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tuqq保持不变，而所有中间变量被改变为当它们在tuqq变化为高下的取值，那么adkw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=0|A=0,B=0)=0.7960\tP(B=0|A=1)=0.1915\tP(B=0|A=0)=0.2085\tP(C=0|A=0,B=1)=0.9743\tP(B=1|A=1)=0.8085\tP(B=1|A=0)=0.7915",
+        "Step 6": "NIE=0.7960*(0.1915-0.2085)+0.9743*(0.8085-0.7915)=0.0030",
+        "Step 7": "NIE=0.0030>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.0030442883527010203
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.2040。在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.0257。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.2040; P(B=0|A=1)=0.1915; P(B=0|A=0)=0.2085; P(C=1|B=1,A=0)=0.0257; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tuqq保持不变，而所有中间变量被改变为当它们在tuqq变化为高下的取值，那么adkw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=1|A=0,B=0)=0.2040\tP(B=0|A=1)=0.1915\tP(B=0|A=0)=0.2085\tP(C=1|A=0,B=1)=0.0257\tP(B=1|A=1)=0.8085\tP(B=1|A=0)=0.7915",
+        "Step 6": "NIE=0.2040*(0.1915-0.2085)+0.0257*(0.8085-0.7915)=-0.0030",
+        "Step 7": "NIE=-0.0030<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.0030442883527010468
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0284。在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0282。",
+        "data_info_math": "P(D=0|B=0,A=1)=0.0284; P(B=0|A=0)=0.2085; P(B=0|A=1)=0.1915; P(D=0|B=1,A=1)=0.0282; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tuqq保持不变，而所有中间变量被改变为当它们在tuqq变化为低下的取值，那么eavb更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(D=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(D=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(D=0|A=1,B=0)=0.0284\tP(B=0|A=0)=0.2085\tP(B=0|A=1)=0.1915\tP(D=0|A=1,B=1)=0.0282\tP(B=1|A=0)=0.7915\tP(B=1|A=1)=0.8085",
+        "Step 6": "NIE=0.0284*(0.2085-0.1915)+0.0282*(0.7915-0.8085)=0.0000",
+        "Step 7": "NIE=0.0000~=0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 2.6613352172800346e-06
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9716。在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9718。",
+        "data_info_math": "P(D=1|B=0,A=1)=0.9716; P(B=0|A=0)=0.2085; P(B=0|A=1)=0.1915; P(D=1|B=1,A=1)=0.9718; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tuqq保持不变，而所有中间变量被改变为当它们在tuqq变化为低下的取值，那么eavb更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(D=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(D=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(D=1|A=1,B=0)=0.9716\tP(B=0|A=0)=0.2085\tP(B=0|A=1)=0.1915\tP(D=1|A=1,B=1)=0.9718\tP(B=1|A=0)=0.7915\tP(B=1|A=1)=0.8085",
+        "Step 6": "NIE=0.9716*(0.2085-0.1915)+0.9718*(0.7915-0.8085)=-0.0000",
+        "Step 7": "NIE=-0.0000~=0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -2.6613352172508153e-06
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1152。在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1054。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.1152; P(B=0|A=1)=0.1915; P(B=0|A=0)=0.2085; P(D=0|B=1,A=0)=0.1054; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tuqq保持不变，而所有中间变量被改变为当它们在tuqq变化为高下的取值，那么eavb更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(D=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(D=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(D=0|A=0,B=0)=0.1152\tP(B=0|A=1)=0.1915\tP(B=0|A=0)=0.2085\tP(D=0|A=0,B=1)=0.1054\tP(B=1|A=1)=0.8085\tP(B=1|A=0)=0.7915",
+        "Step 6": "NIE=0.1152*(0.1915-0.2085)+0.1054*(0.8085-0.7915)=-0.0002",
+        "Step 7": "NIE=-0.0002~=0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": -0.00016685106351651885
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8848。在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8946。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.8848; P(B=0|A=1)=0.1915; P(B=0|A=0)=0.2085; P(D=1|B=1,A=0)=0.8946; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如tuqq保持不变，而所有中间变量被改变为当它们在tuqq变化为高下的取值，那么eavb更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(D=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(D=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(D=1|A=0,B=0)=0.8848\tP(B=0|A=1)=0.1915\tP(B=0|A=0)=0.2085\tP(D=1|A=0,B=1)=0.8946\tP(B=1|A=1)=0.8085\tP(B=1|A=0)=0.7915",
+        "Step 6": "NIE=0.8848*(0.1915-0.2085)+0.8946*(0.8085-0.7915)=0.0002",
+        "Step 7": "NIE=0.0002~=0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0.00016685106351649326
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于adkw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如hjqr保持不变，而所有中间变量被改变为当它们在hjqr变化为低下的取值，那么adkw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于adkw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如hjqr保持不变，而所有中间变量被改变为当它们在hjqr变化为低下的取值，那么adkw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于adkw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如hjqr保持不变，而所有中间变量被改变为当它们在hjqr变化为高下的取值，那么adkw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于adkw的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如hjqr保持不变，而所有中间变量被改变为当它们在hjqr变化为高下的取值，那么adkw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于eavb的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如hjqr保持不变，而所有中间变量被改变为当它们在hjqr变化为低下的取值，那么eavb更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于eavb的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如hjqr保持不变，而所有中间变量被改变为当它们在hjqr变化为低下的取值，那么eavb更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于eavb的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如hjqr保持不变，而所有中间变量被改变为当它们在hjqr变化为高下的取值，那么eavb更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于eavb的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如hjqr保持不变，而所有中间变量被改变为当它们在hjqr变化为高下的取值，那么eavb更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。",
+        "data_info_math": "P(B=0|A=0)=0.2085; P(B=0|A=1)=0.1915; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tuqq为低，假如tuqq为高，那么hjqr更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.2085\tP(B=0|A=1)=0.1915",
+        "Step 6": "ETT=0.2085-0.1915=0.0171",
+        "Step 7": "ETT=0.0171>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.017072124716511677
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, hjqr为高(B=1)的概率为0.7915。在tuqq为高(A=1)的条件下, hjqr为高(B=1)的概率为0.8085。",
+        "data_info_math": "P(B=1|A=0)=0.7915; P(B=1|A=1)=0.8085; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tuqq为低，假如tuqq为高，那么hjqr更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.7915\tP(B=1|A=1)=0.8085",
+        "Step 6": "ETT=0.7915-0.8085=-0.0171",
+        "Step 7": "ETT=-0.0171<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.01707212471651165
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。",
+        "data_info_math": "P(B=0|A=1)=0.1915; P(B=0|A=0)=0.2085; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tuqq为高，假如tuqq为低，那么hjqr更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.1915\tP(B=0|A=0)=0.2085",
+        "Step 6": "ETT=0.1915-0.2085=-0.0171",
+        "Step 7": "ETT=-0.0171<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.017072124716511677
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, hjqr为高(B=1)的概率为0.8085。在tuqq为低(A=0)的条件下, hjqr为高(B=1)的概率为0.7915。",
+        "data_info_math": "P(B=1|A=1)=0.8085; P(B=1|A=0)=0.7915; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tuqq为高，假如tuqq为低，那么hjqr更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.8085\tP(B=1|A=0)=0.7915",
+        "Step 6": "ETT=0.8085-0.7915=0.0171",
+        "Step 7": "ETT=0.0171>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.01707212471651165
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.9371。在tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.9604。",
+        "data_info_math": "P(C=0|A=0)=0.9371; P(C=0|A=1)=0.9604; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tuqq为低，假如tuqq为高，那么adkw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.9371\tP(C=0|A=1)=0.9604",
+        "Step 6": "ETT=0.9371-0.9604=-0.0233",
+        "Step 7": "ETT=-0.0233<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.023313188243320404
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.0629。在tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.0396。",
+        "data_info_math": "P(C=1|A=0)=0.0629; P(C=1|A=1)=0.0396; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tuqq为低，假如tuqq为高，那么adkw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.0629\tP(C=1|A=1)=0.0396",
+        "Step 6": "ETT=0.0629-0.0396=0.0233",
+        "Step 7": "ETT=0.0233>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.02331318824332046
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.9604。在tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.9371。",
+        "data_info_math": "P(C=0|A=1)=0.9604; P(C=0|A=0)=0.9371; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tuqq为高，假如tuqq为低，那么adkw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.9604\tP(C=0|A=0)=0.9371",
+        "Step 6": "ETT=0.9604-0.9371=0.0233",
+        "Step 7": "ETT=0.0233>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.023313188243320404
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.0396。在tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.0629。",
+        "data_info_math": "P(C=1|A=1)=0.0396; P(C=1|A=0)=0.0629; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tuqq为高，假如tuqq为低，那么adkw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.0396\tP(C=1|A=0)=0.0629",
+        "Step 6": "ETT=0.0396-0.0629=-0.0233",
+        "Step 7": "ETT=-0.0233<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.02331318824332046
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1074。在tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0282。",
+        "data_info_math": "P(D=0|A=0)=0.1074; P(D=0|A=1)=0.0282; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tuqq为低，假如tuqq为高，那么eavb更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.1074\tP(D=0|A=1)=0.0282",
+        "Step 6": "ETT=0.1074-0.0282=0.0792",
+        "Step 7": "ETT=0.0792>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.07919670835951986
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8926。在tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9718。",
+        "data_info_math": "P(D=1|A=0)=0.8926; P(D=1|A=1)=0.9718; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tuqq为低，假如tuqq为高，那么eavb更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.8926\tP(D=1|A=1)=0.9718",
+        "Step 6": "ETT=0.8926-0.9718=-0.0792",
+        "Step 7": "ETT=-0.0792<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.07919670835951986
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0282。在tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1074。",
+        "data_info_math": "P(D=0|A=1)=0.0282; P(D=0|A=0)=0.1074; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tuqq为高，假如tuqq为低，那么eavb更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.0282\tP(D=0|A=0)=0.1074",
+        "Step 6": "ETT=0.0282-0.1074=-0.0792",
+        "Step 7": "ETT=-0.0792<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.07919670835951986
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9718。在tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8926。",
+        "data_info_math": "P(D=1|A=1)=0.9718; P(D=1|A=0)=0.8926; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些tuqq为高，假如tuqq为低，那么eavb更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.9718\tP(D=1|A=0)=0.8926",
+        "Step 6": "ETT=0.9718-0.8926=0.0792",
+        "Step 7": "ETT=0.0792>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.07919670835951986
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于tuqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些hjqr为低，假如hjqr为高，那么tuqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于tuqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些hjqr为低，假如hjqr为高，那么tuqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于tuqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些hjqr为高，假如hjqr为低，那么tuqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑hjqr作用于tuqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些hjqr为高，假如hjqr为低，那么tuqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)的条件下, adkw为低(C=0)的概率为0.8249。在tuqq为低(A=0)且hjqr为高(B=1)的条件下, adkw为低(C=0)的概率为0.9743。在hjqr为低(B=0)的条件下, tuqq为低(A=0)的概率为0.5243。在tuqq为高(A=1)且hjqr为高(B=1)的条件下, adkw为低(C=0)的概率为0.9849。在hjqr为低(B=0)的条件下, tuqq为高(A=1)的概率为0.4757。",
+        "data_info_math": "P(C=0|B=0)=0.8249; P(C=0|A=0,B=1)=0.9743; P(A=0|B=0)=0.5243; P(C=0|A=1,B=1)=0.9849; P(A=1|B=0)=0.4757; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些hjqr为低，假如hjqr为高，那么adkw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-sum_{A} P(C=0|B=1,A)*P(A|B=0)=P(C=0|B=0)-[P(C=0|B=1,A=0)*P(A=0|B=0)+P(C=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=0|B=0)=0.8249\tP(C=0|B=1,A=0)=0.9743\tP(A=0|B=0)=0.5243\tP(C=0|B=1,A=1)=0.9849\tP(A=1|B=0)=0.4757",
+        "Step 6": "ETT=0.8249-[0.9743*0.5243+0.9849*0.4757]=-0.1544",
+        "Step 7": "ETT=-0.1544<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.15440508076732268
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)的条件下, adkw为高(C=1)的概率为0.1751。在tuqq为低(A=0)且hjqr为高(B=1)的条件下, adkw为高(C=1)的概率为0.0257。在hjqr为低(B=0)的条件下, tuqq为低(A=0)的概率为0.5243。在tuqq为高(A=1)且hjqr为高(B=1)的条件下, adkw为高(C=1)的概率为0.0151。在hjqr为低(B=0)的条件下, tuqq为高(A=1)的概率为0.4757。",
+        "data_info_math": "P(C=1|B=0)=0.1751; P(C=1|A=0,B=1)=0.0257; P(A=0|B=0)=0.5243; P(C=1|A=1,B=1)=0.0151; P(A=1|B=0)=0.4757; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些hjqr为低，假如hjqr为高，那么adkw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-sum_{A} P(C=1|B=1,A)*P(A|B=0)=P(C=1|B=0)-[P(C=1|B=1,A=0)*P(A=0|B=0)+P(C=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=1|B=0)=0.1751\tP(C=1|B=1,A=0)=0.0257\tP(A=0|B=0)=0.5243\tP(C=1|B=1,A=1)=0.0151\tP(A=1|B=0)=0.4757",
+        "Step 6": "ETT=0.1751-[0.0257*0.5243+0.0151*0.4757]=0.1544",
+        "Step 7": "ETT=0.1544>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.15440508076732273
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)的条件下, adkw为低(C=0)的概率为0.9796。在tuqq为低(A=0)且hjqr为低(B=0)的条件下, adkw为低(C=0)的概率为0.7960。在hjqr为高(B=1)的条件下, tuqq为低(A=0)的概率为0.4976。在tuqq为高(A=1)且hjqr为低(B=0)的条件下, adkw为低(C=0)的概率为0.8569。在hjqr为高(B=1)的条件下, tuqq为高(A=1)的概率为0.5024。",
+        "data_info_math": "P(C=0|B=1)=0.9796; P(C=0|A=0,B=0)=0.7960; P(A=0|B=1)=0.4976; P(C=0|A=1,B=0)=0.8569; P(A=1|B=1)=0.5024; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些hjqr为高，假如hjqr为低，那么adkw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-sum_{A} P(C=0|B=0,A)*P(A|B=1)=P(C=0|B=1)-[P(C=0|B=0,A=0)*P(A=0|B=1)+P(C=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=0|B=1)=0.9796\tP(C=0|B=0,A=0)=0.7960\tP(A=0|B=1)=0.4976\tP(C=0|B=0,A=1)=0.8569\tP(A=1|B=1)=0.5024",
+        "Step 6": "ETT=0.9796-[0.7960*0.4976+0.8569*0.5024]=0.1531",
+        "Step 7": "ETT=0.1531>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.15306433996786872
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)的条件下, adkw为高(C=1)的概率为0.0204。在tuqq为低(A=0)且hjqr为低(B=0)的条件下, adkw为高(C=1)的概率为0.2040。在hjqr为高(B=1)的条件下, tuqq为低(A=0)的概率为0.4976。在tuqq为高(A=1)且hjqr为低(B=0)的条件下, adkw为高(C=1)的概率为0.1431。在hjqr为高(B=1)的条件下, tuqq为高(A=1)的概率为0.5024。",
+        "data_info_math": "P(C=1|B=1)=0.0204; P(C=1|A=0,B=0)=0.2040; P(A=0|B=1)=0.4976; P(C=1|A=1,B=0)=0.1431; P(A=1|B=1)=0.5024; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些hjqr为高，假如hjqr为低，那么adkw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-sum_{A} P(C=1|B=0,A)*P(A|B=1)=P(C=1|B=1)-[P(C=1|B=0,A=0)*P(A=0|B=1)+P(C=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=1|B=1)=0.0204\tP(C=1|B=0,A=0)=0.2040\tP(A=0|B=1)=0.4976\tP(C=1|B=0,A=1)=0.1431\tP(A=1|B=1)=0.5024",
+        "Step 6": "ETT=0.0204-[0.2040*0.4976+0.1431*0.5024]=-0.1531",
+        "Step 7": "ETT=-0.1531<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.15306433996786867
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)的条件下, eavb为低(D=0)的概率为0.0739。在tuqq为低(A=0)且hjqr为高(B=1)的条件下, eavb为低(D=0)的概率为0.1054。在hjqr为低(B=0)的条件下, tuqq为低(A=0)的概率为0.5243。在tuqq为高(A=1)且hjqr为高(B=1)的条件下, eavb为低(D=0)的概率为0.0282。在hjqr为低(B=0)的条件下, tuqq为高(A=1)的概率为0.4757。",
+        "data_info_math": "P(D=0|B=0)=0.0739; P(D=0|A=0,B=1)=0.1054; P(A=0|B=0)=0.5243; P(D=0|A=1,B=1)=0.0282; P(A=1|B=0)=0.4757; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些hjqr为低，假如hjqr为高，那么eavb更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-sum_{A} P(D=0|B=1,A)*P(A|B=0)=P(D=0|B=0)-[P(D=0|B=1,A=0)*P(A=0|B=0)+P(D=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=0|B=0)=0.0739\tP(D=0|B=1,A=0)=0.1054\tP(A=0|B=0)=0.5243\tP(D=0|B=1,A=1)=0.0282\tP(A=1|B=0)=0.4757",
+        "Step 6": "ETT=0.0739-[0.1054*0.5243+0.0282*0.4757]=0.0052",
+        "Step 7": "ETT=0.0052>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.005198252322759691
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)的条件下, eavb为高(D=1)的概率为0.9261。在tuqq为低(A=0)且hjqr为高(B=1)的条件下, eavb为高(D=1)的概率为0.8946。在hjqr为低(B=0)的条件下, tuqq为低(A=0)的概率为0.5243。在tuqq为高(A=1)且hjqr为高(B=1)的条件下, eavb为高(D=1)的概率为0.9718。在hjqr为低(B=0)的条件下, tuqq为高(A=1)的概率为0.4757。",
+        "data_info_math": "P(D=1|B=0)=0.9261; P(D=1|A=0,B=1)=0.8946; P(A=0|B=0)=0.5243; P(D=1|A=1,B=1)=0.9718; P(A=1|B=0)=0.4757; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些hjqr为低，假如hjqr为高，那么eavb更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-sum_{A} P(D=1|B=1,A)*P(A|B=0)=P(D=1|B=0)-[P(D=1|B=1,A=0)*P(A=0|B=0)+P(D=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=1|B=0)=0.9261\tP(D=1|B=1,A=0)=0.8946\tP(A=0|B=0)=0.5243\tP(D=1|B=1,A=1)=0.9718\tP(A=1|B=0)=0.4757",
+        "Step 6": "ETT=0.9261-[0.8946*0.5243+0.9718*0.4757]=-0.0052",
+        "Step 7": "ETT=-0.0052<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.005198252322759611
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)的条件下, eavb为低(D=0)的概率为0.0666。在tuqq为低(A=0)且hjqr为低(B=0)的条件下, eavb为低(D=0)的概率为0.1152。在hjqr为高(B=1)的条件下, tuqq为低(A=0)的概率为0.4976。在tuqq为高(A=1)且hjqr为低(B=0)的条件下, eavb为低(D=0)的概率为0.0284。在hjqr为高(B=1)的条件下, tuqq为高(A=1)的概率为0.5024。",
+        "data_info_math": "P(D=0|B=1)=0.0666; P(D=0|A=0,B=0)=0.1152; P(A=0|B=1)=0.4976; P(D=0|A=1,B=0)=0.0284; P(A=1|B=1)=0.5024; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些hjqr为高，假如hjqr为低，那么eavb更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-sum_{A} P(D=0|B=0,A)*P(A|B=1)=P(D=0|B=1)-[P(D=0|B=0,A=0)*P(A=0|B=1)+P(D=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=0|B=1)=0.0666\tP(D=0|B=0,A=0)=0.1152\tP(A=0|B=1)=0.4976\tP(D=0|B=0,A=1)=0.0284\tP(A=1|B=1)=0.5024",
+        "Step 6": "ETT=0.0666-[0.1152*0.4976+0.0284*0.5024]=-0.0049",
+        "Step 7": "ETT=-0.0049<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": -0.00494175333560473
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)的条件下, eavb为高(D=1)的概率为0.9334。在tuqq为低(A=0)且hjqr为低(B=0)的条件下, eavb为高(D=1)的概率为0.8848。在hjqr为高(B=1)的条件下, tuqq为低(A=0)的概率为0.4976。在tuqq为高(A=1)且hjqr为低(B=0)的条件下, eavb为高(D=1)的概率为0.9716。在hjqr为高(B=1)的条件下, tuqq为高(A=1)的概率为0.5024。",
+        "data_info_math": "P(D=1|B=1)=0.9334; P(D=1|A=0,B=0)=0.8848; P(A=0|B=1)=0.4976; P(D=1|A=1,B=0)=0.9716; P(A=1|B=1)=0.5024; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些hjqr为高，假如hjqr为低，那么eavb更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-sum_{A} P(D=1|B=0,A)*P(A|B=1)=P(D=1|B=1)-[P(D=1|B=0,A=0)*P(A=0|B=1)+P(D=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=1|B=1)=0.9334\tP(D=1|B=0,A=0)=0.8848\tP(A=0|B=1)=0.4976\tP(D=1|B=0,A=1)=0.9716\tP(A=1|B=1)=0.5024",
+        "Step 6": "ETT=0.9334-[0.8848*0.4976+0.9716*0.5024]=0.0049",
+        "Step 7": "ETT=0.0049>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0.004941753335604759
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于tuqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些adkw为低，假如adkw为高，那么tuqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于tuqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些adkw为低，假如adkw为高，那么tuqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于tuqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些adkw为高，假如adkw为低，那么tuqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于tuqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些adkw为高，假如adkw为低，那么tuqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于hjqr的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些adkw为低，假如adkw为高，那么hjqr更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于hjqr的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些adkw为低，假如adkw为高，那么hjqr更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于hjqr的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些adkw为高，假如adkw为低，那么hjqr更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于hjqr的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些adkw为高，假如adkw为低，那么hjqr更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于eavb的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些adkw为低，假如adkw为高，那么eavb更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于eavb的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些adkw为低，假如adkw为高，那么eavb更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于eavb的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些adkw为高，假如adkw为低，那么eavb更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑adkw作用于eavb的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些adkw为高，假如adkw为低，那么eavb更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于tuqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些eavb为低，假如eavb为高，那么tuqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于tuqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些eavb为低，假如eavb为高，那么tuqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于tuqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些eavb为高，假如eavb为低，那么tuqq更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于tuqq的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些eavb为高，假如eavb为低，那么tuqq更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于hjqr的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些eavb为低，假如eavb为高，那么hjqr更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于hjqr的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些eavb为低，假如eavb为高，那么hjqr更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于hjqr的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些eavb为高，假如eavb为低，那么hjqr更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于hjqr的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些eavb为高，假如eavb为低，那么hjqr更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于adkw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些eavb为低，假如eavb为高，那么adkw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 133,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于adkw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些eavb为低，假如eavb为高，那么adkw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 134,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于adkw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些eavb为高，假如eavb为低，那么adkw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 135,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑eavb作用于adkw的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些eavb为高，假如eavb为低，那么adkw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 136,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)且hjqr为低(B=0)的条件下, adkw为低(C=0)的概率为0.7960。在tuqq为高(A=1)且hjqr为低(B=0)的条件下, adkw为低(C=0)的概率为0.8569。",
+        "data_info_math": "P(C=0|A=0,B=0)=0.7960; P(C=0|A=1,B=0)=0.8569; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在hjqr为低的条件下，假如tuqq为低，那么adkw更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=0,B=0))-P(C=0|do(A=1,B=0))=P(C=0|A=0,B=0)-P(C=0|A=1,B=0)",
+        "Step 5": "P(C=0|A=0,B=0)=0.7960\tP(C=0|A=1,B=0)=0.8569",
+        "Step 6": "CDE=0.7960-0.8569=-0.0609",
+        "Step 7": "CDE=-0.0609<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": -0.06091535104552337
+    },
+    {
+      "id": 137,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)且hjqr为高(B=1)的条件下, adkw为高(C=1)的概率为0.0257。在tuqq为高(A=1)且hjqr为高(B=1)的条件下, adkw为高(C=1)的概率为0.0151。",
+        "data_info_math": "P(C=1|A=0,B=1)=0.0257; P(C=1|A=1,B=1)=0.0151; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在hjqr为高的条件下，假如tuqq为低，那么adkw更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=0,B=1))-P(C=1|do(A=1,B=1))=P(C=1|A=0,B=1)-P(C=1|A=1,B=1)",
+        "Step 5": "P(C=1|A=0,B=1)=0.0257\tP(C=1|A=1,B=1)=0.0151",
+        "Step 6": "CDE=0.0257-0.0151=0.0106",
+        "Step 7": "CDE=0.0106>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0.01064434457087061
+    },
+    {
+      "id": 138,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)且hjqr为高(B=1)的条件下, adkw为低(C=0)的概率为0.9849。在tuqq为低(A=0)且hjqr为高(B=1)的条件下, adkw为低(C=0)的概率为0.9743。",
+        "data_info_math": "P(C=0|A=1,B=1)=0.9849; P(C=0|A=0,B=1)=0.9743; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在hjqr为高的条件下，假如tuqq为高，那么adkw更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=1,B=1))-P(C=0|do(A=0,B=1))=P(C=0|A=1,B=1)-P(C=0|A=0,B=1)",
+        "Step 5": "P(C=0|A=1,B=1)=0.9849\tP(C=0|A=0,B=1)=0.9743",
+        "Step 6": "CDE=0.9849-0.9743=0.0106",
+        "Step 7": "CDE=0.0106>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0.0106443445708706
+    },
+    {
+      "id": 139,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)且hjqr为低(B=0)的条件下, adkw为高(C=1)的概率为0.1431。在tuqq为低(A=0)且hjqr为低(B=0)的条件下, adkw为高(C=1)的概率为0.2040。",
+        "data_info_math": "P(C=1|A=1,B=0)=0.1431; P(C=1|A=0,B=0)=0.2040; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在hjqr为低的条件下，假如tuqq为高，那么adkw更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=1,B=0))-P(C=1|do(A=0,B=0))=P(C=1|A=1,B=0)-P(C=1|A=0,B=0)",
+        "Step 5": "P(C=1|A=1,B=0)=0.1431\tP(C=1|A=0,B=0)=0.2040",
+        "Step 6": "CDE=0.1431-0.2040=-0.0609",
+        "Step 7": "CDE=-0.0609<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": -0.0609153510455232
+    },
+    {
+      "id": 140,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)且hjqr为高(B=1)的条件下, eavb为低(D=0)的概率为0.1054。在tuqq为高(A=1)且hjqr为高(B=1)的条件下, eavb为低(D=0)的概率为0.0282。",
+        "data_info_math": "P(D=0|A=0,B=1)=0.1054; P(D=0|A=1,B=1)=0.0282; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在hjqr为高的条件下，假如tuqq为低，那么eavb更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=0,B=1))-P(D=0|do(A=1,B=1))=P(D=0|A=0,B=1)-P(D=0|A=1,B=1)",
+        "Step 5": "P(D=0|A=0,B=1)=0.1054\tP(D=0|A=1,B=1)=0.0282",
+        "Step 6": "CDE=0.1054-0.0282=0.0772",
+        "Step 7": "CDE=0.0772>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0.07718857023116753
+    },
+    {
+      "id": 141,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)且hjqr为低(B=0)的条件下, eavb为高(D=1)的概率为0.8848。在tuqq为高(A=1)且hjqr为低(B=0)的条件下, eavb为高(D=1)的概率为0.9716。",
+        "data_info_math": "P(D=1|A=0,B=0)=0.8848; P(D=1|A=1,B=0)=0.9716; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在hjqr为低的条件下，假如tuqq为低，那么eavb更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=0,B=0))-P(D=1|do(A=1,B=0))=P(D=1|A=0,B=0)-P(D=1|A=1,B=0)",
+        "Step 5": "P(D=1|A=0,B=0)=0.8848\tP(D=1|A=1,B=0)=0.9716",
+        "Step 6": "CDE=0.8848-0.9716=-0.0868",
+        "Step 7": "CDE=-0.0868<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": -0.0868059864008397
+    },
+    {
+      "id": 142,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)且hjqr为高(B=1)的条件下, eavb为低(D=0)的概率为0.0282。在tuqq为低(A=0)且hjqr为高(B=1)的条件下, eavb为低(D=0)的概率为0.1054。",
+        "data_info_math": "P(D=0|A=1,B=1)=0.0282; P(D=0|A=0,B=1)=0.1054; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在hjqr为高的条件下，假如tuqq为高，那么eavb更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=1,B=1))-P(D=0|do(A=0,B=1))=P(D=0|A=1,B=1)-P(D=0|A=0,B=1)",
+        "Step 5": "P(D=0|A=1,B=1)=0.0282\tP(D=0|A=0,B=1)=0.1054",
+        "Step 6": "CDE=0.0282-0.1054=-0.0772",
+        "Step 7": "CDE=-0.0772<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": -0.07718857023116753
+    },
+    {
+      "id": 143,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)且hjqr为低(B=0)的条件下, eavb为高(D=1)的概率为0.9716。在tuqq为低(A=0)且hjqr为低(B=0)的条件下, eavb为高(D=1)的概率为0.8848。",
+        "data_info_math": "P(D=1|A=1,B=0)=0.9716; P(D=1|A=0,B=0)=0.8848; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在hjqr为低的条件下，假如tuqq为高，那么eavb更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=1,B=0))-P(D=1|do(A=0,B=0))=P(D=1|A=1,B=0)-P(D=1|A=0,B=0)",
+        "Step 5": "P(D=1|A=1,B=0)=0.9716\tP(D=1|A=0,B=0)=0.8848",
+        "Step 6": "CDE=0.9716-0.8848=0.0868",
+        "Step 7": "CDE=0.0868>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "FAKE",
+      "prob": 0.0868059864008397
+    },
+    {
+      "id": 144,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象tuqq(A)和观察节点hjqr(B)的后门调整集合。",
+      "Question": "方法1: 根据adkw的情况，我们逐个研究tuqq和hjqr的关联。\n方法2：我们直接研究一般情况下tuqq和hjqr的关联。\n为了理解tuqq如何影响hjqr，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 145,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象tuqq(A)和观察节点hjqr(B)的后门调整集合。",
+      "Question": "方法1: 根据eavb的情况，我们逐个研究tuqq和hjqr的关联。\n方法2：我们直接研究一般情况下tuqq和hjqr的关联。\n为了理解tuqq如何影响hjqr，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 146,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象tuqq(A)和观察节点adkw(C)的后门调整集合。",
+      "Question": "方法1: 根据eavb的情况，我们逐个研究tuqq和adkw的关联。\n方法2：我们直接研究一般情况下tuqq和adkw的关联。\n为了理解tuqq如何影响adkw，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 147,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象tuqq(A)和观察节点adkw(C)的后门调整集合。",
+      "Question": "方法1: 根据hjqr的情况，我们逐个研究tuqq和adkw的关联。\n方法2：我们直接研究一般情况下tuqq和adkw的关联。\n为了理解tuqq如何影响adkw，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 148,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象tuqq(A)和观察节点eavb(D)的后门调整集合。",
+      "Question": "方法1: 根据adkw的情况，我们逐个研究tuqq和eavb的关联。\n方法2：我们直接研究一般情况下tuqq和eavb的关联。\n为了理解tuqq如何影响eavb，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 149,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象tuqq(A)和观察节点eavb(D)的后门调整集合。",
+      "Question": "方法1: 根据adkw的情况，我们逐个研究tuqq和eavb的关联。\n方法2：我们直接研究一般情况下tuqq和eavb的关联。\n为了理解tuqq如何影响eavb，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 150,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象hjqr(B)和观察节点adkw(C)的后门调整集合。",
+      "Question": "方法1: 根据tuqq的情况，我们逐个研究hjqr和adkw的关联。\n方法2：我们直接研究一般情况下hjqr和adkw的关联。\n为了理解hjqr如何影响adkw，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 151,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象hjqr(B)和观察节点adkw(C)的后门调整集合。",
+      "Question": "方法1: 根据tuqq的情况，我们逐个研究hjqr和adkw的关联。\n方法2：我们直接研究一般情况下hjqr和adkw的关联。\n为了理解hjqr如何影响adkw，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 152,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象hjqr(B)和观察节点eavb(D)的后门调整集合。",
+      "Question": "方法1: 根据tuqq的情况，我们逐个研究hjqr和eavb的关联。\n方法2：我们直接研究一般情况下hjqr和eavb的关联。\n为了理解hjqr如何影响eavb，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 153,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象hjqr(B)和观察节点eavb(D)的后门调整集合。",
+      "Question": "方法1: 根据tuqq的情况，我们逐个研究hjqr和eavb的关联。\n方法2：我们直接研究一般情况下hjqr和eavb的关联。\n为了理解hjqr如何影响eavb，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "FAKE",
+      "prob": null
+    },
+    {
+      "id": 154,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, hjqr为高(B=1)的概率为0.7915。hjqr为高(B=1)的概率为0.8000。tuqq为高(A=1)且hjqr为高(B=1)的概率为0.4019。",
+        "data_info_math": "P(B=1|A=0)=0.7915; P(B=1)=0.8000; P(A=1,B=1)=0.4019; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的必要性概率(probability of necessity, PN)。",
+      "Question": "给定tuqq为高且hjqr为高, 那么假如tuqq为低，此时hjqr为低的概率的下界是多少？",
+      "Answer": "0.0211",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.7915",
+        "Step 2": "PN的下界: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.8000-0.7915)/0.4019}\n=max{0, 0.0211}\n=0.0211"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.02111458362967783
+    },
+    {
+      "id": 155,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, hjqr为低(B=0)的概率为0.2085。tuqq为低(A=0)且hjqr为低(B=0)的概率为0.1049。tuqq为高(A=1)且hjqr为高(B=1)的概率为0.4019。",
+        "data_info_math": "P(B=0|A=0)=0.2085; P(A=0,B=0)=0.1049; P(A=1,B=1)=0.4019; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的必要性概率(probability of necessity, PN)。",
+      "Question": "给定tuqq为高且hjqr为高, 那么假如tuqq为低，此时hjqr为低的概率的上界是多少？",
+      "Answer": "0.2579",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.2085",
+        "Step 2": "PN的上界: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.2085-0.1049)/0.4019}\n=min{1, 0.2579}\n=0.2579"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.2579016842567308
+    },
+    {
+      "id": 156,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.0629。adkw为高(C=1)的概率为0.0513。tuqq为高(A=1)且adkw为高(C=1)的概率为0.0197。",
+        "data_info_math": "P(C=1|A=0)=0.0629; P(C=1)=0.0513; P(A=1,C=1)=0.0197; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的必要性概率(probability of necessity, PN)。",
+      "Question": "给定tuqq为高且adkw为高, 那么假如tuqq为低，此时adkw为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.0629",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.0513-0.0629)/0.0197}\n=max{0, -0.5888}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 157,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.9371。tuqq为低(A=0)且adkw为低(C=0)的概率为0.4713。tuqq为高(A=1)且adkw为高(C=1)的概率为0.0197。",
+        "data_info_math": "P(C=0|A=0)=0.9371; P(A=0,C=0)=0.4713; P(A=1,C=1)=0.0197; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的必要性概率(probability of necessity, PN)。",
+      "Question": "给定tuqq为高且adkw为高, 那么假如tuqq为低，此时adkw为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.9371",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.9371-0.4713)/0.0197}\n=min{1, 23.6673}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 158,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8926。eavb为高(D=1)的概率为0.9319。tuqq为高(A=1)且eavb为高(D=1)的概率为0.4830。",
+        "data_info_math": "P(D=1|A=0)=0.8926; P(D=1)=0.9319; P(A=1,D=1)=0.4830; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的必要性概率(probability of necessity, PN)。",
+      "Question": "给定tuqq为高且eavb为高, 那么假如tuqq为低，此时eavb为低的概率的下界是多少？",
+      "Answer": "0.0815",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.8926",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.9319-0.8926)/0.4830}\n=max{0, 0.0815}\n=0.0815"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.08149882385717533
+    },
+    {
+      "id": 159,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1074。tuqq为低(A=0)且eavb为低(D=0)的概率为0.0540。tuqq为高(A=1)且eavb为高(D=1)的概率为0.4830。",
+        "data_info_math": "P(D=0|A=0)=0.1074; P(A=0,D=0)=0.0540; P(A=1,D=1)=0.4830; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的必要性概率(probability of necessity, PN)。",
+      "Question": "给定tuqq为高且eavb为高, 那么假如tuqq为低，此时eavb为低的概率的上界是多少？",
+      "Answer": "0.1106",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.1074",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.1074-0.0540)/0.4830}\n=min{1, 0.1106}\n=0.1106"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.11056714683854194
+    },
+    {
+      "id": 160,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.2040。tuqq为低(A=0)的概率为0.5030。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.1431。tuqq为高(A=1)的概率为0.4970。adkw为高(C=1)的概率为0.0513。hjqr为高(B=1)且adkw为高(C=1)的概率为0.0163。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.2040; P(A=0)=0.5030; P(C=1|B=0,A=1)=0.1431; P(A=1)=0.4970; P(C=1)=0.0513; P(B=1,C=1)=0.0163; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的必要性概率(probability of necessity, PN)。",
+      "Question": "给定hjqr为高且adkw为高, 那么假如hjqr为低，此时adkw为低的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=sum_{A} P(C=1|B=0,A)*P(A)=P(C=1|B=0,A=0)*P(A=0)+P(C=1|B=0,A=1)*P(A=1)\nP(C=1|B=0,A=0)=0.2040\tP(A=0)=0.5030\tP(C=1|B=0,A=1)=0.1431\tP(A=1)=0.4970\nP(C=1|do(B=0))=0.2040*0.5030+0.1431*0.4970=0.1738",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.0513-0.1738)/0.0163}\n=max{0, -7.5120}\n=0.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 161,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.7960。tuqq为低(A=0)的概率为0.5030。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.8569。tuqq为高(A=1)的概率为0.4970。hjqr为低(B=0)且adkw为低(C=0)的概率为0.1650。hjqr为高(B=1)且adkw为高(C=1)的概率为0.0163。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.7960; P(A=0)=0.5030; P(C=0|B=0,A=1)=0.8569; P(A=1)=0.4970; P(B=0,C=0)=0.1650; P(B=1,C=1)=0.0163; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的必要性概率(probability of necessity, PN)。",
+      "Question": "给定hjqr为高且adkw为高, 那么假如hjqr为低，此时adkw为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=sum_{A} P(C=0|B=0,A)*P(A)=P(C=0|B=0,A=0)*P(A=0)+P(C=0|B=0,A=1)*P(A=1)\nP(C=0|B=0,A=0)=0.7960\tP(A=0)=0.5030\tP(C=0|B=0,A=1)=0.8569\tP(A=1)=0.4970\nP(C=0|do(B=0))=0.7960*0.5030+0.8569*0.4970=0.8262",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.8262-0.1650)/0.0163}\n=min{1, 40.5653}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 162,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8848。tuqq为低(A=0)的概率为0.5030。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9716。tuqq为高(A=1)的概率为0.4970。eavb为高(D=1)的概率为0.9319。hjqr为高(B=1)且eavb为高(D=1)的概率为0.7467。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.8848; P(A=0)=0.5030; P(D=1|B=0,A=1)=0.9716; P(A=1)=0.4970; P(D=1)=0.9319; P(B=1,D=1)=0.7467; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的必要性概率(probability of necessity, PN)。",
+      "Question": "给定hjqr为高且eavb为高, 那么假如hjqr为低，此时eavb为低的概率的下界是多少？",
+      "Answer": "0.0053",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=sum_{A} P(D=1|B=0,A)*P(A)=P(D=1|B=0,A=0)*P(A=0)+P(D=1|B=0,A=1)*P(A=1)\nP(D=1|B=0,A=0)=0.8848\tP(A=0)=0.5030\tP(D=1|B=0,A=1)=0.9716\tP(A=1)=0.4970\nP(D=1|do(B=0))=0.8848*0.5030+0.9716*0.4970=0.9280",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.9319-0.9280)/0.7467}\n=max{0, 0.0053}\n=0.0053"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.005294518252417955
+    },
+    {
+      "id": 163,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为低(B=0)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1152。tuqq为低(A=0)的概率为0.5030。在hjqr为低(B=0)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0284。tuqq为高(A=1)的概率为0.4970。hjqr为低(B=0)且eavb为低(D=0)的概率为0.0148。hjqr为高(B=1)且eavb为高(D=1)的概率为0.7467。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.1152; P(A=0)=0.5030; P(D=0|B=0,A=1)=0.0284; P(A=1)=0.4970; P(B=0,D=0)=0.0148; P(B=1,D=1)=0.7467; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的必要性概率(probability of necessity, PN)。",
+      "Question": "给定hjqr为高且eavb为高, 那么假如hjqr为低，此时eavb为低的概率的上界是多少？",
+      "Answer": "0.0767",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=sum_{A} P(D=0|B=0,A)*P(A)=P(D=0|B=0,A=0)*P(A=0)+P(D=0|B=0,A=1)*P(A=1)\nP(D=0|B=0,A=0)=0.1152\tP(A=0)=0.5030\tP(D=0|B=0,A=1)=0.0284\tP(A=1)=0.4970\nP(D=0|do(B=0))=0.1152*0.5030+0.0284*0.4970=0.0720",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.0720-0.0148)/0.7467}\n=min{1, 0.0767}\n=0.0767"
+      },
+      "Type": "PN",
+      "Mode": "FAKE",
+      "prob": 0.07667908418604233
+    },
+    {
+      "id": 164,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, hjqr为低(B=0)的概率为0.1915。hjqr为低(B=0)的概率为0.2000。tuqq为低(A=0)且hjqr为低(B=0)的概率为0.1049。",
+        "data_info_math": "P(B=0|A=1)=0.1915; P(B=0)=0.2000; P(A=0,B=0)=0.1049; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定tuqq为低且hjqr为低, 假如tuqq为高，此时hjqr为高的概率的下界是多少？",
+      "Answer": "0.0819",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.1915",
+        "Step 2": "PS的下界: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.2000-0.1915)/0.1049}\n=max{0, 0.0819}\n=0.0819"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.0818706697884887
+    },
+    {
+      "id": 165,
+      "question_id": 160,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, hjqr为高(B=1)的概率为0.8085。tuqq为低(A=0)且hjqr为低(B=0)的概率为0.1049。tuqq为高(A=1)且hjqr为高(B=1)的概率为0.4019。",
+        "data_info_math": "P(B=1|A=1)=0.8085; P(A=0,B=0)=0.1049; P(A=1,B=1)=0.4019; "
+      },
+      "Instruction": "考虑tuqq作用于hjqr的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定tuqq为低且hjqr为低, 假如tuqq为高，此时hjqr为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.8085",
+        "Step 2": "PS的上界: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.8085-0.4019)/0.1049}\n=min{1, 3.8774}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 166,
+      "question_id": 161,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.9604。adkw为低(C=0)的概率为0.9487。tuqq为低(A=0)且adkw为低(C=0)的概率为0.4713。",
+        "data_info_math": "P(C=0|A=1)=0.9604; P(C=0)=0.9487; P(A=0,C=0)=0.4713; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定tuqq为低且adkw为低, 假如tuqq为高，此时adkw为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.9604",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.9487-0.9604)/0.4713}\n=max{0, -0.0249}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 167,
+      "question_id": 162,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.0396。tuqq为低(A=0)且adkw为低(C=0)的概率为0.4713。tuqq为高(A=1)且adkw为高(C=1)的概率为0.0197。",
+        "data_info_math": "P(C=1|A=1)=0.0396; P(A=0,C=0)=0.4713; P(A=1,C=1)=0.0197; "
+      },
+      "Instruction": "考虑tuqq作用于adkw的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定tuqq为低且adkw为低, 假如tuqq为高，此时adkw为高的概率的上界是多少？",
+      "Answer": "0.0423",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.0396",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.0396-0.0197)/0.4713}\n=min{1, 0.0423}\n=0.0423"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.04225239506309843
+    },
+    {
+      "id": 168,
+      "question_id": 163,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0282。eavb为低(D=0)的概率为0.0681。tuqq为低(A=0)且eavb为低(D=0)的概率为0.0540。",
+        "data_info_math": "P(D=0|A=1)=0.0282; P(D=0)=0.0681; P(A=0,D=0)=0.0540; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定tuqq为低且eavb为低, 假如tuqq为高，此时eavb为高的概率的下界是多少？",
+      "Answer": "0.7371",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.0282",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.0681-0.0282)/0.0540}\n=max{0, 0.7371}\n=0.7371"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.737098009557811
+    },
+    {
+      "id": 169,
+      "question_id": 164,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9718。tuqq为低(A=0)且eavb为低(D=0)的概率为0.0540。tuqq为高(A=1)且eavb为高(D=1)的概率为0.4830。",
+        "data_info_math": "P(D=1|A=1)=0.9718; P(A=0,D=0)=0.0540; P(A=1,D=1)=0.4830; "
+      },
+      "Instruction": "考虑tuqq作用于eavb的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定tuqq为低且eavb为低, 假如tuqq为高，此时eavb为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.9718",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.9718-0.4830)/0.0540}\n=min{1, 9.0443}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 1
+    },
+    {
+      "id": 170,
+      "question_id": 165,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为低(C=0)的概率为0.9743。tuqq为低(A=0)的概率为0.5030。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为低(C=0)的概率为0.9849。tuqq为高(A=1)的概率为0.4970。adkw为低(C=0)的概率为0.9487。hjqr为低(B=0)且adkw为低(C=0)的概率为0.1650。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.9743; P(A=0)=0.5030; P(C=0|B=1,A=1)=0.9849; P(A=1)=0.4970; P(C=0)=0.9487; P(B=0,C=0)=0.1650; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定hjqr为低且adkw为低, 假如hjqr为高，此时adkw为高的概率的下界是多少？",
+      "Answer": "0.0000",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=sum_{A} P(C=0|B=1,A)*P(A)=P(C=0|B=1,A=0)*P(A=0)+P(C=0|B=1,A=1)*P(A=1)\nP(C=0|B=1,A=0)=0.9743\tP(A=0)=0.5030\tP(C=0|B=1,A=1)=0.9849\tP(A=1)=0.4970\nP(C=0|do(B=1))=0.9743*0.5030+0.9849*0.4970=0.9796",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.9487-0.9796)/0.1650}\n=max{0, -0.1872}\n=0.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0
+    },
+    {
+      "id": 171,
+      "question_id": 166,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)且tuqq为低(A=0)的条件下, adkw为高(C=1)的概率为0.0257。tuqq为低(A=0)的概率为0.5030。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, adkw为高(C=1)的概率为0.0151。tuqq为高(A=1)的概率为0.4970。hjqr为低(B=0)且adkw为低(C=0)的概率为0.1650。hjqr为高(B=1)且adkw为高(C=1)的概率为0.0163。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.0257; P(A=0)=0.5030; P(C=1|B=1,A=1)=0.0151; P(A=1)=0.4970; P(B=0,C=0)=0.1650; P(B=1,C=1)=0.0163; "
+      },
+      "Instruction": "考虑hjqr作用于adkw的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定hjqr为低且adkw为低, 假如hjqr为高，此时adkw为高的概率的上界是多少？",
+      "Answer": "0.0250",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=sum_{A} P(C=1|B=1,A)*P(A)=P(C=1|B=1,A=0)*P(A=0)+P(C=1|B=1,A=1)*P(A=1)\nP(C=1|B=1,A=0)=0.0257\tP(A=0)=0.5030\tP(C=1|B=1,A=1)=0.0151\tP(A=1)=0.4970\nP(C=1|do(B=1))=0.0257*0.5030+0.0151*0.4970=0.0204",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.0204-0.0163)/0.1650}\n=min{1, 0.0250}\n=0.0250"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.02504428337961921
+    },
+    {
+      "id": 172,
+      "question_id": 167,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为低(D=0)的概率为0.1054。tuqq为低(A=0)的概率为0.5030。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为低(D=0)的概率为0.0282。tuqq为高(A=1)的概率为0.4970。eavb为低(D=0)的概率为0.0681。hjqr为低(B=0)且eavb为低(D=0)的概率为0.0148。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.1054; P(A=0)=0.5030; P(D=0|B=1,A=1)=0.0282; P(A=1)=0.4970; P(D=0)=0.0681; P(B=0,D=0)=0.0148; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定hjqr为低且eavb为低, 假如hjqr为高，此时eavb为高的概率的下界是多少？",
+      "Answer": "0.0704",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=sum_{A} P(D=0|B=1,A)*P(A)=P(D=0|B=1,A=0)*P(A=0)+P(D=0|B=1,A=1)*P(A=1)\nP(D=0|B=1,A=0)=0.1054\tP(A=0)=0.5030\tP(D=0|B=1,A=1)=0.0282\tP(A=1)=0.4970\nP(D=0|do(B=1))=0.1054*0.5030+0.0282*0.4970=0.0670",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.0681-0.0670)/0.0148}\n=max{0, 0.0704}\n=0.0704"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 0.07035577771616124
+    },
+    {
+      "id": 173,
+      "question_id": 168,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表tuqq, B代表hjqr, C代表adkw, D代表eavb。",
+        "data_info": "在hjqr为高(B=1)且tuqq为低(A=0)的条件下, eavb为高(D=1)的概率为0.8946。tuqq为低(A=0)的概率为0.5030。在hjqr为高(B=1)且tuqq为高(A=1)的条件下, eavb为高(D=1)的概率为0.9718。tuqq为高(A=1)的概率为0.4970。hjqr为低(B=0)且eavb为低(D=0)的概率为0.0148。hjqr为高(B=1)且eavb为高(D=1)的概率为0.7467。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.8946; P(A=0)=0.5030; P(D=1|B=1,A=1)=0.9718; P(A=1)=0.4970; P(B=0,D=0)=0.0148; P(B=1,D=1)=0.7467; "
+      },
+      "Instruction": "考虑hjqr作用于eavb的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定hjqr为低且eavb为低, 假如hjqr为高，此时eavb为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=sum_{A} P(D=1|B=1,A)*P(A)=P(D=1|B=1,A=0)*P(A=0)+P(D=1|B=1,A=1)*P(A=1)\nP(D=1|B=1,A=0)=0.8946\tP(A=0)=0.5030\tP(D=1|B=1,A=1)=0.9718\tP(A=1)=0.4970\nP(D=1|do(B=1))=0.8946*0.5030+0.9718*0.4970=0.9330",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.9330-0.7467)/0.0148}\n=min{1, 12.6049}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "FAKE",
+      "prob": 1
+    }
+  ]
+}

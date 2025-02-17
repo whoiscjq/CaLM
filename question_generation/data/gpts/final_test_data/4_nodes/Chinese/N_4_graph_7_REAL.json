@@ -1,0 +1,3963 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->C",
+      "A->D",
+      "B->C",
+      "B->D"
+    ],
+    "node_name": {
+      "A": "降雨量",
+      "B": "土壤湿度水平",
+      "C": "植物生长",
+      "D": "农作物产量"
+    },
+    "node_value": {
+      "A": [
+        "小",
+        "大"
+      ],
+      "B": [
+        "低",
+        "高"
+      ],
+      "C": [
+        "发育不良",
+        "旺盛"
+      ],
+      "D": [
+        "低",
+        "高"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {
+      "A->B": 1,
+      "A->C": 1,
+      "A->D": 1,
+      "B->C": 1,
+      "B->D": 1
+    },
+    "node_bias": {
+      "A": 0.5032842852048813,
+      "B": -2.7828850013397344,
+      "C": -0.013825779894441217,
+      "D": -0.8439229940743009
+    },
+    "edge_weight": {
+      "A->B": 1.5150535263988094,
+      "A->C": 1.1060226692541233,
+      "A->D": 0.7380123448130502,
+      "B->C": 0.7269614614940811,
+      "B->D": 2.004859995397412
+    },
+    "function_description": "P(A=1)=0.6232\nP(B=1|A)=sigmoid(-2.7828850013397344 + 1.5151 * A)\nP(C=1|A,B)=sigmoid(-0.013825779894441217 + 1.1060 * A + 0.7270 * B)\nP(D=1|A,B)=sigmoid(-0.8439229940743009 + 0.7380 * A + 2.0049 * B)\n",
+    "text_description": "The probability of amount of rainfall being large (A=1) is 0.6232. \nFor those with amount of rainfall being small (A=0), the probability of soil moisture level being high (B=1) is 0.0583. \nFor those with amount of rainfall being large (A=1), the probability of soil moisture level being high (B=1) is 0.2196. \nFor those with amount of rainfall being small (A=0) and soil moisture level being low (B=0), the probability of plant growth being vigorous (C=1) is 0.4965. \nFor those with amount of rainfall being small (A=0) and soil moisture level being high (B=1), the probability of plant growth being vigorous (C=1) is 0.6711. \nFor those with amount of rainfall being large (A=1) and soil moisture level being low (B=0), the probability of plant growth being vigorous (C=1) is 0.7488. \nFor those with amount of rainfall being large (A=1) and soil moisture level being high (B=1), the probability of plant growth being vigorous (C=1) is 0.8605. \nFor those with amount of rainfall being small (A=0) and soil moisture level being low (B=0), the probability of crop yield being high (D=1) is 0.3007. \nFor those with amount of rainfall being small (A=0) and soil moisture level being high (B=1), the probability of crop yield being high (D=1) is 0.7615. \nFor those with amount of rainfall being large (A=1) and soil moisture level being low (B=0), the probability of crop yield being high (D=1) is 0.4735. \nFor those with amount of rainfall being large (A=1) and soil moisture level being high (B=1), the probability of crop yield being high (D=1) is 0.8698. \n",
+    "Statistic_data": [
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 8464
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 9553
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 6157
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 6300
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 568
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 2930
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 3245
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 2780
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 5093
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 2575
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 859
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 803
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 291
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 168
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 94
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 120
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。",
+        "data_info_math": "P(B=0|A=0)=0.9408; P(B=0|A=1)=0.7787; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为小，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.9408\tP(B=0|A=1)=0.7787",
+        "Step 6": "ATE=0.9408-0.7787=0.1621",
+        "Step 7": "ATE=0.1621>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.16208711995505154
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 土壤湿度水平为高(B=1)的概率为0.0592。在降雨量为大(A=1)的条件下, 土壤湿度水平为高(B=1)的概率为0.2213。",
+        "data_info_math": "P(B=1|A=0)=0.0592; P(B=1|A=1)=0.2213; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为小，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.0592\tP(B=1|A=1)=0.2213",
+        "Step 6": "ATE=0.0592-0.2213=-0.1621",
+        "Step 7": "ATE=-0.1621<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.1620871199550515
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。",
+        "data_info_math": "P(B=0|A=1)=0.7787; P(B=0|A=0)=0.9408; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为大，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.7787\tP(B=0|A=0)=0.9408",
+        "Step 6": "ATE=0.7787-0.9408=-0.1621",
+        "Step 7": "ATE=-0.1621<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.16208711995505154
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 土壤湿度水平为高(B=1)的概率为0.2213。在降雨量为小(A=0)的条件下, 土壤湿度水平为高(B=1)的概率为0.0592。",
+        "data_info_math": "P(B=1|A=1)=0.2213; P(B=1|A=0)=0.0592; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为大，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.2213\tP(B=1|A=0)=0.0592",
+        "Step 6": "ATE=0.2213-0.0592=0.1621",
+        "Step 7": "ATE=0.1621>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.1620871199550515
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.4924。在降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.2303。",
+        "data_info_math": "P(C=0|A=0)=0.4924; P(C=0|A=1)=0.2303; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为小，那么植物生长更有可能为发育不良吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=0))-P(C=0|do(A=1))=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.4924\tP(C=0|A=1)=0.2303",
+        "Step 6": "ATE=0.4924-0.2303=0.2621",
+        "Step 7": "ATE=0.2621>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.26209132419797876
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.5076。在降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.7697。",
+        "data_info_math": "P(C=1|A=0)=0.5076; P(C=1|A=1)=0.7697; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为小，那么植物生长更有可能为旺盛吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=0))-P(C=1|do(A=1))=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.5076\tP(C=1|A=1)=0.7697",
+        "Step 6": "ATE=0.5076-0.7697=-0.2621",
+        "Step 7": "ATE=-0.2621<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.26209132419797876
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.2303。在降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.4924。",
+        "data_info_math": "P(C=0|A=1)=0.2303; P(C=0|A=0)=0.4924; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为大，那么植物生长更有可能为发育不良吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=0|do(A=1))-P(C=0|do(A=0))=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.2303\tP(C=0|A=0)=0.4924",
+        "Step 6": "ATE=0.2303-0.4924=-0.2621",
+        "Step 7": "ATE=-0.2621<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.26209132419797876
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.7697。在降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.5076。",
+        "data_info_math": "P(C=1|A=1)=0.7697; P(C=1|A=0)=0.5076; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为大，那么植物生长更有可能为旺盛吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(C=1|do(A=1))-P(C=1|do(A=0))=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.7697\tP(C=1|A=0)=0.5076",
+        "Step 6": "ATE=0.7697-0.5076=0.2621",
+        "Step 7": "ATE=0.2621>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.26209132419797876
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.6718。在降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.4417。",
+        "data_info_math": "P(D=0|A=0)=0.6718; P(D=0|A=1)=0.4417; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为小，那么农作物产量更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6718\tP(D=0|A=1)=0.4417",
+        "Step 6": "ATE=0.6718-0.4417=0.2301",
+        "Step 7": "ATE=0.2301>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.23013164499750832
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.3282。在降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.5583。",
+        "data_info_math": "P(D=1|A=0)=0.3282; P(D=1|A=1)=0.5583; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为小，那么农作物产量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3282\tP(D=1|A=1)=0.5583",
+        "Step 6": "ATE=0.3282-0.5583=-0.2301",
+        "Step 7": "ATE=-0.2301<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.23013164499750838
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.4417。在降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.6718。",
+        "data_info_math": "P(D=0|A=1)=0.4417; P(D=0|A=0)=0.6718; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为大，那么农作物产量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.4417\tP(D=0|A=0)=0.6718",
+        "Step 6": "ATE=0.4417-0.6718=-0.2301",
+        "Step 7": "ATE=-0.2301<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.23013164499750832
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.5583。在降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.3282。",
+        "data_info_math": "P(D=1|A=1)=0.5583; P(D=1|A=0)=0.3282; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果降雨量被改变为大，那么农作物产量更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.5583\tP(D=1|A=0)=0.3282",
+        "Step 6": "ATE=0.5583-0.3282=0.2301",
+        "Step 7": "ATE=0.2301>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.23013164499750838
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果土壤湿度水平被改变为低，那么降雨量更有可能为小吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果土壤湿度水平被改变为低，那么降雨量更有可能为大吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果土壤湿度水平被改变为高，那么降雨量更有可能为小吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果土壤湿度水平被改变为高，那么降雨量更有可能为大吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.5017。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.3434。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.2552。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.1424。降雨量为大(A=1)的概率为0.6213。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5017; P(C=0|B=1,A=0)=0.3434; P(A=0)=0.3787; P(C=0|B=0,A=1)=0.2552; P(C=0|B=1,A=1)=0.1424; P(A=1)=0.6213; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果土壤湿度水平被改变为低，那么植物生长更有可能为发育不良吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=0))-P(C=0|do(B=1))=sum_{A} [P(C=0|B=0,A)*P(A)-P(C=0|B=1,A)*P(A)]=[P(C=0|B=0,A=0)*P(A=0)-P(C=0|B=1,A=0)*P(A=0)]+[P(C=0|B=0,A=1)*P(A=1)-P(C=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=0,A=0)=0.5017\tP(C=0|B=1,A=0)=0.3434\tP(A=0)=0.3787\tP(C=0|B=0,A=1)=0.2552\tP(C=0|B=1,A=1)=0.1424\tP(A=1)=0.6213",
+        "Step 6": "ATE=[0.5017*0.3787-0.3434*0.3787]+[0.2552*0.6213-0.1424*0.6213]=0.1301",
+        "Step 7": "ATE=0.1301>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.13005877281066874
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.4983。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.6566。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.7448。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.8576。降雨量为大(A=1)的概率为0.6213。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4983; P(C=1|B=1,A=0)=0.6566; P(A=0)=0.3787; P(C=1|B=0,A=1)=0.7448; P(C=1|B=1,A=1)=0.8576; P(A=1)=0.6213; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果土壤湿度水平被改变为低，那么植物生长更有可能为旺盛吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=0))-P(C=1|do(B=1))=sum_{A} [P(C=1|B=0,A)*P(A)-P(C=1|B=1,A)*P(A)]=[P(C=1|B=0,A=0)*P(A=0)-P(C=1|B=1,A=0)*P(A=0)]+[P(C=1|B=0,A=1)*P(A=1)-P(C=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=0,A=0)=0.4983\tP(C=1|B=1,A=0)=0.6566\tP(A=0)=0.3787\tP(C=1|B=0,A=1)=0.7448\tP(C=1|B=1,A=1)=0.8576\tP(A=1)=0.6213",
+        "Step 6": "ATE=[0.4983*0.3787-0.6566*0.3787]+[0.7448*0.6213-0.8576*0.6213]=-0.1301",
+        "Step 7": "ATE=-0.1301<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.13005877281066866
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.3434。在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.5017。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.1424。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.2552。降雨量为大(A=1)的概率为0.6213。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.3434; P(C=0|B=0,A=0)=0.5017; P(A=0)=0.3787; P(C=0|B=1,A=1)=0.1424; P(C=0|B=0,A=1)=0.2552; P(A=1)=0.6213; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果土壤湿度水平被改变为高，那么植物生长更有可能为发育不良吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=0|do(B=1))-P(C=0|do(B=0))=sum_{A} [P(C=0|B=1,A)*P(A)-P(C=0|B=0,A)*P(A)]=[P(C=0|B=1,A=0)*P(A=0)-P(C=0|B=0,A=0)*P(A=0)]+[P(C=0|B=1,A=1)*P(A=1)-P(C=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=0|B=1,A=0)=0.3434\tP(C=0|B=0,A=0)=0.5017\tP(A=0)=0.3787\tP(C=0|B=1,A=1)=0.1424\tP(C=0|B=0,A=1)=0.2552\tP(A=1)=0.6213",
+        "Step 6": "ATE=[0.3434*0.3787-0.5017*0.3787]+[0.1424*0.6213-0.2552*0.6213]=-0.1301",
+        "Step 7": "ATE=-0.1301<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.13005877281066874
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.6566。在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.4983。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.8576。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.7448。降雨量为大(A=1)的概率为0.6213。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.6566; P(C=1|B=0,A=0)=0.4983; P(A=0)=0.3787; P(C=1|B=1,A=1)=0.8576; P(C=1|B=0,A=1)=0.7448; P(A=1)=0.6213; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果土壤湿度水平被改变为高，那么植物生长更有可能为旺盛吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(C=1|do(B=1))-P(C=1|do(B=0))=sum_{A} [P(C=1|B=1,A)*P(A)-P(C=1|B=0,A)*P(A)]=[P(C=1|B=1,A=0)*P(A=0)-P(C=1|B=0,A=0)*P(A=0)]+[P(C=1|B=1,A=1)*P(A=1)-P(C=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(C=1|B=1,A=0)=0.6566\tP(C=1|B=0,A=0)=0.4983\tP(A=0)=0.3787\tP(C=1|B=1,A=1)=0.8576\tP(C=1|B=0,A=1)=0.7448\tP(A=1)=0.6213",
+        "Step 6": "ATE=[0.6566*0.3787-0.4983*0.3787]+[0.8576*0.6213-0.7448*0.6213]=0.1301",
+        "Step 7": "ATE=0.1301>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.13005877281066866
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.6994。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.2337。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.5290。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.1343。降雨量为大(A=1)的概率为0.6213。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6994; P(D=0|B=1,A=0)=0.2337; P(A=0)=0.3787; P(D=0|B=0,A=1)=0.5290; P(D=0|B=1,A=1)=0.1343; P(A=1)=0.6213; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果土壤湿度水平被改变为低，那么农作物产量更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=sum_{A} [P(D=0|B=0,A)*P(A)-P(D=0|B=1,A)*P(A)]=[P(D=0|B=0,A=0)*P(A=0)-P(D=0|B=1,A=0)*P(A=0)]+[P(D=0|B=0,A=1)*P(A=1)-P(D=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=0,A=0)=0.6994\tP(D=0|B=1,A=0)=0.2337\tP(A=0)=0.3787\tP(D=0|B=0,A=1)=0.5290\tP(D=0|B=1,A=1)=0.1343\tP(A=1)=0.6213",
+        "Step 6": "ATE=[0.6994*0.3787-0.2337*0.3787]+[0.5290*0.6213-0.1343*0.6213]=0.4216",
+        "Step 7": "ATE=0.4216>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.4216015122161537
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.3006。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.7663。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.4710。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.8657。降雨量为大(A=1)的概率为0.6213。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3006; P(D=1|B=1,A=0)=0.7663; P(A=0)=0.3787; P(D=1|B=0,A=1)=0.4710; P(D=1|B=1,A=1)=0.8657; P(A=1)=0.6213; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果土壤湿度水平被改变为低，那么农作物产量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=sum_{A} [P(D=1|B=0,A)*P(A)-P(D=1|B=1,A)*P(A)]=[P(D=1|B=0,A=0)*P(A=0)-P(D=1|B=1,A=0)*P(A=0)]+[P(D=1|B=0,A=1)*P(A=1)-P(D=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=0,A=0)=0.3006\tP(D=1|B=1,A=0)=0.7663\tP(A=0)=0.3787\tP(D=1|B=0,A=1)=0.4710\tP(D=1|B=1,A=1)=0.8657\tP(A=1)=0.6213",
+        "Step 6": "ATE=[0.3006*0.3787-0.7663*0.3787]+[0.4710*0.6213-0.8657*0.6213]=-0.4216",
+        "Step 7": "ATE=-0.4216<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.42160151221615366
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.2337。在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.6994。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.1343。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.5290。降雨量为大(A=1)的概率为0.6213。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.2337; P(D=0|B=0,A=0)=0.6994; P(A=0)=0.3787; P(D=0|B=1,A=1)=0.1343; P(D=0|B=0,A=1)=0.5290; P(A=1)=0.6213; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果土壤湿度水平被改变为高，那么农作物产量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=sum_{A} [P(D=0|B=1,A)*P(A)-P(D=0|B=0,A)*P(A)]=[P(D=0|B=1,A=0)*P(A=0)-P(D=0|B=0,A=0)*P(A=0)]+[P(D=0|B=1,A=1)*P(A=1)-P(D=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=1,A=0)=0.2337\tP(D=0|B=0,A=0)=0.6994\tP(A=0)=0.3787\tP(D=0|B=1,A=1)=0.1343\tP(D=0|B=0,A=1)=0.5290\tP(A=1)=0.6213",
+        "Step 6": "ATE=[0.2337*0.3787-0.6994*0.3787]+[0.1343*0.6213-0.5290*0.6213]=-0.4216",
+        "Step 7": "ATE=-0.4216<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.4216015122161537
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.7663。在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.3006。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.8657。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.4710。降雨量为大(A=1)的概率为0.6213。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.7663; P(D=1|B=0,A=0)=0.3006; P(A=0)=0.3787; P(D=1|B=1,A=1)=0.8657; P(D=1|B=0,A=1)=0.4710; P(A=1)=0.6213; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果土壤湿度水平被改变为高，那么农作物产量更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=sum_{A} [P(D=1|B=1,A)*P(A)-P(D=1|B=0,A)*P(A)]=[P(D=1|B=1,A=0)*P(A=0)-P(D=1|B=0,A=0)*P(A=0)]+[P(D=1|B=1,A=1)*P(A=1)-P(D=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=1,A=0)=0.7663\tP(D=1|B=0,A=0)=0.3006\tP(A=0)=0.3787\tP(D=1|B=1,A=1)=0.8657\tP(D=1|B=0,A=1)=0.4710\tP(A=1)=0.6213",
+        "Step 6": "ATE=[0.7663*0.3787-0.3006*0.3787]+[0.8657*0.6213-0.4710*0.6213]=0.4216",
+        "Step 7": "ATE=0.4216>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.42160151221615366
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果植物生长被改变为发育不良，那么降雨量更有可能为小吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果植物生长被改变为发育不良，那么降雨量更有可能为大吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果植物生长被改变为旺盛，那么降雨量更有可能为小吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果植物生长被改变为旺盛，那么降雨量更有可能为大吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于土壤湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果植物生长被改变为发育不良，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于土壤湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果植物生长被改变为发育不良，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于土壤湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果植物生长被改变为旺盛，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于土壤湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果植物生长被改变为旺盛，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于农作物产量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果植物生长被改变为发育不良，那么农作物产量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于农作物产量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果植物生长被改变为发育不良，那么农作物产量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于农作物产量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果植物生长被改变为旺盛，那么农作物产量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于农作物产量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果植物生长被改变为旺盛，那么农作物产量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果农作物产量被改变为低，那么降雨量更有可能为小吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果农作物产量被改变为低，那么降雨量更有可能为大吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果农作物产量被改变为高，那么降雨量更有可能为小吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于降雨量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果农作物产量被改变为高，那么降雨量更有可能为大吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于土壤湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果农作物产量被改变为低，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于土壤湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果农作物产量被改变为低，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于土壤湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果农作物产量被改变为高，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于土壤湿度水平的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果农作物产量被改变为高，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于植物生长的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果农作物产量被改变为低，那么植物生长更有可能为发育不良吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于植物生长的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果农作物产量被改变为低，那么植物生长更有可能为旺盛吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于植物生长的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果农作物产量被改变为高，那么植物生长更有可能为发育不良吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于植物生长的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果农作物产量被改变为高，那么植物生长更有可能为旺盛吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。",
+        "data_info_math": "P(B=0|A=0)=0.9408; P(B=0|A=1)=0.7787; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为小，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.9408\tP(B=0|A=1)=0.7787",
+        "Step 6": "NDE=0.9408-0.7787=0.1621",
+        "Step 7": "NDE=0.1621>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.16208711995505154
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 土壤湿度水平为高(B=1)的概率为0.0592。在降雨量为大(A=1)的条件下, 土壤湿度水平为高(B=1)的概率为0.2213。",
+        "data_info_math": "P(B=1|A=0)=0.0592; P(B=1|A=1)=0.2213; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为小，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.0592\tP(B=1|A=1)=0.2213",
+        "Step 6": "NDE=0.0592-0.2213=-0.1621",
+        "Step 7": "NDE=-0.1621<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.1620871199550515
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。",
+        "data_info_math": "P(B=0|A=1)=0.7787; P(B=0|A=0)=0.9408; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为大，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.7787\tP(B=0|A=0)=0.9408",
+        "Step 6": "NDE=0.7787-0.9408=-0.1621",
+        "Step 7": "NDE=-0.1621<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.16208711995505154
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 土壤湿度水平为高(B=1)的概率为0.2213。在降雨量为小(A=0)的条件下, 土壤湿度水平为高(B=1)的概率为0.0592。",
+        "data_info_math": "P(B=1|A=1)=0.2213; P(B=1|A=0)=0.0592; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为大，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.2213\tP(B=1|A=0)=0.0592",
+        "Step 6": "NDE=0.2213-0.0592=0.1621",
+        "Step 7": "NDE=0.1621>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.1620871199550515
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.5017。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.2552。在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.3434。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.1424。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5017; P(C=0|B=0,A=1)=0.2552; P(B=0|A=1)=0.7787; P(C=0|B=1,A=0)=0.3434; P(C=0|B=1,A=1)=0.1424; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为小，那么植物生长更有可能为发育不良吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=0,B)-P(C=0|A=1,B)]*P(B|A=1)=[P(C=0|A=0,B=0)-P(C=0|A=1,B=0)]*P(B=0|A=1)+[P(C=0|A=0,B=1)-P(C=0|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=0|A=0,B=0)=0.5017\tP(C=0|A=1,B=0)=0.2552\tP(B=0|A=1)=0.7787\tP(C=0|A=0,B=1)=0.3434\tP(C=0|A=1,B=1)=0.1424\tP(B=1|A=1)=0.2213",
+        "Step 6": "=(0.5017-0.2552)*0.7787+(0.3434-0.1424)*0.2213=0.2364",
+        "Step 7": "NDE=0.2364>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.23643341198212808
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.4983。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.7448。在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.6566。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.8576。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4983; P(C=1|B=0,A=1)=0.7448; P(B=0|A=1)=0.7787; P(C=1|B=1,A=0)=0.6566; P(C=1|B=1,A=1)=0.8576; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为小，那么植物生长更有可能为旺盛吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=0,B)-P(C=1|A=1,B)]*P(B|A=1)=[P(C=1|A=0,B=0)-P(C=1|A=1,B=0)]*P(B=0|A=1)+[P(C=1|A=0,B=1)-P(C=1|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(C=1|A=0,B=0)=0.4983\tP(C=1|A=1,B=0)=0.7448\tP(B=0|A=1)=0.7787\tP(C=1|A=0,B=1)=0.6566\tP(C=1|A=1,B=1)=0.8576\tP(B=1|A=1)=0.2213",
+        "Step 6": "=(0.4983-0.7448)*0.7787+(0.6566-0.8576)*0.2213=-0.2364",
+        "Step 7": "NDE=-0.2364<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.23643341198212808
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.2552。在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.5017。在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.1424。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.3434。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.2552; P(C=0|B=0,A=0)=0.5017; P(B=0|A=0)=0.9408; P(C=0|B=1,A=1)=0.1424; P(C=0|B=1,A=0)=0.3434; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为大，那么植物生长更有可能为发育不良吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=0|A=1,B)-P(C=0|A=0,B)]*P(B|A=0)=[P(C=0|A=1,B=0)-P(C=0|A=0,B=0)]*P(B=0|A=0)+[P(C=0|A=1,B=1)-P(C=0|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=0|A=1,B=0)=0.2552\tP(C=0|A=0,B=0)=0.5017\tP(B=0|A=0)=0.9408\tP(C=0|A=1,B=1)=0.1424\tP(C=0|A=0,B=1)=0.3434\tP(B=1|A=0)=0.0592",
+        "Step 6": "=(0.2552-0.5017)*0.9408+(0.1424-0.3434)*0.0592=-0.2438",
+        "Step 7": "NDE=-0.2438<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.2437998463112893
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.7448。在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.4983。在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.8576。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.6566。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.7448; P(C=1|B=0,A=0)=0.4983; P(B=0|A=0)=0.9408; P(C=1|B=1,A=1)=0.8576; P(C=1|B=1,A=0)=0.6566; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为大，那么植物生长更有可能为旺盛吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(C=1|A=1,B)-P(C=1|A=0,B)]*P(B|A=0)=[P(C=1|A=1,B=0)-P(C=1|A=0,B=0)]*P(B=0|A=0)+[P(C=1|A=1,B=1)-P(C=1|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(C=1|A=1,B=0)=0.7448\tP(C=1|A=0,B=0)=0.4983\tP(B=0|A=0)=0.9408\tP(C=1|A=1,B=1)=0.8576\tP(C=1|A=0,B=1)=0.6566\tP(B=1|A=0)=0.0592",
+        "Step 6": "=(0.7448-0.4983)*0.9408+(0.8576-0.6566)*0.0592=0.2438",
+        "Step 7": "NDE=0.2438>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.2437998463112893
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.6994。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.5290。在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.2337。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.1343。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6994; P(D=0|B=0,A=1)=0.5290; P(B=0|A=1)=0.7787; P(D=0|B=1,A=0)=0.2337; P(D=0|B=1,A=1)=0.1343; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为小，那么农作物产量更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(D=0|A=0,B)-P(D=0|A=1,B)]*P(B|A=1)=[P(D=0|A=0,B=0)-P(D=0|A=1,B=0)]*P(B=0|A=1)+[P(D=0|A=0,B=1)-P(D=0|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(D=0|A=0,B=0)=0.6994\tP(D=0|A=1,B=0)=0.5290\tP(B=0|A=1)=0.7787\tP(D=0|A=0,B=1)=0.2337\tP(D=0|A=1,B=1)=0.1343\tP(B=1|A=1)=0.2213",
+        "Step 6": "=(0.6994-0.5290)*0.7787+(0.2337-0.1343)*0.2213=0.1547",
+        "Step 7": "NDE=0.1547>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.15465738402261547
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.3006。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.4710。在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.7663。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.8657。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3006; P(D=1|B=0,A=1)=0.4710; P(B=0|A=1)=0.7787; P(D=1|B=1,A=0)=0.7663; P(D=1|B=1,A=1)=0.8657; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为小，那么农作物产量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(D=1|A=0,B)-P(D=1|A=1,B)]*P(B|A=1)=[P(D=1|A=0,B=0)-P(D=1|A=1,B=0)]*P(B=0|A=1)+[P(D=1|A=0,B=1)-P(D=1|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(D=1|A=0,B=0)=0.3006\tP(D=1|A=1,B=0)=0.4710\tP(B=0|A=1)=0.7787\tP(D=1|A=0,B=1)=0.7663\tP(D=1|A=1,B=1)=0.8657\tP(B=1|A=1)=0.2213",
+        "Step 6": "=(0.3006-0.4710)*0.7787+(0.7663-0.8657)*0.2213=-0.1547",
+        "Step 7": "NDE=-0.1547<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.1546573840226155
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.5290。在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.6994。在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.1343。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.2337。",
+        "data_info_math": "P(D=0|B=0,A=1)=0.5290; P(D=0|B=0,A=0)=0.6994; P(B=0|A=0)=0.9408; P(D=0|B=1,A=1)=0.1343; P(D=0|B=1,A=0)=0.2337; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为大，那么农作物产量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(D=0|A=1,B)-P(D=0|A=0,B)]*P(B|A=0)=[P(D=0|A=1,B=0)-P(D=0|A=0,B=0)]*P(B=0|A=0)+[P(D=0|A=1,B=1)-P(D=0|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(D=0|A=1,B=0)=0.5290\tP(D=0|A=0,B=0)=0.6994\tP(B=0|A=0)=0.9408\tP(D=0|A=1,B=1)=0.1343\tP(D=0|A=0,B=1)=0.2337\tP(B=1|A=0)=0.0592",
+        "Step 6": "=(0.5290-0.6994)*0.9408+(0.1343-0.2337)*0.0592=-0.1661",
+        "Step 7": "NDE=-0.1661<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.16614559674203142
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.4710。在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.3006。在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.8657。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.7663。",
+        "data_info_math": "P(D=1|B=0,A=1)=0.4710; P(D=1|B=0,A=0)=0.3006; P(B=0|A=0)=0.9408; P(D=1|B=1,A=1)=0.8657; P(D=1|B=1,A=0)=0.7663; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而降雨量变化为大，那么农作物产量更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(D=1|A=1,B)-P(D=1|A=0,B)]*P(B|A=0)=[P(D=1|A=1,B=0)-P(D=1|A=0,B=0)]*P(B=0|A=0)+[P(D=1|A=1,B=1)-P(D=1|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(D=1|A=1,B=0)=0.4710\tP(D=1|A=0,B=0)=0.3006\tP(B=0|A=0)=0.9408\tP(D=1|A=1,B=1)=0.8657\tP(D=1|A=0,B=1)=0.7663\tP(B=1|A=0)=0.0592",
+        "Step 6": "=(0.4710-0.3006)*0.9408+(0.8657-0.7663)*0.0592=0.1661",
+        "Step 7": "NDE=0.1661>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.16614559674203153
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.5017。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.3434。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.2552。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.1424。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5017; P(C=0|B=1,A=0)=0.3434; P(A=0)=0.3787; P(C=0|B=0,A=1)=0.2552; P(C=0|B=1,A=1)=0.1424; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而土壤湿度水平变化为低，那么植物生长更有可能为发育不良吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=0,A)-P(C=0|B=1,A)]*P(A)=[P(C=0|B=0,A=0)-P(C=0|B=1,A=0)]*P(A=0)+[P(C=0|B=0,A=1)-P(C=0|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=0,A=0)=0.5017\tP(C=0|B=1,A=0)=0.3434\tP(A=0)=0.3787\tP(C=0|B=0,A=1)=0.2552\tP(C=0|B=1,A=1)=0.1424\tP(A=1)=0.6213",
+        "Step 6": "NDE=[0.5017-0.3434]*0.3787+[0.2552-0.1424]*0.6213=0.1301",
+        "Step 7": "NDE=0.1301>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.13005877281066874
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.4983。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.6566。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.7448。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.8576。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4983; P(C=1|B=1,A=0)=0.6566; P(A=0)=0.3787; P(C=1|B=0,A=1)=0.7448; P(C=1|B=1,A=1)=0.8576; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而土壤湿度水平变化为低，那么植物生长更有可能为旺盛吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=0,A)-P(C=1|B=1,A)]*P(A)=[P(C=1|B=0,A=0)-P(C=1|B=1,A=0)]*P(A=0)+[P(C=1|B=0,A=1)-P(C=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=0,A=0)=0.4983\tP(C=1|B=1,A=0)=0.6566\tP(A=0)=0.3787\tP(C=1|B=0,A=1)=0.7448\tP(C=1|B=1,A=1)=0.8576\tP(A=1)=0.6213",
+        "Step 6": "NDE=[0.4983-0.6566]*0.3787+[0.7448-0.8576]*0.6213=-0.1301",
+        "Step 7": "NDE=-0.1301<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.13005877281066872
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.3434。在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.5017。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.1424。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.2552。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.3434; P(C=0|B=0,A=0)=0.5017; P(A=0)=0.3787; P(C=0|B=1,A=1)=0.1424; P(C=0|B=0,A=1)=0.2552; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而土壤湿度水平变化为高，那么植物生长更有可能为发育不良吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=0|B=1,A)-P(C=0|B=0,A)]*P(A)=[P(C=0|B=1,A=0)-P(C=0|B=0,A=0)]*P(A=0)+[P(C=0|B=1,A=1)-P(C=0|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=0|B=1,A=0)=0.3434\tP(C=0|B=0,A=0)=0.5017\tP(A=0)=0.3787\tP(C=0|B=1,A=1)=0.1424\tP(C=0|B=0,A=1)=0.2552\tP(A=1)=0.6213",
+        "Step 6": "NDE=[0.3434-0.5017]*0.3787+[0.1424-0.2552]*0.6213=-0.1301",
+        "Step 7": "NDE=-0.1301<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.13005877281066874
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.6566。在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.4983。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.8576。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.7448。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.6566; P(C=1|B=0,A=0)=0.4983; P(A=0)=0.3787; P(C=1|B=1,A=1)=0.8576; P(C=1|B=0,A=1)=0.7448; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而土壤湿度水平变化为高，那么植物生长更有可能为旺盛吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否存在边。边B->C存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(C=1|B=1,A)-P(C=1|B=0,A)]*P(A)=[P(C=1|B=1,A=0)-P(C=1|B=0,A=0)]*P(A=0)+[P(C=1|B=1,A=1)-P(C=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(C=1|B=1,A=0)=0.6566\tP(C=1|B=0,A=0)=0.4983\tP(A=0)=0.3787\tP(C=1|B=1,A=1)=0.8576\tP(C=1|B=0,A=1)=0.7448\tP(A=1)=0.6213",
+        "Step 6": "NDE=[0.6566-0.4983]*0.3787+[0.8576-0.7448]*0.6213=0.1301",
+        "Step 7": "NDE=0.1301>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.13005877281066872
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.6994。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.2337。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.5290。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.1343。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6994; P(D=0|B=1,A=0)=0.2337; P(A=0)=0.3787; P(D=0|B=0,A=1)=0.5290; P(D=0|B=1,A=1)=0.1343; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而土壤湿度水平变化为低，那么农作物产量更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|B=0,A)-P(D=0|B=1,A)]*P(A)=[P(D=0|B=0,A=0)-P(D=0|B=1,A=0)]*P(A=0)+[P(D=0|B=0,A=1)-P(D=0|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,A=0)=0.6994\tP(D=0|B=1,A=0)=0.2337\tP(A=0)=0.3787\tP(D=0|B=0,A=1)=0.5290\tP(D=0|B=1,A=1)=0.1343\tP(A=1)=0.6213",
+        "Step 6": "NDE=[0.6994-0.2337]*0.3787+[0.5290-0.1343]*0.6213=0.4216",
+        "Step 7": "NDE=0.4216>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.4216015122161537
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.3006。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.7663。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.4710。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.8657。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3006; P(D=1|B=1,A=0)=0.7663; P(A=0)=0.3787; P(D=1|B=0,A=1)=0.4710; P(D=1|B=1,A=1)=0.8657; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而土壤湿度水平变化为低，那么农作物产量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|B=0,A)-P(D=1|B=1,A)]*P(A)=[P(D=1|B=0,A=0)-P(D=1|B=1,A=0)]*P(A=0)+[P(D=1|B=0,A=1)-P(D=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,A=0)=0.3006\tP(D=1|B=1,A=0)=0.7663\tP(A=0)=0.3787\tP(D=1|B=0,A=1)=0.4710\tP(D=1|B=1,A=1)=0.8657\tP(A=1)=0.6213",
+        "Step 6": "NDE=[0.3006-0.7663]*0.3787+[0.4710-0.8657]*0.6213=-0.4216",
+        "Step 7": "NDE=-0.4216<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.4216015122161537
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.2337。在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.6994。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.1343。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.5290。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.2337; P(D=0|B=0,A=0)=0.6994; P(A=0)=0.3787; P(D=0|B=1,A=1)=0.1343; P(D=0|B=0,A=1)=0.5290; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而土壤湿度水平变化为高，那么农作物产量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|B=1,A)-P(D=0|B=0,A)]*P(A)=[P(D=0|B=1,A=0)-P(D=0|B=0,A=0)]*P(A=0)+[P(D=0|B=1,A=1)-P(D=0|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,A=0)=0.2337\tP(D=0|B=0,A=0)=0.6994\tP(A=0)=0.3787\tP(D=0|B=1,A=1)=0.1343\tP(D=0|B=0,A=1)=0.5290\tP(A=1)=0.6213",
+        "Step 6": "NDE=[0.2337-0.6994]*0.3787+[0.1343-0.5290]*0.6213=-0.4216",
+        "Step 7": "NDE=-0.4216<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.4216015122161537
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.7663。在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.3006。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.8657。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.4710。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.7663; P(D=1|B=0,A=0)=0.3006; P(A=0)=0.3787; P(D=1|B=1,A=1)=0.8657; P(D=1|B=0,A=1)=0.4710; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而土壤湿度水平变化为高，那么农作物产量更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|B=1,A)-P(D=1|B=0,A)]*P(A)=[P(D=1|B=1,A=0)-P(D=1|B=0,A=0)]*P(A=0)+[P(D=1|B=1,A=1)-P(D=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,A=0)=0.7663\tP(D=1|B=0,A=0)=0.3006\tP(A=0)=0.3787\tP(D=1|B=1,A=1)=0.8657\tP(D=1|B=0,A=1)=0.4710\tP(A=1)=0.6213",
+        "Step 6": "NDE=[0.7663-0.3006]*0.3787+[0.8657-0.4710]*0.6213=0.4216",
+        "Step 7": "NDE=0.4216>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.4216015122161537
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为小下的取值，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为小下的取值，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为大下的取值，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为大下的取值，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.2552。在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.1424。",
+        "data_info_math": "P(C=0|B=0,A=1)=0.2552; P(B=0|A=0)=0.9408; P(B=0|A=1)=0.7787; P(C=0|B=1,A=1)=0.1424; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为小下的取值，那么植物生长更有可能为发育不良吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=0|A=1,B=0)=0.2552\tP(B=0|A=0)=0.9408\tP(B=0|A=1)=0.7787\tP(C=0|A=1,B=1)=0.1424\tP(B=1|A=0)=0.0592\tP(B=1|A=1)=0.2213",
+        "Step 6": "NIE=0.2552*(0.9408-0.7787)+0.1424*(0.0592-0.2213)=0.0183",
+        "Step 7": "NIE=0.0183>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.018291477886689486
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.7448。在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.8576。",
+        "data_info_math": "P(C=1|B=0,A=1)=0.7448; P(B=0|A=0)=0.9408; P(B=0|A=1)=0.7787; P(C=1|B=1,A=1)=0.8576; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为小下的取值，那么植物生长更有可能为旺盛吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(C=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(C=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(C=1|A=1,B=0)=0.7448\tP(B=0|A=0)=0.9408\tP(B=0|A=1)=0.7787\tP(C=1|A=1,B=1)=0.8576\tP(B=1|A=0)=0.0592\tP(B=1|A=1)=0.2213",
+        "Step 6": "NIE=0.7448*(0.9408-0.7787)+0.8576*(0.0592-0.2213)=-0.0183",
+        "Step 7": "NIE=-0.0183<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.01829147788668946
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.5017。在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.3434。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5017; P(B=0|A=1)=0.7787; P(B=0|A=0)=0.9408; P(C=0|B=1,A=0)=0.3434; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为大下的取值，那么植物生长更有可能为发育不良吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=0|A=0,B=0)=0.5017\tP(B=0|A=1)=0.7787\tP(B=0|A=0)=0.9408\tP(C=0|A=0,B=1)=0.3434\tP(B=1|A=1)=0.2213\tP(B=1|A=0)=0.0592",
+        "Step 6": "NIE=0.5017*(0.7787-0.9408)+0.3434*(0.2213-0.0592)=-0.0257",
+        "Step 7": "NIE=-0.0257<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.02565791221585069
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.4983。在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.6566。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4983; P(B=0|A=1)=0.7787; P(B=0|A=0)=0.9408; P(C=1|B=1,A=0)=0.6566; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为大下的取值，那么植物生长更有可能为旺盛吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否有间接因果关系。从A到C存在节点数大于等于3的有向路径(例如 A->B->C)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(C=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(C=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(C=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(C=1|A=0,B=0)=0.4983\tP(B=0|A=1)=0.7787\tP(B=0|A=0)=0.9408\tP(C=1|A=0,B=1)=0.6566\tP(B=1|A=1)=0.2213\tP(B=1|A=0)=0.0592",
+        "Step 6": "NIE=0.4983*(0.7787-0.9408)+0.6566*(0.2213-0.0592)=0.0257",
+        "Step 7": "NIE=0.0257>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.025657912215850676
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.5290。在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.1343。",
+        "data_info_math": "P(D=0|B=0,A=1)=0.5290; P(B=0|A=0)=0.9408; P(B=0|A=1)=0.7787; P(D=0|B=1,A=1)=0.1343; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为小下的取值，那么农作物产量更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(D=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(D=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(D=0|A=1,B=0)=0.5290\tP(B=0|A=0)=0.9408\tP(B=0|A=1)=0.7787\tP(D=0|A=1,B=1)=0.1343\tP(B=1|A=0)=0.0592\tP(B=1|A=1)=0.2213",
+        "Step 6": "NIE=0.5290*(0.9408-0.7787)+0.1343*(0.0592-0.2213)=0.0640",
+        "Step 7": "NIE=0.0640>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.0639860482554768
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.4710。在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.8657。",
+        "data_info_math": "P(D=1|B=0,A=1)=0.4710; P(B=0|A=0)=0.9408; P(B=0|A=1)=0.7787; P(D=1|B=1,A=1)=0.8657; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为小下的取值，那么农作物产量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(D=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(D=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(D=1|A=1,B=0)=0.4710\tP(B=0|A=0)=0.9408\tP(B=0|A=1)=0.7787\tP(D=1|A=1,B=1)=0.8657\tP(B=1|A=0)=0.0592\tP(B=1|A=1)=0.2213",
+        "Step 6": "NIE=0.4710*(0.9408-0.7787)+0.8657*(0.0592-0.2213)=-0.0640",
+        "Step 7": "NIE=-0.0640<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.06398604825547673
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.6994。在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.2337。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6994; P(B=0|A=1)=0.7787; P(B=0|A=0)=0.9408; P(D=0|B=1,A=0)=0.2337; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为大下的取值，那么农作物产量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(D=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(D=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(D=0|A=0,B=0)=0.6994\tP(B=0|A=1)=0.7787\tP(B=0|A=0)=0.9408\tP(D=0|A=0,B=1)=0.2337\tP(B=1|A=1)=0.2213\tP(B=1|A=0)=0.0592",
+        "Step 6": "NIE=0.6994*(0.7787-0.9408)+0.2337*(0.2213-0.0592)=-0.0755",
+        "Step 7": "NIE=-0.0755<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.07547426097489275
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.3006。在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.7663。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3006; P(B=0|A=1)=0.7787; P(B=0|A=0)=0.9408; P(D=1|B=1,A=0)=0.7663; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如降雨量保持不变，而所有中间变量被改变为当它们在降雨量变化为大下的取值，那么农作物产量更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(D=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(D=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(D=1|A=0,B=0)=0.3006\tP(B=0|A=1)=0.7787\tP(B=0|A=0)=0.9408\tP(D=1|A=0,B=1)=0.7663\tP(B=1|A=1)=0.2213\tP(B=1|A=0)=0.0592",
+        "Step 6": "NIE=0.3006*(0.7787-0.9408)+0.7663*(0.2213-0.0592)=0.0755",
+        "Step 7": "NIE=0.0755>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.07547426097489277
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如土壤湿度水平保持不变，而所有中间变量被改变为当它们在土壤湿度水平变化为低下的取值，那么植物生长更有可能为发育不良吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如土壤湿度水平保持不变，而所有中间变量被改变为当它们在土壤湿度水平变化为低下的取值，那么植物生长更有可能为旺盛吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如土壤湿度水平保持不变，而所有中间变量被改变为当它们在土壤湿度水平变化为高下的取值，那么植物生长更有可能为发育不良吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如土壤湿度水平保持不变，而所有中间变量被改变为当它们在土壤湿度水平变化为高下的取值，那么植物生长更有可能为旺盛吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(C)是否有间接因果关系。从B到C不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如土壤湿度水平保持不变，而所有中间变量被改变为当它们在土壤湿度水平变化为低下的取值，那么农作物产量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如土壤湿度水平保持不变，而所有中间变量被改变为当它们在土壤湿度水平变化为低下的取值，那么农作物产量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如土壤湿度水平保持不变，而所有中间变量被改变为当它们在土壤湿度水平变化为高下的取值，那么农作物产量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如土壤湿度水平保持不变，而所有中间变量被改变为当它们在土壤湿度水平变化为高下的取值，那么农作物产量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。",
+        "data_info_math": "P(B=0|A=0)=0.9408; P(B=0|A=1)=0.7787; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为小，假如降雨量为大，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.9408\tP(B=0|A=1)=0.7787",
+        "Step 6": "ETT=0.9408-0.7787=0.1621",
+        "Step 7": "ETT=0.1621>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.16208711995505154
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 土壤湿度水平为高(B=1)的概率为0.0592。在降雨量为大(A=1)的条件下, 土壤湿度水平为高(B=1)的概率为0.2213。",
+        "data_info_math": "P(B=1|A=0)=0.0592; P(B=1|A=1)=0.2213; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为小，假如降雨量为大，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.0592\tP(B=1|A=1)=0.2213",
+        "Step 6": "ETT=0.0592-0.2213=-0.1621",
+        "Step 7": "ETT=-0.1621<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.1620871199550515
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。",
+        "data_info_math": "P(B=0|A=1)=0.7787; P(B=0|A=0)=0.9408; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为大，假如降雨量为小，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.7787\tP(B=0|A=0)=0.9408",
+        "Step 6": "ETT=0.7787-0.9408=-0.1621",
+        "Step 7": "ETT=-0.1621<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.16208711995505154
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 土壤湿度水平为高(B=1)的概率为0.2213。在降雨量为小(A=0)的条件下, 土壤湿度水平为高(B=1)的概率为0.0592。",
+        "data_info_math": "P(B=1|A=1)=0.2213; P(B=1|A=0)=0.0592; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为大，假如降雨量为小，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.2213\tP(B=1|A=0)=0.0592",
+        "Step 6": "ETT=0.2213-0.0592=0.1621",
+        "Step 7": "ETT=0.1621>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.1620871199550515
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.4924。在降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.2303。",
+        "data_info_math": "P(C=0|A=0)=0.4924; P(C=0|A=1)=0.2303; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为小，假如降雨量为大，那么植物生长更有可能为发育不良吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=0|A=0)-P(C=0|A=1)",
+        "Step 5": "P(C=0|A=0)=0.4924\tP(C=0|A=1)=0.2303",
+        "Step 6": "ETT=0.4924-0.2303=0.2621",
+        "Step 7": "ETT=0.2621>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.26209132419797876
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.5076。在降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.7697。",
+        "data_info_math": "P(C=1|A=0)=0.5076; P(C=1|A=1)=0.7697; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为小，假如降雨量为大，那么植物生长更有可能为旺盛吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=0}-C_{A=1}|A=0]=P(C=1|A=0)-P(C=1|A=1)",
+        "Step 5": "P(C=1|A=0)=0.5076\tP(C=1|A=1)=0.7697",
+        "Step 6": "ETT=0.5076-0.7697=-0.2621",
+        "Step 7": "ETT=-0.2621<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.26209132419797876
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.2303。在降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.4924。",
+        "data_info_math": "P(C=0|A=1)=0.2303; P(C=0|A=0)=0.4924; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为大，假如降雨量为小，那么植物生长更有可能为发育不良吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=0|A=1)-P(C=0|A=0)",
+        "Step 5": "P(C=0|A=1)=0.2303\tP(C=0|A=0)=0.4924",
+        "Step 6": "ETT=0.2303-0.4924=-0.2621",
+        "Step 7": "ETT=-0.2621<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.26209132419797876
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.7697。在降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.5076。",
+        "data_info_math": "P(C=1|A=1)=0.7697; P(C=1|A=0)=0.5076; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为大，假如降雨量为小，那么植物生长更有可能为旺盛吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C有一条或多条有向路径(例如A->B->C)，所以节点A是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[C_{A=1}-C_{A=0}|A=1]=P(C=1|A=1)-P(C=1|A=0)",
+        "Step 5": "P(C=1|A=1)=0.7697\tP(C=1|A=0)=0.5076",
+        "Step 6": "ETT=0.7697-0.5076=0.2621",
+        "Step 7": "ETT=0.2621>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.26209132419797876
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.6718。在降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.4417。",
+        "data_info_math": "P(D=0|A=0)=0.6718; P(D=0|A=1)=0.4417; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为小，假如降雨量为大，那么农作物产量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6718\tP(D=0|A=1)=0.4417",
+        "Step 6": "ETT=0.6718-0.4417=0.2301",
+        "Step 7": "ETT=0.2301>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.23013164499750832
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.3282。在降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.5583。",
+        "data_info_math": "P(D=1|A=0)=0.3282; P(D=1|A=1)=0.5583; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为小，假如降雨量为大，那么农作物产量更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3282\tP(D=1|A=1)=0.5583",
+        "Step 6": "ETT=0.3282-0.5583=-0.2301",
+        "Step 7": "ETT=-0.2301<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.23013164499750838
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.4417。在降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.6718。",
+        "data_info_math": "P(D=0|A=1)=0.4417; P(D=0|A=0)=0.6718; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为大，假如降雨量为小，那么农作物产量更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.4417\tP(D=0|A=0)=0.6718",
+        "Step 6": "ETT=0.4417-0.6718=-0.2301",
+        "Step 7": "ETT=-0.2301<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.23013164499750832
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.5583。在降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.3282。",
+        "data_info_math": "P(D=1|A=1)=0.5583; P(D=1|A=0)=0.3282; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些降雨量为大，假如降雨量为小，那么农作物产量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.5583\tP(D=1|A=0)=0.3282",
+        "Step 6": "ETT=0.5583-0.3282=0.2301",
+        "Step 7": "ETT=0.2301>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.23013164499750838
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些土壤湿度水平为低，假如土壤湿度水平为高，那么降雨量更有可能为小吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些土壤湿度水平为低，假如土壤湿度水平为高，那么降雨量更有可能为大吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些土壤湿度水平为高，假如土壤湿度水平为低，那么降雨量更有可能为小吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑土壤湿度水平作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些土壤湿度水平为高，假如土壤湿度水平为低，那么降雨量更有可能为大吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)的条件下, 植物生长为发育不良(C=0)的概率为0.3598。在降雨量为小(A=0)且土壤湿度水平为高(B=1)的条件下, 植物生长为发育不良(C=0)的概率为0.3434。在土壤湿度水平为低(B=0)的条件下, 降雨量为小(A=0)的概率为0.4241。在降雨量为大(A=1)且土壤湿度水平为高(B=1)的条件下, 植物生长为发育不良(C=0)的概率为0.1424。在土壤湿度水平为低(B=0)的条件下, 降雨量为大(A=1)的概率为0.5759。",
+        "data_info_math": "P(C=0|B=0)=0.3598; P(C=0|A=0,B=1)=0.3434; P(A=0|B=0)=0.4241; P(C=0|A=1,B=1)=0.1424; P(A=1|B=0)=0.5759; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些土壤湿度水平为低，假如土壤湿度水平为高，那么植物生长更有可能为发育不良吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=0|B=0)-sum_{A} P(C=0|B=1,A)*P(A|B=0)=P(C=0|B=0)-[P(C=0|B=1,A=0)*P(A=0|B=0)+P(C=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=0|B=0)=0.3598\tP(C=0|B=1,A=0)=0.3434\tP(A=0|B=0)=0.4241\tP(C=0|B=1,A=1)=0.1424\tP(A=1|B=0)=0.5759",
+        "Step 6": "ETT=0.3598-[0.3434*0.4241+0.1424*0.5759]=0.1321",
+        "Step 7": "ETT=0.1321>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.1321218497265585
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)的条件下, 植物生长为旺盛(C=1)的概率为0.6402。在降雨量为小(A=0)且土壤湿度水平为高(B=1)的条件下, 植物生长为旺盛(C=1)的概率为0.6566。在土壤湿度水平为低(B=0)的条件下, 降雨量为小(A=0)的概率为0.4241。在降雨量为大(A=1)且土壤湿度水平为高(B=1)的条件下, 植物生长为旺盛(C=1)的概率为0.8576。在土壤湿度水平为低(B=0)的条件下, 降雨量为大(A=1)的概率为0.5759。",
+        "data_info_math": "P(C=1|B=0)=0.6402; P(C=1|A=0,B=1)=0.6566; P(A=0|B=0)=0.4241; P(C=1|A=1,B=1)=0.8576; P(A=1|B=0)=0.5759; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些土壤湿度水平为低，假如土壤湿度水平为高，那么植物生长更有可能为旺盛吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=0}-C_{B=1}|B=0]=P(C=1|B=0)-sum_{A} P(C=1|B=1,A)*P(A|B=0)=P(C=1|B=0)-[P(C=1|B=1,A=0)*P(A=0|B=0)+P(C=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(C=1|B=0)=0.6402\tP(C=1|B=1,A=0)=0.6566\tP(A=0|B=0)=0.4241\tP(C=1|B=1,A=1)=0.8576\tP(A=1|B=0)=0.5759",
+        "Step 6": "ETT=0.6402-[0.6566*0.4241+0.8576*0.5759]=-0.1321",
+        "Step 7": "ETT=-0.1321<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.13212184972655844
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)的条件下, 植物生长为发育不良(C=0)的概率为0.1706。在降雨量为小(A=0)且土壤湿度水平为低(B=0)的条件下, 植物生长为发育不良(C=0)的概率为0.5017。在土壤湿度水平为高(B=1)的条件下, 降雨量为小(A=0)的概率为0.1402。在降雨量为大(A=1)且土壤湿度水平为低(B=0)的条件下, 植物生长为发育不良(C=0)的概率为0.2552。在土壤湿度水平为高(B=1)的条件下, 降雨量为大(A=1)的概率为0.8598。",
+        "data_info_math": "P(C=0|B=1)=0.1706; P(C=0|A=0,B=0)=0.5017; P(A=0|B=1)=0.1402; P(C=0|A=1,B=0)=0.2552; P(A=1|B=1)=0.8598; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些土壤湿度水平为高，假如土壤湿度水平为低，那么植物生长更有可能为发育不良吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=0|B=1)-sum_{A} P(C=0|B=0,A)*P(A|B=1)=P(C=0|B=1)-[P(C=0|B=0,A=0)*P(A=0|B=1)+P(C=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=0|B=1)=0.1706\tP(C=0|B=0,A=0)=0.5017\tP(A=0|B=1)=0.1402\tP(C=0|B=0,A=1)=0.2552\tP(A=1|B=1)=0.8598",
+        "Step 6": "ETT=0.1706-[0.5017*0.1402+0.2552*0.8598]=-0.1192",
+        "Step 7": "ETT=-0.1192<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.11922116866171532
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)的条件下, 植物生长为旺盛(C=1)的概率为0.8294。在降雨量为小(A=0)且土壤湿度水平为低(B=0)的条件下, 植物生长为旺盛(C=1)的概率为0.4983。在土壤湿度水平为高(B=1)的条件下, 降雨量为小(A=0)的概率为0.1402。在降雨量为大(A=1)且土壤湿度水平为低(B=0)的条件下, 植物生长为旺盛(C=1)的概率为0.7448。在土壤湿度水平为高(B=1)的条件下, 降雨量为大(A=1)的概率为0.8598。",
+        "data_info_math": "P(C=1|B=1)=0.8294; P(C=1|A=0,B=0)=0.4983; P(A=0|B=1)=0.1402; P(C=1|A=1,B=0)=0.7448; P(A=1|B=1)=0.8598; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些土壤湿度水平为高，假如土壤湿度水平为低，那么植物生长更有可能为旺盛吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C有一条或多条有向路径(例如B->C)，所以节点B是节点C的原因。",
+        "Step 2": "因果效应的可识别性。P(C|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[C_{B=1}-C_{B=0}|B=1]=P(C=1|B=1)-sum_{A} P(C=1|B=0,A)*P(A|B=1)=P(C=1|B=1)-[P(C=1|B=0,A=0)*P(A=0|B=1)+P(C=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(C=1|B=1)=0.8294\tP(C=1|B=0,A=0)=0.4983\tP(A=0|B=1)=0.1402\tP(C=1|B=0,A=1)=0.7448\tP(A=1|B=1)=0.8598",
+        "Step 6": "ETT=0.8294-[0.4983*0.1402+0.7448*0.8598]=0.1192",
+        "Step 7": "ETT=0.1192>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.11922116866171528
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)的条件下, 农作物产量为低(D=0)的概率为0.6013。在降雨量为小(A=0)且土壤湿度水平为高(B=1)的条件下, 农作物产量为低(D=0)的概率为0.2337。在土壤湿度水平为低(B=0)的条件下, 降雨量为小(A=0)的概率为0.4241。在降雨量为大(A=1)且土壤湿度水平为高(B=1)的条件下, 农作物产量为低(D=0)的概率为0.1343。在土壤湿度水平为低(B=0)的条件下, 降雨量为大(A=1)的概率为0.5759。",
+        "data_info_math": "P(D=0|B=0)=0.6013; P(D=0|A=0,B=1)=0.2337; P(A=0|B=0)=0.4241; P(D=0|A=1,B=1)=0.1343; P(A=1|B=0)=0.5759; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些土壤湿度水平为低，假如土壤湿度水平为高，那么农作物产量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-sum_{A} P(D=0|B=1,A)*P(A|B=0)=P(D=0|B=0)-[P(D=0|B=1,A=0)*P(A=0|B=0)+P(D=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=0|B=0)=0.6013\tP(D=0|B=1,A=0)=0.2337\tP(A=0|B=0)=0.4241\tP(D=0|B=1,A=1)=0.1343\tP(A=1|B=0)=0.5759",
+        "Step 6": "ETT=0.6013-[0.2337*0.4241+0.1343*0.5759]=0.4248",
+        "Step 7": "ETT=0.4248>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.4248189530304202
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)的条件下, 农作物产量为高(D=1)的概率为0.3987。在降雨量为小(A=0)且土壤湿度水平为高(B=1)的条件下, 农作物产量为高(D=1)的概率为0.7663。在土壤湿度水平为低(B=0)的条件下, 降雨量为小(A=0)的概率为0.4241。在降雨量为大(A=1)且土壤湿度水平为高(B=1)的条件下, 农作物产量为高(D=1)的概率为0.8657。在土壤湿度水平为低(B=0)的条件下, 降雨量为大(A=1)的概率为0.5759。",
+        "data_info_math": "P(D=1|B=0)=0.3987; P(D=1|A=0,B=1)=0.7663; P(A=0|B=0)=0.4241; P(D=1|A=1,B=1)=0.8657; P(A=1|B=0)=0.5759; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些土壤湿度水平为低，假如土壤湿度水平为高，那么农作物产量更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-sum_{A} P(D=1|B=1,A)*P(A|B=0)=P(D=1|B=0)-[P(D=1|B=1,A=0)*P(A=0|B=0)+P(D=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=1|B=0)=0.3987\tP(D=1|B=1,A=0)=0.7663\tP(A=0|B=0)=0.4241\tP(D=1|B=1,A=1)=0.8657\tP(A=1|B=0)=0.5759",
+        "Step 6": "ETT=0.3987-[0.7663*0.4241+0.8657*0.5759]=-0.4248",
+        "Step 7": "ETT=-0.4248<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.4248189530304202
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)的条件下, 农作物产量为低(D=0)的概率为0.1482。在降雨量为小(A=0)且土壤湿度水平为低(B=0)的条件下, 农作物产量为低(D=0)的概率为0.6994。在土壤湿度水平为高(B=1)的条件下, 降雨量为小(A=0)的概率为0.1402。在降雨量为大(A=1)且土壤湿度水平为低(B=0)的条件下, 农作物产量为低(D=0)的概率为0.5290。在土壤湿度水平为高(B=1)的条件下, 降雨量为大(A=1)的概率为0.8598。",
+        "data_info_math": "P(D=0|B=1)=0.1482; P(D=0|A=0,B=0)=0.6994; P(A=0|B=1)=0.1402; P(D=0|A=1,B=0)=0.5290; P(A=1|B=1)=0.8598; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些土壤湿度水平为高，假如土壤湿度水平为低，那么农作物产量更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-sum_{A} P(D=0|B=0,A)*P(A|B=1)=P(D=0|B=1)-[P(D=0|B=0,A=0)*P(A=0|B=1)+P(D=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=0|B=1)=0.1482\tP(D=0|B=0,A=0)=0.6994\tP(A=0|B=1)=0.1402\tP(D=0|B=0,A=1)=0.5290\tP(A=1|B=1)=0.8598",
+        "Step 6": "ETT=0.1482-[0.6994*0.1402+0.5290*0.8598]=-0.4047",
+        "Step 7": "ETT=-0.4047<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.40469988840894344
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)的条件下, 农作物产量为高(D=1)的概率为0.8518。在降雨量为小(A=0)且土壤湿度水平为低(B=0)的条件下, 农作物产量为高(D=1)的概率为0.3006。在土壤湿度水平为高(B=1)的条件下, 降雨量为小(A=0)的概率为0.1402。在降雨量为大(A=1)且土壤湿度水平为低(B=0)的条件下, 农作物产量为高(D=1)的概率为0.4710。在土壤湿度水平为高(B=1)的条件下, 降雨量为大(A=1)的概率为0.8598。",
+        "data_info_math": "P(D=1|B=1)=0.8518; P(D=1|A=0,B=0)=0.3006; P(A=0|B=1)=0.1402; P(D=1|A=1,B=0)=0.4710; P(A=1|B=1)=0.8598; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些土壤湿度水平为高，假如土壤湿度水平为低，那么农作物产量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-sum_{A} P(D=1|B=0,A)*P(A|B=1)=P(D=1|B=1)-[P(D=1|B=0,A=0)*P(A=0|B=1)+P(D=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=1|B=1)=0.8518\tP(D=1|B=0,A=0)=0.3006\tP(A=0|B=1)=0.1402\tP(D=1|B=0,A=1)=0.4710\tP(A=1|B=1)=0.8598",
+        "Step 6": "ETT=0.8518-[0.3006*0.1402+0.4710*0.8598]=0.4047",
+        "Step 7": "ETT=0.4047>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.4046998884089434
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些植物生长为发育不良，假如植物生长为旺盛，那么降雨量更有可能为小吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些植物生长为发育不良，假如植物生长为旺盛，那么降雨量更有可能为大吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些植物生长为旺盛，假如植物生长为发育不良，那么降雨量更有可能为小吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些植物生长为旺盛，假如植物生长为发育不良，那么降雨量更有可能为大吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于土壤湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些植物生长为发育不良，假如植物生长为旺盛，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于土壤湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些植物生长为发育不良，假如植物生长为旺盛，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于土壤湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些植物生长为旺盛，假如植物生长为发育不良，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于土壤湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些植物生长为旺盛，假如植物生长为发育不良，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于农作物产量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些植物生长为发育不良，假如植物生长为旺盛，那么农作物产量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于农作物产量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些植物生长为发育不良，假如植物生长为旺盛，那么农作物产量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于农作物产量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些植物生长为旺盛，假如植物生长为发育不良，那么农作物产量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑植物生长作用于农作物产量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些植物生长为旺盛，假如植物生长为发育不良，那么农作物产量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D没有有向路径，所以节点C不是节点D的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些农作物产量为低，假如农作物产量为高，那么降雨量更有可能为小吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些农作物产量为低，假如农作物产量为高，那么降雨量更有可能为大吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些农作物产量为高，假如农作物产量为低，那么降雨量更有可能为小吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于降雨量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些农作物产量为高，假如农作物产量为低，那么降雨量更有可能为大吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于土壤湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些农作物产量为低，假如农作物产量为高，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于土壤湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些农作物产量为低，假如农作物产量为高，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于土壤湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些农作物产量为高，假如农作物产量为低，那么土壤湿度水平更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于土壤湿度水平的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些农作物产量为高，假如农作物产量为低，那么土壤湿度水平更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于植物生长的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些农作物产量为低，假如农作物产量为高，那么植物生长更有可能为发育不良吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 133,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于植物生长的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些农作物产量为低，假如农作物产量为高，那么植物生长更有可能为旺盛吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 134,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于植物生长的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些农作物产量为高，假如农作物产量为低，那么植物生长更有可能为发育不良吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 135,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑农作物产量作用于植物生长的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些农作物产量为高，假如农作物产量为低，那么植物生长更有可能为旺盛吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 136,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)且土壤湿度水平为低(B=0)的条件下, 植物生长为发育不良(C=0)的概率为0.5017。在降雨量为大(A=1)且土壤湿度水平为低(B=0)的条件下, 植物生长为发育不良(C=0)的概率为0.2552。",
+        "data_info_math": "P(C=0|A=0,B=0)=0.5017; P(C=0|A=1,B=0)=0.2552; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在土壤湿度水平为低的条件下，假如降雨量为小，那么植物生长更有可能为发育不良吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=0,B=0))-P(C=0|do(A=1,B=0))=P(C=0|A=0,B=0)-P(C=0|A=1,B=0)",
+        "Step 5": "P(C=0|A=0,B=0)=0.5017\tP(C=0|A=1,B=0)=0.2552",
+        "Step 6": "CDE=0.5017-0.2552=0.2465",
+        "Step 7": "CDE=0.2465>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.24649073041834946
+    },
+    {
+      "id": 137,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)且土壤湿度水平为低(B=0)的条件下, 植物生长为旺盛(C=1)的概率为0.4983。在降雨量为大(A=1)且土壤湿度水平为低(B=0)的条件下, 植物生长为旺盛(C=1)的概率为0.7448。",
+        "data_info_math": "P(C=1|A=0,B=0)=0.4983; P(C=1|A=1,B=0)=0.7448; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在土壤湿度水平为低的条件下，假如降雨量为小，那么植物生长更有可能为旺盛吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=0,B=0))-P(C=1|do(A=1,B=0))=P(C=1|A=0,B=0)-P(C=1|A=1,B=0)",
+        "Step 5": "P(C=1|A=0,B=0)=0.4983\tP(C=1|A=1,B=0)=0.7448",
+        "Step 6": "CDE=0.4983-0.7448=-0.2465",
+        "Step 7": "CDE=-0.2465<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.24649073041834946
+    },
+    {
+      "id": 138,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)且土壤湿度水平为低(B=0)的条件下, 植物生长为发育不良(C=0)的概率为0.2552。在降雨量为小(A=0)且土壤湿度水平为低(B=0)的条件下, 植物生长为发育不良(C=0)的概率为0.5017。",
+        "data_info_math": "P(C=0|A=1,B=0)=0.2552; P(C=0|A=0,B=0)=0.5017; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在土壤湿度水平为低的条件下，假如降雨量为大，那么植物生长更有可能为发育不良吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=0|do(A=1,B=0))-P(C=0|do(A=0,B=0))=P(C=0|A=1,B=0)-P(C=0|A=0,B=0)",
+        "Step 5": "P(C=0|A=1,B=0)=0.2552\tP(C=0|A=0,B=0)=0.5017",
+        "Step 6": "CDE=0.2552-0.5017=-0.2465",
+        "Step 7": "CDE=-0.2465<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.24649073041834946
+    },
+    {
+      "id": 139,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)且土壤湿度水平为低(B=0)的条件下, 植物生长为旺盛(C=1)的概率为0.7448。在降雨量为小(A=0)且土壤湿度水平为低(B=0)的条件下, 植物生长为旺盛(C=1)的概率为0.4983。",
+        "data_info_math": "P(C=1|A=1,B=0)=0.7448; P(C=1|A=0,B=0)=0.4983; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在土壤湿度水平为低的条件下，假如降雨量为大，那么植物生长更有可能为旺盛吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(C)是否存在边。边A->C存在。",
+        "Step 2": "因果效应的可识别性。P(C|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(C=1|do(A=1,B=0))-P(C=1|do(A=0,B=0))=P(C=1|A=1,B=0)-P(C=1|A=0,B=0)",
+        "Step 5": "P(C=1|A=1,B=0)=0.7448\tP(C=1|A=0,B=0)=0.4983",
+        "Step 6": "CDE=0.7448-0.4983=0.2465",
+        "Step 7": "CDE=0.2465>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.24649073041834946
+    },
+    {
+      "id": 140,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)且土壤湿度水平为低(B=0)的条件下, 农作物产量为低(D=0)的概率为0.6994。在降雨量为大(A=1)且土壤湿度水平为低(B=0)的条件下, 农作物产量为低(D=0)的概率为0.5290。",
+        "data_info_math": "P(D=0|A=0,B=0)=0.6994; P(D=0|A=1,B=0)=0.5290; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在土壤湿度水平为低的条件下，假如降雨量为小，那么农作物产量更有可能为低吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=0,B=0))-P(D=0|do(A=1,B=0))=P(D=0|A=0,B=0)-P(D=0|A=1,B=0)",
+        "Step 5": "P(D=0|A=0,B=0)=0.6994\tP(D=0|A=1,B=0)=0.5290",
+        "Step 6": "CDE=0.6994-0.5290=0.1703",
+        "Step 7": "CDE=0.1703>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.17034212489172618
+    },
+    {
+      "id": 141,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)且土壤湿度水平为低(B=0)的条件下, 农作物产量为高(D=1)的概率为0.3006。在降雨量为大(A=1)且土壤湿度水平为低(B=0)的条件下, 农作物产量为高(D=1)的概率为0.4710。",
+        "data_info_math": "P(D=1|A=0,B=0)=0.3006; P(D=1|A=1,B=0)=0.4710; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在土壤湿度水平为低的条件下，假如降雨量为小，那么农作物产量更有可能为高吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=0,B=0))-P(D=1|do(A=1,B=0))=P(D=1|A=0,B=0)-P(D=1|A=1,B=0)",
+        "Step 5": "P(D=1|A=0,B=0)=0.3006\tP(D=1|A=1,B=0)=0.4710",
+        "Step 6": "CDE=0.3006-0.4710=-0.1703",
+        "Step 7": "CDE=-0.1703<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.1703421248917263
+    },
+    {
+      "id": 142,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)且土壤湿度水平为高(B=1)的条件下, 农作物产量为低(D=0)的概率为0.1343。在降雨量为小(A=0)且土壤湿度水平为高(B=1)的条件下, 农作物产量为低(D=0)的概率为0.2337。",
+        "data_info_math": "P(D=0|A=1,B=1)=0.1343; P(D=0|A=0,B=1)=0.2337; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在土壤湿度水平为高的条件下，假如降雨量为大，那么农作物产量更有可能为低吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=1,B=1))-P(D=0|do(A=0,B=1))=P(D=0|A=1,B=1)-P(D=0|A=0,B=1)",
+        "Step 5": "P(D=0|A=1,B=1)=0.1343\tP(D=0|A=0,B=1)=0.2337",
+        "Step 6": "CDE=0.1343-0.2337=-0.0995",
+        "Step 7": "CDE=-0.0995<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.09946534749817534
+    },
+    {
+      "id": 143,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)且土壤湿度水平为高(B=1)的条件下, 农作物产量为高(D=1)的概率为0.8657。在降雨量为小(A=0)且土壤湿度水平为高(B=1)的条件下, 农作物产量为高(D=1)的概率为0.7663。",
+        "data_info_math": "P(D=1|A=1,B=1)=0.8657; P(D=1|A=0,B=1)=0.7663; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在土壤湿度水平为高的条件下，假如降雨量为大，那么农作物产量更有可能为高吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=1,B=1))-P(D=1|do(A=0,B=1))=P(D=1|A=1,B=1)-P(D=1|A=0,B=1)",
+        "Step 5": "P(D=1|A=1,B=1)=0.8657\tP(D=1|A=0,B=1)=0.7663",
+        "Step 6": "CDE=0.8657-0.7663=0.0995",
+        "Step 7": "CDE=0.0995>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.09946534749817515
+    },
+    {
+      "id": 144,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象降雨量(A)和观察节点土壤湿度水平(B)的后门调整集合。",
+      "Question": "方法1: 根据农作物产量的情况，我们逐个研究降雨量和土壤湿度水平的关联。\n方法2：我们直接研究一般情况下降雨量和土壤湿度水平的关联。\n为了理解降雨量如何影响土壤湿度水平，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 145,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象降雨量(A)和观察节点土壤湿度水平(B)的后门调整集合。",
+      "Question": "方法1: 根据植物生长的情况，我们逐个研究降雨量和土壤湿度水平的关联。\n方法2：我们直接研究一般情况下降雨量和土壤湿度水平的关联。\n为了理解降雨量如何影响土壤湿度水平，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 146,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象降雨量(A)和观察节点植物生长(C)的后门调整集合。",
+      "Question": "方法1: 根据土壤湿度水平的情况，我们逐个研究降雨量和植物生长的关联。\n方法2：我们直接研究一般情况下降雨量和植物生长的关联。\n为了理解降雨量如何影响植物生长，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 147,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象降雨量(A)和观察节点植物生长(C)的后门调整集合。",
+      "Question": "方法1: 根据农作物产量的情况，我们逐个研究降雨量和植物生长的关联。\n方法2：我们直接研究一般情况下降雨量和植物生长的关联。\n为了理解降雨量如何影响植物生长，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 148,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象降雨量(A)和观察节点农作物产量(D)的后门调整集合。",
+      "Question": "方法1: 根据植物生长的情况，我们逐个研究降雨量和农作物产量的关联。\n方法2：我们直接研究一般情况下降雨量和农作物产量的关联。\n为了理解降雨量如何影响农作物产量，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 149,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象降雨量(A)和观察节点农作物产量(D)的后门调整集合。",
+      "Question": "方法1: 根据植物生长的情况，我们逐个研究降雨量和农作物产量的关联。\n方法2：我们直接研究一般情况下降雨量和农作物产量的关联。\n为了理解降雨量如何影响农作物产量，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 150,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象土壤湿度水平(B)和观察节点植物生长(C)的后门调整集合。",
+      "Question": "方法1: 根据降雨量的情况，我们逐个研究土壤湿度水平和植物生长的关联。\n方法2：我们直接研究一般情况下土壤湿度水平和植物生长的关联。\n为了理解土壤湿度水平如何影响植物生长，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 151,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象土壤湿度水平(B)和观察节点植物生长(C)的后门调整集合。",
+      "Question": "方法1: 根据降雨量的情况，我们逐个研究土壤湿度水平和植物生长的关联。\n方法2：我们直接研究一般情况下土壤湿度水平和植物生长的关联。\n为了理解土壤湿度水平如何影响植物生长，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 152,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象土壤湿度水平(B)和观察节点农作物产量(D)的后门调整集合。",
+      "Question": "方法1: 根据降雨量的情况，我们逐个研究土壤湿度水平和农作物产量的关联。\n方法2：我们直接研究一般情况下土壤湿度水平和农作物产量的关联。\n为了理解土壤湿度水平如何影响农作物产量，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 153,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象土壤湿度水平(B)和观察节点农作物产量(D)的后门调整集合。",
+      "Question": "方法1: 根据降雨量的情况，我们逐个研究土壤湿度水平和农作物产量的关联。\n方法2：我们直接研究一般情况下土壤湿度水平和农作物产量的关联。\n为了理解土壤湿度水平如何影响农作物产量，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 154,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 土壤湿度水平为高(B=1)的概率为0.0592。土壤湿度水平为高(B=1)的概率为0.1599。降雨量为大(A=1)且土壤湿度水平为高(B=1)的概率为0.1375。",
+        "data_info_math": "P(B=1|A=0)=0.0592; P(B=1)=0.1599; P(A=1,B=1)=0.1375; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定降雨量为大且土壤湿度水平为高, 那么假如降雨量为小，此时土壤湿度水平为低的概率的下界是多少？",
+      "Answer": "0.7324",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.0592",
+        "Step 2": "PN的下界: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.1599-0.0592)/0.1375}\n=max{0, 0.7324}\n=0.7324"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.732445171729976
+    },
+    {
+      "id": 155,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 土壤湿度水平为低(B=0)的概率为0.9408。降雨量为小(A=0)且土壤湿度水平为低(B=0)的概率为0.3562。降雨量为大(A=1)且土壤湿度水平为高(B=1)的概率为0.1375。",
+        "data_info_math": "P(B=0|A=0)=0.9408; P(A=0,B=0)=0.3562; P(A=1,B=1)=0.1375; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的必要性概率(probability of necessity, PN)。",
+      "Question": "给定降雨量为大且土壤湿度水平为高, 那么假如降雨量为小，此时土壤湿度水平为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.9408",
+        "Step 2": "PN的上界: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.9408-0.3562)/0.1375}\n=min{1, 4.2513}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 156,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.5076。植物生长为旺盛(C=1)的概率为0.6705。降雨量为大(A=1)且植物生长为旺盛(C=1)的概率为0.4783。",
+        "data_info_math": "P(C=1|A=0)=0.5076; P(C=1)=0.6705; P(A=1,C=1)=0.4783; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的必要性概率(probability of necessity, PN)。",
+      "Question": "给定降雨量为大且植物生长为旺盛, 那么假如降雨量为小，此时植物生长为发育不良的概率的下界是多少？",
+      "Answer": "0.3405",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=0))\nP(C=1|do(A=0))=P(C=1|A=0)=0.5076",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(A=0))]/P(A=1,C=1)}\n=max{0, (0.6705-0.5076)/0.4783}\n=max{0, 0.3405}\n=0.3405"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.3405006134261115
+    },
+    {
+      "id": 157,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.4924。降雨量为小(A=0)且植物生长为发育不良(C=0)的概率为0.1864。降雨量为大(A=1)且植物生长为旺盛(C=1)的概率为0.4783。",
+        "data_info_math": "P(C=0|A=0)=0.4924; P(A=0,C=0)=0.1864; P(A=1,C=1)=0.4783; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的必要性概率(probability of necessity, PN)。",
+      "Question": "给定降雨量为大且植物生长为旺盛, 那么假如降雨量为小，此时植物生长为发育不良的概率的上界是多少？",
+      "Answer": "0.6397",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=0))\nP(C=0|do(A=0))=P(C=0|A=0)=0.4924",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(A=0)-P(A=0,C=0)]/P(A=1,C=1)}\n=min{1, (0.4924-0.1864)/0.4783}\n=min{1, 0.6397}\n=0.6397"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.6396684300948691
+    },
+    {
+      "id": 158,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.3282。农作物产量为高(D=1)的概率为0.4712。降雨量为大(A=1)且农作物产量为高(D=1)的概率为0.3469。",
+        "data_info_math": "P(D=1|A=0)=0.3282; P(D=1)=0.4712; P(A=1,D=1)=0.3469; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的必要性概率(probability of necessity, PN)。",
+      "Question": "给定降雨量为大且农作物产量为高, 那么假如降雨量为小，此时农作物产量为低的概率的下界是多少？",
+      "Answer": "0.4122",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.3282",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.4712-0.3282)/0.3469}\n=max{0, 0.4122}\n=0.4122"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.4121699420695026
+    },
+    {
+      "id": 159,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.6718。降雨量为小(A=0)且农作物产量为低(D=0)的概率为0.2544。降雨量为大(A=1)且农作物产量为高(D=1)的概率为0.3469。",
+        "data_info_math": "P(D=0|A=0)=0.6718; P(A=0,D=0)=0.2544; P(A=1,D=1)=0.3469; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的必要性概率(probability of necessity, PN)。",
+      "Question": "给定降雨量为大且农作物产量为高, 那么假如降雨量为小，此时农作物产量为低的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.6718",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.6718-0.2544)/0.3469}\n=min{1, 1.2032}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 160,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.4983。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.7448。降雨量为大(A=1)的概率为0.6213。植物生长为旺盛(C=1)的概率为0.6705。土壤湿度水平为高(B=1)且植物生长为旺盛(C=1)的概率为0.1326。",
+        "data_info_math": "P(C=1|B=0,A=0)=0.4983; P(A=0)=0.3787; P(C=1|B=0,A=1)=0.7448; P(A=1)=0.6213; P(C=1)=0.6705; P(B=1,C=1)=0.1326; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的必要性概率(probability of necessity, PN)。",
+      "Question": "给定土壤湿度水平为高且植物生长为旺盛, 那么假如土壤湿度水平为低，此时植物生长为发育不良的概率的下界是多少？",
+      "Answer": "0.1437",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=0))\nP(C=1|do(B=0))=sum_{A} P(C=1|B=0,A)*P(A)=P(C=1|B=0,A=0)*P(A=0)+P(C=1|B=0,A=1)*P(A=1)\nP(C=1|B=0,A=0)=0.4983\tP(A=0)=0.3787\tP(C=1|B=0,A=1)=0.7448\tP(A=1)=0.6213\nP(C=1|do(B=0))=0.4983*0.3787+0.7448*0.6213=0.6514",
+        "Step 2": "PN的下界: max{0, [P(C=1)-P(C=1|do(B=0))]/P(B=1,C=1)}\n=max{0, (0.6705-0.6514)/0.1326}\n=max{0, 0.1437}\n=0.1437"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.14374132458068017
+    },
+    {
+      "id": 161,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.5017。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.2552。降雨量为大(A=1)的概率为0.6213。土壤湿度水平为低(B=0)且植物生长为发育不良(C=0)的概率为0.3022。土壤湿度水平为高(B=1)且植物生长为旺盛(C=1)的概率为0.1326。",
+        "data_info_math": "P(C=0|B=0,A=0)=0.5017; P(A=0)=0.3787; P(C=0|B=0,A=1)=0.2552; P(A=1)=0.6213; P(B=0,C=0)=0.3022; P(B=1,C=1)=0.1326; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的必要性概率(probability of necessity, PN)。",
+      "Question": "给定土壤湿度水平为高且植物生长为旺盛, 那么假如土壤湿度水平为低，此时植物生长为发育不良的概率的上界是多少？",
+      "Answer": "0.3494",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=0))\nP(C=0|do(B=0))=sum_{A} P(C=0|B=0,A)*P(A)=P(C=0|B=0,A=0)*P(A=0)+P(C=0|B=0,A=1)*P(A=1)\nP(C=0|B=0,A=0)=0.5017\tP(A=0)=0.3787\tP(C=0|B=0,A=1)=0.2552\tP(A=1)=0.6213\nP(C=0|do(B=0))=0.5017*0.3787+0.2552*0.6213=0.3486",
+        "Step 2": "PN的上界: min{1, [P(C=0)|do(B=0)-P(B=0,C=0)]/P(B=1,C=1)}\n=min{1, (0.3486-0.3022)/0.1326}\n=min{1, 0.3494}\n=0.3494"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.3494108058834552
+    },
+    {
+      "id": 162,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.3006。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.4710。降雨量为大(A=1)的概率为0.6213。农作物产量为高(D=1)的概率为0.4712。土壤湿度水平为高(B=1)且农作物产量为高(D=1)的概率为0.1362。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3006; P(A=0)=0.3787; P(D=1|B=0,A=1)=0.4710; P(A=1)=0.6213; P(D=1)=0.4712; P(B=1,D=1)=0.1362; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的必要性概率(probability of necessity, PN)。",
+      "Question": "给定土壤湿度水平为高且农作物产量为高, 那么假如土壤湿度水平为低，此时农作物产量为低的概率的下界是多少？",
+      "Answer": "0.4751",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=sum_{A} P(D=1|B=0,A)*P(A)=P(D=1|B=0,A=0)*P(A=0)+P(D=1|B=0,A=1)*P(A=1)\nP(D=1|B=0,A=0)=0.3006\tP(A=0)=0.3787\tP(D=1|B=0,A=1)=0.4710\tP(A=1)=0.6213\nP(D=1|do(B=0))=0.3006*0.3787+0.4710*0.6213=0.4065",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.4712-0.4065)/0.1362}\n=max{0, 0.4751}\n=0.4751"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.47511089527498335
+    },
+    {
+      "id": 163,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为低(B=0)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.6994。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为低(B=0)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.5290。降雨量为大(A=1)的概率为0.6213。土壤湿度水平为低(B=0)且农作物产量为低(D=0)的概率为0.5051。土壤湿度水平为高(B=1)且农作物产量为高(D=1)的概率为0.1362。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6994; P(A=0)=0.3787; P(D=0|B=0,A=1)=0.5290; P(A=1)=0.6213; P(B=0,D=0)=0.5051; P(B=1,D=1)=0.1362; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的必要性概率(probability of necessity, PN)。",
+      "Question": "给定土壤湿度水平为高且农作物产量为高, 那么假如土壤湿度水平为低，此时农作物产量为低的概率的上界是多少？",
+      "Answer": "0.6491",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=sum_{A} P(D=0|B=0,A)*P(A)=P(D=0|B=0,A=0)*P(A=0)+P(D=0|B=0,A=1)*P(A=1)\nP(D=0|B=0,A=0)=0.6994\tP(A=0)=0.3787\tP(D=0|B=0,A=1)=0.5290\tP(A=1)=0.6213\nP(D=0|do(B=0))=0.6994*0.3787+0.5290*0.6213=0.5935",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.5935-0.5051)/0.1362}\n=min{1, 0.6491}\n=0.6491"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.6490941576446798
+    },
+    {
+      "id": 164,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 土壤湿度水平为低(B=0)的概率为0.7787。土壤湿度水平为低(B=0)的概率为0.8401。降雨量为小(A=0)且土壤湿度水平为低(B=0)的概率为0.3562。",
+        "data_info_math": "P(B=0|A=1)=0.7787; P(B=0)=0.8401; P(A=0,B=0)=0.3562; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定降雨量为小且土壤湿度水平为低, 假如降雨量为大，此时土壤湿度水平为高的概率的下界是多少？",
+      "Answer": "0.1723",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.7787",
+        "Step 2": "PS的下界: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.8401-0.7787)/0.3562}\n=max{0, 0.1723}\n=0.1723"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.17228808904721513
+    },
+    {
+      "id": 165,
+      "question_id": 160,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 土壤湿度水平为高(B=1)的概率为0.2213。降雨量为小(A=0)且土壤湿度水平为低(B=0)的概率为0.3562。降雨量为大(A=1)且土壤湿度水平为高(B=1)的概率为0.1375。",
+        "data_info_math": "P(B=1|A=1)=0.2213; P(A=0,B=0)=0.3562; P(A=1,B=1)=0.1375; "
+      },
+      "Instruction": "考虑降雨量作用于土壤湿度水平的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定降雨量为小且土壤湿度水平为低, 假如降雨量为大，此时土壤湿度水平为高的概率的上界是多少？",
+      "Answer": "0.2352",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.2213",
+        "Step 2": "PS的上界: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.2213-0.1375)/0.3562}\n=min{1, 0.2352}\n=0.2352"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.23522318897984448
+    },
+    {
+      "id": 166,
+      "question_id": 161,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.2303。植物生长为发育不良(C=0)的概率为0.3295。降雨量为小(A=0)且植物生长为发育不良(C=0)的概率为0.1864。",
+        "data_info_math": "P(C=0|A=1)=0.2303; P(C=0)=0.3295; P(A=0,C=0)=0.1864; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定降雨量为小且植物生长为发育不良, 假如降雨量为大，此时植物生长为旺盛的概率的下界是多少？",
+      "Answer": "0.5323",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(A=1))\nP(C=0|do(A=1))=P(C=0|A=1)=0.2303",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(A=1))]/P(A=0,C=0)}\n=max{0, (0.3295-0.2303)/0.1864}\n=max{0, 0.5323}\n=0.5323"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.5323079855224555
+    },
+    {
+      "id": 167,
+      "question_id": 162,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.7697。降雨量为小(A=0)且植物生长为发育不良(C=0)的概率为0.1864。降雨量为大(A=1)且植物生长为旺盛(C=1)的概率为0.4783。",
+        "data_info_math": "P(C=1|A=1)=0.7697; P(A=0,C=0)=0.1864; P(A=1,C=1)=0.4783; "
+      },
+      "Instruction": "考虑降雨量作用于植物生长的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定降雨量为小且植物生长为发育不良, 假如降雨量为大，此时植物生长为旺盛的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(A=1))\nP(C=1|do(A=1))=P(C=1|A=1)=0.7697",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(A=1)-P(A=1,C=1)]/P(A=0,C=0)}\n=min{1, (0.7697-0.4783)/0.1864}\n=min{1, 1.5633}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 168,
+      "question_id": 163,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.4417。农作物产量为低(D=0)的概率为0.5288。降雨量为小(A=0)且农作物产量为低(D=0)的概率为0.2544。",
+        "data_info_math": "P(D=0|A=1)=0.4417; P(D=0)=0.5288; P(A=0,D=0)=0.2544; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定降雨量为小且农作物产量为低, 假如降雨量为大，此时农作物产量为高的概率的下界是多少？",
+      "Answer": "0.3426",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.4417",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.5288-0.4417)/0.2544}\n=max{0, 0.3426}\n=0.3426"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.34256485845882756
+    },
+    {
+      "id": 169,
+      "question_id": 164,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.5583。降雨量为小(A=0)且农作物产量为低(D=0)的概率为0.2544。降雨量为大(A=1)且农作物产量为高(D=1)的概率为0.3469。",
+        "data_info_math": "P(D=1|A=1)=0.5583; P(A=0,D=0)=0.2544; P(A=1,D=1)=0.3469; "
+      },
+      "Instruction": "考虑降雨量作用于农作物产量的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定降雨量为小且农作物产量为低, 假如降雨量为大，此时农作物产量为高的概率的上界是多少？",
+      "Answer": "0.8311",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.5583",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.5583-0.3469)/0.2544}\n=min{1, 0.8311}\n=0.8311"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.8311252798756056
+    },
+    {
+      "id": 170,
+      "question_id": 165,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为发育不良(C=0)的概率为0.3434。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为发育不良(C=0)的概率为0.1424。降雨量为大(A=1)的概率为0.6213。植物生长为发育不良(C=0)的概率为0.3295。土壤湿度水平为低(B=0)且植物生长为发育不良(C=0)的概率为0.3022。",
+        "data_info_math": "P(C=0|B=1,A=0)=0.3434; P(A=0)=0.3787; P(C=0|B=1,A=1)=0.1424; P(A=1)=0.6213; P(C=0)=0.3295; P(B=0,C=0)=0.3022; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定土壤湿度水平为低且植物生长为发育不良, 假如土壤湿度水平为高，此时植物生长为旺盛的概率的下界是多少？",
+      "Answer": "0.3672",
+      "Reason": {
+        "Step 1": "计算P(C=0|do(B=1))\nP(C=0|do(B=1))=sum_{A} P(C=0|B=1,A)*P(A)=P(C=0|B=1,A=0)*P(A=0)+P(C=0|B=1,A=1)*P(A=1)\nP(C=0|B=1,A=0)=0.3434\tP(A=0)=0.3787\tP(C=0|B=1,A=1)=0.1424\tP(A=1)=0.6213\nP(C=0|do(B=1))=0.3434*0.3787+0.1424*0.6213=0.2185",
+        "Step 2": "PS的下界: max{0, [P(C=0)-P(C=0|do(B=1))]/P(B=0,C=0)}\n=max{0, (0.3295-0.2185)/0.3022}\n=max{0, 0.3672}\n=0.3672"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.367234394912279
+    },
+    {
+      "id": 171,
+      "question_id": 166,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 植物生长为旺盛(C=1)的概率为0.6566。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 植物生长为旺盛(C=1)的概率为0.8576。降雨量为大(A=1)的概率为0.6213。土壤湿度水平为低(B=0)且植物生长为发育不良(C=0)的概率为0.3022。土壤湿度水平为高(B=1)且植物生长为旺盛(C=1)的概率为0.1326。",
+        "data_info_math": "P(C=1|B=1,A=0)=0.6566; P(A=0)=0.3787; P(C=1|B=1,A=1)=0.8576; P(A=1)=0.6213; P(B=0,C=0)=0.3022; P(B=1,C=1)=0.1326; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于植物生长的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定土壤湿度水平为低且植物生长为发育不良, 假如土壤湿度水平为高，此时植物生长为旺盛的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(C=1|do(B=1))\nP(C=1|do(B=1))=sum_{A} P(C=1|B=1,A)*P(A)=P(C=1|B=1,A=0)*P(A=0)+P(C=1|B=1,A=1)*P(A=1)\nP(C=1|B=1,A=0)=0.6566\tP(A=0)=0.3787\tP(C=1|B=1,A=1)=0.8576\tP(A=1)=0.6213\nP(C=1|do(B=1))=0.6566*0.3787+0.8576*0.6213=0.7815",
+        "Step 2": "PS的上界: min{1, [P(C=1)|do(B=1)-P(B=1,C=1)]/P(B=0,C=0)}\n=min{1, (0.7815-0.1326)/0.3022}\n=min{1, 2.1467}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 172,
+      "question_id": 167,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为低(D=0)的概率为0.2337。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为低(D=0)的概率为0.1343。降雨量为大(A=1)的概率为0.6213。农作物产量为低(D=0)的概率为0.5288。土壤湿度水平为低(B=0)且农作物产量为低(D=0)的概率为0.5051。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.2337; P(A=0)=0.3787; P(D=0|B=1,A=1)=0.1343; P(A=1)=0.6213; P(D=0)=0.5288; P(B=0,D=0)=0.5051; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定土壤湿度水平为低且农作物产量为低, 假如土壤湿度水平为高，此时农作物产量为高的概率的下界是多少？",
+      "Answer": "0.7066",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=sum_{A} P(D=0|B=1,A)*P(A)=P(D=0|B=1,A=0)*P(A=0)+P(D=0|B=1,A=1)*P(A=1)\nP(D=0|B=1,A=0)=0.2337\tP(A=0)=0.3787\tP(D=0|B=1,A=1)=0.1343\tP(A=1)=0.6213\nP(D=0|do(B=1))=0.2337*0.3787+0.1343*0.6213=0.1719",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.5288-0.1719)/0.5051}\n=max{0, 0.7066}\n=0.7066"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.7065569314230756
+    },
+    {
+      "id": 173,
+      "question_id": 168,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和5条边A->B, A->C, A->D, B->C, B->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表降雨量, B代表土壤湿度水平, C代表植物生长, D代表农作物产量。",
+        "data_info": "在土壤湿度水平为高(B=1)且降雨量为小(A=0)的条件下, 农作物产量为高(D=1)的概率为0.7663。降雨量为小(A=0)的概率为0.3787。在土壤湿度水平为高(B=1)且降雨量为大(A=1)的条件下, 农作物产量为高(D=1)的概率为0.8657。降雨量为大(A=1)的概率为0.6213。土壤湿度水平为低(B=0)且农作物产量为低(D=0)的概率为0.5051。土壤湿度水平为高(B=1)且农作物产量为高(D=1)的概率为0.1362。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.7663; P(A=0)=0.3787; P(D=1|B=1,A=1)=0.8657; P(A=1)=0.6213; P(B=0,D=0)=0.5051; P(B=1,D=1)=0.1362; "
+      },
+      "Instruction": "考虑土壤湿度水平作用于农作物产量的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定土壤湿度水平为低且农作物产量为低, 假如土壤湿度水平为高，此时农作物产量为高的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=sum_{A} P(D=1|B=1,A)*P(A)=P(D=1|B=1,A=0)*P(A=0)+P(D=1|B=1,A=1)*P(A=1)\nP(D=1|B=1,A=0)=0.7663\tP(A=0)=0.3787\tP(D=1|B=1,A=1)=0.8657\tP(A=1)=0.6213\nP(D=1|do(B=1))=0.7663*0.3787+0.8657*0.6213=0.8281",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.8281-0.1362)/0.5051}\n=min{1, 1.3698}\n=1.0000"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 1
+    }
+  ]
+}

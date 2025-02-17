@@ -1,0 +1,4134 @@
+{
+  "Graph": {
+    "node": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "edge": [
+      "A->B",
+      "A->D",
+      "B->D",
+      "C->D"
+    ],
+    "node_name": {
+      "A": "运动量",
+      "B": "饮食质量",
+      "C": "遗传疾病倾向",
+      "D": "整体健康状况"
+    },
+    "node_value": {
+      "A": [
+        "少",
+        "强烈"
+      ],
+      "B": [
+        "差",
+        "好"
+      ],
+      "C": [
+        "不健康",
+        "健康"
+      ],
+      "D": [
+        "差",
+        "好"
+      ]
+    }
+  },
+  "Data": {
+    "edge_sign": {
+      "A->B": 1,
+      "A->D": 1,
+      "B->D": 1,
+      "C->D": 1
+    },
+    "node_bias": {
+      "A": 0.29186511823320477,
+      "B": -0.7618581404807058,
+      "C": -1.8868628506714853,
+      "D": -0.6151246673214087
+    },
+    "edge_weight": {
+      "A->B": 0.17144430838863745,
+      "A->D": 0.08940495409595717,
+      "B->D": 0.27420849108212186,
+      "C->D": 0.1441343977082803
+    },
+    "function_description": "P(A=1)=0.5725\nP(B=1|A)=sigmoid(-0.7618581404807058 + 0.1714 * A)\nP(C=1)=0.1316\nP(D=1|B,C,A)=sigmoid(-0.6151246673214087 + 0.2742 * B + 0.1441 * C + 0.0894 * A)\n",
+    "text_description": "The probability of amount of exercise done being intense (A=1) is 0.5725. \nFor those with amount of exercise done being little (A=0), the probability of diet quality being good (B=1) is 0.3182. \nFor those with amount of exercise done being intense (A=1), the probability of diet quality being good (B=1) is 0.3565. \nThe probability of genetic predisposition to health issues being healthy (C=1) is 0.1316. \nFor those with diet quality being poor (B=0), genetic predisposition to health issues being unhealthy (C=0) and amount of exercise done being little (A=0), the probability of overall health status being good (D=1) is 0.3509. \nFor those with diet quality being poor (B=0), genetic predisposition to health issues being unhealthy (C=0) and amount of exercise done being intense (A=1), the probability of overall health status being good (D=1) is 0.3715. \nFor those with diet quality being poor (B=0), genetic predisposition to health issues being healthy (C=1) and amount of exercise done being little (A=0), the probability of overall health status being good (D=1) is 0.3844. \nFor those with diet quality being poor (B=0), genetic predisposition to health issues being healthy (C=1) and amount of exercise done being intense (A=1), the probability of overall health status being good (D=1) is 0.4057. \nFor those with diet quality being good (B=1), genetic predisposition to health issues being unhealthy (C=0) and amount of exercise done being little (A=0), the probability of overall health status being good (D=1) is 0.4156. \nFor those with diet quality being good (B=1), genetic predisposition to health issues being unhealthy (C=0) and amount of exercise done being intense (A=1), the probability of overall health status being good (D=1) is 0.4375. \nFor those with diet quality being good (B=1), genetic predisposition to health issues being healthy (C=1) and amount of exercise done being little (A=0), the probability of overall health status being good (D=1) is 0.4510. \nFor those with diet quality being good (B=1), genetic predisposition to health issues being healthy (C=1) and amount of exercise done being intense (A=1), the probability of overall health status being good (D=1) is 0.4732. \n",
+    "Statistic_data": [
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 5973
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 8320
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "count": 9921
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "count": 4494
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 4915
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 675
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 3903
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "count": 2441
+      },
+      {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 699
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 1390
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "count": 3479
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 753
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "count": 1206
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "count": 490
+      },
+      {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "count": 964
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "count": 377
+      }
+    ]
+  },
+  "Questions": [
+    {
+      "id": 0,
+      "question_id": 0,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 饮食质量为差(B=0)的概率为0.6852。在运动量为强烈(A=1)的条件下, 饮食质量为差(B=0)的概率为0.6416。",
+        "data_info_math": "P(B=0|A=0)=0.6852; P(B=0|A=1)=0.6416; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为少，那么饮食质量更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=0))-P(B=0|do(A=1))=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.6852\tP(B=0|A=1)=0.6416",
+        "Step 6": "ATE=0.6852-0.6416=0.0436",
+        "Step 7": "ATE=0.0436>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.043572576710008804
+    },
+    {
+      "id": 1,
+      "question_id": 1,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 饮食质量为好(B=1)的概率为0.3148。在运动量为强烈(A=1)的条件下, 饮食质量为好(B=1)的概率为0.3584。",
+        "data_info_math": "P(B=1|A=0)=0.3148; P(B=1|A=1)=0.3584; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为少，那么饮食质量更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=0))-P(B=1|do(A=1))=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.3148\tP(B=1|A=1)=0.3584",
+        "Step 6": "ATE=0.3148-0.3584=-0.0436",
+        "Step 7": "ATE=-0.0436<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.043572576710008915
+    },
+    {
+      "id": 2,
+      "question_id": 2,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 饮食质量为差(B=0)的概率为0.6416。在运动量为少(A=0)的条件下, 饮食质量为差(B=0)的概率为0.6852。",
+        "data_info_math": "P(B=0|A=1)=0.6416; P(B=0|A=0)=0.6852; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为强烈，那么饮食质量更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=0|do(A=1))-P(B=0|do(A=0))=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.6416\tP(B=0|A=0)=0.6852",
+        "Step 6": "ATE=0.6416-0.6852=-0.0436",
+        "Step 7": "ATE=-0.0436<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.043572576710008804
+    },
+    {
+      "id": 3,
+      "question_id": 3,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 饮食质量为好(B=1)的概率为0.3584。在运动量为少(A=0)的条件下, 饮食质量为好(B=1)的概率为0.3148。",
+        "data_info_math": "P(B=1|A=1)=0.3584; P(B=1|A=0)=0.3148; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为强烈，那么饮食质量更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(B=1|do(A=1))-P(B=1|do(A=0))=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.3584\tP(B=1|A=0)=0.3148",
+        "Step 6": "ATE=0.3584-0.3148=0.0436",
+        "Step 7": "ATE=0.0436>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.043572576710008915
+    },
+    {
+      "id": 4,
+      "question_id": 4,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于遗传疾病倾向的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为少，那么遗传疾病倾向更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 5,
+      "question_id": 5,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于遗传疾病倾向的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为少，那么遗传疾病倾向更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 6,
+      "question_id": 6,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于遗传疾病倾向的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为强烈，那么遗传疾病倾向更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 7,
+      "question_id": 7,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于遗传疾病倾向的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为强烈，那么遗传疾病倾向更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 8,
+      "question_id": 8,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.6259。在运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.5951。",
+        "data_info_math": "P(D=0|A=0)=0.6259; P(D=0|A=1)=0.5951; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为少，那么整体健康状况更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=0))-P(D=0|do(A=1))=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6259\tP(D=0|A=1)=0.5951",
+        "Step 6": "ATE=0.6259-0.5951=0.0308",
+        "Step 7": "ATE=0.0308>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.030815126203914356
+    },
+    {
+      "id": 9,
+      "question_id": 9,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.3741。在运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.4049。",
+        "data_info_math": "P(D=1|A=0)=0.3741; P(D=1|A=1)=0.4049; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为少，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=0))-P(D=1|do(A=1))=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3741\tP(D=1|A=1)=0.4049",
+        "Step 6": "ATE=0.3741-0.4049=-0.0308",
+        "Step 7": "ATE=-0.0308<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.03081512620391469
+    },
+    {
+      "id": 10,
+      "question_id": 10,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.5951。在运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.6259。",
+        "data_info_math": "P(D=0|A=1)=0.5951; P(D=0|A=0)=0.6259; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为强烈，那么整体健康状况更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(A=1))-P(D=0|do(A=0))=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.5951\tP(D=0|A=0)=0.6259",
+        "Step 6": "ATE=0.5951-0.6259=-0.0308",
+        "Step 7": "ATE=-0.0308<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.030815126203914356
+    },
+    {
+      "id": 11,
+      "question_id": 11,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.4049。在运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.3741。",
+        "data_info_math": "P(D=1|A=1)=0.4049; P(D=1|A=0)=0.3741; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果运动量被改变为强烈，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(A=1))-P(D=1|do(A=0))=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.4049\tP(D=1|A=0)=0.3741",
+        "Step 6": "ATE=0.4049-0.3741=0.0308",
+        "Step 7": "ATE=0.0308>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.03081512620391469
+    },
+    {
+      "id": 12,
+      "question_id": 12,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食质量被改变为差，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 13,
+      "question_id": 13,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食质量被改变为差，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 14,
+      "question_id": 14,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食质量被改变为好，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 15,
+      "question_id": 15,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食质量被改变为好，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 16,
+      "question_id": 16,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于遗传疾病倾向的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食质量被改变为差，那么遗传疾病倾向更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 17,
+      "question_id": 17,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于遗传疾病倾向的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食质量被改变为差，那么遗传疾病倾向更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 18,
+      "question_id": 18,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于遗传疾病倾向的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食质量被改变为好，那么遗传疾病倾向更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 19,
+      "question_id": 19,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于遗传疾病倾向的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食质量被改变为好，那么遗传疾病倾向更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 20,
+      "question_id": 20,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.6448。在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.5848。运动量为少(A=0)的概率为0.4312。在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.6198。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.5508。运动量为强烈(A=1)的概率为0.5688。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6448; P(D=0|B=1,A=0)=0.5848; P(A=0)=0.4312; P(D=0|B=0,A=1)=0.6198; P(D=0|B=1,A=1)=0.5508; P(A=1)=0.5688; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食质量被改变为差，那么整体健康状况更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=0))-P(D=0|do(B=1))=sum_{A} [P(D=0|B=0,A)*P(A)-P(D=0|B=1,A)*P(A)]=[P(D=0|B=0,A=0)*P(A=0)-P(D=0|B=1,A=0)*P(A=0)]+[P(D=0|B=0,A=1)*P(A=1)-P(D=0|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=0,A=0)=0.6448\tP(D=0|B=1,A=0)=0.5848\tP(A=0)=0.4312\tP(D=0|B=0,A=1)=0.6198\tP(D=0|B=1,A=1)=0.5508\tP(A=1)=0.5688",
+        "Step 6": "ATE=[0.6448*0.4312-0.5848*0.4312]+[0.6198*0.5688-0.5508*0.5688]=0.0651",
+        "Step 7": "ATE=0.0651>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.0651463549789904
+    },
+    {
+      "id": 21,
+      "question_id": 21,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.3552。在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.4152。运动量为少(A=0)的概率为0.4312。在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.3802。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.4492。运动量为强烈(A=1)的概率为0.5688。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3552; P(D=1|B=1,A=0)=0.4152; P(A=0)=0.4312; P(D=1|B=0,A=1)=0.3802; P(D=1|B=1,A=1)=0.4492; P(A=1)=0.5688; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食质量被改变为差，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=0))-P(D=1|do(B=1))=sum_{A} [P(D=1|B=0,A)*P(A)-P(D=1|B=1,A)*P(A)]=[P(D=1|B=0,A=0)*P(A=0)-P(D=1|B=1,A=0)*P(A=0)]+[P(D=1|B=0,A=1)*P(A=1)-P(D=1|B=1,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=0,A=0)=0.3552\tP(D=1|B=1,A=0)=0.4152\tP(A=0)=0.4312\tP(D=1|B=0,A=1)=0.3802\tP(D=1|B=1,A=1)=0.4492\tP(A=1)=0.5688",
+        "Step 6": "ATE=[0.3552*0.4312-0.4152*0.4312]+[0.3802*0.5688-0.4492*0.5688]=-0.0651",
+        "Step 7": "ATE=-0.0651<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.06514635497899049
+    },
+    {
+      "id": 22,
+      "question_id": 22,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.5848。在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.6448。运动量为少(A=0)的概率为0.4312。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.5508。在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.6198。运动量为强烈(A=1)的概率为0.5688。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.5848; P(D=0|B=0,A=0)=0.6448; P(A=0)=0.4312; P(D=0|B=1,A=1)=0.5508; P(D=0|B=0,A=1)=0.6198; P(A=1)=0.5688; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食质量被改变为好，那么整体健康状况更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=0|do(B=1))-P(D=0|do(B=0))=sum_{A} [P(D=0|B=1,A)*P(A)-P(D=0|B=0,A)*P(A)]=[P(D=0|B=1,A=0)*P(A=0)-P(D=0|B=0,A=0)*P(A=0)]+[P(D=0|B=1,A=1)*P(A=1)-P(D=0|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=0|B=1,A=0)=0.5848\tP(D=0|B=0,A=0)=0.6448\tP(A=0)=0.4312\tP(D=0|B=1,A=1)=0.5508\tP(D=0|B=0,A=1)=0.6198\tP(A=1)=0.5688",
+        "Step 6": "ATE=[0.5848*0.4312-0.6448*0.4312]+[0.5508*0.5688-0.6198*0.5688]=-0.0651",
+        "Step 7": "ATE=-0.0651<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.0651463549789904
+    },
+    {
+      "id": 23,
+      "question_id": 23,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.4152。在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.3552。运动量为少(A=0)的概率为0.4312。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.4492。在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.3802。运动量为强烈(A=1)的概率为0.5688。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.4152; P(D=1|B=0,A=0)=0.3552; P(A=0)=0.4312; P(D=1|B=1,A=1)=0.4492; P(D=1|B=0,A=1)=0.3802; P(A=1)=0.5688; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果饮食质量被改变为好，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ATE=P(D=1|do(B=1))-P(D=1|do(B=0))=sum_{A} [P(D=1|B=1,A)*P(A)-P(D=1|B=0,A)*P(A)]=[P(D=1|B=1,A=0)*P(A=0)-P(D=1|B=0,A=0)*P(A=0)]+[P(D=1|B=1,A=1)*P(A=1)-P(D=1|B=0,A=1)*P(A=1)]",
+        "Step 5": "P(D=1|B=1,A=0)=0.4152\tP(D=1|B=0,A=0)=0.3552\tP(A=0)=0.4312\tP(D=1|B=1,A=1)=0.4492\tP(D=1|B=0,A=1)=0.3802\tP(A=1)=0.5688",
+        "Step 6": "ATE=[0.4152*0.4312-0.3552*0.4312]+[0.4492*0.5688-0.3802*0.5688]=0.0651",
+        "Step 7": "ATE=0.0651>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.06514635497899049
+    },
+    {
+      "id": 24,
+      "question_id": 24,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果遗传疾病倾向被改变为不健康，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 25,
+      "question_id": 25,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果遗传疾病倾向被改变为不健康，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 26,
+      "question_id": 26,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果遗传疾病倾向被改变为健康，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 27,
+      "question_id": 27,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果遗传疾病倾向被改变为健康，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 28,
+      "question_id": 28,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于饮食质量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果遗传疾病倾向被改变为不健康，那么饮食质量更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 29,
+      "question_id": 29,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于饮食质量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果遗传疾病倾向被改变为不健康，那么饮食质量更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 30,
+      "question_id": 30,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于饮食质量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果遗传疾病倾向被改变为健康，那么饮食质量更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 31,
+      "question_id": 31,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于饮食质量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果遗传疾病倾向被改变为健康，那么饮食质量更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 32,
+      "question_id": 32,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为不健康(C=0)的条件下, 整体健康状况为差(D=0)的概率为0.6131。在遗传疾病倾向为健康(C=1)的条件下, 整体健康状况为差(D=0)的概率为0.5775。",
+        "data_info_math": "P(D=0|C=0)=0.6131; P(D=0|C=1)=0.5775; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果遗传疾病倾向被改变为不健康，那么整体健康状况更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(C=0))-P(D=0|do(C=1))=P(D=0|C=0)-P(D=0|C=1)",
+        "Step 5": "P(D=0|C=0)=0.6131\tP(D=0|C=1)=0.5775",
+        "Step 6": "ATE=0.6131-0.5775=0.0355",
+        "Step 7": "ATE=0.0355>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.03554997283113759
+    },
+    {
+      "id": 33,
+      "question_id": 33,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为不健康(C=0)的条件下, 整体健康状况为好(D=1)的概率为0.3869。在遗传疾病倾向为健康(C=1)的条件下, 整体健康状况为好(D=1)的概率为0.4225。",
+        "data_info_math": "P(D=1|C=0)=0.3869; P(D=1|C=1)=0.4225; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果遗传疾病倾向被改变为不健康，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(C=0))-P(D=1|do(C=1))=P(D=1|C=0)-P(D=1|C=1)",
+        "Step 5": "P(D=1|C=0)=0.3869\tP(D=1|C=1)=0.4225",
+        "Step 6": "ATE=0.3869-0.4225=-0.0355",
+        "Step 7": "ATE=-0.0355<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.03554997283113759
+    },
+    {
+      "id": 34,
+      "question_id": 34,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为健康(C=1)的条件下, 整体健康状况为差(D=0)的概率为0.5775。在遗传疾病倾向为不健康(C=0)的条件下, 整体健康状况为差(D=0)的概率为0.6131。",
+        "data_info_math": "P(D=0|C=1)=0.5775; P(D=0|C=0)=0.6131; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果遗传疾病倾向被改变为健康，那么整体健康状况更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=0|do(C=1))-P(D=0|do(C=0))=P(D=0|C=1)-P(D=0|C=0)",
+        "Step 5": "P(D=0|C=1)=0.5775\tP(D=0|C=0)=0.6131",
+        "Step 6": "ATE=0.5775-0.6131=-0.0355",
+        "Step 7": "ATE=-0.0355<0 所以答案为否。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": -0.03554997283113759
+    },
+    {
+      "id": 35,
+      "question_id": 35,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为健康(C=1)的条件下, 整体健康状况为好(D=1)的概率为0.4225。在遗传疾病倾向为不健康(C=0)的条件下, 整体健康状况为好(D=1)的概率为0.3869。",
+        "data_info_math": "P(D=1|C=1)=0.4225; P(D=1|C=0)=0.3869; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果遗传疾病倾向被改变为健康，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ATE=P(D=1|do(C=1))-P(D=1|do(C=0))=P(D=1|C=1)-P(D=1|C=0)",
+        "Step 5": "P(D=1|C=1)=0.4225\tP(D=1|C=0)=0.3869",
+        "Step 6": "ATE=0.4225-0.3869=0.0355",
+        "Step 7": "ATE=0.0355>0 所以答案为是。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0.03554997283113759
+    },
+    {
+      "id": 36,
+      "question_id": 36,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为差，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 37,
+      "question_id": 37,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为差，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 38,
+      "question_id": 38,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 39,
+      "question_id": 39,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 40,
+      "question_id": 40,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食质量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为差，那么饮食质量更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 41,
+      "question_id": 41,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食质量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为差，那么饮食质量更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 42,
+      "question_id": 42,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食质量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么饮食质量更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 43,
+      "question_id": 43,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食质量的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么饮食质量更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 44,
+      "question_id": 44,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于遗传疾病倾向的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为差，那么遗传疾病倾向更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 45,
+      "question_id": 45,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于遗传疾病倾向的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为差，那么遗传疾病倾向更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 46,
+      "question_id": 46,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于遗传疾病倾向的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么遗传疾病倾向更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 47,
+      "question_id": 47,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于遗传疾病倾向的“平均干预效果”(average treatment effect, ATE)。",
+      "Question": "如果整体健康状况被改变为好，那么遗传疾病倾向更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ATE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 48,
+      "question_id": 48,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 饮食质量为差(B=0)的概率为0.6852。在运动量为强烈(A=1)的条件下, 饮食质量为差(B=0)的概率为0.6416。",
+        "data_info_math": "P(B=0|A=0)=0.6852; P(B=0|A=1)=0.6416; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为少，那么饮食质量更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.6852\tP(B=0|A=1)=0.6416",
+        "Step 6": "NDE=0.6852-0.6416=0.0436",
+        "Step 7": "NDE=0.0436>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.043572576710008804
+    },
+    {
+      "id": 49,
+      "question_id": 49,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 饮食质量为好(B=1)的概率为0.3148。在运动量为强烈(A=1)的条件下, 饮食质量为好(B=1)的概率为0.3584。",
+        "data_info_math": "P(B=1|A=0)=0.3148; P(B=1|A=1)=0.3584; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为少，那么饮食质量更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.3148\tP(B=1|A=1)=0.3584",
+        "Step 6": "NDE=0.3148-0.3584=-0.0436",
+        "Step 7": "NDE=-0.0436<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.043572576710008915
+    },
+    {
+      "id": 50,
+      "question_id": 50,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 饮食质量为差(B=0)的概率为0.6416。在运动量为少(A=0)的条件下, 饮食质量为差(B=0)的概率为0.6852。",
+        "data_info_math": "P(B=0|A=1)=0.6416; P(B=0|A=0)=0.6852; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为强烈，那么饮食质量更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.6416\tP(B=0|A=0)=0.6852",
+        "Step 6": "NDE=0.6416-0.6852=-0.0436",
+        "Step 7": "NDE=-0.0436<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.043572576710008804
+    },
+    {
+      "id": 51,
+      "question_id": 51,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 饮食质量为好(B=1)的概率为0.3584。在运动量为少(A=0)的条件下, 饮食质量为好(B=1)的概率为0.3148。",
+        "data_info_math": "P(B=1|A=1)=0.3584; P(B=1|A=0)=0.3148; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为强烈，那么饮食质量更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否存在边。边A->B存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.3584\tP(B=1|A=0)=0.3148",
+        "Step 6": "NDE=0.3584-0.3148=0.0436",
+        "Step 7": "NDE=0.0436>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.043572576710008915
+    },
+    {
+      "id": 52,
+      "question_id": 52,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.6448。在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.6198。在运动量为强烈(A=1)的条件下, 饮食质量为差(B=0)的概率为0.6416。在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.5848。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.5508。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6448; P(D=0|B=0,A=1)=0.6198; P(B=0|A=1)=0.6416; P(D=0|B=1,A=0)=0.5848; P(D=0|B=1,A=1)=0.5508; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为少，那么整体健康状况更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(D=0|A=0,B)-P(D=0|A=1,B)]*P(B|A=1)=[P(D=0|A=0,B=0)-P(D=0|A=1,B=0)]*P(B=0|A=1)+[P(D=0|A=0,B=1)-P(D=0|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(D=0|A=0,B=0)=0.6448\tP(D=0|A=1,B=0)=0.6198\tP(B=0|A=1)=0.6416\tP(D=0|A=0,B=1)=0.5848\tP(D=0|A=1,B=1)=0.5508\tP(B=1|A=1)=0.3584",
+        "Step 6": "=(0.6448-0.6198)*0.6416+(0.5848-0.5508)*0.3584=0.0282",
+        "Step 7": "NDE=0.0282>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.028199440083587678
+    },
+    {
+      "id": 53,
+      "question_id": 53,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.3552。在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.3802。在运动量为强烈(A=1)的条件下, 饮食质量为差(B=0)的概率为0.6416。在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.4152。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.4492。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3552; P(D=1|B=0,A=1)=0.3802; P(B=0|A=1)=0.6416; P(D=1|B=1,A=0)=0.4152; P(D=1|B=1,A=1)=0.4492; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为少，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(D=1|A=0,B)-P(D=1|A=1,B)]*P(B|A=1)=[P(D=1|A=0,B=0)-P(D=1|A=1,B=0)]*P(B=0|A=1)+[P(D=1|A=0,B=1)-P(D=1|A=1,B=1)]*P(B=1|A=1)",
+        "Step 5": "P(D=1|A=0,B=0)=0.3552\tP(D=1|A=1,B=0)=0.3802\tP(B=0|A=1)=0.6416\tP(D=1|A=0,B=1)=0.4152\tP(D=1|A=1,B=1)=0.4492\tP(B=1|A=1)=0.3584",
+        "Step 6": "=(0.3552-0.3802)*0.6416+(0.4152-0.4492)*0.3584=-0.0282",
+        "Step 7": "NDE=-0.0282<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.028199440083587678
+    },
+    {
+      "id": 54,
+      "question_id": 54,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.6198。在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.6448。在运动量为少(A=0)的条件下, 饮食质量为差(B=0)的概率为0.6852。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.5508。在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.5848。",
+        "data_info_math": "P(D=0|B=0,A=1)=0.6198; P(D=0|B=0,A=0)=0.6448; P(B=0|A=0)=0.6852; P(D=0|B=1,A=1)=0.5508; P(D=0|B=1,A=0)=0.5848; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为强烈，那么整体健康状况更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(D=0|A=1,B)-P(D=0|A=0,B)]*P(B|A=0)=[P(D=0|A=1,B=0)-P(D=0|A=0,B=0)]*P(B=0|A=0)+[P(D=0|A=1,B=1)-P(D=0|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(D=0|A=1,B=0)=0.6198\tP(D=0|A=0,B=0)=0.6448\tP(B=0|A=0)=0.6852\tP(D=0|A=1,B=1)=0.5508\tP(D=0|A=0,B=1)=0.5848\tP(B=1|A=0)=0.3148",
+        "Step 6": "=(0.6198-0.6448)*0.6852+(0.5508-0.5848)*0.3148=-0.0278",
+        "Step 7": "NDE=-0.0278<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.02780754762688483
+    },
+    {
+      "id": 55,
+      "question_id": 55,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.3802。在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.3552。在运动量为少(A=0)的条件下, 饮食质量为差(B=0)的概率为0.6852。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.4492。在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.4152。",
+        "data_info_math": "P(D=1|B=0,A=1)=0.3802; P(D=1|B=0,A=0)=0.3552; P(B=0|A=0)=0.6852; P(D=1|B=1,A=1)=0.4492; P(D=1|B=1,A=0)=0.4152; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而运动量变化为强烈，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=sum_{B} [P(D=1|A=1,B)-P(D=1|A=0,B)]*P(B|A=0)=[P(D=1|A=1,B=0)-P(D=1|A=0,B=0)]*P(B=0|A=0)+[P(D=1|A=1,B=1)-P(D=1|A=0,B=1)]*P(B=1|A=0)",
+        "Step 5": "P(D=1|A=1,B=0)=0.3802\tP(D=1|A=0,B=0)=0.3552\tP(B=0|A=0)=0.6852\tP(D=1|A=1,B=1)=0.4492\tP(D=1|A=0,B=1)=0.4152\tP(B=1|A=0)=0.3148",
+        "Step 6": "=(0.3802-0.3552)*0.6852+(0.4492-0.4152)*0.3148=0.0278",
+        "Step 7": "NDE=0.0278>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.02780754762688483
+    },
+    {
+      "id": 56,
+      "question_id": 56,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.6448。在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.5848。运动量为少(A=0)的概率为0.4312。在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.6198。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.5508。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6448; P(D=0|B=1,A=0)=0.5848; P(A=0)=0.4312; P(D=0|B=0,A=1)=0.6198; P(D=0|B=1,A=1)=0.5508; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而饮食质量变化为差，那么整体健康状况更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|B=0,A)-P(D=0|B=1,A)]*P(A)=[P(D=0|B=0,A=0)-P(D=0|B=1,A=0)]*P(A=0)+[P(D=0|B=0,A=1)-P(D=0|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=0,A=0)=0.6448\tP(D=0|B=1,A=0)=0.5848\tP(A=0)=0.4312\tP(D=0|B=0,A=1)=0.6198\tP(D=0|B=1,A=1)=0.5508\tP(A=1)=0.5688",
+        "Step 6": "NDE=[0.6448-0.5848]*0.4312+[0.6198-0.5508]*0.5688=0.0651",
+        "Step 7": "NDE=0.0651>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.06514635497899045
+    },
+    {
+      "id": 57,
+      "question_id": 57,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.3552。在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.4152。运动量为少(A=0)的概率为0.4312。在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.3802。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.4492。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3552; P(D=1|B=1,A=0)=0.4152; P(A=0)=0.4312; P(D=1|B=0,A=1)=0.3802; P(D=1|B=1,A=1)=0.4492; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而饮食质量变化为差，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|B=0,A)-P(D=1|B=1,A)]*P(A)=[P(D=1|B=0,A=0)-P(D=1|B=1,A=0)]*P(A=0)+[P(D=1|B=0,A=1)-P(D=1|B=1,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=0,A=0)=0.3552\tP(D=1|B=1,A=0)=0.4152\tP(A=0)=0.4312\tP(D=1|B=0,A=1)=0.3802\tP(D=1|B=1,A=1)=0.4492\tP(A=1)=0.5688",
+        "Step 6": "NDE=[0.3552-0.4152]*0.4312+[0.3802-0.4492]*0.5688=-0.0651",
+        "Step 7": "NDE=-0.0651<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.06514635497899049
+    },
+    {
+      "id": 58,
+      "question_id": 58,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.5848。在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.6448。运动量为少(A=0)的概率为0.4312。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.5508。在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.6198。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.5848; P(D=0|B=0,A=0)=0.6448; P(A=0)=0.4312; P(D=0|B=1,A=1)=0.5508; P(D=0|B=0,A=1)=0.6198; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而饮食质量变化为好，那么整体健康状况更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=0|B=1,A)-P(D=0|B=0,A)]*P(A)=[P(D=0|B=1,A=0)-P(D=0|B=0,A=0)]*P(A=0)+[P(D=0|B=1,A=1)-P(D=0|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=0|B=1,A=0)=0.5848\tP(D=0|B=0,A=0)=0.6448\tP(A=0)=0.4312\tP(D=0|B=1,A=1)=0.5508\tP(D=0|B=0,A=1)=0.6198\tP(A=1)=0.5688",
+        "Step 6": "NDE=[0.5848-0.6448]*0.4312+[0.5508-0.6198]*0.5688=-0.0651",
+        "Step 7": "NDE=-0.0651<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.06514635497899045
+    },
+    {
+      "id": 59,
+      "question_id": 59,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.4152。在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.3552。运动量为少(A=0)的概率为0.4312。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.4492。在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.3802。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.4152; P(D=1|B=0,A=0)=0.3552; P(A=0)=0.4312; P(D=1|B=1,A=1)=0.4492; P(D=1|B=0,A=1)=0.3802; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而饮食质量变化为好，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否存在边。边B->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "NDE=sum_{A} [P(D=1|B=1,A)-P(D=1|B=0,A)]*P(A)=[P(D=1|B=1,A=0)-P(D=1|B=0,A=0)]*P(A=0)+[P(D=1|B=1,A=1)-P(D=1|B=0,A=1)]*P(A=1)",
+        "Step 5": "P(D=1|B=1,A=0)=0.4152\tP(D=1|B=0,A=0)=0.3552\tP(A=0)=0.4312\tP(D=1|B=1,A=1)=0.4492\tP(D=1|B=0,A=1)=0.3802\tP(A=1)=0.5688",
+        "Step 6": "NDE=[0.4152-0.3552]*0.4312+[0.4492-0.3802]*0.5688=0.0651",
+        "Step 7": "NDE=0.0651>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.06514635497899049
+    },
+    {
+      "id": 60,
+      "question_id": 60,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为不健康(C=0)的条件下, 整体健康状况为差(D=0)的概率为0.6131。在遗传疾病倾向为健康(C=1)的条件下, 整体健康状况为差(D=0)的概率为0.5775。",
+        "data_info_math": "P(D=0|C=0)=0.6131; P(D=0|C=1)=0.5775; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而遗传疾病倾向变化为不健康，那么整体健康状况更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|C=0)-P(D=0|C=1)",
+        "Step 5": "P(D=0|C=0)=0.6131\tP(D=0|C=1)=0.5775",
+        "Step 6": "NDE=0.6131-0.5775=0.0355",
+        "Step 7": "NDE=0.0355>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.03554997283113759
+    },
+    {
+      "id": 61,
+      "question_id": 61,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为不健康(C=0)的条件下, 整体健康状况为好(D=1)的概率为0.3869。在遗传疾病倾向为健康(C=1)的条件下, 整体健康状况为好(D=1)的概率为0.4225。",
+        "data_info_math": "P(D=1|C=0)=0.3869; P(D=1|C=1)=0.4225; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而遗传疾病倾向变化为不健康，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|C=0)-P(D=1|C=1)",
+        "Step 5": "P(D=1|C=0)=0.3869\tP(D=1|C=1)=0.4225",
+        "Step 6": "NDE=0.3869-0.4225=-0.0355",
+        "Step 7": "NDE=-0.0355<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.03554997283113759
+    },
+    {
+      "id": 62,
+      "question_id": 62,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为健康(C=1)的条件下, 整体健康状况为差(D=0)的概率为0.5775。在遗传疾病倾向为不健康(C=0)的条件下, 整体健康状况为差(D=0)的概率为0.6131。",
+        "data_info_math": "P(D=0|C=1)=0.5775; P(D=0|C=0)=0.6131; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而遗传疾病倾向变化为健康，那么整体健康状况更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=0|C=1)-P(D=0|C=0)",
+        "Step 5": "P(D=0|C=1)=0.5775\tP(D=0|C=0)=0.6131",
+        "Step 6": "NDE=0.5775-0.6131=-0.0355",
+        "Step 7": "NDE=-0.0355<0，所以答案为否。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": -0.03554997283113759
+    },
+    {
+      "id": 63,
+      "question_id": 63,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为健康(C=1)的条件下, 整体健康状况为好(D=1)的概率为0.4225。在遗传疾病倾向为不健康(C=0)的条件下, 整体健康状况为好(D=1)的概率为0.3869。",
+        "data_info_math": "P(D=1|C=1)=0.4225; P(D=1|C=0)=0.3869; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“自然直接效果”(natural direct effect, NDE)。",
+      "Question": "假如所有中间变量保持不变，而遗传疾病倾向变化为健康，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否存在边。边C->D存在。",
+        "Step 2": "找到一个合法的中间变量集合: 空集。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NDE=P(D=1|C=1)-P(D=1|C=0)",
+        "Step 5": "P(D=1|C=1)=0.4225\tP(D=1|C=0)=0.3869",
+        "Step 6": "NDE=0.4225-0.3869=0.0355",
+        "Step 7": "NDE=0.0355>0，所以答案为是。"
+      },
+      "Type": "NDE",
+      "Mode": "REAL",
+      "prob": 0.03554997283113759
+    },
+    {
+      "id": 64,
+      "question_id": 64,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为少下的取值，那么饮食质量更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 65,
+      "question_id": 65,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为少下的取值，那么饮食质量更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 66,
+      "question_id": 66,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为强烈下的取值，那么饮食质量更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 67,
+      "question_id": 67,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为强烈下的取值，那么饮食质量更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(B)是否有间接因果关系。从A到B不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 68,
+      "question_id": 68,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.6198。在运动量为少(A=0)的条件下, 饮食质量为差(B=0)的概率为0.6852。在运动量为强烈(A=1)的条件下, 饮食质量为差(B=0)的概率为0.6416。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.5508。",
+        "data_info_math": "P(D=0|B=0,A=1)=0.6198; P(B=0|A=0)=0.6852; P(B=0|A=1)=0.6416; P(D=0|B=1,A=1)=0.5508; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为少下的取值，那么整体健康状况更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=0|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(D=0|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(D=0|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(D=0|A=1,B=0)=0.6198\tP(B=0|A=0)=0.6852\tP(B=0|A=1)=0.6416\tP(D=0|A=1,B=1)=0.5508\tP(B=1|A=0)=0.3148\tP(B=1|A=1)=0.3584",
+        "Step 6": "NIE=0.6198*(0.6852-0.6416)+0.5508*(0.3148-0.3584)=0.0030",
+        "Step 7": "NIE=0.0030>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.00300757857702973
+    },
+    {
+      "id": 69,
+      "question_id": 69,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.3802。在运动量为少(A=0)的条件下, 饮食质量为差(B=0)的概率为0.6852。在运动量为强烈(A=1)的条件下, 饮食质量为差(B=0)的概率为0.6416。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.4492。",
+        "data_info_math": "P(D=1|B=0,A=1)=0.3802; P(B=0|A=0)=0.6852; P(B=0|A=1)=0.6416; P(D=1|B=1,A=1)=0.4492; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为少下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=1|A=1,B)*[P(B|A=0)-P(B|A=1)]=P(D=1|A=1,B=0)*[P(B=0|A=0)-P(B=0|A=1)]+P(D=1|A=1,B=1)*[P(B=1|A=0)-P(B=1|A=1)]",
+        "Step 5": "P(D=1|A=1,B=0)=0.3802\tP(B=0|A=0)=0.6852\tP(B=0|A=1)=0.6416\tP(D=1|A=1,B=1)=0.4492\tP(B=1|A=0)=0.3148\tP(B=1|A=1)=0.3584",
+        "Step 6": "NIE=0.3802*(0.6852-0.6416)+0.4492*(0.3148-0.3584)=-0.0030",
+        "Step 7": "NIE=-0.0030<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.0030075785770298444
+    },
+    {
+      "id": 70,
+      "question_id": 70,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.6448。在运动量为强烈(A=1)的条件下, 饮食质量为差(B=0)的概率为0.6416。在运动量为少(A=0)的条件下, 饮食质量为差(B=0)的概率为0.6852。在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.5848。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6448; P(B=0|A=1)=0.6416; P(B=0|A=0)=0.6852; P(D=0|B=1,A=0)=0.5848; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为强烈下的取值，那么整体健康状况更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=0|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(D=0|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(D=0|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(D=0|A=0,B=0)=0.6448\tP(B=0|A=1)=0.6416\tP(B=0|A=0)=0.6852\tP(D=0|A=0,B=1)=0.5848\tP(B=1|A=1)=0.3584\tP(B=1|A=0)=0.3148",
+        "Step 6": "NIE=0.6448*(0.6416-0.6852)+0.5848*(0.3584-0.3148)=-0.0026",
+        "Step 7": "NIE=-0.0026<0，所以答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": -0.002615686120326883
+    },
+    {
+      "id": 71,
+      "question_id": 71,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.3552。在运动量为强烈(A=1)的条件下, 饮食质量为差(B=0)的概率为0.6416。在运动量为少(A=0)的条件下, 饮食质量为差(B=0)的概率为0.6852。在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.4152。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3552; P(B=0|A=1)=0.6416; P(B=0|A=0)=0.6852; P(D=1|B=1,A=0)=0.4152; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如运动量保持不变，而所有中间变量被改变为当它们在运动量变化为强烈下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否有间接因果关系。从A到D存在节点数大于等于3的有向路径(例如 A->B->D)。",
+        "Step 2": "找到一个合法的中间变量集合: {B}。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "NIE=sum_{B} P(D=1|A=0,B)*[P(B|A=1)-P(B|A=0)]=P(D=1|A=0,B=0)*[P(B=0|A=1)-P(B=0|A=0)]+P(D=1|A=0,B=1)*[P(B=1|A=1)-P(B=1|A=0)]",
+        "Step 5": "P(D=1|A=0,B=0)=0.3552\tP(B=0|A=1)=0.6416\tP(B=0|A=0)=0.6852\tP(D=1|A=0,B=1)=0.4152\tP(B=1|A=1)=0.3584\tP(B=1|A=0)=0.3148",
+        "Step 6": "NIE=0.3552*(0.6416-0.6852)+0.4152*(0.3584-0.3148)=0.0026",
+        "Step 7": "NIE=0.0026>0，所以答案为是。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0.0026156861203269974
+    },
+    {
+      "id": 72,
+      "question_id": 72,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如饮食质量保持不变，而所有中间变量被改变为当它们在饮食质量变化为差下的取值，那么整体健康状况更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 73,
+      "question_id": 73,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如饮食质量保持不变，而所有中间变量被改变为当它们在饮食质量变化为差下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 74,
+      "question_id": 74,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如饮食质量保持不变，而所有中间变量被改变为当它们在饮食质量变化为好下的取值，那么整体健康状况更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 75,
+      "question_id": 75,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如饮食质量保持不变，而所有中间变量被改变为当它们在饮食质量变化为好下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(B)到观察结果(D)是否有间接因果关系。从B到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 76,
+      "question_id": 76,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如遗传疾病倾向保持不变，而所有中间变量被改变为当它们在遗传疾病倾向变化为不健康下的取值，那么整体健康状况更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 77,
+      "question_id": 77,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如遗传疾病倾向保持不变，而所有中间变量被改变为当它们在遗传疾病倾向变化为不健康下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 78,
+      "question_id": 78,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如遗传疾病倾向保持不变，而所有中间变量被改变为当它们在遗传疾病倾向变化为健康下的取值，那么整体健康状况更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 79,
+      "question_id": 79,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“自然间接效果”(natural indirect effect, NIE)。",
+      "Question": "假如遗传疾病倾向保持不变，而所有中间变量被改变为当它们在遗传疾病倾向变化为健康下的取值，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(C)到观察结果(D)是否有间接因果关系。从C到D不存在节点数大于等于3的有向路径，因此答案为否。"
+      },
+      "Type": "NIE",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 80,
+      "question_id": 80,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 饮食质量为差(B=0)的概率为0.6852。在运动量为强烈(A=1)的条件下, 饮食质量为差(B=0)的概率为0.6416。",
+        "data_info_math": "P(B=0|A=0)=0.6852; P(B=0|A=1)=0.6416; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为少，假如运动量为强烈，那么饮食质量更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=0|A=0)-P(B=0|A=1)",
+        "Step 5": "P(B=0|A=0)=0.6852\tP(B=0|A=1)=0.6416",
+        "Step 6": "ETT=0.6852-0.6416=0.0436",
+        "Step 7": "ETT=0.0436>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.043572576710008804
+    },
+    {
+      "id": 81,
+      "question_id": 81,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 饮食质量为好(B=1)的概率为0.3148。在运动量为强烈(A=1)的条件下, 饮食质量为好(B=1)的概率为0.3584。",
+        "data_info_math": "P(B=1|A=0)=0.3148; P(B=1|A=1)=0.3584; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为少，假如运动量为强烈，那么饮食质量更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=0}-B_{A=1}|A=0]=P(B=1|A=0)-P(B=1|A=1)",
+        "Step 5": "P(B=1|A=0)=0.3148\tP(B=1|A=1)=0.3584",
+        "Step 6": "ETT=0.3148-0.3584=-0.0436",
+        "Step 7": "ETT=-0.0436<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.043572576710008915
+    },
+    {
+      "id": 82,
+      "question_id": 82,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 饮食质量为差(B=0)的概率为0.6416。在运动量为少(A=0)的条件下, 饮食质量为差(B=0)的概率为0.6852。",
+        "data_info_math": "P(B=0|A=1)=0.6416; P(B=0|A=0)=0.6852; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为强烈，假如运动量为少，那么饮食质量更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=0|A=1)-P(B=0|A=0)",
+        "Step 5": "P(B=0|A=1)=0.6416\tP(B=0|A=0)=0.6852",
+        "Step 6": "ETT=0.6416-0.6852=-0.0436",
+        "Step 7": "ETT=-0.0436<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.043572576710008804
+    },
+    {
+      "id": 83,
+      "question_id": 83,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 饮食质量为好(B=1)的概率为0.3584。在运动量为少(A=0)的条件下, 饮食质量为好(B=1)的概率为0.3148。",
+        "data_info_math": "P(B=1|A=1)=0.3584; P(B=1|A=0)=0.3148; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为强烈，假如运动量为少，那么饮食质量更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(B)的一个原因。因为从A到B有一条或多条有向路径(例如A->B)，所以节点A是节点B的原因。",
+        "Step 2": "因果效应的可识别性。P(B|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[B_{A=1}-B_{A=0}|A=1]=P(B=1|A=1)-P(B=1|A=0)",
+        "Step 5": "P(B=1|A=1)=0.3584\tP(B=1|A=0)=0.3148",
+        "Step 6": "ETT=0.3584-0.3148=0.0436",
+        "Step 7": "ETT=0.0436>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.043572576710008915
+    },
+    {
+      "id": 84,
+      "question_id": 84,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于遗传疾病倾向的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为少，假如运动量为强烈，那么遗传疾病倾向更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 85,
+      "question_id": 85,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于遗传疾病倾向的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为少，假如运动量为强烈，那么遗传疾病倾向更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 86,
+      "question_id": 86,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于遗传疾病倾向的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为强烈，假如运动量为少，那么遗传疾病倾向更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 87,
+      "question_id": 87,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑运动量作用于遗传疾病倾向的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为强烈，假如运动量为少，那么遗传疾病倾向更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(C)的一个原因。因为从A到C没有有向路径，所以节点A不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 88,
+      "question_id": 88,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.6259。在运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.5951。",
+        "data_info_math": "P(D=0|A=0)=0.6259; P(D=0|A=1)=0.5951; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为少，假如运动量为强烈，那么整体健康状况更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=0|A=0)-P(D=0|A=1)",
+        "Step 5": "P(D=0|A=0)=0.6259\tP(D=0|A=1)=0.5951",
+        "Step 6": "ETT=0.6259-0.5951=0.0308",
+        "Step 7": "ETT=0.0308>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.030815126203914356
+    },
+    {
+      "id": 89,
+      "question_id": 89,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.3741。在运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.4049。",
+        "data_info_math": "P(D=1|A=0)=0.3741; P(D=1|A=1)=0.4049; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为少，假如运动量为强烈，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=0}-D_{A=1}|A=0]=P(D=1|A=0)-P(D=1|A=1)",
+        "Step 5": "P(D=1|A=0)=0.3741\tP(D=1|A=1)=0.4049",
+        "Step 6": "ETT=0.3741-0.4049=-0.0308",
+        "Step 7": "ETT=-0.0308<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.03081512620391469
+    },
+    {
+      "id": 90,
+      "question_id": 90,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.5951。在运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.6259。",
+        "data_info_math": "P(D=0|A=1)=0.5951; P(D=0|A=0)=0.6259; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为强烈，假如运动量为少，那么整体健康状况更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=0|A=1)-P(D=0|A=0)",
+        "Step 5": "P(D=0|A=1)=0.5951\tP(D=0|A=0)=0.6259",
+        "Step 6": "ETT=0.5951-0.6259=-0.0308",
+        "Step 7": "ETT=-0.0308<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.030815126203914356
+    },
+    {
+      "id": 91,
+      "question_id": 91,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.4049。在运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.3741。",
+        "data_info_math": "P(D=1|A=1)=0.4049; P(D=1|A=0)=0.3741; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些运动量为强烈，假如运动量为少，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(A)是否为观察结果(D)的一个原因。因为从A到D有一条或多条有向路径(例如A->B->D)，所以节点A是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(A))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{A=1}-D_{A=0}|A=1]=P(D=1|A=1)-P(D=1|A=0)",
+        "Step 5": "P(D=1|A=1)=0.4049\tP(D=1|A=0)=0.3741",
+        "Step 6": "ETT=0.4049-0.3741=0.0308",
+        "Step 7": "ETT=0.0308>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.03081512620391469
+    },
+    {
+      "id": 92,
+      "question_id": 92,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食质量为差，假如饮食质量为好，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 93,
+      "question_id": 93,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食质量为差，假如饮食质量为好，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 94,
+      "question_id": 94,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食质量为好，假如饮食质量为差，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 95,
+      "question_id": 95,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食质量为好，假如饮食质量为差，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(A)的一个原因。因为从B到A没有有向路径，所以节点B不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 96,
+      "question_id": 96,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于遗传疾病倾向的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食质量为差，假如饮食质量为好，那么遗传疾病倾向更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 97,
+      "question_id": 97,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于遗传疾病倾向的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食质量为差，假如饮食质量为好，那么遗传疾病倾向更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 98,
+      "question_id": 98,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于遗传疾病倾向的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食质量为好，假如饮食质量为差，那么遗传疾病倾向更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 99,
+      "question_id": 99,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑饮食质量作用于遗传疾病倾向的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食质量为好，假如饮食质量为差，那么遗传疾病倾向更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(C)的一个原因。因为从B到C没有有向路径，所以节点B不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 100,
+      "question_id": 100,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)的条件下, 整体健康状况为差(D=0)的概率为0.6310。在运动量为少(A=0)且饮食质量为好(B=1)的条件下, 整体健康状况为差(D=0)的概率为0.5848。在饮食质量为差(B=0)的条件下, 运动量为少(A=0)的概率为0.4474。在运动量为强烈(A=1)且饮食质量为好(B=1)的条件下, 整体健康状况为差(D=0)的概率为0.5508。在饮食质量为差(B=0)的条件下, 运动量为强烈(A=1)的概率为0.5526。",
+        "data_info_math": "P(D=0|B=0)=0.6310; P(D=0|A=0,B=1)=0.5848; P(A=0|B=0)=0.4474; P(D=0|A=1,B=1)=0.5508; P(A=1|B=0)=0.5526; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食质量为差，假如饮食质量为好，那么整体健康状况更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=0|B=0)-sum_{A} P(D=0|B=1,A)*P(A|B=0)=P(D=0|B=0)-[P(D=0|B=1,A=0)*P(A=0|B=0)+P(D=0|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=0|B=0)=0.6310\tP(D=0|B=1,A=0)=0.5848\tP(A=0|B=0)=0.4474\tP(D=0|B=1,A=1)=0.5508\tP(A=1|B=0)=0.5526",
+        "Step 6": "ETT=0.6310-[0.5848*0.4474+0.5508*0.5526]=0.0650",
+        "Step 7": "ETT=0.0650>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.06500081408873054
+    },
+    {
+      "id": 101,
+      "question_id": 101,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)的条件下, 整体健康状况为好(D=1)的概率为0.3690。在运动量为少(A=0)且饮食质量为好(B=1)的条件下, 整体健康状况为好(D=1)的概率为0.4152。在饮食质量为差(B=0)的条件下, 运动量为少(A=0)的概率为0.4474。在运动量为强烈(A=1)且饮食质量为好(B=1)的条件下, 整体健康状况为好(D=1)的概率为0.4492。在饮食质量为差(B=0)的条件下, 运动量为强烈(A=1)的概率为0.5526。",
+        "data_info_math": "P(D=1|B=0)=0.3690; P(D=1|A=0,B=1)=0.4152; P(A=0|B=0)=0.4474; P(D=1|A=1,B=1)=0.4492; P(A=1|B=0)=0.5526; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食质量为差，假如饮食质量为好，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=0}-D_{B=1}|B=0]=P(D=1|B=0)-sum_{A} P(D=1|B=1,A)*P(A|B=0)=P(D=1|B=0)-[P(D=1|B=1,A=0)*P(A=0|B=0)+P(D=1|B=1,A=1)*P(A=1|B=0)]",
+        "Step 5": "P(D=1|B=0)=0.3690\tP(D=1|B=1,A=0)=0.4152\tP(A=0|B=0)=0.4474\tP(D=1|B=1,A=1)=0.4492\tP(A=1|B=0)=0.5526",
+        "Step 6": "ETT=0.3690-[0.4152*0.4474+0.4492*0.5526]=-0.0650",
+        "Step 7": "ETT=-0.0650<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.06500081408873057
+    },
+    {
+      "id": 102,
+      "question_id": 102,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为好(B=1)的条件下, 整体健康状况为差(D=0)的概率为0.5644。在运动量为少(A=0)且饮食质量为差(B=0)的条件下, 整体健康状况为差(D=0)的概率为0.6448。在饮食质量为好(B=1)的条件下, 运动量为少(A=0)的概率为0.3997。在运动量为强烈(A=1)且饮食质量为差(B=0)的条件下, 整体健康状况为差(D=0)的概率为0.6198。在饮食质量为好(B=1)的条件下, 运动量为强烈(A=1)的概率为0.6003。",
+        "data_info_math": "P(D=0|B=1)=0.5644; P(D=0|A=0,B=0)=0.6448; P(A=0|B=1)=0.3997; P(D=0|A=1,B=0)=0.6198; P(A=1|B=1)=0.6003; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食质量为好，假如饮食质量为差，那么整体健康状况更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=0|B=1)-sum_{A} P(D=0|B=0,A)*P(A|B=1)=P(D=0|B=1)-[P(D=0|B=0,A=0)*P(A=0|B=1)+P(D=0|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=0|B=1)=0.5644\tP(D=0|B=0,A=0)=0.6448\tP(A=0|B=1)=0.3997\tP(D=0|B=0,A=1)=0.6198\tP(A=1|B=1)=0.6003",
+        "Step 6": "ETT=0.5644-[0.6448*0.3997+0.6198*0.6003]=-0.0654",
+        "Step 7": "ETT=-0.0654<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.0654294049664616
+    },
+    {
+      "id": 103,
+      "question_id": 103,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为好(B=1)的条件下, 整体健康状况为好(D=1)的概率为0.4356。在运动量为少(A=0)且饮食质量为差(B=0)的条件下, 整体健康状况为好(D=1)的概率为0.3552。在饮食质量为好(B=1)的条件下, 运动量为少(A=0)的概率为0.3997。在运动量为强烈(A=1)且饮食质量为差(B=0)的条件下, 整体健康状况为好(D=1)的概率为0.3802。在饮食质量为好(B=1)的条件下, 运动量为强烈(A=1)的概率为0.6003。",
+        "data_info_math": "P(D=1|B=1)=0.4356; P(D=1|A=0,B=0)=0.3552; P(A=0|B=1)=0.3997; P(D=1|A=1,B=0)=0.3802; P(A=1|B=1)=0.6003; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些饮食质量为好，假如饮食质量为差，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(B)是否为观察结果(D)的一个原因。因为从B到D有一条或多条有向路径(例如B->D)，所以节点B是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：{A}。",
+        "Step 4": "ETT=E[D_{B=1}-D_{B=0}|B=1]=P(D=1|B=1)-sum_{A} P(D=1|B=0,A)*P(A|B=1)=P(D=1|B=1)-[P(D=1|B=0,A=0)*P(A=0|B=1)+P(D=1|B=0,A=1)*P(A=1|B=1)]",
+        "Step 5": "P(D=1|B=1)=0.4356\tP(D=1|B=0,A=0)=0.3552\tP(A=0|B=1)=0.3997\tP(D=1|B=0,A=1)=0.3802\tP(A=1|B=1)=0.6003",
+        "Step 6": "ETT=0.4356-[0.3552*0.3997+0.3802*0.6003]=0.0654",
+        "Step 7": "ETT=0.0654>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.06542940496646166
+    },
+    {
+      "id": 104,
+      "question_id": 104,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些遗传疾病倾向为不健康，假如遗传疾病倾向为健康，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 105,
+      "question_id": 105,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些遗传疾病倾向为不健康，假如遗传疾病倾向为健康，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 106,
+      "question_id": 106,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些遗传疾病倾向为健康，假如遗传疾病倾向为不健康，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 107,
+      "question_id": 107,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些遗传疾病倾向为健康，假如遗传疾病倾向为不健康，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(A)的一个原因。因为从C到A没有有向路径，所以节点C不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 108,
+      "question_id": 108,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于饮食质量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些遗传疾病倾向为不健康，假如遗传疾病倾向为健康，那么饮食质量更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 109,
+      "question_id": 109,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于饮食质量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些遗传疾病倾向为不健康，假如遗传疾病倾向为健康，那么饮食质量更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 110,
+      "question_id": 110,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于饮食质量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些遗传疾病倾向为健康，假如遗传疾病倾向为不健康，那么饮食质量更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 111,
+      "question_id": 111,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑遗传疾病倾向作用于饮食质量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些遗传疾病倾向为健康，假如遗传疾病倾向为不健康，那么饮食质量更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(B)的一个原因。因为从C到B没有有向路径，所以节点C不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 112,
+      "question_id": 112,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为不健康(C=0)的条件下, 整体健康状况为差(D=0)的概率为0.6131。在遗传疾病倾向为健康(C=1)的条件下, 整体健康状况为差(D=0)的概率为0.5775。",
+        "data_info_math": "P(D=0|C=0)=0.6131; P(D=0|C=1)=0.5775; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些遗传疾病倾向为不健康，假如遗传疾病倾向为健康，那么整体健康状况更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=0|C=0)-P(D=0|C=1)",
+        "Step 5": "P(D=0|C=0)=0.6131\tP(D=0|C=1)=0.5775",
+        "Step 6": "ETT=0.6131-0.5775=0.0355",
+        "Step 7": "ETT=0.0355>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.03554997283113759
+    },
+    {
+      "id": 113,
+      "question_id": 113,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为不健康(C=0)的条件下, 整体健康状况为好(D=1)的概率为0.3869。在遗传疾病倾向为健康(C=1)的条件下, 整体健康状况为好(D=1)的概率为0.4225。",
+        "data_info_math": "P(D=1|C=0)=0.3869; P(D=1|C=1)=0.4225; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些遗传疾病倾向为不健康，假如遗传疾病倾向为健康，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{C=0}-D_{C=1}|C=0]=P(D=1|C=0)-P(D=1|C=1)",
+        "Step 5": "P(D=1|C=0)=0.3869\tP(D=1|C=1)=0.4225",
+        "Step 6": "ETT=0.3869-0.4225=-0.0355",
+        "Step 7": "ETT=-0.0355<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.03554997283113759
+    },
+    {
+      "id": 114,
+      "question_id": 114,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为健康(C=1)的条件下, 整体健康状况为差(D=0)的概率为0.5775。在遗传疾病倾向为不健康(C=0)的条件下, 整体健康状况为差(D=0)的概率为0.6131。",
+        "data_info_math": "P(D=0|C=1)=0.5775; P(D=0|C=0)=0.6131; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些遗传疾病倾向为健康，假如遗传疾病倾向为不健康，那么整体健康状况更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=0|C=1)-P(D=0|C=0)",
+        "Step 5": "P(D=0|C=1)=0.5775\tP(D=0|C=0)=0.6131",
+        "Step 6": "ETT=0.5775-0.6131=-0.0355",
+        "Step 7": "ETT=-0.0355<0，所以答案为是。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": -0.03554997283113759
+    },
+    {
+      "id": 115,
+      "question_id": 115,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为健康(C=1)的条件下, 整体健康状况为好(D=1)的概率为0.4225。在遗传疾病倾向为不健康(C=0)的条件下, 整体健康状况为好(D=1)的概率为0.3869。",
+        "data_info_math": "P(D=1|C=1)=0.4225; P(D=1|C=0)=0.3869; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些遗传疾病倾向为健康，假如遗传疾病倾向为不健康，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(C)是否为观察结果(D)的一个原因。因为从C到D有一条或多条有向路径(例如C->D)，所以节点C是节点D的原因。",
+        "Step 2": "因果效应的可识别性。P(D|do(C))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "ETT=E[D_{C=1}-D_{C=0}|C=1]=P(D=1|C=1)-P(D=1|C=0)",
+        "Step 5": "P(D=1|C=1)=0.4225\tP(D=1|C=0)=0.3869",
+        "Step 6": "ETT=0.4225-0.3869=0.0355",
+        "Step 7": "ETT=0.0355>0，所以答案为否。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0.03554997283113759
+    },
+    {
+      "id": 116,
+      "question_id": 116,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为差，假如整体健康状况为好，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 117,
+      "question_id": 117,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为差，假如整体健康状况为好，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 118,
+      "question_id": 118,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为差，那么运动量更有可能为少吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 119,
+      "question_id": 119,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于运动量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为差，那么运动量更有可能为强烈吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(A)的一个原因。因为从D到A没有有向路径，所以节点D不是节点A的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 120,
+      "question_id": 120,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食质量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为差，假如整体健康状况为好，那么饮食质量更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 121,
+      "question_id": 121,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食质量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为差，假如整体健康状况为好，那么饮食质量更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 122,
+      "question_id": 122,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食质量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为差，那么饮食质量更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 123,
+      "question_id": 123,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于饮食质量的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为差，那么饮食质量更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(B)的一个原因。因为从D到B没有有向路径，所以节点D不是节点B的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 124,
+      "question_id": 124,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于遗传疾病倾向的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为差，假如整体健康状况为好，那么遗传疾病倾向更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 125,
+      "question_id": 125,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于遗传疾病倾向的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为差，假如整体健康状况为好，那么遗传疾病倾向更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 126,
+      "question_id": 126,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于遗传疾病倾向的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为差，那么遗传疾病倾向更有可能为不健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 127,
+      "question_id": 127,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑整体健康状况作用于遗传疾病倾向的“对被干预者的干预效果”(effect of treatment on the treated, ETT)。",
+      "Question": "对于那些整体健康状况为好，假如整体健康状况为差，那么遗传疾病倾向更有可能为健康吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查干预对象(D)是否为观察结果(C)的一个原因。因为从D到C没有有向路径，所以节点D不是节点C的原因。"
+      },
+      "Type": "ETT",
+      "Mode": "REAL",
+      "prob": 0
+    },
+    {
+      "id": 128,
+      "question_id": 128,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)且饮食质量为好(B=1)的条件下, 整体健康状况为差(D=0)的概率为0.5848。在运动量为强烈(A=1)且饮食质量为好(B=1)的条件下, 整体健康状况为差(D=0)的概率为0.5508。",
+        "data_info_math": "P(D=0|A=0,B=1)=0.5848; P(D=0|A=1,B=1)=0.5508; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在饮食质量为好的条件下，假如运动量为少，那么整体健康状况更有可能为差吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=0,B=1))-P(D=0|do(A=1,B=1))=P(D=0|A=0,B=1)-P(D=0|A=1,B=1)",
+        "Step 5": "P(D=0|A=0,B=1)=0.5848\tP(D=0|A=1,B=1)=0.5508",
+        "Step 6": "CDE=0.5848-0.5508=0.0340",
+        "Step 7": "CDE=0.0340>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.033970284172877396
+    },
+    {
+      "id": 129,
+      "question_id": 129,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)且饮食质量为差(B=0)的条件下, 整体健康状况为好(D=1)的概率为0.3552。在运动量为强烈(A=1)且饮食质量为差(B=0)的条件下, 整体健康状况为好(D=1)的概率为0.3802。",
+        "data_info_math": "P(D=1|A=0,B=0)=0.3552; P(D=1|A=1,B=0)=0.3802; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在饮食质量为差的条件下，假如运动量为少，那么整体健康状况更有可能为好吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=0,B=0))-P(D=1|do(A=1,B=0))=P(D=1|A=0,B=0)-P(D=1|A=1,B=0)",
+        "Step 5": "P(D=1|A=0,B=0)=0.3552\tP(D=1|A=1,B=0)=0.3802",
+        "Step 6": "CDE=0.3552-0.3802=-0.0250",
+        "Step 7": "CDE=-0.0250<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.02497626806703568
+    },
+    {
+      "id": 130,
+      "question_id": 130,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)且饮食质量为差(B=0)的条件下, 整体健康状况为差(D=0)的概率为0.6198。在运动量为少(A=0)且饮食质量为差(B=0)的条件下, 整体健康状况为差(D=0)的概率为0.6448。",
+        "data_info_math": "P(D=0|A=1,B=0)=0.6198; P(D=0|A=0,B=0)=0.6448; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在饮食质量为差的条件下，假如运动量为强烈，那么整体健康状况更有可能为差吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=0|do(A=1,B=0))-P(D=0|do(A=0,B=0))=P(D=0|A=1,B=0)-P(D=0|A=0,B=0)",
+        "Step 5": "P(D=0|A=1,B=0)=0.6198\tP(D=0|A=0,B=0)=0.6448",
+        "Step 6": "CDE=0.6198-0.6448=-0.0250",
+        "Step 7": "CDE=-0.0250<0，所以答案为否。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": -0.02497626806703568
+    },
+    {
+      "id": 131,
+      "question_id": 131,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)且饮食质量为好(B=1)的条件下, 整体健康状况为好(D=1)的概率为0.4492。在运动量为少(A=0)且饮食质量为好(B=1)的条件下, 整体健康状况为好(D=1)的概率为0.4152。",
+        "data_info_math": "P(D=1|A=1,B=1)=0.4492; P(D=1|A=0,B=1)=0.4152; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的“受控直接效果”(controlled direct effect, CDE)。",
+      "Question": "在饮食质量为好的条件下，假如运动量为强烈，那么整体健康状况更有可能为好吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "检查从干预对象(A)到观察结果(D)是否存在边。边A->D存在。",
+        "Step 2": "因果效应的可识别性。P(D|do(A,B))可被识别。",
+        "Step 3": "找到一个合法的后门调整集合：空集。",
+        "Step 4": "CDE=P(D=1|do(A=1,B=1))-P(D=1|do(A=0,B=1))=P(D=1|A=1,B=1)-P(D=1|A=0,B=1)",
+        "Step 5": "P(D=1|A=1,B=1)=0.4492\tP(D=1|A=0,B=1)=0.4152",
+        "Step 6": "CDE=0.4492-0.4152=0.0340",
+        "Step 7": "CDE=0.0340>0，所以答案为是。"
+      },
+      "Type": "CDE",
+      "Mode": "REAL",
+      "prob": 0.033970284172877396
+    },
+    {
+      "id": 132,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象运动量(A)和观察节点饮食质量(B)的后门调整集合。",
+      "Question": "方法1: 根据整体健康状况的情况，我们逐个研究运动量和饮食质量的关联。\n方法2：我们直接研究一般情况下运动量和饮食质量的关联。\n为了理解运动量如何影响饮食质量，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 133,
+      "question_id": 132,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象运动量(A)和观察节点饮食质量(B)的后门调整集合。",
+      "Question": "方法1: 根据遗传疾病倾向的情况，我们逐个研究运动量和饮食质量的关联。\n方法2：我们直接研究一般情况下运动量和饮食质量的关联。\n为了理解运动量如何影响饮食质量，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 134,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象运动量(A)和观察节点整体健康状况(D)的后门调整集合。",
+      "Question": "方法1: 根据遗传疾病倾向的情况，我们逐个研究运动量和整体健康状况的关联。\n方法2：我们直接研究一般情况下运动量和整体健康状况的关联。\n为了理解运动量如何影响整体健康状况，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 135,
+      "question_id": 133,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象运动量(A)和观察节点整体健康状况(D)的后门调整集合。",
+      "Question": "方法1: 根据遗传疾病倾向的情况，我们逐个研究运动量和整体健康状况的关联。\n方法2：我们直接研究一般情况下运动量和整体健康状况的关联。\n为了理解运动量如何影响整体健康状况，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 136,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象饮食质量(B)和观察节点整体健康状况(D)的后门调整集合。",
+      "Question": "方法1: 根据运动量的情况，我们逐个研究饮食质量和整体健康状况的关联。\n方法2：我们直接研究一般情况下饮食质量和整体健康状况的关联。\n为了理解饮食质量如何影响整体健康状况，使用方法1比方法2更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 137,
+      "question_id": 134,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象饮食质量(B)和观察节点整体健康状况(D)的后门调整集合。",
+      "Question": "方法1: 根据运动量的情况，我们逐个研究饮食质量和整体健康状况的关联。\n方法2：我们直接研究一般情况下饮食质量和整体健康状况的关联。\n为了理解饮食质量如何影响整体健康状况，使用方法2比方法1更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：{A}。因此方法1更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 138,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象遗传疾病倾向(C)和观察节点整体健康状况(D)的后门调整集合。",
+      "Question": "方法1: 根据运动量的情况，我们逐个研究遗传疾病倾向和整体健康状况的关联。\n方法2：我们直接研究一般情况下遗传疾病倾向和整体健康状况的关联。\n为了理解遗传疾病倾向如何影响整体健康状况，使用方法1比方法2更准确吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为否。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 139,
+      "question_id": 135,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "",
+        "data_info_math": ""
+      },
+      "Instruction": "考虑关于干预对象遗传疾病倾向(C)和观察节点整体健康状况(D)的后门调整集合。",
+      "Question": "方法1: 根据运动量的情况，我们逐个研究遗传疾病倾向和整体健康状况的关联。\n方法2：我们直接研究一般情况下遗传疾病倾向和整体健康状况的关联。\n为了理解遗传疾病倾向如何影响整体健康状况，使用方法2比方法1更准确吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "找到一个合法的后门调整集合：空集。因此方法2更好，答案为是。"
+      },
+      "Type": "BAS",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 140,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且饮食质量为好(B=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1241。在整体健康状况为差(D=0)且饮食质量为差(B=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1246。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.1241; P(C=1|D=0,B=0)=0.1246; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，饮食质量会影响遗传疾病倾向吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=0)-P(C=1|do(B=0),D=0)=P(C=1|D=0)-P(C=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 141,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且饮食质量为好(B=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1241。在整体健康状况为差(D=0)且饮食质量为差(B=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1246。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.1241; P(C=1|D=0,B=0)=0.1246; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，饮食质量不会影响遗传疾病倾向吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=0)-P(C=1|do(B=0),D=0)=P(C=1|D=0)-P(C=1|D=0)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 142,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且饮食质量为好(B=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1241。在整体健康状况为差(D=0)且饮食质量为差(B=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1246。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.1241; P(C=1|D=0,B=0)=0.1246; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，饮食质量是和遗传疾病倾向相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=0)-P(C=1|B=0,D=0)=0.1241-0.1246=-0.0005!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 143,
+      "question_id": 136,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且饮食质量为好(B=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1241。在整体健康状况为差(D=0)且饮食质量为差(B=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1246。",
+        "data_info_math": "P(C=1|D=0,B=1)=0.1241; P(C=1|D=0,B=0)=0.1246; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，饮食质量是和遗传疾病倾向独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=0)-P(C=1|B=0,D=0)=0.1241-0.1246=-0.0005!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 144,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且饮食质量为好(B=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1422。在整体健康状况为好(D=1)且饮食质量为差(B=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1409。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.1422; P(C=1|D=1,B=0)=0.1409; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，饮食质量会影响遗传疾病倾向吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=1)-P(C=1|do(B=0),D=1)=P(C=1|D=1)-P(C=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 145,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且饮食质量为好(B=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1422。在整体健康状况为好(D=1)且饮食质量为差(B=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1409。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.1422; P(C=1|D=1,B=0)=0.1409; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，饮食质量不会影响遗传疾病倾向吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|do(B=1),D=1)-P(C=1|do(B=0),D=1)=P(C=1|D=1)-P(C=1|D=1)=0",
+        "Step 2": "在D已知的条件下，B不会影响C，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 146,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且饮食质量为好(B=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1422。在整体健康状况为好(D=1)且饮食质量为差(B=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1409。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.1422; P(C=1|D=1,B=0)=0.1409; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，饮食质量是和遗传疾病倾向相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=1)-P(C=1|B=0,D=1)=0.1422-0.1409=0.0013!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 147,
+      "question_id": 137,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且饮食质量为好(B=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1422。在整体健康状况为好(D=1)且饮食质量为差(B=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1409。",
+        "data_info_math": "P(C=1|D=1,B=1)=0.1422; P(C=1|D=1,B=0)=0.1409; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，饮食质量是和遗传疾病倾向独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|B=1,D=1)-P(C=1|B=0,D=1)=0.1422-0.1409=0.0013!=0",
+        "Step 2": "在D已知的条件下，B和C是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 148,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且遗传疾病倾向为健康(C=1)的条件下, 饮食质量为好(B=1)的概率为0.3141。在整体健康状况为差(D=0)且遗传疾病倾向为不健康(C=0)的条件下, 饮食质量为好(B=1)的概率为0.3151。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.3141; P(B=1|D=0,C=0)=0.3151; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，遗传疾病倾向会影响饮食质量吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=0)-P(B=1|do(C=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 149,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且遗传疾病倾向为健康(C=1)的条件下, 饮食质量为好(B=1)的概率为0.3141。在整体健康状况为差(D=0)且遗传疾病倾向为不健康(C=0)的条件下, 饮食质量为好(B=1)的概率为0.3151。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.3141; P(B=1|D=0,C=0)=0.3151; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，遗传疾病倾向不会影响饮食质量吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=0)-P(B=1|do(C=0),D=0)=P(B=1|D=0)-P(B=1|D=0)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 150,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且遗传疾病倾向为健康(C=1)的条件下, 饮食质量为好(B=1)的概率为0.3141。在整体健康状况为差(D=0)且遗传疾病倾向为不健康(C=0)的条件下, 饮食质量为好(B=1)的概率为0.3151。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.3141; P(B=1|D=0,C=0)=0.3151; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，遗传疾病倾向是和饮食质量相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=0)-P(B=1|C=0,D=0)=0.3141-0.3151=-0.0010!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 151,
+      "question_id": 138,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且遗传疾病倾向为健康(C=1)的条件下, 饮食质量为好(B=1)的概率为0.3141。在整体健康状况为差(D=0)且遗传疾病倾向为不健康(C=0)的条件下, 饮食质量为好(B=1)的概率为0.3151。",
+        "data_info_math": "P(B=1|D=0,C=1)=0.3141; P(B=1|D=0,C=0)=0.3151; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，遗传疾病倾向是和饮食质量独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=0)-P(B=1|C=0,D=0)=0.3141-0.3151=-0.0010!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 152,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且遗传疾病倾向为健康(C=1)的条件下, 饮食质量为好(B=1)的概率为0.3799。在整体健康状况为好(D=1)且遗传疾病倾向为不健康(C=0)的条件下, 饮食质量为好(B=1)的概率为0.3774。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.3799; P(B=1|D=1,C=0)=0.3774; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，遗传疾病倾向会影响饮食质量吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=1)-P(B=1|do(C=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 153,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且遗传疾病倾向为健康(C=1)的条件下, 饮食质量为好(B=1)的概率为0.3799。在整体健康状况为好(D=1)且遗传疾病倾向为不健康(C=0)的条件下, 饮食质量为好(B=1)的概率为0.3774。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.3799; P(B=1|D=1,C=0)=0.3774; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，遗传疾病倾向不会影响饮食质量吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|do(C=1),D=1)-P(B=1|do(C=0),D=1)=P(B=1|D=1)-P(B=1|D=1)=0",
+        "Step 2": "在D已知的条件下，C不会影响B，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 154,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且遗传疾病倾向为健康(C=1)的条件下, 饮食质量为好(B=1)的概率为0.3799。在整体健康状况为好(D=1)且遗传疾病倾向为不健康(C=0)的条件下, 饮食质量为好(B=1)的概率为0.3774。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.3799; P(B=1|D=1,C=0)=0.3774; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，遗传疾病倾向是和饮食质量相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=1)-P(B=1|C=0,D=1)=0.3799-0.3774=0.0025!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 155,
+      "question_id": 139,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且遗传疾病倾向为健康(C=1)的条件下, 饮食质量为好(B=1)的概率为0.3799。在整体健康状况为好(D=1)且遗传疾病倾向为不健康(C=0)的条件下, 饮食质量为好(B=1)的概率为0.3774。",
+        "data_info_math": "P(B=1|D=1,C=1)=0.3799; P(B=1|D=1,C=0)=0.3774; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，遗传疾病倾向是和饮食质量独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(B=1|C=1,D=1)-P(B=1|C=0,D=1)=0.3799-0.3774=0.0025!=0",
+        "Step 2": "在D已知的条件下，C和B是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 156,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且遗传疾病倾向为健康(C=1)的条件下, 运动量为强烈(A=1)的概率为0.5519。在整体健康状况为差(D=0)且遗传疾病倾向为不健康(C=0)的条件下, 运动量为强烈(A=1)的概率为0.5570。",
+        "data_info_math": "P(A=1|D=0,C=1)=0.5519; P(A=1|D=0,C=0)=0.5570; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，遗传疾病倾向会影响运动量吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(C=1),D=0)-P(A=1|do(C=0),D=0)=P(A=1|D=0)-P(A=1|D=0)=0",
+        "Step 2": "在D已知的条件下，C不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 157,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且遗传疾病倾向为健康(C=1)的条件下, 运动量为强烈(A=1)的概率为0.5519。在整体健康状况为差(D=0)且遗传疾病倾向为不健康(C=0)的条件下, 运动量为强烈(A=1)的概率为0.5570。",
+        "data_info_math": "P(A=1|D=0,C=1)=0.5519; P(A=1|D=0,C=0)=0.5570; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，遗传疾病倾向不会影响运动量吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(C=1),D=0)-P(A=1|do(C=0),D=0)=P(A=1|D=0)-P(A=1|D=0)=0",
+        "Step 2": "在D已知的条件下，C不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 158,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且遗传疾病倾向为健康(C=1)的条件下, 运动量为强烈(A=1)的概率为0.5519。在整体健康状况为差(D=0)且遗传疾病倾向为不健康(C=0)的条件下, 运动量为强烈(A=1)的概率为0.5570。",
+        "data_info_math": "P(A=1|D=0,C=1)=0.5519; P(A=1|D=0,C=0)=0.5570; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，遗传疾病倾向是和运动量相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|C=1,D=0)-P(A=1|C=0,D=0)=0.5519-0.5570=-0.0051!=0",
+        "Step 2": "在D已知的条件下，C和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 159,
+      "question_id": 140,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且遗传疾病倾向为健康(C=1)的条件下, 运动量为强烈(A=1)的概率为0.5519。在整体健康状况为差(D=0)且遗传疾病倾向为不健康(C=0)的条件下, 运动量为强烈(A=1)的概率为0.5570。",
+        "data_info_math": "P(A=1|D=0,C=1)=0.5519; P(A=1|D=0,C=0)=0.5570; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，遗传疾病倾向是和运动量独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|C=1,D=0)-P(A=1|C=0,D=0)=0.5519-0.5570=-0.0051!=0",
+        "Step 2": "在D已知的条件下，C和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 160,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且遗传疾病倾向为健康(C=1)的条件下, 运动量为强烈(A=1)的概率为0.5919。在整体健康状况为好(D=1)且遗传疾病倾向为不健康(C=0)的条件下, 运动量为强烈(A=1)的概率为0.5875。",
+        "data_info_math": "P(A=1|D=1,C=1)=0.5919; P(A=1|D=1,C=0)=0.5875; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，遗传疾病倾向会影响运动量吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|do(C=1),D=1)-P(A=1|do(C=0),D=1)=P(A=1|D=1)-P(A=1|D=1)=0",
+        "Step 2": "在D已知的条件下，C不会影响A，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 161,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且遗传疾病倾向为健康(C=1)的条件下, 运动量为强烈(A=1)的概率为0.5919。在整体健康状况为好(D=1)且遗传疾病倾向为不健康(C=0)的条件下, 运动量为强烈(A=1)的概率为0.5875。",
+        "data_info_math": "P(A=1|D=1,C=1)=0.5919; P(A=1|D=1,C=0)=0.5875; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，遗传疾病倾向不会影响运动量吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|do(C=1),D=1)-P(A=1|do(C=0),D=1)=P(A=1|D=1)-P(A=1|D=1)=0",
+        "Step 2": "在D已知的条件下，C不会影响A，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 162,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且遗传疾病倾向为健康(C=1)的条件下, 运动量为强烈(A=1)的概率为0.5919。在整体健康状况为好(D=1)且遗传疾病倾向为不健康(C=0)的条件下, 运动量为强烈(A=1)的概率为0.5875。",
+        "data_info_math": "P(A=1|D=1,C=1)=0.5919; P(A=1|D=1,C=0)=0.5875; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，遗传疾病倾向是和运动量相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(A=1|C=1,D=1)-P(A=1|C=0,D=1)=0.5919-0.5875=0.0044!=0",
+        "Step 2": "在D已知的条件下，C和A是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 163,
+      "question_id": 141,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且遗传疾病倾向为健康(C=1)的条件下, 运动量为强烈(A=1)的概率为0.5919。在整体健康状况为好(D=1)且遗传疾病倾向为不健康(C=0)的条件下, 运动量为强烈(A=1)的概率为0.5875。",
+        "data_info_math": "P(A=1|D=1,C=1)=0.5919; P(A=1|D=1,C=0)=0.5875; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，遗传疾病倾向是和运动量独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(A=1|C=1,D=1)-P(A=1|C=0,D=1)=0.5919-0.5875=0.0044!=0",
+        "Step 2": "在D已知的条件下，C和A是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 164,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且运动量为强烈(A=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1234。在整体健康状况为差(D=0)且运动量为少(A=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1257。",
+        "data_info_math": "P(C=1|D=0,A=1)=0.1234; P(C=1|D=0,A=0)=0.1257; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，运动量会影响遗传疾病倾向吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|do(A=1),D=0)-P(C=1|do(A=0),D=0)=P(C=1|D=0)-P(C=1|D=0)=0",
+        "Step 2": "在D已知的条件下，A不会影响C，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 165,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且运动量为强烈(A=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1234。在整体健康状况为差(D=0)且运动量为少(A=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1257。",
+        "data_info_math": "P(C=1|D=0,A=1)=0.1234; P(C=1|D=0,A=0)=0.1257; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，运动量不会影响遗传疾病倾向吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|do(A=1),D=0)-P(C=1|do(A=0),D=0)=P(C=1|D=0)-P(C=1|D=0)=0",
+        "Step 2": "在D已知的条件下，A不会影响C，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 166,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且运动量为强烈(A=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1234。在整体健康状况为差(D=0)且运动量为少(A=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1257。",
+        "data_info_math": "P(C=1|D=0,A=1)=0.1234; P(C=1|D=0,A=0)=0.1257; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，运动量是和遗传疾病倾向相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|A=1,D=0)-P(C=1|A=0,D=0)=0.1234-0.1257=-0.0022!=0",
+        "Step 2": "在D已知的条件下，A和C是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 167,
+      "question_id": 142,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为差(D=0)且运动量为强烈(A=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1234。在整体健康状况为差(D=0)且运动量为少(A=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1257。",
+        "data_info_math": "P(C=1|D=0,A=1)=0.1234; P(C=1|D=0,A=0)=0.1257; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为差的条件下，运动量是和遗传疾病倾向独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|A=1,D=0)-P(C=1|A=0,D=0)=0.1234-0.1257=-0.0022!=0",
+        "Step 2": "在D已知的条件下，A和C是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 168,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且运动量为强烈(A=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1423。在整体健康状况为好(D=1)且运动量为少(A=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1401。",
+        "data_info_math": "P(C=1|D=1,A=1)=0.1423; P(C=1|D=1,A=0)=0.1401; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，运动量会影响遗传疾病倾向吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|do(A=1),D=1)-P(C=1|do(A=0),D=1)=P(C=1|D=1)-P(C=1|D=1)=0",
+        "Step 2": "在D已知的条件下，A不会影响C，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 169,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且运动量为强烈(A=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1423。在整体健康状况为好(D=1)且运动量为少(A=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1401。",
+        "data_info_math": "P(C=1|D=1,A=1)=0.1423; P(C=1|D=1,A=0)=0.1401; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，运动量不会影响遗传疾病倾向吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|do(A=1),D=1)-P(C=1|do(A=0),D=1)=P(C=1|D=1)-P(C=1|D=1)=0",
+        "Step 2": "在D已知的条件下，A不会影响C，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 170,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且运动量为强烈(A=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1423。在整体健康状况为好(D=1)且运动量为少(A=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1401。",
+        "data_info_math": "P(C=1|D=1,A=1)=0.1423; P(C=1|D=1,A=0)=0.1401; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，运动量是和遗传疾病倾向相关的吗？",
+      "Answer": "是",
+      "Reason": {
+        "Step 1": "P(C=1|A=1,D=1)-P(C=1|A=0,D=1)=0.1423-0.1401=0.0022!=0",
+        "Step 2": "在D已知的条件下，A和C是相关的，因此答案为是。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 171,
+      "question_id": 143,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在整体健康状况为好(D=1)且运动量为强烈(A=1)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1423。在整体健康状况为好(D=1)且运动量为少(A=0)的条件下, 遗传疾病倾向为健康(C=1)的概率为0.1401。",
+        "data_info_math": "P(C=1|D=1,A=1)=0.1423; P(C=1|D=1,A=0)=0.1401; "
+      },
+      "Instruction": "",
+      "Question": "给定整体健康状况为好的条件下，运动量是和遗传疾病倾向独立的吗？",
+      "Answer": "否",
+      "Reason": {
+        "Step 1": "P(C=1|A=1,D=1)-P(C=1|A=0,D=1)=0.1423-0.1401=0.0022!=0",
+        "Step 2": "在D已知的条件下，A和C是相关的，因此答案为否。"
+      },
+      "Type": "CB",
+      "Mode": "REAL",
+      "prob": null
+    },
+    {
+      "id": 172,
+      "question_id": 144,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 饮食质量为好(B=1)的概率为0.3148。饮食质量为好(B=1)的概率为0.3396。运动量为强烈(A=1)且饮食质量为好(B=1)的概率为0.2038。",
+        "data_info_math": "P(B=1|A=0)=0.3148; P(B=1)=0.3396; P(A=1,B=1)=0.2038; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的必要性概率(probability of necessity, PN)。",
+      "Question": "给定运动量为强烈且饮食质量为好, 那么假如运动量为少，此时饮食质量为差的概率的下界是多少？",
+      "Answer": "0.1216",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=0))\nP(B=1|do(A=0))=P(B=1|A=0)=0.3148",
+        "Step 2": "PN的下界: max{0, [P(B=1)-P(B=1|do(A=0))]/P(A=1,B=1)}\n=max{0, (0.3396-0.3148)/0.2038}\n=max{0, 0.1216}\n=0.1216"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.1215859577740044
+    },
+    {
+      "id": 173,
+      "question_id": 145,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 饮食质量为差(B=0)的概率为0.6852。运动量为少(A=0)且饮食质量为差(B=0)的概率为0.2955。运动量为强烈(A=1)且饮食质量为好(B=1)的概率为0.2038。",
+        "data_info_math": "P(B=0|A=0)=0.6852; P(A=0,B=0)=0.2955; P(A=1,B=1)=0.2038; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的必要性概率(probability of necessity, PN)。",
+      "Question": "给定运动量为强烈且饮食质量为好, 那么假如运动量为少，此时饮食质量为差的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=0))\nP(B=0|do(A=0))=P(B=0|A=0)=0.6852",
+        "Step 2": "PN的上界: min{1, [P(B=0)|do(A=0)-P(A=0,B=0)]/P(A=1,B=1)}\n=min{1, (0.6852-0.2955)/0.2038}\n=min{1, 1.9120}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 174,
+      "question_id": 146,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.3741。整体健康状况为好(D=1)的概率为0.3916。运动量为强烈(A=1)且整体健康状况为好(D=1)的概率为0.2303。",
+        "data_info_math": "P(D=1|A=0)=0.3741; P(D=1)=0.3916; P(A=1,D=1)=0.2303; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定运动量为强烈且整体健康状况为好, 那么假如运动量为少，此时整体健康状况为差的概率的下界是多少？",
+      "Answer": "0.0761",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=0))\nP(D=1|do(A=0))=P(D=1|A=0)=0.3741",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(A=0))]/P(A=1,D=1)}\n=max{0, (0.3916-0.3741)/0.2303}\n=max{0, 0.0761}\n=0.0761"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.07610787574809666
+    },
+    {
+      "id": 175,
+      "question_id": 147,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.6259。运动量为少(A=0)且整体健康状况为差(D=0)的概率为0.2699。运动量为强烈(A=1)且整体健康状况为好(D=1)的概率为0.2303。",
+        "data_info_math": "P(D=0|A=0)=0.6259; P(A=0,D=0)=0.2699; P(A=1,D=1)=0.2303; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定运动量为强烈且整体健康状况为好, 那么假如运动量为少，此时整体健康状况为差的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=0))\nP(D=0|do(A=0))=P(D=0|A=0)=0.6259",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(A=0)-P(A=0,D=0)]/P(A=1,D=1)}\n=min{1, (0.6259-0.2699)/0.2303}\n=min{1, 1.5459}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 176,
+      "question_id": 148,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.3552。运动量为少(A=0)的概率为0.4312。在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.3802。运动量为强烈(A=1)的概率为0.5688。整体健康状况为好(D=1)的概率为0.3916。饮食质量为好(B=1)且整体健康状况为好(D=1)的概率为0.1479。",
+        "data_info_math": "P(D=1|B=0,A=0)=0.3552; P(A=0)=0.4312; P(D=1|B=0,A=1)=0.3802; P(A=1)=0.5688; P(D=1)=0.3916; P(B=1,D=1)=0.1479; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定饮食质量为好且整体健康状况为好, 那么假如饮食质量为差，此时整体健康状况为差的概率的下界是多少？",
+      "Answer": "0.1502",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=0))\nP(D=1|do(B=0))=sum_{A} P(D=1|B=0,A)*P(A)=P(D=1|B=0,A=0)*P(A=0)+P(D=1|B=0,A=1)*P(A=1)\nP(D=1|B=0,A=0)=0.3552\tP(A=0)=0.4312\tP(D=1|B=0,A=1)=0.3802\tP(A=1)=0.5688\nP(D=1|do(B=0))=0.3552*0.4312+0.3802*0.5688=0.3694",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(B=0))]/P(B=1,D=1)}\n=max{0, (0.3916-0.3694)/0.1479}\n=max{0, 0.1502}\n=0.1502"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.15020630975196758
+    },
+    {
+      "id": 177,
+      "question_id": 149,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为差(B=0)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.6448。运动量为少(A=0)的概率为0.4312。在饮食质量为差(B=0)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.6198。运动量为强烈(A=1)的概率为0.5688。饮食质量为差(B=0)且整体健康状况为差(D=0)的概率为0.4167。饮食质量为好(B=1)且整体健康状况为好(D=1)的概率为0.1479。",
+        "data_info_math": "P(D=0|B=0,A=0)=0.6448; P(A=0)=0.4312; P(D=0|B=0,A=1)=0.6198; P(A=1)=0.5688; P(B=0,D=0)=0.4167; P(B=1,D=1)=0.1479; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定饮食质量为好且整体健康状况为好, 那么假如饮食质量为差，此时整体健康状况为差的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=0))\nP(D=0|do(B=0))=sum_{A} P(D=0|B=0,A)*P(A)=P(D=0|B=0,A=0)*P(A=0)+P(D=0|B=0,A=1)*P(A=1)\nP(D=0|B=0,A=0)=0.6448\tP(A=0)=0.4312\tP(D=0|B=0,A=1)=0.6198\tP(A=1)=0.5688\nP(D=0|do(B=0))=0.6448*0.4312+0.6198*0.5688=0.6306",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(B=0)-P(B=0,D=0)]/P(B=1,D=1)}\n=min{1, (0.6306-0.4167)/0.1479}\n=min{1, 1.4459}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 178,
+      "question_id": 150,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为不健康(C=0)的条件下, 整体健康状况为好(D=1)的概率为0.3869。整体健康状况为好(D=1)的概率为0.3916。遗传疾病倾向为健康(C=1)且整体健康状况为好(D=1)的概率为0.0554。",
+        "data_info_math": "P(D=1|C=0)=0.3869; P(D=1)=0.3916; P(C=1,D=1)=0.0554; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定遗传疾病倾向为健康且整体健康状况为好, 那么假如遗传疾病倾向为不健康，此时整体健康状况为差的概率的下界是多少？",
+      "Answer": "0.0841",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=0))\nP(D=1|do(C=0))=P(D=1|C=0)=0.3869",
+        "Step 2": "PN的下界: max{0, [P(D=1)-P(D=1|do(C=0))]/P(C=1,D=1)}\n=max{0, (0.3916-0.3869)/0.0554}\n=max{0, 0.0841}\n=0.0841"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 0.08414392269240731
+    },
+    {
+      "id": 179,
+      "question_id": 151,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为不健康(C=0)的条件下, 整体健康状况为差(D=0)的概率为0.6131。遗传疾病倾向为不健康(C=0)且整体健康状况为差(D=0)的概率为0.5327。遗传疾病倾向为健康(C=1)且整体健康状况为好(D=1)的概率为0.0554。",
+        "data_info_math": "P(D=0|C=0)=0.6131; P(C=0,D=0)=0.5327; P(C=1,D=1)=0.0554; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的必要性概率(probability of necessity, PN)。",
+      "Question": "给定遗传疾病倾向为健康且整体健康状况为好, 那么假如遗传疾病倾向为不健康，此时整体健康状况为差的概率的上界是多少？",
+      "Answer": "1.0000",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=0))\nP(D=0|do(C=0))=P(D=0|C=0)=0.6131",
+        "Step 2": "PN的上界: min{1, [P(D=0)|do(C=0)-P(C=0,D=0)]/P(C=1,D=1)}\n=min{1, (0.6131-0.5327)/0.0554}\n=min{1, 1.4511}\n=1.0000"
+      },
+      "Type": "PN",
+      "Mode": "REAL",
+      "prob": 1
+    },
+    {
+      "id": 180,
+      "question_id": 152,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 饮食质量为差(B=0)的概率为0.6416。饮食质量为差(B=0)的概率为0.6604。运动量为少(A=0)且饮食质量为差(B=0)的概率为0.2955。",
+        "data_info_math": "P(B=0|A=1)=0.6416; P(B=0)=0.6604; P(A=0,B=0)=0.2955; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定运动量为少且饮食质量为差, 假如运动量为强烈，此时饮食质量为好的概率的下界是多少？",
+      "Answer": "0.0636",
+      "Reason": {
+        "Step 1": "计算P(B=0|do(A=1))\nP(B=0|do(A=1))=P(B=0|A=1)=0.6416",
+        "Step 2": "PS的下界: max{0, [P(B=0)-P(B=0|do(A=1))]/P(A=0,B=0)}\n=max{0, (0.6604-0.6416)/0.2955}\n=max{0, 0.0636}\n=0.0636"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.06359065551125637
+    },
+    {
+      "id": 181,
+      "question_id": 153,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 饮食质量为好(B=1)的概率为0.3584。运动量为少(A=0)且饮食质量为差(B=0)的概率为0.2955。运动量为强烈(A=1)且饮食质量为好(B=1)的概率为0.2038。",
+        "data_info_math": "P(B=1|A=1)=0.3584; P(A=0,B=0)=0.2955; P(A=1,B=1)=0.2038; "
+      },
+      "Instruction": "考虑运动量作用于饮食质量的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定运动量为少且饮食质量为差, 假如运动量为强烈，此时饮食质量为好的概率的上界是多少？",
+      "Answer": "0.5230",
+      "Reason": {
+        "Step 1": "计算P(B=1|do(A=1))\nP(B=1|do(A=1))=P(B=1|A=1)=0.3584",
+        "Step 2": "PS的上界: min{1, [P(B=1)|do(A=1)-P(A=1,B=1)]/P(A=0,B=0)}\n=min{1, (0.3584-0.2038)/0.2955}\n=min{1, 0.5230}\n=0.5230"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.5230098662335201
+    },
+    {
+      "id": 182,
+      "question_id": 154,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.5951。整体健康状况为差(D=0)的概率为0.6084。运动量为少(A=0)且整体健康状况为差(D=0)的概率为0.2699。",
+        "data_info_math": "P(D=0|A=1)=0.5951; P(D=0)=0.6084; P(A=0,D=0)=0.2699; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定运动量为少且整体健康状况为差, 假如运动量为强烈，此时整体健康状况为好的概率的下界是多少？",
+      "Answer": "0.0492",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(A=1))\nP(D=0|do(A=1))=P(D=0|A=1)=0.5951",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(A=1))]/P(A=0,D=0)}\n=max{0, (0.6084-0.5951)/0.2699}\n=max{0, 0.0492}\n=0.0492"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.049231131601066756
+    },
+    {
+      "id": 183,
+      "question_id": 155,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.4049。运动量为少(A=0)且整体健康状况为差(D=0)的概率为0.2699。运动量为强烈(A=1)且整体健康状况为好(D=1)的概率为0.2303。",
+        "data_info_math": "P(D=1|A=1)=0.4049; P(A=0,D=0)=0.2699; P(A=1,D=1)=0.2303; "
+      },
+      "Instruction": "考虑运动量作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定运动量为少且整体健康状况为差, 假如运动量为强烈，此时整体健康状况为好的概率的上界是多少？",
+      "Answer": "0.6469",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(A=1))\nP(D=1|do(A=1))=P(D=1|A=1)=0.4049",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(A=1)-P(A=1,D=1)]/P(A=0,D=0)}\n=min{1, (0.4049-0.2303)/0.2699}\n=min{1, 0.6469}\n=0.6469"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.6468598829904707
+    },
+    {
+      "id": 184,
+      "question_id": 156,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为差(D=0)的概率为0.5848。运动量为少(A=0)的概率为0.4312。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为差(D=0)的概率为0.5508。运动量为强烈(A=1)的概率为0.5688。整体健康状况为差(D=0)的概率为0.6084。饮食质量为差(B=0)且整体健康状况为差(D=0)的概率为0.4167。",
+        "data_info_math": "P(D=0|B=1,A=0)=0.5848; P(A=0)=0.4312; P(D=0|B=1,A=1)=0.5508; P(A=1)=0.5688; P(D=0)=0.6084; P(B=0,D=0)=0.4167; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定饮食质量为差且整体健康状况为差, 假如饮食质量为好，此时整体健康状况为好的概率的下界是多少？",
+      "Answer": "0.1030",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(B=1))\nP(D=0|do(B=1))=sum_{A} P(D=0|B=1,A)*P(A)=P(D=0|B=1,A=0)*P(A=0)+P(D=0|B=1,A=1)*P(A=1)\nP(D=0|B=1,A=0)=0.5848\tP(A=0)=0.4312\tP(D=0|B=1,A=1)=0.5508\tP(A=1)=0.5688\nP(D=0|do(B=1))=0.5848*0.4312+0.5508*0.5688=0.5655",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(B=1))]/P(B=0,D=0)}\n=max{0, (0.6084-0.5655)/0.4167}\n=max{0, 0.1030}\n=0.1030"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.10300868080932803
+    },
+    {
+      "id": 185,
+      "question_id": 157,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在饮食质量为好(B=1)且运动量为少(A=0)的条件下, 整体健康状况为好(D=1)的概率为0.4152。运动量为少(A=0)的概率为0.4312。在饮食质量为好(B=1)且运动量为强烈(A=1)的条件下, 整体健康状况为好(D=1)的概率为0.4492。运动量为强烈(A=1)的概率为0.5688。饮食质量为差(B=0)且整体健康状况为差(D=0)的概率为0.4167。饮食质量为好(B=1)且整体健康状况为好(D=1)的概率为0.1479。",
+        "data_info_math": "P(D=1|B=1,A=0)=0.4152; P(A=0)=0.4312; P(D=1|B=1,A=1)=0.4492; P(A=1)=0.5688; P(B=0,D=0)=0.4167; P(B=1,D=1)=0.1479; "
+      },
+      "Instruction": "考虑饮食质量作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定饮食质量为差且整体健康状况为差, 假如饮食质量为好，此时整体健康状况为好的概率的上界是多少？",
+      "Answer": "0.6877",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(B=1))\nP(D=1|do(B=1))=sum_{A} P(D=1|B=1,A)*P(A)=P(D=1|B=1,A=0)*P(A=0)+P(D=1|B=1,A=1)*P(A=1)\nP(D=1|B=1,A=0)=0.4152\tP(A=0)=0.4312\tP(D=1|B=1,A=1)=0.4492\tP(A=1)=0.5688\nP(D=1|do(B=1))=0.4152*0.4312+0.4492*0.5688=0.4345",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(B=1)-P(B=1,D=1)]/P(B=0,D=0)}\n=min{1, (0.4345-0.1479)/0.4167}\n=min{1, 0.6877}\n=0.6877"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.6877377684898964
+    },
+    {
+      "id": 186,
+      "question_id": 158,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为健康(C=1)的条件下, 整体健康状况为差(D=0)的概率为0.5775。整体健康状况为差(D=0)的概率为0.6084。遗传疾病倾向为不健康(C=0)且整体健康状况为差(D=0)的概率为0.5327。",
+        "data_info_math": "P(D=0|C=1)=0.5775; P(D=0)=0.6084; P(C=0,D=0)=0.5327; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定遗传疾病倾向为不健康且整体健康状况为差, 假如遗传疾病倾向为健康，此时整体健康状况为好的概率的下界是多少？",
+      "Answer": "0.0580",
+      "Reason": {
+        "Step 1": "计算P(D=0|do(C=1))\nP(D=0|do(C=1))=P(D=0|C=1)=0.5775",
+        "Step 2": "PS的下界: max{0, [P(D=0)-P(D=0|do(C=1))]/P(C=0,D=0)}\n=max{0, (0.6084-0.5775)/0.5327}\n=max{0, 0.0580}\n=0.0580"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.05798776495669643
+    },
+    {
+      "id": 187,
+      "question_id": 159,
+      "Background": {
+        "graph": "给定一个因果图，它具有4个节点A, B, C, D和4条边A->B, A->D, B->D, C->D。",
+        "real_world_meaning": "每个节点的真实世界含义如下：A代表运动量, B代表饮食质量, C代表遗传疾病倾向, D代表整体健康状况。",
+        "data_info": "在遗传疾病倾向为健康(C=1)的条件下, 整体健康状况为好(D=1)的概率为0.4225。遗传疾病倾向为不健康(C=0)且整体健康状况为差(D=0)的概率为0.5327。遗传疾病倾向为健康(C=1)且整体健康状况为好(D=1)的概率为0.0554。",
+        "data_info_math": "P(D=1|C=1)=0.4225; P(C=0,D=0)=0.5327; P(C=1,D=1)=0.0554; "
+      },
+      "Instruction": "考虑遗传疾病倾向作用于整体健康状况的充分性概率(probability of sufficiency, PS)。",
+      "Question": "给定遗传疾病倾向为不健康且整体健康状况为差, 假如遗传疾病倾向为健康，此时整体健康状况为好的概率的上界是多少？",
+      "Answer": "0.6891",
+      "Reason": {
+        "Step 1": "计算P(D=1|do(C=1))\nP(D=1|do(C=1))=P(D=1|C=1)=0.4225",
+        "Step 2": "PS的上界: min{1, [P(D=1)|do(C=1)-P(C=1,D=1)]/P(C=0,D=0)}\n=min{1, (0.4225-0.0554)/0.5327}\n=min{1, 0.6891}\n=0.6891"
+      },
+      "Type": "PS",
+      "Mode": "REAL",
+      "prob": 0.6891497698374922
+    }
+  ]
+}
