@@ -1,0 +1,11 @@
+{
+    "startup":
+        {
+            "ROOT_PATH": "/mnt/petrelfs/chenjunqi/R1_like/deepscaler/outputs/2025-02-18/14-10-02/checkpoints/deepscaler/deepscaler-1.5b-8k/actor/global_step_380"
+        },
+    "query":
+    {
+        "default":{
+        }
+    }
+}
