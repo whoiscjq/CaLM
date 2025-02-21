@@ -4,6 +4,14 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tenacity import retry, stop_after_attempt, wait_exponential
 
+def read_jsonl(file_path):
+    with open(file_path, 'r') as file:
+        data = []
+        for line in file:
+            data.append(json.loads(line))
+        return data
+
+
 class Processor:
     def __init__(self, input_path, output_path):
         self.input_path = input_path
@@ -11,11 +19,12 @@ class Processor:
         self.processed_ids = self._load_processed_ids()
         
     def _load_processed_ids(self):
-        try:
-            with open('processed.log', 'r') as f:
-                return set(f.read().splitlines())
-        except FileNotFoundError:
-            return set()
+        # try:
+        #     with open('processed.log', 'r') as f:
+        #         return set(f.read().splitlines())
+        # except FileNotFoundError:
+        #     return set()
+        return set()
 
     @retry(stop=stop_after_attempt(3), 
            wait=wait_exponential(multiplier=1, min=2, max=10))
@@ -67,8 +76,10 @@ class Processor:
             return item  # 返回原item用于重试
 
     def run(self):
-        with open(self.input_path) as f:
-            data = json.load(f)
+        # with open(self.input_path) as f:
+        #     data = json.load(f)
+        #read jsonl
+        data = read_jsonl(self.input_path)
             
         with ThreadPoolExecutor(max_workers=10) as executor:
             futures = {executor.submit(self.process_item, item): item 
@@ -81,14 +92,14 @@ class Processor:
                         # 成功处理
                         f_out.write(json.dumps(result, ensure_ascii=False) + '\n')
                         print(result)
-                        f_log.write(f"{result['global_id']}\n")
+                        #f_log.write(f"{result['global_id']}\n")
                     else:
                         # 失败重试（根据需求可加入重试队列）
                         pass
 
 if __name__ == "__main__":
     processor = Processor(
-        input_path="/mnt/workspace/o1_like/CaLM/deepseek_gen/dataset/NDE/train.json",
-        output_path="/mnt/workspace/o1_like/CaLM/deepseek_gen/dataset/NDE/train_gt.jsonl"
+        input_path="answer_check/deepseek_NDE_check_output.jsonl",
+        output_path="answer_check/deepseek_NDE_check_gt_output.jsonl"
     )
     processor.run()

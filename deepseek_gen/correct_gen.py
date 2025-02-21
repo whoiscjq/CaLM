@@ -129,7 +129,7 @@ class APIProcessor:
 
 if __name__ == "__main__":
     processor = APIProcessor(
-        input_file="answer_check/deepseek_NDE_output_partial.jsonl",
+        input_file="answer_check/deepseek_NDE_output.jsonl",
         output_file="answer_check/deepseek_NDE_check_output.jsonl"
     )
     processor.run(max_workers=8)
